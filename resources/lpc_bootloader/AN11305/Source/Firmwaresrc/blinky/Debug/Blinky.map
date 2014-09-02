@@ -1,0 +1,549 @@
+Archive member included because of file (symbol)
+
+C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                              ./src/blinky.o (GPIOSetBitValue)
+C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+                              ./src/blinky.o (SystemCoreClock)
+C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+                              ./src/blinky.o (timer32_0_counter)
+c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/armv6-m\libcr_c.a(__weak__main.o)
+                              ./src/cr_startup_lpc11u.o (__main)
+c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/armv6-m\libcr_eabihelpers.a(division.o)
+                              ./src/blinky.o (__aeabi_uidiv)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 ./src/blinky.o
+ .data          0x00000000        0x0 ./src/blinky.o
+ .bss           0x00000000        0x0 ./src/blinky.o
+ .text          0x00000000        0x0 ./src/cr_startup_lpc11u.o
+ .data          0x00000000        0x0 ./src/cr_startup_lpc11u.o
+ .bss           0x00000000        0x0 ./src/cr_startup_lpc11u.o
+ .text          0x00000000        0x0 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .data          0x00000000        0x0 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .bss           0x00000000        0x0 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .text.NVIC_EnableIRQ
+                0x00000000       0x2c C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .text.NVIC_ClearPendingIRQ
+                0x00000000       0x34 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .text.GPIOInit
+                0x00000000       0x30 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .text.GPIOSetFlexInterrupt
+                0x00000000      0x228 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .rodata.GPIOSetFlexInterrupt
+                0x00000000       0x20 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .text.GPIOFlexIntEnable
+                0x00000000       0x74 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .text.GPIOFlexIntDisable
+                0x00000000       0x74 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .text.GPIOFlexIntStatus
+                0x00000000       0x30 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .text.GPIOFlexIntClear
+                0x00000000       0x34 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .text.GPIOSetGroupedInterrupt
+                0x00000000      0x104 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .text.GPIOGetPinValue
+                0x00000000       0x5c C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .text          0x00000000        0x0 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .data          0x00000000        0x0 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .bss           0x00000000        0x0 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .text          0x00000000        0x0 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .data          0x00000000        0x0 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .bss           0x00000000        0x0 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .bss.timer32_0_period
+                0x00000000        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .bss.timer32_1_period
+                0x00000000        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .text.delay32Ms
+                0x00000000       0xc4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .text.disable_timer32
+                0x00000000       0x30 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .text.reset_timer32
+                0x00000000       0x4c C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .text.set_timer32_capture
+                0x00000000       0xf8 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .text.init_timer32PWM
+                0x00000000      0x134 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .text.setMatch_timer32PWM
+                0x00000000       0xa0 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .text          0x00000000        0x0 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/armv6-m\libcr_c.a(__weak__main.o)
+ .data          0x00000000        0x0 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/armv6-m\libcr_c.a(__weak__main.o)
+ .bss           0x00000000        0x0 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/armv6-m\libcr_c.a(__weak__main.o)
+ .text          0x00000000        0x0 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/armv6-m\libcr_eabihelpers.a(division.o)
+ .data          0x00000000        0x0 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/armv6-m\libcr_eabihelpers.a(division.o)
+ .bss           0x00000000        0x0 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/armv6-m\libcr_eabihelpers.a(division.o)
+ .text.__aeabi_division_idivmod
+                0x00000000        0x6 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/armv6-m\libcr_eabihelpers.a(division.o)
+ .text.__aeabi_division_uldivmod
+                0x00000000       0x5a c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/armv6-m\libcr_eabihelpers.a(division.o)
+ .text.__aeabi_division_ldivmod
+                0x00000000       0x32 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/armv6-m\libcr_eabihelpers.a(division.o)
+ .text.__aeabi_division_ldiv0
+                0x00000000        0x2 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/armv6-m\libcr_eabihelpers.a(division.o)
+ .text.__aeabi_division_idivq31+15
+                0x00000000      0x188 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/armv6-m\libcr_eabihelpers.a(division.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+MFlash128        0x00000000         0x00020000         xr
+RamLoc8          0x10000000         0x00002000         xrw
+RamUsb2          0x20004000         0x00000800         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ./src/blinky.o
+LOAD ./src/cr_startup_lpc11u.o
+LOAD C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a
+LOAD C:\Board Code\11Uxx code\for_blinky_AN_crp\CMSISv2p00_LPC11Uxx\Debug\libCMSISv2p00_LPC11Uxx.a
+START GROUP
+LOAD c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/armv6-m\libcr_c.a
+LOAD c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/armv6-m\libcr_eabihelpers.a
+END GROUP
+                0x00020000                __top_MFlash128 = 0x20000
+                0x10002000                __top_RamLoc8 = 0x10002000
+                0x20004800                __top_RamUsb2 = 0x20004800
+
+.text           0x00000000     0x1480
+ FILL mask 0xff
+ *(.isr_vector)
+ .isr_vector    0x00000000       0xc0 ./src/cr_startup_lpc11u.o
+                0x00000000                g_pfnVectors
+                0x000000c0                . = ALIGN (0x4)
+                0x000000c0                __section_table_start = .
+                0x000000c0                __data_section_table = .
+                0x000000c0        0x4 LONG 0x1480 LOADADDR (.data)
+                0x000000c4        0x4 LONG 0x10000000 ADDR (.data)
+                0x000000c8        0x4 LONG 0x4 SIZEOF (.data)
+                0x000000cc        0x4 LONG 0x1480 LOADADDR (.data_RAM2)
+                0x000000d0        0x4 LONG 0x20004000 ADDR (.data_RAM2)
+                0x000000d4        0x4 LONG 0x0 SIZEOF (.data_RAM2)
+                0x000000d8                __data_section_table_end = .
+                0x000000d8                __bss_section_table = .
+                0x000000d8        0x4 LONG 0x10000004 ADDR (.bss)
+                0x000000dc        0x4 LONG 0xd8 SIZEOF (.bss)
+                0x000000e0        0x4 LONG 0x20004000 ADDR (.bss_RAM2)
+                0x000000e4        0x4 LONG 0x0 SIZEOF (.bss_RAM2)
+                0x000000e8                __bss_section_table_end = .
+                0x000000e8                __section_table_end = .
+                0x000002fc                . = 0x2fc
+ *fill*         0x000000e8      0x214 ff
+ *(.crp)
+ .crp           0x000002fc        0x4 ./src/blinky.o
+                0x000002fc                CRP_WORD
+ *(.after_vectors*)
+ .after_vectors
+                0x00000300       0x7c ./src/cr_startup_lpc11u.o
+                0x00000300                NMI_Handler
+                0x00000304                HardFault_Handler
+                0x00000308                SVC_Handler
+                0x0000030c                PendSV_Handler
+                0x00000310                SysTick_Handler
+                0x00000314                data_init
+                0x00000326                bss_init
+                0x00000338                ResetISR
+                0x00000378                SSP0_IRQHandler
+                0x00000378                USBWakeup_IRQHandler
+                0x00000378                IntDefaultHandler
+                0x00000378                TIMER16_1_IRQHandler
+                0x00000378                USB_FIQHandler
+                0x00000378                ADC_IRQHandler
+                0x00000378                SSP1_IRQHandler
+                0x00000378                USB_IRQHandler
+                0x00000378                BOD_IRQHandler
+                0x00000378                I2C_IRQHandler
+                0x00000378                WDT_IRQHandler
+                0x00000378                UART_IRQHandler
+                0x00000378                TIMER16_0_IRQHandler
+                0x00000378                FMC_IRQHandler
+ *(.text*)
+ .text.main     0x0000037c       0x98 ./src/blinky.o
+                0x0000037c                main
+ .text.FLEX_INT0_IRQHandler
+                0x00000414       0xb8 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x00000414                FLEX_INT0_IRQHandler
+ .text.FLEX_INT1_IRQHandler
+                0x000004cc       0xac C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x000004cc                FLEX_INT1_IRQHandler
+ .text.FLEX_INT2_IRQHandler
+                0x00000578       0xac C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x00000578                FLEX_INT2_IRQHandler
+ .text.FLEX_INT3_IRQHandler
+                0x00000624       0xac C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x00000624                FLEX_INT3_IRQHandler
+ .text.FLEX_INT4_IRQHandler
+                0x000006d0       0xac C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x000006d0                FLEX_INT4_IRQHandler
+ .text.FLEX_INT5_IRQHandler
+                0x0000077c       0xac C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x0000077c                FLEX_INT5_IRQHandler
+ .text.FLEX_INT6_IRQHandler
+                0x00000828       0xac C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x00000828                FLEX_INT6_IRQHandler
+ .text.FLEX_INT7_IRQHandler
+                0x000008d4       0xac C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x000008d4                FLEX_INT7_IRQHandler
+ .text.GINT0_IRQHandler
+                0x00000980       0x64 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x00000980                GINT0_IRQHandler
+ .text.GINT1_IRQHandler
+                0x000009e4       0x64 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x000009e4                GINT1_IRQHandler
+ .text.GPIOSetBitValue
+                0x00000a48       0x54 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x00000a48                GPIOSetBitValue
+ .text.GPIOSetDir
+                0x00000a9c       0x78 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x00000a9c                GPIOSetDir
+ .text.SystemCoreClockUpdate
+                0x00000b14      0x1e4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+                0x00000b14                SystemCoreClockUpdate
+ .text.SystemInit
+                0x00000cf8      0x16c C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+                0x00000cf8                SystemInit
+ .text.NVIC_EnableIRQ
+                0x00000e64       0x2c C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .text.TIMER32_0_IRQHandler
+                0x00000e90       0xcc C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+                0x00000e90                TIMER32_0_IRQHandler
+ .text.TIMER32_1_IRQHandler
+                0x00000f5c       0xe8 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+                0x00000f5c                TIMER32_1_IRQHandler
+ .text.enable_timer32
+                0x00001044       0x30 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+                0x00001044                enable_timer32
+ .text.set_timer32_match
+                0x00001074      0x23c C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+                0x00001074                set_timer32_match
+ .text.init_timer32
+                0x000012b0      0x114 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+                0x000012b0                init_timer32
+ .text.__weak_main
+                0x000013c4        0x8 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/armv6-m\libcr_c.a(__weak__main.o)
+                0x000013c4                __weak_main
+                0x000013c4                __main
+ .text.__aeabi_division_uidivmod
+                0x000013cc       0x72 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/armv6-m\libcr_eabihelpers.a(division.o)
+                0x000013cc                __aeabi_uidivmod
+                0x000013cc                __aeabi_uidiv
+ .text.__aeabi_division_idiv0
+                0x0000143e        0x2 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/armv6-m\libcr_eabihelpers.a(division.o)
+                0x0000143e                __aeabi_idiv0
+ *(.rodata .rodata.*)
+ .rodata.SystemCoreClockUpdate
+                0x00001440       0x40 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+                0x00001480                . = ALIGN (0x4)
+
+.glue_7         0x00001480        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x00001480        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x00001480        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x00001480        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x00001480                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00001480                __exidx_end = .
+                0x00001480                _etext = .
+
+.data_RAM2      0x20004000        0x0 load address 0x00001480
+ FILL mask 0xff
+ *(.data.$RAM2*)
+ *(.data.$RamUsb2*)
+                0x20004000                . = ALIGN (0x4)
+
+.uninit_RESERVED
+ *(.bss.$RESERVED*)
+
+.data           0x10000000        0x4 load address 0x00001480
+ FILL mask 0xff
+                0x10000000                _data = .
+ *(vtable)
+ *(.data*)
+ .data.SystemCoreClock
+                0x10000000        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+                0x10000000                SystemCoreClock
+                0x10000004                . = ALIGN (0x4)
+                0x10000004                _edata = .
+
+.bss_RAM2       0x20004000        0x0
+ *(.bss.$RAM2*)
+ *(.bss.$RamUsb2*)
+                0x20004000                . = ALIGN (0x4)
+
+.bss            0x10000004       0xd8
+                0x10000004                _bss = .
+ *(.bss*)
+ .bss.flex_int0_counter
+                0x10000004        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000004                flex_int0_counter
+ .bss.flex_int1_counter
+                0x10000008        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000008                flex_int1_counter
+ .bss.flex_int2_counter
+                0x1000000c        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x1000000c                flex_int2_counter
+ .bss.flex_int3_counter
+                0x10000010        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000010                flex_int3_counter
+ .bss.flex_int4_counter
+                0x10000014        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000014                flex_int4_counter
+ .bss.flex_int5_counter
+                0x10000018        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000018                flex_int5_counter
+ .bss.flex_int6_counter
+                0x1000001c        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x1000001c                flex_int6_counter
+ .bss.flex_int7_counter
+                0x10000020        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000020                flex_int7_counter
+ .bss.gint0_counter
+                0x10000024        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000024                gint0_counter
+ .bss.gint1_counter
+                0x10000028        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000028                gint1_counter
+ .bss.flex_int0_level_counter
+                0x1000002c        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x1000002c                flex_int0_level_counter
+ .bss.flex_int0_rising_edge_counter
+                0x10000030        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000030                flex_int0_rising_edge_counter
+ .bss.flex_int0_falling_edge_counter
+                0x10000034        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000034                flex_int0_falling_edge_counter
+ .bss.flex_int1_level_counter
+                0x10000038        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000038                flex_int1_level_counter
+ .bss.flex_int1_rising_edge_counter
+                0x1000003c        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x1000003c                flex_int1_rising_edge_counter
+ .bss.flex_int1_falling_edge_counter
+                0x10000040        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000040                flex_int1_falling_edge_counter
+ .bss.flex_int2_level_counter
+                0x10000044        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000044                flex_int2_level_counter
+ .bss.flex_int2_rising_edge_counter
+                0x10000048        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000048                flex_int2_rising_edge_counter
+ .bss.flex_int2_falling_edge_counter
+                0x1000004c        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x1000004c                flex_int2_falling_edge_counter
+ .bss.flex_int3_level_counter
+                0x10000050        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000050                flex_int3_level_counter
+ .bss.flex_int3_rising_edge_counter
+                0x10000054        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000054                flex_int3_rising_edge_counter
+ .bss.flex_int3_falling_edge_counter
+                0x10000058        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000058                flex_int3_falling_edge_counter
+ .bss.flex_int4_level_counter
+                0x1000005c        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x1000005c                flex_int4_level_counter
+ .bss.flex_int4_rising_edge_counter
+                0x10000060        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000060                flex_int4_rising_edge_counter
+ .bss.flex_int4_falling_edge_counter
+                0x10000064        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000064                flex_int4_falling_edge_counter
+ .bss.flex_int5_level_counter
+                0x10000068        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000068                flex_int5_level_counter
+ .bss.flex_int5_rising_edge_counter
+                0x1000006c        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x1000006c                flex_int5_rising_edge_counter
+ .bss.flex_int5_falling_edge_counter
+                0x10000070        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000070                flex_int5_falling_edge_counter
+ .bss.flex_int6_level_counter
+                0x10000074        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000074                flex_int6_level_counter
+ .bss.flex_int6_rising_edge_counter
+                0x10000078        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000078                flex_int6_rising_edge_counter
+ .bss.flex_int6_falling_edge_counter
+                0x1000007c        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x1000007c                flex_int6_falling_edge_counter
+ .bss.flex_int7_level_counter
+                0x10000080        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000080                flex_int7_level_counter
+ .bss.flex_int7_rising_edge_counter
+                0x10000084        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000084                flex_int7_rising_edge_counter
+ .bss.flex_int7_falling_edge_counter
+                0x10000088        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000088                flex_int7_falling_edge_counter
+ .bss.gint0_level_counter
+                0x1000008c        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x1000008c                gint0_level_counter
+ .bss.gint0_edge_counter
+                0x10000090        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000090                gint0_edge_counter
+ .bss.gint1_level_counter
+                0x10000094        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000094                gint1_level_counter
+ .bss.gint1_edge_counter
+                0x10000098        0x4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                0x10000098                gint1_edge_counter
+ .bss.timer32_0_counter
+                0x1000009c       0x10 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+                0x1000009c                timer32_0_counter
+ .bss.timer32_1_counter
+                0x100000ac       0x10 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+                0x100000ac                timer32_1_counter
+ .bss.timer32_0_capture
+                0x100000bc       0x10 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+                0x100000bc                timer32_0_capture
+ .bss.timer32_1_capture
+                0x100000cc       0x10 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+                0x100000cc                timer32_1_capture
+ *(COMMON)
+                0x100000dc                . = ALIGN (0x4)
+                0x100000dc                _ebss = .
+                0x100000dc                PROVIDE (end, .)
+                0x100000dc                PROVIDE (_pvHeapStart, .)
+                0x10002000                PROVIDE (_vStackTop, (__top_RamLoc8 - 0x0))
+OUTPUT(Blinky.axf elf32-littlearm)
+
+.debug_abbrev   0x00000000      0x68d
+ .debug_abbrev  0x00000000       0xbd ./src/blinky.o
+ .debug_abbrev  0x000000bd      0x107 ./src/cr_startup_lpc11u.o
+ .debug_abbrev  0x000001c4      0x1e8 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .debug_abbrev  0x000003ac       0xf9 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .debug_abbrev  0x000004a5      0x1e8 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+
+.debug_info     0x00000000     0x325c
+ .debug_info    0x00000000      0x5b4 ./src/blinky.o
+ .debug_info    0x000005b4      0x29a ./src/cr_startup_lpc11u.o
+ .debug_info    0x0000084e     0x1302 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .debug_info    0x00001b50      0x5d2 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .debug_info    0x00002122     0x113a C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+
+.debug_line     0x00000000     0x1985
+ .debug_line    0x00000000      0x430 ./src/blinky.o
+ .debug_line    0x00000430      0x420 ./src/cr_startup_lpc11u.o
+ .debug_line    0x00000850      0x6b3 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .debug_line    0x00000f03      0x4a0 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .debug_line    0x000013a3      0x5e2 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+
+.debug_macinfo  0x00000000    0x164a1
+ .debug_macinfo
+                0x00000000     0x47c6 ./src/blinky.o
+ .debug_macinfo
+                0x000047c6     0x463f ./src/cr_startup_lpc11u.o
+ .debug_macinfo
+                0x00008e05     0x46a1 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .debug_macinfo
+                0x0000d4a6     0x4914 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .debug_macinfo
+                0x00011dba     0x46e7 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+
+.debug_loc      0x00000000      0xa51
+ .debug_loc     0x00000000       0x2c ./src/blinky.o
+ .debug_loc     0x0000002c      0x2e1 ./src/cr_startup_lpc11u.o
+ .debug_loc     0x0000030d      0x44c C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .debug_loc     0x00000759       0x70 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .debug_loc     0x000007c9      0x288 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+
+.debug_pubnames
+                0x00000000      0x8bc
+ .debug_pubnames
+                0x00000000       0x28 ./src/blinky.o
+ .debug_pubnames
+                0x00000028       0xbe ./src/cr_startup_lpc11u.o
+ .debug_pubnames
+                0x000000e6      0x60f C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .debug_pubnames
+                0x000006f5       0x4f C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .debug_pubnames
+                0x00000744      0x178 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+
+.debug_pubtypes
+                0x00000000      0x1b2
+ .debug_pubtypes
+                0x00000000       0x33 ./src/blinky.o
+ .debug_pubtypes
+                0x00000033       0x12 ./src/cr_startup_lpc11u.o
+ .debug_pubtypes
+                0x00000045       0xa4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .debug_pubtypes
+                0x000000e9       0x33 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .debug_pubtypes
+                0x0000011c       0x96 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+
+.debug_aranges  0x00000000      0x1e8
+ .debug_aranges
+                0x00000000       0x20 ./src/blinky.o
+ .debug_aranges
+                0x00000020       0x60 ./src/cr_startup_lpc11u.o
+ .debug_aranges
+                0x00000080       0xc8 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .debug_aranges
+                0x00000148       0x28 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .debug_aranges
+                0x00000170       0x78 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+
+.debug_ranges   0x00000000      0x198
+ .debug_ranges  0x00000000       0x10 ./src/blinky.o
+ .debug_ranges  0x00000010       0x50 ./src/cr_startup_lpc11u.o
+ .debug_ranges  0x00000060       0xb8 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .debug_ranges  0x00000118       0x18 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .debug_ranges  0x00000130       0x68 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+
+.debug_str      0x00000000     0x10d9
+ .debug_str     0x00000000      0x349 ./src/blinky.o
+                                0x36b (size before relaxing)
+ .debug_str     0x00000349      0x12f ./src/cr_startup_lpc11u.o
+                                0x1f3 (size before relaxing)
+ .debug_str     0x00000478      0x8a9 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+                                0xbaf (size before relaxing)
+ .debug_str     0x00000d21       0x48 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+                                0x38f (size before relaxing)
+ .debug_str     0x00000d69      0x370 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+                                0x92c (size before relaxing)
+
+.comment        0x00000000       0x2a
+ .comment       0x00000000       0x2a ./src/blinky.o
+                                 0x2b (size before relaxing)
+ .comment       0x00000000       0x2b ./src/cr_startup_lpc11u.o
+ .comment       0x00000000       0x2b C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .comment       0x00000000       0x2b C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .comment       0x00000000       0x2b C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .comment       0x00000000       0x2b c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/armv6-m\libcr_c.a(__weak__main.o)
+
+.ARM.attributes
+                0x00000000       0x31
+ .ARM.attributes
+                0x00000000       0x33 ./src/blinky.o
+ .ARM.attributes
+                0x00000033       0x33 ./src/cr_startup_lpc11u.o
+ .ARM.attributes
+                0x00000066       0x33 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .ARM.attributes
+                0x00000099       0x33 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .ARM.attributes
+                0x000000cc       0x33 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
+ .ARM.attributes
+                0x000000ff       0x33 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/../../../../arm-none-eabi/lib/armv6-m\libcr_c.a(__weak__main.o)
+ .ARM.attributes
+                0x00000132       0x23 c:/nxp/lpcxpresso_4.2.4_299_beta/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.5.1/armv6-m\libcr_eabihelpers.a(division.o)
+
+.debug_frame    0x00000000      0x590
+ .debug_frame   0x00000000       0x2c ./src/blinky.o
+ .debug_frame   0x0000002c       0xe8 ./src/cr_startup_lpc11u.o
+ .debug_frame   0x00000114      0x2a4 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(gpio.o)
+ .debug_frame   0x000003b8       0x50 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(system_LPC11Uxx.o)
+ .debug_frame   0x00000408      0x188 C:\Board Code\11Uxx code\for_blinky_AN_crp\LPC11Uxx_Driver_Lib\Debug\libLPC11Uxx_Driver_Lib.a(timer32.o)
