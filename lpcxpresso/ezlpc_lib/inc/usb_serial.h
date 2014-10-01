@@ -1,17 +1,8 @@
 
 
 #ifndef USB_SERIAL_H
-#define USEB_SERIAL_H
+#define USB_SERIAL_H
 
-//#include <arduino.h>
-//#include "avr_util.h"
-
-// A serial output that uses hardware UART0 and no interrupts (for lower
-// interrupt jitter). Requires periodic calls to update() to send buffered
-// bytes to the uart.
-//
-// TX Output - TXD (PD1) - pin 31
-// TX Input  - TXD (PD0) - pin 30 (currently not used).
 namespace usb_serial {
 
   // Call from main setup() and loop() respectivly.
@@ -35,6 +26,6 @@ namespace usb_serial {
   // Avoid using this when possible. Useful when needing to print
   // during setup() more than the output buffer can contain.
   //void waitUntilFlushed();
-}  // namespace sio
+}  // namespace us_serial
 
 #endif

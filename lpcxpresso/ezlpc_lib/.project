@@ -3,7 +3,6 @@
 	<name>ezlpc_lib</name>
 	<comment></comment>
 	<projects>
-		<project>kaka</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
