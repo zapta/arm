@@ -1,16 +1,36 @@
-
 #include "system_time.h"
+
+#include "chip/clock_11xx.h"
+
+// Using timer32 0. 
+#define SYS_CLOCK_TIMER32 (LPC_TIMER32_0)
 
 namespace system_time {
 
-// TODO(zapta): have a more accurate time/delay.
-void delay_ms(uint16 ms) {
-  uint16 delay;
-  volatile uint32 i;
-  for (delay = ms; delay > 0; delay--) {
-    // ~1ms loop with -Os optimisatio
-    for (i = 3500; i > 0; i--) {
-    }
+void setup() {
+  const uint32 system_clock_hz = Chip_Clock_GetSystemClockRate();
+  const uint32 prescale = system_clock_hz / 1000000;
+
+  Chip_TIMER_Init(SYS_CLOCK_TIMER32);
+
+    // Set prescaler for 1 usec/count.
+  Chip_TIMER_PrescaleSet(SYS_CLOCK_TIMER32, prescale - 1);
+  // Reset count
+  Chip_TIMER_Reset(SYS_CLOCK_TIMER32);
+  // Start counting.
+  Chip_TIMER_Enable(SYS_CLOCK_TIMER32);
+}
+
+uint32 usecs() {
+  return Chip_TIMER_ReadCount(SYS_CLOCK_TIMER32);
+}
+
+
+// TODO: compensate for the function call/return time?
+void delay_usec(uint32 delay_time_usec) {
+  const uint32 start_time = usecs();
+  while (usecs() - start_time < delay_time_usec) {
+    // Do nothing.
   }
 }
 

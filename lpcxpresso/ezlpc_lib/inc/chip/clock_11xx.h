@@ -32,6 +32,8 @@
 #ifndef __CLOCK_11XX_H_
 #define __CLOCK_11XX_H_
 
+#include "chip.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
