@@ -57,27 +57,33 @@ STATIC const PINMUX_GRP_T pinmuxing[] = {
 	{0,  1,  (IOCON_FUNC1 | IOCON_MODE_INACT)},		/* PIO0_1 used for CLKOUT */
 	{0,  2,  (IOCON_FUNC1 | IOCON_MODE_INACT)},		/* PIO0_2 used for SSEL */
 	{0,  3,  (IOCON_FUNC1 | IOCON_MODE_INACT)},		/* PIO0_3 used for USB_VBUS */
-	{0,  4,  (IOCON_FUNC1 | IOCON_SFI2C_EN)},		/* PIO0_4 used for SCL */
-	{0,  5,  (IOCON_FUNC1 | IOCON_SFI2C_EN)},		/* PIO0_5 used for SDA */
+	//{0,  4,  (IOCON_FUNC1 | IOCON_SFI2C_EN)},		  /* PIO0_4 used for SCL */
+	//{0,  5,  (IOCON_FUNC1 | IOCON_SFI2C_EN)},		  /* PIO0_5 used for SDA */
 	{0,  6,  (IOCON_FUNC1 | IOCON_MODE_INACT)},		/* PIO0_6 used for USB_CONNECT */
-	{0,  11, (IOCON_FUNC1 | IOCON_ADMODE_EN | IOCON_FILT_DIS)},	/* PIO0_11 used for AD0 */
-	{0,  18, (IOCON_FUNC1 | IOCON_MODE_INACT)},		/* PIO0_18 used for RXD */
-	{0,  19, (IOCON_FUNC1 | IOCON_MODE_INACT)},		/* PIO0_19 used for TXD */
+
+	// NOTE: see note later in this file regarding the two I2C pins.
+
+	//{0,  11, (IOCON_FUNC1 | IOCON_ADMODE_EN | IOCON_FILT_DIS)},	/* PIO0_11 used for AD0 */
+//	{0,  18, (IOCON_FUNC1 | IOCON_MODE_INACT)},		/* PIO0_18 used for RXD */
+//	{0,  19, (IOCON_FUNC1 | IOCON_MODE_INACT)},		/* PIO0_19 used for TXD */
 
 	/* I2C0 */
-	{0,  4,  IOCON_FUNC1},
-	{0,  5,  IOCON_FUNC1},
+//	{0,  4,  IOCON_FUNC1},
+//	{0,  5,  IOCON_FUNC1},
 
 	/* Joystick inputs */
-	{1,  22, (IOCON_FUNC0 | IOCON_MODE_PULLUP)},
-	{1,  20, (IOCON_FUNC0 | IOCON_MODE_PULLUP)},
-	{1,  23, (IOCON_FUNC0 | IOCON_MODE_PULLUP)},
-	{1,  21, (IOCON_FUNC0 | IOCON_MODE_PULLUP)},
-	{1,  19, (IOCON_FUNC0 | IOCON_MODE_PULLUP)},
+//	{1,  22, (IOCON_FUNC0 | IOCON_MODE_PULLUP)},
+//	{1,  20, (IOCON_FUNC0 | IOCON_MODE_PULLUP)},
+//	{1,  23, (IOCON_FUNC0 | IOCON_MODE_PULLUP)},
+//	{1,  21, (IOCON_FUNC0 | IOCON_MODE_PULLUP)},
+//	{1,  19, (IOCON_FUNC0 | IOCON_MODE_PULLUP)},
 
 	/* Button inputs */
+
+	// USB bootloader enable button.
 	{0,  1,  (IOCON_FUNC0 | IOCON_MODE_PULLUP)},
-	{0,  16, (IOCON_FUNC0 | IOCON_MODE_PULLUP)},
+
+	//{0,  16, (IOCON_FUNC0 | IOCON_MODE_PULLUP)},
 };
 
 /*****************************************************************************
@@ -151,6 +157,13 @@ STATIC void SystemSetupMuxing(void)
 		Chip_IOCON_PinMuxSet(LPC_IOCON, pinmuxing[i].port, pinmuxing[i].pin,
 							 pinmuxing[i].modefunc);
 	}
+
+	// GPIO0 pins 4,5 (which are also the I2C pins) do not not have internal pull
+	// up and have only open drain mode for output. We set then here as outputs
+	// (low by default) to avoid having floating input.
+	// If needed, the app should switch them to I2C mode and use pullup resistors.
+  Chip_GPIO_SetPinDIROutput(LPC_GPIO, 0, 4);
+  Chip_GPIO_SetPinDIROutput(LPC_GPIO, 0, 5);
 }
 
 /*****************************************************************************

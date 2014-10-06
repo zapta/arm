@@ -59,11 +59,11 @@ const uint32_t ExtRateIn = 0;
 /* Set up and initialize hardware prior to call to main */
 void SystemInit(void)
 {
-#if defined(NO_BOARD_LIB)
-	/* Chip specific SystemInit */
-	Chip_SystemInit();
-#else
+//#if defined(NO_BOARD_LIB)
+//	/* Chip specific SystemInit */
+//	Chip_SystemInit();
+//#else
 	/* Board specific SystemInit */
 	Board_SystemInit();
-#endif
+//#endif
 }

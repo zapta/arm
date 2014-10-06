@@ -11,13 +11,17 @@ public:
     reset();
   }
 
+  inline void set_start_time_usecs(uint32 start_time_usecs) {
+    start_time_usecs_ = start_time_usecs;
+  }
+
   // Start as of now.
   inline void reset() {
     start_time_usecs_ = system_time::usecs();
   }
 
   // Start at last start time + given increment.
-  inline void advance(uint32 delta_time_usecs) {
+  inline void advance_start_time_usecs(uint32 delta_time_usecs) {
     start_time_usecs_ += delta_time_usecs;
   }
 

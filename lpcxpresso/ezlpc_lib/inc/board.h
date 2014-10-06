@@ -34,67 +34,35 @@
 
 #include "chip.h"
 
-// TAL: commented out
-//#include "uda1380.h"
-/* board_api.h is included at the bottom of this file after DEBUG setup */
+// Outlined after LPCXpresso 11U37H board file.
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-/** @defgroup BOARD_NXP_XPRESSO_11U37H NXP LPC11U37H LPCXpresso board support software API functions
- * @ingroup LPCOPEN_11XX_BOARD_XPRESSO_11U37H
- * The board support software API functions provide some simple abstracted
- * functions used across multiple LPCOpen board examples. See @ref BOARD_COMMON_API
- * for the functions defined by this board support layer.<br>
- * @{
- */
-
-/** @defgroup BOARD_NXP_XPRESSO_11U37H_OPTIONS BOARD: NXP LPC11U37H LPCXpresso board build options
- * This board has options that configure its operation at build-time.<br>
- * @{
- */
-
-/** Define DEBUG_ENABLE to enable IO via the DEBUGSTR, DEBUGOUT, and
-    DEBUGIN macros. If not defined, DEBUG* functions will be optimized
-	out of the code at build time.
- */
-#define DEBUG_ENABLE
-
-/** Define DEBUG_SEMIHOSTING along with DEBUG_ENABLE to enable IO support
-    via semihosting. You may need to use a C library that supports
-	semihosting with this option.
- */
-//#define DEBUG_SEMIHOSTING
-
-/** Board UART used for debug output and input using the DEBUG* macros. This
-    is also the port used for Board_UARTPutChar, Board_UARTGetChar, and
-	Board_UARTPutSTR functions.
- */
-#define DEBUG_UART LPC_USART
 
 /**
  * @}
  */
 
 /* Board name */
-#define BOARD_NXP_XPRESSO_11U37H
+//#define BOARD_NXP_XPRESSO_11U37H
 
 /**
  * LED defines
  */
-#define LEDS_LED1           0x01
-#define LEDS_LED2           0x02
-#define LEDS_LED3           0x04
-#define LEDS_LED4           0x08
-#define LEDS_NO_LEDS        0x00
+//#define LEDS_LED1           0x01
+//#define LEDS_LED2           0x02
+//#define LEDS_LED3           0x04
+//#define LEDS_LED4           0x08
+//#define LEDS_NO_LEDS        0x00
 
 /**
  * Button defines
  */
-#define BUTTONS_BUTTON1     0x01
-#define BUTTONS_BUTTON2     0x02
-#define NO_BUTTON_PRESSED   0x00
+//#define BUTTONS_BUTTON1     0x01
+//#define BUTTONS_BUTTON2     0x02
+//#define NO_BUTTON_PRESSED   0x00
 
 /**
  * Joystick defines
@@ -115,13 +83,13 @@ extern "C" {
  * @brief	Initialize buttons on the board
  * @return	Nothing
  */
-void Board_Buttons_Init(void);
+//void Board_Buttons_Init(void);
 
 /**
  * @brief	Get button status
  * @return	status of button
  */
-uint32_t Buttons_GetStatus(void);
+//uint32_t Buttons_GetStatus(void);
 
 /**
  * @brief	Initialize Joystick
@@ -140,7 +108,7 @@ uint32_t Buttons_GetStatus(void);
  * @param	id	: I2C peripheral ID (I2C0)
  * @return	Nothing
  */
-void Board_I2C_Init(I2C_ID_T id);
+//void Board_I2C_Init(I2C_ID_T id);
 
 /**
  * @}

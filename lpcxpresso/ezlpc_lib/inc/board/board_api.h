@@ -67,27 +67,27 @@ void Board_Init(void);
  * @brief	Initializes board UART for output, required for printf redirection
  * @return	None
  */
-void Board_Debug_Init(void);
+//void Board_Debug_Init(void);
 
 /**
  * @brief	Sends a single character on the UART, required for printf redirection
  * @param	ch	: character to send
  * @return	None
  */
-void Board_UARTPutChar(char ch);
+//void Board_UARTPutChar(char ch);
 
 /**
  * @brief	Get a single character from the UART, required for scanf input
  * @return	EOF if not character was received, or character value
  */
-int Board_UARTGetChar(void);
+//int Board_UARTGetChar(void);
 
 /**
  * @brief	Prints a string to the UART
  * @param	str	: Terminated string to output
  * @return	None
  */
-void Board_UARTPutSTR(char *str);
+//void Board_UARTPutSTR(char *str);
 
 /**
  * @brief	Sets the state of a board LED to on or off
@@ -95,21 +95,21 @@ void Board_UARTPutSTR(char *str);
  * @param	State		: true for on, false for off
  * @return	None
  */
-void Board_LED_Set(uint8_t LEDNumber, bool State);
+//void Board_LED_Set(uint8_t LEDNumber, bool State);
 
 /**
  * @brief	Returns the current state of a board LED
  * @param	LEDNumber	: LED number to set state for
  * @return	true if the LED is on, otherwise false
  */
-bool Board_LED_Test(uint8_t LEDNumber);
+//bool Board_LED_Test(uint8_t LEDNumber);
 
 /**
  * @brief	Toggles the current state of a board LED
  * @param	LEDNumber	: LED number to change state for
  * @return	None
  */
-void Board_LED_Toggle(uint8_t LEDNumber);
+//void Board_LED_Toggle(uint8_t LEDNumber);
 
 /**
  * @brief	Turn on Board LCD Backlight
@@ -120,7 +120,7 @@ void Board_LED_Toggle(uint8_t LEDNumber);
  * control backlight intensity via a PWN. For PWM systems, the intensity value
  * is a percentage value between 0 and 100%.
  */
-void Board_SetLCDBacklight(uint8_t Intensity);
+//void Board_SetLCDBacklight(uint8_t Intensity);
 
 /**
  * @brief Function prototype for a MS delay function. Board layers or example code may
@@ -131,26 +131,26 @@ typedef void (*p_msDelay_func_t)(uint32_t);
 /* The DEBUG* functions are selected based on system configuration.
    Code that uses the DEBUG* functions will have their I/O routed to
    the UART, semihosting, or nowhere. */
-#if defined(DEBUG_ENABLE)
-#if defined(DEBUG_SEMIHOSTING)
-#define DEBUGINIT()
-#define DEBUGOUT(...) printf(__VA_ARGS__)
-#define DEBUGSTR(str) printf(str)
-#define DEBUGIN() (int) EOF
-
-#else
-#define DEBUGINIT() Board_Debug_Init()
-#define DEBUGOUT(...) printf(__VA_ARGS__)
-#define DEBUGSTR(str) Board_UARTPutSTR(str)
-#define DEBUGIN() Board_UARTGetChar()
-#endif /* defined(DEBUG_SEMIHOSTING) */
-
-#else
-#define DEBUGINIT()
-#define DEBUGOUT(...)
-#define DEBUGSTR(str)
-#define DEBUGIN() (int) EOF
-#endif /* defined(DEBUG_ENABLE) */
+//#if defined(DEBUG_ENABLE)
+//#if defined(DEBUG_SEMIHOSTING)
+//#define DEBUGINIT()
+//#define DEBUGOUT(...) printf(__VA_ARGS__)
+//#define DEBUGSTR(str) printf(str)
+//#define DEBUGIN() (int) EOF
+//
+//#else
+//#define DEBUGINIT() Board_Debug_Init()
+//#define DEBUGOUT(...) printf(__VA_ARGS__)
+//#define DEBUGSTR(str) Board_UARTPutSTR(str)
+//#define DEBUGIN() Board_UARTGetChar()
+//#endif /* defined(DEBUG_SEMIHOSTING) */
+//
+//#else
+//#define DEBUGINIT()
+//#define DEBUGOUT(...)
+//#define DEBUGSTR(str)
+//#define DEBUGIN() (int) EOF
+//#endif /* defined(DEBUG_ENABLE) */
 
 /**
  * @}
