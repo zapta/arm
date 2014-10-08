@@ -1,8 +1,5 @@
-// A basic hello world example using the ezlpc library. Text output is send to
+// A basic hello world example using the ezlpc library. Text output is sent to
 // the USB serial port (CDC virtual com). 
-//
-// Using state based delay rather than a blocking delay so it can be
-// extended with other functionality.
 
 #include "ezlpc.h"
 #include "io_pins.h"
@@ -29,20 +26,12 @@ static void setup() {
 
 static void loop() {
   static int message_count = 0;
-  // System clock. Wraps around every ~20 days. The code below
-  // handles the wrap around correctly.
   const uint32 time_now_usecs = timer.usecs();
   // Generates a short blink at the beginning of each cycle.
   led.set(time_now_usecs <= 500000);
   if (time_now_usecs >= 1000000) {
     usb_serial::printf("Hello world: %d, %u\n", message_count++,
         system_time::usecs());
-//    usb_serial::printf("pin4: %d, pin5: %d\n",
-//        Chip_GPIO_GetPinState(LPC_GPIO, 0, 4),
-//        Chip_GPIO_GetPinState(LPC_GPIO, 0, 4));
-
-    //Chip_GPIO_GetPinState(LPC_GPIO, 0, 4);
-
     // Advance cycle start time rather than reseting to time now. This
     // way we don't accumulate time errors.
     timer.advance_start_time_usecs(1000000);
