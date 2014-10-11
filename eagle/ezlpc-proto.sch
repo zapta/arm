@@ -3555,10 +3555,10 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <smd name="30" x="-0.75" y="2.55" dx="0.27" dy="0.85" layer="1"/>
 <smd name="31" x="-1.25" y="2.55" dx="0.27" dy="0.85" layer="1"/>
 <smd name="32" x="-1.75" y="2.55" dx="0.27" dy="0.85" layer="1"/>
-<pad name="G1" x="-0.65" y="0.65" drill="0.3" diameter="0.6"/>
-<pad name="G4" x="0.65" y="0.65" drill="0.3" diameter="0.6"/>
-<pad name="G3" x="0.65" y="-0.65" drill="0.3" diameter="0.6"/>
-<pad name="G2" x="-0.65" y="-0.65" drill="0.3" diameter="0.6"/>
+<pad name="G1" x="-0.65" y="0.65" drill="0.3302" diameter="0.6"/>
+<pad name="G4" x="0.65" y="0.65" drill="0.3302" diameter="0.6"/>
+<pad name="G3" x="0.65" y="-0.65" drill="0.3302" diameter="0.6"/>
+<pad name="G2" x="-0.65" y="-0.65" drill="0.3302" diameter="0.6"/>
 <smd name="TAB" x="0" y="0" dx="3.75" dy="3.75" layer="1" cream="no"/>
 <text x="-3.5" y="3.65" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="-3.5" y="-4.95" size="1.27" layer="27" font="vector">&gt;VALUE</text>
