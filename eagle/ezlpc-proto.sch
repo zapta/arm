@@ -4579,6 +4579,8 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </class>
 <class number="1" name="power" width="0.254" drill="0">
 </class>
+<class number="2" name="critical" width="0" drill="0">
+</class>
 </classes>
 <parts>
 <part name="U$3" library="ezlpc-proto" deviceset="NC" device=""/>
@@ -5467,7 +5469,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="66.04" y1="154.94" x2="66.04" y2="157.48" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="USB_DM" class="0">
+<net name="USB_DM" class="2">
 <segment>
 <pinref part="R5" gate="G$1" pin="2"/>
 <wire x1="99.06" y1="162.56" x2="137.16" y2="162.56" width="0.1524" layer="91"/>
@@ -5479,7 +5481,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <label x="170.18" y="205.74" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="USB_DP" class="0">
+<net name="USB_DP" class="2">
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="99.06" y1="157.48" x2="137.16" y2="157.48" width="0.1524" layer="91"/>
