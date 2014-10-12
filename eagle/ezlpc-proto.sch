@@ -215,9 +215,9 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <smd name="31" x="-1.25" y="2.55" dx="0.27" dy="0.85" layer="1"/>
 <smd name="32" x="-1.75" y="2.55" dx="0.27" dy="0.85" layer="1"/>
 <pad name="G1" x="-0.65" y="0.65" drill="0.3302" diameter="0.6" thermals="no"/>
-<pad name="G4" x="0.65" y="0.65" drill="0.3302" diameter="0.6" thermals="no"/>
-<pad name="G3" x="0.65" y="-0.65" drill="0.3302" diameter="0.6" thermals="no"/>
 <pad name="G2" x="-0.65" y="-0.65" drill="0.3302" diameter="0.6" thermals="no"/>
+<pad name="G3" x="0.65" y="-0.65" drill="0.3302" diameter="0.6" thermals="no"/>
+<pad name="G4" x="0.65" y="0.65" drill="0.3302" diameter="0.6" thermals="no"/>
 <smd name="TAB" x="0" y="0" dx="3.75" dy="3.75" layer="1" cream="no"/>
 <text x="-3.5" y="3.65" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="-3.5" y="-4.95" size="1.27" layer="27" font="vector">&gt;VALUE</text>
@@ -280,6 +280,9 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <pad name="10" x="5.08" y="1.27" drill="0.508"/>
 <text x="-1.27" y="3.175" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-1.27" y="-4.445" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-0.889" y1="-1.397" x2="-1.27" y2="-1.905" width="0.254" layer="21"/>
+<wire x1="-1.27" y1="-1.905" x2="-0.508" y2="-1.905" width="0.254" layer="21"/>
+<wire x1="-0.508" y1="-1.905" x2="-0.889" y2="-1.397" width="0.254" layer="21"/>
 </package>
 <package name="SOT25">
 <description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;&lt;p&gt;
@@ -329,21 +332,25 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <rectangle x1="2" y1="4.7" x2="3.75" y2="5.2" layer="41"/>
 <rectangle x1="-3.2" y1="0.6" x2="-2" y2="3.6" layer="41"/>
 <rectangle x1="2" y1="0.6" x2="3.2" y2="3.6" layer="41"/>
-<rectangle x1="-5.06" y1="1.74" x2="-3.29" y2="3.51" layer="31"/>
-<rectangle x1="3.29" y1="1.74" x2="5.07" y2="3.51" layer="31"/>
-<rectangle x1="1.77" y1="5.29" x2="2.68" y2="6.21" layer="31"/>
-<rectangle x1="-2.68" y1="5.29" x2="-1.76" y2="6.21" layer="31"/>
 <smd name="1" x="1.3" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="2" x="0.65" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="3" x="0" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="4" x="-0.65" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="5" x="-1.3" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<pad name="A" x="-4.175" y="2.625" drill="1.016" diameter="1.778" shape="square"/>
-<pad name="B" x="-2.225" y="5.75" drill="0.65" diameter="0.9144" shape="square"/>
-<pad name="C" x="2.225" y="5.75" drill="0.65" diameter="0.9144" shape="square"/>
-<pad name="D" x="4.175" y="2.625" drill="1.016" diameter="1.778" shape="square"/>
 <text x="-12.7" y="5.08" size="1.27" layer="27">&gt;VALUE</text>
 <text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<smd name="D1" x="2.43451875" y="5.7488125" dx="1.4224" dy="1.016" layer="1" roundness="15" rot="R180"/>
+<smd name="D2" x="2.460609375" y="5.748815625" dx="1.5748" dy="1.016" layer="16" roundness="15" rot="R180" stop="no" thermals="no" cream="no"/>
+<hole x="-2.225" y="5.75" drill="0.65"/>
+<smd name="C1" x="-2.430825" y="5.756875" dx="1.4224" dy="1.016" layer="1" roundness="15"/>
+<smd name="C2" x="-2.456915625" y="5.756871875" dx="1.5748" dy="1.016" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
+<hole x="2.225" y="5.75" drill="0.65"/>
+<smd name="A1" x="-4.175" y="2.625" dx="1.778" dy="1.778" layer="1" roundness="15"/>
+<hole x="4.175" y="2.625" drill="1.016"/>
+<smd name="A2" x="-4.175" y="2.625" dx="1.8796" dy="1.8796" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
+<smd name="B2" x="4.175" y="2.625" dx="1.8796" dy="1.8796" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
+<smd name="B1" x="4.175" y="2.625" dx="1.778" dy="1.778" layer="1" roundness="15"/>
+<hole x="-4.175" y="2.625" drill="1.016"/>
 </package>
 <package name="C0402K">
 <description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0204 reflow solder&lt;/b&gt;&lt;p&gt;
@@ -357,18 +364,6 @@ Metric Code Size 1005</description>
 <text x="-0.5" y="0.425" size="1.016" layer="25">&gt;NAME</text>
 <text x="-0.5" y="-1.45" size="1.016" layer="27">&gt;VALUE</text>
 </package>
-<package name="C0603K">
-<description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0603 reflow solder&lt;/b&gt;&lt;p&gt;
-Metric Code Size 1608</description>
-<wire x1="-0.725" y1="0.35" x2="0.725" y2="0.35" width="0.1016" layer="51"/>
-<wire x1="0.725" y1="-0.35" x2="-0.725" y2="-0.35" width="0.1016" layer="51"/>
-<rectangle x1="-0.8" y1="-0.4" x2="-0.45" y2="0.4" layer="51"/>
-<rectangle x1="0.45" y1="-0.4" x2="0.8" y2="0.4" layer="51"/>
-<smd name="1" x="-0.875" y="0" dx="1.05" dy="1.08" layer="1"/>
-<smd name="2" x="0.875" y="0" dx="1.05" dy="1.08" layer="1"/>
-<text x="-0.8" y="0.65" size="1.016" layer="25">&gt;NAME</text>
-<text x="-0.8" y="-1.65" size="1.016" layer="27">&gt;VALUE</text>
-</package>
 <package name="1X01">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="48"/>
@@ -380,21 +375,9 @@ Metric Code Size 1608</description>
 <wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="48"/>
 <wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="48"/>
 <rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
-<pad name="1" x="0" y="0" drill="1.016"/>
+<pad name="1" x="0" y="0" drill="1.016" shape="octagon"/>
 <text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-<package name="CAPACITOR-0402K">
-<description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0204 reflow solder&lt;/b&gt;&lt;p&gt;
-Metric Code Size 1005</description>
-<wire x1="-0.425" y1="0.2" x2="0.425" y2="0.2" width="0.1016" layer="51"/>
-<wire x1="0.425" y1="-0.2" x2="-0.425" y2="-0.2" width="0.1016" layer="51"/>
-<rectangle x1="-0.5" y1="-0.25" x2="-0.225" y2="0.25" layer="51"/>
-<rectangle x1="0.225" y1="-0.25" x2="0.5" y2="0.25" layer="51"/>
-<smd name="1" x="-0.6" y="0" dx="0.925" dy="0.74" layer="1"/>
-<smd name="2" x="0.6" y="0" dx="0.925" dy="0.74" layer="1"/>
-<text x="-0.5" y="0.425" size="1.016" layer="25">&gt;NAME</text>
-<text x="-0.5" y="-1.45" size="1.016" layer="27">&gt;VALUE</text>
 </package>
 <package name="CAPACITOR-0603K">
 <description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0603 reflow solder&lt;/b&gt;&lt;p&gt;
@@ -458,9 +441,9 @@ Metric Code Size 1608</description>
 <wire x1="2.54" y1="-2.54" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
 <wire x1="-1.27" y1="2.54" x2="-2.54" y2="2.54" width="0.1524" layer="94"/>
 <wire x1="-1.27" y1="-2.54" x2="-2.54" y2="-2.54" width="0.1524" layer="94"/>
-<pin name="A1" x="-2.54" y="2.54" visible="off" length="point" direction="pas" swaplevel="1"/>
-<pin name="A2" x="-2.54" y="-2.54" visible="off" length="point" direction="pas" swaplevel="1"/>
-<pin name="C" x="5.08" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+<pin name="A1" x="-2.54" y="2.54" visible="pad" length="point" direction="pas" swaplevel="1"/>
+<pin name="A2" x="-2.54" y="-2.54" visible="pad" length="point" direction="pas" swaplevel="1"/>
+<pin name="C" x="5.08" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
 <text x="1.778" y="-4.5466" size="1.778" layer="95" rot="R180">&gt;NAME</text>
 <text x="-1.778" y="6.1976" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
@@ -576,6 +559,8 @@ Metric Code Size 1608</description>
 <pin name="VDD@2" x="-53.34" y="-17.78" length="middle"/>
 <pin name="XTALIN" x="-53.34" y="45.72" length="middle"/>
 <pin name="XTLOUT" x="-53.34" y="35.56" length="middle"/>
+<text x="-47.498" y="-36.9824" size="1.778" layer="95">&gt;NAME</text>
+<text x="-34.798" y="-36.9824" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="NC">
 <wire x1="0" y1="0" x2="-0.762" y2="0" width="0.1524" layer="94"/>
@@ -1145,15 +1130,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <technology name=""/>
 </technologies>
 </device>
-<device name="C0603K" package="C0603K">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
 </devices>
 </deviceset>
 <deviceset name="PINHD-1X1" prefix="JP" uservalue="yes">
@@ -1178,15 +1154,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <gate name="G$1" symbol="CAPACITOR" x="0" y="0"/>
 </gates>
 <devices>
-<device name="C0402K" package="CAPACITOR-0402K">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
 <device name="C0603K" package="CAPACITOR-0603K">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
@@ -1262,7 +1229,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="R1" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="1k5"/>
 <part name="P+4" library="ezlpc-proto" deviceset="USB-5V" device=""/>
 <part name="+3V5" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="JP1" library="ezlpc-proto" deviceset="SWD-HEADER" device=""/>
+<part name="J2" library="ezlpc-proto" deviceset="SWD-HEADER" device=""/>
 <part name="+3V6" library="ezlpc-proto" deviceset="+3V3" device=""/>
 <part name="GND12" library="ezlpc-proto" deviceset="GND" device=""/>
 <part name="R8" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="24K"/>
@@ -1292,42 +1259,42 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="R5" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="33R"/>
 <part name="D1" library="ezlpc-proto" deviceset="BAS40-05" device=""/>
 <part name="P+1" library="ezlpc-proto" deviceset="USB-5V" device=""/>
-<part name="JP2" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP3" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP4" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP5" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP6" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP7" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP8" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP9" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP10" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP11" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP12" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP13" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP14" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP15" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP16" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP17" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP18" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP19" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP20" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP21" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP22" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP23" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP24" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP25" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP26" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP27" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP28" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP29" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP30" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP20" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP17" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP22" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP26" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP23" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP28" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP3" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP1" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP4" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP5" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP25" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP7" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP8" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP9" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP10" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP11" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP12" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP15" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP16" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP18" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP21" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP2" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP6" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP13" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP14" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP19" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP24" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP27" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP29" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="GND16" library="ezlpc-proto" deviceset="GND" device=""/>
 <part name="+3V3" library="ezlpc-proto" deviceset="+3V3" device=""/>
 <part name="P+2" library="ezlpc-proto" deviceset="USB-5V" device=""/>
 <part name="U$1" library="ezlpc-proto" deviceset="NC" device=""/>
 <part name="U$2" library="ezlpc-proto" deviceset="NC" device=""/>
 <part name="T1" library="ezlpc-proto" deviceset="*-PNP-" device="SOT23-BEC" technology="BC857B" value="MMBT3906"/>
-<part name="JP31" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP30" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1337,7 +1304,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="340.36" y1="259.08" x2="340.36" y2="0" width="0.1524" layer="94"/>
 <wire x1="340.36" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="259.08" width="0.1524" layer="94"/>
-<text x="195.58" y="137.16" size="2.54" layer="97">MCU</text>
+<text x="226.06" y="137.16" size="2.54" layer="97">MCU</text>
 <text x="331.978" y="7.112" size="2.54" layer="97">D</text>
 <text x="63.754" y="45.72" size="2.54" layer="97">3.3V REGULATOR</text>
 <polygon width="0.1524" layer="98">
@@ -1413,7 +1380,10 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <attribute name="VALUE" x="57.658" y="76.835" size="1.778" layer="96"/>
 </instance>
 <instance part="GND28" gate="1" x="63.5" y="71.12"/>
-<instance part="U3" gate="G$1" x="246.38" y="182.88"/>
+<instance part="U3" gate="G$1" x="246.38" y="182.88" smashed="yes">
+<attribute name="NAME" x="206.502" y="145.8976" size="1.778" layer="95"/>
+<attribute name="VALUE" x="214.122" y="145.8976" size="1.778" layer="96"/>
+</instance>
 <instance part="GND2" gate="1" x="190.5" y="149.86"/>
 <instance part="Q1" gate="G$1" x="187.96" y="223.52" smashed="yes" rot="R90">
 <attribute name="NAME" x="184.912" y="224.536" size="1.778" layer="95" rot="R180"/>
@@ -1451,7 +1421,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <attribute name="VALUE" x="48.26" y="177.8" size="1.778" layer="96"/>
 </instance>
 <instance part="+3V5" gate="G$1" x="111.76" y="88.9" rot="R270"/>
-<instance part="JP1" gate="A" x="154.94" y="81.28"/>
+<instance part="J2" gate="A" x="154.94" y="81.28"/>
 <instance part="+3V6" gate="G$1" x="144.78" y="101.6"/>
 <instance part="GND12" gate="1" x="144.78" y="60.96"/>
 <instance part="R8" gate="G$1" x="170.18" y="93.98" rot="R90"/>
@@ -1500,35 +1470,35 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <instance part="P+1" gate="VCC" x="38.1" y="109.22" smashed="yes">
 <attribute name="VALUE" x="35.56" y="101.6" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="JP2" gate="G$1" x="294.64" y="228.6"/>
-<instance part="JP3" gate="G$1" x="294.64" y="226.06"/>
-<instance part="JP4" gate="G$1" x="294.64" y="223.52"/>
-<instance part="JP5" gate="G$1" x="294.64" y="220.98"/>
-<instance part="JP6" gate="G$1" x="294.64" y="218.44"/>
-<instance part="JP7" gate="G$1" x="294.64" y="215.9"/>
-<instance part="JP8" gate="G$1" x="294.64" y="213.36"/>
-<instance part="JP9" gate="G$1" x="294.64" y="210.82"/>
-<instance part="JP10" gate="G$1" x="294.64" y="205.74"/>
-<instance part="JP11" gate="G$1" x="294.64" y="203.2"/>
-<instance part="JP12" gate="G$1" x="294.64" y="200.66"/>
-<instance part="JP13" gate="G$1" x="294.64" y="198.12"/>
-<instance part="JP14" gate="G$1" x="294.64" y="195.58"/>
-<instance part="JP15" gate="G$1" x="294.64" y="193.04"/>
-<instance part="JP16" gate="G$1" x="294.64" y="190.5"/>
-<instance part="JP17" gate="G$1" x="294.64" y="187.96"/>
-<instance part="JP18" gate="G$1" x="294.64" y="182.88"/>
-<instance part="JP19" gate="G$1" x="294.64" y="180.34"/>
-<instance part="JP20" gate="G$1" x="294.64" y="177.8"/>
-<instance part="JP21" gate="G$1" x="294.64" y="175.26"/>
-<instance part="JP22" gate="G$1" x="294.64" y="172.72"/>
-<instance part="JP23" gate="G$1" x="294.64" y="170.18"/>
-<instance part="JP24" gate="G$1" x="294.64" y="167.64"/>
-<instance part="JP25" gate="G$1" x="294.64" y="165.1"/>
-<instance part="JP26" gate="G$1" x="294.64" y="157.48"/>
-<instance part="JP27" gate="G$1" x="294.64" y="154.94"/>
-<instance part="JP28" gate="G$1" x="294.64" y="142.24"/>
-<instance part="JP29" gate="G$1" x="294.64" y="139.7"/>
-<instance part="JP30" gate="G$1" x="294.64" y="134.62"/>
+<instance part="TP20" gate="G$1" x="294.64" y="228.6"/>
+<instance part="TP17" gate="G$1" x="294.64" y="226.06"/>
+<instance part="TP22" gate="G$1" x="294.64" y="223.52"/>
+<instance part="TP26" gate="G$1" x="294.64" y="220.98"/>
+<instance part="TP23" gate="G$1" x="294.64" y="218.44"/>
+<instance part="TP28" gate="G$1" x="294.64" y="215.9"/>
+<instance part="TP3" gate="G$1" x="294.64" y="213.36"/>
+<instance part="TP1" gate="G$1" x="294.64" y="210.82"/>
+<instance part="TP4" gate="G$1" x="294.64" y="205.74"/>
+<instance part="TP5" gate="G$1" x="294.64" y="203.2"/>
+<instance part="TP25" gate="G$1" x="294.64" y="200.66"/>
+<instance part="TP7" gate="G$1" x="294.64" y="198.12"/>
+<instance part="TP8" gate="G$1" x="294.64" y="195.58"/>
+<instance part="TP9" gate="G$1" x="294.64" y="193.04"/>
+<instance part="TP10" gate="G$1" x="294.64" y="190.5"/>
+<instance part="TP11" gate="G$1" x="294.64" y="187.96"/>
+<instance part="TP12" gate="G$1" x="294.64" y="182.88"/>
+<instance part="TP15" gate="G$1" x="294.64" y="180.34"/>
+<instance part="TP16" gate="G$1" x="294.64" y="177.8"/>
+<instance part="TP18" gate="G$1" x="294.64" y="175.26"/>
+<instance part="TP21" gate="G$1" x="294.64" y="172.72"/>
+<instance part="TP2" gate="G$1" x="294.64" y="170.18"/>
+<instance part="TP6" gate="G$1" x="294.64" y="167.64"/>
+<instance part="TP13" gate="G$1" x="294.64" y="165.1"/>
+<instance part="TP14" gate="G$1" x="294.64" y="157.48"/>
+<instance part="TP19" gate="G$1" x="294.64" y="154.94"/>
+<instance part="TP24" gate="G$1" x="294.64" y="142.24"/>
+<instance part="TP27" gate="G$1" x="294.64" y="139.7"/>
+<instance part="TP29" gate="G$1" x="294.64" y="134.62"/>
 <instance part="GND16" gate="1" x="284.48" y="132.08"/>
 <instance part="+3V3" gate="G$1" x="284.48" y="147.32" smashed="yes">
 <attribute name="VALUE" x="279.908" y="148.336" size="1.778" layer="96"/>
@@ -1542,7 +1512,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <attribute name="NAME" x="70.358" y="199.39" size="1.778" layer="95"/>
 <attribute name="VALUE" x="70.104" y="196.342" size="1.778" layer="96"/>
 </instance>
-<instance part="JP31" gate="G$1" x="294.64" y="127"/>
+<instance part="TP30" gate="G$1" x="294.64" y="137.16"/>
 </instances>
 <busses>
 </busses>
@@ -1599,18 +1569,18 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="50.8" y1="147.32" x2="50.8" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="3"/>
+<pinref part="J2" gate="A" pin="3"/>
 <pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="152.4" y1="83.82" x2="144.78" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="83.82" x2="144.78" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="JP1" gate="A" pin="5"/>
+<pinref part="J2" gate="A" pin="5"/>
 <wire x1="144.78" y1="81.28" x2="144.78" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="78.74" x2="144.78" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="76.2" x2="144.78" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="81.28" x2="144.78" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="JP1" gate="A" pin="7"/>
+<pinref part="J2" gate="A" pin="7"/>
 <wire x1="152.4" y1="78.74" x2="144.78" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="JP1" gate="A" pin="9"/>
+<pinref part="J2" gate="A" pin="9"/>
 <wire x1="152.4" y1="76.2" x2="144.78" y2="76.2" width="0.1524" layer="91"/>
 <junction x="144.78" y="81.28"/>
 <junction x="144.78" y="78.74"/>
@@ -1636,7 +1606,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="284.48" y1="68.58" x2="284.48" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP30" gate="G$1" pin="1"/>
+<pinref part="TP29" gate="G$1" pin="1"/>
 <pinref part="GND16" gate="1" pin="GND"/>
 <wire x1="292.1" y1="134.62" x2="284.48" y2="134.62" width="0.1524" layer="91"/>
 </segment>
@@ -1698,7 +1668,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="+3V5" gate="G$1" pin="+3V3"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="1"/>
+<pinref part="J2" gate="A" pin="1"/>
 <pinref part="+3V6" gate="G$1" pin="+3V3"/>
 <wire x1="152.4" y1="86.36" x2="144.78" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="86.36" x2="144.78" y2="99.06" width="0.1524" layer="91"/>
@@ -1734,7 +1704,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="99.06" y1="226.06" x2="99.06" y2="223.52" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP29" gate="G$1" pin="1"/>
+<pinref part="TP27" gate="G$1" pin="1"/>
 <wire x1="292.1" y1="139.7" x2="284.48" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="284.48" y1="139.7" x2="284.48" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="+3V3" gate="G$1" pin="+3V3"/>
@@ -1745,7 +1715,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="SSEL0/CT16B0_CAP0/PIO0_2"/>
 <wire x1="261.62" y1="223.52" x2="292.1" y2="223.52" width="0.1524" layer="91"/>
 <label x="269.24" y="223.52" size="1.778" layer="95"/>
-<pinref part="JP4" gate="G$1" pin="1"/>
+<pinref part="TP22" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="PIO0_4" class="0">
@@ -1753,7 +1723,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="SCL/PIO0_4"/>
 <wire x1="261.62" y1="218.44" x2="292.1" y2="218.44" width="0.1524" layer="91"/>
 <label x="269.24" y="218.44" size="1.778" layer="95"/>
-<pinref part="JP6" gate="G$1" pin="1"/>
+<pinref part="TP23" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="PIO0_5" class="0">
@@ -1761,7 +1731,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="SDA/PIO0_5"/>
 <wire x1="261.62" y1="215.9" x2="292.1" y2="215.9" width="0.1524" layer="91"/>
 <label x="269.24" y="215.9" size="1.778" layer="95"/>
-<pinref part="JP7" gate="G$1" pin="1"/>
+<pinref part="TP28" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="PIO0_6-CONNECT" class="0">
@@ -1769,7 +1739,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="USB_CONNECT/SCK0/PIO0_6"/>
 <wire x1="261.62" y1="213.36" x2="292.1" y2="213.36" width="0.1524" layer="91"/>
 <label x="269.24" y="213.36" size="1.778" layer="95"/>
-<pinref part="JP8" gate="G$1" pin="1"/>
+<pinref part="TP3" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
@@ -1786,7 +1756,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="CTS/PIO0_7"/>
 <wire x1="261.62" y1="210.82" x2="292.1" y2="210.82" width="0.1524" layer="91"/>
 <label x="269.24" y="210.82" size="1.778" layer="95"/>
-<pinref part="JP9" gate="G$1" pin="1"/>
+<pinref part="TP1" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="R11" gate="G$1" pin="2"/>
@@ -1798,7 +1768,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="MISO0/CT16B0_MAT0/PIO0_8"/>
 <wire x1="261.62" y1="205.74" x2="292.1" y2="205.74" width="0.1524" layer="91"/>
-<pinref part="JP10" gate="G$1" pin="1"/>
+<pinref part="TP4" gate="G$1" pin="1"/>
 <label x="269.24" y="205.994" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1806,7 +1776,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="TD/AD0/CT32B0_MAT3/PIO0_11"/>
 <wire x1="261.62" y1="198.12" x2="292.1" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="JP13" gate="G$1" pin="1"/>
+<pinref part="TP7" gate="G$1" pin="1"/>
 <label x="269.494" y="198.374" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1814,7 +1784,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="TMS/AD1/CT32B1_CAP0/PIO0_12"/>
 <wire x1="261.62" y1="195.58" x2="292.1" y2="195.58" width="0.1524" layer="91"/>
-<pinref part="JP14" gate="G$1" pin="1"/>
+<pinref part="TP8" gate="G$1" pin="1"/>
 <label x="269.494" y="195.834" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1822,7 +1792,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="TDO/AD2/CT32B1_MAT0/PIO0_13"/>
 <wire x1="261.62" y1="193.04" x2="292.1" y2="193.04" width="0.1524" layer="91"/>
-<pinref part="JP15" gate="G$1" pin="1"/>
+<pinref part="TP9" gate="G$1" pin="1"/>
 <label x="269.494" y="193.294" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1830,7 +1800,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="TRST/AD3/CT32B1_MAT1/PIO0_14"/>
 <wire x1="261.62" y1="190.5" x2="292.1" y2="190.5" width="0.1524" layer="91"/>
-<pinref part="JP16" gate="G$1" pin="1"/>
+<pinref part="TP10" gate="G$1" pin="1"/>
 <label x="269.494" y="190.754" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1838,7 +1808,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="AD5/CT32B1_MAT3/WAKEUP/PIO0_16"/>
 <wire x1="261.62" y1="182.88" x2="292.1" y2="182.88" width="0.1524" layer="91"/>
-<pinref part="JP18" gate="G$1" pin="1"/>
+<pinref part="TP12" gate="G$1" pin="1"/>
 <label x="269.494" y="182.88" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1846,7 +1816,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="RTS/CT32B0_CAP0/SCLK/PIO0_17"/>
 <wire x1="261.62" y1="180.34" x2="292.1" y2="180.34" width="0.1524" layer="91"/>
-<pinref part="JP19" gate="G$1" pin="1"/>
+<pinref part="TP15" gate="G$1" pin="1"/>
 <label x="269.748" y="180.594" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1854,7 +1824,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="RXD/CT32B0_MAT0/PIO0_18"/>
 <wire x1="261.62" y1="177.8" x2="292.1" y2="177.8" width="0.1524" layer="91"/>
-<pinref part="JP20" gate="G$1" pin="1"/>
+<pinref part="TP16" gate="G$1" pin="1"/>
 <label x="269.494" y="178.054" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1862,7 +1832,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="TXD/CT32B0_MAT1/PIO0_19"/>
 <wire x1="261.62" y1="175.26" x2="292.1" y2="175.26" width="0.1524" layer="91"/>
-<pinref part="JP21" gate="G$1" pin="1"/>
+<pinref part="TP18" gate="G$1" pin="1"/>
 <label x="269.494" y="175.514" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1870,7 +1840,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="CT16B1_CAP0/PIO0_20"/>
 <wire x1="261.62" y1="172.72" x2="292.1" y2="172.72" width="0.1524" layer="91"/>
-<pinref part="JP22" gate="G$1" pin="1"/>
+<pinref part="TP21" gate="G$1" pin="1"/>
 <label x="269.748" y="172.974" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1878,7 +1848,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="CT16B1_MAT0/MOSI1/PIO0_21"/>
 <wire x1="261.62" y1="170.18" x2="292.1" y2="170.18" width="0.1524" layer="91"/>
-<pinref part="JP23" gate="G$1" pin="1"/>
+<pinref part="TP2" gate="G$1" pin="1"/>
 <label x="269.748" y="170.18" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1886,7 +1856,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="AD6/CT16B1_MAT1/MISO1/PIO0_22"/>
 <wire x1="261.62" y1="167.64" x2="292.1" y2="167.64" width="0.1524" layer="91"/>
-<pinref part="JP24" gate="G$1" pin="1"/>
+<pinref part="TP6" gate="G$1" pin="1"/>
 <label x="269.748" y="167.64" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1894,7 +1864,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="AD7/PIO0_23"/>
 <wire x1="261.62" y1="165.1" x2="292.1" y2="165.1" width="0.1524" layer="91"/>
-<pinref part="JP25" gate="G$1" pin="1"/>
+<pinref part="TP13" gate="G$1" pin="1"/>
 <label x="269.748" y="165.354" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1902,7 +1872,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="DCD/CT16B0_MAT2/SCK1/PIO1_15"/>
 <wire x1="261.62" y1="157.48" x2="292.1" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="JP26" gate="G$1" pin="1"/>
+<pinref part="TP14" gate="G$1" pin="1"/>
 <label x="270.002" y="157.734" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1910,7 +1880,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="DTR/SSEL1/PIO1_19"/>
 <wire x1="261.62" y1="154.94" x2="292.1" y2="154.94" width="0.1524" layer="91"/>
-<pinref part="JP27" gate="G$1" pin="1"/>
+<pinref part="TP19" gate="G$1" pin="1"/>
 <label x="270.002" y="155.194" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1919,7 +1889,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="USB_VBUS/PIO0_3"/>
 <wire x1="261.62" y1="220.98" x2="292.1" y2="220.98" width="0.1524" layer="91"/>
 <label x="269.24" y="220.98" size="1.778" layer="95"/>
-<pinref part="JP5" gate="G$1" pin="1"/>
+<pinref part="TP26" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="2"/>
@@ -1951,7 +1921,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="38.1" y1="101.6" x2="38.1" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP28" gate="G$1" pin="1"/>
+<pinref part="TP24" gate="G$1" pin="1"/>
 <wire x1="292.1" y1="142.24" x2="289.56" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="289.56" y1="142.24" x2="289.56" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="P+2" gate="VCC" pin="USB-5V"/>
@@ -1959,7 +1929,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </net>
 <net name="PIO0_0-RESET" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="10"/>
+<pinref part="J2" gate="A" pin="10"/>
 <wire x1="160.02" y1="76.2" x2="210.82" y2="76.2" width="0.1524" layer="91"/>
 <label x="187.96" y="76.2" size="1.778" layer="95"/>
 </segment>
@@ -1971,7 +1941,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="264.16" y1="228.6" x2="292.1" y2="228.6" width="0.1524" layer="91"/>
 <wire x1="264.16" y1="231.14" x2="264.16" y2="228.6" width="0.1524" layer="91"/>
 <junction x="264.16" y="228.6"/>
-<pinref part="JP2" gate="G$1" pin="1"/>
+<pinref part="TP20" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="S2" gate="G$1" pin="2"/>
@@ -1981,20 +1951,15 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </net>
 <net name="PIO0_9" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="6"/>
-<wire x1="160.02" y1="81.28" x2="210.82" y2="81.28" width="0.1524" layer="91"/>
-<label x="187.96" y="81.28" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="U3" gate="G$1" pin="MOSI0/CT16B0_MAT1/PIO0_9"/>
 <wire x1="261.62" y1="203.2" x2="292.1" y2="203.2" width="0.1524" layer="91"/>
 <label x="269.24" y="203.2" size="1.778" layer="95"/>
-<pinref part="JP11" gate="G$1" pin="1"/>
+<pinref part="TP5" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="PIO0_10-SWDCLK" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="4"/>
+<pinref part="J2" gate="A" pin="4"/>
 <wire x1="160.02" y1="83.82" x2="170.18" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="R9" gate="G$1" pin="2"/>
 <wire x1="170.18" y1="83.82" x2="210.82" y2="83.82" width="0.1524" layer="91"/>
@@ -2006,12 +1971,12 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="SWCLK/SCK0/CT16B0_MAT2/PIO0_10"/>
 <wire x1="261.62" y1="200.66" x2="292.1" y2="200.66" width="0.1524" layer="91"/>
 <label x="269.24" y="200.66" size="1.778" layer="95"/>
-<pinref part="JP12" gate="G$1" pin="1"/>
+<pinref part="TP25" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="PIO0_15-SWDIO" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="2"/>
+<pinref part="J2" gate="A" pin="2"/>
 <wire x1="160.02" y1="86.36" x2="170.18" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="R8" gate="G$1" pin="1"/>
 <wire x1="170.18" y1="86.36" x2="210.82" y2="86.36" width="0.1524" layer="91"/>
@@ -2023,7 +1988,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="SWDIO/AD4/CT32B1_MAT2/PIO0_15"/>
 <wire x1="261.62" y1="187.96" x2="292.1" y2="187.96" width="0.1524" layer="91"/>
 <label x="269.24" y="187.96" size="1.778" layer="95"/>
-<pinref part="JP17" gate="G$1" pin="1"/>
+<pinref part="TP11" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="PIO0_1-ISP_EN" class="0">
@@ -2036,7 +2001,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="CLKOUT/CT32B0_MAT2/USB_FTOGGLE/PIO0_1"/>
 <wire x1="261.62" y1="226.06" x2="292.1" y2="226.06" width="0.1524" layer="91"/>
 <label x="269.24" y="226.06" size="1.778" layer="95"/>
-<pinref part="JP3" gate="G$1" pin="1"/>
+<pinref part="TP17" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -2147,20 +2112,27 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </net>
 <net name="N$11" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="8"/>
+<pinref part="J2" gate="A" pin="8"/>
 <wire x1="160.02" y1="78.74" x2="165.1" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="AUX-VIN" class="0">
 <segment>
-<pinref part="JP31" gate="G$1" pin="1"/>
-<wire x1="292.1" y1="127" x2="269.24" y2="127" width="0.1524" layer="91"/>
-<label x="269.24" y="127" size="1.778" layer="95"/>
+<pinref part="TP30" gate="G$1" pin="1"/>
+<wire x1="292.1" y1="137.16" x2="271.78" y2="137.16" width="0.1524" layer="91"/>
+<label x="271.78" y="137.16" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="D1" gate="G$1" pin="A1"/>
 <wire x1="40.64" y1="86.36" x2="25.4" y2="86.36" width="0.1524" layer="91"/>
 <label x="25.4" y="86.36" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PIO0_9-SWD6" class="0">
+<segment>
+<pinref part="J2" gate="A" pin="6"/>
+<wire x1="160.02" y1="81.28" x2="210.82" y2="81.28" width="0.1524" layer="91"/>
+<label x="187.96" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

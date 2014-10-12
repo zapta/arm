@@ -42,7 +42,7 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
@@ -112,10 +112,14 @@
 </layers>
 <board>
 <plain>
-<wire x1="38.1" y1="22.86" x2="0" y2="22.86" width="0" layer="20"/>
-<wire x1="0" y1="22.86" x2="0" y2="0" width="0" layer="20"/>
-<wire x1="0" y1="0" x2="38.1" y2="0" width="0" layer="20"/>
-<wire x1="38.1" y1="0" x2="38.1" y2="22.86" width="0" layer="20"/>
+<wire x1="38.1" y1="0.635" x2="38.1" y2="22.225" width="0" layer="20"/>
+<wire x1="38.1" y1="22.225" x2="37.465" y2="22.86" width="0" layer="20" curve="90"/>
+<wire x1="37.465" y1="22.86" x2="0.5388125" y2="22.86" width="0" layer="20"/>
+<wire x1="0.5388125" y1="22.86" x2="0" y2="22.3211875" width="0" layer="20" curve="90"/>
+<wire x1="0" y1="22.3211875" x2="0" y2="0.5388125" width="0" layer="20"/>
+<wire x1="0" y1="0.5388125" x2="0.5388125" y2="0" width="0" layer="20" curve="90"/>
+<wire x1="0.5388125" y1="0" x2="37.465" y2="0" width="0" layer="20"/>
+<wire x1="37.465" y1="0" x2="38.1" y2="0.635" width="0" layer="20" curve="90"/>
 <text x="30.353" y="5.334" size="0.762" layer="21" font="vector" ratio="10">RST</text>
 <text x="30.48" y="9.779" size="0.762" layer="21" font="vector" ratio="10">ISP</text>
 <text x="18.669" y="17.78" size="0.762" layer="21" font="vector" ratio="10">PWR</text>
@@ -125,7 +129,7 @@
 <text x="11.176" y="2.794" size="0.762" layer="21" font="vector" ratio="10">5</text>
 <text x="23.368" y="2.794" size="0.762" layer="21" font="vector" ratio="10">10</text>
 <text x="36.195" y="2.794" size="0.762" layer="21" font="vector" ratio="10">15</text>
-<text x="36.195" y="19.304" size="0.762" layer="21" font="vector" ratio="10">15</text>
+<text x="36.195" y="19.304" size="0.762" layer="21" font="vector" ratio="10">16</text>
 <text x="25.908" y="19.304" size="0.762" layer="21" font="vector" ratio="10">20</text>
 <text x="13.208" y="19.304" size="0.762" layer="21" font="vector" ratio="10">25</text>
 <text x="0.508" y="19.304" size="0.762" layer="21" font="vector" ratio="10">30</text>
@@ -234,9 +238,9 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <smd name="31" x="-1.25" y="2.55" dx="0.27" dy="0.85" layer="1"/>
 <smd name="32" x="-1.75" y="2.55" dx="0.27" dy="0.85" layer="1"/>
 <pad name="G1" x="-0.65" y="0.65" drill="0.3302" diameter="0.6" thermals="no"/>
-<pad name="G4" x="0.65" y="0.65" drill="0.3302" diameter="0.6" thermals="no"/>
-<pad name="G3" x="0.65" y="-0.65" drill="0.3302" diameter="0.6" thermals="no"/>
 <pad name="G2" x="-0.65" y="-0.65" drill="0.3302" diameter="0.6" thermals="no"/>
+<pad name="G3" x="0.65" y="-0.65" drill="0.3302" diameter="0.6" thermals="no"/>
+<pad name="G4" x="0.65" y="0.65" drill="0.3302" diameter="0.6" thermals="no"/>
 <smd name="TAB" x="0" y="0" dx="3.75" dy="3.75" layer="1" cream="no"/>
 <text x="-3.5" y="3.65" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="-3.5" y="-4.95" size="1.27" layer="27" font="vector">&gt;VALUE</text>
@@ -299,6 +303,9 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <pad name="10" x="5.08" y="1.27" drill="0.508"/>
 <text x="-1.27" y="3.175" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-1.27" y="-4.445" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-0.889" y1="-1.397" x2="-1.27" y2="-1.905" width="0.254" layer="21"/>
+<wire x1="-1.27" y1="-1.905" x2="-0.508" y2="-1.905" width="0.254" layer="21"/>
+<wire x1="-0.508" y1="-1.905" x2="-0.889" y2="-1.397" width="0.254" layer="21"/>
 </package>
 <package name="SOT25">
 <description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;&lt;p&gt;
@@ -348,21 +355,25 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <rectangle x1="2" y1="4.7" x2="3.75" y2="5.2" layer="41"/>
 <rectangle x1="-3.2" y1="0.6" x2="-2" y2="3.6" layer="41"/>
 <rectangle x1="2" y1="0.6" x2="3.2" y2="3.6" layer="41"/>
-<rectangle x1="-5.06" y1="1.74" x2="-3.29" y2="3.51" layer="31"/>
-<rectangle x1="3.29" y1="1.74" x2="5.07" y2="3.51" layer="31"/>
-<rectangle x1="1.77" y1="5.29" x2="2.68" y2="6.21" layer="31"/>
-<rectangle x1="-2.68" y1="5.29" x2="-1.76" y2="6.21" layer="31"/>
 <smd name="1" x="1.3" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="2" x="0.65" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="3" x="0" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="4" x="-0.65" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="5" x="-1.3" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<pad name="A" x="-4.175" y="2.625" drill="1.016" diameter="1.778" shape="square"/>
-<pad name="B" x="-2.225" y="5.75" drill="0.65" diameter="0.9144" shape="square"/>
-<pad name="C" x="2.225" y="5.75" drill="0.65" diameter="0.9144" shape="square"/>
-<pad name="D" x="4.175" y="2.625" drill="1.016" diameter="1.778" shape="square"/>
 <text x="-12.7" y="5.08" size="1.27" layer="27">&gt;VALUE</text>
 <text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<smd name="D1" x="2.43451875" y="5.7488125" dx="1.4224" dy="1.016" layer="1" roundness="15" rot="R180"/>
+<smd name="D2" x="2.460609375" y="5.748815625" dx="1.5748" dy="1.016" layer="16" roundness="15" rot="R180" stop="no" thermals="no" cream="no"/>
+<hole x="-2.225" y="5.75" drill="0.65"/>
+<smd name="C1" x="-2.430825" y="5.756875" dx="1.4224" dy="1.016" layer="1" roundness="15"/>
+<smd name="C2" x="-2.456915625" y="5.756871875" dx="1.5748" dy="1.016" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
+<hole x="2.225" y="5.75" drill="0.65"/>
+<smd name="A1" x="-4.175" y="2.625" dx="1.778" dy="1.778" layer="1" roundness="15"/>
+<hole x="4.175" y="2.625" drill="1.016"/>
+<smd name="A2" x="-4.175" y="2.625" dx="1.8796" dy="1.8796" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
+<smd name="B2" x="4.175" y="2.625" dx="1.8796" dy="1.8796" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
+<smd name="B1" x="4.175" y="2.625" dx="1.778" dy="1.778" layer="1" roundness="15"/>
+<hole x="-4.175" y="2.625" drill="1.016"/>
 </package>
 <package name="C0402K">
 <description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0204 reflow solder&lt;/b&gt;&lt;p&gt;
@@ -387,7 +398,7 @@ Metric Code Size 1005</description>
 <wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="48"/>
 <wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="48"/>
 <rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
-<pad name="1" x="0" y="0" drill="1.016"/>
+<pad name="1" x="0" y="0" drill="1.016" shape="octagon"/>
 <text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
 </package>
@@ -664,31 +675,31 @@ design rules under a new name.</description>
 <attribute name="NAME" x="12.065" y="12.319" size="0.6096" layer="25"/>
 <attribute name="VALUE" x="10.16" y="10.795" size="1.27" layer="27"/>
 </element>
-<element name="JP1" library="ezlpc-proto" package="SWD-HEADER" value="" x="36.195" y="16.891" smashed="yes" rot="R180">
+<element name="J2" library="ezlpc-proto" package="SWD-HEADER" value="" x="36.195" y="16.891" smashed="yes" rot="R180">
 <attribute name="VALUE" x="37.465" y="21.336" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R8" library="ezlpc-proto" package="R0402" value="24K" x="26.289" y="5.715" smashed="yes" rot="R180">
 <attribute name="NAME" x="26.924" y="4.953" size="0.6096" layer="25" rot="R180"/>
 <attribute name="VALUE" x="26.924" y="7.62" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="R9" library="ezlpc-proto" package="R0402" value="24K" x="17.399" y="11.811" smashed="yes" rot="R180">
-<attribute name="NAME" x="16.891" y="10.541" size="0.6096" layer="25"/>
-<attribute name="VALUE" x="18.034" y="13.716" size="1.27" layer="27" rot="R180"/>
+<element name="R9" library="ezlpc-proto" package="R0402" value="24K" x="14.732" y="16.51" smashed="yes" rot="R90">
+<attribute name="NAME" x="13.462" y="17.018" size="0.6096" layer="25" rot="R270"/>
+<attribute name="VALUE" x="16.637" y="15.875" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="R10" library="ezlpc-proto" package="R0402" value="10K" x="22.352" y="18.669" smashed="yes" rot="R180">
 <attribute name="NAME" x="20.32" y="19.177" size="0.6096" layer="25"/>
 <attribute name="VALUE" x="22.987" y="20.574" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="S2" library="ezlpc-proto" package="PUSH_BUTTON" value="PUSH_BUTTON" x="34.925" y="10.16" smashed="yes" rot="R180">
-<attribute name="VALUE" x="29.845" y="12.7" size="1.27" layer="27" rot="R270"/>
+<element name="S2" library="ezlpc-proto" package="PUSH_BUTTON" value="PUSH_BUTTON" x="34.925" y="10.541" smashed="yes" rot="R180">
+<attribute name="VALUE" x="29.845" y="13.081" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="R4" library="ezlpc-proto" package="R0402" value="2K" x="14.859" y="11.811" smashed="yes">
-<attribute name="NAME" x="14.351" y="10.541" size="0.6096" layer="25"/>
-<attribute name="VALUE" x="14.224" y="9.906" size="1.27" layer="27"/>
+<element name="R4" library="ezlpc-proto" package="R0402" value="2K" x="13.716" y="11.938" smashed="yes">
+<attribute name="NAME" x="13.208" y="10.668" size="0.6096" layer="25"/>
+<attribute name="VALUE" x="13.081" y="10.033" size="1.27" layer="27"/>
 </element>
-<element name="R2" library="ezlpc-proto" package="R0402" value="24K" x="10.668" y="7.239" smashed="yes" rot="R270">
-<attribute name="NAME" x="10.287" y="5.461" size="0.6096" layer="25"/>
-<attribute name="VALUE" x="8.763" y="7.874" size="1.27" layer="27" rot="R270"/>
+<element name="R2" library="ezlpc-proto" package="R0402" value="24K" x="10.414" y="7.239" smashed="yes" rot="R270">
+<attribute name="NAME" x="10.033" y="5.461" size="0.6096" layer="25"/>
+<attribute name="VALUE" x="8.509" y="7.874" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="R3" library="ezlpc-proto" package="R0402" value="2K" x="9.017" y="7.239" smashed="yes" rot="R270">
 <attribute name="NAME" x="8.509" y="5.461" size="0.6096" layer="25"/>
@@ -727,98 +738,128 @@ design rules under a new name.</description>
 <attribute name="NAME" x="2.286" y="17.272" size="0.6096" layer="25"/>
 <attribute name="VALUE" x="2.032" y="19.431" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="JP2" library="ezlpc-proto" package="1X01" value="" x="26.67" y="21.59" smashed="yes">
+<element name="TP20" library="ezlpc-proto" package="1X01" value="" x="26.67" y="21.59" smashed="yes">
+<attribute name="NAME" x="26.8732" y="23.6728" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="25.4" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="JP3" library="ezlpc-proto" package="1X01" value="" x="34.29" y="21.59" smashed="yes">
+<element name="TP17" library="ezlpc-proto" package="1X01" value="" x="34.29" y="21.59" smashed="yes">
+<attribute name="NAME" x="34.4932" y="23.6728" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="33.02" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="JP4" library="ezlpc-proto" package="1X01" value="" x="21.59" y="21.59" smashed="yes">
+<element name="TP22" library="ezlpc-proto" package="1X01" value="" x="21.59" y="21.59" smashed="yes">
+<attribute name="NAME" x="21.9202" y="23.6728" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="20.32" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="JP5" library="ezlpc-proto" package="1X01" value="" x="11.43" y="21.59" smashed="yes">
+<element name="TP26" library="ezlpc-proto" package="1X01" value="" x="11.43" y="21.59" smashed="yes">
+<attribute name="NAME" x="11.6332" y="23.6728" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="10.16" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="JP6" library="ezlpc-proto" package="1X01" value="" x="19.05" y="21.59" smashed="yes">
+<element name="TP23" library="ezlpc-proto" package="1X01" value="" x="19.05" y="21.59" smashed="yes">
+<attribute name="NAME" x="19.2532" y="23.6728" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="17.78" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="JP7" library="ezlpc-proto" package="1X01" value="" x="6.35" y="21.59" smashed="yes">
+<element name="TP28" library="ezlpc-proto" package="1X01" value="" x="6.35" y="21.59" smashed="yes">
+<attribute name="NAME" x="6.5532" y="23.7998" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="5.08" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="JP8" library="ezlpc-proto" package="1X01" value="" x="8.89" y="1.27" smashed="yes">
-<attribute name="VALUE" x="7.62" y="-1.905" size="1.27" layer="27"/>
-</element>
-<element name="JP9" library="ezlpc-proto" package="1X01" value="" x="1.27" y="1.27" smashed="yes">
-<attribute name="VALUE" x="0" y="-1.905" size="1.27" layer="27"/>
-</element>
-<element name="JP10" library="ezlpc-proto" package="1X01" value="" x="6.35" y="1.27" smashed="yes">
+<element name="TP3" library="ezlpc-proto" package="1X01" value="" x="6.35" y="1.27" smashed="yes">
+<attribute name="NAME" x="6.1468" y="-1.1938" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="5.08" y="-1.905" size="1.27" layer="27"/>
 </element>
-<element name="JP11" library="ezlpc-proto" package="1X01" value="" x="11.43" y="1.27" smashed="yes">
+<element name="TP1" library="ezlpc-proto" package="1X01" value="" x="1.27" y="1.27" smashed="yes">
+<attribute name="NAME" x="1.1938" y="-1.0668" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="0" y="-1.905" size="1.27" layer="27"/>
+</element>
+<element name="TP4" library="ezlpc-proto" package="1X01" value="" x="8.89" y="1.27" smashed="yes">
+<attribute name="NAME" x="8.6868" y="-1.1938" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="7.62" y="-1.905" size="1.27" layer="27"/>
+</element>
+<element name="TP5" library="ezlpc-proto" package="1X01" value="" x="11.43" y="1.27" smashed="yes">
+<attribute name="NAME" x="11.3538" y="-1.5748" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="10.16" y="-1.905" size="1.27" layer="27"/>
 </element>
-<element name="JP12" library="ezlpc-proto" package="1X01" value="" x="13.97" y="21.59" smashed="yes">
+<element name="TP25" library="ezlpc-proto" package="1X01" value="" x="13.97" y="21.59" smashed="yes">
+<attribute name="NAME" x="14.1732" y="23.6728" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="12.7" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="JP13" library="ezlpc-proto" package="1X01" value="" x="16.51" y="1.27" smashed="yes">
+<element name="TP7" library="ezlpc-proto" package="1X01" value="" x="16.51" y="1.27" smashed="yes">
+<attribute name="NAME" x="16.5608" y="-1.1938" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="15.24" y="-1.905" size="1.27" layer="27"/>
 </element>
-<element name="JP14" library="ezlpc-proto" package="1X01" value="" x="19.05" y="1.27" smashed="yes">
+<element name="TP8" library="ezlpc-proto" package="1X01" value="" x="19.05" y="1.27" smashed="yes">
+<attribute name="NAME" x="19.2278" y="-1.1938" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="17.78" y="-1.905" size="1.27" layer="27"/>
 </element>
-<element name="JP15" library="ezlpc-proto" package="1X01" value="" x="21.59" y="1.27" smashed="yes">
+<element name="TP9" library="ezlpc-proto" package="1X01" value="" x="21.59" y="1.27" smashed="yes">
+<attribute name="NAME" x="21.3868" y="-1.0668" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="20.32" y="-1.905" size="1.27" layer="27"/>
 </element>
-<element name="JP16" library="ezlpc-proto" package="1X01" value="" x="24.13" y="1.27" smashed="yes">
+<element name="TP10" library="ezlpc-proto" package="1X01" value="" x="24.13" y="1.27" smashed="yes">
+<attribute name="NAME" x="24.0538" y="-1.0668" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="22.86" y="-1.905" size="1.27" layer="27"/>
 </element>
-<element name="JP17" library="ezlpc-proto" package="1X01" value="" x="26.67" y="1.27" smashed="yes">
+<element name="TP11" library="ezlpc-proto" package="1X01" value="" x="26.67" y="1.27" smashed="yes">
+<attribute name="NAME" x="26.4668" y="-0.9398" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="25.4" y="-1.905" size="1.27" layer="27"/>
 </element>
-<element name="JP18" library="ezlpc-proto" package="1X01" value="" x="29.21" y="1.27" smashed="yes">
+<element name="TP12" library="ezlpc-proto" package="1X01" value="" x="29.21" y="1.27" smashed="yes">
+<attribute name="NAME" x="29.0068" y="-0.9398" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="27.94" y="-1.905" size="1.27" layer="27"/>
 </element>
-<element name="JP19" library="ezlpc-proto" package="1X01" value="" x="36.83" y="1.27" smashed="yes">
+<element name="TP15" library="ezlpc-proto" package="1X01" value="" x="36.83" y="1.27" smashed="yes">
+<attribute name="NAME" x="36.6268" y="-1.1938" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="35.56" y="-1.905" size="1.27" layer="27"/>
 </element>
-<element name="JP20" library="ezlpc-proto" package="1X01" value="" x="36.83" y="21.59" smashed="yes">
+<element name="TP16" library="ezlpc-proto" package="1X01" value="" x="36.83" y="21.59" smashed="yes">
+<attribute name="NAME" x="37.1602" y="23.6728" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="35.56" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="JP21" library="ezlpc-proto" package="1X01" value="" x="31.75" y="21.59" smashed="yes">
+<element name="TP18" library="ezlpc-proto" package="1X01" value="" x="31.75" y="21.59" smashed="yes">
+<attribute name="NAME" x="31.8262" y="23.6728" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="30.48" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="JP22" library="ezlpc-proto" package="1X01" value="" x="24.13" y="21.59" smashed="yes">
+<element name="TP21" library="ezlpc-proto" package="1X01" value="" x="24.13" y="21.59" smashed="yes">
+<attribute name="NAME" x="24.3332" y="23.6728" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="22.86" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="JP23" library="ezlpc-proto" package="1X01" value="" x="3.81" y="1.27" smashed="yes" rot="R90">
+<element name="TP2" library="ezlpc-proto" package="1X01" value="" x="3.81" y="1.27" smashed="yes" rot="R90">
+<attribute name="NAME" x="3.4798" y="-1.1938" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="6.985" y="0" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="JP24" library="ezlpc-proto" package="1X01" value="" x="13.97" y="1.27" smashed="yes">
+<element name="TP6" library="ezlpc-proto" package="1X01" value="" x="13.97" y="1.27" smashed="yes">
+<attribute name="NAME" x="13.7668" y="-1.4478" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="12.7" y="-1.905" size="1.27" layer="27"/>
 </element>
-<element name="JP25" library="ezlpc-proto" package="1X01" value="" x="31.75" y="1.27" smashed="yes">
+<element name="TP13" library="ezlpc-proto" package="1X01" value="" x="31.75" y="1.27" smashed="yes">
+<attribute name="NAME" x="31.4198" y="-1.1938" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="30.48" y="-1.905" size="1.27" layer="27"/>
 </element>
-<element name="JP26" library="ezlpc-proto" package="1X01" value="" x="34.29" y="1.27" smashed="yes">
+<element name="TP14" library="ezlpc-proto" package="1X01" value="" x="34.29" y="1.27" smashed="yes">
+<attribute name="NAME" x="34.2138" y="-1.3208" size="0.8128" layer="48" font="vector" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="33.02" y="-1.905" size="1.27" layer="27"/>
 </element>
-<element name="JP27" library="ezlpc-proto" package="1X01" value="" x="29.21" y="21.59" smashed="yes">
+<element name="TP19" library="ezlpc-proto" package="1X01" value="" x="29.21" y="21.59" smashed="yes">
+<attribute name="NAME" x="29.2862" y="23.6728" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="27.94" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="JP28" library="ezlpc-proto" package="1X01" value="" x="16.51" y="21.59" smashed="yes">
+<element name="TP24" library="ezlpc-proto" package="1X01" value="" x="16.51" y="21.59" smashed="yes">
+<attribute name="NAME" x="16.7132" y="23.6728" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="15.24" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="JP29" library="ezlpc-proto" package="1X01" value="" x="8.89" y="21.59" smashed="yes">
+<element name="TP27" library="ezlpc-proto" package="1X01" value="" x="8.89" y="21.59" smashed="yes">
+<attribute name="NAME" x="9.0932" y="23.7998" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="7.62" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="JP30" library="ezlpc-proto" package="1X01" value="" x="3.81" y="21.59" smashed="yes">
+<element name="TP29" library="ezlpc-proto" package="1X01" value="" x="3.81" y="21.59" smashed="yes">
+<attribute name="NAME" x="4.1402" y="23.9268" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="2.54" y="18.415" size="1.27" layer="27"/>
 </element>
-<element name="T1" library="ezlpc-proto" package="SOT23-BEC" value="MMBT3906" x="13.589" y="7.239" smashed="yes" rot="R270">
-<attribute name="NAME" x="14.605" y="5.715" size="0.6096" layer="25"/>
-<attribute name="VALUE" x="10.414" y="9.144" size="1.27" layer="27" rot="R270"/>
+<element name="T1" library="ezlpc-proto" package="SOT23-BEC" value="MMBT3906" x="13.208" y="7.239" smashed="yes" rot="R270">
+<attribute name="NAME" x="14.224" y="5.715" size="0.6096" layer="25"/>
+<attribute name="VALUE" x="10.033" y="9.144" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="JP31" library="ezlpc-proto" package="1X01" value="" x="1.27" y="21.59" smashed="yes">
+<element name="TP30" library="ezlpc-proto" package="1X01" value="" x="1.27" y="21.59" smashed="yes">
+<attribute name="NAME" x="1.6002" y="23.7998" size="0.8128" layer="48" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="0" y="18.415" size="1.27" layer="27"/>
 </element>
 </elements>
@@ -834,15 +875,15 @@ design rules under a new name.</description>
 <contactref element="C5" pad="2"/>
 <contactref element="U1" pad="1"/>
 <contactref element="J1" pad="5"/>
-<contactref element="JP1" pad="3"/>
-<contactref element="JP1" pad="5"/>
-<contactref element="JP1" pad="7"/>
-<contactref element="JP1" pad="9"/>
+<contactref element="J2" pad="3"/>
+<contactref element="J2" pad="5"/>
+<contactref element="J2" pad="7"/>
+<contactref element="J2" pad="9"/>
 <contactref element="R9" pad="1"/>
 <contactref element="S2" pad="A1"/>
 <contactref element="LED3" pad="C"/>
 <contactref element="LED2" pad="C"/>
-<contactref element="JP30" pad="1"/>
+<contactref element="TP29" pad="1"/>
 <contactref element="U3" pad="TAB"/>
 <contactref element="U3" pad="G4"/>
 <contactref element="U3" pad="G1"/>
@@ -901,10 +942,10 @@ design rules under a new name.</description>
 <wire x1="32.385" y1="16.891" x2="31.115" y2="16.891" width="0" layer="19" extent="1-1"/>
 <wire x1="33.655" y1="16.891" x2="32.385" y2="16.891" width="0" layer="19" extent="1-1"/>
 <wire x1="34.925" y1="16.891" x2="33.655" y2="16.891" width="0" layer="19" extent="1-1"/>
-<wire x1="37" y1="9.085" x2="34.925" y2="16.891" width="0" layer="19" extent="1-1"/>
+<wire x1="37" y1="9.466" x2="34.925" y2="16.891" width="0" layer="19" extent="1-1"/>
 <wire x1="28.829" y1="7.507" x2="34.925" y2="16.891" width="0" layer="19" extent="1-1"/>
 <wire x1="22.733" y1="9.144" x2="23.383" y2="9.271" width="0" layer="19" extent="1-16"/>
-<wire x1="18.049" y1="11.811" x2="19.05" y2="11.938" width="0" layer="19" extent="1-16"/>
+<wire x1="14.732" y1="15.86" x2="19.05" y2="11.938" width="0" layer="19" extent="1-16"/>
 <wire x1="20.308" y1="17.145" x2="21.463" y2="17.018" width="0" layer="19" extent="1-16"/>
 <wire x1="1.282" y1="5.334" x2="4.79" y2="12.73" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -941,13 +982,13 @@ design rules under a new name.</description>
 <contactref element="U3" pad="29"/>
 <contactref element="U2" pad="5"/>
 <contactref element="C2" pad="1"/>
-<contactref element="JP1" pad="1"/>
+<contactref element="J2" pad="1"/>
 <contactref element="R8" pad="2"/>
 <contactref element="R10" pad="2"/>
 <contactref element="R2" pad="2"/>
 <contactref element="R12" pad="2"/>
 <contactref element="R7" pad="2"/>
-<contactref element="JP29" pad="1"/>
+<contactref element="TP27" pad="1"/>
 <contactref element="T1" pad="E"/>
 <wire x1="11.924" y1="14.859" x2="11.303" y2="14.746" width="0.4064" layer="1"/>
 <wire x1="11.303" y1="14.746" x2="11.303" y2="17.526" width="0.4064" layer="1"/>
@@ -980,130 +1021,133 @@ design rules under a new name.</description>
 <wire x1="21.702" y1="18.669" x2="22.479" y2="15.748" width="0" layer="19" extent="1-16"/>
 <wire x1="25.639" y1="5.715" x2="25.283" y2="9.394" width="0" layer="19" extent="1-1"/>
 <wire x1="8.89" y1="21.59" x2="11.872" y2="18.095" width="0" layer="19" extent="1-1"/>
-<wire x1="10.668" y1="6.589" x2="11.303" y2="14.746" width="0" layer="19" extent="1-1"/>
-<wire x1="12.489" y1="6.289" x2="10.668" y2="6.589" width="0" layer="19" extent="1-1"/>
-<wire x1="5.969" y1="5.954" x2="10.668" y2="6.589" width="0" layer="19" extent="1-1"/>
+<wire x1="10.414" y1="6.589" x2="11.303" y2="14.746" width="0" layer="19" extent="1-1"/>
+<wire x1="12.108" y1="6.289" x2="10.414" y2="6.589" width="0" layer="19" extent="1-1"/>
+<wire x1="5.969" y1="5.954" x2="10.414" y2="6.589" width="0" layer="19" extent="1-1"/>
 <wire x1="21.971" y1="11.706" x2="21.971" y2="13.843" width="0.2032" layer="1"/>
 </signal>
 <signal name="PIO0_2">
 <contactref element="U3" pad="8"/>
-<contactref element="JP4" pad="1"/>
+<contactref element="TP22" pad="1"/>
 <wire x1="20.983" y1="11.694" x2="21.59" y2="21.59" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_4">
 <contactref element="U3" pad="10"/>
-<contactref element="JP6" pad="1"/>
+<contactref element="TP23" pad="1"/>
 <wire x1="20.183" y1="10.394" x2="19.05" y2="21.59" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_5">
 <contactref element="U3" pad="11"/>
-<contactref element="JP7" pad="1"/>
+<contactref element="TP28" pad="1"/>
 <wire x1="6.35" y1="21.59" x2="20.183" y2="9.894" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_6-CONNECT">
 <contactref element="U3" pad="15"/>
 <contactref element="R3" pad="2"/>
 <contactref element="LED1" pad="C"/>
-<contactref element="JP8" pad="1"/>
+<contactref element="TP3" pad="1"/>
 <wire x1="9.017" y1="6.589" x2="20.183" y2="7.894" width="0" layer="19" extent="1-1"/>
 <wire x1="7.493" y1="5.981" x2="9.017" y2="6.589" width="0" layer="19" extent="1-1"/>
-<wire x1="8.89" y1="1.27" x2="9.017" y2="6.589" width="0" layer="19" extent="1-1"/>
+<wire x1="6.35" y1="1.27" x2="9.017" y2="6.589" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_7-LED">
 <contactref element="U3" pad="16"/>
 <contactref element="R11" pad="2"/>
-<contactref element="JP9" pad="1"/>
+<contactref element="TP1" pad="1"/>
 <wire x1="4.191" y1="5.065" x2="20.183" y2="7.394" width="0" layer="19" extent="1-1"/>
 <wire x1="1.27" y1="1.27" x2="4.191" y2="5.065" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_8">
 <contactref element="U3" pad="17"/>
-<contactref element="JP10" pad="1"/>
-<wire x1="6.35" y1="1.27" x2="20.983" y2="6.594" width="0" layer="19" extent="1-1"/>
+<contactref element="TP4" pad="1"/>
+<wire x1="8.89" y1="1.27" x2="20.983" y2="6.594" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_11">
 <contactref element="U3" pad="21"/>
-<contactref element="JP13" pad="1"/>
+<contactref element="TP7" pad="1"/>
 <wire x1="16.51" y1="1.27" x2="22.983" y2="6.594" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_12">
 <contactref element="U3" pad="22"/>
-<contactref element="JP14" pad="1"/>
+<contactref element="TP8" pad="1"/>
 <wire x1="19.05" y1="1.27" x2="23.483" y2="6.594" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_13">
 <contactref element="U3" pad="23"/>
-<contactref element="JP15" pad="1"/>
+<contactref element="TP9" pad="1"/>
 <wire x1="21.59" y1="1.27" x2="23.983" y2="6.594" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_14">
 <contactref element="U3" pad="24"/>
-<contactref element="JP16" pad="1"/>
+<contactref element="TP10" pad="1"/>
 <wire x1="24.13" y1="1.27" x2="24.483" y2="6.594" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_16">
 <contactref element="U3" pad="26"/>
-<contactref element="JP18" pad="1"/>
+<contactref element="TP12" pad="1"/>
 <wire x1="29.21" y1="1.27" x2="25.283" y2="7.894" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_17">
 <contactref element="U3" pad="30"/>
-<contactref element="JP19" pad="1"/>
+<contactref element="TP15" pad="1"/>
 <wire x1="25.283" y1="9.894" x2="36.83" y2="1.27" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_18">
 <contactref element="U3" pad="31"/>
-<contactref element="JP20" pad="1"/>
+<contactref element="TP16" pad="1"/>
 <wire x1="25.283" y1="10.394" x2="36.83" y2="21.59" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_19">
 <contactref element="U3" pad="32"/>
-<contactref element="JP21" pad="1"/>
+<contactref element="TP18" pad="1"/>
 <wire x1="25.283" y1="10.894" x2="31.75" y2="21.59" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_20">
 <contactref element="U3" pad="7"/>
-<contactref element="JP22" pad="1"/>
+<contactref element="TP21" pad="1"/>
 <wire x1="21.483" y1="11.694" x2="24.13" y2="21.59" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_21">
 <contactref element="U3" pad="12"/>
-<contactref element="JP23" pad="1"/>
-<wire x1="3.81" y1="1.27" x2="20.183" y2="9.394" width="0" layer="19" extent="1-1"/>
+<contactref element="TP2" pad="1"/>
+<via x="18.7198" y="9.398" extent="1-16" drill="0.3302"/>
+<wire x1="20.183" y1="9.394" x2="18.7238" y2="9.394" width="0.2032" layer="1"/>
+<wire x1="18.7238" y1="9.394" x2="18.7198" y2="9.398" width="0.2032" layer="1"/>
+<wire x1="3.81" y1="1.27" x2="18.7238" y2="9.394" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_22">
 <contactref element="U3" pad="20"/>
-<contactref element="JP24" pad="1"/>
+<contactref element="TP6" pad="1"/>
 <wire x1="13.97" y1="1.27" x2="22.483" y2="6.594" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_23">
 <contactref element="U3" pad="27"/>
-<contactref element="JP25" pad="1"/>
+<contactref element="TP13" pad="1"/>
 <wire x1="31.75" y1="1.27" x2="25.283" y2="8.394" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO1_15">
 <contactref element="U3" pad="28"/>
-<contactref element="JP26" pad="1"/>
+<contactref element="TP14" pad="1"/>
 <wire x1="34.29" y1="1.27" x2="25.283" y2="8.894" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO1_19">
 <contactref element="U3" pad="1"/>
-<contactref element="JP27" pad="1"/>
+<contactref element="TP19" pad="1"/>
 <wire x1="24.483" y1="11.694" x2="29.21" y2="21.59" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_3-VBUS">
 <contactref element="U3" pad="9"/>
 <contactref element="R4" pad="2"/>
-<contactref element="JP5" pad="1"/>
-<wire x1="15.509" y1="11.811" x2="20.183" y2="10.894" width="0" layer="19" extent="1-1"/>
-<wire x1="11.43" y1="21.59" x2="15.509" y2="11.811" width="0" layer="19" extent="1-1"/>
+<contactref element="TP26" pad="1"/>
+<wire x1="14.366" y1="11.938" x2="20.183" y2="10.894" width="0" layer="19" extent="1-1"/>
+<wire x1="11.43" y1="21.59" x2="14.366" y2="11.938" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="USB-5V">
 <contactref element="J1" pad="1"/>
 <contactref element="U1" pad="4"/>
 <contactref element="R4" pad="1"/>
 <contactref element="D1" pad="2"/>
-<contactref element="JP28" pad="1"/>
+<contactref element="TP24" pad="1"/>
 <wire x1="6.223" y1="10.13" x2="6.223" y2="8.763" width="0.3048" layer="1"/>
 <wire x1="6.223" y1="8.763" x2="8.001" y2="8.763" width="0.3048" layer="1"/>
 <wire x1="8.001" y1="8.763" x2="8.951" y2="8.763" width="0.4064" layer="1"/>
@@ -1117,41 +1161,39 @@ design rules under a new name.</description>
 <wire x1="6.477" y1="14.859" x2="5.969" y2="15.367" width="0.6096" layer="1"/>
 <wire x1="5.969" y1="15.367" x2="5.316" y2="15.367" width="0.6096" layer="1"/>
 <wire x1="5.316" y1="15.367" x2="4.107" y2="16.576" width="0.6096" layer="1"/>
-<wire x1="14.209" y1="11.811" x2="16.51" y2="21.59" width="0" layer="19" extent="1-1"/>
-<wire x1="8.951" y1="9.72" x2="14.209" y2="11.811" width="0" layer="19" extent="1-1"/>
+<wire x1="13.066" y1="11.938" x2="16.51" y2="21.59" width="0" layer="19" extent="1-1"/>
+<wire x1="8.951" y1="9.72" x2="13.066" y2="11.938" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_0-RESET">
-<contactref element="JP1" pad="10"/>
+<contactref element="J2" pad="10"/>
 <contactref element="U3" pad="2"/>
 <contactref element="R10" pad="1"/>
 <contactref element="S2" pad="B2"/>
-<contactref element="JP2" pad="1"/>
-<wire x1="32.85" y1="11.21" x2="31.115" y2="15.621" width="0" layer="19" extent="1-1"/>
-<wire x1="23.983" y1="11.694" x2="32.85" y2="11.21" width="0" layer="19" extent="1-1"/>
+<contactref element="TP20" pad="1"/>
+<wire x1="32.85" y1="11.591" x2="31.115" y2="15.621" width="0" layer="19" extent="1-1"/>
+<wire x1="23.983" y1="11.694" x2="32.85" y2="11.591" width="0" layer="19" extent="1-1"/>
 <wire x1="23.002" y1="18.669" x2="23.983" y2="11.694" width="0" layer="19" extent="1-1"/>
 <wire x1="26.67" y1="21.59" x2="23.002" y2="18.669" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_9">
-<contactref element="JP1" pad="6"/>
 <contactref element="U3" pad="18"/>
-<contactref element="JP11" pad="1"/>
-<wire x1="21.483" y1="6.594" x2="33.655" y2="15.621" width="0" layer="19" extent="1-1"/>
+<contactref element="TP5" pad="1"/>
 <wire x1="11.43" y1="1.27" x2="21.483" y2="6.594" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_10-SWDCLK">
-<contactref element="JP1" pad="4"/>
+<contactref element="J2" pad="4"/>
 <contactref element="R9" pad="2"/>
 <contactref element="U3" pad="19"/>
-<contactref element="JP12" pad="1"/>
+<contactref element="TP25" pad="1"/>
 <wire x1="21.983" y1="6.594" x2="34.925" y2="15.621" width="0" layer="19" extent="1-1"/>
-<wire x1="16.749" y1="11.811" x2="21.983" y2="6.594" width="0" layer="19" extent="1-1"/>
-<wire x1="13.97" y1="21.59" x2="16.749" y2="11.811" width="0" layer="19" extent="1-1"/>
+<wire x1="14.732" y1="17.16" x2="21.983" y2="6.594" width="0" layer="19" extent="1-1"/>
+<wire x1="13.97" y1="21.59" x2="14.732" y2="17.16" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_15-SWDIO">
-<contactref element="JP1" pad="2"/>
+<contactref element="J2" pad="2"/>
 <contactref element="R8" pad="1"/>
 <contactref element="U3" pad="25"/>
-<contactref element="JP17" pad="1"/>
+<contactref element="TP11" pad="1"/>
 <wire x1="26.939" y1="5.715" x2="36.195" y2="15.621" width="0" layer="19" extent="1-1"/>
 <wire x1="25.283" y1="7.394" x2="26.939" y2="5.715" width="0" layer="19" extent="1-1"/>
 <wire x1="26.67" y1="1.27" x2="26.939" y2="5.715" width="0" layer="19" extent="1-1"/>
@@ -1159,7 +1201,7 @@ design rules under a new name.</description>
 <signal name="PIO0_1-ISP_EN">
 <contactref element="S1" pad="B2"/>
 <contactref element="U3" pad="3"/>
-<contactref element="JP3" pad="1"/>
+<contactref element="TP17" pad="1"/>
 <wire x1="32.85" y1="6.765" x2="34.29" y2="21.59" width="0" layer="19" extent="1-1"/>
 <wire x1="23.483" y1="11.694" x2="32.85" y2="6.765" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -1167,13 +1209,13 @@ design rules under a new name.</description>
 <contactref element="R2" pad="1"/>
 <contactref element="R3" pad="1"/>
 <contactref element="T1" pad="B"/>
-<wire x1="10.668" y1="7.889" x2="12.489" y2="8.189" width="0" layer="19" extent="1-1"/>
-<wire x1="9.017" y1="7.889" x2="10.668" y2="7.889" width="0" layer="19" extent="1-1"/>
+<wire x1="10.414" y1="7.889" x2="12.108" y2="8.189" width="0" layer="19" extent="1-1"/>
+<wire x1="9.017" y1="7.889" x2="10.414" y2="7.889" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="R1" pad="2"/>
 <contactref element="T1" pad="C"/>
-<wire x1="14.689" y1="7.239" x2="11.445" y2="12.7" width="0" layer="19" extent="1-1"/>
+<wire x1="14.308" y1="7.239" x2="11.445" y2="12.7" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$2">
 <contactref element="LED3" pad="A"/>
@@ -1225,9 +1267,12 @@ design rules under a new name.</description>
 <contactref element="U3" pad="13"/>
 <wire x1="20.183" y1="8.894" x2="20.183" y2="8.89" width="0.2032" layer="1"/>
 <wire x1="20.183" y1="8.894" x2="20.179" y2="8.89" width="0.2032" layer="1"/>
-<wire x1="20.179" y1="8.89" x2="16.637" y2="8.89" width="0.2032" layer="1"/>
-<wire x1="16.637" y1="8.89" x2="15.494" y2="10.033" width="0.2032" layer="1"/>
-<wire x1="15.494" y1="10.033" x2="11.445" y2="10.033" width="0.2032" layer="1"/>
+<wire x1="20.179" y1="8.89" x2="19.2786" y2="8.89" width="0.2032" layer="1"/>
+<wire x1="19.2786" y1="8.89" x2="19.1008" y2="8.7122" width="0.2032" layer="1"/>
+<wire x1="19.1008" y1="8.7122" x2="16.3068" y2="8.7122" width="0.2032" layer="1"/>
+<wire x1="16.3068" y1="8.7122" x2="15.367" y2="9.652" width="0.2032" layer="1"/>
+<wire x1="15.367" y1="9.652" x2="11.445" y2="9.652" width="0.2032" layer="1"/>
+<wire x1="11.445" y1="9.652" x2="11.445" y2="10.033" width="0.2032" layer="1"/>
 </signal>
 <signal name="USB_DP" class="2">
 <contactref element="R6" pad="2"/>
@@ -1237,10 +1282,12 @@ design rules under a new name.</description>
 <wire x1="10.795" y1="10.795" x2="11.176" y2="11.176" width="0.2032" layer="1"/>
 <wire x1="11.176" y1="11.176" x2="11.445" y2="11.176" width="0.2032" layer="1"/>
 <wire x1="20.183" y1="8.394" x2="20.171" y2="8.382" width="0.2032" layer="1"/>
-<wire x1="20.171" y1="8.382" x2="16.002" y2="8.382" width="0.2032" layer="1"/>
-<wire x1="16.002" y1="8.382" x2="15.113" y2="9.271" width="0.2032" layer="1"/>
+<wire x1="16.1036" y1="8.2804" x2="15.113" y2="9.271" width="0.2032" layer="1"/>
 <wire x1="15.113" y1="9.271" x2="10.795" y2="9.271" width="0.2032" layer="1"/>
 <wire x1="10.795" y1="9.271" x2="10.795" y2="10.795" width="0.2032" layer="1"/>
+<wire x1="20.171" y1="8.382" x2="19.4056" y2="8.382" width="0.2032" layer="1"/>
+<wire x1="19.4056" y1="8.382" x2="19.304" y2="8.2804" width="0.2032" layer="1"/>
+<wire x1="19.304" y1="8.2804" x2="16.1036" y2="8.2804" width="0.2032" layer="1"/>
 </signal>
 <signal name="N$9">
 <contactref element="J1" pad="2"/>
@@ -1257,16 +1304,33 @@ design rules under a new name.</description>
 <wire x1="6.746" y1="10.78" x2="7.1755" y2="10.3505" width="0.2032" layer="1"/>
 </signal>
 <signal name="N$11">
-<contactref element="JP1" pad="8"/>
+<contactref element="J2" pad="8"/>
 </signal>
 <signal name="AUX-VIN">
-<contactref element="JP31" pad="1"/>
+<contactref element="TP30" pad="1"/>
 <contactref element="D1" pad="1"/>
 <wire x1="1.27" y1="21.59" x2="1.27" y2="19.558" width="0.6096" layer="1"/>
 <wire x1="1.27" y1="19.558" x2="2.352" y2="18.476" width="0.6096" layer="1"/>
 <wire x1="2.352" y1="18.476" x2="4.107" y2="18.476" width="0.6096" layer="1"/>
 </signal>
+<signal name="PIO0_9-SWD6">
+<contactref element="J2" pad="6"/>
+</signal>
 </signals>
+<errors>
+<approved hash="4,1,331b0f61088034fa"/>
+<approved hash="4,1,3410086a0a40363a"/>
+<approved hash="4,1,50022d77ddf3c400"/>
+<approved hash="4,1,ac5f01b8a00efe0f"/>
+<approved hash="4,1,511c6be66f895573"/>
+<approved hash="4,1,2c1716ed69c95333"/>
+<approved hash="4,1,308fc9a4ff03925f"/>
+<approved hash="4,1,990b8c3e2c31ad73"/>
+<approved hash="4,16,3410086a0a40363a"/>
+<approved hash="4,16,331b0f61088034fa"/>
+<approved hash="4,16,511c6be66f895573"/>
+<approved hash="4,16,2c1716ed69c95333"/>
+</errors>
 </board>
 </drawing>
 </eagle>
