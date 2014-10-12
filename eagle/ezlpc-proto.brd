@@ -512,7 +512,7 @@ design rules under a new name.</description>
 <param name="mlMaxStopFrame" value="4mil"/>
 <param name="mlMinCreamFrame" value="0mil"/>
 <param name="mlMaxCreamFrame" value="0mil"/>
-<param name="mlViaStopLimit" value="0mil"/>
+<param name="mlViaStopLimit" value="20mil"/>
 <param name="srRoundness" value="0"/>
 <param name="srMinRoundness" value="0mil"/>
 <param name="srMaxRoundness" value="0mil"/>
@@ -1320,14 +1320,18 @@ design rules under a new name.</description>
 <errors>
 <approved hash="4,1,331b0f61088034fa"/>
 <approved hash="4,1,3410086a0a40363a"/>
+<approved hash="4,16,3410086a0a40363a"/>
+<approved hash="4,16,331b0f61088034fa"/>
+<approved hash="4,1,8d268cd289fb880f"/>
+<approved hash="4,1,88b48940882589d1"/>
 <approved hash="4,1,50022d77ddf3c400"/>
 <approved hash="4,1,ac5f01b8a00efe0f"/>
 <approved hash="4,1,511c6be66f895573"/>
 <approved hash="4,1,2c1716ed69c95333"/>
 <approved hash="4,1,308fc9a4ff03925f"/>
 <approved hash="4,1,990b8c3e2c31ad73"/>
-<approved hash="4,16,3410086a0a40363a"/>
-<approved hash="4,16,331b0f61088034fa"/>
+<approved hash="4,16,88b48940882589d1"/>
+<approved hash="4,16,8d268cd289fb880f"/>
 <approved hash="4,16,511c6be66f895573"/>
 <approved hash="4,16,2c1716ed69c95333"/>
 </errors>
