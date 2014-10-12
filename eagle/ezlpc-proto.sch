@@ -1328,8 +1328,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="U$2" library="ezlpc-proto" deviceset="NC" device=""/>
 <part name="T1" library="ezlpc-proto" deviceset="*-PNP-" device="SOT23-BEC" technology="BC857B" value="MMBT3906"/>
 <part name="JP31" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="JP32" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="GND7" library="ezlpc-proto" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1545,8 +1543,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <attribute name="VALUE" x="70.104" y="196.342" size="1.778" layer="96"/>
 </instance>
 <instance part="JP31" gate="G$1" x="294.64" y="127"/>
-<instance part="JP32" gate="G$1" x="294.64" y="124.46"/>
-<instance part="GND7" gate="1" x="289.56" y="121.92"/>
 </instances>
 <busses>
 </busses>
@@ -1649,11 +1645,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="193.04" y1="154.94" x2="190.5" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="190.5" y1="154.94" x2="190.5" y2="152.4" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="JP32" gate="G$1" pin="1"/>
-<pinref part="GND7" gate="1" pin="GND"/>
-<wire x1="292.1" y1="124.46" x2="289.56" y2="124.46" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
