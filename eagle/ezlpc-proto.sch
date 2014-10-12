@@ -1262,14 +1262,14 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="TP20" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP17" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP22" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP26" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP25" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP23" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP28" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP26" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP2" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP3" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP1" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP4" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP5" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP25" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP24" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP7" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP8" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP9" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
@@ -1280,21 +1280,21 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="TP16" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP18" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP21" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP2" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP1" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP6" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP13" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP14" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP19" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP24" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP30" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP27" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP29" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP28" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="GND16" library="ezlpc-proto" deviceset="GND" device=""/>
 <part name="+3V3" library="ezlpc-proto" deviceset="+3V3" device=""/>
 <part name="P+2" library="ezlpc-proto" deviceset="USB-5V" device=""/>
 <part name="U$1" library="ezlpc-proto" deviceset="NC" device=""/>
 <part name="U$2" library="ezlpc-proto" deviceset="NC" device=""/>
 <part name="T1" library="ezlpc-proto" deviceset="*-PNP-" device="SOT23-BEC" technology="BC857B" value="MMBT3906"/>
-<part name="TP30" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP29" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1473,14 +1473,14 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <instance part="TP20" gate="G$1" x="294.64" y="228.6"/>
 <instance part="TP17" gate="G$1" x="294.64" y="226.06"/>
 <instance part="TP22" gate="G$1" x="294.64" y="223.52"/>
-<instance part="TP26" gate="G$1" x="294.64" y="220.98"/>
+<instance part="TP25" gate="G$1" x="294.64" y="220.98"/>
 <instance part="TP23" gate="G$1" x="294.64" y="218.44"/>
-<instance part="TP28" gate="G$1" x="294.64" y="215.9"/>
-<instance part="TP3" gate="G$1" x="294.64" y="213.36"/>
-<instance part="TP1" gate="G$1" x="294.64" y="210.82"/>
+<instance part="TP26" gate="G$1" x="294.64" y="215.9"/>
+<instance part="TP2" gate="G$1" x="294.64" y="213.36"/>
+<instance part="TP3" gate="G$1" x="294.64" y="210.82"/>
 <instance part="TP4" gate="G$1" x="294.64" y="205.74"/>
 <instance part="TP5" gate="G$1" x="294.64" y="203.2"/>
-<instance part="TP25" gate="G$1" x="294.64" y="200.66"/>
+<instance part="TP24" gate="G$1" x="294.64" y="200.66"/>
 <instance part="TP7" gate="G$1" x="294.64" y="198.12"/>
 <instance part="TP8" gate="G$1" x="294.64" y="195.58"/>
 <instance part="TP9" gate="G$1" x="294.64" y="193.04"/>
@@ -1491,14 +1491,14 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <instance part="TP16" gate="G$1" x="294.64" y="177.8"/>
 <instance part="TP18" gate="G$1" x="294.64" y="175.26"/>
 <instance part="TP21" gate="G$1" x="294.64" y="172.72"/>
-<instance part="TP2" gate="G$1" x="294.64" y="170.18"/>
+<instance part="TP1" gate="G$1" x="294.64" y="170.18"/>
 <instance part="TP6" gate="G$1" x="294.64" y="167.64"/>
 <instance part="TP13" gate="G$1" x="294.64" y="165.1"/>
 <instance part="TP14" gate="G$1" x="294.64" y="157.48"/>
 <instance part="TP19" gate="G$1" x="294.64" y="154.94"/>
-<instance part="TP24" gate="G$1" x="294.64" y="142.24"/>
+<instance part="TP30" gate="G$1" x="294.64" y="142.24"/>
 <instance part="TP27" gate="G$1" x="294.64" y="139.7"/>
-<instance part="TP29" gate="G$1" x="294.64" y="134.62"/>
+<instance part="TP28" gate="G$1" x="294.64" y="134.62"/>
 <instance part="GND16" gate="1" x="284.48" y="132.08"/>
 <instance part="+3V3" gate="G$1" x="284.48" y="147.32" smashed="yes">
 <attribute name="VALUE" x="279.908" y="148.336" size="1.778" layer="96"/>
@@ -1512,7 +1512,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <attribute name="NAME" x="70.358" y="199.39" size="1.778" layer="95"/>
 <attribute name="VALUE" x="70.104" y="196.342" size="1.778" layer="96"/>
 </instance>
-<instance part="TP30" gate="G$1" x="294.64" y="137.16"/>
+<instance part="TP29" gate="G$1" x="294.64" y="137.16"/>
 </instances>
 <busses>
 </busses>
@@ -1606,7 +1606,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="284.48" y1="68.58" x2="284.48" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="TP29" gate="G$1" pin="1"/>
+<pinref part="TP28" gate="G$1" pin="1"/>
 <pinref part="GND16" gate="1" pin="GND"/>
 <wire x1="292.1" y1="134.62" x2="284.48" y2="134.62" width="0.1524" layer="91"/>
 </segment>
@@ -1731,7 +1731,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="SDA/PIO0_5"/>
 <wire x1="261.62" y1="215.9" x2="292.1" y2="215.9" width="0.1524" layer="91"/>
 <label x="269.24" y="215.9" size="1.778" layer="95"/>
-<pinref part="TP28" gate="G$1" pin="1"/>
+<pinref part="TP26" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="PIO0_6-CONNECT" class="0">
@@ -1739,7 +1739,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="USB_CONNECT/SCK0/PIO0_6"/>
 <wire x1="261.62" y1="213.36" x2="292.1" y2="213.36" width="0.1524" layer="91"/>
 <label x="269.24" y="213.36" size="1.778" layer="95"/>
-<pinref part="TP3" gate="G$1" pin="1"/>
+<pinref part="TP2" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
@@ -1756,7 +1756,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="CTS/PIO0_7"/>
 <wire x1="261.62" y1="210.82" x2="292.1" y2="210.82" width="0.1524" layer="91"/>
 <label x="269.24" y="210.82" size="1.778" layer="95"/>
-<pinref part="TP1" gate="G$1" pin="1"/>
+<pinref part="TP3" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="R11" gate="G$1" pin="2"/>
@@ -1848,7 +1848,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="CT16B1_MAT0/MOSI1/PIO0_21"/>
 <wire x1="261.62" y1="170.18" x2="292.1" y2="170.18" width="0.1524" layer="91"/>
-<pinref part="TP2" gate="G$1" pin="1"/>
+<pinref part="TP1" gate="G$1" pin="1"/>
 <label x="269.748" y="170.18" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -1889,7 +1889,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="USB_VBUS/PIO0_3"/>
 <wire x1="261.62" y1="220.98" x2="292.1" y2="220.98" width="0.1524" layer="91"/>
 <label x="269.24" y="220.98" size="1.778" layer="95"/>
-<pinref part="TP26" gate="G$1" pin="1"/>
+<pinref part="TP25" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="2"/>
@@ -1921,7 +1921,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="38.1" y1="101.6" x2="38.1" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="TP24" gate="G$1" pin="1"/>
+<pinref part="TP30" gate="G$1" pin="1"/>
 <wire x1="292.1" y1="142.24" x2="289.56" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="289.56" y1="142.24" x2="289.56" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="P+2" gate="VCC" pin="USB-5V"/>
@@ -1971,7 +1971,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <pinref part="U3" gate="G$1" pin="SWCLK/SCK0/CT16B0_MAT2/PIO0_10"/>
 <wire x1="261.62" y1="200.66" x2="292.1" y2="200.66" width="0.1524" layer="91"/>
 <label x="269.24" y="200.66" size="1.778" layer="95"/>
-<pinref part="TP25" gate="G$1" pin="1"/>
+<pinref part="TP24" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="PIO0_15-SWDIO" class="0">
@@ -2118,7 +2118,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </net>
 <net name="AUX-VIN" class="0">
 <segment>
-<pinref part="TP30" gate="G$1" pin="1"/>
+<pinref part="TP29" gate="G$1" pin="1"/>
 <wire x1="292.1" y1="137.16" x2="271.78" y2="137.16" width="0.1524" layer="91"/>
 <label x="271.78" y="137.16" size="1.778" layer="95"/>
 </segment>
