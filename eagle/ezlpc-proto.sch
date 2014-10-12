@@ -406,6 +406,20 @@ Metric Code Size 1608</description>
 <text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
 </package>
+<package name="1X01-SQUARE">
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="48"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="48"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="48"/>
+<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="48"/>
+<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="48"/>
+<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="48"/>
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="48"/>
+<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="48"/>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.016" shape="square"/>
+<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="+3V3">
@@ -1146,6 +1160,14 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <technology name=""/>
 </technologies>
 </device>
+<device name="SQUARE" package="1X01-SQUARE">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="CAPACITOR" prefix="C" uservalue="yes">
@@ -1280,7 +1302,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="TP16" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP18" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP21" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP1" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP1" library="ezlpc-proto" deviceset="PINHD-1X1" device="SQUARE"/>
 <part name="TP6" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP13" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP14" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
