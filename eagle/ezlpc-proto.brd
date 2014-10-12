@@ -628,7 +628,7 @@ design rules under a new name.</description>
 <attribute name="NAME" x="7.074" y="18.557" size="0.6096" layer="25"/>
 <attribute name="VALUE" x="6.224" y="17.818" size="1.016" layer="27" rot="R270"/>
 </element>
-<element name="U3" library="ezlpc-proto" package="HVQFN33-5MM" value="LPC11U35FHN33/501" x="22.733" y="9.144" smashed="yes" rot="R270">
+<element name="U3" library="ezlpc-proto" package="HVQFN33-5MM" value="LPC11U35FHI33/501" x="22.733" y="9.144" smashed="yes" rot="R270">
 <attribute name="NAME" x="24.059" y="12.413" size="0.6096" layer="25" font="vector"/>
 <attribute name="VALUE" x="17.783" y="12.644" size="1.27" layer="27" font="vector" rot="R270"/>
 </element>

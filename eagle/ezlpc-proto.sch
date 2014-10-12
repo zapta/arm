@@ -1244,7 +1244,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="GND18" library="ezlpc-proto" deviceset="GND" device=""/>
 <part name="C1" library="ezlpc-proto" deviceset="CAPACITOR" device="C0603K" value="2u2"/>
 <part name="GND28" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="U3" library="ezlpc-proto" deviceset="LPC11U35FHN33/501" device=""/>
+<part name="U3" library="ezlpc-proto" deviceset="LPC11U35FHN33/501" device="" value="LPC11U35FHI33/501"/>
 <part name="GND2" library="ezlpc-proto" deviceset="GND" device=""/>
 <part name="Q1" library="ezlpc-proto" deviceset="CRYSTAL" device="CTS406" value="12Mhz"/>
 <part name="C3" library="ezlpc-proto" deviceset="C-US" device="C0402K" value="18pF"/>
