@@ -1241,7 +1241,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="R1" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="1k5"/>
 <part name="P+4" library="ezlpc-proto" deviceset="USB-5V" device=""/>
 <part name="+3V5" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="J2" library="ezlpc-proto" deviceset="SWD-HEADER" device=""/>
+<part name="J2" library="ezlpc-proto" deviceset="SWD-HEADER" device="" value="SWD HEADER"/>
 <part name="+3V6" library="ezlpc-proto" deviceset="+3V3" device=""/>
 <part name="GND12" library="ezlpc-proto" deviceset="GND" device=""/>
 <part name="R8" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="10K"/>
@@ -1271,42 +1271,42 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="R5" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="33R"/>
 <part name="U4" library="ezlpc-proto" deviceset="BAS40-05" device=""/>
 <part name="P+1" library="ezlpc-proto" deviceset="USB-5V" device=""/>
-<part name="TP20" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP17" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP22" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP25" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP23" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP26" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP2" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP3" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP4" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP5" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP24" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP7" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP8" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP9" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP10" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP11" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP12" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP15" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP16" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP18" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP21" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP1" library="ezlpc-proto" deviceset="PINHD-1X1" device="SQUARE"/>
-<part name="TP6" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP13" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP14" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP19" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP30" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP27" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
-<part name="TP28" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP20" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP17" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP22" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP25" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP23" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP26" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP2" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP3" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP4" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP5" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP24" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP7" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP8" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP9" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP10" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP11" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP12" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP15" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP16" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP18" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP21" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP1" library="ezlpc-proto" deviceset="PINHD-1X1" device="SQUARE" value="HDR1"/>
+<part name="TP6" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP13" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP14" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP19" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP30" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP27" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP28" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
 <part name="GND16" library="ezlpc-proto" deviceset="GND" device=""/>
 <part name="+3V3" library="ezlpc-proto" deviceset="+3V3" device=""/>
 <part name="P+2" library="ezlpc-proto" deviceset="USB-5V" device=""/>
 <part name="U$1" library="ezlpc-proto" deviceset="NC" device=""/>
 <part name="U$2" library="ezlpc-proto" deviceset="NC" device=""/>
 <part name="T1" library="ezlpc-proto" deviceset="*-PNP-" device="SOT23-BEC" technology="BC857B" value="MMBT3906"/>
-<part name="TP29" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
+<part name="TP29" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
 </parts>
 <sheets>
 <sheet>
@@ -1370,8 +1370,8 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <text x="294.64" y="55.88" size="1.778" layer="94">Optional F</text>
 <text x="236.982" y="75.184" size="1.778" layer="94">ISP</text>
 <text x="262.382" y="75.184" size="1.778" layer="94">RST</text>
-<text x="278.892" y="75.438" size="1.778" layer="94">LED</text>
-<text x="291.592" y="75.438" size="1.778" layer="94">PWR</text>
+<text x="281.432" y="75.438" size="1.778" layer="94">LED</text>
+<text x="296.672" y="75.438" size="1.778" layer="94">PWR</text>
 <text x="91.44" y="211.074" size="1.778" layer="94">USB</text>
 </plain>
 <instances>
@@ -1462,15 +1462,15 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <instance part="R2" gate="G$1" x="78.74" y="215.9" rot="R90"/>
 <instance part="+3V10" gate="G$1" x="78.74" y="228.6"/>
 <instance part="R3" gate="G$1" x="88.9" y="203.2"/>
-<instance part="LED3" gate="G$1" x="297.18" y="73.66"/>
-<instance part="R12" gate="G$1" x="297.18" y="83.82" rot="R90"/>
-<instance part="GND5" gate="1" x="297.18" y="63.5"/>
-<instance part="R11" gate="G$1" x="284.48" y="83.82" rot="R90"/>
+<instance part="LED3" gate="G$1" x="302.26" y="73.66"/>
+<instance part="R12" gate="G$1" x="302.26" y="83.82" rot="R90"/>
+<instance part="GND5" gate="1" x="302.26" y="63.5"/>
+<instance part="R11" gate="G$1" x="287.02" y="83.82" rot="R90"/>
 <instance part="R7" gate="G$1" x="99.06" y="218.44" rot="R90"/>
-<instance part="LED2" gate="G$1" x="284.48" y="73.66"/>
+<instance part="LED2" gate="G$1" x="287.02" y="73.66"/>
 <instance part="LED1" gate="G$1" x="99.06" y="210.82"/>
-<instance part="GND6" gate="1" x="284.48" y="63.5"/>
-<instance part="+3V4" gate="G$1" x="297.18" y="106.68"/>
+<instance part="GND6" gate="1" x="287.02" y="63.5"/>
+<instance part="+3V4" gate="G$1" x="302.26" y="106.68"/>
 <instance part="+3V11" gate="G$1" x="99.06" y="228.6"/>
 <instance part="R6" gate="G$1" x="93.98" y="157.48" smashed="yes">
 <attribute name="NAME" x="85.852" y="158.2166" size="1.778" layer="95"/>
@@ -1524,7 +1524,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <attribute name="VALUE" x="288.544" y="148.336" size="1.778" layer="96"/>
 </instance>
 <instance part="U$1" gate="G$1" x="93.98" y="81.28" rot="R180"/>
-<instance part="U$2" gate="G$1" x="165.1" y="78.74" rot="R180"/>
+<instance part="U$2" gate="G$1" x="160.02" y="78.74" rot="R180"/>
 <instance part="T1" gate="G$1" x="68.58" y="203.2" smashed="yes" rot="MR0">
 <attribute name="NAME" x="70.358" y="199.39" size="1.778" layer="95"/>
 <attribute name="VALUE" x="70.104" y="196.342" size="1.778" layer="96"/>
@@ -1615,12 +1615,12 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="LED3" gate="G$1" pin="C"/>
 <pinref part="GND5" gate="1" pin="GND"/>
-<wire x1="297.18" y1="68.58" x2="297.18" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="302.26" y1="68.58" x2="302.26" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="LED2" gate="G$1" pin="C"/>
 <pinref part="GND6" gate="1" pin="GND"/>
-<wire x1="284.48" y1="68.58" x2="284.48" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="287.02" y1="68.58" x2="287.02" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="TP28" gate="G$1" pin="1"/>
@@ -1713,7 +1713,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="+3V4" gate="G$1" pin="+3V3"/>
 <pinref part="R12" gate="G$1" pin="2"/>
-<wire x1="297.18" y1="104.14" x2="297.18" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="302.26" y1="104.14" x2="302.26" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="+3V11" gate="G$1" pin="+3V3"/>
@@ -1777,8 +1777,8 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </segment>
 <segment>
 <pinref part="R11" gate="G$1" pin="2"/>
-<wire x1="284.48" y1="88.9" x2="284.48" y2="106.68" width="0.1524" layer="91"/>
-<label x="284.48" y="91.44" size="1.778" layer="95" rot="R90"/>
+<wire x1="287.02" y1="88.9" x2="287.02" y2="106.68" width="0.1524" layer="91"/>
+<label x="287.02" y="91.44" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="PIO0_8" class="0">
@@ -1966,14 +1966,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <label x="271.78" y="88.9" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="PIO0_9" class="0">
-<segment>
-<pinref part="U3" gate="G$1" pin="MOSI0/CT16B0_MAT1/PIO0_9"/>
-<wire x1="261.62" y1="203.2" x2="292.1" y2="203.2" width="0.1524" layer="91"/>
-<label x="269.24" y="203.2" size="1.778" layer="95"/>
-<pinref part="TP5" gate="G$1" pin="1"/>
-</segment>
-</net>
 <net name="PIO0_10-SWDCLK" class="0">
 <segment>
 <pinref part="J2" gate="A" pin="4"/>
@@ -2045,14 +2037,14 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="LED3" gate="G$1" pin="A"/>
 <pinref part="R12" gate="G$1" pin="1"/>
-<wire x1="297.18" y1="76.2" x2="297.18" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="302.26" y1="76.2" x2="302.26" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="R11" gate="G$1" pin="1"/>
 <pinref part="LED2" gate="G$1" pin="A"/>
-<wire x1="284.48" y1="78.74" x2="284.48" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="287.02" y1="78.74" x2="287.02" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -2127,13 +2119,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <junction x="71.12" y="162.56"/>
 </segment>
 </net>
-<net name="N$11" class="0">
-<segment>
-<pinref part="J2" gate="A" pin="8"/>
-<wire x1="160.02" y1="78.74" x2="165.1" y2="78.74" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="AUX-VIN" class="0">
+<net name="EXT-VIN" class="0">
 <segment>
 <pinref part="TP29" gate="G$1" pin="1"/>
 <wire x1="292.1" y1="137.16" x2="271.78" y2="137.16" width="0.1524" layer="91"/>
@@ -2151,6 +2137,12 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="160.02" y1="81.28" x2="210.82" y2="81.28" width="0.1524" layer="91"/>
 <label x="187.96" y="81.28" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="MOSI0/CT16B0_MAT1/PIO0_9"/>
+<wire x1="261.62" y1="203.2" x2="292.1" y2="203.2" width="0.1524" layer="91"/>
+<label x="269.24" y="203.2" size="1.778" layer="95"/>
+<pinref part="TP5" gate="G$1" pin="1"/>
+</segment>
 </net>
 </nets>
 </sheet>
@@ -2159,40 +2151,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <approved hash="102,1,93.98,88.9,VOUT,+3V3,,,,"/>
 <approved hash="202,1,93.98,81.28,U2,FB,,,,"/>
 <approved hash="104,1,73.66,88.9,U2,VIN,N$10,,,"/>
-<approved hash="113,1,156.168,82.6812,JP2,,,,,"/>
-<approved hash="113,1,297.502,72.39,LED3,,,,,"/>
-<approved hash="113,1,284.802,72.39,LED2,,,,,"/>
-<approved hash="113,1,99.3817,209.55,LED1,,,,,"/>
-<approved hash="113,1,25.1629,83.6888,JP1,,,,,"/>
-<approved hash="113,1,294.344,228.6,JP3,,,,,"/>
-<approved hash="113,1,294.344,226.06,JP4,,,,,"/>
-<approved hash="113,1,294.344,223.52,JP5,,,,,"/>
-<approved hash="113,1,294.344,220.98,JP6,,,,,"/>
-<approved hash="113,1,294.344,218.44,JP7,,,,,"/>
-<approved hash="113,1,294.344,215.9,JP8,,,,,"/>
-<approved hash="113,1,294.344,213.36,JP9,,,,,"/>
-<approved hash="113,1,295.163,210.82,JP10,,,,,"/>
-<approved hash="113,1,295.163,205.74,JP11,,,,,"/>
-<approved hash="113,1,295.163,203.2,JP12,,,,,"/>
-<approved hash="113,1,295.163,200.66,JP13,,,,,"/>
-<approved hash="113,1,295.163,198.12,JP14,,,,,"/>
-<approved hash="113,1,295.163,195.58,JP15,,,,,"/>
-<approved hash="113,1,295.163,193.04,JP16,,,,,"/>
-<approved hash="113,1,295.163,190.5,JP17,,,,,"/>
-<approved hash="113,1,295.163,187.96,JP18,,,,,"/>
-<approved hash="113,1,295.163,182.88,JP19,,,,,"/>
-<approved hash="113,1,295.163,180.34,JP20,,,,,"/>
-<approved hash="113,1,295.163,177.8,JP21,,,,,"/>
-<approved hash="113,1,295.163,175.26,JP22,,,,,"/>
-<approved hash="113,1,295.163,172.72,JP23,,,,,"/>
-<approved hash="113,1,295.163,170.18,JP24,,,,,"/>
-<approved hash="113,1,295.163,167.64,JP25,,,,,"/>
-<approved hash="113,1,295.163,165.1,JP26,,,,,"/>
-<approved hash="113,1,295.163,157.48,JP27,,,,,"/>
-<approved hash="113,1,295.163,154.94,JP28,,,,,"/>
-<approved hash="113,1,295.163,142.24,JP29,,,,,"/>
-<approved hash="113,1,295.163,139.7,JP30,,,,,"/>
-<approved hash="113,1,295.163,137.16,JP31,,,,,"/>
 </errors>
 </schematic>
 </drawing>
