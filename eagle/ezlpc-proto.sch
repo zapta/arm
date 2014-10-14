@@ -118,14 +118,10 @@ by exp-lbrs-filter.ulp</description>
 <packages>
 <package name="SOT23">
 <description>&lt;B&gt;DIODE&lt;/B&gt;</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="-0.1524" x2="-1.4224" y2="0.6604" width="0.1524" layer="21"/>
-<wire x1="-1.4224" y1="0.6604" x2="-0.8636" y2="0.6604" width="0.1524" layer="21"/>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.1524" width="0.1524" layer="21"/>
-<wire x1="0.8636" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="21"/>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.127" layer="21"/>
+<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.127" layer="21"/>
+<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.127" layer="21"/>
+<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.127" layer="21"/>
 <rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
 <rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
 <rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
@@ -178,10 +174,10 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <circle x="1.3" y="0" radius="0.15" width="0.3" layer="31"/>
 <circle x="1.3" y="-1.3" radius="0.15" width="0.3" layer="31"/>
 <circle x="-3" y="2.5" radius="0.15" width="0.3" layer="21"/>
-<wire x1="-2.5" y1="2.5" x2="2.5" y2="2.5" width="0.2032" layer="21"/>
-<wire x1="2.5" y1="2.5" x2="2.5" y2="-2.5" width="0.2032" layer="21"/>
-<wire x1="2.5" y1="-2.5" x2="-2.5" y2="-2.5" width="0.2032" layer="21"/>
-<wire x1="-2.5" y1="-2.5" x2="-2.5" y2="2.5" width="0.2032" layer="21"/>
+<wire x1="-2.5" y1="2.5" x2="2.5" y2="2.5" width="0.127" layer="21"/>
+<wire x1="2.5" y1="2.5" x2="2.5" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="2.5" y1="-2.5" x2="-2.5" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="-2.5" y1="-2.5" x2="-2.5" y2="2.5" width="0.127" layer="21"/>
 <smd name="1" x="-2.55" y="1.75" dx="0.27" dy="0.85" layer="1" rot="R90"/>
 <smd name="2" x="-2.55" y="1.25" dx="0.27" dy="0.85" layer="1" rot="R90"/>
 <smd name="3" x="-2.55" y="0.75" dx="0.27" dy="0.85" layer="1" rot="R90"/>
@@ -224,10 +220,10 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 </package>
 <package name="SOT143B">
 <description>&lt;b&gt;SOT-143&lt;/b&gt;</description>
-<wire x1="-1.448" y1="0.635" x2="1.448" y2="0.635" width="0.1" layer="21"/>
-<wire x1="-1.448" y1="-0.635" x2="1.448" y2="-0.635" width="0.1" layer="21"/>
-<wire x1="-1.448" y1="-0.635" x2="-1.448" y2="0.635" width="0.1" layer="21"/>
-<wire x1="1.448" y1="-0.635" x2="1.448" y2="0.635" width="0.1" layer="21"/>
+<wire x1="-1.448" y1="0.635" x2="1.448" y2="0.635" width="0.127" layer="21"/>
+<wire x1="-1.448" y1="-0.635" x2="1.448" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="-1.448" y1="-0.635" x2="-1.448" y2="0.635" width="0.127" layer="21"/>
+<wire x1="1.448" y1="-0.635" x2="1.448" y2="0.635" width="0.127" layer="21"/>
 <smd name="1" x="-0.75" y="-1.075" dx="1" dy="0.8" layer="1"/>
 <smd name="2" x="0.95" y="-1.075" dx="0.6" dy="0.85" layer="1"/>
 <smd name="3" x="0.95" y="1.075" dx="0.6" dy="0.85" layer="1"/>
@@ -238,11 +234,11 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <package name="PUSH_BUTTON">
 <description>&lt;b&gt;TACT SWITCH&lt;/b&gt; (EARTH TERMINAL)&lt;p&gt;
 Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%20Series.pdf</description>
-<circle x="0" y="0" radius="0.7" width="0.2032" layer="21"/>
-<wire x1="-2.3" y1="-1.6" x2="-2.3" y2="1.6" width="0.2" layer="21"/>
-<wire x1="2.3" y1="-1.6" x2="2.3" y2="1.6" width="0.2" layer="21"/>
-<wire x1="2.3" y1="1.6" x2="-2.3" y2="1.6" width="0.2" layer="21"/>
-<wire x1="2.3" y1="-1.6" x2="-2.3" y2="-1.6" width="0.2" layer="21"/>
+<circle x="0" y="0" radius="0.7" width="0.127" layer="21"/>
+<wire x1="-2.3" y1="-1.6" x2="-2.3" y2="1.6" width="0.127" layer="21"/>
+<wire x1="2.3" y1="-1.6" x2="2.3" y2="1.6" width="0.127" layer="21"/>
+<wire x1="2.3" y1="1.6" x2="-2.3" y2="1.6" width="0.127" layer="21"/>
+<wire x1="2.3" y1="-1.6" x2="-2.3" y2="-1.6" width="0.127" layer="21"/>
 <smd name="A1" x="-2.075" y="1.075" dx="1.05" dy="0.65" layer="1"/>
 <smd name="A2" x="2.075" y="1.075" dx="1.05" dy="0.65" layer="1"/>
 <smd name="B1" x="-2.075" y="-1.075" dx="1.05" dy="0.65" layer="1"/>
@@ -264,10 +260,10 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 </package>
 <package name="SWD-HEADER">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-3.81" y1="1.8" x2="3.81" y2="1.8" width="0.1524" layer="21"/>
-<wire x1="-3.81" y1="-1.8" x2="3.81" y2="-1.8" width="0.1524" layer="21"/>
-<wire x1="-3.81" y1="-1.8" x2="-3.81" y2="1.8" width="0.1524" layer="21"/>
-<wire x1="3.81" y1="-1.8" x2="3.81" y2="1.8" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="1.8" x2="3.81" y2="1.8" width="0.127" layer="21"/>
+<wire x1="-3.81" y1="-1.8" x2="3.81" y2="-1.8" width="0.127" layer="21"/>
+<wire x1="-3.81" y1="-1.8" x2="-3.81" y2="1.8" width="0.127" layer="21"/>
+<wire x1="3.81" y1="-1.8" x2="3.81" y2="1.8" width="0.127" layer="21"/>
 <wire x1="-4.0132" y1="-0.6604" x2="-4.5212" y2="-0.2794" width="0.254" layer="21"/>
 <wire x1="-4.5212" y1="-0.2794" x2="-4.5212" y2="-1.0414" width="0.254" layer="21"/>
 <wire x1="-4.5212" y1="-1.0414" x2="-4.0132" y2="-0.6604" width="0.254" layer="21"/>
@@ -288,17 +284,11 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;&lt;p&gt;
 TSC [Taiwan Semiconductor Company, Ltd]&lt;br&gt;
 Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
-<wire x1="1.422" y1="0.785" x2="1.422" y2="-0.785" width="0.1524" layer="21"/>
-<wire x1="1.422" y1="-0.785" x2="-1.422" y2="-0.785" width="0.1524" layer="51"/>
-<wire x1="-1.422" y1="-0.785" x2="-1.422" y2="0.785" width="0.1524" layer="21"/>
-<wire x1="-1.422" y1="0.785" x2="1.422" y2="0.785" width="0.1524" layer="51"/>
-<wire x1="-0.522" y1="0.785" x2="0.522" y2="0.785" width="0.1524" layer="21"/>
-<wire x1="-0.428" y1="-0.785" x2="-0.522" y2="-0.785" width="0.1524" layer="21"/>
-<wire x1="0.522" y1="-0.785" x2="0.428" y2="-0.785" width="0.1524" layer="21"/>
-<wire x1="-1.328" y1="-0.785" x2="-1.422" y2="-0.785" width="0.1524" layer="21"/>
-<wire x1="1.422" y1="-0.785" x2="1.328" y2="-0.785" width="0.1524" layer="21"/>
-<wire x1="1.328" y1="0.785" x2="1.422" y2="0.785" width="0.1524" layer="21"/>
-<wire x1="-1.422" y1="0.785" x2="-1.328" y2="0.785" width="0.1524" layer="21"/>
+<wire x1="1.422" y1="0.785" x2="1.422" y2="-0.785" width="0.127" layer="21"/>
+<wire x1="1.422" y1="-0.785" x2="-1.422" y2="-0.785" width="0.127" layer="21"/>
+<wire x1="-1.422" y1="-0.785" x2="-1.422" y2="0.785" width="0.127" layer="21"/>
+<wire x1="-1.422" y1="0.785" x2="1.422" y2="0.785" width="0.127" layer="21"/>
+<wire x1="1.328" y1="0.785" x2="1.422" y2="0.785" width="0.127" layer="21"/>
 <rectangle x1="-1.2" y1="-1.5" x2="-0.7" y2="-0.85" layer="51"/>
 <rectangle x1="-0.25" y1="-1.5" x2="0.25" y2="-0.85" layer="51"/>
 <rectangle x1="0.7" y1="-1.5" x2="1.2" y2="-0.85" layer="51"/>
@@ -314,11 +304,11 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </package>
 <package name="USB-MICRO-ZX62RD-AB-5P8">
 <description>http://www.hirose.co.jp/cataloge_hp/e24200011.pdf</description>
-<wire x1="3.75" y1="0.6" x2="3.75" y2="5.6" width="0.1" layer="21"/>
-<wire x1="3.75" y1="5.6" x2="-3.75" y2="5.6" width="0.1" layer="21"/>
-<wire x1="-3.75" y1="5.6" x2="-3.75" y2="0.6" width="0.1" layer="21"/>
-<wire x1="-5" y1="0.6" x2="0" y2="0.6" width="0.1" layer="51"/>
-<wire x1="0" y1="0.6" x2="5" y2="0.6" width="0.1" layer="51"/>
+<wire x1="3.75" y1="0.6" x2="3.75" y2="5.6" width="0.127" layer="21"/>
+<wire x1="3.75" y1="5.6" x2="-3.75" y2="5.6" width="0.127" layer="21"/>
+<wire x1="-3.75" y1="5.6" x2="-3.75" y2="0.6" width="0.127" layer="21"/>
+<wire x1="-5" y1="0.6" x2="0" y2="0.6" width="0.127" layer="51"/>
+<wire x1="0" y1="0.6" x2="5" y2="0.6" width="0.127" layer="51"/>
 <wire x1="0" y1="0.6" x2="-0.3" y2="1.2" width="0.127" layer="51"/>
 <wire x1="-0.3" y1="1.2" x2="0.3" y2="1.2" width="0.127" layer="51"/>
 <wire x1="0.3" y1="1.2" x2="0" y2="0.6" width="0.127" layer="51"/>
@@ -366,20 +356,20 @@ Metric Code Size 1005</description>
 </package>
 <package name="1X01">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="48"/>
-<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="48"/>
-<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="48"/>
-<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="48"/>
-<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="48"/>
-<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="48"/>
-<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="48"/>
-<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="48"/>
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.127" layer="48"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.127" layer="48"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.127" layer="48"/>
+<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.127" layer="48"/>
+<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.127" layer="48"/>
+<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.127" layer="48"/>
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.127" layer="48"/>
+<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.127" layer="48"/>
 <rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
 <pad name="1" x="0" y="0" drill="1.016" shape="octagon"/>
 <text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
 </package>
-<package name="CAPACITOR-0603K">
+<package name="C0603K">
 <description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0603 reflow solder&lt;/b&gt;&lt;p&gt;
 Metric Code Size 1608</description>
 <wire x1="-0.725" y1="0.35" x2="0.725" y2="0.35" width="0.1016" layer="51"/>
@@ -393,10 +383,10 @@ Metric Code Size 1608</description>
 </package>
 <package name="SOT23-BEC">
 <description>TO-236 ITT Intermetall</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.127" layer="51"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.127" layer="51"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.127" layer="51"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.127" layer="51"/>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.127" layer="21"/>
+<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.127" layer="21"/>
+<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.127" layer="21"/>
+<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.127" layer="21"/>
 <rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
 <rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
 <rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
@@ -407,14 +397,14 @@ Metric Code Size 1608</description>
 <text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="1X01-SQUARE">
-<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="48"/>
-<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="48"/>
-<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="48"/>
-<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="48"/>
-<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="48"/>
-<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="48"/>
-<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="48"/>
-<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="48"/>
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.127" layer="48"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.127" layer="48"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.127" layer="48"/>
+<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.127" layer="48"/>
+<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.127" layer="48"/>
+<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.127" layer="48"/>
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.127" layer="48"/>
+<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.127" layer="48"/>
 <rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
 <pad name="1" x="0" y="0" drill="1.016" shape="square"/>
 <text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
@@ -1176,7 +1166,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <gate name="G$1" symbol="CAPACITOR" x="0" y="0"/>
 </gates>
 <devices>
-<device name="C0603K" package="CAPACITOR-0603K">
+<device name="C0603K" package="C0603K">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
