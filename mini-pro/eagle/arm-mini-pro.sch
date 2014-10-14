@@ -112,8 +112,8 @@
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
-<library name="ezlpc-proto">
-<description>Generated from &lt;b&gt;ezlpc-proto.sch&lt;/b&gt;&lt;p&gt;
+<library name="arm-mini-pro">
+<description>Generated from &lt;b&gt;arm-mini-pro.sch&lt;/b&gt;&lt;p&gt;
 by exp-lbrs-filter.ulp</description>
 <packages>
 <package name="SOT23">
@@ -1212,101 +1212,101 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </class>
 </classes>
 <parts>
-<part name="U$3" library="ezlpc-proto" deviceset="NC" device=""/>
-<part name="U$20" library="ezlpc-proto" deviceset="DOCFIELD" device=""/>
-<part name="GND22" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="J1" library="ezlpc-proto" deviceset="USB" device="" value="MICRO USB"/>
-<part name="S1" library="ezlpc-proto" deviceset="PUSH_BUTTON" device=""/>
-<part name="U2" library="ezlpc-proto" deviceset="TC1015" device="" value="MIC5225-3.3v"/>
-<part name="GND3" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="C2" library="ezlpc-proto" deviceset="CAPACITOR" device="C0603K" value="2u2"/>
-<part name="GND18" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="C1" library="ezlpc-proto" deviceset="CAPACITOR" device="C0603K" value="2u2"/>
-<part name="GND28" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="U3" library="ezlpc-proto" deviceset="LPC11U35FHN33/501" device="" value="LPC11U35FHI33/501"/>
-<part name="GND2" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="Q1" library="ezlpc-proto" deviceset="CRYSTAL" device="CTS406" value="12Mhz"/>
-<part name="C3" library="ezlpc-proto" deviceset="C-US" device="C0402K" value="18pF"/>
-<part name="C4" library="ezlpc-proto" deviceset="C-US" device="C0402K" value="18pF"/>
-<part name="GND4" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="C6" library="ezlpc-proto" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
-<part name="GND10" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="C5" library="ezlpc-proto" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
-<part name="GND11" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="+3V1" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="+3V2" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="U1" library="ezlpc-proto" deviceset="PRTR5V0U2X" device=""/>
-<part name="GND1" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="GND8" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="R1" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="1k5"/>
-<part name="P+4" library="ezlpc-proto" deviceset="USB-5V" device=""/>
-<part name="+3V5" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="J2" library="ezlpc-proto" deviceset="SWD-HEADER" device="" value="SWD HEADER"/>
-<part name="+3V6" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="GND12" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="R8" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="10K"/>
-<part name="R9" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="10K"/>
-<part name="GND13" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="+3V7" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="R10" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="10K"/>
-<part name="+3V8" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="S2" library="ezlpc-proto" deviceset="PUSH_BUTTON" device=""/>
-<part name="GND14" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="R4" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="1K5"/>
-<part name="+3V9" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="R2" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="10K"/>
-<part name="+3V10" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="R3" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="1K5"/>
-<part name="LED3" library="ezlpc-proto" deviceset="LED" device="CHIP-LED0603" value="Blue"/>
-<part name="R12" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="1K5"/>
-<part name="GND5" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="R11" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="1K5"/>
-<part name="R7" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="1K5"/>
-<part name="LED2" library="ezlpc-proto" deviceset="LED" device="CHIP-LED0603" value="Red"/>
-<part name="LED1" library="ezlpc-proto" deviceset="LED" device="CHIP-LED0603" value="Green"/>
-<part name="GND6" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="+3V4" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="+3V11" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="R6" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="33R"/>
-<part name="R5" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="33R"/>
-<part name="U4" library="ezlpc-proto" deviceset="BAS40-05" device=""/>
-<part name="P+1" library="ezlpc-proto" deviceset="USB-5V" device=""/>
-<part name="TP20" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP17" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP22" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP25" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP23" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP26" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP2" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP3" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP4" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP5" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP24" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP7" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP8" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP9" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP10" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP11" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP12" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP15" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP16" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP18" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP21" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP1" library="ezlpc-proto" deviceset="PINHD-1X1" device="SQUARE" value="HDR1"/>
-<part name="TP6" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP13" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP14" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP19" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP30" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP27" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="TP28" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
-<part name="GND16" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="+3V3" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="P+2" library="ezlpc-proto" deviceset="USB-5V" device=""/>
-<part name="U$1" library="ezlpc-proto" deviceset="NC" device=""/>
-<part name="U$2" library="ezlpc-proto" deviceset="NC" device=""/>
-<part name="T1" library="ezlpc-proto" deviceset="*-PNP-" device="SOT23-BEC" technology="BC857B" value="MMBT3906"/>
-<part name="TP29" library="ezlpc-proto" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="U$3" library="arm-mini-pro" deviceset="NC" device=""/>
+<part name="U$20" library="arm-mini-pro" deviceset="DOCFIELD" device=""/>
+<part name="GND22" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="J1" library="arm-mini-pro" deviceset="USB" device="" value="MICRO USB"/>
+<part name="S1" library="arm-mini-pro" deviceset="PUSH_BUTTON" device=""/>
+<part name="U2" library="arm-mini-pro" deviceset="TC1015" device="" value="MIC5225-3.3v"/>
+<part name="GND3" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="C2" library="arm-mini-pro" deviceset="CAPACITOR" device="C0603K" value="2u2"/>
+<part name="GND18" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="C1" library="arm-mini-pro" deviceset="CAPACITOR" device="C0603K" value="2u2"/>
+<part name="GND28" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="U3" library="arm-mini-pro" deviceset="LPC11U35FHN33/501" device="" value="LPC11U35FHI33/501"/>
+<part name="GND2" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="Q1" library="arm-mini-pro" deviceset="CRYSTAL" device="CTS406" value="12Mhz"/>
+<part name="C3" library="arm-mini-pro" deviceset="C-US" device="C0402K" value="18pF"/>
+<part name="C4" library="arm-mini-pro" deviceset="C-US" device="C0402K" value="18pF"/>
+<part name="GND4" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="C6" library="arm-mini-pro" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
+<part name="GND10" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="C5" library="arm-mini-pro" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
+<part name="GND11" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="+3V1" library="arm-mini-pro" deviceset="+3V3" device=""/>
+<part name="+3V2" library="arm-mini-pro" deviceset="+3V3" device=""/>
+<part name="U1" library="arm-mini-pro" deviceset="PRTR5V0U2X" device=""/>
+<part name="GND1" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="GND8" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="R1" library="arm-mini-pro" deviceset="R-US_" device="R0402" value="1k5"/>
+<part name="P+4" library="arm-mini-pro" deviceset="USB-5V" device=""/>
+<part name="+3V5" library="arm-mini-pro" deviceset="+3V3" device=""/>
+<part name="J2" library="arm-mini-pro" deviceset="SWD-HEADER" device="" value="SWD HEADER"/>
+<part name="+3V6" library="arm-mini-pro" deviceset="+3V3" device=""/>
+<part name="GND12" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="R8" library="arm-mini-pro" deviceset="R-US_" device="R0402" value="10K"/>
+<part name="R9" library="arm-mini-pro" deviceset="R-US_" device="R0402" value="10K"/>
+<part name="GND13" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="+3V7" library="arm-mini-pro" deviceset="+3V3" device=""/>
+<part name="R10" library="arm-mini-pro" deviceset="R-US_" device="R0402" value="10K"/>
+<part name="+3V8" library="arm-mini-pro" deviceset="+3V3" device=""/>
+<part name="S2" library="arm-mini-pro" deviceset="PUSH_BUTTON" device=""/>
+<part name="GND14" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="R4" library="arm-mini-pro" deviceset="R-US_" device="R0402" value="1K5"/>
+<part name="+3V9" library="arm-mini-pro" deviceset="+3V3" device=""/>
+<part name="R2" library="arm-mini-pro" deviceset="R-US_" device="R0402" value="10K"/>
+<part name="+3V10" library="arm-mini-pro" deviceset="+3V3" device=""/>
+<part name="R3" library="arm-mini-pro" deviceset="R-US_" device="R0402" value="1K5"/>
+<part name="LED3" library="arm-mini-pro" deviceset="LED" device="CHIP-LED0603" value="Blue"/>
+<part name="R12" library="arm-mini-pro" deviceset="R-US_" device="R0402" value="1K5"/>
+<part name="GND5" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="R11" library="arm-mini-pro" deviceset="R-US_" device="R0402" value="1K5"/>
+<part name="R7" library="arm-mini-pro" deviceset="R-US_" device="R0402" value="1K5"/>
+<part name="LED2" library="arm-mini-pro" deviceset="LED" device="CHIP-LED0603" value="Red"/>
+<part name="LED1" library="arm-mini-pro" deviceset="LED" device="CHIP-LED0603" value="Green"/>
+<part name="GND6" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="+3V4" library="arm-mini-pro" deviceset="+3V3" device=""/>
+<part name="+3V11" library="arm-mini-pro" deviceset="+3V3" device=""/>
+<part name="R6" library="arm-mini-pro" deviceset="R-US_" device="R0402" value="33R"/>
+<part name="R5" library="arm-mini-pro" deviceset="R-US_" device="R0402" value="33R"/>
+<part name="U4" library="arm-mini-pro" deviceset="BAS40-05" device=""/>
+<part name="P+1" library="arm-mini-pro" deviceset="USB-5V" device=""/>
+<part name="TP20" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP17" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP22" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP25" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP23" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP26" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP2" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP3" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP4" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP5" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP24" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP7" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP8" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP9" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP10" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP11" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP12" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP15" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP16" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP18" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP21" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP1" library="arm-mini-pro" deviceset="PINHD-1X1" device="SQUARE" value="HDR1"/>
+<part name="TP6" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP13" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP14" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP19" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP30" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP27" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="TP28" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
+<part name="GND16" library="arm-mini-pro" deviceset="GND" device=""/>
+<part name="+3V3" library="arm-mini-pro" deviceset="+3V3" device=""/>
+<part name="P+2" library="arm-mini-pro" deviceset="USB-5V" device=""/>
+<part name="U$1" library="arm-mini-pro" deviceset="NC" device=""/>
+<part name="U$2" library="arm-mini-pro" deviceset="NC" device=""/>
+<part name="T1" library="arm-mini-pro" deviceset="*-PNP-" device="SOT23-BEC" technology="BC857B" value="MMBT3906"/>
+<part name="TP29" library="arm-mini-pro" deviceset="PINHD-1X1" device="" value="HDR1"/>
 </parts>
 <sheets>
 <sheet>
