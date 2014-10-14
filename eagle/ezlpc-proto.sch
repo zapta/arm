@@ -1311,7 +1311,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <sheets>
 <sheet>
 <plain>
-<text x="243.84" y="27.94" size="2.54" layer="97" font="vector">EZLPC PROTOTYPE BOARD</text>
+<text x="243.84" y="27.94" size="2.54" layer="97" font="vector">ARM MINI PRO</text>
 <wire x1="0" y1="259.08" x2="340.36" y2="259.08" width="0.1524" layer="94"/>
 <wire x1="340.36" y1="259.08" x2="340.36" y2="0" width="0.1524" layer="94"/>
 <wire x1="340.36" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
@@ -1338,7 +1338,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <vertex x="109.22" y="238.76"/>
 </polygon>
 <text x="66.04" y="124.46" size="2.54" layer="97">USB</text>
-<text x="147.32" y="45.72" size="2.54" layer="97">SWD (DEBUGGING)</text>
+<text x="144.78" y="45.72" size="2.54" layer="97">SWD (DEBUGGING)</text>
 <polygon width="0.1524" layer="98">
 <vertex x="17.78" y="96.52"/>
 <vertex x="53.34" y="96.52"/>
@@ -1373,6 +1373,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <text x="281.432" y="75.438" size="1.778" layer="94">LED</text>
 <text x="296.672" y="75.438" size="1.778" layer="94">PWR</text>
 <text x="91.44" y="211.074" size="1.778" layer="94">USB</text>
+<text x="251.46" y="45.72" size="2.54" layer="97">STUFF</text>
 </plain>
 <instances>
 <instance part="U$3" gate="G$1" x="48.26" y="152.4" rot="R180"/>
