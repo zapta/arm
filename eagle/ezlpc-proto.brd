@@ -133,7 +133,7 @@
 <text x="26.0096" y="16.9418" size="0.762" layer="21" font="vector" ratio="10">20</text>
 <text x="13.3096" y="16.9418" size="0.762" layer="21" font="vector" ratio="10">25</text>
 <text x="0.635" y="16.9418" size="0.762" layer="21" font="vector" ratio="10">30</text>
-<text x="33.7566" y="16.3068" size="0.762" layer="21" font="vector" ratio="10">SWD</text>
+<text x="30.4546" y="16.5608" size="0.762" layer="21" font="vector" ratio="10">SWD</text>
 </plain>
 <libraries>
 <library name="ezlpc-proto">
@@ -288,25 +288,25 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 </package>
 <package name="SWD-HEADER">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-1.27" y1="2.54" x2="6.35" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="-1.27" x2="6.35" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="-1.27" x2="-1.27" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="6.35" y1="-1.27" x2="6.35" y2="2.54" width="0.1524" layer="21"/>
-<pad name="1" x="0" y="0" drill="0.508" shape="square"/>
-<pad name="2" x="0" y="1.27" drill="0.508"/>
-<pad name="3" x="1.27" y="0" drill="0.508"/>
-<pad name="4" x="1.27" y="1.27" drill="0.508"/>
-<pad name="5" x="2.54" y="0" drill="0.508"/>
-<pad name="6" x="2.54" y="1.27" drill="0.508"/>
-<pad name="7" x="3.81" y="0" drill="0.508"/>
-<pad name="8" x="3.81" y="1.27" drill="0.508"/>
-<pad name="9" x="5.08" y="0" drill="0.508"/>
-<pad name="10" x="5.08" y="1.27" drill="0.508"/>
+<wire x1="-3.81" y1="1.8" x2="3.81" y2="1.8" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="-1.8" x2="3.81" y2="-1.8" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="-1.8" x2="-3.81" y2="1.8" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="-1.8" x2="3.81" y2="1.8" width="0.1524" layer="21"/>
+<wire x1="-4.0132" y1="-0.6604" x2="-4.5212" y2="-0.2794" width="0.254" layer="21"/>
+<wire x1="-4.5212" y1="-0.2794" x2="-4.5212" y2="-1.0414" width="0.254" layer="21"/>
+<wire x1="-4.5212" y1="-1.0414" x2="-4.0132" y2="-0.6604" width="0.254" layer="21"/>
+<pad name="1" x="-2.54" y="-0.635" drill="0.508" shape="square"/>
+<pad name="2" x="-2.54" y="0.635" drill="0.508"/>
+<pad name="3" x="-1.27" y="-0.635" drill="0.508"/>
+<pad name="4" x="-1.27" y="0.635" drill="0.508"/>
+<pad name="5" x="0" y="-0.635" drill="0.508"/>
+<pad name="6" x="0" y="0.635" drill="0.508"/>
+<pad name="7" x="1.27" y="-0.635" drill="0.508"/>
+<pad name="8" x="1.27" y="0.635" drill="0.508"/>
+<pad name="9" x="2.54" y="-0.635" drill="0.508"/>
+<pad name="10" x="2.54" y="0.635" drill="0.508"/>
 <text x="-1.27" y="3.175" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-1.27" y="-4.445" size="1.27" layer="27">&gt;VALUE</text>
-<wire x1="-0.889" y1="-1.397" x2="-1.27" y2="-1.905" width="0.254" layer="21"/>
-<wire x1="-1.27" y1="-1.905" x2="-0.508" y2="-1.905" width="0.254" layer="21"/>
-<wire x1="-0.508" y1="-1.905" x2="-0.889" y2="-1.397" width="0.254" layer="21"/>
 </package>
 <package name="SOT25">
 <description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;&lt;p&gt;
@@ -361,19 +361,19 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <smd name="3" x="0" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="4" x="-0.65" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="5" x="-1.3" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<text x="-12.7" y="5.08" size="1.27" layer="27">&gt;VALUE</text>
-<text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
-<smd name="D1" x="2.43451875" y="5.7488125" dx="1.4224" dy="1.016" layer="1" roundness="15" rot="R180"/>
-<smd name="D2" x="2.460609375" y="5.748815625" dx="1.5748" dy="1.016" layer="16" roundness="15" rot="R180" stop="no" thermals="no" cream="no"/>
-<hole x="-2.225" y="5.75" drill="0.65"/>
+<smd name="A1" x="-4.175" y="2.625" dx="1.778" dy="1.778" layer="1" roundness="15"/>
+<smd name="A2" x="-4.175" y="2.625" dx="1.8796" dy="1.8796" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
+<smd name="B1" x="4.175" y="2.625" dx="1.778" dy="1.778" layer="1" roundness="15"/>
+<smd name="B2" x="4.175" y="2.625" dx="1.8796" dy="1.8796" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
 <smd name="C1" x="-2.430825" y="5.756875" dx="1.4224" dy="1.016" layer="1" roundness="15"/>
 <smd name="C2" x="-2.456915625" y="5.756871875" dx="1.5748" dy="1.016" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
+<smd name="D1" x="2.43451875" y="5.7488125" dx="1.4224" dy="1.016" layer="1" roundness="15" rot="R180"/>
+<smd name="D2" x="2.460609375" y="5.748815625" dx="1.5748" dy="1.016" layer="16" roundness="15" rot="R180" stop="no" thermals="no" cream="no"/>
+<text x="-12.7" y="5.08" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<hole x="-2.225" y="5.75" drill="0.65"/>
 <hole x="2.225" y="5.75" drill="0.65"/>
-<smd name="A1" x="-4.175" y="2.625" dx="1.778" dy="1.778" layer="1" roundness="15"/>
 <hole x="4.175" y="2.625" drill="1.016"/>
-<smd name="A2" x="-4.175" y="2.625" dx="1.8796" dy="1.8796" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
-<smd name="B2" x="4.175" y="2.625" dx="1.8796" dy="1.8796" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
-<smd name="B1" x="4.175" y="2.625" dx="1.778" dy="1.778" layer="1" roundness="15"/>
 <hole x="-4.175" y="2.625" drill="1.016"/>
 </package>
 <package name="C0402K">
@@ -639,8 +639,8 @@ design rules under a new name.</description>
 <element name="J1" library="ezlpc-proto" package="USB-MICRO-ZX62RD-AB-5P8" value="MICRO USB" x="-0.635" y="8.89" smashed="yes" rot="R270">
 <attribute name="VALUE" x="4.445" y="21.59" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="S1" library="ezlpc-proto" package="PUSH_BUTTON" value="PUSH_BUTTON" x="34.798" y="5.461" smashed="yes" rot="R180">
-<attribute name="VALUE" x="29.718" y="8.001" size="1.27" layer="27" rot="R270"/>
+<element name="S1" library="ezlpc-proto" package="PUSH_BUTTON" value="PUSH_BUTTON" x="34.925" y="5.461" smashed="yes" rot="R180">
+<attribute name="VALUE" x="29.845" y="8.001" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="U2" library="ezlpc-proto" package="SOT25" value="MIC5225-3.3v" x="11.049" y="14.605" smashed="yes" rot="R270">
 <attribute name="NAME" x="9.525" y="16.383" size="0.8128" layer="25" font="vector" ratio="10"/>
@@ -663,7 +663,7 @@ design rules under a new name.</description>
 <attribute name="MPN" value="" x="50.2158" y="-6.3754" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="" x="50.2158" y="-6.3754" size="1.778" layer="27" display="off"/>
 <attribute name="OC_FARNELL" value="unknown" x="50.2158" y="-6.3754" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="27.6098" y="12.9286" size="0.8128" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="28.0924" y="15.3924" size="0.8128" layer="25" font="vector" ratio="10"/>
 <attribute name="VALUE" x="23.5458" y="11.4046" size="1.27" layer="27"/>
 </element>
 <element name="C3" library="ezlpc-proto" package="C0402K" value="18pF" x="25.8318" y="13.3096" smashed="yes" rot="R180">
@@ -671,11 +671,11 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="26.3318" y="14.7596" size="1.016" layer="27" rot="R180"/>
 </element>
 <element name="C4" library="ezlpc-proto" package="C0402K" value="18pF" x="23.7998" y="15.0876" smashed="yes" rot="R90">
-<attribute name="NAME" x="22.4108" y="16.0206" size="0.8128" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="21.8774" y="15.1062" size="0.8128" layer="25" font="vector" ratio="10"/>
 <attribute name="VALUE" x="25.2498" y="14.5876" size="1.016" layer="27" rot="R90"/>
 </element>
 <element name="C6" library="ezlpc-proto" package="CAPACITOR-0603K" value="0.1uF" x="29.0068" y="6.9596" smashed="yes" rot="R270">
-<attribute name="NAME" x="26.9368" y="6.5174" size="0.8128" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="28.2806" y="6.1596" size="0.8128" layer="25" font="vector" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="27.3568" y="7.7596" size="1.016" layer="27" rot="R270"/>
 </element>
 <element name="C5" library="ezlpc-proto" package="CAPACITOR-0603K" value="0.1uF" x="19.6088" y="12.5476" smashed="yes" rot="R270">
@@ -690,11 +690,11 @@ design rules under a new name.</description>
 <attribute name="NAME" x="11.8618" y="7.8232" size="0.8128" layer="25" font="vector" ratio="10"/>
 <attribute name="VALUE" x="9.271" y="8.636" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="J2" library="ezlpc-proto" package="SWD-HEADER" value="" x="36.195" y="14.859" smashed="yes" rot="R180">
-<attribute name="VALUE" x="37.465" y="19.304" size="1.27" layer="27" rot="R180"/>
+<element name="J2" library="ezlpc-proto" package="SWD-HEADER" value="" x="33.8836" y="14.6304" smashed="yes">
+<attribute name="VALUE" x="32.6136" y="10.1854" size="1.27" layer="27"/>
 </element>
 <element name="R8" library="ezlpc-proto" package="R0402" value="10K" x="26.3652" y="4.2164" smashed="yes">
-<attribute name="NAME" x="25.7302" y="4.9784" size="0.8128" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="27.6098" y="3.7846" size="0.8128" layer="25" font="vector" ratio="10"/>
 <attribute name="VALUE" x="25.7302" y="2.3114" size="1.27" layer="27"/>
 </element>
 <element name="R9" library="ezlpc-proto" package="R0402" value="10K" x="14.4526" y="14.3764" smashed="yes" rot="R90">
@@ -702,11 +702,11 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="16.3576" y="13.7414" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="R10" library="ezlpc-proto" package="R0402" value="10K" x="27.7876" y="12.5222" smashed="yes" rot="R90">
-<attribute name="NAME" x="26.8478" y="10.668" size="0.8128" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="26.4414" y="10.6172" size="0.8128" layer="25" font="vector" ratio="10"/>
 <attribute name="VALUE" x="29.6926" y="11.8872" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="S2" library="ezlpc-proto" package="PUSH_BUTTON" value="PUSH_BUTTON" x="34.798" y="9.525" smashed="yes" rot="R180">
-<attribute name="VALUE" x="29.718" y="12.065" size="1.27" layer="27" rot="R270"/>
+<element name="S2" library="ezlpc-proto" package="PUSH_BUTTON" value="PUSH_BUTTON" x="34.925" y="9.525" smashed="yes" rot="R180">
+<attribute name="VALUE" x="29.845" y="12.065" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="R4" library="ezlpc-proto" package="R0402" value="1K5" x="13.335" y="10.414" smashed="yes" rot="R90">
 <attribute name="NAME" x="13.9954" y="9.3218" size="0.8128" layer="25" font="vector" ratio="10"/>
@@ -742,15 +742,15 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="8.509" y="6.985" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="R6" library="ezlpc-proto" package="R0402" value="33R" x="16.2052" y="6.8326" smashed="yes">
-<attribute name="NAME" x="17.4752" y="6.5786" size="0.8128" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="16.9672" y="5.461" size="0.8128" layer="25" font="vector" ratio="10"/>
 <attribute name="VALUE" x="15.5702" y="4.9276" size="1.27" layer="27"/>
 </element>
 <element name="R5" library="ezlpc-proto" package="R0402" value="33R" x="15.1638" y="8.001" smashed="yes">
-<attribute name="NAME" x="14.7828" y="6.731" size="0.8128" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="15.7988" y="8.5852" size="0.8128" layer="25" font="vector" ratio="10"/>
 <attribute name="VALUE" x="14.5288" y="6.096" size="1.27" layer="27"/>
 </element>
 <element name="U4" library="ezlpc-proto" package="SOT23" value="BAS40-05" x="5.207" y="14.986" smashed="yes" rot="R270">
-<attribute name="NAME" x="2.286" y="14.732" size="0.8128" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="1.9304" y="15.0368" size="0.8128" layer="25" font="vector" ratio="10"/>
 <attribute name="VALUE" x="2.032" y="16.891" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="TP20" library="ezlpc-proto" package="1X01" value="" x="26.67" y="19.05" smashed="yes">
@@ -958,18 +958,18 @@ design rules under a new name.</description>
 <wire x1="7.8994" y1="13.208" x2="7.8994" y2="12.3952" width="0.6096" layer="16"/>
 <wire x1="19.2278" y1="10.6934" x2="22.4028" y2="10.6934" width="0.8128" layer="16"/>
 <wire x1="22.4028" y1="13.208" x2="24.3332" y2="13.208" width="0.8128" layer="16"/>
-<wire x1="33.655" y1="14.859" x2="34.925" y2="14.859" width="0" layer="19" extent="1-1"/>
-<wire x1="32.385" y1="14.859" x2="33.655" y2="14.859" width="0" layer="19" extent="1-1"/>
-<wire x1="31.115" y1="14.859" x2="32.385" y2="14.859" width="0" layer="19" extent="1-1"/>
-<wire x1="31.4332" y1="9.652" x2="31.115" y2="14.859" width="0" layer="19" extent="1-1"/>
+<wire x1="33.8836" y1="13.9954" x2="32.6136" y2="13.9954" width="0" layer="19" extent="1-1"/>
+<wire x1="35.1536" y1="13.9954" x2="33.8836" y2="13.9954" width="0" layer="19" extent="1-1"/>
+<wire x1="36.4236" y1="13.9954" x2="35.1536" y2="13.9954" width="0" layer="19" extent="1-1"/>
+<wire x1="31.4332" y1="9.652" x2="36.4236" y2="13.9954" width="0" layer="19" extent="1-1"/>
 <wire x1="29.0068" y1="6.0846" x2="31.4332" y2="9.652" width="0" layer="19" extent="1-1"/>
 <wire x1="19.6088" y1="10.668" x2="19.2278" y2="10.6934" width="0" layer="19" extent="1-16"/>
 <wire x1="22.987" y1="13.1826" x2="22.4028" y2="13.208" width="0" layer="19" extent="1-16"/>
 <wire x1="22.9108" y1="7.7216" x2="23.5608" y2="7.8486" width="0" layer="19" extent="1-16"/>
 <wire x1="14.4526" y1="13.7264" x2="10.174" y2="12.319" width="0" layer="19" extent="1-1"/>
 <wire x1="15.6838" y1="16.256" x2="14.4526" y2="13.7264" width="0" layer="19" extent="1-1"/>
-<wire x1="36.873" y1="8.45" x2="31.4332" y2="9.652" width="0" layer="19" extent="1-1"/>
-<wire x1="36.873" y1="4.386" x2="36.873" y2="8.45" width="0" layer="19" extent="1-1"/>
+<wire x1="37" y1="8.45" x2="31.4332" y2="9.652" width="0" layer="19" extent="1-1"/>
+<wire x1="37" y1="4.386" x2="37" y2="8.45" width="0" layer="19" extent="1-1"/>
 <wire x1="7.874" y1="12.446" x2="7.874" y2="10.7188" width="0.6096" layer="16"/>
 <wire x1="7.874" y1="10.7188" x2="7.874" y2="10.668" width="0.6096" layer="16"/>
 <wire x1="7.8994" y1="10.668" x2="7.8994" y2="10.7188" width="0.6096" layer="16"/>
@@ -1028,13 +1028,13 @@ design rules under a new name.</description>
 <via x="22.1488" y="14.2748" extent="1-16" drill="0.508"/>
 <via x="26.5938" y="7.9756" extent="1-16" drill="0.3302"/>
 <wire x1="29.0068" y1="7.9716" x2="29.0068" y2="7.8346" width="0.254" layer="1"/>
-<wire x1="26.5938" y1="7.9756" x2="25.5524" y2="7.9756" width="0.508" layer="16"/>
+<wire x1="26.5938" y1="7.9756" x2="26.0604" y2="7.9756" width="0.6096" layer="16"/>
 <wire x1="29.0068" y1="7.9716" x2="26.5978" y2="7.9716" width="0.4064" layer="1"/>
 <wire x1="26.5978" y1="7.9716" x2="26.5938" y2="7.9756" width="0.6096" layer="1"/>
 <wire x1="25.4608" y1="7.9716" x2="26.5898" y2="7.9716" width="0.254" layer="1"/>
 <wire x1="26.5898" y1="7.9716" x2="26.5938" y2="7.9756" width="0.254" layer="1"/>
 <wire x1="22.1488" y1="12.4206" x2="22.1488" y2="14.2748" width="0.508" layer="1"/>
-<wire x1="25.5524" y1="7.9756" x2="25.5524" y2="14.2748" width="0.6096" layer="16"/>
+<wire x1="26.0604" y1="7.9756" x2="26.0604" y2="14.2748" width="0.6096" layer="16"/>
 <wire x1="22.1488" y1="14.2748" x2="19.6228" y2="14.2748" width="0.6096" layer="1"/>
 <wire x1="19.6228" y1="14.2748" x2="19.6088" y2="13.4226" width="0.6096" layer="1"/>
 <wire x1="22.1488" y1="10.2836" x2="22.1488" y2="12.4206" width="0.2032" layer="1"/>
@@ -1042,14 +1042,14 @@ design rules under a new name.</description>
 <wire x1="10.917" y1="16.51" x2="9.525" y2="16.51" width="0.6096" layer="1"/>
 <wire x1="9.525" y1="16.51" x2="8.89" y2="17.145" width="0.6096" layer="1"/>
 <wire x1="8.89" y1="17.145" x2="8.89" y2="19.05" width="0.6096" layer="1"/>
-<wire x1="22.1488" y1="14.2748" x2="25.5524" y2="14.2748" width="0.6096" layer="16"/>
+<wire x1="22.1488" y1="14.2748" x2="26.0604" y2="14.2748" width="0.6096" layer="16"/>
 <wire x1="19.6088" y1="13.4226" x2="18.3756" y2="13.4226" width="0.6096" layer="1"/>
 <wire x1="18.3756" y1="13.4226" x2="17.653" y2="12.7" width="0.6096" layer="1"/>
 <wire x1="11.924" y1="12.319" x2="12.954" y2="12.319" width="0.6096" layer="1"/>
 <wire x1="12.954" y1="12.319" x2="13.335" y2="12.7" width="0.6096" layer="1"/>
 <wire x1="13.335" y1="12.7" x2="17.653" y2="12.7" width="0.6096" layer="1"/>
-<wire x1="27.7876" y1="13.1722" x2="36.195" y2="14.859" width="0" layer="19" extent="1-1"/>
-<wire x1="25.5524" y1="14.2748" x2="27.7876" y2="13.1722" width="0" layer="19" extent="1-16"/>
+<wire x1="27.7876" y1="13.1722" x2="31.3436" y2="13.9954" width="0" layer="19" extent="1-1"/>
+<wire x1="26.0604" y1="14.2748" x2="27.7876" y2="13.1722" width="0" layer="19" extent="1-16"/>
 <wire x1="16.256" y1="13.7264" x2="17.653" y2="12.7" width="0" layer="19" extent="1-1"/>
 <wire x1="27.0152" y1="4.2164" x2="26.5898" y2="7.9716" width="0" layer="19" extent="1-1"/>
 <wire x1="11.557" y1="6.2634" x2="11.303" y2="12.206" width="0" layer="19" extent="1-1"/>
@@ -1207,10 +1207,10 @@ design rules under a new name.</description>
 <contactref element="R10" pad="1"/>
 <contactref element="S2" pad="B2"/>
 <contactref element="TP20" pad="1"/>
-<wire x1="32.723" y1="10.575" x2="31.115" y2="13.589" width="0" layer="19" extent="1-1"/>
-<wire x1="27.7876" y1="11.8722" x2="31.115" y2="13.589" width="0" layer="19" extent="1-1"/>
+<wire x1="32.85" y1="10.575" x2="36.4236" y2="15.2654" width="0" layer="19" extent="1-1"/>
+<wire x1="27.7876" y1="11.8722" x2="36.4236" y2="15.2654" width="0" layer="19" extent="1-1"/>
 <wire x1="24.1608" y1="10.2716" x2="27.7876" y2="11.8722" width="0" layer="19" extent="1-1"/>
-<wire x1="26.67" y1="19.05" x2="31.115" y2="13.589" width="0" layer="19" extent="1-1"/>
+<wire x1="26.67" y1="19.05" x2="36.4236" y2="15.2654" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PIO0_9">
 <contactref element="U3" pad="18"/>
@@ -1222,7 +1222,7 @@ design rules under a new name.</description>
 <contactref element="R9" pad="2"/>
 <contactref element="U3" pad="19"/>
 <contactref element="TP24" pad="1"/>
-<wire x1="22.1608" y1="5.1716" x2="34.925" y2="13.589" width="0" layer="19" extent="1-1"/>
+<wire x1="22.1608" y1="5.1716" x2="32.6136" y2="15.2654" width="0" layer="19" extent="1-1"/>
 <wire x1="14.4526" y1="15.0264" x2="22.1608" y2="5.1716" width="0" layer="19" extent="1-1"/>
 <wire x1="16.51" y1="19.05" x2="14.4526" y2="15.0264" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -1231,7 +1231,7 @@ design rules under a new name.</description>
 <contactref element="R8" pad="1"/>
 <contactref element="U3" pad="25"/>
 <contactref element="TP11" pad="1"/>
-<wire x1="25.4608" y1="5.9716" x2="36.195" y2="13.589" width="0" layer="19" extent="1-1"/>
+<wire x1="25.4608" y1="5.9716" x2="31.3436" y2="15.2654" width="0" layer="19" extent="1-1"/>
 <wire x1="25.7152" y1="4.2164" x2="25.4608" y2="5.9716" width="0" layer="19" extent="1-1"/>
 <wire x1="26.67" y1="1.27" x2="25.7152" y2="4.2164" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -1239,8 +1239,8 @@ design rules under a new name.</description>
 <contactref element="S1" pad="B2"/>
 <contactref element="U3" pad="3"/>
 <contactref element="TP17" pad="1"/>
-<wire x1="32.723" y1="6.511" x2="34.29" y2="19.05" width="0" layer="19" extent="1-1"/>
-<wire x1="23.6608" y1="10.2716" x2="32.723" y2="6.511" width="0" layer="19" extent="1-1"/>
+<wire x1="32.85" y1="6.511" x2="34.29" y2="19.05" width="0" layer="19" extent="1-1"/>
+<wire x1="23.6608" y1="10.2716" x2="32.85" y2="6.511" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$4">
 <contactref element="R2" pad="1"/>
@@ -1358,8 +1358,8 @@ design rules under a new name.</description>
 <approved hash="4,16,511c6be66f895573"/>
 <approved hash="4,16,2c1716ed69c95333"/>
 <approved hash="4,1,ec3c6ecb38ca8d0a"/>
-<approved hash="4,1,8d448cb0f1e5f011"/>
 <approved hash="4,1,883689c2862b87df"/>
+<approved hash="4,1,8d448cb0f1e5f011"/>
 <approved hash="4,1,adef01b8a180f3d6"/>
 <approved hash="4,1,50822d97a2a1c895"/>
 <approved hash="4,1,56366ccc6e995463"/>
@@ -1367,8 +1367,8 @@ design rules under a new name.</description>
 <approved hash="4,1,307fc5cdf3a49261"/>
 <approved hash="4,1,e607ff795f48d241"/>
 <approved hash="4,16,ec3c6ecb38ca8d0a"/>
-<approved hash="4,16,8d448cb0f1e5f011"/>
 <approved hash="4,16,883689c2862b87df"/>
+<approved hash="4,16,8d448cb0f1e5f011"/>
 <approved hash="4,16,56366ccc6e995463"/>
 <approved hash="4,16,50af6a55691953e3"/>
 </errors>

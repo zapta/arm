@@ -264,25 +264,25 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 </package>
 <package name="SWD-HEADER">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-1.27" y1="2.54" x2="6.35" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="-1.27" x2="6.35" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="-1.27" x2="-1.27" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="6.35" y1="-1.27" x2="6.35" y2="2.54" width="0.1524" layer="21"/>
-<pad name="1" x="0" y="0" drill="0.508" shape="square"/>
-<pad name="2" x="0" y="1.27" drill="0.508"/>
-<pad name="3" x="1.27" y="0" drill="0.508"/>
-<pad name="4" x="1.27" y="1.27" drill="0.508"/>
-<pad name="5" x="2.54" y="0" drill="0.508"/>
-<pad name="6" x="2.54" y="1.27" drill="0.508"/>
-<pad name="7" x="3.81" y="0" drill="0.508"/>
-<pad name="8" x="3.81" y="1.27" drill="0.508"/>
-<pad name="9" x="5.08" y="0" drill="0.508"/>
-<pad name="10" x="5.08" y="1.27" drill="0.508"/>
+<wire x1="-3.81" y1="1.8" x2="3.81" y2="1.8" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="-1.8" x2="3.81" y2="-1.8" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="-1.8" x2="-3.81" y2="1.8" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="-1.8" x2="3.81" y2="1.8" width="0.1524" layer="21"/>
+<wire x1="-4.0132" y1="-0.6604" x2="-4.5212" y2="-0.2794" width="0.254" layer="21"/>
+<wire x1="-4.5212" y1="-0.2794" x2="-4.5212" y2="-1.0414" width="0.254" layer="21"/>
+<wire x1="-4.5212" y1="-1.0414" x2="-4.0132" y2="-0.6604" width="0.254" layer="21"/>
+<pad name="1" x="-2.54" y="-0.635" drill="0.508" shape="square"/>
+<pad name="2" x="-2.54" y="0.635" drill="0.508"/>
+<pad name="3" x="-1.27" y="-0.635" drill="0.508"/>
+<pad name="4" x="-1.27" y="0.635" drill="0.508"/>
+<pad name="5" x="0" y="-0.635" drill="0.508"/>
+<pad name="6" x="0" y="0.635" drill="0.508"/>
+<pad name="7" x="1.27" y="-0.635" drill="0.508"/>
+<pad name="8" x="1.27" y="0.635" drill="0.508"/>
+<pad name="9" x="2.54" y="-0.635" drill="0.508"/>
+<pad name="10" x="2.54" y="0.635" drill="0.508"/>
 <text x="-1.27" y="3.175" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-1.27" y="-4.445" size="1.27" layer="27">&gt;VALUE</text>
-<wire x1="-0.889" y1="-1.397" x2="-1.27" y2="-1.905" width="0.254" layer="21"/>
-<wire x1="-1.27" y1="-1.905" x2="-0.508" y2="-1.905" width="0.254" layer="21"/>
-<wire x1="-0.508" y1="-1.905" x2="-0.889" y2="-1.397" width="0.254" layer="21"/>
 </package>
 <package name="SOT25">
 <description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;&lt;p&gt;
@@ -337,19 +337,19 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <smd name="3" x="0" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="4" x="-0.65" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="5" x="-1.3" y="5.425" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<text x="-12.7" y="5.08" size="1.27" layer="27">&gt;VALUE</text>
-<text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
-<smd name="D1" x="2.43451875" y="5.7488125" dx="1.4224" dy="1.016" layer="1" roundness="15" rot="R180"/>
-<smd name="D2" x="2.460609375" y="5.748815625" dx="1.5748" dy="1.016" layer="16" roundness="15" rot="R180" stop="no" thermals="no" cream="no"/>
-<hole x="-2.225" y="5.75" drill="0.65"/>
+<smd name="A1" x="-4.175" y="2.625" dx="1.778" dy="1.778" layer="1" roundness="15"/>
+<smd name="A2" x="-4.175" y="2.625" dx="1.8796" dy="1.8796" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
+<smd name="B1" x="4.175" y="2.625" dx="1.778" dy="1.778" layer="1" roundness="15"/>
+<smd name="B2" x="4.175" y="2.625" dx="1.8796" dy="1.8796" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
 <smd name="C1" x="-2.430825" y="5.756875" dx="1.4224" dy="1.016" layer="1" roundness="15"/>
 <smd name="C2" x="-2.456915625" y="5.756871875" dx="1.5748" dy="1.016" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
+<smd name="D1" x="2.43451875" y="5.7488125" dx="1.4224" dy="1.016" layer="1" roundness="15" rot="R180"/>
+<smd name="D2" x="2.460609375" y="5.748815625" dx="1.5748" dy="1.016" layer="16" roundness="15" rot="R180" stop="no" thermals="no" cream="no"/>
+<text x="-12.7" y="5.08" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<hole x="-2.225" y="5.75" drill="0.65"/>
 <hole x="2.225" y="5.75" drill="0.65"/>
-<smd name="A1" x="-4.175" y="2.625" dx="1.778" dy="1.778" layer="1" roundness="15"/>
 <hole x="4.175" y="2.625" drill="1.016"/>
-<smd name="A2" x="-4.175" y="2.625" dx="1.8796" dy="1.8796" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
-<smd name="B2" x="4.175" y="2.625" dx="1.8796" dy="1.8796" layer="16" roundness="15" stop="no" thermals="no" cream="no"/>
-<smd name="B1" x="4.175" y="2.625" dx="1.778" dy="1.778" layer="1" roundness="15"/>
 <hole x="-4.175" y="2.625" drill="1.016"/>
 </package>
 <package name="C0402K">
