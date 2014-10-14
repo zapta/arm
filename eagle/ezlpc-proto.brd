@@ -1336,7 +1336,7 @@ design rules under a new name.</description>
 <wire x1="3.81" y1="19.05" x2="4.107" y2="18.753" width="0.6096" layer="1"/>
 <wire x1="4.107" y1="18.753" x2="4.107" y2="15.936" width="0.6096" layer="1"/>
 </signal>
-<signal name="PIO0_9-SWD6">
+<signal name="PIO0_9-SWDO">
 <contactref element="J2" pad="6"/>
 </signal>
 </signals>

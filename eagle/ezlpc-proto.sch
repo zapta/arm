@@ -2155,7 +2155,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <label x="25.4" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="PIO0_9-SWD6" class="0">
+<net name="PIO0_9-SWDO" class="0">
 <segment>
 <pinref part="J2" gate="A" pin="6"/>
 <wire x1="160.02" y1="81.28" x2="210.82" y2="81.28" width="0.1524" layer="91"/>
