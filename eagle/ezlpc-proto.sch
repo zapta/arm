@@ -1254,32 +1254,32 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="J2" library="ezlpc-proto" deviceset="SWD-HEADER" device=""/>
 <part name="+3V6" library="ezlpc-proto" deviceset="+3V3" device=""/>
 <part name="GND12" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="R8" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="24K"/>
-<part name="R9" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="24K"/>
+<part name="R8" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="10K"/>
+<part name="R9" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="10K"/>
 <part name="GND13" library="ezlpc-proto" deviceset="GND" device=""/>
 <part name="+3V7" library="ezlpc-proto" deviceset="+3V3" device=""/>
 <part name="R10" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="10K"/>
 <part name="+3V8" library="ezlpc-proto" deviceset="+3V3" device=""/>
 <part name="S2" library="ezlpc-proto" deviceset="PUSH_BUTTON" device=""/>
 <part name="GND14" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="R4" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="2K"/>
+<part name="R4" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="1K5"/>
 <part name="+3V9" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="R2" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="24K"/>
+<part name="R2" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="10K"/>
 <part name="+3V10" library="ezlpc-proto" deviceset="+3V3" device=""/>
-<part name="R3" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="2K"/>
-<part name="LED3" library="ezlpc-proto" deviceset="LED" device="CHIP-LED0603"/>
-<part name="R12" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="2K"/>
+<part name="R3" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="1K5"/>
+<part name="LED3" library="ezlpc-proto" deviceset="LED" device="CHIP-LED0603" value="Blue"/>
+<part name="R12" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="1K5"/>
 <part name="GND5" library="ezlpc-proto" deviceset="GND" device=""/>
-<part name="R11" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="2K"/>
-<part name="R7" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="2K"/>
-<part name="LED2" library="ezlpc-proto" deviceset="LED" device="CHIP-LED0603"/>
-<part name="LED1" library="ezlpc-proto" deviceset="LED" device="CHIP-LED0603"/>
+<part name="R11" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="1K5"/>
+<part name="R7" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="1K5"/>
+<part name="LED2" library="ezlpc-proto" deviceset="LED" device="CHIP-LED0603" value="Red"/>
+<part name="LED1" library="ezlpc-proto" deviceset="LED" device="CHIP-LED0603" value="Green"/>
 <part name="GND6" library="ezlpc-proto" deviceset="GND" device=""/>
 <part name="+3V4" library="ezlpc-proto" deviceset="+3V3" device=""/>
 <part name="+3V11" library="ezlpc-proto" deviceset="+3V3" device=""/>
 <part name="R6" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="33R"/>
 <part name="R5" library="ezlpc-proto" deviceset="R-US_" device="R0402" value="33R"/>
-<part name="D1" library="ezlpc-proto" deviceset="BAS40-05" device=""/>
+<part name="U4" library="ezlpc-proto" deviceset="BAS40-05" device=""/>
 <part name="P+1" library="ezlpc-proto" deviceset="USB-5V" device=""/>
 <part name="TP20" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
 <part name="TP17" library="ezlpc-proto" deviceset="PINHD-1X1" device=""/>
@@ -1348,7 +1348,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <vertex x="109.22" y="238.76"/>
 </polygon>
 <text x="66.04" y="124.46" size="2.54" layer="97">USB</text>
-<text x="147.32" y="45.72" size="2.54" layer="97">SWD</text>
+<text x="147.32" y="45.72" size="2.54" layer="97">SWD (DEBUGGING)</text>
 <polygon width="0.1524" layer="98">
 <vertex x="17.78" y="96.52"/>
 <vertex x="53.34" y="96.52"/>
@@ -1378,6 +1378,11 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <vertex x="231.14" y="53.34"/>
 </polygon>
 <text x="294.64" y="55.88" size="1.778" layer="94">Optional F</text>
+<text x="236.982" y="75.184" size="1.778" layer="94">ISP</text>
+<text x="262.382" y="75.184" size="1.778" layer="94">RST</text>
+<text x="278.892" y="75.438" size="1.778" layer="94">LED</text>
+<text x="291.592" y="75.438" size="1.778" layer="94">PWR</text>
+<text x="91.44" y="211.074" size="1.778" layer="94">USB</text>
 </plain>
 <instances>
 <instance part="U$3" gate="G$1" x="48.26" y="152.4" rot="R180"/>
@@ -1485,7 +1490,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <attribute name="NAME" x="85.852" y="163.2966" size="1.778" layer="95"/>
 <attribute name="VALUE" x="98.298" y="163.068" size="1.778" layer="96"/>
 </instance>
-<instance part="D1" gate="G$1" x="43.18" y="88.9" smashed="yes" rot="MR180">
+<instance part="U4" gate="G$1" x="43.18" y="88.9" smashed="yes" rot="MR180">
 <attribute name="NAME" x="42.164" y="79.7814" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="38.354" y="82.9564" size="1.778" layer="96" rot="MR180"/>
 </instance>
@@ -1935,7 +1940,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <junction x="58.42" y="167.64"/>
 </segment>
 <segment>
-<pinref part="D1" gate="G$1" pin="A2"/>
+<pinref part="U4" gate="G$1" pin="A2"/>
 <wire x1="40.64" y1="91.44" x2="38.1" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="91.44" x2="38.1" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="VCC" pin="USB-5V"/>
@@ -2077,7 +2082,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <junction x="71.12" y="88.9"/>
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="63.5" y1="83.82" x2="63.5" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="D1" gate="G$1" pin="C"/>
+<pinref part="U4" gate="G$1" pin="C"/>
 <junction x="63.5" y="88.9"/>
 <junction x="63.5" y="88.9"/>
 <junction x="58.42" y="88.9"/>
@@ -2145,7 +2150,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <label x="271.78" y="137.16" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="D1" gate="G$1" pin="A1"/>
+<pinref part="U4" gate="G$1" pin="A1"/>
 <wire x1="40.64" y1="86.36" x2="25.4" y2="86.36" width="0.1524" layer="91"/>
 <label x="25.4" y="86.36" size="1.778" layer="95"/>
 </segment>
