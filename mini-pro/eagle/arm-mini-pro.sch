@@ -2149,9 +2149,9 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </sheet>
 </sheets>
 <errors>
-<approved hash="102,1,93.98,88.9,VOUT,+3V3,,,,"/>
-<approved hash="202,1,93.98,81.28,U2,FB,,,,"/>
-<approved hash="104,1,73.66,88.9,U2,VIN,N$10,,,"/>
+<approved hash="102,1,93.98,73.66,VOUT,+3V3,,,,"/>
+<approved hash="202,1,93.98,66.04,U2,FB,,,,"/>
+<approved hash="104,1,73.66,73.66,U2,VIN,N$10,,,"/>
 </errors>
 </schematic>
 </drawing>
