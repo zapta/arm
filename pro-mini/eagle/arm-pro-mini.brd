@@ -723,7 +723,7 @@ design rules under a new name.</description>
 <element name="LED3" library="arm-pro-mini" package="CHIP-LED0603" value="Blue" x="16.4338" y="16.256" smashed="yes" rot="R90">
 <attribute name="VALUE" x="17.0688" y="18.161" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="R12" library="arm-pro-mini" package="R0402" value="1K5" x="16.256" y="14.3764" smashed="yes" rot="R270">
+<element name="R12" library="arm-pro-mini" package="R0402" value="10K" x="16.256" y="14.3764" smashed="yes" rot="R270">
 <attribute name="NAME" x="17.8054" y="13.2334" size="0.8128" layer="25" font="vector" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="14.351" y="15.0114" size="1.27" layer="27" rot="R270"/>
 </element>

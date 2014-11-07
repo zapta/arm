@@ -1258,7 +1258,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <part name="+3V10" library="arm-pro-mini" deviceset="+3V3" device=""/>
 <part name="R3" library="arm-pro-mini" deviceset="R-US_" device="R0402" value="1K5"/>
 <part name="LED3" library="arm-pro-mini" deviceset="LED" device="CHIP-LED0603" value="Blue"/>
-<part name="R12" library="arm-pro-mini" deviceset="R-US_" device="R0402" value="1K5"/>
+<part name="R12" library="arm-pro-mini" deviceset="R-US_" device="R0402" value="10K"/>
 <part name="GND5" library="arm-pro-mini" deviceset="GND" device=""/>
 <part name="R11" library="arm-pro-mini" deviceset="R-US_" device="R0402" value="1K5"/>
 <part name="R7" library="arm-pro-mini" deviceset="R-US_" device="R0402" value="1K5"/>
