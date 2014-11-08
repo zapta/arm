@@ -24,8 +24,9 @@ corner_radius = wall_width;
 bottom_height = 1.5; 
 // Free space to leave below the PCB (for double side tape).
 space_below_board = 1;
-// Free space to leave above the PCB.
-space_above_board = 4;
+// Free space to leave above the PCB. If too high it makes it difficult
+// to press the reset and ISP buttons.
+space_above_board = 2;
 // Width of opening for USB connector.
 port_width = 9;
 // Offset of USB connector center from board's center.
