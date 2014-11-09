@@ -25,9 +25,9 @@ static void setup() {
   arm_pro_mini::setup();
   // Uses timer32_0 for generating a 1 usec 32 bit clock (does not use interrupts).
   system_time::setup();
-  // Initialize the USB serial connection. This will allow us to print messages.
+//  // Initialize the USB serial connection. This will allow us to print messages.
   usb_serial::setup();
-  // Reset the timer to the time now. This starts the first cycle.
+//  // Reset the timer to the time now. This starts the first cycle.
   timer.reset();
 }
 
@@ -36,13 +36,14 @@ static void loop() {
 
   const uint32 time_now_usecs = timer.usecs();
 
-  const uint32 cycle_time_usecs = 200000;
+  const uint32 cycle_time_usecs = 100000;
 
   // Generates a short blink at the beginning of each cycle.
   led.set(time_now_usecs <= cycle_time_usecs / 3);
   if (time_now_usecs >= cycle_time_usecs) {
-    usb_serial::printf("Hello world: %d, %u\n", message_count++,
+    usb_serial::printf("Hello world: %d, %u\n", message_count,
         system_time::usecs());
+    message_count++;
     // Advance cycle start time rather than reseting to time now. This
     // way we don't accumulate time errors.
     timer.advance_start_time_usecs(cycle_time_usecs);

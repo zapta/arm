@@ -30,17 +30,9 @@
  */
 #include <string.h>
 #include "usb_serial/app_usbd_cfg.h"
-//#include "board.h"
 #include "chip.h"
 #include "usb_serial/cdc_vcom.h"
 
-/*****************************************************************************
- * Private types/enumerations/variables
- ****************************************************************************/
-
-/*****************************************************************************
- * Public types/enumerations/variables
- ****************************************************************************/
 
 /**
  * Global variable to hold Virtual COM port control data.

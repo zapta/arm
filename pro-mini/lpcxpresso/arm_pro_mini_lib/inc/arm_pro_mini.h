@@ -1,3 +1,5 @@
+// Main include file of the ARM PRO MINI library.
+
 #ifndef __ARM_PRO_MINI_H_
 #define __ARM_PRO_MINI_H_
 
@@ -18,8 +20,8 @@ typedef uint16_t uint16;
 typedef uint32_t uint32;
 typedef uint64_t uint64;
 
-
 namespace arm_pro_mini {
+  // Call this once to intialize the board.
   extern void setup();
 }
 

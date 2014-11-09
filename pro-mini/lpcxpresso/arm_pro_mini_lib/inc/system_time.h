@@ -1,7 +1,6 @@
 #ifndef SYSTEM_TIME_H
 #define SYSTEM_TIME_H
 
-// TODO: reduce include scope. Need only friendly types.
 #include "arm_pro_mini.h"
 
 namespace system_time {

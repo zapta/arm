@@ -1,31 +1,3 @@
-/*
- * @brief LPC11xx basic chip inclusion file
- *
- * Copyright(C) NXP Semiconductors, 2012
- * All rights reserved.
- *
- * Software that is described herein is for illustrative purposes only
- * which provides customers with programming information regarding the
- * LPC products.  This software is supplied "AS IS" without any warranties of
- * any kind, and NXP Semiconductors and its licensor disclaim any and
- * all warranties, express or implied, including all implied warranties of
- * merchantability, fitness for a particular purpose and non-infringement of
- * intellectual property rights.  NXP Semiconductors assumes no responsibility
- * or liability for the use of the software, conveys no license or rights under any
- * patent, copyright, mask work right, or any other intellectual property rights in
- * or to any products. NXP Semiconductors reserves the right to make changes
- * in the software without notification. NXP Semiconductors also makes no
- * representation or warranty that such application will be suitable for the
- * specified use without further testing or modification.
- *
- * Permission to use, copy, modify, and distribute this software and its
- * documentation is hereby granted, under NXP Semiconductors' and its
- * licensor's relevant copyrights in the software, without fee, provided that it
- * is used in conjunction with NXP Semiconductors microcontrollers.  This
- * copyright, permission, and disclaimer notice must appear in all copies of
- * this code.
- */
-
 // NOTE: a simplified version of lpc_chip_11uxx_lib LPC library.
 
 #ifndef __CHIP_H_
@@ -48,81 +20,7 @@ extern "C" {
 #error "Unexpected CPU type"
 #endif
 
-//#if !defined(ENABLE_UNTESTED_CODE)
-//#if defined(CHIP_LPC110X)
-//#error "xxxxxx"
-//#warning The LCP110X code has not been tested with a platform. This code should
-//	build without errors but may not work correctly for the device. To disable this
-//	#warning message, define ENABLE_UNTESTED_CODE.
-//#endif
-//#if defined(CHIP_LPC11XXLV)
-//#error "xxxxxx"
-//#warning The LPC11XXLV code has not been tested with a platform. This code should
-//	build without errors but may not work correctly for the device. To disable this
-//	#warning message, define ENABLE_UNTESTED_CODE.
-//#endif
-//#if defined(CHIP_LPC11AXX)
-//#error "xxxxxx"
-//#warning The LPC11AXX code has not been tested with a platform. This code should
-//	build without errors but may not work correctly for the device. To disable this
-//	#warning message, define ENABLE_UNTESTED_CODE.
-//#endif
-//#if defined(CHIP_LPC11EXX)
-//#error "xxxxxx"
-//#warning The LPC11EXX code has not been tested with a platform. This code should
-//	build without errors but may not work correctly for the device. To disable this
-//	warning message, define ENABLE_UNTESTED_CODE.
-//#endif
-//#endif
-
-//#if !defined(CHIP_LPC110X) && !defined(CHIP_LPC11XXLV) && !defined(CHIP_LPC11AXX) &&
-//	!defined(CHIP_LPC11CXX) && !defined(CHIP_LPC11EXX) && !defined(CHIP_LPC11UXX) &&
-//	!defined(CHIP_LPC1125)
-//#error CHIP_LPC110x/CHIP_LPC11XXLV/CHIP_LPC11AXX/CHIP_LPC11CXX/CHIP_LPC11EXX/CHIP_LPC11UXX/CHIP_LPC1125 is not defined!
-//#endif
-
-///* Peripheral mapping per device
-//   Peripheral					Device(s)
-//   ----------------------------	-------------------------------------------------------------------------------------------------------------
-//   I2C(40000000)								CHIP_LPC11XXLV/	CHIP_LPC11CXX/	CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX	CHIP_LPC1125
-//   WDT(40004000)				CHIP_LPC110x/	CHIP_LPC11XXLV/	CHIP_LPC11CXX/	CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX	CHIP_LPC1125
-//   UART0(40008000)				CHIP_LPC110x/	CHIP_LPC11XXLV/	CHIP_LPC11CXX													CHIP_LPC1125
-//   UART1(40020000)																												CHIP_LPC1125
-//   UART2(40024000)																												CHIP_LPC1125
-//   USART/SMARTCARD(40008000)													CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX
-//   TIMER0_16(4000C000)			CHIP_LPC110x/	CHIP_LPC11XXLV/	CHIP_LPC11CXX/	CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX	CHIP_LPC1125
-//   TIMER1_16(40010000)			CHIP_LPC110x/	CHIP_LPC11XXLV/	CHIP_LPC11CXX/	CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX	CHIP_LPC1125
-//   TIMER0_32(40014000)			CHIP_LPC110x/	CHIP_LPC11XXLV/	CHIP_LPC11CXX/	CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX	CHIP_LPC1125
-//   TIMER1_32(40018000)			CHIP_LPC110x/	CHIP_LPC11XXLV/	CHIP_LPC11CXX/	CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX	CHIP_LPC1125
-//   ADC(4001C000)				CHIP_LPC110x/	CHIP_LPC11XXLV/	CHIP_LPC11CXX/	CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX	CHIP_LPC1125
-//   DAC(40024000)																								CHIP_LPC11AXX
-//   ACMP(40028000)																								CHIP_LPC11AXX
-//   PMU(40038000)				CHIP_LPC110x/					CHIP_LPC11CXX/	CHIP_LPC11UXX/	CHIP_LPC11EXX					CHIP_LPC1125
-//   FLASH_CTRL(4003C000)			CHIP_LPC110x/	CHIP_LPC11XXLV/	CHIP_LPC11CXX/	CHIP_LPC11UXX									CHIP_LPC1125
-//   FLASH_EEPROM(4003C000)																		CHIP_LPC11EXX/	CHIP_LPC11AXX
-//   SPI0(40040000)				CHIP_LPC110x/	CHIP_LPC11XXLV/	CHIP_LPC11CXX
-//   SSP0(40040000)																CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX	CHIP_LPC1125
-//   IOCONF(40044000)				CHIP_LPC110x/	CHIP_LPC11XXLV/	CHIP_LPC11CXX/	CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX	CHIP_LPC1125
-//   SYSCON(40048000)				CHIP_LPC110x/	CHIP_LPC11XXLV/	CHIP_LPC11CXX/	CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX	CHIP_LPC1125
-//   GPIOINTS(4004C000)															CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX
-//   USB(40080000)																CHIP_LPC11UXX
-//   CCAN(40050000)												CHIP_LPC11CXX
-//   SPI1(40058000)												CHIP_LPC11CXX
-//   SSP1(40058000)																CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX	CHIP_LPC1125
-//   GPIO_GRP0_INT(4005C000)														CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX
-//   GPIO_GRP1_INT(40060000)														CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX
-//   GPIO_PORT(50000000)															CHIP_LPC11UXX/	CHIP_LPC11EXX/	CHIP_LPC11AXX
-//   GPIO_PIO0(50000000)			CHIP_LPC110x/	CHIP_LPC11XXLV/	CHIP_LPC11CXX													CHIP_LPC1125
-//   GPIO_PIO1(50010000)			CHIP_LPC110x/	CHIP_LPC11XXLV/	CHIP_LPC11CXX													CHIP_LPC1125
-//   GPIO_PIO2(50020000)							CHIP_LPC11XXLV/	CHIP_LPC11CXX													CHIP_LPC1125
-//   GPIO_PIO3(50030000)							CHIP_LPC11XXLV/	CHIP_LPC11CXX													CHIP_LPC1125
-// */
-
-/** @defgroup PERIPH_11XX_BASE CHIP: LPC11xx Peripheral addresses and register set declarations
- * @ingroup CHIP_11XX_Drivers
- * @{
- */
-
+// Peripheral declarations.
 #define LPC_I2C_BASE              0x40000000
 #define LPC_WWDT_BASE             0x40004000
 #define LPC_USART_BASE            0x40008000
@@ -141,36 +39,17 @@ extern "C" {
 #define LPC_USB0_BASE             0x40080000
 #define LPC_CAN0_BASE             0x40050000
 #define LPC_SSP1_BASE             0x40058000
-//#if defined(CHIP_LPC1125)
-//#define LPC_USART1_BASE           0x40020000
-//#define LPC_USART2_BASE           0x40024000
-//#endif
-//#if defined(CHIP_LPC11UXX) || defined(CHIP_LPC11EXX) || defined(CHIP_LPC11AXX)
-//#error "zzz"
 #define LPC_GPIO_PIN_INT_BASE     0x4004C000
 #define LPC_GPIO_GROUP_INT0_BASE  0x4005C000
 #define LPC_GPIO_GROUP_INT1_BASE  0x40060000
 #define LPC_GPIO_PORT_BASE        0x50000000
 
-//#else
-//  #error "not used"
-//  #define LPC_GPIO_PORT0_BASE       0x50000000
-//  #define LPC_GPIO_PORT1_BASE       0x50010000
-//  #if defined(CHIP_LPC11XXLV) || defined(CHIP_LPC11CXX) || defined(CHIP_LPC1125)
-//    #define LPC_GPIO_PORT2_BASE       0x50020000
-//    #define LPC_GPIO_PORT3_BASE       0x50030000
-//  #endif /* defined(CHIP_LPC11XXLV) || defined(CHIP_LPC11CXX) || defined(CHIP_LPC1125) */
-//#endif /* defined(CHIP_LPC11UXX) || defined(CHIP_LPC11EXX) || defined(CHIP_LPC11AXX) */
-
-
+// Used to call the ROM functions.
 #define IAP_ENTRY_LOCATION        0X1FFF1FF1
 #define LPC_ROM_API_BASE_LOC      0x1FFF1FF8
 
-//#if !defined(CHIP_LPC110x)
-//#error "xxx"
-#define LPC_I2C                   ((LPC_I2C_T              *) LPC_I2C_BASE)
-//#endif
 
+#define LPC_I2C                   ((LPC_I2C_T              *) LPC_I2C_BASE)
 #define LPC_WWDT                  ((LPC_WWDT_T             *) LPC_WWDT_BASE)
 #define LPC_USART                 ((LPC_USART_T            *) LPC_USART_BASE)
 #define LPC_TIMER16_0             ((LPC_TIMER_T            *) LPC_TIMER16_0_BASE)
@@ -178,53 +57,17 @@ extern "C" {
 #define LPC_TIMER32_0             ((LPC_TIMER_T            *) LPC_TIMER32_0_BASE)
 #define LPC_TIMER32_1             ((LPC_TIMER_T            *) LPC_TIMER32_1_BASE)
 #define LPC_ADC                   ((LPC_ADC_T              *) LPC_ADC_BASE)
-
-//#if defined(CHIP_LPC1125)
-//#error "yyy"
-//#define LPC_USART0                LPC_USART
-//#define LPC_USART1                ((LPC_USART_T            *) LPC_USART1_BASE)
-//#define LPC_USART2                ((LPC_USART_T            *) LPC_USART2_BASE)
-//#endif
-
-//#if defined(CHIP_LPC11AXX)
-//#error "xxx"
-//#define LPC_DAC                   ((LPC_DAC_T              *) LPC_DAC_BASE)
-//#define LPC_CMP                   ((LPC_CMP_T              *) LPC_ACMP_BASE)
-//#endif
-
 #define LPC_PMU                   ((LPC_PMU_T              *) LPC_PMU_BASE)
 #define LPC_FMC                   ((LPC_FMC_T              *) LPC_FLASH_BASE)
 #define LPC_SSP0                  ((LPC_SSP_T              *) LPC_SSP0_BASE)
 #define LPC_IOCON                 ((LPC_IOCON_T            *) LPC_IOCON_BASE)
 #define LPC_SYSCTL                ((LPC_SYSCTL_T           *) LPC_SYSCTL_BASE)
-
-//#if defined(CHIP_LPC11CXX) || defined(CHIP_LPC11UXX) || defined(CHIP_LPC11EXX) || defined(CHIP_LPC11AXX) ||
-//	defined(CHIP_LPC1125)
-//#error "xxxxxx"
 #define LPC_SSP1                  ((LPC_SSP_T              *) LPC_SSP1_BASE)
-//#endif
-
-
 #define LPC_USB                   ((LPC_USB_T              *) LPC_USB0_BASE)
-
-//#if defined(CHIP_LPC11UXX) || defined(CHIP_LPC11EXX) || defined(CHIP_LPC11AXX)
-//#error "uuu"
 #define LPC_PININT                ((LPC_PIN_INT_T          *) LPC_GPIO_PIN_INT_BASE)
 #define LPC_GPIOGROUP             ((LPC_GPIOGROUPINT_T     *) LPC_GPIO_GROUP_INT0_BASE)
 #define LPC_GPIO                  ((LPC_GPIO_T             *) LPC_GPIO_PORT_BASE)
-//#else
-//#define LPC_GPIO                  ((LPC_GPIO_T             *) LPC_GPIO_PORT0_BASE)
-//#endif
-
 #define LPC_ROM_API               (*((LPC_ROM_API_T        * *) LPC_ROM_API_BASE_LOC))
-
-/**
- * @}
- */
-
-/** @ingroup CHIP_11XX_DRIVER_OPTIONS
- * @{
- */
 
 /**
  * @brief	System oscillator rate
@@ -242,10 +85,6 @@ extern const uint32_t OscRateIn;
  */
 extern const uint32_t ExtRateIn;
 
-/**
- * @}
- */
-
 #include "chip/pmu_11xx.h"
 #include "chip/fmc_11xx.h"
 #include "chip/sysctl_11xx.h"
@@ -256,69 +95,24 @@ extern const uint32_t ExtRateIn;
 #include "chip/wwdt_11xx.h"
 #include "chip/ssp_11xx.h"
 #include "chip/romapi_11xx.h"
-
-//#if !defined(CHIP_LPC1125)
-//#error "jjj"
-/* All LPC1xx devices except the LPC1125 */
 #include "chip/adc_11xx.h"
-
-//#else
-///* LPC1125 has different IP than other LPC11xx devices */
-//#include "chip/adc_1125.h"
-//#endif
-
-/* Different GPIO/GPIOGROUP/PININT blocks for parts with similar numbers */
-//#if defined(CHIP_LPC11CXX) || defined(CHIP_LPC110X) || defined(CHIP_LPC11XXLV) || defined(CHIP_LPC1125)
-//#error "ttt"
-//#include "chip/gpio_11xx_2.h"
-//#else
-//#error "zzz"
 #include "chip/gpio_11xx_1.h"
 #include "chip/gpiogroup_11xx.h"
 #include "chip/pinint_11xx.h"
-//#endif
-
-/* Family specific drivers */
-//#if defined(CHIP_LPC11AXX)
-//#error "ggg"
-//  #include "acmp_11xx.h"
-//  #include "dac_11xx.h"
-//#endif
-
-//#if !defined(CHIP_LPC110X)
-//#error "ggg"
-  #include "chip/i2c_11xx.h"
-  #include "chip/i2cm_11xx.h"
-//#endif
-
-//#if defined(CHIP_LPC11CXX)
-//#error "ggg"
-//  #include "ccand_11xx.h"
-//#endif
-
-//#if defined(CHIP_LPC11UXX)
-//#error "ggg"
-
-  #include "chip/usbd_11xx.h"
+#include "chip/i2c_11xx.h"
+#include "chip/i2cm_11xx.h"
+#include "chip/usbd_11xx.h"
 //#endif
 
 /* Family specific IRQ handler alias list */
-//#if (defined(CHIP_LPC11AXX) || defined(CHIP_LPC11EXX) || defined(CHIP_LPC11UXX))
-//#error "hhh"
 #define UART_IRQHandler      USART_IRQHandler
 #define USART0_IRQHandler    USART_IRQHandler
-//#endif
 
 /* Common IRQ Handler Alias list */
 #define UART0_IRQHanlder     UART_IRQHandler
 #define I2C0_IRQHandler      I2C_IRQHandler
 #define CMP_IRQHandler       ACMP_IRQHandler
 #define WWDT_IRQHandler      WDT_IRQHandler
-
-/** @defgroup SUPPORT_11XX_FUNC CHIP: LPC11xx support functions
- * @ingroup CHIP_11XX_Drivers
- * @{
- */
 
 /**
  * @brief	Current system clock rate, mainly used for sysTick
@@ -339,10 +133,6 @@ void SystemCoreClockUpdate(void);
  * system clocking prior to the application starting.
  */
 void Chip_SystemInit(void);
-
-/**
- * @}
- */
 
 #ifdef __cplusplus
 }
