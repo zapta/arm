@@ -33,7 +33,6 @@
 #include "chip.h"
 #include "usb_serial/cdc_vcom.h"
 
-
 /**
  * Global variable to hold Virtual COM port control data.
  */

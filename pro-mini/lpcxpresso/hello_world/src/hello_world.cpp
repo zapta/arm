@@ -25,9 +25,9 @@ static void setup() {
   arm_pro_mini::setup();
   // Uses timer32_0 for generating a 1 usec 32 bit clock (does not use interrupts).
   system_time::setup();
-//  // Initialize the USB serial connection. This will allow us to print messages.
+  // Initialize the USB serial connection. This will allow us to print messages.
   usb_serial::setup();
-//  // Reset the timer to the time now. This starts the first cycle.
+  // Reset the timer to the time now. This starts the first cycle.
   timer.reset();
 }
 

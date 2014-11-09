@@ -102,7 +102,6 @@ extern const uint32_t ExtRateIn;
 #include "chip/i2c_11xx.h"
 #include "chip/i2cm_11xx.h"
 #include "chip/usbd_11xx.h"
-//#endif
 
 /* Family specific IRQ handler alias list */
 #define UART_IRQHandler      USART_IRQHandler
