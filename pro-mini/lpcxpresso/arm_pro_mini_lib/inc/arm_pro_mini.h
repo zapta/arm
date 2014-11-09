@@ -23,6 +23,9 @@ typedef uint64_t uint64;
 namespace arm_pro_mini {
   // Call this once to intialize the board.
   extern void setup();
+
+  // Jump to ISP mode. Never returns.
+  void ReinvokeISP();
 }
 
 #ifdef __cplusplus
