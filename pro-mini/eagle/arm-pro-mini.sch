@@ -1317,7 +1317,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="340.36" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="259.08" width="0.1524" layer="94"/>
 <text x="226.06" y="137.16" size="2.54" layer="97">MCU</text>
-<text x="331.978" y="7.112" size="2.54" layer="97">1</text>
+<text x="331.978" y="7.112" size="2.54" layer="97">1A</text>
 <text x="73.914" y="30.48" size="2.54" layer="97">3.3V REGULATOR</text>
 <text x="66.04" y="124.46" size="2.54" layer="97">USB</text>
 <text x="149.86" y="48.26" size="2.54" layer="97">SWD (DEBUGGING)</text>

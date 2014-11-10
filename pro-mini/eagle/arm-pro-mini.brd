@@ -120,8 +120,8 @@
 <wire x1="0" y1="0.5388125" x2="0.5388125" y2="0" width="0" layer="20" curve="90"/>
 <wire x1="0.5388125" y1="0" x2="37.465" y2="0" width="0" layer="20"/>
 <wire x1="37.465" y1="0" x2="38.1" y2="0.635" width="0" layer="20" curve="90"/>
-<text x="30.353" y="4.8768" size="0.762" layer="21" font="vector" ratio="10">RST</text>
-<text x="30.226" y="8.128" size="0.762" layer="21" font="vector" ratio="10">ISP</text>
+<text x="30.226" y="8.1534" size="0.762" layer="21" font="vector" ratio="10">RST</text>
+<text x="30.226" y="5.0038" size="0.762" layer="21" font="vector" ratio="10">ISP</text>
 <text x="15.5194" y="16.7894" size="0.762" layer="21" font="vector" ratio="10">PWR</text>
 <text x="27.2542" y="9.2456" size="0.762" layer="21" font="vector" ratio="10">LED</text>
 <text x="6.35" y="3.683" size="0.762" layer="21" font="vector" ratio="10">USB</text>
@@ -135,7 +135,7 @@
 <text x="0.635" y="16.9418" size="0.762" layer="21" font="vector" ratio="10">30</text>
 <text x="30.4546" y="16.5608" size="0.762" layer="21" font="vector" ratio="10">SWD</text>
 <text x="15.24" y="3.6576" size="0.762" layer="21" font="vector" ratio="10">ARM MINI PRO</text>
-<text x="15.24" y="2.5908" size="0.762" layer="21" font="vector" ratio="10">REV 1. OSH</text>
+<text x="15.24" y="2.5908" size="0.762" layer="21" font="vector" ratio="10">REV 1A OSH</text>
 <wire x1="1.27" y1="2.413" x2="1.27" y2="1.27" width="0.1524" layer="21"/>
 <wire x1="11.43" y1="2.413" x2="11.43" y2="1.27" width="0.1524" layer="21"/>
 <wire x1="24.13" y1="2.413" x2="24.13" y2="1.27" width="0.1524" layer="21"/>
@@ -144,6 +144,9 @@
 <wire x1="36.83" y1="17.907" x2="36.83" y2="19.05" width="0.1524" layer="21"/>
 <wire x1="13.97" y1="17.907" x2="13.97" y2="19.05" width="0.1524" layer="21"/>
 <wire x1="1.27" y1="17.907" x2="1.27" y2="19.05" width="0.1524" layer="21"/>
+<text x="5.4102" y="17.0688" size="0.762" layer="21" font="vector" ratio="10">GND</text>
+<text x="7.9502" y="17.0688" size="0.762" layer="21" font="vector" ratio="10">3V3</text>
+<text x="0.635" y="15.9004" size="0.762" layer="21" font="vector" ratio="10">5V</text>
 </plain>
 <libraries>
 <library name="arm-pro-mini">
@@ -643,7 +646,7 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="29.845" y="8.001" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="U2" library="arm-pro-mini" package="SOT25" value="MIC5225-3.3v" x="11.049" y="14.605" smashed="yes" rot="R270">
-<attribute name="NAME" x="9.525" y="16.383" size="0.8128" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="10.3124" y="16.3576" size="0.8128" layer="25" font="vector" ratio="10"/>
 <attribute name="VALUE" x="7.62" y="16.51" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C2" library="arm-pro-mini" package="C0603K" value="2u2" x="11.049" y="12.319" smashed="yes" rot="R180">
