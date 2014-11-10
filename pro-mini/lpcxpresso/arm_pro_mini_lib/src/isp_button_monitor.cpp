@@ -15,7 +15,10 @@ void setup() {
 }
 
 void loop() {
-  // The button is active low.
+  // If the button is pressed (low), then jump to ROM's ISP mode.
+  //
+  // TODO: add basic debouncing (e.g. N consecutive cycle with button pressed). Not that
+  // we need it but just in case.
   if (!Chip_GPIO_ReadPortBit(LPC_GPIO, ISP_BUTTON_PORT, ISP_BUTTON_BIT)) {
     arm_pro_mini::ReinvokeISP();
   }
