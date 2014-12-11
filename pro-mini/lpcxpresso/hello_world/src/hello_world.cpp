@@ -54,7 +54,9 @@ static void loop() {
   // Generates a blink at the beginning of each cycle.
   led.set(time_now_in_cycle_usecs <= kCycleTimeUsecs / 3);
   if (time_now_in_cycle_usecs >= kCycleTimeUsecs) {
-    usb_serial::printf("Hello world: %d, %u\n", message_count,
+    // NOTE: using \r\n EOL for the benefit of dumb serial dump. Typically
+    // \n is sufficient.
+    usb_serial::printf("Hello world: %d, %u\r\n", message_count,
         system_time::usecs());
     message_count++;
     // Advance cycle start time rather than reseting to time now. This
