@@ -17,7 +17,7 @@ board_thickness = 1.6;
 // Free marging aroudn the pcb.
 board_margin = 0.5; 
 // Width of box's wall.
-wall_width = 1.6;  
+wall_width = 2;  
 // Radius of four box corners.
 corner_radius = wall_width; 
 // Thickness of the bottom.
@@ -26,17 +26,21 @@ bottom_height = 1.5;
 space_below_board = 1;
 // Free space to leave above the PCB. If too high it makes it difficult
 // to press the reset and ISP buttons.
-space_above_board = 2;
+space_above_board = 1;
 // Width of opening for USB connector.
 port_width = 9;
 // Offset of USB connector center from board's center.
 port_offset_from_center = 1.27;
+// Distance from top of base to the bottom of the port opening.
+port_offset_from_base = 1.5;
 
 // Derived dimensions
 //
 box_len = 2*wall_width + 2*board_margin + board_len;
 box_width = 2*wall_width + 2*board_margin + board_width;
-box_height = wall_width + space_below_board + space_above_board;
+box_height = bottom_height + space_below_board + space_above_board + board_thickness;
+
+echo("Box size, len: ", box_len, ", width: ", box_width, ", height: ", box_height);
 
 // A small, >0 value for well define relations between objects.
 // Does not affect generated box.
@@ -68,7 +72,8 @@ module main_part() {
     // Remove opening for USB connector.
     solid_box(-eps, 
         box_width/2-port_offset_from_center - port_width/2, 
-        bottom_height, wall_width + eps2, port_width, box_height);
+        bottom_height + port_offset_from_base, 
+        wall_width + eps2, port_width, box_height);
   }
 }
 
