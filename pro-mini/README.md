@@ -65,6 +65,7 @@ This section will teach you how to load new firmware on your board. It is done b
 For more information about the USB bootloader see NXP's [application note AN11305](resources/lpc_bootloader/AN11305v.1.pdf).
 
 
+
 ### Quick Start 2 - Using the USB/Serial port.
 
 This section will teach you how to view on your computer seial data output from the ARM PRO MINI. It is useful for example to communicate with a program running on the ARM PRO MINI or to debug a program you write using print messages.
@@ -89,6 +90,8 @@ Hello world: 7, 2400178
 Hello world: 8, 2700177
 ...
 ~~~
+
+
 
 
 ### Quick Start 3 - Installing the IDE and compiling Hello World.
