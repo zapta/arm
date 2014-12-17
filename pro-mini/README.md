@@ -1,7 +1,7 @@
 ARM PRO MINI
 ============
 
-## OVERVIEW
+### OVERVIEW
 
 ARM PRO MINI is a small barebone open source ARM M0 microcontroller board that is great for 
 quick prototyping and as a starting point for your own ARM based custom designs. 
@@ -44,9 +44,9 @@ LEDS | Power (blue), USB status (green), Application (red),
 Switches | Reset, ISP.
 Recomanded IDE | NXP LPCXpresso (eclipse based, free)
 
-## Quick Start 1 - Uploading a Program
+### Quick Start 1 - Uploading a Program
 
-This step will teach you how to load new firmware on your board.
+This section will teach you how to load new firmware on your board. It is done by switching the board to the USB/ISP virtual disk mode and copying the new binary file.
 
 1. Connect the ARM PRO MINI board to a USB port of a Max OSX, Linux or Windows computer.
 2. Restart the board in the USB/ISP mode by performing the following sequence (with some practice, can be done with a simple 'roll' of one finger)
