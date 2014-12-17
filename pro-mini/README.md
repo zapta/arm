@@ -44,25 +44,26 @@ Content Cell  | Content Cell
 Content Cell  | Content Cell
 
 
-
-| MCU | NXP ARM M0 LPC11U35FHI33/501
-| Memory | 64K flash, 8K RAM, 4K EEPROM
-| Speed | 48Mhz
-| Core voltage | 3.3V   (3.3V LDO included)
-| MCU Package | QFN 5x5mm, 0.5mm pitch, 32 pads + ground tab.
-| Dimensions | 1.5” x 0.775”  (38.1mm x 19.7mm)
-| PCB Layers | 2
-| PCB Thickness | 1mm recommended. (standard 1.6mm is also OK).
-| PCB file format | Eagle + PDF + Gerber files.
-| SMT Technology | 0402, QFN 0.5mm pitch.
-| Power options | USB, ext 3.3v, ext ??-?? (3.3V LDO included) 
-| Header pins | 2x15 DIP, 0.7” raw spacing. Access to all MCU's power and I/O pins.
-| USB Connector | Micro B
-| Debugger Connector | SWD 2x5 pin header, 0.5” pitch
-| Crystal | 12Mhz (for 48Mhz MCU operation).
-| LEDS | Power (blue), USB status (green), Application (red), 
-| Switches | Reset, ISP.
-| Recomanded IDE | NXP LPCXpresso (eclipse based, free)
+Attribute | Value
+--------- | -----
+MCU | NXP ARM M0 LPC11U35FHI33/501
+Memory | 64K flash, 8K RAM, 4K EEPROM
+Speed | 48Mhz
+Core voltage | 3.3V   (3.3V LDO included)
+MCU Package | QFN 5x5mm, 0.5mm pitch, 32 pads + ground tab.
+Dimensions | 1.5” x 0.775”  (38.1mm x 19.7mm)
+PCB Layers | 2
+PCB Thickness | 1mm recommended. (standard 1.6mm is also OK).
+PCB file format | Eagle + PDF + Gerber files.
+SMT Technology | 0402, QFN 0.5mm pitch.
+Power options | USB, ext 3.3v, ext ??-?? (3.3V LDO included) 
+Header pins | 2x15 DIP, 0.7” raw spacing. Access to all MCU's power and I/O pins.
+USB Connector | Micro B
+Debugger Connector | SWD 2x5 pin header, 0.5” pitch
+Crystal | 12Mhz (for 48Mhz MCU operation).
+LEDS | Power (blue), USB status (green), Application (red), 
+Switches | Reset, ISP.
+Recomanded IDE | NXP LPCXpresso (eclipse based, free)
 
 ## Quick Start 1 - Uploading a Program
 
