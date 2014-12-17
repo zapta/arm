@@ -11,6 +11,7 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 ![](www/arm_pro_mini.jpg)
 
 
+<br>
 ### Highlights
 
 * Prototyping friendly. Compatible with standard soldieries breadboards and can be soldered to a standard 0.1” proto board.
@@ -18,11 +19,12 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 * Single package install of the free toolchain and IDE (NXP Eclipse/LPCXpresso).
 * Full support of Windows, Mac OSX and Linux.
 * Easy firmware upgrade using a simple file drag and drop. Programmers and adapters are not required, even if you just built your own board.
-* Supports optional debuggers such as the $30 OM13014,598 (for single stepping and full debugging capabilities).
+* Supports optional debuggers such as the $30 [OM13014,598](http://www.digikey.com/short/7zbr3m) (for single stepping and full debugging capabilities).
 * I/O library and a hello world example (with serial printing over USB, parallel port io, blinking LED, and timing).
 * Liberal open source license (commercial use OK and free, sharing and attribution not required).
 
 
+<br>
 ### Specification
 
 Attribute | Value
@@ -47,6 +49,7 @@ Switches | Reset, ISP.
 Recomanded IDE | NXP LPCXpresso (eclipse based, free)
 
 
+<br>
 ### Quick Start 1 - Uploading a Program
 
 This section will teach you how to load new firmware on your board. It is done by switching the board to the USB/ISP virtual disk mode and copying the new binary file.
@@ -65,7 +68,7 @@ This section will teach you how to load new firmware on your board. It is done b
 For more information about the USB bootloader see NXP's [application note AN11305](resources/lpc_bootloader/AN11305v.1.pdf).
 
 
-
+<br>
 ### Quick Start 2 - Using the USB/Serial port.
 
 This section will teach you how to view on your computer seial data output from the ARM PRO MINI. It is useful for example to communicate with a program running on the ARM PRO MINI or to debug a program you write using print messages.
@@ -92,8 +95,7 @@ Hello world: 8, 2700177
 ~~~
 
 
-
-
+<br>
 ### Quick Start 3 - Installing the IDE and compiling Hello World.
 
 This section will teach you how to install the NXP LPCXpresso IDE and how to setup and compile a project for the ARM PRO MINI.
