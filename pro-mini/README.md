@@ -8,7 +8,7 @@ quick prototyping and as a starting point for your own ARM based custom designs.
 It was designed and named after the venerable Arduino Pro Mini and it is an excellent 
 stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM architecture.
 
-![](www/arm_pro_mini.png)
+![](www/arm_pro_mini.jpg)
 
 ### Highlights
 
@@ -24,19 +24,28 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 ### Specification
 
 Experiment1
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+
+aaa | bbb
+---- | ----
+dddd | dddd
+kadj aldf | ladjfadf
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
 
 Experiment2
+
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 
 Experiment3
+
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
+
 
 | MCU | NXP ARM M0 LPC11U35FHI33/501
 | Memory | 64K flash, 8K RAM, 4K EEPROM
