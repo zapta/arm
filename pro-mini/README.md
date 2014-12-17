@@ -50,14 +50,14 @@ This section will teach you how to load new firmware on your board. It is done b
 
 1. Connect the ARM PRO MINI board to a USB port of a Max OSX, Linux or Windows computer.
 2. Restart the board in the USB/ISP mode by performing the following sequence (with some practice, can be done with a simple 'roll' of one finger)
-3. Press and hold the RST button.
-4. Press and hold the ISP button.
-5. Release the RST button.
-6. Release the ISP button.
-7. The ARM PRO MINI will mount itself on your computer as an external disk with a single file named firmware.bin.
-8. Copy one of the two provided hello world image files over the *firmware.bin* file. Note: on Mac OSX drag and drop does not work, instead using the cp shell command: *cp hello_world_fast_blink.bin "/Volumes/CRP DISABLD/firmware.bin"*
-9. Press the RST button of the ARM PRO MINI to restart it in the RUN mode. The image file you just loaded should start running and the red LED on the ARM PRO MINI should blink.
-10. Repeat the process with the other image file *hello_world_slow_blink.bin*  and notice how the blinking rate changes.
+    *. Press and hold the RST button.
+    *. Press and hold the ISP button.
+    *. Release the RST button.
+    *. Release the ISP button.
+3. The ARM PRO MINI will mount itself on your computer as an external disk with a single file named firmware.bin.
+4. Copy one of the two provided hello world image files over the *firmware.bin* file. Note: on Mac OSX drag and drop does not work, instead using the cp shell command: *cp hello_world_fast_blink.bin "/Volumes/CRP DISABLD/firmware.bin"*
+5. Press the RST button of the ARM PRO MINI to restart it in the RUN mode. The image file you just loaded should start running and the red LED on the ARM PRO MINI should blink.
+6. Repeat the process with the other image file *hello_world_slow_blink.bin*  and notice how the blinking rate changes.
 
 For more information about the USB bootloader see NXP's [application note AN11305](resources/lpc_bootloader/AN11305v.1.pdf).
 
