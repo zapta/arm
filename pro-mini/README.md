@@ -10,6 +10,7 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 
 ![](www/arm_pro_mini.jpg)
 
+
 ### Highlights
 
 * Prototyping friendly. Compatible with standard soldieries breadboards and can be soldered to a standard 0.1” proto board.
@@ -20,6 +21,7 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 * Supports optional debuggers such as the $30 OM13014,598 (for single stepping and full debugging capabilities).
 * I/O library and a hello world example (with serial printing over USB, parallel port io, blinking LED, and timing).
 * Liberal open source license (commercial use OK and free, sharing and attribution not required).
+
 
 ### Specification
 
@@ -44,6 +46,7 @@ LEDS | Power (blue), USB status (green), Application (red),
 Switches | Reset, ISP.
 Recomanded IDE | NXP LPCXpresso (eclipse based, free)
 
+
 ### Quick Start 1 - Uploading a Program
 
 This section will teach you how to load new firmware on your board. It is done by switching the board to the USB/ISP virtual disk mode and copying the new binary file.
@@ -61,13 +64,14 @@ This section will teach you how to load new firmware on your board. It is done b
 
 For more information about the USB bootloader see NXP's [application note AN11305](resources/lpc_bootloader/AN11305v.1.pdf).
 
+
 ### Quick Start 2 - Using the USB/Serial port.
 
 This section will teach you how to view on your computer seial data output from the ARM PRO MINI. It is useful for example to communicate with a program running on the ARM PRO MINI or to debug a program you write using print messages.
 
 1. Load and run a hello world binary image as described above. Make sure the red LED blinks.
 2. Identify the serial port on your computer. 
-    * On Mac OSX:  run ls /dev/tty.usb*, the port name looks like /dev/tty.usbmodemNXP-71
+    * On Mac OSX:  run _ls /dev/tty.usb*_, the port name looks like */dev/tty.usbmodemNXP-71*.
     * On Linux: TBD
     * On Windows: TBD
 3. Use a terminal emulator to print the text received on the serial port you identified above.
@@ -86,6 +90,10 @@ Hello world: 8, 2700177
 ...
 ~~~
 
+
+### Quick Start 3 - Installing the IDE and compiling Hello World.
+
+This section will teach you how to install the NXP LPCXpresso IDE and how to setup and compile a project for the ARM PRO MINI.
 
 TO BE CONTINUED...
 
