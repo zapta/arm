@@ -23,29 +23,8 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 
 ### Specification
 
-Experiment1
-
----- | ----
-dddd | dddd
-kadj aldf | ladjfadf
-
-aaa | bbb
-dddd | dddd
-kadj aldf | ladjfadf
-
-aaa | bbb
----- | ----
-dddd | dddd
-kadj aldf | ladjfadf
-
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
-
-
 Attribute | Value
---------- | -----
+:--------- | :-----
 MCU | NXP ARM M0 LPC11U35FHI33/501
 Memory | 64K flash, 8K RAM, 4K EEPROM
 Speed | 48Mhz
