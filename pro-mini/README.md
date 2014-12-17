@@ -49,7 +49,7 @@ Recomanded IDE | NXP LPCXpresso (eclipse based, free)
 This section will teach you how to load new firmware on your board. It is done by switching the board to the USB/ISP virtual disk mode and copying the new binary file.
 
 1. Connect the ARM PRO MINI board to a USB port of a Max OSX, Linux or Windows computer.
-2. Restart the board in the USB/ISP mode by performing the following sequence (with some practice, can be done with a simple 'roll' of one finger)
+2. Restart the board in the USB/ISP mode by performing the following sequence (with some practice, can be done with a simple 'roll' of one finger):
     * Press and hold the RST button.
     * Press and hold the ISP button.
     * Release the RST button.
@@ -60,6 +60,32 @@ This section will teach you how to load new firmware on your board. It is done b
 6. Repeat the process with the other image file *hello_world_slow_blink.bin*  and notice how the blinking rate changes.
 
 For more information about the USB bootloader see NXP's [application note AN11305](resources/lpc_bootloader/AN11305v.1.pdf).
+
+### Quick Start 2 - Using the USB/Serial port.
+
+This section will teach you how to view on your computer seial data output from the ARM PRO MINI. It is useful for example to communicate with a program running on the ARM PRO MINI or to debug a program you write using print messages.
+
+1. Load and run a hello world binary image as described above. Make sure the red LED blinks.
+2. Identify the serial port on your computer. 
+    * On Mac OSX:  run ls /dev/tty.usb*, the port name looks like /dev/tty.usbmodemNXP-71
+    * On Linux: TBD
+    * On Windows: TBD
+3. Use a terminal emulator to print the text received on the serial port you identified above.
+    * On Mac OSX: run the command screen <port_name>. For example *screen /dev/tty.usbmodemNXP-71*
+    * On Linux: TBD
+    * On Windows: TBD
+
+The output will look like this:
+~~~
+...
+Hello world: 4, 1500177
+Hello world: 5, 1800178
+Hello world: 6, 2100178
+Hello world: 7, 2400178
+Hello world: 8, 2700177
+...
+~~~
+
 
 TO BE CONTINUED...
 
