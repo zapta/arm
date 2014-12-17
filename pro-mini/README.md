@@ -50,10 +50,10 @@ This section will teach you how to load new firmware on your board. It is done b
 
 1. Connect the ARM PRO MINI board to a USB port of a Max OSX, Linux or Windows computer.
 2. Restart the board in the USB/ISP mode by performing the following sequence (with some practice, can be done with a simple 'roll' of one finger)
-    *. Press and hold the RST button.
-    *. Press and hold the ISP button.
-    *. Release the RST button.
-    *. Release the ISP button.
+    * Press and hold the RST button.
+    * Press and hold the ISP button.
+    * Release the RST button.
+    * Release the ISP button.
 3. The ARM PRO MINI will mount itself on your computer as an external disk with a single file named firmware.bin.
 4. Copy one of the two provided hello world image files over the *firmware.bin* file. Note: on Mac OSX drag and drop does not work, instead using the cp shell command: *cp hello_world_fast_blink.bin "/Volumes/CRP DISABLD/firmware.bin"*
 5. Press the RST button of the ARM PRO MINI to restart it in the RUN mode. The image file you just loaded should start running and the red LED on the ARM PRO MINI should blink.
