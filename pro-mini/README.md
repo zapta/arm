@@ -11,6 +11,9 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 ![](www/arm_pro_mini.jpg)
 
 
+[Schematic (pdf)](eagle/arm-pro-mini-schematic.pdf)
+
+
 <br>
 ### Highlights
 
