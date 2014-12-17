@@ -22,7 +22,7 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 * Single package install of the free toolchain and IDE (NXP Eclipse/LPCXpresso).
 * Full support of Windows, Mac OSX and Linux.
 * Easy firmware upgrade using a simple file drag and drop. Programmers and adapters are not required, even if you just built your own board.
-* Supports optional debuggers (such as the [OM13014,598](http://www.digikey.com/short/7zbr3m)) for single stepping and full debugging capabilities).
+* Supports optional debuggers (such as the [OM13014,598](http://www.digikey.com/short/7zbr3m)) for single stepping and full debugging capabilities.
 * I/O library and a hello world example (with serial printing over USB, parallel port io, blinking LED, and timing).
 * Liberal open source license (commercial use OK and free, sharing and attribution not required).
 
