@@ -103,6 +103,18 @@ Hello world: 8, 2700177
 
 This section will teach you how to install the NXP LPCXpresso IDE and how to setup and compile a project for the ARM PRO MINI.
 
+1. Download and Install the LPCXpresso IDE as described here http://www.lpcware.com/lpcxpresso/download. (this tutorial was tested with LPCXpresso V7.3.0 on Mac OSX).
+2. Copy the project directory https://github.com/zapta/arm/tree/master/pro-mini to your computer (e.g. by extracting the repository zip file https://github.com/zapta/arm/archive/master.zip in a directory on your computer).
+3. Import the *arm_pro_mini_lib* and *hellow_world* projects LPCXpresso.
+    * Select *File | Import... | General | Existing Projects into workspace* and then click *Next*
+    * Select the archive file *arm_pro_min_getting_started.zip*, note the the two projects *arm_pro_mini_lib* and *hello_world* are selected and click Finish..
+4. Build the hello world binary
+    * Right click on the *hello_world* project and select Build Project.
+    * Expand the *hello_world* project and make sure the *hello_world.bin* file was created in the Debug.
+7. Load the generated *hello_world.bin* program to the ARM PRO MINI using the USB/ISP bootloader as described above.
+
+
+
 TO BE CONTINUED...
 
 
