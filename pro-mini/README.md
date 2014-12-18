@@ -103,18 +103,36 @@ Hello world: 8, 2700177
 
 This section will teach you how to install the NXP LPCXpresso IDE and how to setup and compile a project for the ARM PRO MINI.
 
-1. Download and Install the LPCXpresso IDE as described here http://www.lpcware.com/lpcxpresso/download. (this tutorial was tested with LPCXpresso V7.3.0 on Mac OSX).
-2. Copy the project directory https://github.com/zapta/arm/tree/master/pro-mini to your computer (e.g. by extracting the repository zip file https://github.com/zapta/arm/archive/master.zip in a directory on your computer).
-3. Import the *arm_pro_mini_lib* and *hellow_world* projects LPCXpresso.
+1. Download and Install the LPCXpresso IDE as described here http://www.lpcware.com/lpcxpresso/download. (this tutorial verified with LPCXpresso V7.3.0 on Mac OSX 10.9.5).
+2. Copy the project directory https://github.com/zapta/arm/tree/master/pro-mini to your computer (e.g. by cloning the github repository or extracting the zip file https://github.com/zapta/arm/archive/master.zip).
+3. Import the *arm_pro_mini_lib* and *hellow_world* projects into LPCXpresso:
     * Select *File | Import... | General | Existing Projects into workspace* and then click *Next*
-    * Select the archive file *arm_pro_min_getting_started.zip*, note the the two projects *arm_pro_mini_lib* and *hello_world* are selected and click Finish..
-4. Build the hello world binary
-    * Right click on the *hello_world* project and select Build Project.
-    * Expand the *hello_world* project and make sure the *hello_world.bin* file was created in the Debug.
-7. Load the generated *hello_world.bin* program to the ARM PRO MINI using the USB/ISP bootloader as described above.
+    * Select the archive file *arm_pro_min_getting_started.zip*, verify that the two projects *arm_pro_mini_lib* and *hello_world* are selected and then click *Finish*.
+4. Build the hello world binary:
+    * Right click on the *hello_world* project and select *Build Project*.
+    * Expand the *hello_world* project and verify that the binary image file *hello_world.bin* created in the Debug directory.
+7. Load the generated *hello_world.bin* image to the ARM PRO MINI board using the USB/ISP bootloader as described above.
+8. Modify the file *src/hello_file.cpp* in the *hellow_world* project (e.g. change the value of *kCycleTimeUsecs*), rebuild and load the file and verify that your changes took effect.
+
+TIP: The LPCXpresso's External Tools facility can be used to automate the process of building the project and uploading to the ARM PRO MINI. For details, see the provided Mac OSX script *copy_to_usb_isp.sh*.
 
 
+<br>
+### Schematic Description
+The [schematic](https://github.com/zapta/arm/blob/master/pro-mini/eagle/arm-pro-mini-schematic.pdf?raw=true) of the ARM PRO MINI is minimal and modular to make it easy to customize it for your own ARM based boards. It includes the MCU running at 48Mhz (using a 12Mhz crystal), USB protectiona and glue electronics, power source arbitraror (external and USB), 3.3V voltage regulator, SWD debugging header and a few LEDs and buttons.
 
-TO BE CONTINUED...
+When customizing for your own board, you can eliminate the optional parts that you don't need. For example, if your board already has a 3.3V regulator than you don't need the power arbitrarion diodes and and the LDO. The important thing to remember is that nothing is sacred about this cirtuit and you can adapt it as you wish.
 
+
+<br>
+### Building Your Own ARM PRO MINI
+Building a ARM PRO MINI is stragiht forward as long as you are comfortable with working with SMT devices. The BOM is available here https://github.com/zapta/arm/blob/master/pro-mini/eagle/arm-pro-mini-bom.pdf?raw=true and all components can be sourced from Digikey. The PCB is two layers with trace/spacing requirements that are compatible with inexpensive vendors such as Elecrow and OSHPark and the repository includes both eagle and gerber files (generated with Elecrow CAM file). For prototypes we used Elecrow 5x5cm max 1mm HASL PCB and 0.12mm (~5mil) laser cut metal stencil. Initial programming of a bootloader is not required and the board is ready to use once it assembled.
+
+
+<br>
+### General Resources
+* [LPC11U3X datasheet](resouces/LPC11U35/LPC11U3X_datasheet.pdf) (hardware).
+* [LPC11U3X manual](resouces/LPC11U35/LPC11U3X_manual.pdf) (programming).
+* LPC forums http://www.lpcware.com/forum
+* EEVblog microcontrollers forum http://www.eevblog.com/forum/microcontrollers
 
