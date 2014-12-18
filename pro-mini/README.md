@@ -11,20 +11,22 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 ![](www/arm_pro_mini.jpg)
 
 
-[Schematic (pdf)](eagle/arm-pro-mini-schematic.pdf)
+[Schematic (pdf)](https://github.com/zapta/arm/blob/master/pro-mini/eagle/arm-pro-mini-schematic.pdf?raw=true)
+
+[BOM (pdf)](https://github.com/zapta/arm/blob/master/pro-mini/eagle/arm-pro-mini-bom.pdf?raw=true)
 
 
 <br>
 ### Highlights
 
 * Prototyping friendly. Compatible with standard soldieries breadboards and can be soldered to a standard 0.1” proto board.
-* Simple and easy to understand barebone design. Customize for your own PCB design by selecting the portions of the circuit you need.
+* Straight forward barebone design. Customize for your own PCB design by selecting the portions of the circuit you need.
 * Single package install of the free toolchain and IDE (NXP Eclipse/LPCXpresso).
 * Full support of Windows, Mac OSX and Linux.
-* Easy firmware upgrade using a simple file drag and drop. Programmers and adapters are not required, even if you just built your own board.
+* Easy firmware upgrade using a file drag and drop. Programmers and adapters are not required, even if you are bringing up your won board!
 * Supports optional debuggers (such as the [OM13014,598](http://www.digikey.com/short/7zbr3m)) for single stepping and full debugging capabilities.
 * I/O library and a hello world example (with serial printing over USB, parallel port io, blinking LED, and timing).
-* Liberal open source license (commercial use OK and free, sharing and attribution not required).
+* Liberal open source license (even commercial use is OK and free, sharing and attribution not required).
 
 
 <br>
@@ -37,13 +39,13 @@ Memory | 64K flash, 8K RAM, 4K EEPROM
 Speed | 48Mhz
 Core voltage | 3.3V   (3.3V LDO included)
 MCU Package | QFN 5x5mm, 0.5mm pitch, 32 pads + ground tab.
-Dimensions | 1.5” x 0.775”  (38.1mm x 19.7mm)
+PCB dimensions | 1.5” x 0.775”  (38.1mm x 19.7mm)
 PCB Layers | 2
 PCB Thickness | 1mm recommended. (standard 1.6mm is also OK).
 PCB file format | Eagle + PDF + Gerber files.
 SMT Technology | 0402, QFN 0.5mm pitch.
-Power options | USB, ext 3.3v, ext ??-?? (3.3V LDO included) 
-Header pins | 2x15 DIP, 0.7” raw spacing. Access to all MCU's power and I/O pins.
+Power options | USB, ext 3.3v, ext 16V max (with included 3.3V LDO) 
+Header pins | 2x15 DIP, 0.7” row spacing. Access to all MCU's I/O pins.
 USB Connector | Micro B
 Debugger Connector | SWD 2x5 pin header, 0.5” pitch
 Crystal | 12Mhz (for 48Mhz MCU operation).
@@ -76,11 +78,11 @@ For more information about the USB bootloader see NXP's [application note AN1130
 
 This section will teach you how to view on your computer seial data output from the ARM PRO MINI. It is useful for example to communicate with a program running on the ARM PRO MINI or to debug a program you write using print messages.
 
-1. Load and run a hello world binary image as described above. Make sure the red LED blinks.
+1. Load and run a hello world image file as described above. Make sure the red LED blinks.
 2. Identify the serial port on your computer. 
     * On Mac OSX:  run _ls /dev/tty.usb*_, the port name looks like */dev/tty.usbmodemNXP-71*.
     * On Linux: TBD
-    * On Windows: TBD
+    * On Windows: TBD (may required the NXP CDC driver [here](resources/lpc_bootloader).
 3. Use a terminal emulator to print the text received on the serial port you identified above.
     * On Mac OSX: run the command screen <port_name>. For example *screen /dev/tty.usbmodemNXP-71*
     * On Linux: TBD
@@ -104,14 +106,14 @@ Hello world: 8, 2700177
 This section will teach you how to install the NXP LPCXpresso IDE and how to setup and compile a project for the ARM PRO MINI.
 
 1. Download and Install the LPCXpresso IDE as described here http://www.lpcware.com/lpcxpresso/download. (this tutorial verified with LPCXpresso V7.3.0 on Mac OSX 10.9.5).
-2. Copy the project directory https://github.com/zapta/arm/tree/master/pro-mini to your computer (e.g. by cloning the github repository or extracting the zip file https://github.com/zapta/arm/archive/master.zip).
+2. Copy the project directory https://github.com/zapta/arm/tree/master/pro-mini to your computer (e.g. by cloning the github repository or by extracting the zip file https://github.com/zapta/arm/archive/master.zip).
 3. Import the *arm_pro_mini_lib* and *hellow_world* projects into LPCXpresso:
     * Select *File | Import... | General | Existing Projects into workspace* and then click *Next*
     * Select the archive file *arm_pro_min_getting_started.zip*, verify that the two projects *arm_pro_mini_lib* and *hello_world* are selected and then click *Finish*.
-4. Build the hello world binary:
+4. Build the hello world image file:
     * Right click on the *hello_world* project and select *Build Project*.
-    * Expand the *hello_world* project and verify that the binary image file *hello_world.bin* created in the Debug directory.
-7. Load the generated *hello_world.bin* image to the ARM PRO MINI board using the USB/ISP bootloader as described above.
+    * Expand the *hello_world* project and verify that the image file *hello_world.bin* created in the Debug directory.
+7. Load the generated *hello_world.bin* image file to the ARM PRO MINI board using the USB/ISP bootloader as described above.
 8. Modify the file *src/hello_file.cpp* in the *hellow_world* project (e.g. change the value of *kCycleTimeUsecs*), rebuild and load the file and verify that your changes took effect.
 
 TIP: The LPCXpresso's External Tools facility can be used to automate the process of building the project and uploading to the ARM PRO MINI. For details, see the provided Mac OSX script *copy_to_usb_isp.sh*.
@@ -126,13 +128,16 @@ When customizing for your own board, you can eliminate the optional parts that y
 
 <br>
 ### Building Your Own ARM PRO MINI
+
+![](www/arm_pro_mini_board.png)
+
 Building a ARM PRO MINI is stragiht forward as long as you are comfortable with working with SMT devices. The BOM is available here https://github.com/zapta/arm/blob/master/pro-mini/eagle/arm-pro-mini-bom.pdf?raw=true and all components can be sourced from Digikey. The PCB is two layers with trace/spacing requirements that are compatible with inexpensive vendors such as Elecrow and OSHPark and the repository includes both eagle and gerber files (generated with Elecrow CAM file). For prototypes we used Elecrow 5x5cm max 1mm HASL PCB and 0.12mm (~5mil) laser cut metal stencil. Initial programming of a bootloader is not required and the board is ready to use once it assembled.
 
 
 <br>
 ### General Resources
-* [LPC11U3X datasheet](resouces/LPC11U35/LPC11U3X_datasheet.pdf) (hardware).
-* [LPC11U3X manual](resouces/LPC11U35/LPC11U3X_manual.pdf) (programming).
+* [LPC11U3X datasheet](resources/LPC11U3X/LPC11U3X_datasheet.pdf) (hardware).
+* [LPC11U3X manual](resou.ces/LPC11U3X/LPC11U3X_manual.pdf) (programming).
 * LPC forums http://www.lpcware.com/forum
-* EEVblog microcontrollers forum http://www.eevblog.com/forum/microcontrollers
+* EEVblog microcontrollers forum http://www.eevblog.com/forum/microcontrollers/
 
