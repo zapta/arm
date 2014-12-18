@@ -26,7 +26,7 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 * Easy firmware upgrade using a file drag and drop. Programmers and adapters are not required, even if you are bringing up your won board!
 * Supports optional debuggers (such as the [OM13014,598](http://www.digikey.com/short/7zbr3m)) for single stepping and full debugging capabilities.
 * I/O library and a hello world example (with serial printing over USB, parallel port io, blinking LED, and timing).
-* Liberal open source license (even commercial use is OK and free, sharing and attribution not required).
+* No nonsense open source license (no commercial restrictions, sharing and attribution not required).
 
 
 <br>
