@@ -25,7 +25,7 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 * Straight forward barebone design. Customize for your own PCB design by selecting the portions of the circuit you need.
 * Single package install of the free toolchain and IDE (NXP Eclipse/LPCXpresso).
 * Full support of Windows, Mac OSX and Linux.
-* Easy firmware upgrade using a file drag and drop. Programmers and adapters are not required, even if you are bringing up your won board!
+* Easy firmware upgrade using a file drag and drop. Programmers and adapters are not required, even if you are bringing up your own board!
 * Supports optional debuggers (such as the [OM13014,598](http://www.digikey.com/short/7zbr3m)) for single stepping and full debugging capabilities.
 * I/O library and a hello world example (with serial printing over USB, parallel port io, blinking LED, and timing).
 * No nonsense open source license (no commercial restrictions, sharing and attribution not required).
