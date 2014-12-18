@@ -49,6 +49,7 @@ static void setup() {
 static void loop() {
   // If the ISP button is pressed, this will jump to the USB/ISP
   // mode, allowing to upgrade the firmware via drag and drop.
+  // Otherwise just reset the board while the ISP button is pressed.
   isp_button_monitor::loop();
 
   static int message_count = 0;

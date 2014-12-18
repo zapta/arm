@@ -60,7 +60,7 @@ Recomanded IDE | NXP LPCXpresso (eclipse based, free)
 This section will teach you how to load new firmware on your board. It is done by switching the board to the USB/ISP virtual disk mode and copying the new binary file.
 
 1. Connect the ARM PRO MINI board to a USB port of a Max OSX, Linux or Windows computer.
-2. Restart the board in the USB/ISP mode by performing the following sequence (with some practice, can be done with a simple 'roll' of one finger):
+2. Restart the board while the ISP button is pressed to enter the USB/ISP mode (with some practice, this can be done with a simple roll of one finger):
     * Press and hold the RST button.
     * Press and hold the ISP button.
     * Release the RST button.
@@ -178,6 +178,7 @@ static void setup() {
 static void loop() {
   // If the ISP button is pressed, this will jump to the USB/ISP
   // mode, allowing to upgrade the firmware via drag and drop.
+  // Otherwise just reset the board while the ISP button is pressed.
   isp_button_monitor::loop();
 
   static int message_count = 0;
