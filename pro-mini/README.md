@@ -203,8 +203,7 @@ int main(void) {
     loop();
   }
 }
-
-``` csharp
+```
 
 
 <br>
