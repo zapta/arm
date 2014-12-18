@@ -224,8 +224,8 @@ Building a ARM PRO MINI is stragiht forward as long as you are comfortable with 
 
 <br>
 ### General Resources
-* [LPC11U3X datasheet](resources/LPC11U3X/LPC11U3X_datasheet.pdf) (hardware).
-* [LPC11U3X manual](resou.ces/LPC11U3X/LPC11U3X_manual.pdf) (programming).
+* [LPC11U3X datasheet](https://github.com/zapta/arm/blob/master/pro-mini/resources/LPC11U3X/LPC11U3X_datasheet.pdf?raw=true) PDF (hardware).
+* [LPC11U3X manual](https://github.com/zapta/arm/blob/master/pro-mini/resources/LPC11U3X/LPC11U3X_manual.pdf?raw=true) PDF (programming).
 * LPC forums http://www.lpcware.com/forum
 * EEVblog microcontrollers forum http://www.eevblog.com/forum/microcontrollers/
 
