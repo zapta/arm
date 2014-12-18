@@ -1,6 +1,9 @@
 // A basic hello world example using the arm_pro_mini library. It blinks the LED
 // and prints to the USB/CDC serial port.
 
+// These #include files are from the arm_pro_mini_lib library.
+
+// The base arm_pro_mini_lib include.
 #include "arm_pro_mini.h"
 
 // Provides abstraction to digital I/o pins.
