@@ -120,6 +120,8 @@ This section will teach you how to install the NXP LPCXpresso IDE and how to set
 
 TIP: The LPCXpresso's External Tools facility can be used to automate the process of building the project and uploading to the ARM PRO MINI. For details, see the provided Mac OSX script *copy_to_usb_isp.sh*.
 
+![](www/lpcxpresso.jpg)
+
 <br>
 ### The ARM PRO MINI Library
 This library includes everything you will need to program the ARM PRO MINI. It includes simplified low level chip and board definitions (based on LPCOPEN) as well as original code that support serial over USB/CDC, passive timers, digital pin I/O and more. It is installed in LPCXpresso as a library project which the hello world project (and in the future your own progrmas) depends on. The depenency is defined in the hello world LPCXpresso project such that compiling the hello world project also compiles the library if needed. 
