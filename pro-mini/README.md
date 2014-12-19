@@ -120,7 +120,7 @@ This section will teach you how to install the NXP LPCXpresso IDE and how to set
 
 TIP: The LPCXpresso's External Tools facility can be used to automate the process of building the project and uploading to the ARM PRO MINI. For details, see the provided Mac OSX script *copy_to_usb_isp.sh*.
 
-![](www/lpcxpresso.jpg)
+![](www/lpcxpresso.png)
 
 <br>
 ### The ARM PRO MINI Library
