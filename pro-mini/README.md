@@ -118,9 +118,12 @@ This section will teach you how to install the NXP LPCXpresso IDE and how to set
 7. Load the generated *hello_world.bin* image file to the ARM PRO MINI board using the USB/ISP bootloader as described above.
 8. Modify the file *src/hello_file.cpp* in the *hellow_world* project (e.g. change the value of *kCycleTimeUsecs*), rebuild and load the file and verify that your changes took effect.
 
-TIP: The LPCXpresso's External Tools facility can be used to automate the process of building the project and uploading to the ARM PRO MINI. For details, see the provided Mac OSX script *copy_to_usb_isp.sh*.
 
 ![](www/lpcxpresso.png)
+
+
+TIP: The LPCXpresso's External Tools facility can be used to automate the process of building the project and uploading to the ARM PRO MINI. For details, see the provided Mac OSX script *copy_to_usb_isp.sh*.
+
 
 <br>
 ### The ARM PRO MINI Library
