@@ -119,6 +119,7 @@ This section will teach you how to install the NXP LPCXpresso IDE and how to set
 8. Modify the file *src/hello_file.cpp* in the *hellow_world* project (e.g. change the value of *kCycleTimeUsecs*), rebuild and load the file and verify that your changes took effect.
 
 
+<br>
 ![](www/lpcxpresso.png)
 
 
