@@ -61,8 +61,6 @@ Recomanded IDE | NXP LPCXpresso (eclipse based, free)
 
 ![](www/pin_out.png)
 
-![](www/pin_out.svg)
-
 
 <br>
 ### Quick Start 1 - Uploading a Program
