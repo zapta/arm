@@ -224,18 +224,18 @@ int main(void) {
 <br>
 ### Compiling with the ARMmbed Online IDE.
 
-The instructions above explain how to install and use the fully featured LPCXpresso IDE and tool chain. Another options that
-is available for developing software the ARM PRO MINI is to use the ARM's free online IDE at mbed.org. The following steps 
+The instructions above explain how to install and use the fully featured LPCXpresso IDE and tool chain. Another option that
+ARM PRO MINI developes has it to use the ARM's free online IDE at mbed.org which doesn't require any sofrware installation. Following steps 
 outline how to compile a simple blinky program for the ARM PRO MINI:
 
-1. Login to http://mbed.org (a free registration is required) and go to the compiler section https://developer.mbed.org/compiler
-2. Add a LPC11u35/501 platform to your compiler configuration. 
+1. Login to http://mbed.org (a free registration is required) and go to the compiler section at https://developer.mbed.org/compiler
+2. Add a LPC11u35/501 platform to your compiler configuration (requires only once). 
 3. Create a new project and type in blinky program below.
-4. CLick on the Compile button. This will compile the program and will download the binary file named *mbed_blinky_LPC11U35_501.bin* to your computer.
-5. Upload the binary file to your ARM PRO MINI board as described above.
+4. CLick on the Compile button. This will compile the program and if the compilation was successful it will download the binary file named *mbed_blinky_LPC11U35_501.bin* to your computer.
+5. Upload the binary file to your ARM PRO MINI board as described eariler in this document.
 
 
-ARMmbed blinky probram:
+ARMmbed blinky program:
 ``` cpp
 #include "mbed.h"
 
@@ -250,7 +250,6 @@ int main() {
 ```
 
 
-ARMmbed online IDE:
 ![](www/mbed_ide.png)
 
 
