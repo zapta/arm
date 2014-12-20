@@ -230,9 +230,13 @@ outline how to compile a simple blinky program for the ARM PRO MINI:
 
 1. Login to http://mbed.org (a free registration is required) and go to the compiler section https://developer.mbed.org/compiler
 2. Add a LPC11u35/501 platform to your compiler configuration. 
-3. Create a new project and type in the following program.
-``` cpp
+3. Create a new project and type in blinky program below.
+4. CLick on the Compile button. This will compile the program and will download the binary file named *mbed_blinky_LPC11U35_501.bin* to your computer.
+5. Upload the binary file to your ARM PRO MINI board as described above.
 
+
+ARMmbed blinky probram:
+``` cpp
 #include "mbed.h"
 
 DigitalOut led(P0_7);  // LED pin.
@@ -244,12 +248,10 @@ int main() {
   }
 }
 ```
-4. CLick on the Compile button. This will compile the program and will download the binary file named *mbed_blinky_LPC11U35_501.bin* to your computer.
-5. Upload the binary file to your ARM PRO MINI board as described above.
 
 
+ARMmbed online IDE:
 ![](www/mbed_ide.png)
-
 
 
 <br>
