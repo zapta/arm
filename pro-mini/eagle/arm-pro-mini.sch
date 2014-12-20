@@ -1318,18 +1318,17 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="0" y1="0" x2="0" y2="259.08" width="0.1524" layer="94"/>
 <text x="226.06" y="137.16" size="2.54" layer="97">MCU</text>
 <text x="331.978" y="7.112" size="2.54" layer="97">1A</text>
-<text x="73.914" y="30.48" size="2.54" layer="97">3.3V REGULATOR</text>
-<text x="66.04" y="124.46" size="2.54" layer="97">USB</text>
+<text x="73.914" y="48.26" size="2.54" layer="97">3.3V REGULATOR</text>
+<text x="66.04" y="114.3" size="2.54" layer="97">USB</text>
 <text x="149.86" y="48.26" size="2.54" layer="97">SWD (DEBUGGING)</text>
-<wire x1="38.1" y1="86.36" x2="60.96" y2="86.36" width="0.2032" layer="94" style="shortdash"/>
-<wire x1="60.96" y1="86.36" x2="60.96" y2="73.66" width="0.2032" layer="94" style="shortdash"/>
-<wire x1="53.34" y1="195.58" x2="53.34" y2="210.82" width="0.2032" layer="94" style="shortdash"/>
-<wire x1="53.34" y1="210.82" x2="66.04" y2="210.82" width="0.2032" layer="94" style="shortdash"/>
-<wire x1="53.34" y1="195.58" x2="66.04" y2="195.58" width="0.2032" layer="94" style="shortdash"/>
-<text x="88.9" y="134.62" size="1.778" layer="94">Optional B</text>
-<text x="21.59" y="56.388" size="1.778" layer="94">Optional C</text>
-<text x="165.608" y="56.388" size="1.778" layer="94">Optional - D</text>
-<text x="238.76" y="55.88" size="1.778" layer="94">Optional E</text>
+<wire x1="40.64" y1="91.44" x2="60.96" y2="91.44" width="0.2032" layer="94" style="shortdash"/>
+<wire x1="60.96" y1="91.44" x2="60.96" y2="78.74" width="0.2032" layer="94" style="shortdash"/>
+<wire x1="55.88" y1="195.58" x2="55.88" y2="210.82" width="0.2032" layer="94" style="shortdash"/>
+<wire x1="55.88" y1="210.82" x2="68.58" y2="210.82" width="0.2032" layer="94" style="shortdash"/>
+<wire x1="55.88" y1="195.58" x2="68.58" y2="195.58" width="0.2032" layer="94" style="shortdash"/>
+<text x="74.168" y="126.238" size="1.778" layer="94">Optional B1</text>
+<text x="24.13" y="56.388" size="1.778" layer="94">Optional C</text>
+<text x="165.608" y="56.388" size="1.778" layer="94">Optional - E</text>
 <text x="90.17" y="192.786" size="1.778" layer="94">Optional  A</text>
 <text x="294.64" y="55.88" size="1.778" layer="94">Optional F</text>
 <text x="236.982" y="75.184" size="1.778" layer="94">ISP</text>
@@ -1342,47 +1341,57 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="187.96" y1="114.3" x2="187.96" y2="53.34" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="187.96" y1="53.34" x2="142.24" y2="53.34" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="142.24" y1="53.34" x2="142.24" y2="114.3" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="17.78" y1="81.28" x2="53.34" y2="81.28" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="53.34" y1="81.28" x2="53.34" y2="53.34" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="53.34" y1="53.34" x2="17.78" y2="53.34" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="17.78" y1="53.34" x2="17.78" y2="81.28" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="30.48" y1="185.42" x2="109.22" y2="185.42" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="109.22" y1="185.42" x2="109.22" y2="132.08" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="109.22" y1="132.08" x2="30.48" y2="132.08" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="30.48" y1="132.08" x2="30.48" y2="185.42" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="58.42" y1="238.76" x2="58.42" y2="190.5" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="58.42" y1="190.5" x2="109.22" y2="190.5" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="20.32" y1="86.36" x2="55.88" y2="86.36" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="55.88" y1="86.36" x2="55.88" y2="53.34" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="55.88" y1="53.34" x2="20.32" y2="53.34" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="20.32" y1="53.34" x2="20.32" y2="86.36" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="30.48" y1="177.8" x2="109.22" y2="177.8" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="109.22" y1="177.8" x2="109.22" y2="119.38" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="109.22" y1="119.38" x2="30.48" y2="119.38" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="30.48" y1="119.38" x2="30.48" y2="177.8" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="60.96" y1="238.76" x2="60.96" y2="190.5" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="60.96" y1="190.5" x2="109.22" y2="190.5" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="109.22" y1="190.5" x2="109.22" y2="238.76" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="109.22" y1="238.76" x2="58.42" y2="238.76" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="109.22" y1="238.76" x2="60.96" y2="238.76" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="231.14" y1="114.3" x2="231.14" y2="53.34" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="231.14" y1="53.34" x2="317.5" y2="53.34" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="317.5" y1="53.34" x2="317.5" y2="114.3" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="317.5" y1="114.3" x2="231.14" y2="114.3" width="0.1524" layer="97" style="shortdash"/>
-<text x="20.574" y="30.48" size="2.54" layer="97">POWER SELECTOR</text>
+<text x="20.574" y="48.26" size="2.54" layer="97">POWER SELECTOR</text>
+<wire x1="55.88" y1="124.46" x2="55.88" y2="146.05" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="93.98" y1="146.05" x2="55.88" y2="146.05" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="93.98" y1="124.46" x2="55.88" y2="124.46" width="0.1524" layer="97" style="shortdash"/>
+<text x="91.44" y="172.72" size="1.778" layer="94">Optional B</text>
+<wire x1="93.98" y1="146.05" x2="93.98" y2="124.46" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="66.04" y1="86.36" x2="119.38" y2="86.36" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="66.04" y1="53.34" x2="119.38" y2="53.34" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="66.04" y1="53.34" x2="66.04" y2="86.36" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="119.38" y1="53.34" x2="119.38" y2="86.36" width="0.1524" layer="97" style="shortdash"/>
+<text x="87.63" y="56.388" size="1.778" layer="94">Optional C</text>
 </plain>
 <instances>
-<instance part="U$3" gate="G$1" x="48.26" y="152.4" rot="R180"/>
+<instance part="U$3" gate="G$1" x="48.26" y="144.78" rot="R180"/>
 <instance part="U$20" gate="G$1" x="238.76" y="0"/>
 <instance part="GND22" gate="1" x="246.38" y="63.5"/>
-<instance part="J1" gate="G$1" x="40.64" y="152.4" smashed="yes">
-<attribute name="NAME" x="33.782" y="140.97" size="1.778" layer="95"/>
-<attribute name="VALUE" x="33.782" y="137.414" size="1.778" layer="96"/>
+<instance part="J1" gate="G$1" x="40.64" y="144.78" smashed="yes">
+<attribute name="NAME" x="33.782" y="133.35" size="1.778" layer="95"/>
+<attribute name="VALUE" x="33.782" y="129.794" size="1.778" layer="96"/>
 </instance>
 <instance part="S1" gate="G$1" x="246.38" y="76.2" smashed="yes">
 <attribute name="NAME" x="240.792" y="71.628" size="1.778" layer="95"/>
 </instance>
-<instance part="U2" gate="G$1" x="91.44" y="68.58"/>
-<instance part="GND3" gate="1" x="78.74" y="55.88"/>
-<instance part="C2" gate="G$1" x="109.22" y="66.04" smashed="yes">
-<attribute name="NAME" x="110.998" y="67.183" size="1.778" layer="95"/>
-<attribute name="VALUE" x="110.49" y="61.595" size="1.778" layer="96"/>
+<instance part="U2" gate="G$1" x="93.98" y="73.66"/>
+<instance part="GND3" gate="1" x="81.28" y="60.96"/>
+<instance part="C2" gate="G$1" x="111.76" y="71.12" smashed="yes">
+<attribute name="NAME" x="113.538" y="72.263" size="1.778" layer="95"/>
+<attribute name="VALUE" x="113.03" y="66.675" size="1.778" layer="96"/>
 </instance>
-<instance part="GND18" gate="1" x="109.22" y="55.88"/>
-<instance part="C1" gate="G$1" x="71.12" y="66.04" smashed="yes">
-<attribute name="NAME" x="65.532" y="67.183" size="1.778" layer="95"/>
-<attribute name="VALUE" x="65.278" y="61.595" size="1.778" layer="96"/>
+<instance part="GND18" gate="1" x="111.76" y="60.96"/>
+<instance part="C1" gate="G$1" x="73.66" y="71.12" smashed="yes">
+<attribute name="NAME" x="68.072" y="72.263" size="1.778" layer="95"/>
+<attribute name="VALUE" x="67.818" y="66.675" size="1.778" layer="96"/>
 </instance>
-<instance part="GND28" gate="1" x="71.12" y="55.88"/>
+<instance part="GND28" gate="1" x="73.66" y="60.96"/>
 <instance part="U3" gate="G$1" x="246.38" y="182.88" smashed="yes">
 <attribute name="NAME" x="206.502" y="145.8976" size="1.778" layer="95"/>
 <attribute name="VALUE" x="214.122" y="145.8976" size="1.778" layer="96"/>
@@ -1401,29 +1410,29 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <attribute name="VALUE" x="181.356" y="215.519" size="1.778" layer="96"/>
 </instance>
 <instance part="GND4" gate="1" x="172.72" y="213.36"/>
-<instance part="C6" gate="G$1" x="182.88" y="160.02" smashed="yes">
-<attribute name="NAME" x="176.022" y="159.385" size="1.778" layer="95"/>
-<attribute name="VALUE" x="174.498" y="155.067" size="1.778" layer="96"/>
+<instance part="C6" gate="G$1" x="180.34" y="160.02" smashed="yes">
+<attribute name="NAME" x="173.482" y="159.385" size="1.778" layer="95"/>
+<attribute name="VALUE" x="171.958" y="155.067" size="1.778" layer="96"/>
 </instance>
-<instance part="GND10" gate="1" x="182.88" y="149.86"/>
-<instance part="C5" gate="G$1" x="182.88" y="182.88" smashed="yes">
-<attribute name="NAME" x="175.26" y="180.975" size="1.778" layer="95"/>
-<attribute name="VALUE" x="172.974" y="177.673" size="1.778" layer="96"/>
+<instance part="GND10" gate="1" x="180.34" y="149.86"/>
+<instance part="C5" gate="G$1" x="180.34" y="182.88" smashed="yes">
+<attribute name="NAME" x="172.72" y="180.975" size="1.778" layer="95"/>
+<attribute name="VALUE" x="170.434" y="177.673" size="1.778" layer="96"/>
 </instance>
-<instance part="GND11" gate="1" x="182.88" y="175.26"/>
-<instance part="+3V1" gate="G$1" x="182.88" y="170.18"/>
-<instance part="+3V2" gate="G$1" x="182.88" y="193.04"/>
-<instance part="U1" gate="G$1" x="63.5" y="147.32" smashed="yes">
-<attribute name="VALUE" x="72.644" y="145.288" size="1.778" layer="96"/>
-<attribute name="NAME" x="72.898" y="148.59" size="1.778" layer="95"/>
+<instance part="GND11" gate="1" x="180.34" y="175.26"/>
+<instance part="+3V1" gate="G$1" x="180.34" y="170.18"/>
+<instance part="+3V2" gate="G$1" x="180.34" y="193.04"/>
+<instance part="U1" gate="G$1" x="66.04" y="137.16" smashed="yes">
+<attribute name="VALUE" x="74.422" y="133.35" size="1.778" layer="96"/>
+<attribute name="NAME" x="75.438" y="138.43" size="1.778" layer="95"/>
 </instance>
-<instance part="GND1" gate="1" x="63.5" y="137.16"/>
-<instance part="GND8" gate="1" x="50.8" y="137.16"/>
-<instance part="R1" gate="G$1" x="66.04" y="177.8" rot="R90"/>
-<instance part="P+4" gate="VCC" x="55.88" y="175.26" smashed="yes" rot="R270">
-<attribute name="VALUE" x="48.26" y="177.8" size="1.778" layer="96"/>
+<instance part="GND1" gate="1" x="66.04" y="127"/>
+<instance part="GND8" gate="1" x="50.8" y="127"/>
+<instance part="R1" gate="G$1" x="68.58" y="170.18" rot="R90"/>
+<instance part="P+4" gate="VCC" x="55.88" y="167.64" smashed="yes" rot="R270">
+<attribute name="VALUE" x="48.26" y="170.18" size="1.778" layer="96"/>
 </instance>
-<instance part="+3V5" gate="G$1" x="124.46" y="73.66" rot="R270"/>
+<instance part="+3V5" gate="G$1" x="129.54" y="78.74" rot="R270"/>
 <instance part="J2" gate="A" x="160.02" y="83.82"/>
 <instance part="+3V6" gate="G$1" x="149.86" y="104.14"/>
 <instance part="GND12" gate="1" x="149.86" y="63.5"/>
@@ -1440,11 +1449,11 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <attribute name="NAME" x="266.192" y="71.628" size="1.778" layer="95"/>
 </instance>
 <instance part="GND14" gate="1" x="271.78" y="63.5"/>
-<instance part="R4" gate="G$1" x="93.98" y="167.64" smashed="yes">
-<attribute name="NAME" x="85.852" y="168.6306" size="1.778" layer="95"/>
-<attribute name="VALUE" x="98.806" y="168.656" size="1.778" layer="96"/>
+<instance part="R4" gate="G$1" x="93.98" y="160.02" smashed="yes">
+<attribute name="NAME" x="85.852" y="161.0106" size="1.778" layer="95"/>
+<attribute name="VALUE" x="98.806" y="161.036" size="1.778" layer="96"/>
 </instance>
-<instance part="+3V9" gate="G$1" x="66.04" y="228.6"/>
+<instance part="+3V9" gate="G$1" x="68.58" y="228.6"/>
 <instance part="R2" gate="G$1" x="78.74" y="215.9" rot="R90"/>
 <instance part="+3V10" gate="G$1" x="78.74" y="228.6"/>
 <instance part="R3" gate="G$1" x="88.9" y="203.2"/>
@@ -1458,20 +1467,20 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <instance part="GND6" gate="1" x="287.02" y="63.5"/>
 <instance part="+3V4" gate="G$1" x="302.26" y="106.68"/>
 <instance part="+3V11" gate="G$1" x="99.06" y="228.6"/>
-<instance part="R6" gate="G$1" x="93.98" y="157.48" smashed="yes">
-<attribute name="NAME" x="85.852" y="158.2166" size="1.778" layer="95"/>
-<attribute name="VALUE" x="98.044" y="157.988" size="1.778" layer="96"/>
+<instance part="R6" gate="G$1" x="93.98" y="149.86" smashed="yes">
+<attribute name="NAME" x="85.852" y="150.5966" size="1.778" layer="95"/>
+<attribute name="VALUE" x="98.044" y="150.368" size="1.778" layer="96"/>
 </instance>
-<instance part="R5" gate="G$1" x="93.98" y="162.56" smashed="yes">
-<attribute name="NAME" x="85.852" y="163.2966" size="1.778" layer="95"/>
-<attribute name="VALUE" x="98.298" y="163.068" size="1.778" layer="96"/>
+<instance part="R5" gate="G$1" x="93.98" y="154.94" smashed="yes">
+<attribute name="NAME" x="85.852" y="155.6766" size="1.778" layer="95"/>
+<attribute name="VALUE" x="98.298" y="155.448" size="1.778" layer="96"/>
 </instance>
-<instance part="U4" gate="G$1" x="43.18" y="73.66" smashed="yes" rot="MR180">
-<attribute name="NAME" x="42.164" y="64.5414" size="1.778" layer="95" rot="MR180"/>
-<attribute name="VALUE" x="38.354" y="67.7164" size="1.778" layer="96" rot="MR180"/>
+<instance part="U4" gate="G$1" x="45.72" y="78.74" smashed="yes" rot="MR180">
+<attribute name="NAME" x="44.704" y="69.6214" size="1.778" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="40.894" y="72.7964" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="P+1" gate="VCC" x="38.1" y="93.98" smashed="yes">
-<attribute name="VALUE" x="35.56" y="86.36" size="1.778" layer="96" rot="R90"/>
+<instance part="P+1" gate="VCC" x="40.64" y="99.06" smashed="yes">
+<attribute name="VALUE" x="38.1" y="91.44" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="TP20" gate="G$1" x="294.64" y="228.6"/>
 <instance part="TP17" gate="G$1" x="294.64" y="226.06"/>
@@ -1499,23 +1508,23 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <instance part="TP13" gate="G$1" x="294.64" y="165.1"/>
 <instance part="TP14" gate="G$1" x="294.64" y="157.48"/>
 <instance part="TP19" gate="G$1" x="294.64" y="154.94"/>
-<instance part="TP30" gate="G$1" x="294.64" y="142.24"/>
-<instance part="TP27" gate="G$1" x="294.64" y="139.7"/>
-<instance part="TP28" gate="G$1" x="294.64" y="134.62"/>
-<instance part="GND16" gate="1" x="284.48" y="132.08"/>
-<instance part="+3V3" gate="G$1" x="284.48" y="147.32" smashed="yes">
-<attribute name="VALUE" x="279.908" y="148.336" size="1.778" layer="96"/>
+<instance part="TP30" gate="G$1" x="294.64" y="139.7"/>
+<instance part="TP27" gate="G$1" x="294.64" y="137.16"/>
+<instance part="TP28" gate="G$1" x="294.64" y="132.08"/>
+<instance part="GND16" gate="1" x="284.48" y="129.54"/>
+<instance part="+3V3" gate="G$1" x="284.48" y="144.78" smashed="yes">
+<attribute name="VALUE" x="279.908" y="145.796" size="1.778" layer="96"/>
 </instance>
-<instance part="P+2" gate="VCC" x="289.56" y="147.32" smashed="yes">
-<attribute name="VALUE" x="288.544" y="148.336" size="1.778" layer="96"/>
+<instance part="P+2" gate="VCC" x="289.56" y="144.78" smashed="yes">
+<attribute name="VALUE" x="288.544" y="145.796" size="1.778" layer="96"/>
 </instance>
-<instance part="U$1" gate="G$1" x="101.6" y="66.04" rot="R180"/>
+<instance part="U$1" gate="G$1" x="104.14" y="71.12" rot="R180"/>
 <instance part="U$2" gate="G$1" x="165.1" y="81.28" rot="R180"/>
-<instance part="T1" gate="G$1" x="68.58" y="203.2" smashed="yes" rot="MR0">
-<attribute name="NAME" x="70.358" y="199.39" size="1.778" layer="95"/>
-<attribute name="VALUE" x="70.104" y="196.342" size="1.778" layer="96"/>
+<instance part="T1" gate="G$1" x="71.12" y="203.2" smashed="yes" rot="MR0">
+<attribute name="NAME" x="72.898" y="199.39" size="1.778" layer="95"/>
+<attribute name="VALUE" x="72.644" y="196.342" size="1.778" layer="96"/>
 </instance>
-<instance part="TP29" gate="G$1" x="294.64" y="137.16"/>
+<instance part="TP29" gate="G$1" x="294.64" y="134.62"/>
 </instances>
 <busses>
 </busses>
@@ -1528,19 +1537,19 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="GND"/>
-<wire x1="81.28" y1="63.5" x2="78.74" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="78.74" y1="63.5" x2="78.74" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="68.58" x2="81.28" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="68.58" x2="81.28" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="C2" gate="G$1" pin="2"/>
 <pinref part="GND18" gate="1" pin="GND"/>
-<wire x1="109.22" y1="60.96" x2="109.22" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="66.04" x2="111.76" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND28" gate="1" pin="GND"/>
 <pinref part="C1" gate="G$1" pin="2"/>
-<wire x1="71.12" y1="58.42" x2="71.12" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="63.5" x2="73.66" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C3" gate="G$1" pin="2"/>
@@ -1555,7 +1564,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="C6" gate="G$1" pin="2"/>
 <pinref part="GND10" gate="1" pin="GND"/>
-<wire x1="182.88" y1="152.4" x2="182.88" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="152.4" x2="180.34" y2="154.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C5" gate="G$1" pin="2"/>
@@ -1568,8 +1577,8 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="J1" gate="G$1" pin="GND"/>
 <pinref part="GND8" gate="1" pin="GND"/>
-<wire x1="48.26" y1="147.32" x2="50.8" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="147.32" x2="50.8" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="139.7" x2="50.8" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="139.7" x2="50.8" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="J2" gate="A" pin="3"/>
@@ -1611,7 +1620,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="TP28" gate="G$1" pin="1"/>
 <pinref part="GND16" gate="1" pin="GND"/>
-<wire x1="292.1" y1="134.62" x2="284.48" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="292.1" y1="132.08" x2="284.48" y2="132.08" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="GND"/>
@@ -1645,29 +1654,29 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <net name="+3V3" class="0">
 <segment>
 <pinref part="C5" gate="G$1" pin="1"/>
-<wire x1="182.88" y1="185.42" x2="182.88" y2="187.96" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="185.42" x2="180.34" y2="187.96" width="0.1524" layer="91"/>
 <pinref part="U3" gate="G$1" pin="VDD@1"/>
-<wire x1="182.88" y1="187.96" x2="193.04" y2="187.96" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="187.96" x2="193.04" y2="187.96" width="0.1524" layer="91"/>
 <pinref part="+3V2" gate="G$1" pin="+3V3"/>
-<wire x1="182.88" y1="190.5" x2="182.88" y2="187.96" width="0.1524" layer="91"/>
-<junction x="182.88" y="187.96"/>
+<wire x1="180.34" y1="190.5" x2="180.34" y2="187.96" width="0.1524" layer="91"/>
+<junction x="180.34" y="187.96"/>
 </segment>
 <segment>
 <pinref part="C6" gate="G$1" pin="1"/>
-<wire x1="182.88" y1="162.56" x2="182.88" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="162.56" x2="180.34" y2="165.1" width="0.1524" layer="91"/>
 <pinref part="U3" gate="G$1" pin="VDD@2"/>
-<wire x1="182.88" y1="165.1" x2="193.04" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="165.1" x2="193.04" y2="165.1" width="0.1524" layer="91"/>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
-<wire x1="182.88" y1="167.64" x2="182.88" y2="165.1" width="0.1524" layer="91"/>
-<junction x="182.88" y="165.1"/>
+<wire x1="180.34" y1="167.64" x2="180.34" y2="165.1" width="0.1524" layer="91"/>
+<junction x="180.34" y="165.1"/>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="VOUT"/>
-<wire x1="101.6" y1="73.66" x2="109.22" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="78.74" x2="111.76" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="109.22" y1="73.66" x2="121.92" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="68.58" x2="109.22" y2="73.66" width="0.1524" layer="91"/>
-<junction x="109.22" y="73.66"/>
+<wire x1="111.76" y1="78.74" x2="127" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="73.66" x2="111.76" y2="78.74" width="0.1524" layer="91"/>
+<junction x="111.76" y="78.74"/>
 <pinref part="+3V5" gate="G$1" pin="+3V3"/>
 </segment>
 <segment>
@@ -1691,9 +1700,9 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </segment>
 <segment>
 <pinref part="+3V9" gate="G$1" pin="+3V3"/>
-<wire x1="66.04" y1="226.06" x2="66.04" y2="210.82" width="0.1524" layer="91"/>
-<junction x="66.04" y="210.82"/>
-<wire x1="66.04" y1="210.82" x2="66.04" y2="208.28" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="226.06" x2="68.58" y2="210.82" width="0.1524" layer="91"/>
+<junction x="68.58" y="210.82"/>
+<wire x1="68.58" y1="210.82" x2="68.58" y2="208.28" width="0.1524" layer="91"/>
 <pinref part="T1" gate="G$1" pin="E"/>
 </segment>
 <segment>
@@ -1708,8 +1717,8 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </segment>
 <segment>
 <pinref part="TP27" gate="G$1" pin="1"/>
-<wire x1="292.1" y1="139.7" x2="284.48" y2="139.7" width="0.1524" layer="91"/>
-<wire x1="284.48" y1="139.7" x2="284.48" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="292.1" y1="137.16" x2="284.48" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="137.16" x2="284.48" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="+3V3" gate="G$1" pin="+3V3"/>
 </segment>
 </net>
@@ -1896,37 +1905,37 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="99.06" y1="167.64" x2="137.16" y2="167.64" width="0.1524" layer="91"/>
-<label x="114.3" y="167.64" size="1.778" layer="95"/>
+<wire x1="99.06" y1="160.02" x2="137.16" y2="160.02" width="0.1524" layer="91"/>
+<label x="114.3" y="160.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="USB-5V" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="VBUS"/>
-<wire x1="48.26" y1="167.64" x2="50.8" y2="167.64" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="160.02" x2="50.8" y2="160.02" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="VCC"/>
-<wire x1="50.8" y1="167.64" x2="58.42" y2="167.64" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="167.64" x2="58.42" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="175.26" x2="50.8" y2="175.26" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="175.26" x2="50.8" y2="167.64" width="0.1524" layer="91"/>
-<junction x="50.8" y="167.64"/>
+<wire x1="50.8" y1="160.02" x2="60.96" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="160.02" x2="60.96" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="167.64" x2="50.8" y2="167.64" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="167.64" x2="50.8" y2="160.02" width="0.1524" layer="91"/>
+<junction x="50.8" y="160.02"/>
 <pinref part="P+4" gate="VCC" pin="USB-5V"/>
 <pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="58.42" y1="167.64" x2="88.9" y2="167.64" width="0.1524" layer="91"/>
-<junction x="58.42" y="167.64"/>
+<wire x1="60.96" y1="160.02" x2="88.9" y2="160.02" width="0.1524" layer="91"/>
+<junction x="60.96" y="160.02"/>
 </segment>
 <segment>
 <pinref part="U4" gate="G$1" pin="A2"/>
-<wire x1="40.64" y1="76.2" x2="38.1" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="76.2" x2="38.1" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="81.28" x2="40.64" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="81.28" x2="40.64" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="VCC" pin="USB-5V"/>
-<junction x="38.1" y="86.36"/>
-<wire x1="38.1" y1="86.36" x2="38.1" y2="91.44" width="0.1524" layer="91"/>
+<junction x="40.64" y="91.44"/>
+<wire x1="40.64" y1="91.44" x2="40.64" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="TP30" gate="G$1" pin="1"/>
-<wire x1="292.1" y1="142.24" x2="289.56" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="289.56" y1="142.24" x2="289.56" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="292.1" y1="139.7" x2="289.56" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="289.56" y1="139.7" x2="289.56" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="P+2" gate="VCC" pin="USB-5V"/>
 </segment>
 </net>
@@ -2003,7 +2012,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="78.74" y1="210.82" x2="78.74" y2="203.2" width="0.1524" layer="91"/>
-<wire x1="78.74" y1="203.2" x2="71.12" y2="203.2" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="203.2" x2="73.66" y2="203.2" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="78.74" y1="203.2" x2="83.82" y2="203.2" width="0.1524" layer="91"/>
 <junction x="78.74" y="203.2"/>
@@ -2013,9 +2022,9 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <net name="N$5" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="66.04" y1="198.12" x2="66.04" y2="195.58" width="0.1524" layer="91"/>
-<junction x="66.04" y="195.58"/>
-<wire x1="66.04" y1="195.58" x2="66.04" y2="182.88" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="198.12" x2="68.58" y2="195.58" width="0.1524" layer="91"/>
+<junction x="68.58" y="195.58"/>
+<wire x1="68.58" y1="195.58" x2="68.58" y2="175.26" width="0.1524" layer="91"/>
 <pinref part="T1" gate="G$1" pin="C"/>
 </segment>
 </net>
@@ -2042,40 +2051,40 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <net name="N$10" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="SHDN"/>
-<wire x1="81.28" y1="68.58" x2="78.74" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="78.74" y1="68.58" x2="78.74" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="73.66" x2="81.28" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="73.66" x2="81.28" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="U2" gate="G$1" pin="VIN"/>
-<wire x1="81.28" y1="73.66" x2="78.74" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="78.74" y1="73.66" x2="71.12" y2="73.66" width="0.1524" layer="91"/>
-<junction x="78.74" y="73.66"/>
+<wire x1="83.82" y1="78.74" x2="81.28" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="78.74" x2="73.66" y2="78.74" width="0.1524" layer="91"/>
+<junction x="81.28" y="78.74"/>
 <pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="71.12" y1="68.58" x2="71.12" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="73.66" x2="73.66" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="U4" gate="G$1" pin="C"/>
-<junction x="71.12" y="73.66"/>
-<junction x="71.12" y="73.66"/>
-<wire x1="48.26" y1="73.66" x2="60.96" y2="73.66" width="0.1524" layer="91"/>
-<junction x="60.96" y="73.66"/>
-<wire x1="60.96" y1="73.66" x2="71.12" y2="73.66" width="0.1524" layer="91"/>
+<junction x="73.66" y="78.74"/>
+<junction x="73.66" y="78.74"/>
+<wire x1="50.8" y1="78.74" x2="60.96" y2="78.74" width="0.1524" layer="91"/>
+<junction x="60.96" y="78.74"/>
+<wire x1="60.96" y1="78.74" x2="73.66" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$8" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="D+"/>
 <pinref part="R6" gate="G$1" pin="1"/>
-<wire x1="48.26" y1="157.48" x2="66.04" y2="157.48" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="157.48" x2="66.04" y2="157.48" width="0.1524" layer="91"/>
-<junction x="66.04" y="157.48"/>
+<wire x1="48.26" y1="149.86" x2="68.58" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="149.86" x2="68.58" y2="149.86" width="0.1524" layer="91"/>
+<junction x="68.58" y="149.86"/>
 <pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="66.04" y1="172.72" x2="66.04" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="165.1" x2="68.58" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="IO1"/>
-<wire x1="66.04" y1="154.94" x2="66.04" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="144.78" x2="68.58" y2="149.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="USB_DM" class="2">
 <segment>
 <pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="99.06" y1="162.56" x2="137.16" y2="162.56" width="0.1524" layer="91"/>
-<label x="114.3" y="162.56" size="1.778" layer="95"/>
+<wire x1="99.06" y1="154.94" x2="137.16" y2="154.94" width="0.1524" layer="91"/>
+<label x="114.3" y="154.94" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="USB_DM"/>
@@ -2086,8 +2095,8 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <net name="USB_DP" class="2">
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
-<wire x1="99.06" y1="157.48" x2="137.16" y2="157.48" width="0.1524" layer="91"/>
-<label x="114.3" y="157.48" size="1.778" layer="95"/>
+<wire x1="99.06" y1="149.86" x2="137.16" y2="149.86" width="0.1524" layer="91"/>
+<label x="114.3" y="149.86" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="USB_DP"/>
@@ -2099,23 +2108,23 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <segment>
 <pinref part="R5" gate="G$1" pin="1"/>
 <pinref part="J1" gate="G$1" pin="D-"/>
-<wire x1="48.26" y1="162.56" x2="71.12" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="154.94" x2="73.66" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="IO2"/>
-<wire x1="71.12" y1="162.56" x2="88.9" y2="162.56" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="154.94" x2="71.12" y2="162.56" width="0.1524" layer="91"/>
-<junction x="71.12" y="162.56"/>
+<wire x1="73.66" y1="154.94" x2="88.9" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="144.78" x2="73.66" y2="154.94" width="0.1524" layer="91"/>
+<junction x="73.66" y="154.94"/>
 </segment>
 </net>
 <net name="EXT-VIN" class="0">
 <segment>
 <pinref part="TP29" gate="G$1" pin="1"/>
-<wire x1="292.1" y1="137.16" x2="271.78" y2="137.16" width="0.1524" layer="91"/>
-<label x="271.78" y="137.16" size="1.778" layer="95"/>
+<wire x1="292.1" y1="134.62" x2="271.78" y2="134.62" width="0.1524" layer="91"/>
+<label x="271.78" y="134.62" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U4" gate="G$1" pin="A1"/>
-<wire x1="40.64" y1="71.12" x2="25.4" y2="71.12" width="0.1524" layer="91"/>
-<label x="25.4" y="71.12" size="1.778" layer="95"/>
+<wire x1="43.18" y1="76.2" x2="27.94" y2="76.2" width="0.1524" layer="91"/>
+<label x="27.94" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PIO0_9-SWDO" class="0">
