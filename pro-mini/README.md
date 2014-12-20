@@ -57,6 +57,14 @@ Recomanded IDE | NXP LPCXpresso (eclipse based, free)
 
 
 <br>
+### Pinout Diagram
+
+![](www/pin_out.png)
+
+![](www/pin_out.svg)
+
+
+<br>
 ### Quick Start 1 - Uploading a Program
 
 This section will teach you how to load new firmware on your board. It is done by switching the board to the USB/ISP virtual disk mode and copying the new binary file.
