@@ -153,13 +153,12 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <wire x1="0.4" y1="0.45" x2="0.4" y2="-0.45" width="0.1016" layer="51"/>
 <rectangle x1="-0.45" y1="0.45" x2="0.45" y2="0.85" layer="51"/>
 <rectangle x1="-0.45" y1="-0.85" x2="0.45" y2="-0.45" layer="51"/>
-<rectangle x1="-0.45" y1="0" x2="-0.3" y2="0.3" layer="21"/>
-<rectangle x1="0.3" y1="0" x2="0.45" y2="0.3" layer="21"/>
-<rectangle x1="-0.15" y1="0" x2="0.15" y2="0.3" layer="21"/>
-<smd name="A" x="0" y="-0.75" dx="0.8" dy="0.8" layer="1"/>
-<smd name="C" x="0" y="0.75" dx="0.8" dy="0.8" layer="1"/>
+<smd name="A" x="0" y="-0.55" dx="0.5" dy="0.7" layer="1"/>
+<smd name="C" x="0" y="0.55" dx="0.5" dy="0.7" layer="1"/>
 <text x="-0.635" y="-0.635" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <text x="1.905" y="-0.635" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<wire x1="-0.4746" y1="0.7762" x2="-0.4746" y2="0.2762" width="0.2032" layer="21"/>
+<wire x1="0.4652" y1="0.7762" x2="0.4652" y2="0.2762" width="0.2032" layer="21"/>
 </package>
 <package name="HVQFN33-5MM">
 <description>&lt;h2&gt;HVQFN-33&lt;/h2&gt;7x7x0.85mm

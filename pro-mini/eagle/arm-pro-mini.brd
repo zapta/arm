@@ -190,13 +190,12 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <wire x1="0.4" y1="0.45" x2="0.4" y2="-0.45" width="0.1016" layer="51"/>
 <rectangle x1="-0.45" y1="0.45" x2="0.45" y2="0.85" layer="51"/>
 <rectangle x1="-0.45" y1="-0.85" x2="0.45" y2="-0.45" layer="51"/>
-<rectangle x1="-0.45" y1="0" x2="-0.3" y2="0.3" layer="21"/>
-<rectangle x1="0.3" y1="0" x2="0.45" y2="0.3" layer="21"/>
-<rectangle x1="-0.15" y1="0" x2="0.15" y2="0.3" layer="21"/>
-<smd name="A" x="0" y="-0.75" dx="0.8" dy="0.8" layer="1"/>
-<smd name="C" x="0" y="0.75" dx="0.8" dy="0.8" layer="1"/>
+<smd name="A" x="0" y="-0.55" dx="0.5" dy="0.7" layer="1"/>
+<smd name="C" x="0" y="0.55" dx="0.5" dy="0.7" layer="1"/>
 <text x="-0.635" y="-0.635" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <text x="1.905" y="-0.635" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<wire x1="-0.4746" y1="0.7762" x2="-0.4746" y2="0.2762" width="0.2032" layer="21"/>
+<wire x1="0.4652" y1="0.7762" x2="0.4652" y2="0.2762" width="0.2032" layer="21"/>
 </package>
 <package name="HVQFN33-5MM">
 <description>&lt;h2&gt;HVQFN-33&lt;/h2&gt;7x7x0.85mm
@@ -973,7 +972,7 @@ design rules under a new name.</description>
 <wire x1="36.2712" y1="7.7216" x2="36.2204" y2="7.6708" width="0.1524" layer="1"/>
 <wire x1="36.9824" y1="4.3942" x2="37" y2="4.386" width="0.1524" layer="1"/>
 <wire x1="36.9824" y1="8.4328" x2="37" y2="8.45" width="0.1524" layer="1"/>
-<wire x1="33.6042" y1="9.652" x2="31.4332" y2="9.652" width="0.1524" layer="1"/>
+<wire x1="33.6042" y1="9.652" x2="31.2332" y2="9.652" width="0.1524" layer="1"/>
 <wire x1="33.8836" y1="9.9314" x2="33.6042" y2="9.652" width="0.1524" layer="1"/>
 <wire x1="33.8836" y1="13.9954" x2="33.8836" y2="9.9314" width="0.1524" layer="16"/>
 <wire x1="33.8836" y1="13.9954" x2="32.6136" y2="13.9954" width="0.1524" layer="16"/>
@@ -983,9 +982,6 @@ design rules under a new name.</description>
 <wire x1="33.9344" y1="10.0584" x2="34.8742" y2="9.1186" width="0.1524" layer="16"/>
 <wire x1="33.9344" y1="10.0584" x2="33.8836" y2="9.9314" width="0.1524" layer="16"/>
 <wire x1="22.987" y1="13.1826" x2="22.987" y2="13.208" width="0.1524" layer="16"/>
-<wire x1="14.8336" y1="16.256" x2="15.6838" y2="16.256" width="0.1524" layer="1"/>
-<wire x1="14.3002" y1="16.7894" x2="14.8336" y2="16.256" width="0.1524" layer="1"/>
-<wire x1="12.9794" y1="16.7894" x2="14.3002" y2="16.7894" width="0.1524" layer="1"/>
 <wire x1="12.9794" y1="10.668" x2="12.9794" y2="14.7828" width="0.1524" layer="16"/>
 <wire x1="12.9794" y1="14.7828" x2="12.9794" y2="16.7894" width="0.1524" layer="16"/>
 <wire x1="13.4112" y1="14.7828" x2="14.4526" y2="13.7414" width="0.1524" layer="1"/>
@@ -1014,6 +1010,10 @@ design rules under a new name.</description>
 <wire x1="22.987" y1="13.1826" x2="22.987" y2="15.2654" width="0.2032" layer="1"/>
 <wire x1="22.987" y1="15.2654" x2="23.4092" y2="15.6876" width="0.2032" layer="1"/>
 <wire x1="23.4092" y1="15.6876" x2="23.7998" y2="15.6876" width="0.2032" layer="1"/>
+<wire x1="12.9794" y1="16.7894" x2="13.081" y2="16.6878" width="0.2032" layer="1"/>
+<wire x1="13.081" y1="16.6878" x2="14.9098" y2="16.6878" width="0.2032" layer="1"/>
+<wire x1="14.9098" y1="16.6878" x2="15.3416" y2="16.256" width="0.2032" layer="1"/>
+<wire x1="15.3416" y1="16.256" x2="15.8838" y2="16.256" width="0.2032" layer="1"/>
 </signal>
 <signal name="N$1">
 <contactref element="C3" pad="1"/>
@@ -1203,7 +1203,7 @@ design rules under a new name.</description>
 <via x="15.5956" y="3.9116" extent="1-16" drill="0.3302"/>
 <wire x1="3.4544" y1="5.0292" x2="5.08" y2="5.0292" width="0.1524" layer="1"/>
 <wire x1="5.08" y1="5.0292" x2="7.124" y2="5.0292" width="0.1524" layer="1"/>
-<wire x1="7.124" y1="5.0292" x2="7.124" y2="5.08" width="0.1524" layer="1"/>
+<wire x1="7.124" y1="5.0292" x2="7.324" y2="5.08" width="0.1524" layer="1"/>
 <wire x1="5.08" y1="4.3434" x2="5.08" y2="5.0292" width="0.1524" layer="1"/>
 </signal>
 <signal name="PIO0_7-LED">
@@ -1610,25 +1610,27 @@ design rules under a new name.</description>
 <signal name="N$2">
 <contactref element="LED3" pad="A"/>
 <contactref element="R12" pad="1"/>
-<wire x1="17.1704" y1="15.9512" x2="17.1704" y2="16.256" width="0.1524" layer="1"/>
-<wire x1="16.256" y1="15.0368" x2="17.1704" y2="15.9512" width="0.1524" layer="1"/>
-<wire x1="17.1704" y1="16.256" x2="17.1838" y2="16.256" width="0.1524" layer="1"/>
+<wire x1="17.1704" y1="16.256" x2="16.9838" y2="16.256" width="0.1524" layer="1"/>
 <wire x1="16.256" y1="15.0368" x2="16.256" y2="14.9264" width="0.1524" layer="1"/>
+<wire x1="17.1704" y1="16.256" x2="16.8656" y2="16.256" width="0.2032" layer="1"/>
+<wire x1="16.8656" y1="16.256" x2="16.8656" y2="15.7734" width="0.2032" layer="1"/>
+<wire x1="16.8656" y1="15.7734" x2="16.256" y2="15.1638" width="0.2032" layer="1"/>
+<wire x1="16.256" y1="15.1638" x2="16.256" y2="14.9264" width="0.2032" layer="1"/>
 </signal>
 <signal name="N$6">
 <contactref element="R11" pad="1"/>
 <contactref element="LED2" pad="A"/>
-<wire x1="30.2514" y1="9.652" x2="29.9332" y2="9.652" width="0.1524" layer="1"/>
+<wire x1="30.2514" y1="9.652" x2="30.1332" y2="9.652" width="0.1524" layer="1"/>
 <wire x1="31.3602" y1="10.8204" x2="31.4198" y2="10.8204" width="0.1524" layer="1"/>
 <wire x1="31.4198" y1="10.8204" x2="30.8356" y2="10.2362" width="0.1524" layer="1"/>
 <wire x1="30.8356" y1="10.2362" x2="30.5816" y2="10.2362" width="0.1524" layer="1"/>
 <wire x1="30.5816" y1="10.2362" x2="29.9974" y2="9.652" width="0.1524" layer="1"/>
-<wire x1="29.9974" y1="9.652" x2="29.9332" y2="9.652" width="0.1524" layer="1"/>
+<wire x1="29.9974" y1="9.652" x2="30.1332" y2="9.652" width="0.1524" layer="1"/>
 </signal>
 <signal name="N$7">
 <contactref element="R7" pad="1"/>
 <contactref element="LED1" pad="A"/>
-<wire x1="9.9822" y1="5.08" x2="8.624" y2="5.08" width="0.2032" layer="1"/>
+<wire x1="9.9822" y1="5.08" x2="8.424" y2="5.08" width="0.2032" layer="1"/>
 <wire x1="10.1092" y1="4.953" x2="9.9822" y2="5.08" width="0.1524" layer="1"/>
 <wire x1="10.1092" y1="4.953" x2="10.1092" y2="5.038" width="0.1524" layer="1"/>
 </signal>
@@ -1752,8 +1754,8 @@ design rules under a new name.</description>
 <approved hash="4,1,adef01b8a180f3d6"/>
 <approved hash="4,1,56366ccc6e995463"/>
 <approved hash="4,1,50af6a55691953e3"/>
-<approved hash="4,1,307fc5cdf3a49261"/>
 <approved hash="4,1,e607ff795f48d241"/>
+<approved hash="4,1,307fc5cdf3a49261"/>
 <approved hash="4,16,ec3c6ecb38ca8d0a"/>
 <approved hash="4,16,8d448cb0f1e5f011"/>
 <approved hash="4,16,883689c2862b87df"/>
