@@ -46,6 +46,7 @@ PCB dimensions | 1.5” x 0.775”  (38.1mm x 19.7mm)
 PCB Layers | 2
 PCB Thickness | 1mm recommended. (standard 1.6mm is also OK).
 PCB file format | Eagle + PDF + Gerber files.
+PCB rules | 6mil min trace, 7mil min spacing.
 SMT Technology | 0402, QFN 0.5mm pitch.
 Power options | USB, ext 3.3v, ext 16V max (with included 3.3V LDO) 
 Header pins | 2x15 DIP, 0.7” row spacing. Access to all MCU's I/O pins.
