@@ -2141,6 +2141,10 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="102,1,104.14,78.74,VOUT,+3V3,,,,"/>
+<approved hash="104,1,83.82,78.74,U2,VIN,N$10,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>
