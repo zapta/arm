@@ -683,7 +683,7 @@ Metric Code Size 1608</description>
 <wire x1="7.62" y1="-7.62" x2="7.62" y2="7.62" width="0.4064" layer="94"/>
 <wire x1="7.62" y1="7.62" x2="-7.62" y2="7.62" width="0.4064" layer="94"/>
 <wire x1="-7.62" y1="7.62" x2="-7.62" y2="-7.62" width="0.4064" layer="94"/>
-<pin name="FB" x="10.16" y="-2.54" length="short" direction="in" rot="R180"/>
+<pin name="FB" x="10.16" y="-2.54" length="short" direction="pas" rot="R180"/>
 <pin name="GND" x="-10.16" y="-5.08" length="short" direction="pwr"/>
 <pin name="SHDN" x="-10.16" y="0" length="short" direction="in" function="dot"/>
 <pin name="VIN" x="-10.16" y="5.08" length="short" direction="pwr"/>
@@ -2141,11 +2141,6 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 </nets>
 </sheet>
 </sheets>
-<errors>
-<approved hash="102,1,101.6,73.66,VOUT,+3V3,,,,"/>
-<approved hash="202,1,101.6,66.04,U2,FB,,,,"/>
-<approved hash="104,1,81.28,73.66,U2,VIN,N$10,,,"/>
-</errors>
 </schematic>
 </drawing>
 </eagle>
