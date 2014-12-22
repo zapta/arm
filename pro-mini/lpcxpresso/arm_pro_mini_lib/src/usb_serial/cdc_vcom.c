@@ -89,7 +89,7 @@ static ErrorCode_t VCOM_bulk_out_hdlr(USBD_HANDLE_T hUsb, void *data, uint32_t e
 	return LPC_OK;
 }
 
-/* Set line coding call back routine */
+/* Set line coding callback routine */
 static ErrorCode_t VCOM_SetLineCode(USBD_HANDLE_T hCDC, CDC_LINE_CODING *line_coding)
 {
 	VCOM_DATA_T *pVcom = &g_vCOM;
@@ -202,21 +202,45 @@ uint32_t vcom_read_cnt(void)
 	return ret;
 }
 
-/* Virtual com port write routine. Returns how many bytes were actually written. */
-uint32_t vcom_write(uint8_t *pBuf, uint32_t len)
+/*
+ * Primitive virtual com port write routine. Returns how many bytes were actually
+ * written.
+ * Assumes() is_tx_ready it true. len shoudl be <= 64.
+ */
+static const int kMaxPacketSize = 64;
+static uint32_t vcom_write_packet(uint8_t *pBuf, uint32_t len)
 {
-	VCOM_DATA_T *pVcom = &g_vCOM;
-	uint32_t ret = 0;
+  VCOM_DATA_T* const pVcom = &g_vCOM;
+  uint32_t ret = 0;
+  
+  // Mark as busy. Will be cleared on completion by the callback handler.
+  pVcom->tx_flags |= VCOM_TX_BUSY;
 
-	if ( (pVcom->tx_flags & VCOM_TX_CONNECTED) && ((pVcom->tx_flags & VCOM_TX_BUSY) == 0) ) {
-		pVcom->tx_flags |= VCOM_TX_BUSY;
+  /* enter critical section */
+  NVIC_DisableIRQ(USB0_IRQn);
+  ret = USBD_API->hw->WriteEP(pVcom->hUsb, USB_CDC_IN_EP, pBuf, len);
+  /* exit critical section */
+  NVIC_EnableIRQ(USB0_IRQn);
 
-		/* enter critical section */
-		NVIC_DisableIRQ(USB0_IRQn);
-		ret = USBD_API->hw->WriteEP(pVcom->hUsb, USB_CDC_IN_EP, pBuf, len);
-		/* exit critical section */
-		NVIC_EnableIRQ(USB0_IRQn);
-	}
+  return ret;
+}
 
-	return ret;
+// Write out. Returns number of bytes actually written.
+uint32_t vcom_write(uint8_t *pBuf, uint32_t len) {
+  // Write one packet at a time.
+  uint32_t total_bytes_sent = 0;
+  while(total_bytes_sent < len) {
+    const int bytes_left_to_send = len - total_bytes_sent;
+    const int packet_size = (bytes_left_to_send > kMaxPacketSize)
+        ? kMaxPacketSize : bytes_left_to_send;
+    if (!(g_vCOM.tx_flags & VCOM_TX_CONNECTED)) {
+      break;
+    }
+    // If TX is buzy, this loop acts as a buzy loop.
+    if (!(g_vCOM.tx_flags & VCOM_TX_BUSY)) {
+      const int bytes_sent =  vcom_write_packet(pBuf + total_bytes_sent, packet_size);
+      total_bytes_sent += bytes_sent;
+    }
+  }
+  return total_bytes_sent;
 }

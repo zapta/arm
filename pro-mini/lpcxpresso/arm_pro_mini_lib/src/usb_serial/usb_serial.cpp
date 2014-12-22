@@ -152,11 +152,10 @@ void printf(const char *format, ...) {
   if (vcom_connected()) {
 
   // Assuming single thread, using static buffer.
-  static char buf[80];
+  static char buf[100];
   va_list ap;
   va_start(ap, format);
   int n = vsnprintf(buf, sizeof(buf), (const char *) format, ap);
-  // TODO: keep writing if only a portion was written. Abort if USB not connected.
   vcom_write((uint8_t*) buf, n);
   va_end(ap);
   }
