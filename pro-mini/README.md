@@ -90,8 +90,9 @@ This section will teach you how to view on your computer seial data output from 
 
 1. Load and run a hello world image file as described above. Make sure the red LED blinks.
 2. Identify the serial port on your computer. 
-    * **Mac OSX:**  run _ls /dev/*usb*_, the port name looks like */dev/cu.usbmodemNXP-71*.
-    * **Linux:** diff the output of 'ls /dev/*' with and without the ARM PRO MINI connected and look for port that appears only when
+    * **Mac OSX:**  run _ls /dev/\*usb\*_, the port name looks like */dev/cu.usbmodemNXP-71*.
+    * **Linux:** diff the output of the command _ls /dev/\*_ with and without the ARM PRO MINI 
+      connected and look for port that appears only when
       the ARM PRO MINI is connected. The serial port our linux test box is called */dev/ttyACM0* and is also availal with 
       two other name under the */dev/serial* directory.
     * **Windows:** TBD (may required the NXP CDC driver [here](resources/lpc_bootloader).
