@@ -90,12 +90,14 @@ This section will teach you how to view on your computer seial data output from 
 
 1. Load and run a hello world image file as described above. Make sure the red LED blinks.
 2. Identify the serial port on your computer. 
-    * On Mac OSX:  run _ls /dev/tty.usb*_, the port name looks like */dev/tty.usbmodemNXP-71*.
-    * On Linux: TBD
+    * On Mac OSX:  run _ls /dev/*usb*_, the port name looks like */dev/cu.usbmodemNXP-71*.
+    * On Linux: perform diff of 'ls /dev/*' with and without the board connected. 
+      The serial port on my linux box is called */dev/ttyACM0* and is also availal with 
+      two other name under the */dev/serial* directory.
     * On Windows: TBD (may required the NXP CDC driver [here](resources/lpc_bootloader).
 3. Use a terminal emulator to print the text received on the serial port you identified above.
-    * On Mac OSX: run the command screen <port_name>. For example *screen /dev/tty.usbmodemNXP-71*
-    * On Linux: TBD
+    * On Mac OSX: run the command *cat <port_name>*. For example *cat /dev/cu.usbmodemNXP-71*
+    * On Linux: run the command *cat <port_name>*. For example *cat /dev/ttyACM0*.
     * On Windows: TBD
 
 The output will look like this:
