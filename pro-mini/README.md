@@ -61,7 +61,7 @@ Recomanded IDE | NXP LPCXpresso (eclipse based, free)
 <br>
 ### Pinout Diagram
 
-![](www/pin_out.png)
+![](www/pinout_diagram.png)
 
 
 <br>
