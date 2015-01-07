@@ -11,6 +11,9 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 ![](www/arm_pro_mini.jpg)
 
 
+![](www/arm_pro_mini_2.jpg)
+
+
 [Schematic (PDF)](https://github.com/zapta/arm/blob/master/pro-mini/eagle/arm-pro-mini-schematic.pdf?raw=true)
 
 [BOM (CSV)](https://github.com/zapta/arm/blob/master/pro-mini/eagle/arm-pro-mini-bom.csv)
