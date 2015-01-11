@@ -157,8 +157,8 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <smd name="C" x="0" y="0.55" dx="0.5" dy="0.7" layer="1"/>
 <text x="-0.635" y="-0.635" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <text x="1.905" y="-0.635" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<wire x1="-0.4746" y1="0.7762" x2="-0.4746" y2="0.2762" width="0.2032" layer="21"/>
-<wire x1="0.4652" y1="0.7762" x2="0.4652" y2="0.2762" width="0.2032" layer="21"/>
+<wire x1="-0.6" y1="0.7762" x2="-0.6" y2="0.2762" width="0.2032" layer="21"/>
+<wire x1="0.6" y1="0.7762" x2="0.6" y2="0.2762" width="0.2032" layer="21"/>
 </package>
 <package name="HVQFN33-5MM">
 <description>&lt;h2&gt;HVQFN-33&lt;/h2&gt;7x7x0.85mm
@@ -265,16 +265,16 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <wire x1="-4.0132" y1="-0.6604" x2="-4.5212" y2="-0.2794" width="0.254" layer="21"/>
 <wire x1="-4.5212" y1="-0.2794" x2="-4.5212" y2="-1.0414" width="0.254" layer="21"/>
 <wire x1="-4.5212" y1="-1.0414" x2="-4.0132" y2="-0.6604" width="0.254" layer="21"/>
-<pad name="1" x="-2.54" y="-0.635" drill="0.508" shape="square"/>
-<pad name="2" x="-2.54" y="0.635" drill="0.508"/>
-<pad name="3" x="-1.27" y="-0.635" drill="0.508"/>
-<pad name="4" x="-1.27" y="0.635" drill="0.508"/>
-<pad name="5" x="0" y="-0.635" drill="0.508"/>
-<pad name="6" x="0" y="0.635" drill="0.508"/>
-<pad name="7" x="1.27" y="-0.635" drill="0.508"/>
-<pad name="8" x="1.27" y="0.635" drill="0.508"/>
-<pad name="9" x="2.54" y="-0.635" drill="0.508"/>
-<pad name="10" x="2.54" y="0.635" drill="0.508"/>
+<pad name="1" x="-2.54" y="-0.635" drill="0.6" diameter="0.9906" shape="square"/>
+<pad name="2" x="-2.54" y="0.635" drill="0.6" diameter="0.9906"/>
+<pad name="3" x="-1.27" y="-0.635" drill="0.6" diameter="0.9906"/>
+<pad name="4" x="-1.27" y="0.635" drill="0.6" diameter="0.9906"/>
+<pad name="5" x="0" y="-0.635" drill="0.6" diameter="0.9906"/>
+<pad name="6" x="0" y="0.635" drill="0.6" diameter="0.9906"/>
+<pad name="7" x="1.27" y="-0.635" drill="0.6" diameter="0.9906"/>
+<pad name="8" x="1.27" y="0.635" drill="0.6" diameter="0.9906"/>
+<pad name="9" x="2.54" y="-0.635" drill="0.6" diameter="0.9906"/>
+<pad name="10" x="2.54" y="0.635" drill="0.6" diameter="0.9906"/>
 <text x="-1.27" y="3.175" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-1.27" y="-4.445" size="1.27" layer="27">&gt;VALUE</text>
 </package>
