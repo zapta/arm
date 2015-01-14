@@ -276,6 +276,14 @@ Building a ARM PRO MINI is stragiht forward as long as you are comfortable with 
 
 
 <br>
+### U8G Graphics Library
+
+![](www/u8g_breadboard.png)
+
+U8GLib is a very capable open source portable graphics library for microcontrollers that was developed by Oliver Kraus (home page at https://code.google.com/p/u8glib/). The ARM PRO MINI source code repository includes a snapshot of u8glib in a form of a LPCXpresso project together with an SPI driver for ARM PRO MINI and a sample program that uses it. 
+
+
+<br>
 ### General Resources
 * [LPC11U3X datasheet](https://github.com/zapta/arm/blob/master/pro-mini/resources/LPC11U3X/LPC11U3X_datasheet.pdf?raw=true) PDF (hardware).
 * [LPC11U3X manual](https://github.com/zapta/arm/blob/master/pro-mini/resources/LPC11U3X/LPC11U3X_manual.pdf?raw=true) PDF (programming).
