@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>hello_u8g</name>
+	<name>u8g_example</name>
 	<comment></comment>
 	<projects>
 		<project>arm_pro_mini_lib</project>
