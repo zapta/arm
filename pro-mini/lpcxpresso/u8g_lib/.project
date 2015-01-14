@@ -3,6 +3,7 @@
 	<name>u8g_lib</name>
 	<comment></comment>
 	<projects>
+		<project>arm_pro_mini_lib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
