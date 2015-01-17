@@ -4,12 +4,15 @@
 // that similar Heltec modules with different pin labels or with blue
 // display are different and requires adaptation.
 //
+// NOTE: the definitive pin assignment of the SPI OLED driver
+// is in u8g_arm_pro_mini.cpp
+//
 // GND - pin 28. Ground.
 // VCC - pin 27. 3.3V
 // SCL - pin 24. SPI SCK 0.
-// SDA - pin  4. SPI MOSI 0.
-// RST - pin 21. P0_20 (reset).
-// D/C - pin 13. P0_23 (a0).
+// SDA - pin  5. SPI MOSI 0.
+// RST - pin 16. P0_18 (reset).
+// D/C - pin 18. P0_19 (a0).
 
 // The base arm_pro_mini_lib include.
 #include "arm_pro_mini.h"

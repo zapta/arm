@@ -43,10 +43,16 @@
 #include "chip/iocon_11xx.h"
 #include "io_pins.h"
 
-// These pins are used in additional to SPI0 clock and MOSI.
-static io_pins::OutputPin u8g_pin_a0(0, 23);   // D/C
+// 1 - use chip select pin. 0 - ignore chip select pin.
+#define USE_CS 0
+
+// These pins are used in additional to SPI0 clock and MOSI0.
+static io_pins::OutputPin u8g_pin_rst(0, 18);  // Reset
+static io_pins::OutputPin u8g_pin_a0(0, 19);   // D/C
+
+#if USE_CS
 static io_pins::OutputPin u8g_pin_cs(0, 16);   // Chip select
-static io_pins::OutputPin u8g_pin_rst(0, 20);  // Reset
+#endif
 
 // setup spi0
 // ns is the clock cycle time between 0 and 20000
@@ -137,18 +143,23 @@ uint8_t u8g_com_hw_spi_fn(u8g_t *u8g, uint8_t msg, uint8_t arg_val,
     break;
 
   case U8G_COM_MSG_CHIP_SELECT:
-    if (arg_val == 0) {
-      /* disable */
-      uint8_t i;
-      /* this delay is required to avoid that the display is switched off too early --> DOGS102 with LPC1114 */
-      for (i = 0; i < 5; i++)
-        u8g_10MicroDelay();
-      u8g_pin_cs.set(true);
-    } else {
-      /* enable */
-      u8g_pin_cs.set(false);
-    }
-    u8g_MicroDelay();
+    // The Heltec SPI module we are using doesn't use chip select.
+#if USE_CS
+     if (arg_val == 0) {
+       // disable
+       uint8_t i;
+       // this delay is required to avoid that the display is switched off
+       // too early --> DOGS102 with LPC1114 */
+       for (i = 0; i < 5; i++) {
+         u8g_10MicroDelay();
+       }
+       u8g_pin_cs.set(true);
+     } else {
+       // enable
+       u8g_pin_cs.set(false);
+     }
+     u8g_MicroDelay();
+#endif
     break;
 
   case U8G_COM_MSG_RESET:
