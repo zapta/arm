@@ -1366,6 +1366,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="66.04" y1="53.34" x2="66.04" y2="86.36" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="119.38" y1="53.34" x2="119.38" y2="86.36" width="0.1524" layer="97" style="shortdash"/>
 <text x="87.63" y="56.388" size="1.778" layer="94">Optional C</text>
+<text x="10.16" y="7.62" size="2.54" layer="97" font="vector">OSH. Share alike and attributions are optional. Commercial use ok.</text>
 </plain>
 <instances>
 <instance part="U$3" gate="G$1" x="48.26" y="144.78" rot="R180"/>

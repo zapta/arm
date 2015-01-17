@@ -948,7 +948,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <text x="59.182" y="34.544" size="1.778" layer="94">ISP</text>
 <text x="118.872" y="34.798" size="1.778" layer="94">LED</text>
 <text x="57.15" y="79.248" size="1.778" layer="94">3.3V LDO</text>
-<text x="7.62" y="5.08" size="2.54" layer="97" font="vector">OSH, share alike and attributions are optional, commercial use ok.</text>
+<text x="7.62" y="5.08" size="2.54" layer="97" font="vector">OSH. Share alike and attributions are optional. Commercial use ok.</text>
 </plain>
 <instances>
 <instance part="U$20" gate="G$1" x="167.64" y="0"/>
