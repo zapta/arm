@@ -36,7 +36,7 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 
 
 <br>
-### Where To Get ARM PRO MINI?
+### Where To Get an ARM PRO MINI?
 As of Jan 2014 I have a limited supply of free ARM PRO MINI samples that I am giving to established eevblog users.
 Since the license of the ARM PRO MINI is very liberal (attribution and share alike not required, commercial mixing and cloning are ok and free) it is likely that others will want to make them available to the public. If you want to list your offering here please contact us at armpro@zapta.com. 
 
