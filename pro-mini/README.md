@@ -310,7 +310,7 @@ Building a ARM PRO MINI is stragiht forward as long as you are comfortable with 
 
 ![](www/u8g_breadboard.jpg)
 
-U8GLib is a very capable open source portable graphics library for microcontrollers that was developed by Oliver Kraus (home page at https://code.google.com/p/u8glib/). The ARM PRO MINI source code repository includes a snapshot of u8glib in a form of a LPCXpresso project together with an SPI driver for ARM PRO MINI and a sample program that uses it https://github.com/zapta/arm/blob/master/pro-mini/lpcxpresso/u8g_example/src/u8g_example.cpp . 
+U8GLib is a very capable open source portable graphics library for microcontrollers that was developed by Oliver Kraus (home page at https://code.google.com/p/u8glib/). The ARM PRO MINI source code repository includes a snapshot of u8glib in a form of a LPCXpresso project together with an SPI driver for ARM PRO MINI and a sample program that uses it [u8g_example.cpp](https://github.com/zapta/arm/blob/master/pro-mini/lpcxpresso/u8g_example/src/u8g_example.cpp). 
 
 
 <br>
