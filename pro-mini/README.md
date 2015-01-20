@@ -36,6 +36,16 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 
 
 <br>
+### Where To Get ARM PRO MINI?
+As of Jan 2014 I have a limited supply of free ARM PRO MINI samples that I am giving to established eevblog users.
+Since the license of the ARM PRO MINI is very liberal (attribution and share alike not required, commercial mixing and cloning are ok and free) it is likely that others will want to make them available to the public. If you want to list your offering here please contact us at armpro@zapta.com. 
+
+1. Make your own board. This will be a rewarding project, especially if you want to practice assembly of SMD boards. The complete BOM with digikey's part numbers are available in the repository. You can order the PCB from OSH PARK by uploading the Eagle .brd file (~$6 per three boards). Mylar stencils are available from OSH STENCILS (I prefer the 5mil over the 3mil ones) and the board is ready to use once it come out of your toaster oven. Make sure to have a decent magnifier glass for visutal inspection of the soldering and is you documented your build process let me know and I will mention it here. See more details below.
+
+2. TBD.
+
+
+<br>
 ### Specification
 
 Attribute | Value
