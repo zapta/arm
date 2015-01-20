@@ -137,7 +137,23 @@ This section will teach you how to install the NXP LPCXpresso IDE and how to set
 ![](www/lpcxpresso.png)
 
 
-TIP: The LPCXpresso's External Tools facility can be used to automate the process of building the project and uploading to the ARM PRO MINI. For details, see the provided Mac OSX script *copy_to_usb_isp.sh*.
+<br>
+### Automatic Build/Download Using LPCXpresso
+This section explains how to setup LPCXpresso to automate the process of building your project and downloading the generated .bin file to your ARM PRO MINI board via the USB/ISP bootloader (rather copying the .bin file manually as explained eariler). This is done by setting up the provided *arm_pro_mini_lib/tools/copy_bin_to_usb_isp.sh* script (**TODO**: add a similar batch file for Windows) as an external LPCXpresso tool .
+
+1. In LPCXpresson, open *Run | External Tools | External Tools Configuration ...*.
+2. Add a new launch configuration.
+3. Set the name of the new launch configuration to *USB_ISP*.
+3. In the Main tab Set the Location field to *${workspace_loc:/arm_pro_mini_lib/tools/copy_bin_to_usb_isp.sh}* and set the Arguments field to *${project_name} ${project_loc} ${config_name:${project_name}}*.
+4. In the Common tab check *External Tools* to display the external tool icon in the tool bar.
+5. Click *Close*.
+6. To build and download switch the ARM PRO MINI board to USB/ISP mode (reset while the ISP button is pressed, explained above), then click on the External Tool icon and run USB/ISP. When the build and download are completed, reset your ARM PRO MINI board to start the new program you just downloaded.
+
+
+![](www/isp_copy_tool_1.png)
+
+
+![](www/isp_copy_tool_2.png)
 
 
 <br>
