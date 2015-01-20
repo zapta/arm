@@ -144,10 +144,10 @@ This section explains how to setup LPCXpresso to automate the process of buildin
 1. In LPCXpresson, open *Run | External Tools | External Tools Configuration ...*.
 2. Add a new launch configuration.
 3. Set the name of the new launch configuration to *USB_ISP*.
-3. In the Main tab Set the Location field to *${workspace_loc:/arm_pro_mini_lib/tools/copy_bin_to_usb_isp.sh}* and set the Arguments field to *${project_name} ${project_loc} ${config_name:${project_name}}*.
-4. In the Common tab check *External Tools* to display the external tool icon in the tool bar.
+3. In the *Main* tab set the Location field to *${workspace_loc:/arm_pro_mini_lib/tools/copy_bin_to_usb_isp.sh}* and set the Arguments field to *${project_name} ${project_loc} ${config_name:${project_name}}*
+4. In the *Common* tab check *External Tools* to display the external tool icon in the tool bar.
 5. Click *Close*.
-6. To build and download switch the ARM PRO MINI board to USB/ISP mode (reset while the ISP button is pressed, explained above), then click on the External Tool icon and run USB/ISP. When the build and download are completed, reset your ARM PRO MINI board to start the new program you just downloaded.
+6. To build and download switch the ARM PRO MINI board to USB/ISP mode (reset while the ISP button is pressed, explained above), then click on the *External Tool* icon and run USB/ISP. When the build and download are completed, reset your ARM PRO MINI board to start the new program you just downloaded.
 
 
 <br>
