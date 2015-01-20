@@ -139,7 +139,9 @@ This section will teach you how to install the NXP LPCXpresso IDE and how to set
 
 <br>
 ### Automatic Build/Download Using LPCXpresso
-This section explains how to setup LPCXpresso to automate the process of building your project and downloading the generated .bin file to your ARM PRO MINI board via the USB/ISP bootloader (rather copying the .bin file manually as explained eariler). This is done by setting up the provided *arm_pro_mini_lib/tools/copy_bin_to_usb_isp.sh* script (**TODO**: add a similar batch file for Windows) as an external LPCXpresso tool .
+This section explains how to setup LPCXpresso to automate the process of building your project and downloading the generated .bin file to your ARM PRO MINI board via the USB/ISP bootloader (rather copying the .bin file manually as explained eariler). This is done by setting up the provided *arm_pro_mini_lib/tools/copy_bin_to_usb_isp.sh* script as an external LPCXpresso tool.
+
+**TODO**: add a similar batch file for Windows. The existing script was tested on Mac OSX and should work also on Linux.
 
 1. In LPCXpresson, open *Run | External Tools | External Tools Configuration ...*.
 2. Add a new launch configuration.
