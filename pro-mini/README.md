@@ -150,9 +150,11 @@ This section explains how to setup LPCXpresso to automate the process of buildin
 6. To build and download switch the ARM PRO MINI board to USB/ISP mode (reset while the ISP button is pressed, explained above), then click on the External Tool icon and run USB/ISP. When the build and download are completed, reset your ARM PRO MINI board to start the new program you just downloaded.
 
 
+<br>
 ![](www/isp_copy_tool_1.png)
 
 
+<br>
 ![](www/isp_copy_tool_2.png)
 
 
