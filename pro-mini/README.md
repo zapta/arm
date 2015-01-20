@@ -38,7 +38,7 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 <br>
 ### Where To Get an ARM PRO MINI?
 As of Jan 2014 I have a limited supply of free ARM PRO MINI samples that I am giving to established eevblog users.
-Since the license of the ARM PRO MINI is very liberal (attribution and share alike not required, commercial mixing and cloning are ok and free) it is likely that others will want to make them available to the public. If you want to list your offering here please contact us at armpro@zapta.com. 
+Since the license of the ARM PRO MINI is very liberal (attribution and share alike not required, commercial mixing and cloning are ok and free) it is likely that others will want to make them available to the public. If you want to list your offering here please let me know.
 
 1. Make your own board. This will be a rewarding project, especially if you want to practice assembly of SMD boards. The complete BOM with digikey's part numbers are available in the repository. You can order the PCB from OSH PARK by uploading the Eagle .brd file (~$6 per three boards). Mylar stencils are available from OSH STENCILS (I prefer the 5mil over the 3mil ones) and the board is ready to use once it come out of your toaster oven. Make sure to have a decent magnifier glass for visutal inspection of the soldering and is you documented your build process let me know and I will mention it here. See more details below.
 
@@ -319,4 +319,5 @@ U8GLib is a very capable open source portable graphics library for microcontroll
 * [LPC11U3X manual](https://github.com/zapta/arm/blob/master/pro-mini/resources/LPC11U3X/LPC11U3X_manual.pdf?raw=true) PDF (programming).
 * LPC forums http://www.lpcware.com/forum
 * EEVblog microcontrollers forum http://www.eevblog.com/forum/microcontrollers/
+* Contact: armpro{at}zapta{dot}com.
 
