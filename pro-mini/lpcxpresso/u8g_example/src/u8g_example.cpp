@@ -17,9 +17,6 @@
 // RST - pin 16. P0_18 (reset).
 // D/C - pin 18. P0_19 (a0).
 
-#include <stdlib.h>
-#include <stdio.h>
-
 // The base arm_pro_mini_lib include.
 #include "arm_pro_mini.h"
 
@@ -39,6 +36,10 @@
 // standard u8g.h.
 #include "u8g_arm_pro_mini.h"
 
+// For snprintf
+#include <stdio.h>
+
+
 // Red LED is at GPIO0_7.
 static io_pins::OutputPin led(0, 7);
 
@@ -54,29 +55,24 @@ static u8g_t u8g;
 static const int kMaxX = 128 - 1;
 static const int kMaxY = 64 - 1;
 
-static const int kSpeed = 1;
-
-// Return a random number in [min, max].
-static inline int randRange(int min, int max) {
-  return min + rand() % (max - min + 1);
-}
-
 // An up/down counter bouncing between [min, max].
-struct BouncingValue {
-  BouncingValue(int min, int max) :
+struct bouncingCounter {
+  bouncingCounter(int min, int max) :
       min(min),
       max(max),
-      value(randRange(min, max)),
-      speed(kSpeed) {
+      value((min + max) /2),
+      direction(1) {
   }
 
+  // Move the value up or down by one step. Bounce if reaching
+  // a limit.
   void step() {
     // Handle edge bounce
-    if ((speed > 0 && value >= max) || (speed < 0 && value <= min)) {
-      speed = -speed;
+    if ((direction > 0 && value >= max) || (direction < 0 && value <= min)) {
+      direction = -direction;
     }
     // Move by one unit of time.
-    value += speed;
+    value += direction;
     // Clip to min/max.
     if (value < min) {
       value = min;
@@ -88,40 +84,16 @@ struct BouncingValue {
   const int min;
   const int max;
   int value;
-  int speed;
+  // +1 or -1.
+  int direction;
 };
 
-// A ball of given radius bouncing on x and y ranges.
-struct Ball {
-  Ball(int r) :
-      r(r), x(r, kMaxX - r), y(r, kMaxY - r) {
-  }
-
-  void step() {
-    x.step();
-    y.step();
-  }
-
-  void draw() {
-    u8g_DrawDisc(&u8g, x.value, y.value, r, U8G_DRAW_ALL);
-    u8g_DrawLine(&u8g, 0, 0, x.value, y.value);
-    u8g_DrawLine(&u8g, 0, kMaxY, x.value, y.value);
-    u8g_DrawLine(&u8g, kMaxX, 0, x.value, y.value);
-    u8g_DrawLine(&u8g, kMaxX, kMaxY, x.value, y.value);
-
-    char bfr[15];
-    snprintf(bfr, sizeof(bfr), "x:%d y:%d", x.value, y.value);
-    u8g_DrawStr(&u8g, 38, kMaxY-9, bfr);
-  }
-
-  const int r;
-  BouncingValue x;
-  BouncingValue y;
-};
 
 // Represents the display state and operations.
-struct DisplayModel {
-  DisplayModel() : ball(3) {
+struct Model {
+  Model() :
+    x(0, kMaxX),
+    y(0, kMaxY) {
   }
 
   void draw() {
@@ -132,17 +104,55 @@ struct DisplayModel {
     u8g_SetFontPosTop(&u8g);
 
     u8g_DrawStr(&u8g, kMaxX/2-32, 0, "ARM PRO MINI");
-    ball.draw();
+    u8g_DrawLine(&u8g, x.value, 0, x.value, kMaxY);
+    u8g_DrawLine(&u8g, 0, y.value, kMaxX, y.value);
+
+    char bfr[15];
+    snprintf(bfr, sizeof(bfr), "x:%d y:%d", x.value, y.value);
+    u8g_DrawStr(&u8g, 38, kMaxY-9, bfr);
   }
 
   void step() {
-    ball.step();
+    x.step();
+    y.step();
   }
 
-  Ball ball;
+  bouncingCounter x;
+  bouncingCounter y;
 };
 
-DisplayModel displayModel;
+static Model model;
+
+// Take care of updating the display with the model's state.
+struct View {
+  View(const Model& model):
+    m(model) {
+  }
+
+  void draw() {
+    // Prepare. Could be move to setup().
+    u8g_SetFont(&u8g, u8g_font_6x10);
+    u8g_SetFontRefHeightExtendedText(&u8g);
+    u8g_SetDefaultForegroundColor(&u8g);
+    u8g_SetFontPosTop(&u8g);
+
+    // U8G picture loop. See more details here:
+    // https://code.google.com/p/u8glib/wiki/tpictureloop
+    u8g_FirstPage(&u8g);
+     do {
+       u8g_DrawStr(&u8g, kMaxX/2-32, 0, "ARM PRO MINI");
+          u8g_DrawLine(&u8g, m.x.value, 0, m.x.value, kMaxY);
+          u8g_DrawLine(&u8g, 0, m.y.value, kMaxX, m.y.value);
+
+          char bfr[15];
+          snprintf(bfr, sizeof(bfr), "x:%d y:%d", m.x.value, m.y.value);
+          u8g_DrawStr(&u8g, 38, kMaxY-9, bfr);
+     } while (u8g_NextPage(&u8g));
+  }
+  const Model& m;
+};
+
+static View view(model);
 
 // One time initialization of the board.
 static void setup() {
@@ -168,23 +178,12 @@ static void loop() {
     led.set(!led.get());
     timer.reset();
 
-    // U8G picture loop. Each loop renders the next portion
-    // of the display (aka 'page'). This sacrifices CPU time to save display
-    // buffer memory.
-    //
-    // TODO: to reduce max loop time draw each page in a separate
-    // call to loop(). Hopefully it will not cause flicker.
-    //
-    // This loop iterates 8 times with about 1ms per iteration.
-    u8g_FirstPage(&u8g);
-    do {
-      displayModel.draw();
-    } while (u8g_NextPage(&u8g));
+    model.step();
+    view.draw();
 
-    displayModel.step();
     usb_serial::printf("x:%d, y:%d\r\n",
-        displayModel.ball.x.value,
-        displayModel.ball.y.value);
+        model.x.value,
+        model.y.value);
   }
 }
 
