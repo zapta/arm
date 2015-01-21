@@ -26,9 +26,8 @@
 // Provides interrupt free elapsed time measurement using system time.
 #include "passive_timer.h"
 
-// Allows to jump to ISP mode when ISP button is pressed.
-#include "isp_button_monitor.h"
-
+// The ARM PRO MINI specific driver of u8glib. This also includes the
+// standard u8g.h.
 #include "u8g_arm_pro_mini.h"
 
 // Red LED is at GPIO0_7.
@@ -37,88 +36,24 @@ static io_pins::OutputPin led(0, 7);
 // Timer timing the renderings.
 static PassiveTimer timer;
 
-// The U8G instance.
-//
-// TODO: expose the u8g instance as a class instance with methods rather
-// c functions.
+// The U8G instance (a C struct).
 u8g_t u8g;
 
-static void u8g_prepare(void) {
+static uint8 drawing_state = 0;
+
+static void draw(void) {
+  // Prepare. Could be move to setup().
   u8g_SetFont(&u8g, u8g_font_6x10);
   u8g_SetFontRefHeightExtendedText(&u8g);
   u8g_SetDefaultForegroundColor(&u8g);
   u8g_SetFontPosTop(&u8g);
-}
 
-static void u8g_box_frame(uint8 a) {
-  u8g_DrawStr(&u8g, 0, 0, "drawBox");
-  u8g_DrawBox(&u8g, 5, 10, 20, 10);
-  u8g_DrawBox(&u8g, 10 + a, 15, 30, 7);
-  u8g_DrawStr(&u8g, 0, 30, "drawFrame");
-  u8g_DrawFrame(&u8g, 5, 10 + 30, 20, 10);
-  u8g_DrawFrame(&u8g, 10 + a, 15 + 30, 30, 7);
-}
-
-static void u8g_string(uint8 a) {
-  u8g_DrawStr(&u8g, 30 + a, 31, " 0");
-  u8g_DrawStr90(&u8g, 30, 31 + a, " 90");
-  u8g_DrawStr180(&u8g, 30 - a, 31, " 180");
-  u8g_DrawStr270(&u8g, 30, 31 - a, " 270");
-}
-
-static void u8g_line(uint8 a) {
-  u8g_DrawStr(&u8g, 0, 0, "drawLine");
-  u8g_DrawLine(&u8g, 7 + a, 10, 40, 55);
-  u8g_DrawLine(&u8g, 7 + a * 2, 10, 60, 55);
-  u8g_DrawLine(&u8g, 7 + a * 3, 10, 80, 55);
-  u8g_DrawLine(&u8g, 7 + a * 4, 10, 100, 55);
-}
-
-static void u8g_ascii_1(void) {
-  char s[2] = " ";
-  uint8 x, y;
-  u8g_DrawStr(&u8g, 0, 0, "ASCII page 1");
-  for (y = 0; y < 6; y++) {
-    for (x = 0; x < 16; x++) {
-      s[0] = y * 16 + x + 32;
-      u8g_DrawStr(&u8g, x * 7, y * 10 + 10, s);
-    }
-  }
-}
-
-static void u8g_ascii_2(void) {
-  char s[2] = " ";
-  uint8 x, y;
-  u8g_DrawStr(&u8g, 0, 0, "ASCII page 2");
-  for (y = 0; y < 6; y++) {
-    for (x = 0; x < 16; x++) {
-      s[0] = y * 16 + x + 160;
-      u8g_DrawStr(&u8g, x * 7, y * 10 + 10, s);
-    }
-  }
-}
-
-static uint8 draw_state = 0;
-
-static void draw(void) {
-  u8g_prepare();
-  switch (draw_state >> 3) {
-  case 0:
-    u8g_box_frame(draw_state & 7);
-    break;
-  case 1:
-    u8g_string(draw_state & 7);
-    break;
-  case 2:
-    u8g_line(draw_state & 7);
-    break;
-  case 3:
-    u8g_ascii_1();
-    break;
-  case 4:
-    u8g_ascii_2();
-    break;
-  }
+  // Draw lines.
+  u8g_DrawStr(&u8g, 0, 0, "Draw lines");
+  u8g_DrawLine(&u8g, drawing_state, 10, 40, 63);
+  u8g_DrawLine(&u8g, drawing_state * 2, 10, 60, 63);
+  u8g_DrawLine(&u8g, drawing_state * 3, 10, 80, 63);
+  u8g_DrawLine(&u8g, drawing_state * 4, 10, 100, 63);
 }
 
 // One time initialization.
@@ -130,9 +65,6 @@ static void setup() {
 
   // Reset the timer to the time now. This starts the first cycle.
   timer.reset();
-
-  // Get ready to monitor the ISP button
-  isp_button_monitor::setup();
 
   // u8g initialization for the ssd1306 128x64 oled we use with SPI0.
   u8g_InitComFn(&u8g, &u8g_dev_ssd1306_128x64_hw_spi, u8g_com_hw_spi_fn);
@@ -152,7 +84,7 @@ static void loop() {
     // of the display (aka 'page'). This sacrifices CPU time to save display
     // buffer memory.
     //
-    // TODO: to reduce max loop time draw each page in a seperate
+    // TODO: to reduce max loop time draw each page in a separate
     // call to loop(). Hopefully it will not cause flicker.
     //
     // This loop iterates 8 times with about 1ms per iteration.
@@ -161,8 +93,9 @@ static void loop() {
       draw();
     } while (u8g_NextPage(&u8g));
 
-    draw_state++;
-    if (draw_state >= 5 * 8) {
+    // Note that we change the drawing state after each full screen
+    // drawing, not after each drawing of a portion of the screen.
+    if  (++draw_state >= 32) {
       draw_state = 0;
     }
   }
