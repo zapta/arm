@@ -7,7 +7,6 @@ TODO list for ARM PRO MINI
 ** Enclosure
 
 **SOFTWARE**
-* Simplify the u8g example
 * How much of the mbed.org library can be used?
 * Test the I/O library with all GPIO pins
 
