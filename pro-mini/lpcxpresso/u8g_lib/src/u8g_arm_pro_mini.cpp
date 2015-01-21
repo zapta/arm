@@ -36,6 +36,10 @@
 
  */
 
+// TODO: implement the SPI driver below using the standard LPC11Uxx API
+// API from ssp_11xx.h. Currently workign directly against the 
+// hardware.
+
 #include "u8g_arm_pro_mini.h"
 #include "system_time.h"
 #include "chip.h"
