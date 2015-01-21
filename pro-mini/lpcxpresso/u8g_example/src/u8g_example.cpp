@@ -4,6 +4,9 @@
 // that similar Heltec modules with different pin labels or with blue
 // display are different and requires adaptation.
 //
+// NOTE: the g8glib reference manual is available here
+// https://code.google.com/p/u8glib/wiki/userreference
+//
 // NOTE: the definitive pin assignment of the SPI OLED driver
 // is in u8g_arm_pro_mini.cpp
 //
@@ -95,8 +98,8 @@ static void loop() {
 
     // Note that we change the drawing state after each full screen
     // drawing, not after each drawing of a portion of the screen.
-    if  (++draw_state >= 32) {
-      draw_state = 0;
+    if  (++drawing_state >= 32) {
+      drawing_state = 0;
     }
   }
 }
