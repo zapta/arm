@@ -9,6 +9,18 @@ echo "Working directory: $PWD"
 
 # Set lpcxpresso to provide these two variables with the name and
 # absolute path of the current project.
+#
+# Location field:
+# ${workspace_loc:/arm_pro_mini_lib/tools/copy_bin_to_usb_isp.sh}
+#
+# Arguments field:
+# ${project_name} ${project_loc} ${config_name:${project_name}}
+#
+# Selected in Build tab:
+# * Build before launch.
+# * The project containing the selected resource.
+# * Include referenced projects
+# 
 
 # E.g. 'hello_world'
 project_name="$1"
