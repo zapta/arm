@@ -41,7 +41,10 @@
 //#define U8G_I2C_WITH_NO_ACK
 
 static uint8_t u8g_i2c_err_code;
-static uint8_t u8g_i2c_opt;		/* U8G_I2C_OPT_NO_ACK, SAM: U8G_I2C_OPT_DEV_1 */
+
+// ARM_PRO_MINI NOTE: commented out to avoid an 'unused' warning.
+//static uint8_t u8g_i2c_opt;		/* U8G_I2C_OPT_NO_ACK, SAM: U8G_I2C_OPT_DEV_1 */
+
 /*
   position values
     1: start condition
@@ -66,13 +69,14 @@ uint8_t u8g_i2c_get_err_pos(void)
   return u8g_i2c_err_pos;
 }
 
-static void u8g_i2c_set_error(uint8_t code, uint8_t pos)
-{
-  if ( u8g_i2c_err_code > 0 )
-    return;
-  u8g_i2c_err_code |= code;
-  u8g_i2c_err_pos = pos;
-}
+// ARM_PRO_MINI NOTE: commented out to avoid an 'unused' warning.
+//static void u8g_i2c_set_error(uint8_t code, uint8_t pos)
+//{
+//  if ( u8g_i2c_err_code > 0 )
+//    return;
+//  u8g_i2c_err_code |= code;
+//  u8g_i2c_err_pos = pos;
+//}
 
 
 
