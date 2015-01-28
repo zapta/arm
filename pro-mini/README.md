@@ -290,6 +290,11 @@ int main() {
 ![](www/mbed_ide.png)
 
 
+The following YouTube video by Daniel Andrade demonstrates how to compile and run an ARM PRO MINI hello world program using mbed:
+
+[![MBed Hello World with Arm Pro Mini](http://img.youtube.com/vi/lx2LFm1QSR8/0.jpg)](http://www.youtube.com/watch?v=T-lx2LFm1QSR8)
+
+
 <br>
 ### Schematic Description
 The [schematic](https://github.com/zapta/arm/blob/master/pro-mini/eagle/arm-pro-mini-schematic.pdf?raw=true) of the ARM PRO MINI is minimal and modular to make it easy to customize it for your own ARM based boards. It includes the MCU running at 48Mhz (using a 12Mhz crystal), USB protectiona and glue electronics, power source arbitraror (external and USB), 3.3V voltage regulator, SWD debugging header and a few LEDs and buttons.
