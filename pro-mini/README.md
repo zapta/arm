@@ -290,7 +290,7 @@ int main() {
 ![](www/mbed_ide.png)
 
 
-The following YouTube video by Daniel Andrade demonstrates how to compile and run an ARM PRO MINI hello world program using mbed:
+The following YouTube video by Daniel Andrade from http://www.danielandrade.net demonstrates how to compile and run an ARM PRO MINI hello world program using mbed:
 
 [![MBed Hello World with Arm Pro Mini](http://img.youtube.com/vi/lx2LFm1QSR8/0.jpg)](http://youtu.be/lx2LFm1QSR8)
 
