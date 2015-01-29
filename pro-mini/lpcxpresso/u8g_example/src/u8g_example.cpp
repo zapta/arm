@@ -36,6 +36,9 @@
 // standard u8g.h.
 #include "u8g_arm_pro_mini.h"
 
+// Allows to jump to ISP mode when ISP button is pressed.
+#include "isp_button_monitor.h"
+
 // For snprintf
 #include <stdio.h>
 
@@ -141,12 +144,12 @@ struct View {
     u8g_FirstPage(&u8g);
      do {
        u8g_DrawStr(&u8g, kMaxX/2-32, 0, "ARM PRO MINI");
-          u8g_DrawLine(&u8g, m.x.value, 0, m.x.value, kMaxY);
-          u8g_DrawLine(&u8g, 0, m.y.value, kMaxX, m.y.value);
+       u8g_DrawLine(&u8g, m.x.value, 0, m.x.value, kMaxY);
+       u8g_DrawLine(&u8g, 0, m.y.value, kMaxX, m.y.value);
 
-          char bfr[15];
-          snprintf(bfr, sizeof(bfr), "x:%d y:%d", m.x.value, m.y.value);
-          u8g_DrawStr(&u8g, 38, kMaxY-9, bfr);
+       char bfr[15];
+       snprintf(bfr, sizeof(bfr), "x:%d y:%d", m.x.value, m.y.value);
+       u8g_DrawStr(&u8g, 38, kMaxY-9, bfr);
      } while (u8g_NextPage(&u8g));
   }
   const Model& m;
@@ -166,6 +169,9 @@ static void setup() {
 
   usb_serial::setup();
 
+  // Get ready to monitor the ISP button
+  isp_button_monitor::setup();
+
   // u8g initialization for the ssd1306 128x64 oled we use with SPI0.
   u8g_InitComFn(&u8g, &u8g_dev_ssd1306_128x64_hw_spi, u8g_com_hw_spi_fn);
 }
@@ -174,7 +180,12 @@ static void setup() {
 static void loop() {
   const uint32 usecs_in_cycle = timer.usecs();
 
-  if (usecs_in_cycle >= 50000L) {
+  // If the ISP button is pressed, this will jump to the USB/ISP
+  // mode, allowing to upgrade the firmware via drag and drop.
+  // Otherwise just reset the board while the ISP button is pressed.
+  isp_button_monitor::loop();
+
+  if (usecs_in_cycle >= 50 * 1000L) {
     led.set(!led.get());
     timer.reset();
 
