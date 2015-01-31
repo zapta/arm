@@ -31,8 +31,9 @@ space_above_board = 1;
 port_width = 9;
 // Offset of USB connector center from board's center.
 port_offset_from_center = 1.27;
-// Distance from top of base to the bottom of the port opening.
-port_offset_from_base = 1.5;
+// Distance from top of base to the bottom of the port opening. Leaving
+// this as zero makes it easier to prey out the board if needed.
+port_offset_from_base = 0;
 
 // Derived dimensions
 //
