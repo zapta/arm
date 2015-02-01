@@ -10,12 +10,24 @@
 // NOTE: the definitive pin assignment of the SPI OLED driver
 // is in u8g_arm_pro_mini.cpp
 //
+// ARM MINI PRO:
+// -------------
 // GND - pin 28. Ground.
 // VCC - pin 27. 3.3V
 // SCL - pin 24. SPI SCK 0.
 // SDA - pin  5. SPI MOSI 0.
-// RST - pin 16. P0_18 (reset).
+// RST - pin 16. P0_18 (u8g reset).
 // D/C - pin 18. P0_19 (a0).
+//
+// ARM MINI TINY:
+// -------------
+// GND - pin  1. Ground.
+// VCC - pin  3. 3.3V
+// SCL - pin  6. SPI SCK 0.
+// SDA - pin  5. SPI MOSI 0.
+// RST - pin  8. P0_18 (u8g reset).
+// D/C - pin  9. P0_19 (a0).
+
 
 // The base arm_pro_mini_lib include.
 #include "arm_pro_mini.h"
@@ -97,22 +109,6 @@ struct Model {
   Model() :
     x(0, kMaxX),
     y(0, kMaxY) {
-  }
-
-  void draw() {
-    // Prepare. Could be move to setup().
-    u8g_SetFont(&u8g, u8g_font_6x10);
-    u8g_SetFontRefHeightExtendedText(&u8g);
-    u8g_SetDefaultForegroundColor(&u8g);
-    u8g_SetFontPosTop(&u8g);
-
-    u8g_DrawStr(&u8g, kMaxX/2-32, 0, "ARM PRO MINI");
-    u8g_DrawLine(&u8g, x.value, 0, x.value, kMaxY);
-    u8g_DrawLine(&u8g, 0, y.value, kMaxX, y.value);
-
-    char bfr[15];
-    snprintf(bfr, sizeof(bfr), "x:%d y:%d", x.value, y.value);
-    u8g_DrawStr(&u8g, 38, kMaxY-9, bfr);
   }
 
   void step() {
