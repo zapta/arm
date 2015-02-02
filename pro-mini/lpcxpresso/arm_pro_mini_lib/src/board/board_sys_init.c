@@ -52,6 +52,8 @@ typedef struct {
  * Public types/enumerations/variables
  ****************************************************************************/
 
+// TODO: cleanup this table for ARM PRO MINI.
+//
 /* Pin muxing table, only items that need changing from their default pin
    state are in this table. */
 STATIC const PINMUX_GRP_T pinmuxing[] = {
