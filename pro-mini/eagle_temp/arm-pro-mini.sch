@@ -149,12 +149,12 @@ Source: 008-0260-0_E.pdf</description>
 <description>&lt;b&gt;Hyper CHIPLED Hyper-Bright LED&lt;/b&gt;&lt;p&gt;
 LB Q993&lt;br&gt;
 Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
+<wire x1="-0.7" y1="1.0762" x2="-0.7" y2="0.5762" width="0.2032" layer="21"/>
+<wire x1="0.7" y1="1.0762" x2="0.7" y2="0.5762" width="0.2032" layer="21"/>
 <smd name="A" x="0" y="-0.825" dx="0.8" dy="0.8" layer="1"/>
 <smd name="C" x="0" y="0.825" dx="0.8" dy="0.8" layer="1"/>
 <text x="-0.635" y="-0.635" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <text x="1.905" y="-0.635" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<wire x1="-0.7" y1="1.0762" x2="-0.7" y2="0.5762" width="0.2032" layer="21"/>
-<wire x1="0.7" y1="1.0762" x2="0.7" y2="0.5762" width="0.2032" layer="21"/>
 </package>
 <package name="HVQFN33-5MM">
 <description>&lt;h2&gt;HVQFN-33&lt;/h2&gt;7x7x0.85mm
@@ -300,29 +300,15 @@ Metric Code Size 1608</description>
 <text x="-0.8" y="0.65" size="1.016" layer="25">&gt;NAME</text>
 <text x="-0.8" y="-1.65" size="1.016" layer="27">&gt;VALUE</text>
 </package>
-<package name="1X01-SQUARE">
-<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.127" layer="48"/>
-<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.127" layer="48"/>
-<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.127" layer="48"/>
-<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.127" layer="48"/>
-<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.127" layer="48"/>
-<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.127" layer="48"/>
-<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.127" layer="48"/>
-<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.127" layer="48"/>
-<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
-<pad name="1" x="0" y="0" drill="1.016" shape="square"/>
-<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-</package>
 <package name="SC75-BEC">
 <description>SC59 (SOT23) Motorola</description>
 <wire x1="0.8" y1="0.6" x2="0.8" y2="-0.6" width="0.127" layer="21"/>
 <wire x1="0.8" y1="-0.6" x2="-0.8" y2="-0.6" width="0.127" layer="21"/>
 <wire x1="-0.8" y1="-0.6" x2="-0.8" y2="0.6" width="0.127" layer="21"/>
 <wire x1="-0.8" y1="0.6" x2="0.8" y2="0.6" width="0.127" layer="21"/>
+<smd name="B" x="-0.5" y="-0.571" dx="0.356" dy="0.508" layer="1"/>
 <smd name="C" x="0" y="0.571" dx="0.356" dy="0.508" layer="1"/>
 <smd name="E" x="0.5" y="-0.571" dx="0.356" dy="0.508" layer="1"/>
-<smd name="B" x="-0.5" y="-0.571" dx="0.356" dy="0.508" layer="1"/>
 <text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
 </package>
@@ -334,8 +320,8 @@ Metric Code Size 1608</description>
 <wire x1="-1.2" y1="-1.15" x2="1.2" y2="-1.15" width="0.2032" layer="21"/>
 <wire x1="1.2" y1="-1.15" x2="1.2" y2="1.15" width="0.2032" layer="21"/>
 <wire x1="1.2" y1="1.15" x2="0.5" y2="1.15" width="0.2032" layer="21"/>
-<smd name="VIN" x="0" y="1.35" dx="0.6" dy="1" layer="1"/>
 <smd name="GND" x="-0.95" y="-1.35" dx="0.6" dy="1" layer="1"/>
+<smd name="VIN" x="0" y="1.35" dx="0.6" dy="1" layer="1"/>
 <smd name="VOUT" x="0.95" y="-1.35" dx="0.6" dy="1" layer="1"/>
 <text x="-1.397" y="1.794" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.524" y="-3.064" size="1.27" layer="27">&gt;VALUE</text>
@@ -350,17 +336,6 @@ Metric Code Size 1608</description>
 <wire x1="0" y1="-1.45" x2="-0.3" y2="-0.9" width="0.127" layer="51"/>
 <wire x1="-0.3" y1="-0.9" x2="0.3" y2="-0.9" width="0.127" layer="51"/>
 <wire x1="0.3" y1="-0.9" x2="0" y2="-1.45" width="0.127" layer="51"/>
-<smd name="5" x="1.3" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<smd name="4" x="0.65" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<smd name="3" x="0" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<smd name="2" x="-0.65" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<smd name="1" x="-1.3" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<text x="-12.7" y="5.08" size="1.27" layer="27">&gt;VALUE</text>
-<text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
-<pad name="G1" x="-3.3" y="0" drill="1.016" diameter="1.7" shape="square" stop="no"/>
-<pad name="G2" x="3.3" y="0" drill="1.016" diameter="1.7" shape="square" stop="no"/>
-<pad name="G3" x="-3.2" y="2.45" drill="0.508" diameter="1.5" shape="square" stop="no"/>
-<pad name="G4" x="3.2" y="2.45" drill="0.508" diameter="1.5" shape="square" stop="no"/>
 <rectangle x1="-3.975" y1="1.675" x2="-2.425" y2="3.225" layer="31"/>
 <rectangle x1="2.425" y1="1.675" x2="3.975" y2="3.225" layer="31"/>
 <rectangle x1="2.425" y1="-0.875" x2="4.175" y2="0.875" layer="31"/>
@@ -369,6 +344,18 @@ Metric Code Size 1608</description>
 <rectangle x1="-4.05" y1="1.6" x2="-2.35" y2="3.3" layer="29"/>
 <rectangle x1="2.35" y1="1.6" x2="4.05" y2="3.3" layer="29"/>
 <rectangle x1="2.35" y1="-0.95" x2="4.25" y2="0.95" layer="29"/>
+<smd name="1" x="-1.3" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
+<smd name="2" x="-0.65" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
+<smd name="3" x="0" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
+<smd name="4" x="0.65" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
+<smd name="5" x="1.3" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
+<pad name="G1" x="-3.3" y="0" drill="1.016" diameter="1.7" shape="square" stop="no"/>
+<pad name="G2" x="3.3" y="0" drill="1.016" diameter="1.7" shape="square" stop="no"/>
+<pad name="G3" x="-3.2" y="2.45" drill="0.508" diameter="1.5" shape="square" stop="no"/>
+<pad name="G4" x="3.2" y="2.45" drill="0.508" diameter="1.5" shape="square" stop="no"/>
+<text x="-12.7" y="5.08" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<rectangle x1="-2.286" y1="-0.889" x2="2.286" y2="1.778" layer="41"/>
 </package>
 </packages>
 <symbols>
@@ -610,6 +597,9 @@ Metric Code Size 1608</description>
 <text x="1.016" y="-4.191" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="PNP-RESISTORS">
+<circle x="-2.286" y="0" radius="0.254" width="0.3048" layer="94"/>
+<circle x="2.54" y="3.556" radius="0.254" width="0.3048" layer="94"/>
+<rectangle x1="-0.254" y1="-2.54" x2="0.508" y2="2.54" layer="94"/>
 <wire x1="-5.08" y1="0" x2="-4.826" y2="0.762" width="0.1524" layer="94"/>
 <wire x1="-4.826" y1="0.762" x2="-4.572" y2="-0.508" width="0.1524" layer="94"/>
 <wire x1="-4.572" y1="-0.508" x2="-4.318" y2="0.762" width="0.1524" layer="94"/>
@@ -640,14 +630,11 @@ Metric Code Size 1608</description>
 <wire x1="1.778" y1="1.778" x2="1.524" y2="2.159" width="0.254" layer="94"/>
 <wire x1="1.524" y1="2.159" x2="1.143" y2="1.905" width="0.254" layer="94"/>
 <wire x1="1.143" y1="1.905" x2="1.524" y2="1.905" width="0.254" layer="94"/>
-<circle x="-2.286" y="0" radius="0.254" width="0.3048" layer="94"/>
-<circle x="2.54" y="3.556" radius="0.254" width="0.3048" layer="94"/>
-<text x="-10.16" y="7.62" size="1.778" layer="95">&gt;NAME</text>
-<text x="-10.16" y="5.08" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-0.254" y1="-2.54" x2="0.508" y2="2.54" layer="94"/>
 <pin name="B" x="-7.62" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
 <pin name="C" x="2.54" y="-5.08" visible="off" length="short" direction="pas" swaplevel="3" rot="R90"/>
 <pin name="E" x="2.54" y="5.08" visible="off" length="short" direction="pas" swaplevel="2" rot="R270"/>
+<text x="-10.16" y="7.62" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="5.08" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="LDO">
 <wire x1="-7.62" y1="-5.08" x2="7.62" y2="-5.08" width="0.4064" layer="94"/>
@@ -925,14 +912,6 @@ General-purpose diode for high-speed switching</description>
 </gates>
 <devices>
 <device name="" package="1X01">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SQUARE" package="1X01-SQUARE">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 </connects>
