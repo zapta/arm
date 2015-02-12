@@ -357,6 +357,35 @@ Metric Code Size 1608</description>
 <text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
 <rectangle x1="-2.286" y1="-0.889" x2="2.286" y2="1.778" layer="41"/>
 </package>
+<package name="SOT-563">
+<description>&lt;b&gt;SOT-563, 6 LEAD CASE 463A-01 ISSUE F&lt;/b&gt;&lt;p&gt;
+Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
+<wire x1="-0.75" y1="0.55" x2="-0.75" y2="-0.55" width="0.1016" layer="21"/>
+<wire x1="-0.75" y1="-0.55" x2="0.75" y2="-0.55" width="0.1016" layer="51"/>
+<wire x1="0.75" y1="-0.55" x2="0.75" y2="0.55" width="0.1016" layer="21"/>
+<wire x1="0.75" y1="0.55" x2="-0.75" y2="0.55" width="0.1016" layer="51"/>
+<circle x="-0.525" y="-0.25" radius="0.1" width="0" layer="21"/>
+<smd name="1" x="-0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="2" x="0" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="3" x="0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="4" x="0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="5" x="0" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="6" x="-0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.675" y1="0.425" x2="-0.325" y2="0.925" layer="29"/>
+<rectangle x1="-0.175" y1="0.425" x2="0.175" y2="0.925" layer="29"/>
+<rectangle x1="0.325" y1="0.425" x2="0.675" y2="0.925" layer="29"/>
+<rectangle x1="-0.625" y1="0.475" x2="-0.375" y2="0.875" layer="31"/>
+<rectangle x1="-0.125" y1="0.475" x2="0.125" y2="0.875" layer="31"/>
+<rectangle x1="0.375" y1="0.475" x2="0.625" y2="0.875" layer="31"/>
+<rectangle x1="0.325" y1="-0.925" x2="0.675" y2="-0.425" layer="29" rot="R180"/>
+<rectangle x1="-0.175" y1="-0.925" x2="0.175" y2="-0.425" layer="29" rot="R180"/>
+<rectangle x1="-0.675" y1="-0.925" x2="-0.325" y2="-0.425" layer="29" rot="R180"/>
+<rectangle x1="0.375" y1="-0.875" x2="0.625" y2="-0.475" layer="31" rot="R180"/>
+<rectangle x1="-0.125" y1="-0.875" x2="0.125" y2="-0.475" layer="31" rot="R180"/>
+<rectangle x1="-0.625" y1="-0.875" x2="-0.375" y2="-0.475" layer="31" rot="R180"/>
+</package>
 </packages>
 <symbols>
 <symbol name="+3V3">
@@ -659,6 +688,20 @@ Metric Code Size 1608</description>
 <pin name="VBUS" x="7.62" y="15.24" length="short" rot="R180"/>
 <text x="3.302" y="-11.43" size="1.778" layer="95" rot="MR0">&gt;NAME</text>
 <text x="3.302" y="-16.51" size="1.778" layer="96" rot="MR0">&gt;VALUE</text>
+</symbol>
+<symbol name="USB_FILTER">
+<wire x1="-7.62" y1="7.62" x2="7.62" y2="7.62" width="0.254" layer="94"/>
+<wire x1="7.62" y1="7.62" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-5.08" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
+<pin name="DPO" x="10.16" y="-2.54" length="short" direction="pas" rot="R180"/>
+<pin name="DMO" x="10.16" y="5.08" length="short" direction="pas" rot="R180"/>
+<pin name="GND" x="-10.16" y="-2.54" length="short" direction="pwr"/>
+<pin name="VBUS" x="-10.16" y="5.08" length="short" direction="pwr"/>
+<text x="-5.842" y="-8.89" size="1.778" layer="95" rot="MR180">&gt;NAME</text>
+<text x="-5.842" y="-11.43" size="1.778" layer="96" rot="MR180">&gt;VALUE</text>
+<pin name="DMI" x="-10.16" y="2.54" length="short" direction="pas"/>
+<pin name="DPI" x="-10.16" y="0" length="short" direction="pas"/>
+<wire x1="-7.62" y1="7.62" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -992,6 +1035,26 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="USB_FILTER">
+<gates>
+<gate name="G$1" symbol="USB_FILTER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOT-563">
+<connects>
+<connect gate="G$1" pin="DMI" pad="4"/>
+<connect gate="G$1" pin="DMO" pad="3"/>
+<connect gate="G$1" pin="DPI" pad="6"/>
+<connect gate="G$1" pin="DPO" pad="1"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="VBUS" pad="5"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -1092,6 +1155,7 @@ General-purpose diode for high-speed switching</description>
 <part name="D2" library="arm-pro-mini" deviceset="LED" device="" value="GRN"/>
 <part name="U1" library="arm-pro-mini" deviceset="LDO" device="" value="MCP1754ST-3302E/CB"/>
 <part name="J1" library="arm-pro-mini" deviceset="USB" device=""/>
+<part name="U2" library="arm-pro-mini" deviceset="USB_FILTER" device="" value="NUF2042XV6T1G"/>
 </parts>
 <sheets>
 <sheet>
@@ -1102,7 +1166,7 @@ General-purpose diode for high-speed switching</description>
 <wire x1="340.36" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="259.08" width="0.1524" layer="94"/>
 <text x="233.68" y="144.78" size="2.54" layer="97">MCU</text>
-<text x="331.978" y="7.112" size="2.54" layer="97">2A</text>
+<text x="331.978" y="7.112" size="2.54" layer="97">2C</text>
 <text x="78.994" y="48.26" size="2.54" layer="97">3.3V REGULATOR</text>
 <text x="71.12" y="149.86" size="2.54" layer="97">USB</text>
 <text x="154.94" y="48.26" size="2.54" layer="97">SWD DEBUGGER PORT
@@ -1252,6 +1316,7 @@ General-purpose diode for high-speed switching</description>
 <attribute name="VALUE" x="88.9" y="88.9" size="1.778" layer="96"/>
 </instance>
 <instance part="J1" gate="G$1" x="35.56" y="170.18"/>
+<instance part="U2" gate="G$1" x="88.9" y="167.64"/>
 </instances>
 <busses>
 </busses>
@@ -1301,6 +1366,9 @@ General-purpose diode for high-speed switching</description>
 <wire x1="43.18" y1="165.1" x2="48.26" y2="165.1" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="165.1" x2="48.26" y2="162.56" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="GND"/>
+<pinref part="U2" gate="G$1" pin="GND"/>
+<wire x1="48.26" y1="165.1" x2="78.74" y2="165.1" width="0.1524" layer="91"/>
+<junction x="48.26" y="165.1"/>
 </segment>
 <segment>
 <pinref part="J2" gate="A" pin="3"/>
@@ -1623,16 +1691,19 @@ General-purpose diode for high-speed switching</description>
 <junction x="45.72" y="185.42"/>
 <pinref part="P+4" gate="VCC" pin="USB-5V"/>
 <pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="45.72" y1="185.42" x2="83.82" y2="185.42" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="185.42" x2="73.66" y2="185.42" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="VBUS"/>
+<pinref part="U2" gate="G$1" pin="VBUS"/>
+<wire x1="73.66" y1="185.42" x2="83.82" y2="185.42" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="172.72" x2="73.66" y2="172.72" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="172.72" x2="73.66" y2="185.42" width="0.1524" layer="91"/>
+<junction x="73.66" y="185.42"/>
 </segment>
 <segment>
 <pinref part="D3" gate="G$1" pin="A2"/>
 <wire x1="40.64" y1="86.36" x2="38.1" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="86.36" x2="38.1" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="86.36" x2="38.1" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="VCC" pin="USB-5V"/>
-<junction x="38.1" y="96.52"/>
-<wire x1="38.1" y1="96.52" x2="38.1" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="TP30" gate="G$1" pin="1"/>
@@ -1745,9 +1816,9 @@ General-purpose diode for high-speed switching</description>
 </net>
 <net name="USB_DM" class="2">
 <segment>
-<wire x1="43.18" y1="180.34" x2="132.08" y2="180.34" width="0.1524" layer="91"/>
-<label x="109.22" y="180.34" size="1.778" layer="95"/>
-<pinref part="J1" gate="G$1" pin="D-"/>
+<wire x1="99.06" y1="172.72" x2="132.08" y2="172.72" width="0.1524" layer="91"/>
+<label x="109.22" y="172.72" size="1.778" layer="95"/>
+<pinref part="U2" gate="G$1" pin="DMO"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="USB_DM"/>
@@ -1757,13 +1828,9 @@ General-purpose diode for high-speed switching</description>
 </net>
 <net name="USB_DP" class="2">
 <segment>
-<wire x1="63.5" y1="190.5" x2="63.5" y2="175.26" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="175.26" x2="132.08" y2="175.26" width="0.1524" layer="91"/>
-<label x="109.22" y="175.26" size="1.778" layer="95"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="43.18" y1="175.26" x2="63.5" y2="175.26" width="0.1524" layer="91"/>
-<junction x="63.5" y="175.26"/>
-<pinref part="J1" gate="G$1" pin="D+"/>
+<wire x1="99.06" y1="165.1" x2="132.08" y2="165.1" width="0.1524" layer="91"/>
+<label x="109.22" y="165.1" size="1.778" layer="95"/>
+<pinref part="U2" gate="G$1" pin="DPO"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="USB_DP"/>
@@ -1796,12 +1863,34 @@ General-purpose diode for high-speed switching</description>
 <pinref part="TP5" gate="G$1" pin="1"/>
 </segment>
 </net>
+<net name="N$4" class="2">
+<segment>
+<wire x1="43.18" y1="180.34" x2="68.58" y2="180.34" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="180.34" x2="68.58" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="170.18" x2="78.74" y2="170.18" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$1" pin="D-"/>
+<pinref part="U2" gate="G$1" pin="DMI"/>
+</segment>
+</net>
+<net name="N$7" class="2">
+<segment>
+<wire x1="63.5" y1="175.26" x2="63.5" y2="167.64" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="167.64" x2="78.74" y2="167.64" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$1" pin="D+"/>
+<wire x1="43.18" y1="175.26" x2="63.5" y2="175.26" width="0.1524" layer="91"/>
+<junction x="63.5" y="175.26"/>
+<wire x1="63.5" y1="190.5" x2="63.5" y2="175.26" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<pinref part="U2" gate="G$1" pin="DPI"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
 <errors>
 <approved hash="102,1,104.14,83.82,VOUT,+3V3,,,,"/>
 <approved hash="104,1,83.82,83.82,U1,VIN,N$10,,,"/>
+<approved hash="104,1,78.74,172.72,U2,VBUS,USB-5V,,,"/>
 </errors>
 </schematic>
 </drawing>
