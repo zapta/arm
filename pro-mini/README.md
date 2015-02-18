@@ -8,8 +8,6 @@ quick prototyping and as a starting point for your own ARM based custom designs.
 It was designed and named after the venerable Arduino Pro Mini and it is an excellent 
 stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM architecture.
 
-![](www/arm_pro_mini.jpg)
-
 
 ![](www/arm_pro_mini_2.jpg)
 
