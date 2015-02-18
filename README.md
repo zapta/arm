@@ -1,7 +1,10 @@
 ARM PROJECTS
 ============
 
+ARM PRO MINI 
 
-For the ARM PRO MINI click here: https://github.com/zapta/arm/tree/master/pro-mini
+Files: https://github.com/zapta/arm/tree/master/pro-mini
+
+Documentation: https://github.com/zapta/arm/tree/master/pro-mini#arm-pro-mini
 
 
