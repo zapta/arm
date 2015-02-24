@@ -31,8 +31,12 @@ static const uint32 kCycleTimeUsecs = 300 * 1000;  // fast
 // Timer for generating the delay bettween printed messages.
 static PassiveTimer timer;
 
-// Red LED is at GPIO0_7.
-static io_pins::OutputPin led(0, 7);
+// Red LED is at GPIO0_20.
+static io_pins::OutputPin led1(0, 20);
+
+// Early versions of ARM PRO MINI had the led
+// at GPIO0_7.
+static io_pins::OutputPin legacy_led(0, 7);
 
 static void setup() {
   arm_pro_mini::setup();
@@ -56,7 +60,10 @@ static void loop() {
   const uint32 time_now_in_cycle_usecs = timer.usecs();
 
   // Generates a blink at the beginning of each cycle.
-  led.set(time_now_in_cycle_usecs <= kCycleTimeUsecs / 3);
+  const bool led_state = time_now_in_cycle_usecs <= kCycleTimeUsecs / 3;
+  led1.set(led_state);
+  legacy_led.set(led_state);
+
   if (time_now_in_cycle_usecs >= kCycleTimeUsecs) {
     // NOTE: using \r\n EOL for the benefit of dumb serial dump. Typically
     // \n is sufficient.
