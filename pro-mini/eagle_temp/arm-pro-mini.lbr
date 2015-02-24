@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="1" unitdist="mic" unit="mic" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -267,9 +267,9 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <wire x1="0.8" y1="-0.6" x2="-0.8" y2="-0.6" width="0.127" layer="21"/>
 <wire x1="-0.8" y1="-0.6" x2="-0.8" y2="0.6" width="0.127" layer="21"/>
 <wire x1="-0.8" y1="0.6" x2="0.8" y2="0.6" width="0.127" layer="21"/>
-<smd name="B" x="-0.5" y="-0.571" dx="0.356" dy="0.508" layer="1"/>
-<smd name="C" x="0" y="0.571" dx="0.356" dy="0.508" layer="1"/>
-<smd name="E" x="0.5" y="-0.571" dx="0.356" dy="0.508" layer="1"/>
+<smd name="B" x="-0.5" y="-0.571" dx="0.5" dy="0.6" layer="1"/>
+<smd name="C" x="0" y="0.571" dx="0.5" dy="0.6" layer="1"/>
+<smd name="E" x="0.5" y="-0.571" dx="0.5" dy="0.6" layer="1"/>
 <text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
 </package>
@@ -286,6 +286,35 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <smd name="VOUT" x="0.95" y="-1.35" dx="0.6" dy="1" layer="1"/>
 <text x="-1.397" y="1.794" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.524" y="-3.064" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="SOT-563">
+<description>&lt;b&gt;SOT-563, 6 LEAD CASE 463A-01 ISSUE F&lt;/b&gt;&lt;p&gt;
+Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
+<circle x="-0.525" y="-0.25" radius="0.1" width="0" layer="21"/>
+<wire x1="-0.75" y1="0.55" x2="-0.75" y2="-0.55" width="0.1016" layer="21"/>
+<wire x1="-0.75" y1="-0.55" x2="0.75" y2="-0.55" width="0.1016" layer="51"/>
+<wire x1="0.75" y1="-0.55" x2="0.75" y2="0.55" width="0.1016" layer="21"/>
+<wire x1="0.75" y1="0.55" x2="-0.75" y2="0.55" width="0.1016" layer="51"/>
+<rectangle x1="-0.675" y1="0.425" x2="-0.325" y2="0.925" layer="29"/>
+<rectangle x1="-0.175" y1="0.425" x2="0.175" y2="0.925" layer="29"/>
+<rectangle x1="0.325" y1="0.425" x2="0.675" y2="0.925" layer="29"/>
+<rectangle x1="-0.625" y1="0.475" x2="-0.375" y2="0.875" layer="31"/>
+<rectangle x1="-0.125" y1="0.475" x2="0.125" y2="0.875" layer="31"/>
+<rectangle x1="0.375" y1="0.475" x2="0.625" y2="0.875" layer="31"/>
+<rectangle x1="0.325" y1="-0.925" x2="0.675" y2="-0.425" layer="29" rot="R180"/>
+<rectangle x1="-0.175" y1="-0.925" x2="0.175" y2="-0.425" layer="29" rot="R180"/>
+<rectangle x1="-0.675" y1="-0.925" x2="-0.325" y2="-0.425" layer="29" rot="R180"/>
+<rectangle x1="0.375" y1="-0.875" x2="0.625" y2="-0.475" layer="31" rot="R180"/>
+<rectangle x1="-0.125" y1="-0.875" x2="0.125" y2="-0.475" layer="31" rot="R180"/>
+<rectangle x1="-0.625" y1="-0.875" x2="-0.375" y2="-0.475" layer="31" rot="R180"/>
+<smd name="1" x="-0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="2" x="0" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="3" x="0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="4" x="0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="5" x="0" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="6" x="-0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="SOT23">
 <description>&lt;B&gt;DIODE&lt;/B&gt;</description>
@@ -342,6 +371,7 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <rectangle x1="-4.05" y1="1.6" x2="-2.35" y2="3.3" layer="29"/>
 <rectangle x1="2.35" y1="1.6" x2="4.05" y2="3.3" layer="29"/>
 <rectangle x1="2.35" y1="-0.95" x2="4.25" y2="0.95" layer="29"/>
+<rectangle x1="-2.286" y1="-0.889" x2="2.286" y2="1.778" layer="41"/>
 <smd name="1" x="-1.3" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="2" x="-0.65" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="3" x="0" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
@@ -353,36 +383,6 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <pad name="G4" x="3.2" y="2.45" drill="0.508" diameter="1.5" shape="square" stop="no"/>
 <text x="-12.7" y="5.08" size="1.27" layer="27">&gt;VALUE</text>
 <text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
-<rectangle x1="-2.286" y1="-0.889" x2="2.286" y2="1.778" layer="41"/>
-</package>
-<package name="SOT-563">
-<description>&lt;b&gt;SOT-563, 6 LEAD CASE 463A-01 ISSUE F&lt;/b&gt;&lt;p&gt;
-Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
-<wire x1="-0.75" y1="0.55" x2="-0.75" y2="-0.55" width="0.1016" layer="21"/>
-<wire x1="-0.75" y1="-0.55" x2="0.75" y2="-0.55" width="0.1016" layer="51"/>
-<wire x1="0.75" y1="-0.55" x2="0.75" y2="0.55" width="0.1016" layer="21"/>
-<wire x1="0.75" y1="0.55" x2="-0.75" y2="0.55" width="0.1016" layer="51"/>
-<circle x="-0.525" y="-0.25" radius="0.1" width="0" layer="21"/>
-<smd name="1" x="-0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="2" x="0" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="3" x="0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="4" x="0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="5" x="0" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="6" x="-0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.675" y1="0.425" x2="-0.325" y2="0.925" layer="29"/>
-<rectangle x1="-0.175" y1="0.425" x2="0.175" y2="0.925" layer="29"/>
-<rectangle x1="0.325" y1="0.425" x2="0.675" y2="0.925" layer="29"/>
-<rectangle x1="-0.625" y1="0.475" x2="-0.375" y2="0.875" layer="31"/>
-<rectangle x1="-0.125" y1="0.475" x2="0.125" y2="0.875" layer="31"/>
-<rectangle x1="0.375" y1="0.475" x2="0.625" y2="0.875" layer="31"/>
-<rectangle x1="0.325" y1="-0.925" x2="0.675" y2="-0.425" layer="29" rot="R180"/>
-<rectangle x1="-0.175" y1="-0.925" x2="0.175" y2="-0.425" layer="29" rot="R180"/>
-<rectangle x1="-0.675" y1="-0.925" x2="-0.325" y2="-0.425" layer="29" rot="R180"/>
-<rectangle x1="0.375" y1="-0.875" x2="0.625" y2="-0.475" layer="31" rot="R180"/>
-<rectangle x1="-0.125" y1="-0.875" x2="0.125" y2="-0.475" layer="31" rot="R180"/>
-<rectangle x1="-0.625" y1="-0.875" x2="-0.375" y2="-0.475" layer="31" rot="R180"/>
 </package>
 </packages>
 <symbols>
@@ -691,15 +691,15 @@ Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
 <wire x1="-7.62" y1="7.62" x2="7.62" y2="7.62" width="0.254" layer="94"/>
 <wire x1="7.62" y1="7.62" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
 <wire x1="7.62" y1="-5.08" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
-<pin name="DPO" x="10.16" y="-2.54" length="short" direction="pas" rot="R180"/>
+<wire x1="-7.62" y1="7.62" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
+<pin name="DMI" x="-10.16" y="2.54" length="short" direction="pas"/>
 <pin name="DMO" x="10.16" y="5.08" length="short" direction="pas" rot="R180"/>
+<pin name="DPI" x="-10.16" y="0" length="short" direction="pas"/>
+<pin name="DPO" x="10.16" y="-2.54" length="short" direction="pas" rot="R180"/>
 <pin name="GND" x="-10.16" y="-2.54" length="short" direction="pwr"/>
 <pin name="VBUS" x="-10.16" y="5.08" length="short" direction="pwr"/>
 <text x="-5.842" y="-8.89" size="1.778" layer="95" rot="MR180">&gt;NAME</text>
 <text x="-5.842" y="-11.43" size="1.778" layer="96" rot="MR180">&gt;VALUE</text>
-<pin name="DMI" x="-10.16" y="2.54" length="short" direction="pas"/>
-<pin name="DPI" x="-10.16" y="0" length="short" direction="pas"/>
-<wire x1="-7.62" y1="7.62" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
