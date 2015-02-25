@@ -9,8 +9,6 @@
 //
 #include "_gitignore_wifi_credentials.h"
 
-static const char AT_NONE[] = "AT";
-
 static const char AT_AP_CONNECT[] =
     "AT+CWJAP=\""
     WIFI_CREDENTIALS_AP_SSID
@@ -21,6 +19,17 @@ static const char AT_AP_CONNECT[] =
 static const char AT_AP_LIST[] =
     "AT+CWLAP";
 
+static const char* kConnCommands[] = {
+    "AT",
+    "AT+CWMODE=3",
+    //"AT+RST",
+    //"AT",
+    AT_AP_CONNECT,
+    "AT+CIFSR",
+    "AT+CIPMUX=1",
+    "AT+CIPSERVER=1,80",
+    NULL
+};
 
 // Initial delay after reset before communicating with the
 // ESP8266.
@@ -143,9 +152,7 @@ void isp_loop() {
 }
 
 
-Timer timer;
-
-class Commander {
+class CommandExecutor{
 public:
   enum State {
     IDLE,
@@ -155,7 +162,7 @@ public:
     DONE_TIMEOUT,
   };
 
-  Commander() {
+  CommandExecutor() {
     _state = IDLE;
     _timer.start();
     reset_line_buffer();
@@ -196,8 +203,10 @@ public:
     if (c != '\n') {
      // usb_serial.printf("* normal [%c]\n", c);
       if (_buffer_char_count < (sizeof(_line_buffer) - 1)) {
+        // Append char.
         //usb_serial.printf("* normal [%c]\n", c);
         _line_buffer[_buffer_char_count++]  = c;
+        _line_buffer[_buffer_char_count]  = '\0';
       } else {
         //usb_serial.printf("* normal [%c] FULL\n", c);
       }
@@ -206,8 +215,10 @@ public:
 
     // Here when the char is LF which indicates end of line.
 
+    usb_serial.printf("* RESP [%s]\n", _line_buffer);
+
     // Handle OK status.
-    if (strcmp(_line_buffer, "OK") == 0) {
+    if (strcmp(_line_buffer, "OK") == 0 || strcmp(_line_buffer, "no change") == 0) {
       usb_serial.printf("* OK (%d ms)\n", _timer.read_ms());
       _state = DONE_OK;
       return;
@@ -248,15 +259,91 @@ private:
   State _state;
   Timer _timer;
   unsigned int _buffer_char_count;
-  char _line_buffer[10];
+  char _line_buffer[50];
 
   void reset_line_buffer() {
-    memset(_line_buffer, '\0', sizeof(_line_buffer));
+    //memset(_line_buffer, '\0', sizeof(_line_buffer));
+    _line_buffer[0] = '\0';
     _buffer_char_count = 0;
   }
 };
 
-static Commander commander;
+class CommandSequenceExecutor  {
+public:
+  enum SeqState {
+    SEQ_IDLE,
+    SEQ_EXECUTING,
+    SEQ_DONE_OK,
+    SEQ_DONE_ERR
+  };
+
+  CommandSequenceExecutor() {
+    _state = SEQ_IDLE;
+    _current_cmd = NULL;
+  }
+
+
+
+  void start_sequence(const char** command_list) {
+    _current_cmd = command_list;
+    start_next_command();
+  }
+
+  void loop() {
+    _command_exec.loop();
+
+    if (_state != SEQ_EXECUTING) {
+      return;
+    }
+
+    if (!_command_exec.is_command_done()) {
+      return;
+    }
+
+    if (!_command_exec.is_command_done_ok()) {
+      _state = SEQ_DONE_ERR;
+      usb_serial.printf("# SEQ ERR\n");
+      _current_cmd = NULL;
+      return;
+    }
+
+    start_next_command();
+  }
+
+  // Is current state is 'in progress'?
+   bool is_seq_done() {
+     return _state == SEQ_DONE_OK || _state == SEQ_DONE_ERR;
+   }
+
+   bool is_command_done_ok() {
+     return _state == SEQ_DONE_OK;
+   }
+
+private:
+  CommandExecutor _command_exec;
+  SeqState _state;
+  const char** _current_cmd;
+
+  // If the list is empty we treat it as an error.
+  void start_next_command() {
+     if (*_current_cmd == NULL) {
+       usb_serial.printf("# SEQ OK\n");
+       _state = SEQ_DONE_OK;
+       _current_cmd = NULL;
+       return;
+     }
+
+     _state = SEQ_EXECUTING;
+     usb_serial.printf("# SEQ [%s]\n", *_current_cmd);
+     _command_exec.start_command(*_current_cmd, 8000);
+     _current_cmd++;
+   }
+};
+
+static Timer timer;
+
+static CommandSequenceExecutor seq;
+
 
 void setup() {
   timer.start();
@@ -265,20 +352,45 @@ void setup() {
   wifi_serial.format(8, SerialBase::None, 1);
 }
 
+enum MainState {
+  MAIN_INITIAL_DELAY,
+  MAIN_SEQUENCE,
+  MAIN_READY,
+};
+
+
 void loop() {
   isp_loop();
-  commander.loop();
 
-  const int time_in_cycle_ms = timer.read_ms();
-  led = (time_in_cycle_ms < 20);
-  if (time_in_cycle_ms < 15000) {
-      return;
+
+  static MainState state = MAIN_INITIAL_DELAY;
+  //static bool in_delay = true;
+
+  if (state == MAIN_INITIAL_DELAY) {
+    if (timer.read_ms() >= 10000) {
+      usb_serial.printf("----\n");
+      state = MAIN_SEQUENCE;
+      seq.start_sequence(kConnCommands);
+      timer.reset();
+    }
+    return;
   }
-  timer.reset();
-  usb_serial.printf("----\n");
 
-  //commander.start_command(AT_AP_LIST, 8000);
-  commander.start_command(AT_AP_CONNECT, 8000);
+  if (state == MAIN_SEQUENCE) {
+    seq.loop();
+    led.write(timer.read_ms() < 100);
+    if (seq.is_seq_done()) {
+      state = MAIN_READY;
+      timer.reset();
+    }
+    return;
+  }
+
+  // Here when ready
+  if (wifi_serial.readable()) {
+    const char c = wifi_serial.getc();
+    usb_serial.printf("[%c %02x]\n", c, c);
+  }
 }
 
 int main(void) {
