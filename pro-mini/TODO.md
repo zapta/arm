@@ -1,11 +1,8 @@
 TODO list for ARM PRO MINI
 
 **SCHEMATIC**
-* Move LED to PIO0_20 to be compatible with mbed (as LED1).
-* Reduce BOM cost.
 
 **LAYOUT**
-* Move the PWR led label away from pin 24.
 
 ** Enclosure
 
@@ -14,8 +11,9 @@ TODO list for ARM PRO MINI
 
 
 **DOCUMENTATION**
-* Add a picture of a solder pasted printed board.
 * In the pinout diagram, indicated that p0_4, p0_5 are non pull up, open drain only.
+* Updated board picture.
+* Updated pinotu diagram (LED moved).
 
 **MISCELLANEOUS**
 

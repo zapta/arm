@@ -134,7 +134,7 @@
 <text x="0.635" y="16.9418" size="0.762" layer="21" font="vector" ratio="10">30</text>
 <text x="27.8384" y="17.0434" size="0.762" layer="21" font="vector" ratio="10" rot="SR270">SWD</text>
 <text x="29.21" y="11.1506" size="0.762" layer="21" font="vector" ratio="10">ARM MINI PRO</text>
-<text x="30.099" y="9.9568" size="0.762" layer="21" font="vector" ratio="10">REV 2D OSH</text>
+<text x="30.099" y="9.9568" size="0.762" layer="21" font="vector" ratio="10">REV 2E OSH</text>
 <wire x1="1.27" y1="2.413" x2="1.27" y2="1.27" width="0.1524" layer="21"/>
 <wire x1="11.43" y1="2.413" x2="11.43" y2="1.27" width="0.1524" layer="21"/>
 <wire x1="24.13" y1="2.413" x2="24.13" y2="1.27" width="0.1524" layer="21"/>
@@ -382,35 +382,27 @@ Metric Code Size 1608</description>
 <rectangle x1="-4.05" y1="1.6" x2="-2.35" y2="3.3" layer="29"/>
 <rectangle x1="2.35" y1="1.6" x2="4.05" y2="3.3" layer="29"/>
 <rectangle x1="2.35" y1="-0.95" x2="4.25" y2="0.95" layer="29"/>
+<rectangle x1="-2.159" y1="-0.889" x2="2.159" y2="1.778" layer="41"/>
 <smd name="1" x="-1.3" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="2" x="-0.65" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="3" x="0" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="4" x="0.65" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="5" x="1.3" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<pad name="G1" x="-3.3" y="0" drill="1.016" diameter="1.7" shape="square" stop="no"/>
-<pad name="G2" x="3.3" y="0" drill="1.016" diameter="1.7" shape="square" stop="no"/>
+<pad name="G1" x="-3.3" y="0" drill="1.143" diameter="2.032" shape="square" stop="no"/>
+<pad name="G2" x="3.3" y="0" drill="1.143" diameter="2.032" shape="square" stop="no"/>
 <pad name="G3" x="-3.2" y="2.45" drill="0.508" diameter="1.5" shape="square" stop="no"/>
 <pad name="G4" x="3.2" y="2.45" drill="0.508" diameter="1.5" shape="square" stop="no"/>
 <text x="-12.7" y="5.08" size="1.27" layer="27">&gt;VALUE</text>
 <text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
-<rectangle x1="-2.286" y1="-0.889" x2="2.286" y2="1.778" layer="41"/>
 </package>
 <package name="SOT-563">
 <description>&lt;b&gt;SOT-563, 6 LEAD CASE 463A-01 ISSUE F&lt;/b&gt;&lt;p&gt;
 Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
+<circle x="-0.525" y="-0.25" radius="0.1" width="0" layer="21"/>
 <wire x1="-0.75" y1="0.55" x2="-0.75" y2="-0.55" width="0.1016" layer="21"/>
 <wire x1="-0.75" y1="-0.55" x2="0.75" y2="-0.55" width="0.1016" layer="51"/>
 <wire x1="0.75" y1="-0.55" x2="0.75" y2="0.55" width="0.1016" layer="21"/>
 <wire x1="0.75" y1="0.55" x2="-0.75" y2="0.55" width="0.1016" layer="51"/>
-<circle x="-0.525" y="-0.25" radius="0.1" width="0" layer="21"/>
-<smd name="1" x="-0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="2" x="0" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="3" x="0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="4" x="0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="5" x="0" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="6" x="-0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
 <rectangle x1="-0.675" y1="0.425" x2="-0.325" y2="0.925" layer="29"/>
 <rectangle x1="-0.175" y1="0.425" x2="0.175" y2="0.925" layer="29"/>
 <rectangle x1="0.325" y1="0.425" x2="0.675" y2="0.925" layer="29"/>
@@ -423,6 +415,14 @@ Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
 <rectangle x1="0.375" y1="-0.875" x2="0.625" y2="-0.475" layer="31" rot="R180"/>
 <rectangle x1="-0.125" y1="-0.875" x2="0.125" y2="-0.475" layer="31" rot="R180"/>
 <rectangle x1="-0.625" y1="-0.875" x2="-0.375" y2="-0.475" layer="31" rot="R180"/>
+<smd name="1" x="-0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="2" x="0" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="3" x="0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="4" x="0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="5" x="0" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="6" x="-0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 </library>

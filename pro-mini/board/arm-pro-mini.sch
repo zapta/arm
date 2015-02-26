@@ -344,35 +344,27 @@ Metric Code Size 1608</description>
 <rectangle x1="-4.05" y1="1.6" x2="-2.35" y2="3.3" layer="29"/>
 <rectangle x1="2.35" y1="1.6" x2="4.05" y2="3.3" layer="29"/>
 <rectangle x1="2.35" y1="-0.95" x2="4.25" y2="0.95" layer="29"/>
+<rectangle x1="-2.159" y1="-0.889" x2="2.159" y2="1.778" layer="41"/>
 <smd name="1" x="-1.3" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="2" x="-0.65" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="3" x="0" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="4" x="0.65" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
 <smd name="5" x="1.3" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<pad name="G1" x="-3.3" y="0" drill="1.016" diameter="1.7" shape="square" stop="no"/>
-<pad name="G2" x="3.3" y="0" drill="1.016" diameter="1.7" shape="square" stop="no"/>
+<pad name="G1" x="-3.3" y="0" drill="1.143" diameter="2.032" shape="square" stop="no"/>
+<pad name="G2" x="3.3" y="0" drill="1.143" diameter="2.032" shape="square" stop="no"/>
 <pad name="G3" x="-3.2" y="2.45" drill="0.508" diameter="1.5" shape="square" stop="no"/>
 <pad name="G4" x="3.2" y="2.45" drill="0.508" diameter="1.5" shape="square" stop="no"/>
 <text x="-12.7" y="5.08" size="1.27" layer="27">&gt;VALUE</text>
 <text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
-<rectangle x1="-2.286" y1="-0.889" x2="2.286" y2="1.778" layer="41"/>
 </package>
 <package name="SOT-563">
 <description>&lt;b&gt;SOT-563, 6 LEAD CASE 463A-01 ISSUE F&lt;/b&gt;&lt;p&gt;
 Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
+<circle x="-0.525" y="-0.25" radius="0.1" width="0" layer="21"/>
 <wire x1="-0.75" y1="0.55" x2="-0.75" y2="-0.55" width="0.1016" layer="21"/>
 <wire x1="-0.75" y1="-0.55" x2="0.75" y2="-0.55" width="0.1016" layer="51"/>
 <wire x1="0.75" y1="-0.55" x2="0.75" y2="0.55" width="0.1016" layer="21"/>
 <wire x1="0.75" y1="0.55" x2="-0.75" y2="0.55" width="0.1016" layer="51"/>
-<circle x="-0.525" y="-0.25" radius="0.1" width="0" layer="21"/>
-<smd name="1" x="-0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="2" x="0" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="3" x="0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="4" x="0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="5" x="0" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="6" x="-0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
 <rectangle x1="-0.675" y1="0.425" x2="-0.325" y2="0.925" layer="29"/>
 <rectangle x1="-0.175" y1="0.425" x2="0.175" y2="0.925" layer="29"/>
 <rectangle x1="0.325" y1="0.425" x2="0.675" y2="0.925" layer="29"/>
@@ -385,6 +377,14 @@ Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
 <rectangle x1="0.375" y1="-0.875" x2="0.625" y2="-0.475" layer="31" rot="R180"/>
 <rectangle x1="-0.125" y1="-0.875" x2="0.125" y2="-0.475" layer="31" rot="R180"/>
 <rectangle x1="-0.625" y1="-0.875" x2="-0.375" y2="-0.475" layer="31" rot="R180"/>
+<smd name="1" x="-0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="2" x="0" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="3" x="0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="4" x="0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="5" x="0" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="6" x="-0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -693,15 +693,15 @@ Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
 <wire x1="-7.62" y1="7.62" x2="7.62" y2="7.62" width="0.254" layer="94"/>
 <wire x1="7.62" y1="7.62" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
 <wire x1="7.62" y1="-5.08" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
-<pin name="DPO" x="10.16" y="-2.54" length="short" direction="pas" rot="R180"/>
+<wire x1="-7.62" y1="7.62" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
+<pin name="DMI" x="-10.16" y="2.54" length="short" direction="pas"/>
 <pin name="DMO" x="10.16" y="5.08" length="short" direction="pas" rot="R180"/>
+<pin name="DPI" x="-10.16" y="0" length="short" direction="pas"/>
+<pin name="DPO" x="10.16" y="-2.54" length="short" direction="pas" rot="R180"/>
 <pin name="GND" x="-10.16" y="-2.54" length="short" direction="pwr"/>
 <pin name="VBUS" x="-10.16" y="5.08" length="short" direction="pwr"/>
 <text x="-5.842" y="-8.89" size="1.778" layer="95" rot="MR180">&gt;NAME</text>
 <text x="-5.842" y="-11.43" size="1.778" layer="96" rot="MR180">&gt;VALUE</text>
-<pin name="DMI" x="-10.16" y="2.54" length="short" direction="pas"/>
-<pin name="DPI" x="-10.16" y="0" length="short" direction="pas"/>
-<wire x1="-7.62" y1="7.62" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1166,8 +1166,7 @@ General-purpose diode for high-speed switching</description>
 <wire x1="340.36" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="259.08" width="0.1524" layer="94"/>
 <text x="233.68" y="144.78" size="2.54" layer="97">MCU</text>
-<text x="331.978" y="7.112" size="2.54" layer="97">2D</text>
-<text x="68.834" y="48.26" size="2.54" layer="97">3.3V REGULATOR</text>
+<text x="331.978" y="7.112" size="2.54" layer="97">2E</text>
 <text x="71.12" y="149.86" size="2.54" layer="97">USB</text>
 <text x="154.94" y="48.26" size="2.54" layer="97">SWD DEBUGGER PORT
 (OPTIONAL)</text>
@@ -1176,9 +1175,12 @@ General-purpose diode for high-speed switching</description>
 <text x="263.652" y="72.898" size="1.778" layer="94">LED1</text>
 <text x="248.412" y="72.898" size="1.778" layer="94">PWR</text>
 <text x="261.62" y="48.26" size="2.54" layer="97">USER INTERFACE</text>
-<text x="20.574" y="48.26" size="2.54" layer="97">POWER SELECTOR</text>
+<text x="53.594" y="50.8" size="2.54" layer="97">POWER</text>
 <text x="10.16" y="7.62" size="2.54" layer="97" font="vector">OSH. Share alike and attributions are optional. Commercial use ok.</text>
 <text x="71.12" y="149.86" size="2.54" layer="97">USB</text>
+<text x="10.16" y="15.24" size="2.54" layer="97">* Early boards had the LED
+  connected to PIO0_7.</text>
+<text x="266.7" y="96.52" size="2.54" layer="97">*</text>
 </plain>
 <instances>
 <instance part="U$3" gate="G$1" x="43.18" y="170.18" rot="R180"/>
@@ -1187,17 +1189,17 @@ General-purpose diode for high-speed switching</description>
 <instance part="S1" gate="G$1" x="307.34" y="76.2" smashed="yes">
 <attribute name="NAME" x="301.752" y="71.628" size="1.778" layer="95"/>
 </instance>
-<instance part="GND3" gate="1" x="81.28" y="66.04"/>
-<instance part="C2" gate="G$1" x="96.52" y="76.2" smashed="yes">
-<attribute name="NAME" x="98.298" y="77.343" size="1.778" layer="95"/>
-<attribute name="VALUE" x="97.79" y="71.755" size="1.778" layer="96"/>
+<instance part="GND3" gate="1" x="76.2" y="63.5"/>
+<instance part="C2" gate="G$1" x="91.44" y="73.66" smashed="yes">
+<attribute name="NAME" x="93.218" y="74.803" size="1.778" layer="95"/>
+<attribute name="VALUE" x="92.71" y="69.215" size="1.778" layer="96"/>
 </instance>
-<instance part="GND18" gate="1" x="96.52" y="66.04"/>
-<instance part="C1" gate="G$1" x="66.04" y="76.2" smashed="yes">
-<attribute name="NAME" x="60.452" y="77.343" size="1.778" layer="95"/>
-<attribute name="VALUE" x="60.198" y="71.755" size="1.778" layer="96"/>
+<instance part="GND18" gate="1" x="91.44" y="63.5"/>
+<instance part="C1" gate="G$1" x="60.96" y="73.66" smashed="yes">
+<attribute name="NAME" x="55.372" y="74.803" size="1.778" layer="95"/>
+<attribute name="VALUE" x="55.118" y="69.215" size="1.778" layer="96"/>
 </instance>
-<instance part="GND28" gate="1" x="66.04" y="66.04"/>
+<instance part="GND28" gate="1" x="60.96" y="63.5"/>
 <instance part="U3" gate="G$1" x="254" y="190.5" smashed="yes">
 <attribute name="NAME" x="214.122" y="153.5176" size="1.778" layer="95"/>
 <attribute name="VALUE" x="221.742" y="153.5176" size="1.778" layer="96"/>
@@ -1233,7 +1235,7 @@ General-purpose diode for high-speed switching</description>
 <instance part="P+4" gate="VCC" x="50.8" y="190.5" smashed="yes" rot="R270">
 <attribute name="VALUE" x="43.18" y="193.04" size="1.778" layer="96"/>
 </instance>
-<instance part="+3V5" gate="G$1" x="114.3" y="83.82" rot="R270"/>
+<instance part="+3V5" gate="G$1" x="109.22" y="81.28" rot="R270"/>
 <instance part="J2" gate="A" x="160.02" y="83.82"/>
 <instance part="+3V6" gate="G$1" x="149.86" y="104.14"/>
 <instance part="GND12" gate="1" x="149.86" y="63.5"/>
@@ -1260,12 +1262,12 @@ General-purpose diode for high-speed switching</description>
 <instance part="R7" gate="G$1" x="271.78" y="81.28" rot="R90"/>
 <instance part="GND6" gate="1" x="271.78" y="60.96"/>
 <instance part="+3V4" gate="G$1" x="254" y="104.14"/>
-<instance part="D3" gate="G$1" x="43.18" y="83.82" smashed="yes" rot="MR180">
-<attribute name="NAME" x="47.244" y="89.9414" size="1.778" layer="95" rot="MR180"/>
-<attribute name="VALUE" x="38.354" y="77.8764" size="1.778" layer="96" rot="MR180"/>
+<instance part="D3" gate="G$1" x="40.64" y="81.28" smashed="yes" rot="MR180">
+<attribute name="NAME" x="44.704" y="87.4014" size="1.778" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="30.734" y="72.7964" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="P+1" gate="VCC" x="38.1" y="104.14" smashed="yes">
-<attribute name="VALUE" x="35.56" y="96.52" size="1.778" layer="96" rot="R90"/>
+<instance part="P+1" gate="VCC" x="35.56" y="101.6" smashed="yes">
+<attribute name="VALUE" x="33.02" y="93.98" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="TP20" gate="G$1" x="302.26" y="236.22"/>
 <instance part="TP17" gate="G$1" x="302.26" y="233.68"/>
@@ -1311,9 +1313,9 @@ General-purpose diode for high-speed switching</description>
 </instance>
 <instance part="D1" gate="G$1" x="271.78" y="71.12"/>
 <instance part="D2" gate="G$1" x="254" y="71.12"/>
-<instance part="U1" gate="G$1" x="81.28" y="78.74" smashed="yes">
-<attribute name="NAME" x="76.2" y="93.98" size="1.778" layer="95"/>
-<attribute name="VALUE" x="76.2" y="88.9" size="1.778" layer="96"/>
+<instance part="U1" gate="G$1" x="76.2" y="76.2" smashed="yes">
+<attribute name="NAME" x="71.12" y="91.44" size="1.778" layer="95"/>
+<attribute name="VALUE" x="63.5" y="86.36" size="1.778" layer="96"/>
 </instance>
 <instance part="J1" gate="G$1" x="35.56" y="170.18"/>
 <instance part="U2" gate="G$1" x="88.9" y="167.64"/>
@@ -1328,19 +1330,19 @@ General-purpose diode for high-speed switching</description>
 <pinref part="S1" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<wire x1="81.28" y1="71.12" x2="81.28" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="68.58" x2="76.2" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <pinref part="U1" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="C2" gate="G$1" pin="2"/>
 <pinref part="GND18" gate="1" pin="GND"/>
-<wire x1="96.52" y1="71.12" x2="96.52" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="68.58" x2="91.44" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND28" gate="1" pin="GND"/>
 <pinref part="C1" gate="G$1" pin="2"/>
-<wire x1="66.04" y1="68.58" x2="66.04" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="66.04" x2="60.96" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C3" gate="G$1" pin="2"/>
@@ -1461,11 +1463,11 @@ General-purpose diode for high-speed switching</description>
 <junction x="187.96" y="172.72"/>
 </segment>
 <segment>
-<wire x1="91.44" y1="83.82" x2="96.52" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="81.28" x2="91.44" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="96.52" y1="83.82" x2="111.76" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="78.74" x2="96.52" y2="83.82" width="0.1524" layer="91"/>
-<junction x="96.52" y="83.82"/>
+<wire x1="91.44" y1="81.28" x2="106.68" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="76.2" x2="91.44" y2="81.28" width="0.1524" layer="91"/>
+<junction x="91.44" y="81.28"/>
 <pinref part="+3V5" gate="G$1" pin="+3V3"/>
 <pinref part="U1" gate="G$1" pin="VOUT"/>
 </segment>
@@ -1701,8 +1703,8 @@ General-purpose diode for high-speed switching</description>
 </segment>
 <segment>
 <pinref part="D3" gate="G$1" pin="A2"/>
-<wire x1="40.64" y1="86.36" x2="38.1" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="86.36" x2="38.1" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="83.82" x2="35.56" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="83.82" x2="35.56" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="VCC" pin="USB-5V"/>
 </segment>
 <segment>
@@ -1804,13 +1806,13 @@ General-purpose diode for high-speed switching</description>
 </net>
 <net name="N$10" class="0">
 <segment>
-<wire x1="71.12" y1="83.82" x2="66.04" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="81.28" x2="60.96" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="66.04" y1="78.74" x2="66.04" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="76.2" x2="60.96" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="D3" gate="G$1" pin="C"/>
-<junction x="66.04" y="83.82"/>
-<junction x="66.04" y="83.82"/>
-<wire x1="48.26" y1="83.82" x2="66.04" y2="83.82" width="0.1524" layer="91"/>
+<junction x="60.96" y="81.28"/>
+<junction x="60.96" y="81.28"/>
+<wire x1="45.72" y1="81.28" x2="60.96" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="VIN"/>
 </segment>
 </net>
@@ -1846,8 +1848,8 @@ General-purpose diode for high-speed switching</description>
 </segment>
 <segment>
 <pinref part="D3" gate="G$1" pin="A1"/>
-<wire x1="40.64" y1="81.28" x2="25.4" y2="81.28" width="0.1524" layer="91"/>
-<label x="25.4" y="81.28" size="1.778" layer="95"/>
+<wire x1="38.1" y1="78.74" x2="22.86" y2="78.74" width="0.1524" layer="91"/>
+<label x="22.86" y="78.74" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PIO0_9-SWDO" class="0">
