@@ -1,6 +1,7 @@
 #include "mbed.h"
 #include "USBSerial.h"
 #include <string.h>
+#include <ctype.h>
 
 // This file is not checked in git. It contains the following
 // definitions (adapt to your own access point):
@@ -17,11 +18,17 @@ WIFI_CREDENTIALS_AP_PASSWORD
 
 static const char AT_AP_LIST[] = "AT+CWLAP";
 
-static const char* kOkStatusResponses[] = { "OK", "no change",
-NULL, };
+static const char* kOkStatusResponses[] = {
+    "OK",
+    "ready",
+    "no change",
+    "SEND OK",
+    NULL, };
 
-static const char* kErrorStatusResponses[] = { "ERROR",
-NULL, };
+static const char* kErrorStatusResponses[] = {
+    "ERROR",
+    "Fail",
+    NULL, };
 
 // Null terminated list.
 static bool isStringInList(const char* str, const char** list) {
@@ -36,7 +43,11 @@ static bool isStringInList(const char* str, const char** list) {
 class Action {
 public:
   enum Type {
-    RESET_PULSE, DELAY, CONSUME, AT_COMMAND, END,
+    RESET_PULSE,
+    DELAY,
+    FLUSH_INPUT,
+    AT_COMMAND,
+    END,
   };
 
   const uint8_t type;
@@ -45,17 +56,46 @@ public:
 };
 
 static const Action kInitSequence[] = {
-    { Action::RESET_PULSE, NULL, 50, },
-    { Action::DELAY, NULL, 1000 },
-    { Action::CONSUME, NULL, 0 },
-    { Action::AT_COMMAND, "AT", 500 },
-    { Action::AT_COMMAND, "AT+CWMODE=3", 1000 },
-    { Action::AT_COMMAND, AT_AP_CONNECT, 10000 },
-    { Action::AT_COMMAND, "AT+CIFSR", 500 },
-    { Action::AT_COMMAND, "AT+CIPMUX=1", 500 },
-    { Action::AT_COMMAND, "AT+CIPSERVER=1,80", 1000 },
-    { Action::END, NULL, 0 },
-};
+    {
+        Action::RESET_PULSE,
+        NULL,
+        50, },
+    {
+        Action::DELAY,
+        NULL,
+        1000 },
+    {
+        Action::FLUSH_INPUT,
+        NULL,
+        0 },
+    {
+        Action::AT_COMMAND,
+        "AT",
+        500 },
+    {
+        Action::AT_COMMAND,
+        "AT+CWMODE=3",
+        1000 },
+    {
+        Action::AT_COMMAND,
+        AT_AP_CONNECT,
+        10000 },
+    {
+        Action::AT_COMMAND,
+        "AT+CIFSR",
+        500 },
+    {
+        Action::AT_COMMAND,
+        "AT+CIPMUX=1",
+        500 },
+    {
+        Action::AT_COMMAND,
+        "AT+CIPSERVER=1,80",
+        1000 },
+    {
+        Action::END,
+        NULL,
+        0 }, };
 
 // Initial delay after reset before communicating with the
 // ESP8266.
@@ -175,10 +215,163 @@ void isp_loop() {
   }
 }
 
+//class WifiLineReader {
+//  enum State {
+//    READING_LINE,
+//    READING_DATA_SIZE,
+//    READING_DATA,
+//    LINE_OK,
+//    ERROR,
+//  };
+//
+//  WifiLineReader() {
+//    reset(true);
+//  }
+//
+//  void reset(bool flush_input) {
+//    _state = READING_LINE;
+//    _line_size = 0;
+//    _data_size = 0;
+//    _expected_data_size = 0;
+//
+//    if (flush_input) {
+//      while (wifi_serial.readable()) {
+//        wifi_serial.getc();
+//      }
+//    }
+//  }
+//
+//  void loop() {
+//    //@@@ TODO: detect timeout within a line.
+//    if (!wifi_serial.readable()) {
+//         return;
+//    }
+//    switch (_state) {
+//    case READING_LINE:
+//      loop_reading_line();
+//      break;
+//    case READING_DATA_SIZE:
+//      loop_reading_data_size();
+//      break;
+//    case READING_DATA:
+//      break;
+//    case LINE_OK:
+//      break;
+//    case ERROR:
+//      break;
+//    default:
+//      _state = ERROR;
+//      break;
+//    }
+//  }
+//
+//  void loop_reading_line() {
+//     const char c = wifi_serial.getc();
+//     // Ignore CR.
+//     if (c == '\r') {
+//       return;
+//     }
+//
+//     // Handle LF (end of line)
+//     if (c == '\n') {
+//        _state = LINE_OK;
+//       return;
+//     }
+//
+//     // Append to line buffer. Error if full.
+//     if (!append_to_line_buffer(c)) {
+//       _state = ERROR;
+//       return;
+//     }
+//
+//     // If next is the data size field of the IPD response (incoming data) then
+//     // switch state to read it. Doing it only when the size if right to avoid
+//     // too many string comparisons.
+//     if (_line_size == 7 && strcmp(_line_buffer, "+IPD,0,") == 0) {
+//       _state = READING_DATA_SIZE;
+//     }
+//   }
+//
+//  void loop_reading_data_size() {
+//    const char c = wifi_serial.getc();
+//    if (!append_to_line_buffer(c)) {
+//      _state = ERROR;
+//      return;
+//    }
+//
+//    // Detect field terminator.
+//    if (c == ':') {
+//      _state = (_expected_data_size > 0) ? READING_DATA : READING_LINE;
+//      return;
+//    }
+//
+//    // Expecting a decimal digit. Updated the expected size.
+//    const int digit = (c - '0');
+//    if (digit < 0 || digit > 9) {
+//      _state = ERROR;
+//      return;
+//    }
+//    _expected_data_size = (_expected_data_size * 10) + digit;
+//    // @@@ TODO: if expected data size larger than data buffer size
+//    // set state to error.
+//  }
+//
+//  void loop_reading_data() {
+//    const char c = wifi_serial.getc();
+//    if (is_data_buffer_full()) {
+//      _state = ERROR;
+//      return;
+//    }
+//    _data_buffer[_data_size++] = c;
+//    if (_data_size >= _expected_data_size) {
+//      // Switch to read the rest of the file. Expecting here only the terminating
+//      // CR/LF.
+//      _state = READING_LINE;
+//    }
+//  }
+//
+//
+//  // Return true if ok, otherwise buffer was full.
+//  inline bool append_to_line_buffer(const char c) {
+//    if (is_line_buffer_full()) {
+//      return false;
+//    }
+//    _line_buffer[_line_size++] = c;
+//    _line_buffer[_line_size] = '\0';
+//    return true;
+//  }
+//
+//
+//  bool inline is_line_buffer_full() {
+//    // -1 because it is managed as a null terminated string.
+//    return _line_size >= (sizeof(_line_buffer) - 1);
+//  }
+//
+//  bool inline is_data_buffer_full() {
+//    // Straight binary data, no null terminator.
+//    return _data_size >= (sizeof(_data_buffer));
+//  }
+//
+//  State _state;
+//
+//  // Line buffer is managed as a null terminated string.
+//  unsigned int _line_size;
+//  char _line_buffer[30 + 1];
+//
+//  // Data buffer is managed as a straight binary data, no null terminator.
+//  unsigned int _expected_data_size;
+//  unsigned int _data_size;
+//  uint8_t _data_buffer[256];
+//};
+
 class WifiActionExecutor {
 public:
   enum State {
-    IDLE, IN_PROGRESS, DONE_OK, DONE_ERROR, DONE_TIMEOUT,
+    IDLE,
+    IN_PROGRESS,
+    DONE_OK,
+    DONE_ERROR,
+    DONE_TIMEOUT,
   };
 
   WifiActionExecutor() {
@@ -194,31 +387,31 @@ public:
       return;
     }
     switch (_action->type) {
-    case Action::RESET_PULSE:
-      if (_timer.read_ms() >= _action->timeout_ms) {
-        wifi_reset.write(1);
-        _state = DONE_OK;
-        usb_serial.printf("* DONE OK (%d ms)\n", _timer.read_ms());
-      }
-      break;
+      case Action::RESET_PULSE:
+        if (_timer.read_ms() >= _action->timeout_ms) {
+          wifi_reset.write(1);
+          _state = DONE_OK;
+          usb_serial.printf("* DONE OK (%d ms)\n", _timer.read_ms());
+        }
+        break;
 
-    case Action::DELAY:
-      if (_timer.read_ms() >= _action->timeout_ms) {
-        _state = DONE_OK;
-        usb_serial.printf("* DONE OK (%d ms)\n", _timer.read_ms());
-      }
-      break;
+      case Action::DELAY:
+        if (_timer.read_ms() >= _action->timeout_ms) {
+          _state = DONE_OK;
+          usb_serial.printf("* DONE OK (%d ms)\n", _timer.read_ms());
+        }
+        break;
 
-    case Action::AT_COMMAND:
-      at_command_loop();
-      break;
+      case Action::AT_COMMAND:
+        at_command_loop();
+        break;
 
-    case Action::CONSUME:
-    case Action::END:
-    default:
-      usb_serial.printf("* LOOP: unexpected action %d\n", _action->type);
-      _state = DONE_ERROR;
-      break;
+      case Action::FLUSH_INPUT:
+      case Action::END:
+      default:
+        usb_serial.printf("* LOOP: unexpected action %d\n", _action->type);
+        _state = DONE_ERROR;
+        break;
     }
   }
 
@@ -296,42 +489,42 @@ public:
 
     // Action type specific.
     switch (action->type) {
-    case Action::RESET_PULSE:
-      usb_serial.printf("\n* ACTION: RESET [%d]\n", action->timeout_ms);
-      wifi_reset.write(0);
-      // Will end by timer.
-      break;
+      case Action::RESET_PULSE:
+        usb_serial.printf("\n* ACTION: RESET [%d]\n", action->timeout_ms);
+        wifi_reset.write(0);
+        // Will end by timer.
+        break;
 
-    case Action::DELAY:
-      usb_serial.printf("\n* ACTION: DELAY [%d]\n", action->timeout_ms);
-      // Nothing to do. Will end by timer.
-      break;
+      case Action::DELAY:
+        usb_serial.printf("\n* ACTION: DELAY [%d]\n", action->timeout_ms);
+        // Nothing to do. Will end by timer.
+        break;
 
-    case Action::CONSUME: {
-      usb_serial.printf("\n* ACTION: CONSUME\n");
-      int n = 0;
-      while (wifi_serial.readable()) {
-        wifi_serial.getc();
-        n++;
+      case Action::FLUSH_INPUT: {
+        usb_serial.printf("\n* ACTION: FLUSH_INPUT\n");
+        int n = 0;
+        while (wifi_serial.readable()) {
+          wifi_serial.getc();
+          n++;
+        }
+        _state = DONE_OK;
+        usb_serial.printf("* DONE OK (%d ms, %d chars)\n", _timer.read_ms(), n);
       }
-      _state = DONE_OK;
-      usb_serial.printf("* DONE OK (%d ms, %d chars)\n", _timer.read_ms(), n);
-    }
-      break;
+        break;
 
-    case Action::AT_COMMAND:
-      usb_serial.printf("\n* ACTION: CMD [%s]\n", action->at_command);
-      wifi_serial.puts(action->at_command);
-      wifi_serial.puts("\r\n");
-      break;
+      case Action::AT_COMMAND:
+        usb_serial.printf("\n* ACTION: CMD [%s]\n", action->at_command);
+        wifi_serial.puts(action->at_command);
+        wifi_serial.puts("\r\n");
+        break;
 
-      // The sequence executor is expected to detect the END action and stop
-      // before calling this.
-    case Action::END:
-    default:
-      usb_serial.printf("\n* ACTION: unexpected type %d\n", action->type);
-      _state = DONE_ERROR;
-      break;
+        // The sequence executor is expected to detect the END action and stop
+        // before calling this.
+      case Action::END:
+      default:
+        usb_serial.printf("\n* ACTION: unexpected type %d\n", action->type);
+        _state = DONE_ERROR;
+        break;
     }
   }
 
@@ -361,7 +554,10 @@ private:
 class CommandSequenceExecutor {
 public:
   enum SeqState {
-    SEQ_IDLE, SEQ_EXECUTING, SEQ_DONE_OK, SEQ_DONE_ERR
+    SEQ_IDLE,
+    SEQ_EXECUTING,
+    SEQ_DONE_OK,
+    SEQ_DONE_ERR
   };
 
   CommandSequenceExecutor() {
@@ -438,7 +634,9 @@ void setup() {
 }
 
 enum MainState {
-  MAIN_INITIAL_DELAY, MAIN_SEQUENCE, MAIN_READY,
+  MAIN_INITIAL_DELAY,
+  MAIN_SEQUENCE,
+  MAIN_READY,
 };
 
 void loop() {
@@ -470,7 +668,24 @@ void loop() {
   // Here when ready
   if (wifi_serial.readable()) {
     const char c = wifi_serial.getc();
-    usb_serial.printf("[%c %02x]\n", c, c);
+    switch (c) {
+      case '\r':
+        usb_serial.puts("<CR>");
+        break;
+      case '\n':
+        usb_serial.puts("<LF>\n");
+        break;
+      default:
+        if (isprint(c)) {
+          usb_serial.putc(c);
+        } else {
+          usb_serial.printf("<%02x>", c);
+        }
+    }
+//    if (c == '\r') {
+//      usb_serial.puts("<CR>");
+//    }
+//    usb_serial.printf("[%c %02x]\n", c, c);
   }
 }
 
