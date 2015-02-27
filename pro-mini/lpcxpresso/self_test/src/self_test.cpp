@@ -33,6 +33,7 @@ public:
 static NumberedOutputPin pinTable[] = {
   NumberedOutputPin(1, 0, 21),
   NumberedOutputPin(2, 0, 6),
+  // LED on early versions boards.
   NumberedOutputPin(3, 0, 7),
   NumberedOutputPin(4, 0, 8),
   NumberedOutputPin(5, 0, 9),
@@ -53,6 +54,7 @@ static NumberedOutputPin pinTable[] = {
   NumberedOutputPin(19, 1, 19),
   // RST button, avoid short to ground.
   // NumberedOutputPin(20, 0, 0),
+  // LED on newer version boards.
   NumberedOutputPin(21, 0, 20),
   NumberedOutputPin(22, 0, 2),
   // This one is open drain, requires external pullup.
