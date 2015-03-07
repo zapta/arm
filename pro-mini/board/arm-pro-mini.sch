@@ -118,10 +118,11 @@ by exp-lbrs-filter.ulp</description>
 <packages>
 <package name="SOT23">
 <description>&lt;B&gt;DIODE&lt;/B&gt;</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.127" layer="21"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.127" layer="21"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.127" layer="21"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.127" layer="21"/>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.2224" width="0.127" layer="21"/>
+<wire x1="0.3224" y1="-0.6604" x2="-0.3224" y2="-0.6604" width="0.127" layer="21"/>
+<wire x1="-1.4224" y1="-0.2224" x2="-1.4224" y2="0.6604" width="0.127" layer="21"/>
+<wire x1="-1.4224" y1="0.6604" x2="-0.7396" y2="0.6604" width="0.127" layer="21"/>
+<wire x1="0.6396" y1="0.6604" x2="1.4224" y2="0.6604" width="0.127" layer="21"/>
 <rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
 <rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
 <rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
@@ -169,10 +170,14 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <circle x="1.3" y="0" radius="0.15" width="0.3" layer="31"/>
 <circle x="1.3" y="-1.3" radius="0.15" width="0.3" layer="31"/>
 <circle x="-3" y="2.5" radius="0.15" width="0.3" layer="21"/>
-<wire x1="-2.5" y1="2.5" x2="2.5" y2="2.5" width="0.127" layer="21"/>
-<wire x1="2.5" y1="2.5" x2="2.5" y2="-2.5" width="0.127" layer="21"/>
-<wire x1="2.5" y1="-2.5" x2="-2.5" y2="-2.5" width="0.127" layer="21"/>
-<wire x1="-2.5" y1="-2.5" x2="-2.5" y2="2.5" width="0.127" layer="21"/>
+<wire x1="-2.5" y1="2.5" x2="-2.1" y2="2.5" width="0.127" layer="21"/>
+<wire x1="2.1" y1="2.5" x2="2.5" y2="2.5" width="0.127" layer="21"/>
+<wire x1="2.5" y1="2.5" x2="2.5" y2="2.1" width="0.127" layer="21"/>
+<wire x1="2.5" y1="-2.1" x2="2.5" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="2.5" y1="-2.5" x2="2.1" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="-2.1" y1="-2.5" x2="-2.5" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="-2.5" y1="-2.5" x2="-2.5" y2="-2.1" width="0.127" layer="21"/>
+<wire x1="-2.5" y1="2.1" x2="-2.5" y2="2.5" width="0.127" layer="21"/>
 <smd name="1" x="-2.55" y="1.75" dx="0.27" dy="0.85" layer="1" rot="R90"/>
 <smd name="2" x="-2.55" y="1.25" dx="0.27" dy="0.85" layer="1" rot="R90"/>
 <smd name="3" x="-2.55" y="0.75" dx="0.27" dy="0.85" layer="1" rot="R90"/>
@@ -217,8 +222,7 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <description>&lt;b&gt;TACT SWITCH&lt;/b&gt; (EARTH TERMINAL)&lt;p&gt;
 Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%20Series.pdf</description>
 <circle x="0" y="0" radius="0.7" width="0.127" layer="21"/>
-<wire x1="-2.3" y1="-1.6" x2="-2.3" y2="1.6" width="0.127" layer="21"/>
-<wire x1="2.3" y1="-1.6" x2="2.3" y2="1.6" width="0.127" layer="21"/>
+<wire x1="-2.3" y1="-0.6" x2="-2.3" y2="0.6" width="0.127" layer="21"/>
 <wire x1="2.3" y1="1.6" x2="-2.3" y2="1.6" width="0.127" layer="21"/>
 <wire x1="2.3" y1="-1.6" x2="-2.3" y2="-1.6" width="0.127" layer="21"/>
 <smd name="A1" x="-2.075" y="1.075" dx="1.05" dy="0.65" layer="1"/>
@@ -227,6 +231,7 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <smd name="B2" x="2.075" y="-1.05" dx="1.05" dy="0.65" layer="1"/>
 <text x="-5.08" y="-2.54" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <text x="5.08" y="-2.54" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<wire x1="2.3" y1="-0.6" x2="2.3" y2="0.6" width="0.127" layer="21"/>
 </package>
 <package name="R0402">
 <description>&lt;b&gt;RESISTOR&lt;/b&gt;</description>
@@ -302,10 +307,11 @@ Metric Code Size 1608</description>
 </package>
 <package name="SC75-BEC">
 <description>SC59 (SOT23) Motorola</description>
-<wire x1="0.8" y1="0.6" x2="0.8" y2="-0.6" width="0.127" layer="21"/>
-<wire x1="0.8" y1="-0.6" x2="-0.8" y2="-0.6" width="0.127" layer="21"/>
-<wire x1="-0.8" y1="-0.6" x2="-0.8" y2="0.6" width="0.127" layer="21"/>
-<wire x1="-0.8" y1="0.6" x2="0.8" y2="0.6" width="0.127" layer="21"/>
+<wire x1="0.8" y1="0.6" x2="0.8" y2="-0.1" width="0.127" layer="21"/>
+<wire x1="0.1" y1="-0.6" x2="-0.1" y2="-0.6" width="0.127" layer="21"/>
+<wire x1="-0.8" y1="-0.1" x2="-0.8" y2="0.6" width="0.127" layer="21"/>
+<wire x1="-0.8" y1="0.6" x2="-0.4" y2="0.6" width="0.127" layer="21"/>
+<wire x1="0.4" y1="0.6" x2="0.8" y2="0.6" width="0.127" layer="21"/>
 <smd name="B" x="-0.5" y="-0.571" dx="0.5" dy="0.6" layer="1"/>
 <smd name="C" x="0" y="0.571" dx="0.5" dy="0.6" layer="1"/>
 <smd name="E" x="0.5" y="-0.571" dx="0.5" dy="0.6" layer="1"/>
@@ -316,9 +322,9 @@ Metric Code Size 1608</description>
 <description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
 3-lead smd</description>
 <wire x1="-1.2" y1="1.15" x2="-0.5" y2="1.15" width="0.2032" layer="21"/>
-<wire x1="-1.2" y1="1.15" x2="-1.2" y2="-1.15" width="0.2032" layer="21"/>
-<wire x1="-1.2" y1="-1.15" x2="1.2" y2="-1.15" width="0.2032" layer="21"/>
-<wire x1="1.2" y1="-1.15" x2="1.2" y2="1.15" width="0.2032" layer="21"/>
+<wire x1="-1.2" y1="1.15" x2="-1.2" y2="-0.6" width="0.2032" layer="21"/>
+<wire x1="-0.4" y1="-1.15" x2="0.4" y2="-1.15" width="0.2032" layer="21"/>
+<wire x1="1.2" y1="-0.6" x2="1.2" y2="1.15" width="0.2032" layer="21"/>
 <wire x1="1.2" y1="1.15" x2="0.5" y2="1.15" width="0.2032" layer="21"/>
 <smd name="GND" x="-0.95" y="-1.35" dx="0.6" dy="1" layer="1"/>
 <smd name="VIN" x="0" y="1.35" dx="0.6" dy="1" layer="1"/>
@@ -328,9 +334,9 @@ Metric Code Size 1608</description>
 </package>
 <package name="USB-MICRO">
 <description>http://www.hirose.co.jp/cataloge_hp/e24200011.pdf</description>
-<wire x1="3.25" y1="0.6" x2="3.25" y2="3.6" width="0.127" layer="21"/>
+<wire x1="3.25" y1="3.3" x2="3.25" y2="3.6" width="0.127" layer="21"/>
 <wire x1="3.25" y1="3.6" x2="-3.25" y2="3.6" width="0.127" layer="21"/>
-<wire x1="-3.25" y1="3.6" x2="-3.25" y2="0.6" width="0.127" layer="21"/>
+<wire x1="-3.25" y1="3.6" x2="-3.25" y2="3.3" width="0.127" layer="21"/>
 <wire x1="-5" y1="-1.45" x2="0" y2="-1.45" width="0.127" layer="51"/>
 <wire x1="0" y1="-1.45" x2="5" y2="-1.45" width="0.127" layer="51"/>
 <wire x1="0" y1="-1.45" x2="-0.3" y2="-0.9" width="0.127" layer="51"/>
@@ -356,15 +362,15 @@ Metric Code Size 1608</description>
 <pad name="G4" x="3.2" y="2.45" drill="0.508" diameter="1.5" shape="square" stop="no"/>
 <text x="-12.7" y="5.08" size="1.27" layer="27">&gt;VALUE</text>
 <text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<wire x1="-3.25" y1="1.5" x2="-3.25" y2="1.2" width="0.127" layer="21"/>
+<wire x1="3.25" y1="1.2" x2="3.25" y2="1.5" width="0.127" layer="21"/>
 </package>
 <package name="SOT-563">
 <description>&lt;b&gt;SOT-563, 6 LEAD CASE 463A-01 ISSUE F&lt;/b&gt;&lt;p&gt;
 Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
 <circle x="-0.525" y="-0.25" radius="0.1" width="0" layer="21"/>
 <wire x1="-0.75" y1="0.55" x2="-0.75" y2="-0.55" width="0.1016" layer="21"/>
-<wire x1="-0.75" y1="-0.55" x2="0.75" y2="-0.55" width="0.1016" layer="51"/>
 <wire x1="0.75" y1="-0.55" x2="0.75" y2="0.55" width="0.1016" layer="21"/>
-<wire x1="0.75" y1="0.55" x2="-0.75" y2="0.55" width="0.1016" layer="51"/>
 <rectangle x1="-0.675" y1="0.425" x2="-0.325" y2="0.925" layer="29"/>
 <rectangle x1="-0.175" y1="0.425" x2="0.175" y2="0.925" layer="29"/>
 <rectangle x1="0.325" y1="0.425" x2="0.675" y2="0.925" layer="29"/>
@@ -1166,7 +1172,7 @@ General-purpose diode for high-speed switching</description>
 <wire x1="340.36" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="259.08" width="0.1524" layer="94"/>
 <text x="233.68" y="144.78" size="2.54" layer="97">MCU</text>
-<text x="331.978" y="7.112" size="2.54" layer="97">2E</text>
+<text x="331.978" y="7.112" size="2.54" layer="97">2F</text>
 <text x="71.12" y="149.86" size="2.54" layer="97">USB</text>
 <text x="154.94" y="48.26" size="2.54" layer="97">SWD DEBUGGER PORT
 (OPTIONAL)</text>
@@ -1890,8 +1896,8 @@ General-purpose diode for high-speed switching</description>
 </sheet>
 </sheets>
 <errors>
-<approved hash="102,1,104.14,83.82,VOUT,+3V3,,,,"/>
-<approved hash="104,1,83.82,83.82,U1,VIN,N$10,,,"/>
+<approved hash="102,1,86.36,81.28,VOUT,+3V3,,,,"/>
+<approved hash="104,1,66.04,81.28,U1,VIN,N$10,,,"/>
 <approved hash="104,1,78.74,172.72,U2,VBUS,USB-5V,,,"/>
 </errors>
 </schematic>
