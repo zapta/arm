@@ -117,47 +117,47 @@
 by exp-lbrs-filter.ulp</description>
 <packages>
 <package name="ARM-PRO-MINI">
-<wire x1="-8.89" y1="6.35" x2="-2.54" y2="6.35" width="0.127" layer="21"/>
-<wire x1="-2.54" y1="6.35" x2="5.08" y2="6.35" width="0.127" layer="21"/>
-<wire x1="5.08" y1="6.35" x2="11.43" y2="6.35" width="0.127" layer="21"/>
-<wire x1="11.43" y1="6.35" x2="11.43" y2="-31.75" width="0.127" layer="21"/>
-<wire x1="11.43" y1="-31.75" x2="-8.89" y2="-31.75" width="0.127" layer="21"/>
-<wire x1="-8.89" y1="-31.75" x2="-8.89" y2="6.35" width="0.127" layer="21"/>
-<wire x1="-2.54" y1="6.35" x2="-2.54" y2="3.81" width="0.127" layer="21"/>
+<wire x1="-8.89" y1="6.5" x2="-2.54" y2="6.5" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="6.5" x2="5.08" y2="6.5" width="0.127" layer="21"/>
+<wire x1="5.08" y1="6.5" x2="11.43" y2="6.5" width="0.127" layer="21"/>
+<wire x1="11.43" y1="6.5" x2="11.43" y2="-31.9" width="0.127" layer="21"/>
+<wire x1="11.43" y1="-31.9" x2="-8.89" y2="-31.9" width="0.127" layer="21"/>
+<wire x1="-8.89" y1="-31.9" x2="-8.89" y2="6.5" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="6.5" x2="-2.54" y2="3.81" width="0.127" layer="21"/>
 <wire x1="-2.54" y1="3.81" x2="5.08" y2="3.81" width="0.127" layer="21"/>
-<wire x1="5.08" y1="3.81" x2="5.08" y2="6.35" width="0.127" layer="21"/>
-<pad name="1" x="-7.62" y="5.08" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="2" x="-7.62" y="2.54" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="3" x="-7.62" y="0" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="4" x="-7.62" y="-2.54" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="5" x="-7.62" y="-5.08" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="6" x="-7.62" y="-7.62" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="7" x="-7.62" y="-10.16" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="8" x="-7.62" y="-12.7" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="9" x="-7.62" y="-15.24" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="10" x="-7.62" y="-17.78" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="11" x="-7.62" y="-20.32" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="12" x="-7.62" y="-22.86" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="13" x="-7.62" y="-25.4" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="14" x="-7.62" y="-27.94" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="15" x="-7.62" y="-30.48" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="16" x="10.16" y="-30.48" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="17" x="10.16" y="-27.94" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="18" x="10.16" y="-25.4" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="19" x="10.16" y="-22.86" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="20" x="10.16" y="-20.32" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="21" x="10.16" y="-17.78" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="22" x="10.16" y="-15.24" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="23" x="10.16" y="-12.7" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="24" x="10.16" y="-10.16" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="25" x="10.16" y="-7.62" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="26" x="10.16" y="-5.08" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="27" x="10.16" y="-2.54" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="28" x="10.16" y="0" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="29" x="10.16" y="2.54" drill="0.508" diameter="1.5" shape="octagon"/>
-<pad name="30" x="10.16" y="5.08" drill="0.508" diameter="1.5" shape="octagon"/>
-<text x="-1.905" y="0.635" size="1.27" layer="25">&gt;NAME</text>
-<text x="-2.54" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="5.08" y1="3.81" x2="5.08" y2="6.5" width="0.127" layer="21"/>
+<pad name="1" x="-7.62" y="5.08" drill="1.35" shape="long"/>
+<pad name="2" x="-7.62" y="2.54" drill="1.3" shape="long"/>
+<pad name="3" x="-7.62" y="0" drill="1.3" shape="long"/>
+<pad name="4" x="-7.62" y="-2.54" drill="1.3" shape="long"/>
+<pad name="5" x="-7.62" y="-5.08" drill="1.3" shape="long"/>
+<pad name="6" x="-7.62" y="-7.62" drill="1.3" shape="long"/>
+<pad name="7" x="-7.62" y="-10.16" drill="1.3" shape="long"/>
+<pad name="8" x="-7.62" y="-12.7" drill="1.3" shape="long"/>
+<pad name="9" x="-7.62" y="-15.24" drill="1.3" shape="long"/>
+<pad name="10" x="-7.62" y="-17.78" drill="1.3" shape="long"/>
+<pad name="11" x="-7.62" y="-20.32" drill="1.3" shape="long"/>
+<pad name="12" x="-7.62" y="-22.86" drill="1.3" shape="long"/>
+<pad name="13" x="-7.62" y="-25.4" drill="1.3" shape="long"/>
+<pad name="14" x="-7.62" y="-27.94" drill="1.3" shape="long"/>
+<pad name="15" x="-7.62" y="-30.48" drill="1.3" shape="long"/>
+<pad name="16" x="10.16" y="-30.48" drill="1.3" shape="long"/>
+<pad name="17" x="10.16" y="-27.94" drill="1.3" shape="long"/>
+<pad name="18" x="10.16" y="-25.4" drill="1.3" shape="long"/>
+<pad name="19" x="10.16" y="-22.86" drill="1.3" shape="long"/>
+<pad name="20" x="10.16" y="-20.32" drill="1.3" shape="long"/>
+<pad name="21" x="10.16" y="-17.78" drill="1.3" shape="long"/>
+<pad name="22" x="10.16" y="-15.24" drill="1.3" shape="long"/>
+<pad name="23" x="10.16" y="-12.7" drill="1.3" shape="long"/>
+<pad name="24" x="10.16" y="-10.16" drill="1.3" shape="long"/>
+<pad name="25" x="10.16" y="-7.62" drill="1.3" shape="long"/>
+<pad name="26" x="10.16" y="-5.08" drill="1.3" shape="long"/>
+<pad name="27" x="10.16" y="-2.54" drill="1.3" shape="long"/>
+<pad name="28" x="10.16" y="0" drill="1.3" shape="long"/>
+<pad name="29" x="10.16" y="2.54" drill="1.3" shape="long"/>
+<pad name="30" x="10.16" y="5.08" drill="1.3" shape="long"/>
+<text x="-1.905" y="0.635" size="1.27" layer="21">&gt;NAME</text>
+<text x="-2.54" y="-2.54" size="1.27" layer="21">&gt;VALUE</text>
 </package>
 <package name="TEST-POINT">
 <smd name="A" x="0" y="0" dx="4" dy="2.1" layer="1" roundness="25"/>
@@ -423,6 +423,61 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="arm-pro-mini">
+<description>Generated from &lt;b&gt;arm-pro-mini.sch&lt;/b&gt;&lt;p&gt;
+by exp-lbrs-filter.ulp</description>
+<packages>
+<package name="PUSH_BUTTON">
+<description>&lt;b&gt;TACT SWITCH&lt;/b&gt; (EARTH TERMINAL)&lt;p&gt;
+Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%20Series.pdf</description>
+<circle x="0" y="0" radius="0.7" width="0.127" layer="21"/>
+<wire x1="-2.3" y1="-0.6" x2="-2.3" y2="0.6" width="0.127" layer="21"/>
+<wire x1="2.3" y1="1.6" x2="-2.3" y2="1.6" width="0.127" layer="21"/>
+<wire x1="2.3" y1="-1.6" x2="-2.3" y2="-1.6" width="0.127" layer="21"/>
+<smd name="A1" x="-2.075" y="1.075" dx="1.05" dy="0.65" layer="1"/>
+<smd name="A2" x="2.075" y="1.075" dx="1.05" dy="0.65" layer="1"/>
+<smd name="B1" x="-2.075" y="-1.075" dx="1.05" dy="0.65" layer="1"/>
+<smd name="B2" x="2.075" y="-1.05" dx="1.05" dy="0.65" layer="1"/>
+<text x="-5.08" y="-2.54" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="5.08" y="-2.54" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<wire x1="2.3" y1="-0.6" x2="2.3" y2="0.6" width="0.127" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="PUSH_BUTTON">
+<circle x="0" y="-1.524" radius="0.915809375" width="0.254" layer="94"/>
+<circle x="0" y="1.524" radius="0.915809375" width="0.254" layer="94"/>
+<wire x1="-2.032" y1="2.54" x2="-2.032" y2="1.524" width="0.254" layer="94"/>
+<wire x1="-2.032" y1="1.524" x2="-2.032" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-2.032" y1="-1.27" x2="-2.032" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="-2.032" y1="1.524" x2="-3.048" y2="1.524" width="0.254" layer="94"/>
+<wire x1="-3.048" y1="1.524" x2="-3.048" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-3.048" y1="-1.27" x2="-2.032" y2="-1.27" width="0.254" layer="94"/>
+<pin name="1" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="2" x="0" y="5.08" visible="off" length="short" direction="pas" rot="R270"/>
+<text x="-10.16" y="3.81" size="1.778" layer="95">&gt;NAME</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="PUSH_BUTTON">
+<description>CKN10502CT-ND</description>
+<gates>
+<gate name="G$1" symbol="PUSH_BUTTON" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PUSH_BUTTON">
+<connects>
+<connect gate="G$1" pin="1" pad="A1"/>
+<connect gate="G$1" pin="2" pad="B2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -476,6 +531,8 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <part name="TP4" library="arm-pro-mini-tester" deviceset="TEST-POINT" device=""/>
 <part name="R4" library="arm-pro-mini-tester" deviceset="R-US_" device="R0805"/>
 <part name="D17" library="arm-pro-mini-tester" deviceset="LED" device=""/>
+<part name="S2" library="arm-pro-mini" deviceset="PUSH_BUTTON" device=""/>
+<part name="S1" library="arm-pro-mini" deviceset="PUSH_BUTTON" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -485,7 +542,7 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <wire x1="340.36" y1="259.08" x2="340.36" y2="0" width="0.1524" layer="94"/>
 <wire x1="340.36" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="259.08" width="0.1524" layer="94"/>
-<text x="331.978" y="7.112" size="2.54" layer="97">1</text>
+<text x="331.978" y="7.112" size="2.54" layer="97">2</text>
 <text x="10.16" y="7.62" size="2.54" layer="97" font="vector">OSH. Share alike and attributions are optional. Commercial use ok.</text>
 </plain>
 <instances>
@@ -525,8 +582,8 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <instance part="R1" gate="G$1" x="266.7" y="129.54" rot="R270"/>
 <instance part="R2" gate="G$1" x="251.46" y="129.54" rot="R270"/>
 <instance part="R3" gate="G$1" x="185.42" y="160.02" rot="R90"/>
-<instance part="TP1" gate="G$1" x="233.68" y="106.68" smashed="yes" rot="R180">
-<attribute name="NAME" x="232.664" y="103.505" size="1.778" layer="95" rot="R180"/>
+<instance part="TP1" gate="G$1" x="208.28" y="106.68" smashed="yes" rot="R180">
+<attribute name="NAME" x="207.264" y="103.505" size="1.778" layer="95" rot="R180"/>
 </instance>
 <instance part="TP2" gate="G$1" x="251.46" y="149.86" smashed="yes" rot="R90">
 <attribute name="NAME" x="248.285" y="150.876" size="1.778" layer="95" rot="R90"/>
@@ -539,6 +596,8 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 </instance>
 <instance part="R4" gate="G$1" x="281.94" y="129.54" rot="R270"/>
 <instance part="D17" gate="G$1" x="281.94" y="119.38" rot="MR0"/>
+<instance part="S2" gate="G$1" x="238.76" y="121.92"/>
+<instance part="S1" gate="G$1" x="226.06" y="121.92"/>
 </instances>
 <busses>
 </busses>
@@ -692,13 +751,19 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <wire x1="147.32" y1="71.12" x2="170.18" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$18" class="0">
+<net name="ISP" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="P0_1"/>
 <wire x1="139.7" y1="109.22" x2="149.86" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="109.22" x2="149.86" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="D29" gate="G$1" pin="C"/>
 <wire x1="149.86" y1="78.74" x2="170.18" y2="78.74" width="0.1524" layer="91"/>
+<label x="142.24" y="109.22" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="S2" gate="G$1" pin="2"/>
+<wire x1="238.76" y1="127" x2="238.76" y2="142.24" width="0.1524" layer="91"/>
+<label x="238.76" y="132.08" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -719,13 +784,19 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <wire x1="154.94" y1="93.98" x2="170.18" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$21" class="0">
+<net name="RST" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="P0_0"/>
 <wire x1="139.7" y1="116.84" x2="157.48" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="116.84" x2="157.48" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="D25" gate="G$1" pin="C"/>
 <wire x1="157.48" y1="101.6" x2="170.18" y2="101.6" width="0.1524" layer="91"/>
+<label x="144.78" y="116.84" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="S1" gate="G$1" pin="2"/>
+<wire x1="226.06" y1="127" x2="226.06" y2="142.24" width="0.1524" layer="91"/>
+<label x="226.06" y="132.08" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="N$22" class="0">
@@ -797,15 +868,23 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <wire x1="266.7" y1="114.3" x2="266.7" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="266.7" y1="106.68" x2="251.46" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="TP1" gate="G$1" pin="TP"/>
-<label x="236.22" y="106.68" size="1.778" layer="95"/>
+<label x="210.82" y="106.68" size="1.778" layer="95"/>
 <pinref part="D17" gate="G$1" pin="C"/>
-<wire x1="251.46" y1="106.68" x2="236.22" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="106.68" x2="238.76" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="106.68" x2="226.06" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="106.68" x2="210.82" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="281.94" y1="114.3" x2="281.94" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="281.94" y1="106.68" x2="266.7" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="D19" gate="G$1" pin="C"/>
 <wire x1="251.46" y1="114.3" x2="251.46" y2="106.68" width="0.1524" layer="91"/>
 <junction x="251.46" y="106.68"/>
 <junction x="266.7" y="106.68"/>
+<pinref part="S1" gate="G$1" pin="1"/>
+<wire x1="226.06" y1="116.84" x2="226.06" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="S2" gate="G$1" pin="1"/>
+<wire x1="238.76" y1="116.84" x2="238.76" y2="106.68" width="0.1524" layer="91"/>
+<junction x="226.06" y="106.68"/>
+<junction x="238.76" y="106.68"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="3.3V"/>
