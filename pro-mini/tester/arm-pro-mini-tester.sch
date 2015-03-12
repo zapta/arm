@@ -126,36 +126,36 @@ by exp-lbrs-filter.ulp</description>
 <wire x1="-2.54" y1="6.5" x2="-2.54" y2="3.81" width="0.127" layer="21"/>
 <wire x1="-2.54" y1="3.81" x2="5.08" y2="3.81" width="0.127" layer="21"/>
 <wire x1="5.08" y1="3.81" x2="5.08" y2="6.5" width="0.127" layer="21"/>
-<pad name="1" x="-7.62" y="5.08" drill="1.35" shape="long"/>
-<pad name="2" x="-7.62" y="2.54" drill="1.3" shape="long"/>
-<pad name="3" x="-7.62" y="0" drill="1.3" shape="long"/>
-<pad name="4" x="-7.62" y="-2.54" drill="1.3" shape="long"/>
-<pad name="5" x="-7.62" y="-5.08" drill="1.3" shape="long"/>
-<pad name="6" x="-7.62" y="-7.62" drill="1.3" shape="long"/>
-<pad name="7" x="-7.62" y="-10.16" drill="1.3" shape="long"/>
-<pad name="8" x="-7.62" y="-12.7" drill="1.3" shape="long"/>
-<pad name="9" x="-7.62" y="-15.24" drill="1.3" shape="long"/>
-<pad name="10" x="-7.62" y="-17.78" drill="1.3" shape="long"/>
-<pad name="11" x="-7.62" y="-20.32" drill="1.3" shape="long"/>
-<pad name="12" x="-7.62" y="-22.86" drill="1.3" shape="long"/>
-<pad name="13" x="-7.62" y="-25.4" drill="1.3" shape="long"/>
-<pad name="14" x="-7.62" y="-27.94" drill="1.3" shape="long"/>
-<pad name="15" x="-7.62" y="-30.48" drill="1.3" shape="long"/>
-<pad name="16" x="10.16" y="-30.48" drill="1.3" shape="long"/>
-<pad name="17" x="10.16" y="-27.94" drill="1.3" shape="long"/>
-<pad name="18" x="10.16" y="-25.4" drill="1.3" shape="long"/>
-<pad name="19" x="10.16" y="-22.86" drill="1.3" shape="long"/>
-<pad name="20" x="10.16" y="-20.32" drill="1.3" shape="long"/>
-<pad name="21" x="10.16" y="-17.78" drill="1.3" shape="long"/>
-<pad name="22" x="10.16" y="-15.24" drill="1.3" shape="long"/>
-<pad name="23" x="10.16" y="-12.7" drill="1.3" shape="long"/>
-<pad name="24" x="10.16" y="-10.16" drill="1.3" shape="long"/>
-<pad name="25" x="10.16" y="-7.62" drill="1.3" shape="long"/>
-<pad name="26" x="10.16" y="-5.08" drill="1.3" shape="long"/>
-<pad name="27" x="10.16" y="-2.54" drill="1.3" shape="long"/>
-<pad name="28" x="10.16" y="0" drill="1.3" shape="long"/>
-<pad name="29" x="10.16" y="2.54" drill="1.3" shape="long"/>
-<pad name="30" x="10.16" y="5.08" drill="1.3" shape="long"/>
+<pad name="1" x="-7.62" y="5.08" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="2" x="-7.62" y="2.54" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="3" x="-7.62" y="0" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="4" x="-7.62" y="-2.54" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="5" x="-7.62" y="-5.08" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="6" x="-7.62" y="-7.62" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="7" x="-7.62" y="-10.16" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="8" x="-7.62" y="-12.7" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="9" x="-7.62" y="-15.24" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="10" x="-7.62" y="-17.78" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="11" x="-7.62" y="-20.32" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="12" x="-7.62" y="-22.86" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="13" x="-7.62" y="-25.4" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="14" x="-7.62" y="-27.94" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="15" x="-7.62" y="-30.48" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="16" x="10.16" y="-30.48" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="17" x="10.16" y="-27.94" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="18" x="10.16" y="-25.4" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="19" x="10.16" y="-22.86" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="20" x="10.16" y="-20.32" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="21" x="10.16" y="-17.78" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="22" x="10.16" y="-15.24" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="23" x="10.16" y="-12.7" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="24" x="10.16" y="-10.16" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="25" x="10.16" y="-7.62" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="26" x="10.16" y="-5.08" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="27" x="10.16" y="-2.54" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="28" x="10.16" y="0" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="29" x="10.16" y="2.54" drill="1.016" diameter="1.778" shape="long"/>
+<pad name="30" x="10.16" y="5.08" drill="1.016" diameter="1.778" shape="long"/>
 <text x="-1.905" y="0.635" size="1.27" layer="21">&gt;NAME</text>
 <text x="-2.54" y="-2.54" size="1.27" layer="21">&gt;VALUE</text>
 </package>
@@ -542,7 +542,7 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <wire x1="340.36" y1="259.08" x2="340.36" y2="0" width="0.1524" layer="94"/>
 <wire x1="340.36" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="259.08" width="0.1524" layer="94"/>
-<text x="331.978" y="7.112" size="2.54" layer="97">2</text>
+<text x="331.978" y="7.112" size="2.54" layer="97">3</text>
 <text x="10.16" y="7.62" size="2.54" layer="97" font="vector">OSH. Share alike and attributions are optional. Commercial use ok.</text>
 </plain>
 <instances>
