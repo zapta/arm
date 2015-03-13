@@ -1,6 +1,7 @@
 TODO list for ARM PRO MINI
 
 **SCHEMATIC**
+* Connect crystal's ground pads to ground.
 
 **LAYOUT**
 
@@ -13,7 +14,7 @@ TODO list for ARM PRO MINI
 **DOCUMENTATION**
 * In the pinout diagram, indicated that p0_4, p0_5 are non pull up, open drain only.
 * Updated board picture.
-* Updated pinotu diagram (LED moved).
+* Updated pinotu diagram (LED and buttons moved).
 
 **MISCELLANEOUS**
 
