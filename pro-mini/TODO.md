@@ -1,7 +1,7 @@
 TODO list for ARM PRO MINI
 
 **SCHEMATIC**
-* Connect crystal's ground pads to ground.
+* Update BOM with new diodes and cap.
 
 **LAYOUT**
 
