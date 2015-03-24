@@ -133,9 +133,10 @@
 <text x="13.3604" y="16.9418" size="0.762" layer="21" font="vector" ratio="10">25</text>
 <text x="0.635" y="16.9418" size="0.762" layer="21" font="vector" ratio="10">30</text>
 <text x="27.8384" y="17.0434" size="0.762" layer="21" font="vector" ratio="10" rot="SR270">SWD</text>
-<text x="21.0566" y="3.048" size="0.762" layer="21" font="vector" ratio="10">ARM MINI
+<text x="30.4546" y="4.5212" size="0.762" layer="21" font="vector" ratio="10">ARM
+MINI
 PRO</text>
-<text x="16.002" y="16.3576" size="0.762" layer="21" font="vector" ratio="10">REV 2F</text>
+<text x="21.717" y="4.191" size="0.762" layer="21" font="vector" ratio="10">REV 2F</text>
 <wire x1="1.27" y1="2.413" x2="1.27" y2="2.159" width="0.1524" layer="21"/>
 <wire x1="11.43" y1="2.413" x2="11.43" y2="2.159" width="0.1524" layer="21"/>
 <wire x1="24.13" y1="2.413" x2="24.13" y2="2.159" width="0.1524" layer="21"/>
@@ -149,7 +150,7 @@ PRO</text>
 <text x="0.635" y="15.9004" size="0.762" layer="21" font="vector" ratio="10">5V</text>
 <text x="7.14989375" y="-9.83480625" size="0.8128" layer="48" font="vector" ratio="10">OSH. Share alike and attributions
 are optional. Commercial use ok.</text>
-<text x="12.192" y="3.9116" size="0.762" layer="21" font="vector" ratio="10">OSH</text>
+<text x="11.049" y="7.8232" size="0.762" layer="21" font="vector" ratio="10">OSH</text>
 </plain>
 <libraries>
 <library name="arm-pro-mini">
