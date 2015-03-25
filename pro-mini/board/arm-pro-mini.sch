@@ -1180,7 +1180,7 @@ General-purpose diode for high-speed switching</description>
 <wire x1="340.36" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="259.08" width="0.1524" layer="94"/>
 <text x="233.68" y="144.78" size="2.54" layer="97">MCU</text>
-<text x="331.978" y="7.112" size="2.54" layer="97">2G</text>
+<text x="331.978" y="7.112" size="2.54" layer="97">3</text>
 <text x="71.12" y="149.86" size="2.54" layer="97">USB</text>
 <text x="139.7" y="48.26" size="2.54" layer="97">SWD DEBUGGER PORT
 (OPTIONAL)</text>
