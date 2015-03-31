@@ -85,21 +85,30 @@ void writeRawByte(uint8_t b) {
     //if (write_buffer_size >= kWriteBufferMaxSize) {
     //  flushWrites();
     //}
+
+    //@@@@
     esp8266::tx_fifo.putByte(b);
-
-    //write_buffer[write_buffer_size++] = b;
-      debug.printf("TX[%02x ");
-
-    if (b == '\r') {
-          debug.printf("CR");
-        } else if (b == '\n') {
-          debug.printf("LF");
-        } else {
-          debug.printf("%c", b);
-        }
+    //esp8266::rx_fifo.putByte(b);
 
 
-    debug.printf("]\n");
+    //esp8266::rx_fifo.putByte(b);
+
+
+    debug.printf("TX[%02x]\n", b);
+
+
+//      debug.printf("TX[%02x ");
+//
+//    if (b == '\r') {
+//          debug.printf("CR");
+//        } else if (b == '\n') {
+//          debug.printf("LF");
+//        } else {
+//          debug.printf("%c", b);
+//        }
+//
+//
+//    debug.printf("]\n");
 
   }
   total_bytes_written++;
@@ -343,8 +352,8 @@ void sendLoginRequest(uint64_t device_id, uint64_t auth_token) {
     writeStringField(5, t);  // auth token
 
     t = uint64ToHex(device_id);
-    snprintf(tmp_buffer, sizeof(t), "android-%s", t);
-    writeStringField(6, t);  // device_id
+    snprintf(tmp_buffer, sizeof(tmp_buffer), "android-%s", t);
+    writeStringField(6, tmp_buffer);  // device_id
 
     writeVarintField(16, 2);  // auth_service = ANDROID_ID
 

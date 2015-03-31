@@ -35,7 +35,8 @@ static Serial wifi_serial(P0_19, P0_18);  // tx, rx
 static uint8_t rx_fifo_buffer[20];
 ByteFifo rx_fifo(rx_fifo_buffer, sizeof(rx_fifo_buffer));
 
-static uint8_t tx_fifo_buffer[500];
+// Should be large enough for the largest message we send.
+static uint8_t tx_fifo_buffer[200];
 ByteFifo tx_fifo(tx_fifo_buffer, sizeof(tx_fifo_buffer));
 
 static Timer tx_timer;

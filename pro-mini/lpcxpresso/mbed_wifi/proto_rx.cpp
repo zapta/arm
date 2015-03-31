@@ -18,6 +18,7 @@ static uint32_t total_bytes_read = 0;
 
 static bool readByte(uint8_t* b) {
   if (esp8266::rx_fifo.getByte(b)) {
+    debug.printf("PR[%02x]\n", *b);
     total_bytes_read++;
     return true;
   }
