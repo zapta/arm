@@ -102,7 +102,6 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TARGET_NXP/TARGET_LPC11UXX}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TARGET_NXP/TARGET_LPC11UXX/TARGET_MCU_LPC11U35_501}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TARGET_NXP/TARGET_LPC11UXX/TARGET_MCU_LPC11U35_501/TARGET_LPC11U35_501}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arm_pro_mini_lib/inc}&quot;"/>
 								</option>
 								<inputType id="com.crt.advproject.compiler.input.205113874" superClass="com.crt.advproject.compiler.input"/>
 							</tool>
@@ -111,9 +110,7 @@
 								<option id="com.crt.advproject.gas.thumb.1976113150" name="Thumb mode" superClass="com.crt.advproject.gas.thumb" value="true" valueType="boolean"/>
 								<option id="gnu.both.asm.option.flags.crt.1501250871" name="Assembler flags" superClass="gnu.both.asm.option.flags.crt" value="-c -x assembler-with-cpp -D__NEWLIB__  -DDEBUG -D__CODE_RED " valueType="string"/>
 								<option id="com.crt.advproject.gas.hdrlib.473313643" name="Library headers" superClass="com.crt.advproject.gas.hdrlib" value="com.crt.advproject.gas.hdrlib.newlib" valueType="enumerated"/>
-								<option id="gnu.both.asm.option.include.paths.1914191545" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arm_pro_mini_lib/inc}&quot;"/>
-								</option>
+								<option id="gnu.both.asm.option.include.paths.1914191545" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths"/>
 								<inputType id="com.crt.advproject.assembler.input.910682278" name="Additional Assembly Source Files" superClass="com.crt.advproject.assembler.input"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.918519340" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -236,7 +233,6 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TARGET_NXP/TARGET_LPC11UXX}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TARGET_NXP/TARGET_LPC11UXX/TARGET_MCU_LPC11U35_501}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TARGET_NXP/TARGET_LPC11UXX/TARGET_MCU_LPC11U35_501/TARGET_LPC11U35_501}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arm_pro_mini_lib/inc}&quot;"/>
 								</option>
 								<option id="com.crt.advproject.cpp.hdrlib.607219064" name="Library headers" superClass="com.crt.advproject.cpp.hdrlib" value="com.crt.advproject.cpp.hdrlib.newlib" valueType="enumerated"/>
 								<inputType id="com.crt.advproject.compiler.cpp.input.1172589171" superClass="com.crt.advproject.compiler.cpp.input"/>
@@ -264,9 +260,7 @@
 								</option>
 								<option id="gnu.c.compiler.option.misc.other.2015545820" name="Other flags" superClass="gnu.c.compiler.option.misc.other" value="-c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti" valueType="string"/>
 								<option id="gnu.c.compiler.option.optimization.flags.675461365" name="Other optimization flags" superClass="gnu.c.compiler.option.optimization.flags" value="-Os" valueType="string"/>
-								<option id="gnu.c.compiler.option.include.paths.898450136" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arm_pro_mini_lib/inc}&quot;"/>
-								</option>
+								<option id="gnu.c.compiler.option.include.paths.898450136" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths"/>
 								<inputType id="com.crt.advproject.compiler.input.1938378962" superClass="com.crt.advproject.compiler.input"/>
 							</tool>
 							<tool id="com.crt.advproject.gas.exe.release.579950187" name="MCU Assembler" superClass="com.crt.advproject.gas.exe.release">
@@ -274,9 +268,7 @@
 								<option id="com.crt.advproject.gas.thumb.1024544278" name="Thumb mode" superClass="com.crt.advproject.gas.thumb" value="true" valueType="boolean"/>
 								<option id="gnu.both.asm.option.flags.crt.637466836" name="Assembler flags" superClass="gnu.both.asm.option.flags.crt" value="-c -x assembler-with-cpp -D__NEWLIB__  -DNDEBUG -D__CODE_RED " valueType="string"/>
 								<option id="com.crt.advproject.gas.hdrlib.492600365" name="Library headers" superClass="com.crt.advproject.gas.hdrlib" value="com.crt.advproject.gas.hdrlib.newlib" valueType="enumerated"/>
-								<option id="gnu.both.asm.option.include.paths.1228949471" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arm_pro_mini_lib/inc}&quot;"/>
-								</option>
+								<option id="gnu.both.asm.option.include.paths.1228949471" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths"/>
 								<inputType id="com.crt.advproject.assembler.input.812068162" name="Additional Assembly Source Files" superClass="com.crt.advproject.assembler.input"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.382259205" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -293,8 +285,6 @@
 								<option id="com.crt.advproject.link.cpp.hdrlib.259007915" name="Library" superClass="com.crt.advproject.link.cpp.hdrlib" value="com.crt.advproject.cpp.link.hdrlib.newlib.semihost" valueType="enumerated"/>
 								<option id="gnu.cpp.link.option.libs.6254811" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="mbed"/>
-									<listOptionValue builtIn="false" value="capi"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${workspace_loc:/arm_pro_mini_lib/Debug/libarm_pro_mini_lib.a}&quot;"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.813959094" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/.}&quot;"/>
@@ -312,7 +302,6 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TARGET_NXP/TARGET_LPC11UXX}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TARGET_NXP/TARGET_LPC11UXX/TARGET_MCU_LPC11U35_501}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TARGET_NXP/TARGET_LPC11UXX/TARGET_MCU_LPC11U35_501/TARGET_LPC11U35_501}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arm_pro_mini_lib}&quot;"/>
 								</option>
 								<option id="gnu.cpp.link.option.userobjs.1313579148" name="Other objects" superClass="gnu.cpp.link.option.userobjs" valueType="userObjs">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TOOLCHAIN_GCC_CR/startup_LPC11xx.o}&quot;"/>
@@ -322,6 +311,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TOOLCHAIN_GCC_CR/cmsis_nvic.o}&quot;"/>
 								</option>
 								<option id="com.crt.advproject.link.cpp.multicore.master.userobjs.304899144" name="Slave Objects (not visible)" superClass="com.crt.advproject.link.cpp.multicore.master.userobjs" valueType="userObjs"/>
+								<option id="com.crt.advproject.link.cpp.multicore.slave.1846371432" name="Multicore configuration" superClass="com.crt.advproject.link.cpp.multicore.slave"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.486207182" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -350,7 +340,6 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TARGET_NXP/TARGET_LPC11UXX}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TARGET_NXP/TARGET_LPC11UXX/TARGET_MCU_LPC11U35_501}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed/TARGET_LPC11U35_501/TARGET_NXP/TARGET_LPC11UXX/TARGET_MCU_LPC11U35_501/TARGET_LPC11U35_501}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arm_pro_mini_lib/inc}&quot;"/>
 								</option>
 								<inputType id="com.crt.advproject.compiler.cpp.input.1706370613" superClass="com.crt.advproject.compiler.cpp.input"/>
 							</tool>
@@ -466,7 +455,7 @@
 				<parser enabled="true"/>
 			</scannerInfoProvider>
 		</profile>
-		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.release.1977230950;com.crt.advproject.config.exe.release.1977230950.180082224;com.crt.advproject.gcc.exe.release.536058616;com.crt.advproject.compiler.input.1565281352">
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.release.1977230950;com.crt.advproject.config.exe.release.1977230950.180082224;com.crt.advproject.gas.exe.release.607817423;com.crt.advproject.assembler.input.21606274">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.crt.advproject.GCCManagedMakePerProjectProfile"/>
 			<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
 				<buildOutputProvider>
@@ -509,7 +498,7 @@
 				</scannerInfoProvider>
 			</profile>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.release.1977230950;com.crt.advproject.config.exe.release.1977230950.180082224;com.crt.advproject.gas.exe.release.607817423;com.crt.advproject.assembler.input.21606274">
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.release.1977230950;com.crt.advproject.config.exe.release.1977230950.180082224;com.crt.advproject.gcc.exe.release.536058616;com.crt.advproject.compiler.input.1565281352">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.crt.advproject.GCCManagedMakePerProjectProfile"/>
 			<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
 				<buildOutputProvider>
