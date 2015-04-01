@@ -13,9 +13,6 @@ extern void setup();
 // Call from the main loop()
 extern void loop();
 
-// Send data upstream.
-//extern void tx(const uint8_t* data, int size);
-
 // Read downstream bytes from here.
 extern ByteFifo rx_fifo;
 

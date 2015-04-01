@@ -102,13 +102,13 @@ void loop() {
   while (state != TAG_LINE_READY && wifi_serial.readable()) {
     const char c = wifi_serial.getc();
 
-//    if (c == '\r') {
-//      debug.printf("{CR}\n");
-//    } else if (c == '\n') {
-//      debug.printf("{LF}\n");
-//    } else {
-//      debug.printf("{%c}\n", c);
-//    }
+    if (c == '\r') {
+      debug.printf("{CR}\n");
+    } else if (c == '\n') {
+      debug.printf("{LF}\n");
+    } else {
+      debug.printf("{%c}\n", c);
+    }
 
     switch (state) {
       case IDLE:
@@ -262,7 +262,6 @@ static void tx_loop() {
     return;  // wait
   }
 
-  //tx_timer.reset();
   wifi_serial.puts("TX(\"");
   debug.puts("TX(\"");
   for (int i = 0; i < 20; i++) {
@@ -270,14 +269,10 @@ static void tx_loop() {
     if (!tx_fifo.getByte(&b)) {
       break;
     }
-       //const uint8_t b = data[i];
-       //static char bfr[10];
-       //snprintf(bfr, sizeof(bfr), "\\%03d", b);
     debug.printf("\\%u", b);
     wifi_serial.printf("\\%u", b);
   }
-      // wifi_serial.p
-      // wifi_serial.puts(bfr);
+
     wifi_serial.puts("\")\n");
     debug.puts("\")\n");
     tx_in_progress = true;
@@ -290,33 +285,12 @@ void loop() {
   tx_loop();
 }
 
-//ByteFifo& rx() {
-//  return rx_fifo;
-//}
-
 uint32_t connectionId() {
   // NOTE: if is_connected is true then connection_id is guaranteed to
   // be non zero.
   return is_connected ? connection_id : 0;
 }
 
-// TODO: how much data can we send in one call? Does this blocks
-// properly? Should we buffer the output in a fifo here?
-//void tx(const uint8_t* data, int size) {
-//  debug.printf("*** SENDING ***\n");
-//  wifi_serial.puts("sock:send(\"");
-//  debug.puts("sock:send(\"");
-//  for (int i = 0; i < size; i++) {
-//    const uint8_t b = data[i];
-//    static char bfr[10];
-//    snprintf(bfr, sizeof(bfr), "\\%03d", b);
-//    debug.puts(bfr);
-//    wifi_serial.puts(bfr);
-//  }
-//  wifi_serial.puts("\")\n");
-//  debug.puts("\")\n");
-//
-//}
 
 void reconnect() {
   debug.printf("*** RECONNECT ***\n");

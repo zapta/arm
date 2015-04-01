@@ -1,25 +1,39 @@
-#include "parser.h"
+#include "protocol_rx.h"
 
-#include "protobuf.h"
-#include "esp8266.h"
 #include "debug.h"
+#include "protocol_util.h"
+#include "esp8266.h"
+#include "inttypes.h"
 
-///
+namespace protocol_rx {
 
+enum State {
+  STATE_STOPED,  // 0
+  STATE_PARSE_VERSION,  // 1
+  STATE_PARSE_TOP_MSG_TAG,  // 2
+  STATE_PARSE_TOP_MSG_LENGTH,  // 3
+  STATE_TEST_IF_MSG_DONE,  // 4
+  STATE_PARSE_FIELD_TAG,  // 5
+  STATE_PARSE_VARINT_FIELD_VALUE,  // 6
+  STATE_PARSE_FIELD_DATA_LENGTH,  // 9
+  STATE_PARSE_VAR_LEN_DATA,  // 10
+  STATE_EVENT_READY,  // 11
+};
 
-namespace parser {
+static State state;
+static uint32_t total_bytes_read;
 
-static uint32_t total_bytes_read = 0;
+static EventType pending_event_type;
 
 static bool readByte(uint8_t* b) {
   if (esp8266::rx_fifo.getByte(b)) {
+    //debug.printf("PR[%02x]\n", *b);
     total_bytes_read++;
     return true;
   }
   return false;
 }
 
-//static int bytes_read;
 namespace varint_parser {
 static uint32_t bytes_parsed;
 static uint64_t result;
@@ -53,63 +67,10 @@ static bool parse() {
       return true;
     }
   }
-  protobuf::protocolPanic("varint64 overrun");
+  protocol_util::protocolPanic("varint64 overrun");
   return false;
 }
-
-}  // namespace varing_parser
-
-class TestListener: Listener {
-public:
-  virtual void onMessageEnter(uint8_t new_nesting_level, uint8_t tag_num) {
-    debug.printf("onMsgEnter: %u, %u\n", new_nesting_level, tag_num);
-  }
-
-  virtual void onMessageExit(uint8_t new_nestingLevel) {
-    debug.printf("onMsgExit: %u\n", new_nestingLevel);
-  }
-
-  virtual void onVarintField(uint8_t tag_num, uint64_t value) {
-    debug.printf("onVarint: %u, %08x %08x\n", tag_num,
-        static_cast<uint32_t>(value >> 32), static_cast<uint32_t>(value));
-  }
-
-  virtual bool isSubMessage(uint8_t tag_num, uint32_t length) {
-    debug.printf("resolve: %u, %u\n", tag_num, length);
-    return false;
-  }
-
-  // Called for variable length fields that were resolved as VAR_LEN_DATA.
-  virtual void onDataFieldStart(uint8_t tag_num) {
-    debug.printf("onDataStart: %u\n", tag_num);
-  }
-  virtual void onDataFieldByte(uint8_t tag_num, uint8_t byte_value) {
-    debug.printf("onDataByte: %u\n", tag_num);
-  }
-  virtual void onDataFieldEnd(uint8_t tag_num) {
-    debug.printf("onDataEnd: %u\n", tag_num);
-  }
-};
-
-static TestListener test_listener;
-static Listener* listener;
-
-enum State {
-  STATE_STOPED,  // 0
-  STATE_PARSE_VERSION,  // 1
-  STATE_PARSE_TOP_MSG_TAG,  // 2
-  STATE_PARSE_TOP_MSG_LENGTH,  // 3
-  STATE_TEST_IF_MSG_DONE,  // 4
-  STATE_PARSE_FIELD_TAG,  // 5
-  STATE_PARSE_VARINT_FIELD_VALUE,  // 6
-//  STATE_PARSE_FIXED32_VALUE,  // 7
-//  STATE_PARSE_FIXED64_VALUE,  // 8
-  STATE_PARSE_FIELD_DATA_LENGTH,  // 9
-  STATE_PARSE_VAR_LEN_DATA,  // 10
-  //STATE_EVENT_READY,
-};
-
-static State state;
+}  // namespace varint_parser
 
 // Represents one messages in the message stack.
 struct StackEntry {
@@ -142,18 +103,64 @@ static void updateStackPath() {
     i += snprintf(&stack_path[i], (kBufferSize - i), j? ".%u" : "%u", tag_num);
     // Check for buffer overflow.
     if (i >= kBufferSize - 1) {
-      protobuf::protocolPanic("path ovf");
+      protocol_util::protocolPanic("path ovf");
       return;
     }
   }
   debug.printf("PATH: [%s]\n", stack_path);
 }
-
+// The tag number and type of the current field.
 static uint8_t field_tag_num;
 static uint8_t field_tag_type;
 
+// The total size of the current variable length field and the number of
+// bytes read so far.
 static uint32_t field_var_length;
 static uint32_t field_var_bytes_read;
+
+class ProtoListener {
+public:
+  // Call backs are done as long as the protocol parsing is on track.
+  virtual const char* listenerName() { return "DEFAULT"; }
+  // This method also resets the listener.
+  virtual void onMessageStart() {debug.printf("onMessageStart() %s\n", listenerName());}
+  virtual void onMessageEnd() {debug.printf("onMessageEnd() %s\n", listenerName());}
+  virtual void onVarintField() {debug.printf("onVarintField()\n");}
+  virtual bool isCurrentFieldASubMessage() {return false;}
+  virtual void onDataFieldStart() {debug.printf("onDataFieldStart()\n");}
+  virtual void onDataFieldByte(uint8_t byte_value) {debug.printf("onDataFieldByte()\n");}
+  virtual void onDataFieldEnd() {debug.printf("onDataFieldEnd()\n");}
+};
+static ProtoListener default_listener;
+
+LoginResponseEvent login_response_event;
+
+class LoginResponseListener : public ProtoListener {
+public:
+  virtual const char* listenerName() { return "LOGIN_RESP"; }
+
+  virtual bool isCurrentFieldASubMessage() {
+    // Error info
+    if (strcmp("3", stack_path) == 0 && field_tag_num == 3) {
+       return true;
+    }
+    // ErrorInfo.Extension
+    if (strcmp("3.3", stack_path) == 0 && field_tag_num == 4) {
+      return true;
+    }
+    return false;
+  }
+
+  virtual void onMessageEnd() {
+    ProtoListener::onMessageEnd();
+    pending_event_type = EVENT_LOGIN_RESPONSE;
+  }
+};
+
+static LoginResponseListener login_response_listener;
+
+// Never null. Changes listener on incoming message boundary.
+static ProtoListener* current_listener = &default_listener;
 
 void setup() {
   state = STATE_STOPED;
@@ -192,12 +199,15 @@ void loop() {
     case STATE_PARSE_TOP_MSG_TAG:
       // TODO: assert that stack_size == 0 here.
       if (varint_parser::parse()) {
-        // We use uintt_8 to represent tag nums.
+        // We use uint_8 to represent tag nums. 8 bits are sufficient for this
+        // specific protocol.
         if (varint_parser::result > 0xff) {
-          protobuf::protocolPanic("tag size");
-          state = STATE_STOPED;
+          protocol_util::protocolPanic("tag size");
+          setState(STATE_STOPED);
+          //state = STATE_STOPED;
           return;
         }
+        pending_event_type = EVENT_NONE;
         stack[0].message_tag_num = static_cast<uint8_t>(varint_parser::result);
         setState(STATE_PARSE_TOP_MSG_LENGTH);
       }
@@ -213,6 +223,23 @@ void loop() {
         stack_size = 1;
         updateStackPath();
         debug.printf("\n***PUSH -> %d\n", stack_size);
+        debug.printf("*** msg tag num: %d\n", stack[0].message_tag_num);
+        switch (stack[0].message_tag_num) {
+          case 3:
+            current_listener = &login_response_listener;
+//            debug.printf("*** case 3  %s\n", current_listener.listenerName());
+//            debug.printf("*** case 3  %s\n", login_response_listener.listenerName());
+//            debug.printf("*** case 3  %s\n", default_listener.listenerName());
+
+
+
+            break;
+          default:
+            debug.printf("*** case default\n");
+            current_listener = &default_listener;
+            debug.printf("LISTENER: %s\n", current_listener->listenerName());
+        }
+        current_listener->onMessageStart();
         setState(STATE_TEST_IF_MSG_DONE);
       }
       break;
@@ -221,7 +248,7 @@ void loop() {
       const StackEntry* const stack_top = &stack[stack_size - 1];
       const uint32_t bytes_so_far = total_bytes_read
           - stack_top->start_total_bytes_read;
-      debug.printf("\nMsg bytes: %u/%u (level=%d)\n", bytes_so_far, stack_top->message_length, stack_size);
+      debug.printf("\nMsg bytes read: %u/%u (level=%d)\n", bytes_so_far, stack_top->message_length, stack_size);
       //  TODO: if it's actually > than protcol panic. Should match exactly.
       if (bytes_so_far >= stack_top->message_length) {
         stack_size--;
@@ -230,10 +257,14 @@ void loop() {
         updateStackPath();
         if (stack_size == 0) {
           // Done parsing top level message.
-          setState(STATE_PARSE_TOP_MSG_TAG);
+          current_listener->onMessageEnd();
+          // Some messages generate an event, some don't. Events can be generated
+          // per top message.
+          debug.printf("pending_event_type: %d, listener=%s\n", pending_event_type, current_listener->listenerName());
+          setState(pending_event_type ? STATE_EVENT_READY : STATE_PARSE_TOP_MSG_TAG);
         }
       } else {
-        // Continue pasring fields of this message.
+        // More bytes to parse in this message. Parse next field.
         setState(STATE_PARSE_FIELD_TAG);
       }
     }
@@ -246,12 +277,12 @@ void loop() {
         field_tag_type = static_cast<uint8_t>(varint_parser::result) & 0x7;
         debug.printf("TAG: [%s].%u, type=%d\n", stack_path, field_tag_num, field_tag_type);
         // Dispatch by field tag type
-        if (field_tag_type == protobuf::kTagTypeVarint) {
+        if (field_tag_type == protocol_util::kTagTypeVarint) {
           setState(STATE_PARSE_VARINT_FIELD_VALUE);
-        } else if (field_tag_type == protobuf::kTagTypeLenDelimited) {
+        } else if (field_tag_type == protocol_util::kTagTypeLenDelimited) {
           setState(STATE_PARSE_FIELD_DATA_LENGTH);
         } else {
-          protobuf::protocolPanic("parser tag type");
+          protocol_util::protocolPanic("parser tag type");
           setState(STATE_STOPED);
         }
       }
@@ -260,6 +291,7 @@ void loop() {
     case STATE_PARSE_VARINT_FIELD_VALUE:
       if (varint_parser::parse()) {
         debug.printf("VARINT FIELD DONE [%s].%u\n", stack_path, field_tag_num);
+        current_listener->onVarintField();
         setState(STATE_TEST_IF_MSG_DONE);
       }
       break;
@@ -269,37 +301,12 @@ void loop() {
       if (varint_parser::parse()) {
         field_var_length = static_cast<uint32_t>(varint_parser::result);
 
-        // TODO: ask listener for policy. For now faking it.
-
-        bool is_sub_message = false;
-//        if (stack_size == 1 &&
-//            stack[0].message_tag_num == 3 &&  // LoginResponse
-//            field_tag_num == 3) {             // LoginResponse.ErrorInfo
-//          debug.printf("\nEntering LoginResponse.ErrorInfo sub message [%s].%u\n", stack_path, field_tag_num);
-//          is_sub_message = true;
-//        }
-//        if (stack_size == 2 &&
-//            stack[0].message_tag_num == 3 &&  // LoginResponse
-//            stack[1].message_tag_num == 3 &&  // LoginResponse.ErrorInfo
-//            field_tag_num == 4) {             // LoginResponse.ErrorInfo.Extension
-//          debug.printf("\nEntering LoginResponse.ErrorInfo.Extension sub message [%s].%u\n", stack_path, field_tag_num);
-//          is_sub_message = true;
-//        }
-
-        if (strcmp("3", stack_path) == 0 && field_tag_num == 3) {
-            is_sub_message = true;
-            debug.printf("Entering LoginResponse.ErrorInfo\n");
-        } else  if (strcmp("3.3", stack_path) == 0 && field_tag_num == 4) {
-          is_sub_message = true;
-          debug.printf("Entering LoginResponse.ErrorInfo.Extension sub message\n");
-        }
-
-
-        if (is_sub_message) {
+        // This decision is message dependent so we ask the listener.
+        if (current_listener->isCurrentFieldASubMessage()) {
           stack_size++;
           if (stack_size > kMaxStackSize) {
             // TODO: make this a common method to set panic and stop
-            protobuf::protocolPanic("parser stack");
+            protocol_util::protocolPanic("parser stack");
             setState(STATE_STOPED);
             return;
           }
@@ -308,17 +315,14 @@ void loop() {
           stack_top->message_length = field_var_length;
           stack_top->message_tag_num = field_tag_num;
           stack_top->start_total_bytes_read = total_bytes_read;
-          // Raised panic if buffer overflow.
           updateStackPath();
+          current_listener->onMessageStart();
           setState(STATE_TEST_IF_MSG_DONE);
         } else {
+          current_listener->onDataFieldStart();
           setState(STATE_PARSE_VAR_LEN_DATA);
           field_var_bytes_read = 0;
         }
-
-        //FieldPolicy policy =  VAR_LEN_SKIP;
-        //setState(STATE_PARSE_VAR_LEN_DATA);
-        //field_var_bytes_read = 0;
       }
       break;
 
@@ -343,14 +347,31 @@ void loop() {
         debug.puts("\n");
 
         field_var_bytes_read++;
+        current_listener->onDataFieldByte(b);
       }
       debug.printf("VAR LEN FIELD DONE [%s].%u, len=%u\n", stack_path, field_tag_num, field_var_bytes_read);
+      current_listener->onDataFieldEnd();
       setState(STATE_TEST_IF_MSG_DONE);
       break;
 
     default:
-      protobuf::protocolPanic("parser state");
+      protocol_util::protocolPanic("parser state");
   }
 }
 
-}  // parser
+EventType currentEvent() {
+  return (state == STATE_EVENT_READY) ? pending_event_type : EVENT_NONE;
+}
+extern void eventDone() {
+  debug.printf("eventDone() called\n");
+  if (state == STATE_EVENT_READY) {
+    setState(STATE_PARSE_TOP_MSG_TAG);
+  }
+}
+
+void dumpInternalState() {
+  debug.printf("proto_rx: state=%d, event=%d\n", state, current_listener);
+}
+
+
+}  // namespace protocol_rx
