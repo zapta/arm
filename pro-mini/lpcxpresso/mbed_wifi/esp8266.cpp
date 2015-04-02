@@ -66,14 +66,14 @@ static State state;
 static unsigned int tag_line_size;
 static char tag_line_buffer[20];
 
-bool inline is_line_buffer_full() {
+bool inline isLineBufferFull() {
   // -1 because it is managed as a null terminated string.
   return tag_line_size >= (sizeof(tag_line_buffer) - 1);
 }
 
 // Return true if ok, otherwise buffer was full.
-inline bool append_to_line_buffer(const char c) {
-  if (is_line_buffer_full()) {
+inline bool appendToLineBuffer(const char c) {
+  if (isLineBufferFull()) {
     return false;
   }
   tag_line_buffer[tag_line_size++] = c;
@@ -82,13 +82,13 @@ inline bool append_to_line_buffer(const char c) {
 }
 
 // Get ready to the next line.
-void next_tag_line() {
+void nextTagLine() {
   state = IDLE;
   tag_line_size = 0;
   tag_line_buffer[0] = '\0';
 }
 
-void flush_input() {
+void flushInput() {
   int n = 0;
   while (wifi_serial.readable()) {
     wifi_serial.getc();
@@ -96,24 +96,27 @@ void flush_input() {
   }
   debug.printf("*** Flushed %d input chars\n", n);
   rx_fifo.reset();
-  next_tag_line();
+  nextTagLine();
 }
 
 void setup() {
-  flush_input();
+  flushInput();
 }
 
 void loop() {
   while (state != TAG_LINE_READY && wifi_serial.readable()) {
     const char c = wifi_serial.getc();
 
-//    if (c == '\r') {
-//      debug.printf("{CR}\n");
-//    } else if (c == '\n') {
-//      debug.printf("{LF}\n");
-//    } else {
-//      debug.printf("{%c}\n", c);
-//    }
+    // Enable to dump all communication from esp8266 Lua (verbose).
+    if (false) {
+      if (c == '\r') {
+        debug.printf("{CR}\n");
+      } else if (c == '\n') {
+        debug.printf("{LF}\n");
+      } else {
+        debug.printf("{%c}\n", c);
+      }
+    }
 
     switch (state) {
       case IDLE:
@@ -122,7 +125,7 @@ void loop() {
         }
         if (c == '!' || c == '+') {
           state = READING_TAG_LINE;
-          append_to_line_buffer(c);
+          appendToLineBuffer(c);
           continue;
         }
         state = IGNORED_LINE;
@@ -130,7 +133,7 @@ void loop() {
 
       case IGNORED_LINE:
         if (c == '\n') {
-          next_tag_line();
+          nextTagLine();
         }
         continue;
 
@@ -139,7 +142,7 @@ void loop() {
         } else if (c == '\n') {
           state = TAG_LINE_READY;
         } else {
-          append_to_line_buffer(c);
+          appendToLineBuffer(c);
         }
         continue;
 
@@ -148,13 +151,13 @@ void loop() {
 
       default:
         debug.printf("* Unknown state:%d\n", state);
-        next_tag_line();
+        nextTagLine();
     }
   }
 }
 }  // namespace wifi_reader
 
-static void resetConnectionState() {
+static void resetForANewConnection() {
   tx_timer.start();
   tx_in_progress = 0;
   tx_fifo.reset();
@@ -162,19 +165,14 @@ static void resetConnectionState() {
 }
 
 void setup() {
-  // TODO: reset the ESP8266 via its reset pin.
-
-  //wifi_serial.baud(115200);
+  // TODO: reset the ESP8266 using its reset pin.
   wifi_serial.baud(9600);
   debug.printf("*** 9600\n");
-
   wifi_serial.format(8, SerialBase::None, 1);
   wifi_reader::setup();
   connection_id = 0;
   is_connected = false;
-
-  resetConnectionState();
-
+  resetForANewConnection();
 }
 
 // Returns 0-15 for a lower case hex char, or -1 otherwise.
@@ -195,11 +193,16 @@ static void rx_loop() {
     return;
   }
 
-  //debug.printf("TL [%s]\n", wifi_reader::tag_line_buffer);
+  // Enable to dump tag lines recieved from the esp8266 Lua.
+  if (true) {
+    debug.printf("tag: [%s]\n", wifi_reader::tag_line_buffer);
+  }
 
   const char tag = wifi_reader::tag_line_buffer[0];
 
   // Handle connection report.
+  // "!0" -> not connected
+  // "!1" -> connected
   if (tag == '!') {
     const char flag = wifi_reader::tag_line_buffer[1];
     if (flag != '0' && flag != '1') {
@@ -211,15 +214,15 @@ static void rx_loop() {
       // break the assumption that connection_id is non zero when is_connected
       // is true.
       connection_id++;
-      resetConnectionState();
+      resetForANewConnection();
       //rx_fifo.reset();
     } else if (flag == '0' && is_connected) {
       // Connection lost.
       is_connected = false;
       //rx_fifo.reset();
-      resetConnectionState();
+      resetForANewConnection();
     }
-    wifi_reader::next_tag_line();
+    wifi_reader::nextTagLine();
     return;
   }
 
@@ -242,12 +245,12 @@ static void rx_loop() {
         debug.printf("BAD LN: [%s]\n", wifi_reader::tag_line_buffer);
       }
     }
-    wifi_reader::next_tag_line();
+    wifi_reader::nextTagLine();
     return;
   }
 
   debug.printf("??: [%s]\n", wifi_reader::tag_line_buffer);
-  wifi_reader::next_tag_line();
+  wifi_reader::nextTagLine();
 }
 
 static void tx_loop() {
@@ -301,14 +304,14 @@ uint32_t connectionId() {
   return is_connected ? connection_id : 0;
 }
 
-void reconnect() {
+void abortCurrentConnection() {
   debug.printf("*** RECONNECT ***\n");
   wifi_serial.puts("if sock then sock:close() end\n");
 }
 
-void dumpState() {
-  debug.printf("### is_conn=%d, reader=%d.%d[%s], rx=%d, tx=%d\n", is_connected,
-      wifi_reader::state, wifi_reader::tag_line_size,
+void dumpInternalState() {
+  debug.printf("esp8266 is_conn=%d, reader=%d.%d[%s], rx=%d, tx=%d\n",
+      is_connected, wifi_reader::state, wifi_reader::tag_line_size,
       wifi_reader::tag_line_buffer, rx_fifo.size(), tx_in_progress);
 }
 

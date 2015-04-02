@@ -3,42 +3,13 @@
 #include "debug.h"
 #include "esp8266.h"
 #include "protocol_util.h"
+#include "string_util.h"
 
 namespace protocol_tx {
 
 static const char kDomain[] = "mcs.android.com";
 
 static char tmp_buffer[30];
-
-// Size is sufficient to contain a uint64 in decimal or hex format including
-// a null terminator.
-static char uint64_to_str_buffer[20+1];
-
-static char* uint64ToDecimal(uint64_t v) {
-  char* p = uint64_to_str_buffer + sizeof(uint64_to_str_buffer);
-  *(--p) = '\0';
-  for (bool first = true; v || first; first = false) {
-    uint32_t digit = v % 10;
-    const char c = '0' + digit;
-    *(--p) = c;
-    v = v / 10;
-  }
-  return p;
-}
-
-static char* uint64ToHex(uint64_t v) {
-  char* p = uint64_to_str_buffer + sizeof(uint64_to_str_buffer);
-  *(--p) = '\0';
-  for (bool first = true; v || first; first = false) {
-    uint32_t digit = v & 0xf;
-    const char c = (digit < 10)
-        ? ('0' + digit)
-        : ('a' - 10 + digit);
-    *(--p) = c;
-    v = v >> 4;
-  }
-  return p;
-}
 
 // Total bytes written so far.
 static uint32_t total_bytes_written = 0;
@@ -124,14 +95,14 @@ void sendLoginRequest(uint64_t device_id, uint64_t auth_token) {
     writeStringField(1, "");  // Not used. Required field.
     writeStringField(2, kDomain);  // domain
 
-    const char* t = uint64ToDecimal(device_id);
+    const char* t = string_util::uint64ToDecimal(device_id);
     writeStringField(3, t);  // user
     writeStringField(4, t);  // resource
 
-    t = uint64ToDecimal(auth_token);
+    t = string_util::uint64ToDecimal(auth_token);
     writeStringField(5, t);  // auth token
 
-    t = uint64ToHex(device_id);
+    t = string_util::uint64ToHex(device_id);
     snprintf(tmp_buffer, sizeof(tmp_buffer), "android-%s", t);
     writeStringField(6, tmp_buffer);  // device_id
 
@@ -178,17 +149,21 @@ void sendHeartbeatPing() {
 }
 
 void setup() {
-  reset();
+  resetForANewConnection();
 }
 
 void loop() {
   // Nothing to do.
 }
 
-void reset() {
+void resetForANewConnection() {
   total_bytes_written = 0;
   is_counting_only_mode = false;
   esp8266::rx_fifo.reset();
+}
+
+void dumpInternalState() {
+  // Nonthing to dump for now.
 }
 
 }  // namespace protocol_tx

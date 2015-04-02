@@ -19,7 +19,10 @@ extern void setup();
 extern void loop();
 
 // Cleanup for a new connection.
-extern void reset();
+extern void resetForANewConnection();
+
+extern void dumpInternalState();
+
 }  // namespace protocol_tx
 
 #endif  // PROTOCOL_H

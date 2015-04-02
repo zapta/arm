@@ -21,14 +21,15 @@ void loop() {
   protocol_rx::loop();
 }
 
-void reset() {
-  protocol_tx::reset();
-  protocol_rx::reset();
+void resetForANewConnection() {
+  protocol_tx::resetForANewConnection();
+  protocol_rx::resetForANewConnection();
   protocol_util::is_panic_mode = false;
 }
 
 void dumpInternalState() {
   protocol_rx::dumpInternalState();
+  protocol_tx::dumpInternalState();
 }
 
 }  // namespace protocol

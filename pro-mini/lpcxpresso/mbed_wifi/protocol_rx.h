@@ -10,7 +10,7 @@ extern void setup();
 extern void loop();
 
 // Prepare for a new connection.
-extern void reset();
+extern void resetForANewConnection();
 
 enum EventType {
   // It's safe to assume that 0 means none.

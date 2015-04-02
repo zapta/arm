@@ -18,7 +18,7 @@ namespace protocol {
 extern void setup();
 
 // Reset protocol for a new connection.
-extern void reset();
+extern void resetForANewConnection();
 
 // Continuous polling.
 extern void loop();

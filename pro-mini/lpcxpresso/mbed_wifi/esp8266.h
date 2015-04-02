@@ -25,10 +25,10 @@ extern uint32_t connectionId();
 // If connected then close the current connectiona and reconnect.
 // Otherwise do nothing. Usefull for situation when the network protocol
 // encoutnered an unrecoverable error.
-extern void reconnect();
+extern void abortCurrentConnection();
 
 // Dump internal information for debugging.
-extern void dumpState();
+extern void dumpInternalState();
 
 }  // namespace esp8266
 

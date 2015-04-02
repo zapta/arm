@@ -12,7 +12,7 @@ bool is_panic_mode = false;
 void protocolPanic(const char* short_message) {
   if (!is_panic_mode) {
     debug.printf("Protocol panic: %s\n", short_message);
-    esp8266::reconnect();
+    esp8266::abortCurrentConnection();
     is_panic_mode = true;
   }
 }

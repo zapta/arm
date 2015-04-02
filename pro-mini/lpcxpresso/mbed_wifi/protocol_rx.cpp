@@ -102,9 +102,9 @@ static void updateStackPath() {
   int i = 0;
   stack_path[0] = '\0';
   const int kBufferSize = sizeof(stack_path);
-  for(int j = 0; j < stack_size; j++) {
+  for (int j = 0; j < stack_size; j++) {
     const uint8_t tag_num = stack[j].message_tag_num;
-    i += snprintf(&stack_path[i], (kBufferSize - i), j? ".%u" : "%u", tag_num);
+    i += snprintf(&stack_path[i], (kBufferSize - i), j ? ".%u" : "%u", tag_num);
     // Check for buffer overflow.
     if (i >= kBufferSize - 1) {
       protocol_util::protocolPanic("path ovf");
@@ -125,29 +125,51 @@ static uint32_t field_var_bytes_read;
 class ProtoListener {
 public:
   // Call backs are done as long as the protocol parsing is on track.
-  virtual const char* listenerName() { return "DEFAULT"; }
+  virtual const char* listenerName() {
+    return "DEFAULT";
+  }
   // This method also resets the listener.
-  virtual void onTopMessageStart() {debug.printf("onTopMessageStart() %s\n", listenerName());}
-  virtual void onTopMessageEnd() {debug.printf("onTopMessageEnd() %s\n", listenerName());}
-  virtual void onSubMessageStart() {debug.printf("onSubMessageStart() %s\n", listenerName());}
-  virtual void onSubMessageEnd() {debug.printf("onSubMessageEnd() %s\n", listenerName());}
-  virtual void onVarintField() {debug.printf("onVarintField()\n");}
-  virtual bool isCurrentFieldASubMessage() {return false;}
-  virtual void onDataFieldStart() {debug.printf("onDataFieldStart()\n");}
-  virtual void onDataFieldByte(uint8_t byte_value) {debug.printf("onDataFieldByte()\n");}
-  virtual void onDataFieldEnd() {debug.printf("onDataFieldEnd()\n");}
+  virtual void onTopMessageStart() {
+    debug.printf("onTopMessageStart() %s\n", listenerName());
+  }
+  virtual void onTopMessageEnd() {
+    debug.printf("onTopMessageEnd() %s\n", listenerName());
+  }
+  virtual void onSubMessageStart() {
+    debug.printf("onSubMessageStart() %s\n", listenerName());
+  }
+  virtual void onSubMessageEnd() {
+    debug.printf("onSubMessageEnd() %s\n", listenerName());
+  }
+  virtual void onVarintField() {
+    debug.printf("onVarintField()\n");
+  }
+  virtual bool isCurrentFieldASubMessage() {
+    return false;
+  }
+  virtual void onDataFieldStart() {
+    debug.printf("onDataFieldStart()\n");
+  }
+  virtual void onDataFieldByte(uint8_t byte_value) {
+    debug.printf("onDataFieldByte()\n");
+  }
+  virtual void onDataFieldEnd() {
+    debug.printf("onDataFieldEnd()\n");
+  }
 };
 static ProtoListener default_listener;
 
 // ----- LoginResponse
-class LoginResponseListener : public ProtoListener {
+class LoginResponseListener: public ProtoListener {
 public:
-  virtual const char* listenerName() { return "LOGIN_RESP"; }
+  virtual const char* listenerName() {
+    return "LOGIN_RESP";
+  }
   virtual bool isCurrentFieldASubMessage() {
     // Error info, ErrorInfo.Extension.
-    return
-        (stackPathEq("3") && (field_tag_num == 3 || field_tag_num == 4 || field_tag_num == 7)) ||
-        (stackPathEq("3.3") && field_tag_num == 4);
+    return (stackPathEq("3")
+        && (field_tag_num == 3 || field_tag_num == 4 || field_tag_num == 7))
+        || (stackPathEq("3.3") && field_tag_num == 4);
   }
   virtual void onTopMessageStart() {
     // TODO: remove the call to super. For debugging only.
@@ -164,7 +186,8 @@ public:
     ProtoListener::onVarintField();
     if (stackPathEq("3.3") && field_tag_num == 1) {
       // TODO: is this the proper case, interpreting the 32 LSB bits as a int32?
-      rx_login_response_event.error_code = static_cast<int32_t>(varint_parser::result);
+      rx_login_response_event.error_code =
+          static_cast<int32_t>(varint_parser::result);
     }
   }
 };
@@ -172,10 +195,12 @@ static LoginResponseListener login_response_listener;
 RxLoginResponseEvent rx_login_response_event;
 
 // ----- HeartbeatAck
-class HeartbeatAckListener : public ProtoListener {
+class HeartbeatAckListener: public ProtoListener {
 public:
-  virtual const char* listenerName() { return "HRTB_ACK"; }
-   virtual void onTopMessageStart() {
+  virtual const char* listenerName() {
+    return "HRTB_ACK";
+  }
+  virtual void onTopMessageStart() {
     rx_heartbeat_ack_event.stream_id = 0;
     rx_heartbeat_ack_event.last_stream_id_received = 0;
   }
@@ -185,17 +210,18 @@ public:
   virtual void onVarintField() {
     if (stack_size == 1 && field_tag_num == 1) {
       // TODO: is this the proper case, interpreting the 32 LSB bits as a int32?
-      rx_heartbeat_ack_event.stream_id = static_cast<int32_t>(varint_parser::result);
+      rx_heartbeat_ack_event.stream_id =
+          static_cast<int32_t>(varint_parser::result);
     }
     if (stack_size == 1 && field_tag_num == 2) {
       // TODO: is this the proper case, interpreting the 32 LSB bits as a int32?
-      rx_heartbeat_ack_event.last_stream_id_received = static_cast<int32_t>(varint_parser::result);
+      rx_heartbeat_ack_event.last_stream_id_received =
+          static_cast<int32_t>(varint_parser::result);
     }
   }
 };
 static HeartbeatAckListener hearbeat_ack_listener;
 RxHeatbeatAckEvent rx_heartbeat_ack_event;
-
 
 // Never null. Changes listener on incoming message boundary.
 static ProtoListener* current_listener = &default_listener;
@@ -213,15 +239,11 @@ static void setState(State new_state) {
   varint_parser::reset();
 }
 
-void reset() {
+void resetForANewConnection() {
   setState(STATE_PARSE_VERSION);
   stack_size = 0;
   updateStackPath();
 }
-
-//void stop() {
-//  setState(STATE_STOPED);
-//}
 
 void loop() {
   switch (state) {
@@ -283,7 +305,8 @@ void loop() {
       const StackEntry* const stack_top = &stack[stack_size - 1];
       const uint32_t bytes_so_far = total_bytes_read
           - stack_top->start_total_bytes_read;
-      debug.printf("\nMsg bytes read: %u/%u (level=%d)\n", bytes_so_far, stack_top->message_length, stack_size);
+      debug.printf("\nMsg bytes read: %u/%u (level=%d)\n", bytes_so_far,
+          stack_top->message_length, stack_size);
       //  TODO: if it's actually > than protcol panic. Should match exactly.
       if (bytes_so_far >= stack_top->message_length) {
         if (stack_size == 1) {
@@ -296,27 +319,27 @@ void loop() {
         // In pop the path is shorten so we don't worry about the length.
         updateStackPath();
         if (stack_size == 0) {
-          // Only top level messges can generate an event.
-          // Done parsing top level message.
-          //current_listener->onTopMessageEnd();
-          // Some messages generate an event, some don't. Events can be generated
-          // per top message.
-          debug.printf("pending_event_type: %d, listener=%s\n", pending_event_type, current_listener->listenerName());
-          setState(pending_event_type ? STATE_EVENT_READY : STATE_PARSE_TOP_MSG_TAG);
+          // Done parsing a top level message. If the message generated an
+          // event, go to STATE_EVENT_READY state and stay there until the event
+          // will be processed by the app. Otherwise, continue parsing next
+          // top level message.
+          setState(
+              pending_event_type ? STATE_EVENT_READY : STATE_PARSE_TOP_MSG_TAG);
         }
       } else {
-        // More bytes to parse in this message. Parse next field.
+        // More bytes left in this message. Parse next field in this message.
         setState(STATE_PARSE_FIELD_TAG);
       }
-    }
       break;
+    }
 
     case STATE_PARSE_FIELD_TAG:
       if (varint_parser::parse()) {
         // TODO: panic if tag num doesn't fit in field_tag_num.
         field_tag_num = static_cast<uint8_t>(varint_parser::result >> 3);
         field_tag_type = static_cast<uint8_t>(varint_parser::result) & 0x7;
-        debug.printf("TAG: [%s].%u, type=%d\n", stack_path, field_tag_num, field_tag_type);
+        debug.printf("TAG: [%s].%u, type=%d\n", stack_path, field_tag_num,
+            field_tag_type);
         // Dispatch by field tag type
         if (field_tag_type == protocol_util::kTagTypeVarint) {
           setState(STATE_PARSE_VARINT_FIELD_VALUE);
@@ -337,7 +360,6 @@ void loop() {
       }
       break;
 
-
     case STATE_PARSE_FIELD_DATA_LENGTH:
       if (varint_parser::parse()) {
         field_var_length = static_cast<uint32_t>(varint_parser::result);
@@ -352,7 +374,7 @@ void loop() {
             return;
           }
           debug.printf("\n***PUSH -> %d\n", stack_size);
-          StackEntry* const stack_top = &stack[stack_size-1];
+          StackEntry* const stack_top = &stack[stack_size - 1];
           stack_top->message_length = field_var_length;
           stack_top->message_tag_num = field_tag_num;
           stack_top->start_total_bytes_read = total_bytes_read;
@@ -390,7 +412,8 @@ void loop() {
         field_var_bytes_read++;
         current_listener->onDataFieldByte(b);
       }
-      debug.printf("VAR LEN FIELD DONE [%s].%u, len=%u\n", stack_path, field_tag_num, field_var_bytes_read);
+      debug.printf("VAR LEN FIELD DONE [%s].%u, len=%u\n", stack_path,
+          field_tag_num, field_var_bytes_read);
       current_listener->onDataFieldEnd();
       setState(STATE_TEST_IF_MSG_DONE);
       break;
@@ -411,8 +434,7 @@ extern void eventDone() {
 }
 
 void dumpInternalState() {
-  debug.printf("proto_rx: state=%d, event=%d\n", state, current_listener);
+  debug.printf("proto_rx: state=%d, event=%d\n", state, currentEvent());
 }
-
 
 }  // namespace protocol_rx

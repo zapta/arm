@@ -56,6 +56,44 @@ static void protocolPanic(const char* short_message) {
   //state = ERROR;
 }
 
+// Called periodic to dump state for debugging.
+static void dumpInternalState() {
+  esp8266::dumpInternalState();
+  protocol::dumpInternalState();
+  debug.printf("main: s=%d t=%d\n", state,
+      time_in_current_state.read_ms() / 1000);
+}
+
+// Handler for the CONNECTED state.
+static void loop_connectedState() {
+
+  if (heatbeat_timer.read_ms() > 15000) {
+    heatbeat_timer.reset();
+    protocol_tx::sendHeartbeatPing();
+    return;
+  }
+
+  const protocol_rx::EventType event_type = protocol_rx::currentEvent();
+
+  if (!event_type) {
+    return;
+  }
+
+  switch (event_type) {
+    // Received an HeatbreakAck message.
+    case protocol_rx::EVENT_HEARTBEAK_ACK:
+      debug.printf("*** main: heartbet ACK: %d, %d\n",
+          protocol_rx::rx_heartbeat_ack_event.stream_id,
+          protocol_rx::rx_heartbeat_ack_event.last_stream_id_received);
+      break;
+
+    // All other events
+    default:
+      debug.printf("Unexpected event type: %d\n", event_type);
+  }
+  protocol_rx::eventDone();
+}
+
 static void loop() {
   esp8266::loop();
   protocol::loop();
@@ -63,18 +101,15 @@ static void loop() {
   led.write(led_timer.read_ms() < 200);
   if (led_timer.read_ms() >= 3000) {
     led_timer.reset();
-    esp8266::dumpState();
-    debug.printf("main: s=%d t=%d\n", state,
-        time_in_current_state.read_ms() / 1000);
+    dumpInternalState();
   }
 
   const uint32_t connection_id = esp8266::connectionId();
   // Handle connection change.
   if (connection_id != last_connection_id) {
     last_connection_id = connection_id;
-    protocol::reset();
+    protocol::resetForANewConnection();
     setState(NOT_CONNECTED);
-    //state = NOT_CONNECTED;
     return;
   }
 
@@ -103,44 +138,26 @@ static void loop() {
         setState(CONNECTED);
         heatbeat_timer.reset();
       }
-    }
       break;
-
-    case CONNECTED: {
-      const protocol_rx::EventType event_type = protocol_rx::currentEvent();
-      if (event_type) {
-        switch (event_type) {
-          case protocol_rx::EVENT_HEARTBEAK_ACK:
-            debug.printf("*** main: heartbet ACK: %d, %d\n",
-                protocol_rx::rx_heartbeat_ack_event.stream_id,
-                protocol_rx::rx_heartbeat_ack_event.last_stream_id_received);
-            break;
-          default:
-            debug.printf("Unexpected event type: %d\n", event_type);
-        }
-        protocol_rx::eventDone();
-      }
-
-      if (heatbeat_timer.read_ms() > 15000) {
-        heatbeat_timer.reset();
-        protocol_tx::sendHeartbeatPing();
-        //debug.printf("main: connected %d seconds\n", time_in_current_state.read_ms()/1000);
-      }
-      // TODO: handle other events here
     }
+
+    case CONNECTED:
+      loop_connectedState();
       break;
 
     case ERROR:
-      // Exit by the connection change logic at the top of this function.
+      // This state exists by the connection change logic at the
+      // top of this function.
       break;
 
     default:
       debug.printf("Unknown: %d\n", state);
       setState(ERROR);
-      //state = ERROR;
   }
 }
 
+// Arduino like main.
+// One time initialization and then continuous polling.
 int main(void) {
   setup();
   for (;;) {
