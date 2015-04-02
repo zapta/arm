@@ -92,6 +92,10 @@ static int stack_size;
 
 static char stack_path[20];
 
+static inline bool stackPathEq(const char* s) {
+  return strcmp(stack_path, s) == 0;
+}
+
 // Encode the stack pass as a null terminated string with a '.' seperated list of message_tag_num
 // in decimal format, starting with top level message. E.g. "3.2.11".
 static void updateStackPath() {
@@ -123,8 +127,10 @@ public:
   // Call backs are done as long as the protocol parsing is on track.
   virtual const char* listenerName() { return "DEFAULT"; }
   // This method also resets the listener.
-  virtual void onMessageStart() {debug.printf("onMessageStart() %s\n", listenerName());}
-  virtual void onMessageEnd() {debug.printf("onMessageEnd() %s\n", listenerName());}
+  virtual void onTopMessageStart() {debug.printf("onTopMessageStart() %s\n", listenerName());}
+  virtual void onTopMessageEnd() {debug.printf("onTopMessageEnd() %s\n", listenerName());}
+  virtual void onSubMessageStart() {debug.printf("onSubMessageStart() %s\n", listenerName());}
+  virtual void onSubMessageEnd() {debug.printf("onSubMessageEnd() %s\n", listenerName());}
   virtual void onVarintField() {debug.printf("onVarintField()\n");}
   virtual bool isCurrentFieldASubMessage() {return false;}
   virtual void onDataFieldStart() {debug.printf("onDataFieldStart()\n");}
@@ -133,31 +139,63 @@ public:
 };
 static ProtoListener default_listener;
 
-LoginResponseEvent login_response_event;
-
+// ----- LoginResponse
 class LoginResponseListener : public ProtoListener {
 public:
   virtual const char* listenerName() { return "LOGIN_RESP"; }
-
   virtual bool isCurrentFieldASubMessage() {
-    // Error info
-    if (strcmp("3", stack_path) == 0 && field_tag_num == 3) {
-       return true;
-    }
-    // ErrorInfo.Extension
-    if (strcmp("3.3", stack_path) == 0 && field_tag_num == 4) {
-      return true;
-    }
-    return false;
+    // Error info, ErrorInfo.Extension.
+    return
+        (stackPathEq("3") && (field_tag_num == 3 || field_tag_num == 4 || field_tag_num == 7)) ||
+        (stackPathEq("3.3") && field_tag_num == 4);
   }
-
-  virtual void onMessageEnd() {
-    ProtoListener::onMessageEnd();
+  virtual void onTopMessageStart() {
+    // TODO: remove the call to super. For debugging only.
+    ProtoListener::onTopMessageStart();
+    rx_login_response_event.error_code = 0;
+  }
+  virtual void onTopMessageEnd() {
+    // TODO: remove the call to super. For debugging only.
+    ProtoListener::onTopMessageEnd();
     pending_event_type = EVENT_LOGIN_RESPONSE;
   }
+  virtual void onVarintField() {
+    // TODO: remove the call to super. For debugging only.
+    ProtoListener::onVarintField();
+    if (stackPathEq("3.3") && field_tag_num == 1) {
+      // TODO: is this the proper case, interpreting the 32 LSB bits as a int32?
+      rx_login_response_event.error_code = static_cast<int32_t>(varint_parser::result);
+    }
+  }
 };
-
 static LoginResponseListener login_response_listener;
+RxLoginResponseEvent rx_login_response_event;
+
+// ----- HeartbeatAck
+class HeartbeatAckListener : public ProtoListener {
+public:
+  virtual const char* listenerName() { return "HRTB_ACK"; }
+   virtual void onTopMessageStart() {
+    rx_heartbeat_ack_event.stream_id = 0;
+    rx_heartbeat_ack_event.last_stream_id_received = 0;
+  }
+  virtual void onTopMessageEnd() {
+    pending_event_type = EVENT_HEARTBEAK_ACK;
+  }
+  virtual void onVarintField() {
+    if (stack_size == 1 && field_tag_num == 1) {
+      // TODO: is this the proper case, interpreting the 32 LSB bits as a int32?
+      rx_heartbeat_ack_event.stream_id = static_cast<int32_t>(varint_parser::result);
+    }
+    if (stack_size == 1 && field_tag_num == 2) {
+      // TODO: is this the proper case, interpreting the 32 LSB bits as a int32?
+      rx_heartbeat_ack_event.last_stream_id_received = static_cast<int32_t>(varint_parser::result);
+    }
+  }
+};
+static HeartbeatAckListener hearbeat_ack_listener;
+RxHeatbeatAckEvent rx_heartbeat_ack_event;
+
 
 // Never null. Changes listener on incoming message boundary.
 static ProtoListener* current_listener = &default_listener;
@@ -175,15 +213,15 @@ static void setState(State new_state) {
   varint_parser::reset();
 }
 
-void start() {
+void reset() {
   setState(STATE_PARSE_VERSION);
   stack_size = 0;
   updateStackPath();
 }
 
-void stop() {
-  setState(STATE_STOPED);
-}
+//void stop() {
+//  setState(STATE_STOPED);
+//}
 
 void loop() {
   switch (state) {
@@ -225,21 +263,18 @@ void loop() {
         debug.printf("\n***PUSH -> %d\n", stack_size);
         debug.printf("*** msg tag num: %d\n", stack[0].message_tag_num);
         switch (stack[0].message_tag_num) {
+          case 1:
+            current_listener = &hearbeat_ack_listener;
+            break;
           case 3:
             current_listener = &login_response_listener;
-//            debug.printf("*** case 3  %s\n", current_listener.listenerName());
-//            debug.printf("*** case 3  %s\n", login_response_listener.listenerName());
-//            debug.printf("*** case 3  %s\n", default_listener.listenerName());
-
-
-
             break;
           default:
-            debug.printf("*** case default\n");
+            //debug.printf("*** case default\n");
             current_listener = &default_listener;
             debug.printf("LISTENER: %s\n", current_listener->listenerName());
         }
-        current_listener->onMessageStart();
+        current_listener->onTopMessageStart();
         setState(STATE_TEST_IF_MSG_DONE);
       }
       break;
@@ -251,13 +286,19 @@ void loop() {
       debug.printf("\nMsg bytes read: %u/%u (level=%d)\n", bytes_so_far, stack_top->message_length, stack_size);
       //  TODO: if it's actually > than protcol panic. Should match exactly.
       if (bytes_so_far >= stack_top->message_length) {
+        if (stack_size == 1) {
+          current_listener->onTopMessageEnd();
+        } else {
+          current_listener->onSubMessageEnd();
+        }
         stack_size--;
         debug.printf("\n*** POP -> %d\n", stack_size);
         // In pop the path is shorten so we don't worry about the length.
         updateStackPath();
         if (stack_size == 0) {
+          // Only top level messges can generate an event.
           // Done parsing top level message.
-          current_listener->onMessageEnd();
+          //current_listener->onTopMessageEnd();
           // Some messages generate an event, some don't. Events can be generated
           // per top message.
           debug.printf("pending_event_type: %d, listener=%s\n", pending_event_type, current_listener->listenerName());
@@ -316,7 +357,7 @@ void loop() {
           stack_top->message_tag_num = field_tag_num;
           stack_top->start_total_bytes_read = total_bytes_read;
           updateStackPath();
-          current_listener->onMessageStart();
+          current_listener->onSubMessageStart();
           setState(STATE_TEST_IF_MSG_DONE);
         } else {
           current_listener->onDataFieldStart();

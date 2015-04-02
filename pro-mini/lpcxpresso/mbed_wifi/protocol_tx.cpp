@@ -151,6 +151,32 @@ void sendLoginRequest(uint64_t device_id, uint64_t auth_token) {
   debug.printf("LoginRequest sent, %u (%u) bytes\n", pass1_size, pass0_size);
 }
 
+void sendHeartbeatPing() {
+  uint32_t pass0_size = 0;
+  uint32_t pass1_size = 0;
+
+  is_counting_only_mode = true;
+  for (int pass = 0; pass < 2; pass++) {
+    const uint32_t pass_start_count = total_bytes_written;
+
+    // TODO: send actual values.
+    writeVarintField(1, 1);  // Last ocal stream id sent.
+    writeVarintField(2, 1);  // Last remote stream id recieved.
+    writeVarintField(3, 1);  // Status
+
+    if (pass == 0) {
+      pass0_size = total_bytes_written - pass_start_count;
+      is_counting_only_mode = false;
+      writeVarint(0);  // message tag for LoginRequest.
+      writeVarint(pass0_size);
+    } else {
+      // This else section is for verification only.
+      pass1_size = total_bytes_written - pass_start_count;
+    }
+  }
+  debug.printf("HeartbeatPing sent, %u (%u) bytes\n", pass1_size, pass0_size);
+}
+
 void setup() {
   reset();
 }

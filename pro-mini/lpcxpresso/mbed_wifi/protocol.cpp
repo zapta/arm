@@ -23,7 +23,7 @@ void loop() {
 
 void reset() {
   protocol_tx::reset();
-  protocol_rx::stop();
+  protocol_rx::reset();
   protocol_util::is_panic_mode = false;
 }
 

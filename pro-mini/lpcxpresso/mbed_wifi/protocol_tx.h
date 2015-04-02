@@ -9,6 +9,8 @@ namespace protocol_tx {
 extern void sendProtocolVersion();
 // Sent once on each new connection immedielty after the protocol version.
 extern void sendLoginRequest(uint64_t device_id, uint64_t auth_token);
+// Send a heatbeat pin. Local and acked message ids are filled in automatically.
+extern void sendHeartbeatPing();
 
 // One time initialization.
 extern void setup();

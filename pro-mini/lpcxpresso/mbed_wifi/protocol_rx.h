@@ -9,25 +9,36 @@ namespace protocol_rx {
 extern void setup();
 extern void loop();
 
-// Start/stop the downstream data. We restart it for each new connection.
-extern void stop();
-extern void start();
+// Prepare for a new connection.
+extern void reset();
 
 enum EventType {
   // It's safe to assume that 0 means none.
   EVENT_NONE = 0,
-  EVENT_LOGIN_RESPONSE
+  EVENT_LOGIN_RESPONSE,
+  EVENT_HEARTBEAK_ACK,
 };
 
 // TODO: have the events in a C union to reduce memory footprint?
-struct LoginResponseEvent {
-  uint32_t id;
-  uint64_t secret;
-};
-extern LoginResponseEvent login_response_event;
+// Content is valid only when currentEvent() == EVENT_LOGIN_RESPONSE;
 
-// Events generating from parsing incoming messages.
+// Login Response event.
+struct RxLoginResponseEvent {
+  int32_t error_code;
+};
+extern RxLoginResponseEvent rx_login_response_event;
+
+// Heartbeat Ack event
+struct RxHeatbeatAckEvent {
+  int32_t stream_id;
+  int32_t last_stream_id_received;
+};
+extern RxHeatbeatAckEvent rx_heartbeat_ack_event;
+
+
+// The current ready event, or EVENT_NONE (also 0) if none.
 extern EventType currentEvent();
+// Call to continue the parsing to the next event.
 extern void eventDone();
 
 // For debugging.

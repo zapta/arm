@@ -8,6 +8,11 @@
 // UTXD -> ARP PRO MINI #16 (RX)
 // URXD -> ARP PRO MINI #18 (TX)
 // -------------------------------
+//
+//
+// Implement a state machine that will control automatic sending of heart beat
+// and will export signal that will block sending by the app to avoid interefering
+// with other ongoing sending.
 
 #include "esp8266.h"
 
@@ -102,13 +107,13 @@ void loop() {
   while (state != TAG_LINE_READY && wifi_serial.readable()) {
     const char c = wifi_serial.getc();
 
-    if (c == '\r') {
-      debug.printf("{CR}\n");
-    } else if (c == '\n') {
-      debug.printf("{LF}\n");
-    } else {
-      debug.printf("{%c}\n", c);
-    }
+//    if (c == '\r') {
+//      debug.printf("{CR}\n");
+//    } else if (c == '\n') {
+//      debug.printf("{LF}\n");
+//    } else {
+//      debug.printf("{%c}\n", c);
+//    }
 
     switch (state) {
       case IDLE:
@@ -156,7 +161,6 @@ static void resetConnectionState() {
   rx_fifo.reset();
 }
 
-
 void setup() {
   // TODO: reset the ESP8266 via its reset pin.
 
@@ -183,7 +187,6 @@ static int hexCharToInt(const char c) {
   }
   return -1;
 }
-
 
 static void rx_loop() {
   wifi_reader::loop();
@@ -230,6 +233,8 @@ static void rx_loop() {
         const uint8_t b = (hex1 << 4) + hex2;
         debug.printf("RX[%02x]\n", b);
         if (!rx_fifo.putByte(b)) {
+          // TODO: propogate it somehow to protocl panic. For example, has a was_full
+          // flag in the fifo that protocol_rx will poll.
           debug.printf("RX FULL\n");
         }
       } else {
@@ -247,8 +252,10 @@ static void rx_loop() {
 
 static void tx_loop() {
   if (!tx_fifo.size()) {
+    // Done sending bytes to Lua, issue a FLUSH
     if (tx_in_progress) {
-      if (tx_timer.read_ms() > 1000) {
+      // TODO: define a const for time SEND and FLUSH.
+      if (tx_timer.read_ms() >= 300) {
         tx_timer.reset();
         debug.puts("FLUSH()\n");
         wifi_serial.puts("FLUSH()\n");
@@ -258,7 +265,10 @@ static void tx_loop() {
     return;
   }
 
-  if (tx_timer.read_ms() < 1000) {
+  // Here when having pending bytes. Have sufficient time gap
+  // before sending next line.
+  // TODO: define time const.
+  if (tx_timer.read_ms() < 300) {
     return;  // wait
   }
 
@@ -273,10 +283,10 @@ static void tx_loop() {
     wifi_serial.printf("\\%u", b);
   }
 
-    wifi_serial.puts("\")\n");
-    debug.puts("\")\n");
-    tx_in_progress = true;
-    tx_timer.reset();
+  wifi_serial.puts("\")\n");
+  debug.puts("\")\n");
+  tx_in_progress = true;
+  tx_timer.reset();
 
 }
 
@@ -290,7 +300,6 @@ uint32_t connectionId() {
   // be non zero.
   return is_connected ? connection_id : 0;
 }
-
 
 void reconnect() {
   debug.printf("*** RECONNECT ***\n");
