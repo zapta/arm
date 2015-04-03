@@ -151,13 +151,14 @@ public:
     debug.printf("onDataFieldStart()\n");
   }
   virtual void onDataFieldByte(uint8_t byte_value) {
-    debug.printf("onDataFieldByte()\n");
+    //debug.printf("onDataFieldByte()\n");
   }
   virtual void onDataFieldEnd() {
     debug.printf("onDataFieldEnd()\n");
   }
 };
 static ProtoListener default_listener;
+
 
 // ----- LoginResponse
 class LoginResponseListener: public ProtoListener {
@@ -194,6 +195,7 @@ public:
 static LoginResponseListener login_response_listener;
 RxLoginResponseEvent rx_login_response_event;
 
+
 // ----- HeartbeatAck
 class HeartbeatAckListener: public ProtoListener {
 public:
@@ -201,18 +203,12 @@ public:
     return "HRTB_ACK";
   }
   virtual void onTopMessageStart() {
-    rx_heartbeat_ack_event.stream_id = 0;
     rx_heartbeat_ack_event.last_stream_id_received = 0;
   }
   virtual void onTopMessageEnd() {
     pending_event_type = EVENT_HEARTBEAK_ACK;
   }
   virtual void onVarintField() {
-    if (stack_size == 1 && field_tag_num == 1) {
-      // TODO: is this the proper case, interpreting the 32 LSB bits as a int32?
-      rx_heartbeat_ack_event.stream_id =
-          static_cast<int32_t>(varint_parser::result);
-    }
     if (stack_size == 1 && field_tag_num == 2) {
       // TODO: is this the proper case, interpreting the 32 LSB bits as a int32?
       rx_heartbeat_ack_event.last_stream_id_received =
@@ -222,6 +218,32 @@ public:
 };
 static HeartbeatAckListener hearbeat_ack_listener;
 RxHeatbeatAckEvent rx_heartbeat_ack_event;
+
+// ----- DataMessageStanza (8)
+
+class DataMessageStanzaListener: public ProtoListener {
+public:
+  virtual const char* listenerName() {
+    return "DM_STANZA";
+  }
+  virtual bool isCurrentFieldASubMessage() {
+    // App data
+    return (stackPathEq("8") && field_tag_num == 7);
+  }
+  virtual void onTopMessageStart() {
+    // TODO: remove the call to super. For debugging only.
+    ProtoListener::onTopMessageStart();
+    // TODO: init event fields here
+  }
+  virtual void onTopMessageEnd() {
+    // TODO: remove the call to super. For debugging only.
+    ProtoListener::onTopMessageEnd();
+    pending_event_type = EVENT_DATA_MESSAGE_STANZA;
+  }
+};
+static DataMessageStanzaListener data_message_stanza_listener;
+RxDataMessageStanzaEvent rx_data_message_stanza_event;
+
 
 // Never null. Changes listener on incoming message boundary.
 static ProtoListener* current_listener = &default_listener;
@@ -290,6 +312,9 @@ void loop() {
             break;
           case 3:
             current_listener = &login_response_listener;
+            break;
+          case 8:
+            current_listener = &data_message_stanza_listener;
             break;
           default:
             //debug.printf("*** case default\n");

@@ -79,12 +79,17 @@ static void loop_connectedState() {
     return;
   }
 
+  // Handle for the specific event derived from selected incoming
+  // MCS message types.
   switch (event_type) {
     // Received an HeatbreakAck message.
     case protocol_rx::EVENT_HEARTBEAK_ACK:
-      debug.printf("*** main: heartbet ACK: %d, %d\n",
-          protocol_rx::rx_heartbeat_ack_event.stream_id,
+      debug.printf("*** main: heartbeat ACK: last_id=%d\n",
           protocol_rx::rx_heartbeat_ack_event.last_stream_id_received);
+      break;
+
+    case protocol_rx::EVENT_DATA_MESSAGE_STANZA:
+      debug.printf("*** main: message stanza event\n");
       break;
 
     // All other events
@@ -118,8 +123,8 @@ static void loop() {
       // If we got here, connection_id is non zero and is equals to last_connection_id.
       if (connection_id) {
         debug.printf("## SENDING LOGIN\n");
-        protocol_tx::sendProtocolVersion();
-        protocol_tx::sendLoginRequest(config::device_id, config::auth_token);
+        //protocol_tx::sendProtocolVersion();
+        protocol_tx::sendProtocolVersionAndLoginRequest(config::device_id, config::auth_token);
         setState(WAIT_LOGIN_RESPONSE);
       }
       break;

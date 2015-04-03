@@ -7,9 +7,7 @@
 
 namespace protocol_tx {
 
-static const char kDomain[] = "mcs.android.com";
-
-static char tmp_buffer[30];
+//-------------------- Protocol Buffers Primitives
 
 // Total bytes written so far.
 static uint32_t total_bytes_written = 0;
@@ -72,18 +70,21 @@ void writeStringField(uint32_t tag_num, const char* value) {
   sendProtocolRawBytes(reinterpret_cast<const uint8_t*>(value), n);
 }
 
+//-------------------- Protocol Messages
 
-void sendProtocolVersion() {
-  is_counting_only_mode = false;
-  writeVarint(38);
-}
+static char tmp_buffer[30];
 
-void sendLoginRequest(uint64_t device_id, uint64_t auth_token) {
+void sendProtocolVersionAndLoginRequest(uint64_t device_id, uint64_t auth_token) {
   debug.printf("id=%08x:%08x\n", static_cast<uint32_t>(device_id >> 32),
       static_cast<uint32_t>(device_id));
   debug.printf("auth=%08x:%08x\n", static_cast<uint32_t>(auth_token >> 32),
       static_cast<uint32_t>(auth_token));
 
+  // Send protocol version byte.
+  is_counting_only_mode = false;
+  writeVarint(38);
+
+  // Send LoginRequest message
   uint32_t pass0_size = 0;
   uint32_t pass1_size = 0;
 
@@ -93,7 +94,7 @@ void sendLoginRequest(uint64_t device_id, uint64_t auth_token) {
     const uint32_t pass_start_count = total_bytes_written;
 
     writeStringField(1, "");  // Not used. Required field.
-    writeStringField(2, kDomain);  // domain
+    writeStringField(2, "mcs.android.com");  // domain
 
     const char* t = string_util::uint64ToDecimal(device_id);
     writeStringField(3, t);  // user
@@ -147,6 +148,8 @@ void sendHeartbeatPing() {
   }
   debug.printf("HeartbeatPing sent, %u (%u) bytes\n", pass1_size, pass0_size);
 }
+
+//-------------------- Misc
 
 void setup() {
   resetForANewConnection();

@@ -194,7 +194,7 @@ static void rx_loop() {
   }
 
   // Enable to dump tag lines recieved from the esp8266 Lua.
-  if (true) {
+  if (false) {
     debug.printf("tag: [%s]\n", wifi_reader::tag_line_buffer);
   }
 
@@ -234,7 +234,7 @@ static void rx_loop() {
       const int hex2 = hexCharToInt(wifi_reader::tag_line_buffer[2]);
       if (hex1 >= 0 && hex2 >= 0) {
         const uint8_t b = (hex1 << 4) + hex2;
-        debug.printf("RX[%02x]\n", b);
+        //debug.printf("RX[%02x]\n", b);
         if (!rx_fifo.putByte(b)) {
           // TODO: propogate it somehow to protocl panic. For example, has a was_full
           // flag in the fifo that protocol_rx will poll.

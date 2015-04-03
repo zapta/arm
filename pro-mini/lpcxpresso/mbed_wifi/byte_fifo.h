@@ -8,14 +8,12 @@ public:
   ByteFifo(uint8_t* buffer, uint32_t buffer_size)
     : _buffer(buffer),
       _max_buffer_size(buffer_size) {
-    //_bytes_consumed = 0;
     reset();
   }
 
   void reset() {
     _byte_count = 0;
     _first_byte_index = 0;
-    // _bytes_read is not affected by reset();
   }
 
   inline bool isFull() {

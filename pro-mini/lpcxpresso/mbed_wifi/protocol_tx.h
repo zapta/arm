@@ -5,10 +5,12 @@
 
 namespace protocol_tx {
 
-// The first thing that is sent on a new connection.
-extern void sendProtocolVersion();
-// Sent once on each new connection immedielty after the protocol version.
-extern void sendLoginRequest(uint64_t device_id, uint64_t auth_token);
+// Is it ok to send a message.
+extern bool isReadyToSend();
+
+// Should be sent once on a new connection.
+extern void sendProtocolVersionAndLoginRequest(uint64_t device_id, uint64_t auth_token);
+
 // Send a heatbeat pin. Local and acked message ids are filled in automatically.
 extern void sendHeartbeatPing();
 
@@ -21,6 +23,7 @@ extern void loop();
 // Cleanup for a new connection.
 extern void resetForANewConnection();
 
+// For debugging.
 extern void dumpInternalState();
 
 }  // namespace protocol_tx

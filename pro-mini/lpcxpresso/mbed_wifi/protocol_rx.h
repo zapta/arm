@@ -17,6 +17,7 @@ enum EventType {
   EVENT_NONE = 0,
   EVENT_LOGIN_RESPONSE,
   EVENT_HEARTBEAK_ACK,
+  EVENT_DATA_MESSAGE_STANZA,
 };
 
 // TODO: have the events in a C union to reduce memory footprint?
@@ -30,10 +31,15 @@ extern RxLoginResponseEvent rx_login_response_event;
 
 // Heartbeat Ack event
 struct RxHeatbeatAckEvent {
-  int32_t stream_id;
   int32_t last_stream_id_received;
 };
 extern RxHeatbeatAckEvent rx_heartbeat_ack_event;
+
+// Data Message Stanza event
+struct RxDataMessageStanzaEvent {
+  //int32_t last_stream_id_received;
+};
+extern RxDataMessageStanzaEvent rx_data_message_stanza_event;
 
 
 // The current ready event, or EVENT_NONE (also 0) if none.
