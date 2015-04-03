@@ -83,5 +83,6 @@ ls -l "${bin_dst}"
 echo "Copying ..."
 cp "${bin_src}" "${bin_dst}"
 ls -l "${bin_dst}"
+echo
 echo "DONE OK."
 
