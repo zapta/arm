@@ -6,15 +6,6 @@
 
 namespace protocol_util {
 
-// Exported by protocol_util.h
-bool is_panic_mode = false;
-
-void protocolPanic(const char* short_message) {
-  if (!is_panic_mode) {
-    debug.printf("Protocol panic: %s\n", short_message);
-    esp8266::abortCurrentConnection();
-    is_panic_mode = true;
-  }
-}
+// Nothing to put here for now.
 
 }  // namespace protocol_util

@@ -47,6 +47,9 @@ extern EventType currentEvent();
 // Call to continue the parsing to the next event.
 extern void eventDone();
 
+// Called by protocol.cpp on protocol panic.
+extern void onProtocolPanic();
+
 // For debugging.
 extern void dumpInternalState();
 

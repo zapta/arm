@@ -7,9 +7,6 @@
 #include "protocol_tx.h"
 #include "_config.h"
 
-// expose Panic in protocol.h and remove this.
-#include "protocol_util.h"
-
 static DigitalOut led(P0_20, 0);
 
 static Timer timer;
@@ -51,7 +48,7 @@ static void setup() {
 }
 
 static void protocolPanic(const char* short_message) {
-  protocol_util::protocolPanic(short_message);
+  protocol::protocolPanic(short_message);
   setState(ERROR);
   //state = ERROR;
 }

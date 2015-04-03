@@ -5,6 +5,11 @@
 
 #include "mbed.h"
 
+namespace protocol {
+  extern void protocolPanic(const char* short_message);
+  //extern bool is_panic_mode;
+}
+
 namespace protocol_util {
 
 // General protocol buffer tag types.
@@ -15,12 +20,6 @@ static const uint8_t kTagTypeLenDelimited = 2;
 static const uint8_t kTagTypeStartGroup = 3;
 static const uint8_t kTagTypeEndGroup = 4;
 static const uint8_t kTagTypeFixed32 = 5;
-
-// Call this in case of an error when the protocol gets out of sync.
-// It triggers a reconnection.
-extern void protocolPanic(const char* short_message);
-
-extern bool is_panic_mode;
 
 }  // namespace protocol_util
 

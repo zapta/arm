@@ -67,7 +67,7 @@ static bool parse() {
       return true;
     }
   }
-  protocol_util::protocolPanic("varint64 overrun");
+  protocol::protocolPanic("varint64 overrun");
   return false;
 }
 }  // namespace varint_parser
@@ -107,7 +107,7 @@ static void updateStackPath() {
     i += snprintf(&stack_path[i], (kBufferSize - i), j ? ".%u" : "%u", tag_num);
     // Check for buffer overflow.
     if (i >= kBufferSize - 1) {
-      protocol_util::protocolPanic("path ovf");
+      protocol::protocolPanic("path ovf");
       return;
     }
   }
@@ -284,7 +284,7 @@ void loop() {
         // We use uint_8 to represent tag nums. 8 bits are sufficient for this
         // specific protocol.
         if (varint_parser::result > 0xff) {
-          protocol_util::protocolPanic("tag size");
+          protocol::protocolPanic("tag size");
           setState(STATE_STOPED);
           //state = STATE_STOPED;
           return;
@@ -371,7 +371,7 @@ void loop() {
         } else if (field_tag_type == protocol_util::kTagTypeLenDelimited) {
           setState(STATE_PARSE_FIELD_DATA_LENGTH);
         } else {
-          protocol_util::protocolPanic("parser tag type");
+          protocol::protocolPanic("parser tag type");
           setState(STATE_STOPED);
         }
       }
@@ -394,7 +394,7 @@ void loop() {
           stack_size++;
           if (stack_size > kMaxStackSize) {
             // TODO: make this a common method to set panic and stop
-            protocol_util::protocolPanic("parser stack");
+            protocol::protocolPanic("parser stack");
             setState(STATE_STOPED);
             return;
           }
@@ -444,7 +444,7 @@ void loop() {
       break;
 
     default:
-      protocol_util::protocolPanic("parser state");
+      protocol::protocolPanic("parser state");
   }
 }
 
@@ -456,6 +456,12 @@ extern void eventDone() {
   if (state == STATE_EVENT_READY) {
     setState(STATE_PARSE_TOP_MSG_TAG);
   }
+}
+
+// Do not call directly from this module. Call protocol::protocolPanic() instead
+// so the panic mode can be propograted to all stake holders.
+void onProtocolPanic() {
+  // TODO: do something useful or delete this TODO comment.
 }
 
 void dumpInternalState() {

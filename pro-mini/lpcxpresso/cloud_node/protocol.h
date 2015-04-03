@@ -23,6 +23,11 @@ extern void resetForANewConnection();
 // Continuous polling.
 extern void loop();
 
+// Call this on protcol errors. It propogates the panic call to the
+// protcol rx and tx modules and triggers a connection restart.
+extern void protocolPanic(const char* short_message);
+extern bool isPanicMode();
+
 // For debugging.
 extern void dumpInternalState();
 

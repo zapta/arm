@@ -23,6 +23,9 @@ extern void loop();
 // Cleanup for a new connection.
 extern void resetForANewConnection();
 
+// Called by protocol.cpp on protocol panic.
+extern void onProtocolPanic();
+
 // For debugging.
 extern void dumpInternalState();
 

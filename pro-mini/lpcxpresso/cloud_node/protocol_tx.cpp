@@ -20,7 +20,7 @@ static bool is_counting_only_mode = false;
 void writeRawByte(uint8_t b) {
   if (!is_counting_only_mode) {
     if (!esp8266::tx_fifo.putByte(b)) {
-      protocol_util::protocolPanic("TX ovf");
+      protocol::protocolPanic("TX ovf");
       return;
     }
     debug.printf("TX[%02x]\n", b);
@@ -163,6 +163,12 @@ void resetForANewConnection() {
   total_bytes_written = 0;
   is_counting_only_mode = false;
   esp8266::rx_fifo.reset();
+}
+
+// Do not call directly from this module. Call protocol::protocolPanic() instead
+// so the panic mode can be propograted to all stake holders.
+void onProtocolPanic() {
+  // TODO: do something useful or delete this TODO comment.
 }
 
 void dumpInternalState() {
