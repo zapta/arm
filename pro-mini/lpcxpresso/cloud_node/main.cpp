@@ -63,8 +63,8 @@ static void dumpInternalState() {
 
 // Handler for the CONNECTED state.
 static void loop_connectedState() {
-
-  if (heatbeat_timer.read_ms() > 15000) {
+  // TODO: define a const for the heartbeat interval.
+  if (heatbeat_timer.read_ms() > 3 * 60 * 1000) {
     heatbeat_timer.reset();
     protocol_tx::sendHeartbeatPing();
     return;
@@ -79,15 +79,11 @@ static void loop_connectedState() {
   // Handle for the specific event derived from selected incoming
   // MCS message types.
   switch (event_type) {
-    // Received an HeatbreakAck message.
-    case protocol_rx::EVENT_HEARTBEAK_ACK:
-      debug.printf("*** main: heartbeat ACK: last_id=%d\n",
-          protocol_rx::rx_heartbeat_ack_event.last_stream_id_received);
+    case protocol_rx::EVENT_DATA_MESSAGE_STANZA: {
+      const protocol_rx::RxDataMessageStanzaEvent& event = protocol_rx::rx_data_message_stanza_event;
+      debug.printf("*** main: message stanza event: [%s]=[%s]\n", event.key, event.value);
       break;
-
-    case protocol_rx::EVENT_DATA_MESSAGE_STANZA:
-      debug.printf("*** main: message stanza event\n");
-      break;
+    }
 
     // All other events
     default:

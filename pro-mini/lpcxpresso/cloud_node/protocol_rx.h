@@ -29,15 +29,16 @@ struct RxLoginResponseEvent {
 };
 extern RxLoginResponseEvent rx_login_response_event;
 
-// Heartbeat Ack event
-struct RxHeatbeatAckEvent {
-  int32_t last_stream_id_received;
-};
-extern RxHeatbeatAckEvent rx_heartbeat_ack_event;
-
 // Data Message Stanza event
 struct RxDataMessageStanzaEvent {
-  //int32_t last_stream_id_received;
+  // The key/value from the first AppData field. Values are
+  // null terminated string truncated to the buffer size.
+  // Default values are empty strings.
+  //
+  // TODO: define a memory pool that is shared among events rather than assign
+  // each one its own memory.
+  char key[20];
+  char value[60];
 };
 extern RxDataMessageStanzaEvent rx_data_message_stanza_event;
 

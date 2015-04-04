@@ -3,7 +3,7 @@
 #include "debug.h"
 #include "protocol_util.h"
 #include "esp8266.h"
-#include "inttypes.h"
+#include "string_util.h"
 
 namespace protocol_rx {
 
@@ -159,7 +159,6 @@ public:
 };
 static ProtoListener default_listener;
 
-
 // ----- LoginResponse
 class LoginResponseListener: public ProtoListener {
 public:
@@ -195,30 +194,6 @@ public:
 static LoginResponseListener login_response_listener;
 RxLoginResponseEvent rx_login_response_event;
 
-
-// ----- HeartbeatAck
-class HeartbeatAckListener: public ProtoListener {
-public:
-  virtual const char* listenerName() {
-    return "HRTB_ACK";
-  }
-  virtual void onTopMessageStart() {
-    rx_heartbeat_ack_event.last_stream_id_received = 0;
-  }
-  virtual void onTopMessageEnd() {
-    pending_event_type = EVENT_HEARTBEAK_ACK;
-  }
-  virtual void onVarintField() {
-    if (stack_size == 1 && field_tag_num == 2) {
-      // TODO: is this the proper case, interpreting the 32 LSB bits as a int32?
-      rx_heartbeat_ack_event.last_stream_id_received =
-          static_cast<int32_t>(varint_parser::result);
-    }
-  }
-};
-static HeartbeatAckListener hearbeat_ack_listener;
-RxHeatbeatAckEvent rx_heartbeat_ack_event;
-
 // ----- DataMessageStanza (8)
 
 class DataMessageStanzaListener: public ProtoListener {
@@ -233,17 +208,49 @@ public:
   virtual void onTopMessageStart() {
     // TODO: remove the call to super. For debugging only.
     ProtoListener::onTopMessageStart();
-    // TODO: init event fields here
+    _app_data_field_count = 0;
+    rx_data_message_stanza_event.key[0] = '\0';
+    rx_data_message_stanza_event.value[0] = '\0';
   }
   virtual void onTopMessageEnd() {
     // TODO: remove the call to super. For debugging only.
     ProtoListener::onTopMessageEnd();
     pending_event_type = EVENT_DATA_MESSAGE_STANZA;
   }
+  virtual void onSubMessageStart() {
+    // TODO: remove the call to super. For debugging only.
+    ProtoListener::onSubMessageStart();
+    if (stackPathEq("8.7")) {
+      _app_data_field_count++;
+    }
+  }
+  void onDataFieldByte(uint8_t byte_value) {
+    // TODO: remove the call to super. For debugging only.
+    ProtoListener::onDataFieldByte(byte_value);
+    // If this is the first instance of the repeated AppData field.
+    if (stackPathEq("8.7") && _app_data_field_count == 1) {
+      switch (field_tag_num) {
+        case 1:
+          string_util::appendChar(rx_data_message_stanza_event.key,
+              sizeof(rx_data_message_stanza_event.key), byte_value);
+          //debug.printf("--- key: [%s]\n", rx_data_message_stanza_event.key);
+          break;
+        case 2:
+          string_util::appendChar(rx_data_message_stanza_event.value,
+              sizeof(rx_data_message_stanza_event.value), byte_value);
+          //debug.printf("--- value: [%s]\n", rx_data_message_stanza_event.value);
+          break;
+        default:
+          break;
+      }
+    }
+  }
+
+  // Counts repeated AppData field. First is 1, second is 2, etc.
+  int _app_data_field_count;
 };
 static DataMessageStanzaListener data_message_stanza_listener;
 RxDataMessageStanzaEvent rx_data_message_stanza_event;
-
 
 // Never null. Changes listener on incoming message boundary.
 static ProtoListener* current_listener = &default_listener;
@@ -306,10 +313,8 @@ void loop() {
         updateStackPath();
         debug.printf("\n***PUSH -> %d\n", stack_size);
         debug.printf("*** msg tag num: %d\n", stack[0].message_tag_num);
+        protocol_util::in_messages_counter++;
         switch (stack[0].message_tag_num) {
-          case 1:
-            current_listener = &hearbeat_ack_listener;
-            break;
           case 3:
             current_listener = &login_response_listener;
             break;

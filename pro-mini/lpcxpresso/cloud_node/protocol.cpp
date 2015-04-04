@@ -6,7 +6,6 @@
 #include "protocol_tx.h"
 #include "protocol_rx.h"
 #include "esp8266.h"
-//#include "inttypes.h"
 
 namespace protocol {
 
@@ -26,11 +25,10 @@ bool isPanicMode() {
   return is_panic_mode;
 }
 
-
 void setup() {
   protocol_tx::setup();
   protocol_rx::setup();
-  is_panic_mode = false;
+  resetForANewConnection();
 }
 
 void loop() {
@@ -41,10 +39,15 @@ void loop() {
 void resetForANewConnection() {
   protocol_tx::resetForANewConnection();
   protocol_rx::resetForANewConnection();
-  is_panic_mode = false;
+
+  // Handshake counters.
+  protocol_util::out_messages_counter = 0;
+  protocol_util::in_messages_counter = 0;
 }
 
 void dumpInternalState() {
+  debug.printf("protocol: msgs in=%d, out=%d, panic=%d\n",
+      protocol_util::in_messages_counter, protocol_util::out_messages_counter, is_panic_mode);
   protocol_rx::dumpInternalState();
   protocol_tx::dumpInternalState();
 }

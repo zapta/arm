@@ -14,6 +14,8 @@ namespace string_util {
 extern char* uint64ToDecimal(uint64_t v);
 extern char* uint64ToHex(uint64_t v);
 
+extern void appendChar(char* bfr, int bfr_size, uint8_t c);
+
 }  // namespace string_util
 
 #endif  // STRING_UTIL__H

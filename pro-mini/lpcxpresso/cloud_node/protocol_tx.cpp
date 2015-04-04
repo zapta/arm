@@ -75,6 +75,8 @@ void writeStringField(uint32_t tag_num, const char* value) {
 static char tmp_buffer[30];
 
 void sendProtocolVersionAndLoginRequest(uint64_t device_id, uint64_t auth_token) {
+  protocol_util::out_messages_counter++;
+
   debug.printf("id=%08x:%08x\n", static_cast<uint32_t>(device_id >> 32),
       static_cast<uint32_t>(device_id));
   debug.printf("auth=%08x:%08x\n", static_cast<uint32_t>(auth_token >> 32),
@@ -124,6 +126,8 @@ void sendProtocolVersionAndLoginRequest(uint64_t device_id, uint64_t auth_token)
 }
 
 void sendHeartbeatPing() {
+  protocol_util::out_messages_counter++;
+
   uint32_t pass0_size = 0;
   uint32_t pass1_size = 0;
 
@@ -132,9 +136,9 @@ void sendHeartbeatPing() {
     const uint32_t pass_start_count = total_bytes_written;
 
     // TODO: send actual values.
-    writeVarintField(1, 1);  // Last ocal stream id sent.
-    writeVarintField(2, 1);  // Last remote stream id recieved.
-    writeVarintField(3, 1);  // Status
+    writeVarintField(1, protocol_util::out_messages_counter);
+    writeVarintField(2, protocol_util::in_messages_counter);
+    writeVarintField(3, 0);  // Status
 
     if (pass == 0) {
       pass0_size = total_bytes_written - pass_start_count;

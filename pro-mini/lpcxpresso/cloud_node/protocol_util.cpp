@@ -6,6 +6,7 @@
 
 namespace protocol_util {
 
-// Nothing to put here for now.
+uint32_t out_messages_counter;
+uint32_t in_messages_counter;
 
 }  // namespace protocol_util

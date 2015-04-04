@@ -36,4 +36,13 @@ char* uint64ToHex(uint64_t v) {
   return p;
 }
 
+void appendChar(char* bfr, int bfr_size, uint8_t c) {
+  const int n = strlen(bfr);
+  if (n < bfr_size - 1) {
+    bfr[n] = c;
+    bfr[n+1] = '\0';
+  }
+}
+
+
 }  // namespace string_util
