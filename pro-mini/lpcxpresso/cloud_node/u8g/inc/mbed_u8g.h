@@ -36,8 +36,8 @@
 */
 
 
-#ifndef _U8G_MBED_H
-#define _U8G_MBED_H
+#ifndef _MBED_U8G_H
+#define _MBED_U8G_H
 
 #include "u8g.h"
 

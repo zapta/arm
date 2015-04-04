@@ -37,10 +37,21 @@ static Serial wifi_serial(P0_19, P0_18);  // tx, rx
 
 // Buffer for downstream data bytes. These are binary bytes from
 // the down stream.
-static uint8_t rx_fifo_buffer[20];
+//
+// TODO: determine the proper size. Assumption is that it should
+// be able to contain the data of a long (~15-20ms) drawing operation
+// but not sure what is the internal buffer size of the serial driver.
+// Can also call rx polling from the drawing loop. Should be
+// further inverstigated.
+//
+static uint8_t rx_fifo_buffer[50];
 ByteFifo rx_fifo(rx_fifo_buffer, sizeof(rx_fifo_buffer));
 
-// Should be large enough for the largest message we send.
+// Should be large enough to contain the largest message we send
+// since we send it in a single polling loop. If this is too much
+// memory, may try to break the sending into multiple polling
+// iterations.
+//
 static uint8_t tx_fifo_buffer[200];
 ByteFifo tx_fifo(tx_fifo_buffer, sizeof(tx_fifo_buffer));
 
@@ -194,9 +205,7 @@ static void rx_polling() {
   }
 
   // Enable to dump tag lines recieved from the esp8266 Lua.
-  if (false) {
-    debug.printf("tag: [%s]\n", wifi_reader::tag_line_buffer);
-  }
+  //debug.printf("tag: [%s]\n", wifi_reader::tag_line_buffer);
 
   const char tag = wifi_reader::tag_line_buffer[0];
 

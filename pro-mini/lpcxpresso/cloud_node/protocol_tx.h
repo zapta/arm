@@ -6,7 +6,7 @@
 namespace protocol_tx {
 
 // Is it ok to send a message.
-extern bool isReadyToSend();
+//extern bool isReadyToSend();
 
 // Should be sent once on a new connection.
 extern void sendProtocolVersionAndLoginRequest(uint64_t device_id, uint64_t auth_token);

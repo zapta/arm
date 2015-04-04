@@ -293,7 +293,6 @@ void polling() {
         if (varint_parser::result > 0xff) {
           protocol::protocolPanic("tag size");
           setState(STATE_STOPED);
-          //state = STATE_STOPED;
           return;
         }
         pending_event_type = EVENT_NONE;

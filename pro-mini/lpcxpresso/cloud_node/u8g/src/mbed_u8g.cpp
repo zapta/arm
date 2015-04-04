@@ -40,7 +40,7 @@
 // API from ssp_11xx.h. Currently workign directly against the 
 // hardware.
 
-#include "u8g_mbed.h"
+#include "mbed_u8g.h"
 //#include "system_time.h"
 //#include "chip.h"
 //#include "chip/gpio_11xx_1.h"
@@ -75,7 +75,7 @@ void spi_init(uint32_t ns) {
   // second edge capture, with a 1MHz clock rate
   spi.format(8,3);
   // TODO: compute actual speed.
-  spi.frequency(1000000);
+  spi.frequency(10000000);
 
 
 //  // SPI clock polarity [0, 1]. Specifies clock steady state between frame.
