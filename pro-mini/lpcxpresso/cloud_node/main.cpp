@@ -76,14 +76,14 @@ void draw() {
  }
 
 
-static void setup() {
+static void initialize() {
   timer.start();
   led_timer.start();
   heatbeat_timer.start();
   time_in_current_state.start();
   //state = NOT_CONNECTED;
-  esp8266::setup();
-  protocol::setup();
+  esp8266::initialize();
+  protocol::initialize();
   // u8g initialization for the ssd1306 128x64 oled we use with SPI0.
   u8g_InitComFn(&u8g, &u8g_dev_ssd1306_128x64_hw_spi, u8g_com_hw_spi_fn);
   draw();
@@ -106,7 +106,7 @@ static void dumpInternalState() {
 }
 
 // Handler for the CONNECTED state.
-static void loop_connectedState() {
+static void polling_connectedState() {
   // TODO: define a const for the heartbeat interval.
   if (heatbeat_timer.read_ms() > 3 * 60 * 1000) {
     heatbeat_timer.reset();
@@ -136,9 +136,9 @@ static void loop_connectedState() {
   protocol_rx::eventDone();
 }
 
-static void loop() {
-  esp8266::loop();
-  protocol::loop();
+static void polling() {
+  esp8266::polling();
+  protocol::polling();
 
   led.write(led_timer.read_ms() < 200);
   if (led_timer.read_ms() >= 3000) {
@@ -185,7 +185,7 @@ static void loop() {
     }
 
     case CONNECTED:
-      loop_connectedState();
+      polling_connectedState();
       break;
 
     case ERROR:
@@ -199,11 +199,10 @@ static void loop() {
   }
 }
 
-// Arduino like main.
 // One time initialization and then continuous polling.
 int main(void) {
-  setup();
+  initialize();
   for (;;) {
-    loop();
+    polling();
   }
 }

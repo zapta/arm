@@ -25,15 +25,15 @@ bool isPanicMode() {
   return is_panic_mode;
 }
 
-void setup() {
-  protocol_tx::setup();
-  protocol_rx::setup();
+void initialize() {
+  protocol_tx::initialize();
+  protocol_rx::initialize();
   resetForANewConnection();
 }
 
-void loop() {
-  protocol_tx::loop();
-  protocol_rx::loop();
+void polling() {
+  protocol_tx::polling();
+  protocol_rx::polling();
 }
 
 void resetForANewConnection() {

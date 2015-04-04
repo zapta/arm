@@ -255,7 +255,7 @@ RxDataMessageStanzaEvent rx_data_message_stanza_event;
 // Never null. Changes listener on incoming message boundary.
 static ProtoListener* current_listener = &default_listener;
 
-void setup() {
+void initialize() {
   state = STATE_STOPED;
   varint_parser::reset();
 }
@@ -274,7 +274,7 @@ void resetForANewConnection() {
   updateStackPath();
 }
 
-void loop() {
+void polling() {
   switch (state) {
     case STATE_STOPED:
       break;

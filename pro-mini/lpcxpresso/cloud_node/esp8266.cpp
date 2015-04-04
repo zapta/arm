@@ -103,7 +103,7 @@ void setup() {
   flushInput();
 }
 
-void loop() {
+void polling() {
   while (state != TAG_LINE_READY && wifi_serial.readable()) {
     const char c = wifi_serial.getc();
 
@@ -164,7 +164,7 @@ static void resetForANewConnection() {
   rx_fifo.reset();
 }
 
-void setup() {
+void initialize() {
   // TODO: reset the ESP8266 using its reset pin.
   wifi_serial.baud(9600);
   debug.printf("*** 9600\n");
@@ -186,8 +186,8 @@ static int hexCharToInt(const char c) {
   return -1;
 }
 
-static void rx_loop() {
-  wifi_reader::loop();
+static void rx_polling() {
+  wifi_reader::polling();
 
   if (wifi_reader::state != wifi_reader::TAG_LINE_READY) {
     return;
@@ -253,7 +253,7 @@ static void rx_loop() {
   wifi_reader::nextTagLine();
 }
 
-static void tx_loop() {
+static void tx_polling() {
   if (!tx_fifo.size()) {
     // Done sending bytes to Lua, issue a FLUSH
     if (tx_in_progress) {
@@ -293,9 +293,9 @@ static void tx_loop() {
 
 }
 
-void loop() {
-  rx_loop();
-  tx_loop();
+void polling() {
+  rx_polling();
+  tx_polling();
 }
 
 uint32_t connectionId() {

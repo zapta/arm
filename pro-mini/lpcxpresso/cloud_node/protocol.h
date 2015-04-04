@@ -15,13 +15,13 @@
 namespace protocol {
 
 // One time initialization..
-extern void setup();
+extern void initialize();
 
 // Reset protocol for a new connection.
 extern void resetForANewConnection();
 
 // Continuous polling.
-extern void loop();
+extern void polling();
 
 // Call this on protcol errors. It propogates the panic call to the
 // protcol rx and tx modules and triggers a connection restart.

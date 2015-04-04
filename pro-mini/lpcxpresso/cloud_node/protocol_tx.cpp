@@ -155,11 +155,11 @@ void sendHeartbeatPing() {
 
 //-------------------- Misc
 
-void setup() {
+void initialize() {
   resetForANewConnection();
 }
 
-void loop() {
+void polling() {
   // Nothing to do.
 }
 

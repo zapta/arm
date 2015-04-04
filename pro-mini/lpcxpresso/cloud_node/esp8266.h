@@ -8,10 +8,10 @@
 namespace esp8266 {
 
 // Call first to initialize.
-extern void setup();
+extern void initialize();
 
 // Call from the main loop()
-extern void loop();
+extern void polling();
 
 // Read downstream bytes from here.
 extern ByteFifo rx_fifo;

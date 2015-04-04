@@ -6,8 +6,8 @@
 namespace protocol_rx {
 
 
-extern void setup();
-extern void loop();
+extern void initialize();
+extern void polling();
 
 // Prepare for a new connection.
 extern void resetForANewConnection();

@@ -15,10 +15,10 @@ extern void sendProtocolVersionAndLoginRequest(uint64_t device_id, uint64_t auth
 extern void sendHeartbeatPing();
 
 // One time initialization.
-extern void setup();
+extern void initialize();
 
 // Continious polling.
-extern void loop();
+extern void polling();
 
 // Cleanup for a new connection.
 extern void resetForANewConnection();
