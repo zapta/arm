@@ -55,8 +55,8 @@
 static SPI spi(P0_9, NC, P0_10); // mosi, miso, sclk
 
 // These pins are used in additional to SPI0 clock and MOSI0.
-static DigitalOut u8g_pin_rst(P0_18);  // Reset
-static DigitalOut u8g_pin_a0(P0_19);  // D/C
+static DigitalOut u8g_pin_rst(P0_16);  // Reset
+static DigitalOut u8g_pin_a0(P0_23);  // D/C
 
 // These pins are used in additional to SPI0 clock and MOSI0.
 //static io_pins::OutputPin u8g_pin_rst(0, 18);  // Reset

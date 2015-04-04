@@ -6,6 +6,9 @@
 #include "protocol.h"
 #include "protocol_tx.h"
 #include "_config.h"
+#include "u8g_mbed.h"
+
+#include "protocol_util.h"  // remove this dependency
 
 static DigitalOut led(P0_20, 0);
 
@@ -14,6 +17,16 @@ static Timer timer;
 static Timer led_timer;
 
 static Timer time_in_current_state;
+
+// The U8G instance (a C struct).
+static u8g_t u8g;
+
+// Screen dimensions,
+// x range = [0, kMaxX]
+// y range = [0, kMaxY]
+static const int kMaxX = 128 - 1;
+static const int kMaxY = 64 - 1;
+
 
 // TODO: move this to the protocol to determine when a heatbeat should be
 // sent.
@@ -37,6 +50,32 @@ static void setState(MainState new_state) {
   time_in_current_state.reset();
 }
 
+// TODO: call rx loop in the iterations here.
+// TODO: faster SPI clock
+void draw() {
+   // Prepare. Could be move to setup().
+   u8g_SetFont(&u8g, u8g_font_6x10);
+   u8g_SetFontRefHeightExtendedText(&u8g);
+   u8g_SetDefaultForegroundColor(&u8g);
+   u8g_SetFontPosTop(&u8g);
+
+   // U8G picture loop. See more details here:
+   // https://code.google.com/p/u8glib/wiki/tpictureloop
+   u8g_FirstPage(&u8g);
+    do {
+      u8g_DrawStr(&u8g, kMaxX/2-32, 0, "CLOUD NODE");
+      //u8g_DrawLine(&u8g, m.x.value, 0, m.x.value, kMaxY);
+      //u8g_DrawLine(&u8g, 0, m.y.value, kMaxX, m.y.value);
+
+      char bfr[15];
+      snprintf(bfr, sizeof(bfr), "in: %lu", protocol_util::in_messages_counter);
+      u8g_DrawStr(&u8g, 10, kMaxY-20, bfr);
+      snprintf(bfr, sizeof(bfr), "out: %lu", protocol_util::out_messages_counter);
+         u8g_DrawStr(&u8g, 10, kMaxY-9, bfr);
+    } while (u8g_NextPage(&u8g));
+ }
+
+
 static void setup() {
   timer.start();
   led_timer.start();
@@ -45,7 +84,12 @@ static void setup() {
   //state = NOT_CONNECTED;
   esp8266::setup();
   protocol::setup();
+  // u8g initialization for the ssd1306 128x64 oled we use with SPI0.
+  u8g_InitComFn(&u8g, &u8g_dev_ssd1306_128x64_hw_spi, u8g_com_hw_spi_fn);
+  draw();
+
 }
+
 
 static void protocolPanic(const char* short_message) {
   protocol::protocolPanic(short_message);
@@ -100,6 +144,7 @@ static void loop() {
   if (led_timer.read_ms() >= 3000) {
     led_timer.reset();
     dumpInternalState();
+    draw();
   }
 
   const uint32_t connection_id = esp8266::connectionId();
