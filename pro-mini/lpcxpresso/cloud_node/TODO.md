@@ -11,6 +11,7 @@ TODO list for Cloud Node
 
 
 **SOFTWARE**
+* Fix the HH.MM.DD display (negative values)
 * Store configruation and credentials in MCU EEPROM.
 * Cleanup interrupt driven RX.
 * Revisit buffer sizes.
