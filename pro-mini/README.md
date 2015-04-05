@@ -12,7 +12,7 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 ![](www/arm_pro_mini_2.jpg)
 
 
-[Schematic (PDF)](https://github.com/zapta/arm/blob/master/pro-mini/eagle/arm-pro-mini-schematic.pdf?raw=true)
+[Schematic (PDF)](https://github.com/zapta/arm/blob/master/pro-mini/board/arm-pro-mini-schematic.pdf)
 
 [BOM (CSV)](https://github.com/zapta/arm/blob/master/pro-mini/eagle/arm-pro-mini-bom.csv)
 
@@ -295,7 +295,7 @@ The following YouTube video by Daniel Andrade from http://www.danielandrade.net 
 
 <br>
 ### Schematic Description
-The [schematic](https://github.com/zapta/arm/blob/master/pro-mini/eagle/arm-pro-mini-schematic.pdf?raw=true) of the ARM PRO MINI is minimal and modular to make it easy to customize it for your own ARM based boards. It includes the MCU running at 48Mhz (using a 12Mhz crystal), USB protectiona and glue electronics, power source arbitraror (external and USB), 3.3V voltage regulator, SWD debugging header and a few LEDs and buttons.
+The [schematic](https://github.com/zapta/arm/blob/master/pro-mini/board/arm-pro-mini-schematic.pdf) of the ARM PRO MINI is minimal and modular to make it easy to customize it for your own ARM based boards. It includes the MCU running at 48Mhz (using a 12Mhz crystal), USB protectiona and glue electronics, power source arbitraror (external and USB), 3.3V voltage regulator, SWD debugging header and a few LEDs and buttons.
 
 When customizing for your own board, you can eliminate the optional parts that you don't need. For example, if your board already has a 3.3V regulator than you don't need the power arbitrarion diodes and and the LDO. The important thing to remember is that nothing is sacred about this cirtuit and you can adapt it as you wish.
 
@@ -318,8 +318,8 @@ U8GLib is a very capable open source portable graphics library for microcontroll
 
 <br>
 ### General Resources
-* [LPC11U3X datasheet](https://github.com/zapta/arm/blob/master/pro-mini/resources/LPC11U3X/LPC11U3X_datasheet.pdf?raw=true) PDF (hardware).
-* [LPC11U3X manual](https://github.com/zapta/arm/blob/master/pro-mini/resources/LPC11U3X/LPC11U3X_manual.pdf?raw=true) PDF (programming).
+* [LPC11U3X datasheet](https://github.com/zapta/arm/blob/master/pro-mini/resources/LPC11U3X/LPC11U3X_datasheet.pdf) PDF (hardware).
+* [LPC11U3X manual](https://github.com/zapta/arm/blob/master/pro-mini/resources/LPC11U3X/LPC11U3X_user_manual.pdf) PDF (programming).
 * LPC forums http://www.lpcware.com/forum
 * EEVblog microcontrollers forum http://www.eevblog.com/forum/microcontrollers/
 * Contact: armpro{at}zapta{dot}com.
