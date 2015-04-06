@@ -4,6 +4,7 @@
 #define ESP8266_H
 
 #include "byte_fifo.h"
+#include "byte_fifo_uart_rx.h"
 
 namespace esp8266 {
 
@@ -12,6 +13,8 @@ extern void initialize();
 
 // Call from the main loop()
 extern void polling();
+
+// TODO: hide the fifos and provide basic access functions.
 
 // Read downstream bytes from here.
 extern ByteFifo rx_fifo;

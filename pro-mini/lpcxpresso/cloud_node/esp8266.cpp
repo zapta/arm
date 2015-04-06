@@ -8,20 +8,17 @@
 // UTXD -> ARP PRO MINI #16 (RX)
 // URXD -> ARP PRO MINI #18 (TX)
 // -------------------------------
-//
-//
-// Implement a state machine that will control automatic sending of heart beat
-// and will export signal that will block sending by the app to avoid interefering
-// with other ongoing sending.
+
 
 #include "esp8266.h"
 
 #include <string.h>
 #include <ctype.h>
 
-#include "byte_fifo.h"
+//#include "byte_fifo.h"
 #include "debug.h"
 #include "mbed.h"
+#include "passive_timer.h"
 
 namespace esp8266 {
 
@@ -32,8 +29,20 @@ static bool is_connected = false;
 // ESP8266 reset output. Active low.
 //static DigitalOut wifi_reset(P0_23, 1);
 
+// TODO: revisit size.
+static uint8_t serial_rx_irq_fifo_buffer[100];
+ByteFifoRxIrq serial_rx_irq_fifo(serial_rx_irq_fifo_buffer, sizeof(serial_rx_irq_fifo_buffer));
+
 // Hardware serial to wifi device.
 static Serial wifi_serial(P0_19, P0_18);  // tx, rx
+
+static void Rx_interrupt() {
+  while ((wifi_serial.readable())) {
+    // TODO: hadd a 'was full' flag in the fifo so we can detect missing
+    // bytes.
+    serial_rx_irq_fifo.putByteInIrq(wifi_serial.getc());
+  }
+}
 
 // Buffer for downstream data bytes. These are binary bytes from
 // the down stream.
@@ -44,7 +53,7 @@ static Serial wifi_serial(P0_19, P0_18);  // tx, rx
 // Can also call rx polling from the drawing loop. Should be
 // further inverstigated.
 //
-static uint8_t rx_fifo_buffer[50];
+static uint8_t rx_fifo_buffer[30];
 ByteFifo rx_fifo(rx_fifo_buffer, sizeof(rx_fifo_buffer));
 
 // Should be large enough to contain the largest message we send
@@ -54,8 +63,9 @@ ByteFifo rx_fifo(rx_fifo_buffer, sizeof(rx_fifo_buffer));
 //
 static uint8_t tx_fifo_buffer[200];
 ByteFifo tx_fifo(tx_fifo_buffer, sizeof(tx_fifo_buffer));
+//FifoTx tx_fifo;
 
-static Timer tx_timer;
+static PassiveTimer tx_timer;
 
 static bool tx_in_progress;
 
@@ -110,24 +120,29 @@ void flushInput() {
   nextTagLine();
 }
 
-void setup() {
+void initialize() {
   flushInput();
 }
 
 void polling() {
-  while (state != TAG_LINE_READY && wifi_serial.readable()) {
-    const char c = wifi_serial.getc();
+  while (state != TAG_LINE_READY ) {
+    //&& wifi_serial.readable()) {
+  //}
+    //const char c = wifi_serial.getc();
+    uint8_t c = 0;
+    if (!serial_rx_irq_fifo.getByte(&c)) {
+      return;
+    }
 
     // Enable to dump all communication from esp8266 Lua (verbose).
-    if (false) {
-      if (c == '\r') {
-        debug.printf("{CR}\n");
-      } else if (c == '\n') {
-        debug.printf("{LF}\n");
-      } else {
-        debug.printf("{%c}\n", c);
-      }
+    if (c == '\r') {
+      debug.printf("{CR}\n");
+    } else if (c == '\n') {
+      debug.printf("{LF}\n");
+    } else {
+      debug.printf("{%c}\n", c);
     }
+
 
     switch (state) {
       case IDLE:
@@ -169,7 +184,7 @@ void polling() {
 }  // namespace wifi_reader
 
 static void resetForANewConnection() {
-  tx_timer.start();
+  tx_timer.reset();
   tx_in_progress = 0;
   tx_fifo.reset();
   rx_fifo.reset();
@@ -180,7 +195,9 @@ void initialize() {
   wifi_serial.baud(9600);
   debug.printf("*** 9600\n");
   wifi_serial.format(8, SerialBase::None, 1);
-  wifi_reader::setup();
+  wifi_serial.attach(&Rx_interrupt, Serial::RxIrq);
+
+  wifi_reader::initialize();
   connection_id = 0;
   is_connected = false;
   resetForANewConnection();
@@ -205,7 +222,7 @@ static void rx_polling() {
   }
 
   // Enable to dump tag lines recieved from the esp8266 Lua.
-  //debug.printf("tag: [%s]\n", wifi_reader::tag_line_buffer);
+  debug.printf("tag: [%s]\n", wifi_reader::tag_line_buffer);
 
   const char tag = wifi_reader::tag_line_buffer[0];
 
@@ -267,7 +284,7 @@ static void tx_polling() {
     // Done sending bytes to Lua, issue a FLUSH
     if (tx_in_progress) {
       // TODO: define a const for time SEND and FLUSH.
-      if (tx_timer.read_ms() >= 300) {
+      if (tx_timer.usecs() >= 300000) {
         tx_timer.reset();
         debug.puts("FLUSH()\n");
         wifi_serial.puts("FLUSH()\n");
@@ -280,7 +297,7 @@ static void tx_polling() {
   // Here when having pending bytes. Have sufficient time gap
   // before sending next line.
   // TODO: define time const.
-  if (tx_timer.read_ms() < 300) {
+  if (tx_timer.usecs() < 300000) {
     return;  // wait
   }
 
@@ -299,7 +316,6 @@ static void tx_polling() {
   debug.puts("\")\n");
   tx_in_progress = true;
   tx_timer.reset();
-
 }
 
 void polling() {

@@ -7,7 +7,7 @@ class ByteFifo {
 public:
   ByteFifo(uint8_t* buffer, uint32_t buffer_size)
     : _buffer(buffer),
-      _max_buffer_size(buffer_size) {
+      _capacity(buffer_size) {
     reset();
   }
 
@@ -16,17 +16,17 @@ public:
     _first_byte_index = 0;
   }
 
-  inline bool isFull() {
-    return _byte_count >= _max_buffer_size;
-  }
+//  bool isFull() {
+//    return _byte_count >= _capacity;
+//  }
 
-  inline uint32_t size() {
+  uint32_t size() {
     return _byte_count;
   }
 
-  inline uint32_t maxSize() {
-    return _max_buffer_size;
-  }
+//  uint32_t capacity() {
+//    return _capacity;
+//  }
 
   // Returns false if a byte is not available.
   bool getByte(uint8_t* byte) {
@@ -34,22 +34,21 @@ public:
       return false;
     }
     *byte = _buffer[_first_byte_index++];
-    if (_first_byte_index >= _max_buffer_size) {
+    if (_first_byte_index >= _capacity) {
       _first_byte_index = 0;
     }
     _byte_count--;
-    //_bytes_consumed++;
     return true;
   }
 
   // Return false if buffer was full.
   bool putByte(uint8_t byte) {
-    if (_byte_count >= _max_buffer_size) {
+    if (_byte_count >= _capacity) {
       return false;
     }
     uint32_t insertion_index = _first_byte_index + _byte_count;
-    if (insertion_index >= _max_buffer_size) {
-      insertion_index -= _max_buffer_size;
+    if (insertion_index >= _capacity) {
+      insertion_index -= _capacity;
     }
     _buffer[insertion_index] = byte;
     _byte_count++;
@@ -57,9 +56,9 @@ public:
     return true;
   }
 
-private:
+protected:
   uint8_t* const _buffer;
-  const uint32_t _max_buffer_size;
+  const uint32_t _capacity;
   uint32_t _byte_count;
   uint32_t _first_byte_index;
 };

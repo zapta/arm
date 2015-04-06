@@ -4,6 +4,7 @@
 #include "protocol_util.h"
 #include "esp8266.h"
 #include "string_util.h"
+#include "string_pool.h"
 
 namespace protocol_rx {
 
@@ -15,9 +16,9 @@ enum State {
   STATE_TEST_IF_MSG_DONE,  // 4
   STATE_PARSE_FIELD_TAG,  // 5
   STATE_PARSE_VARINT_FIELD_VALUE,  // 6
-  STATE_PARSE_FIELD_DATA_LENGTH,  // 9
-  STATE_PARSE_VAR_LEN_DATA,  // 10
-  STATE_EVENT_READY,  // 11
+  STATE_PARSE_FIELD_DATA_LENGTH,  // 7
+  STATE_PARSE_VAR_LEN_DATA,  // 8
+  STATE_EVENT_READY,  // 9
 };
 
 static State state;
@@ -25,15 +26,19 @@ static uint32_t total_bytes_read;
 
 static EventType pending_event_type;
 
+static char event_string_pool_buffer[50];
+static StringPool event_string_pool(event_string_pool_buffer, sizeof(event_string_pool_buffer));
+
 static bool readByte(uint8_t* b) {
   if (esp8266::rx_fifo.getByte(b)) {
-    //debug.printf("PR[%02x]\n", *b);
     total_bytes_read++;
     return true;
   }
   return false;
 }
 
+// Parser for an incoming protocol buffers variable length int.
+// The value is available at 'result' once is_done is set.
 namespace varint_parser {
 static uint32_t bytes_parsed;
 static uint64_t result;
@@ -45,14 +50,14 @@ static void reset() {
   is_done = false;
 }
 
+// Keep calling this until it returns true. At that point, result is at
+// 'result'.
 static bool parse() {
-  // NOTE: This is not intended to be called after the first time it
-  // returns true but we add this escape just in case.
   if (is_done) {
     return true;
   }
 
-  // Varint64 can be encoded as at most 10 bytes (7 bits per byte)
+  // A varint64 can be encoded as at most 10 bytes (7 bits per byte)
   while (bytes_parsed < 10) {
     uint8_t b;
     if (!readByte(&b)) {
@@ -90,8 +95,11 @@ static StackEntry stack[kMaxStackSize];
 // This is also the number of items in the stack.
 static int stack_size;
 
+// A string that encodes the unique tag path of the top message in
+// the stack. See updateStackPath for the format.
 static char stack_path[20];
 
+// Convinience function to test the current message path.
 static inline bool stackPathEq(const char* s) {
   return strcmp(stack_path, s) == 0;
 }
@@ -122,6 +130,10 @@ static uint8_t field_tag_type;
 static uint32_t field_var_length;
 static uint32_t field_var_bytes_read;
 
+// The parsing of each top level message (and it sub messages) is done
+// against a listener on the parsing events. This is the base
+// listener type and is also the default one for to level message
+// we want to ignore.
 class ProtoListener {
 public:
   // Call backs are done as long as the protocol parsing is on track.
@@ -130,31 +142,27 @@ public:
   }
   // This method also resets the listener.
   virtual void onTopMessageStart() {
-    debug.printf("onTopMessageStart() %s\n", listenerName());
   }
   virtual void onTopMessageEnd() {
-    debug.printf("onTopMessageEnd() %s\n", listenerName());
   }
   virtual void onSubMessageStart() {
-    debug.printf("onSubMessageStart() %s\n", listenerName());
   }
   virtual void onSubMessageEnd() {
-    debug.printf("onSubMessageEnd() %s\n", listenerName());
   }
   virtual void onVarintField() {
-    debug.printf("onVarintField()\n");
   }
+  // After parsing the tag and length of a variable length field,
+  // this method is called to resolve if the field is a data field
+  // (e.g. a string) or a sub message. This information cannot be derived
+  // from the primitive protocol buffer elements.
   virtual bool isCurrentFieldASubMessage() {
     return false;
   }
   virtual void onDataFieldStart() {
-    debug.printf("onDataFieldStart()\n");
   }
   virtual void onDataFieldByte(uint8_t byte_value) {
-    //debug.printf("onDataFieldByte()\n");
   }
   virtual void onDataFieldEnd() {
-    debug.printf("onDataFieldEnd()\n");
   }
 };
 static ProtoListener default_listener;
@@ -172,20 +180,13 @@ public:
         || (stackPathEq("3.3") && field_tag_num == 4);
   }
   virtual void onTopMessageStart() {
-    // TODO: remove the call to super. For debugging only.
-    ProtoListener::onTopMessageStart();
     rx_login_response_event.error_code = 0;
   }
   virtual void onTopMessageEnd() {
-    // TODO: remove the call to super. For debugging only.
-    ProtoListener::onTopMessageEnd();
     pending_event_type = EVENT_LOGIN_RESPONSE;
   }
   virtual void onVarintField() {
-    // TODO: remove the call to super. For debugging only.
-    ProtoListener::onVarintField();
     if (stackPathEq("3.3") && field_tag_num == 1) {
-      // TODO: is this the proper case, interpreting the 32 LSB bits as a int32?
       rx_login_response_event.error_code =
           static_cast<int32_t>(varint_parser::result);
     }
@@ -206,44 +207,33 @@ public:
     return (stackPathEq("8") && field_tag_num == 7);
   }
   virtual void onTopMessageStart() {
-    // TODO: remove the call to super. For debugging only.
-    ProtoListener::onTopMessageStart();
     _app_data_field_count = 0;
-    rx_data_message_stanza_event.key[0] = '\0';
-    rx_data_message_stanza_event.value[0] = '\0';
+    rx_data_message_stanza_event.value = "";
   }
   virtual void onTopMessageEnd() {
-    // TODO: remove the call to super. For debugging only.
-    ProtoListener::onTopMessageEnd();
     pending_event_type = EVENT_DATA_MESSAGE_STANZA;
   }
   virtual void onSubMessageStart() {
-    // TODO: remove the call to super. For debugging only.
-    ProtoListener::onSubMessageStart();
     if (stackPathEq("8.7")) {
       _app_data_field_count++;
     }
   }
+  void onDataFieldStart() {
+     if (isTargetValueField()) {
+       // Create an extensible string.
+       rx_data_message_stanza_event.value = event_string_pool.createNewString();
+     }
+   }
   void onDataFieldByte(uint8_t byte_value) {
-    // TODO: remove the call to super. For debugging only.
-    ProtoListener::onDataFieldByte(byte_value);
-    // If this is the first instance of the repeated AppData field.
-    if (stackPathEq("8.7") && _app_data_field_count == 1) {
-      switch (field_tag_num) {
-        case 1:
-          string_util::appendChar(rx_data_message_stanza_event.key,
-              sizeof(rx_data_message_stanza_event.key), byte_value);
-          //debug.printf("--- key: [%s]\n", rx_data_message_stanza_event.key);
-          break;
-        case 2:
-          string_util::appendChar(rx_data_message_stanza_event.value,
-              sizeof(rx_data_message_stanza_event.value), byte_value);
-          //debug.printf("--- value: [%s]\n", rx_data_message_stanza_event.value);
-          break;
-        default:
-          break;
-      }
+    if (isTargetValueField()) {
+      event_string_pool.addByteToLastString(byte_value);
     }
+  }
+
+private:
+  // We extract the text from the value field of the first AppData sub message.
+  bool isTargetValueField() {
+    return stackPathEq("8.7") && _app_data_field_count == 1 && field_tag_num == 2;
   }
 
   // Counts repeated AppData field. First is 1, second is 2, etc.
@@ -251,6 +241,8 @@ public:
 };
 static DataMessageStanzaListener data_message_stanza_listener;
 RxDataMessageStanzaEvent rx_data_message_stanza_event;
+
+// -----
 
 // Never null. Changes listener on incoming message boundary.
 static ProtoListener* current_listener = &default_listener;
@@ -263,8 +255,6 @@ void initialize() {
 static void setState(State new_state) {
   debug.printf("parser %d -> %d\n", state, new_state);
   state = new_state;
-  // NOTE: some state changes don't require varint parser reset but we do
-  // it anyway for simplicity.
   varint_parser::reset();
 }
 
@@ -321,10 +311,10 @@ void polling() {
             current_listener = &data_message_stanza_listener;
             break;
           default:
-            //debug.printf("*** case default\n");
             current_listener = &default_listener;
             debug.printf("LISTENER: %s\n", current_listener->listenerName());
         }
+        event_string_pool.reset();
         current_listener->onTopMessageStart();
         setState(STATE_TEST_IF_MSG_DONE);
       }
@@ -447,7 +437,12 @@ void polling() {
       setState(STATE_TEST_IF_MSG_DONE);
       break;
 
+    case STATE_EVENT_READY:
+      // Stay in this state until eventDone() is called
+      break;
+
     default:
+      debug.printf("state=%d\n", state);
       protocol::protocolPanic("parser state");
   }
 }
@@ -469,7 +464,7 @@ void onProtocolPanic() {
 }
 
 void dumpInternalState() {
-  debug.printf("proto_rx: state=%d, event=%d\n", state, currentEvent());
+  debug.printf("proto_rx: depth=%d, path=[%s], state=%d, event=%d\n", stack_size,  stack_path, state, currentEvent());
 }
 
 }  // namespace protocol_rx

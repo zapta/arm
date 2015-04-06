@@ -11,12 +11,16 @@ TODO list for Cloud Node
 
 
 **SOFTWARE**
-* Fix the HH.MM.DD display (negative values)
-* Solve the Lua syncrhonization issue between output from onX events and output from the command line (currently just the prompt since the echo is disabled)
+* Verify that we have sufficient RAM margin.
 * Cleanup interrupt driven RX.
+* Reset the ESP8266 using an output pin of the MCU (each time establishing a connection?)
+* Add to the uart IRQ RX fifo a flag indicating it was full and raise a protocol panic when this happens.
+
+* If got stuck for too long in LOGIN state raise protocol panic.
+* On Windows, interaction between USBSerial/CDC and the MCU's programs (loosing chars on login?).
+* Solve the Lua syncrhonization issue between output from onX events and output from the command line (currently just the prompt since the echo is disabled)
 * Schedule sending using a readyToSend() method in protocol.tx to avoid overlapping sends (e.g. heartbeat).
 * Better handling of protocolPanic. Currently it soemtimes doesn't close connection.
-* Verify that we have sufficient RAM margin.
 
 * Store configruation and credentials in MCU EEPROM.
 * Revisit buffer sizes.

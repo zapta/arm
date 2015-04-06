@@ -31,20 +31,14 @@ extern RxLoginResponseEvent rx_login_response_event;
 
 // Data Message Stanza event
 struct RxDataMessageStanzaEvent {
-  // The key/value from the first AppData field. Values are
-  // null terminated string truncated to the buffer size.
-  // Default values are empty strings.
-  //
-  // TODO: define a memory pool that is shared among events rather than assign
-  // each one its own memory.
-  char key[20];
-  char value[60];
+  // A string extracted from the AppData.value field of the message.
+  const char*  value;
 };
 extern RxDataMessageStanzaEvent rx_data_message_stanza_event;
 
-
 // The current ready event, or EVENT_NONE (also 0) if none.
 extern EventType currentEvent();
+
 // Call to continue the parsing to the next event.
 extern void eventDone();
 
