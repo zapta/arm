@@ -22,6 +22,14 @@
 
 namespace esp8266 {
 
+//@@@ FOR DEBUGGING ONLY @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//static DigitalOut bad_line_trigger(P0_15);  //
+//static DigitalOut irq_called(P0_14);  //
+//static DigitalOut irq_push_failed(P0_13);  //
+//static DigitalOut rx_pull(P0_12);  //
+
+
+
 // Invariant: when is_connected is true, connection_id is non zero.
 static uint32_t connection_id = 0;
 static bool is_connected = false;
@@ -30,7 +38,7 @@ static bool is_connected = false;
 //static DigitalOut wifi_reset(P0_23, 1);
 
 // TODO: revisit size.
-static uint8_t serial_rx_irq_fifo_buffer[100];
+static uint8_t serial_rx_irq_fifo_buffer[200];
 ByteFifoRxIrq serial_rx_irq_fifo(serial_rx_irq_fifo_buffer, sizeof(serial_rx_irq_fifo_buffer));
 
 // Hardware serial to wifi device.
@@ -40,7 +48,12 @@ static void Rx_interrupt() {
   while ((wifi_serial.readable())) {
     // TODO: hadd a 'was full' flag in the fifo so we can detect missing
     // bytes.
-    serial_rx_irq_fifo.putByteInIrq(wifi_serial.getc());
+    //irq_called.write(1);
+    if (!serial_rx_irq_fifo.putByteInIrq(wifi_serial.getc())) {
+      //irq_push_failed.write(1);
+    }
+    //irq_push_failed.write(0);
+    //irq_called.write(0);
   }
 }
 
@@ -129,19 +142,26 @@ void polling() {
     //&& wifi_serial.readable()) {
   //}
     //const char c = wifi_serial.getc();
+    //rx_pull.write(1);
     uint8_t c = 0;
     if (!serial_rx_irq_fifo.getByte(&c)) {
+      //rx_pull.write(0);
       return;
     }
+    //rx_pull.write(0);
+    //static DigitalOut irq_push_failed(P0_13);  //
+
 
     // Enable to dump all communication from esp8266 Lua (verbose).
-    if (c == '\r') {
-      debug.printf("{CR}\n");
-    } else if (c == '\n') {
-      debug.printf("{LF}\n");
-    } else {
-      debug.printf("{%c}\n", c);
-    }
+    // NOTE: use with caution. It slows the processing of incoming bytes.
+//    if (c == '\r') {
+//      debug.printf("{CR}\n");
+//    } else if (c == '\n') {
+//      debug.printf("{LF}\n");
+//    } else {
+//      debug.printf("{%c}\n", c);
+//    }
+
 
 
     switch (state) {
@@ -222,7 +242,8 @@ static void rx_polling() {
   }
 
   // Enable to dump tag lines recieved from the esp8266 Lua.
-  debug.printf("tag: [%s]\n", wifi_reader::tag_line_buffer);
+  // NOTE: use with caution. It slows the processing of incoming bytes.
+  //debug.printf("tag: [%s]\n", wifi_reader::tag_line_buffer);
 
   const char tag = wifi_reader::tag_line_buffer[0];
 
@@ -259,6 +280,7 @@ static void rx_polling() {
       const int hex1 = hexCharToInt(wifi_reader::tag_line_buffer[1]);
       const int hex2 = hexCharToInt(wifi_reader::tag_line_buffer[2]);
       if (hex1 >= 0 && hex2 >= 0) {
+        //bad_line_trigger.write(0);
         const uint8_t b = (hex1 << 4) + hex2;
         //debug.printf("RX[%02x]\n", b);
         if (!rx_fifo.putByte(b)) {
@@ -267,8 +289,11 @@ static void rx_polling() {
           debug.printf("RX FULL\n");
         }
       } else {
-        // TODO: trigger protcol panic and reconnection
+        // @@@ TODO: trigger protcol panic and reconnection
+        //bad_line_trigger.write(1);
         debug.printf("BAD LN: [%s]\n", wifi_reader::tag_line_buffer);
+        had_bad_line = true;
+
       }
     }
     wifi_reader::nextTagLine();
@@ -301,6 +326,9 @@ static void tx_polling() {
     return;  // wait
   }
 
+  // TODO: this loop take too long since it waits on the hardware
+  // buffer.:w
+
   wifi_serial.puts("TX(\"");
   debug.puts("TX(\"");
   for (int i = 0; i < 20; i++) {
@@ -310,6 +338,9 @@ static void tx_polling() {
     }
     debug.printf("\\%u", b);
     wifi_serial.printf("\\%u", b);
+
+    // Experimental @@@
+    rx_polling();
   }
 
   wifi_serial.puts("\")\n");
@@ -339,5 +370,8 @@ void dumpInternalState() {
       is_connected, wifi_reader::state, wifi_reader::tag_line_size,
       wifi_reader::tag_line_buffer, rx_fifo.size(), tx_in_progress);
 }
+
+// TODO: remove. For initial debugging only.
+bool had_bad_line;
 
 }  // namespace esp8266

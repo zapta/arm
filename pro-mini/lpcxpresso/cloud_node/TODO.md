@@ -11,7 +11,11 @@ TODO list for Cloud Node
 
 
 **SOFTWARE**
+* Make the display a state machine, one display slive per polling loop (take s~3ms).
+* Cleanup the experimental pollings.
+* Break the esp8266 tx_polling into multiple polling slices using a state machine.
 * Verify that we have sufficient RAM margin.
+* Refactor the protocol to a seperate library with clean API.
 * Cleanup interrupt driven RX.
 * Reset the ESP8266 using an output pin of the MCU (each time establishing a connection?)
 * Add to the uart IRQ RX fifo a flag indicating it was full and raise a protocol panic when this happens.

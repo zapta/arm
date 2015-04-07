@@ -11,7 +11,7 @@ static Timer timer;
 static void setup() {
   serial.baud(9600);
   serial.format(8, SerialBase::None, 1);
-  led_timer.start();
+  timer.start();
 }
 
 static void loop() {
@@ -19,7 +19,7 @@ static void loop() {
 
   while (serial.readable()) {
     usb.putc(serial.getc());
-    led_timer.reset();
+    timer.reset();
   }
 
   while (usb.readable()) {

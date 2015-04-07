@@ -9,15 +9,19 @@
 
 namespace protocol {
 
+//static DigitalOut panic_pin(P0_11);  //  @@@@@@ debug only
+
 static bool is_panic_mode;
 
 // Delegate to protocol_gp so both protocol_tx and protocol_rx can
 // access the panic flag.
 void protocolPanic(const char* short_message) {
   if (!is_panic_mode) {
+    //panic_pin.write(1);
     debug.printf("Protocol panic: %s\n", short_message);
     esp8266::abortCurrentConnection();
     is_panic_mode = true;
+    //panic_pin.write(0);
   }
 }
 

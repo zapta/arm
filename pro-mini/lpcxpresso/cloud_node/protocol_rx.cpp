@@ -415,18 +415,20 @@ void polling() {
           return;
         }
 
-        debug.printf("data %u/%u: ", field_var_bytes_read, field_var_length);
-        // TODO: make this a common util function.
-        if (b == '\r') {
-          debug.puts("{CR}");
-        } else if (b == '\n') {
-          debug.puts("{LF}");
-        } else if (b > ' ' && b <= '~') {
-          debug.printf("{%c}", b);
-        } else {
-          debug.printf("{%02x}", b);
-        }
-        debug.puts("\n");
+        // For debugging only. 
+        // Use with caution, it slows the incoming stream procesing and creates timing issues.
+//        debug.printf("data %u/%u: ", field_var_bytes_read, field_var_length);
+//        // TODO: make this a common util function.
+//        if (b == '\r') {
+//          debug.puts("{CR}");
+//        } else if (b == '\n') {
+//          debug.puts("{LF}");
+//        } else if (b > ' ' && b <= '~') {
+//          debug.printf("{%c}", b);
+//        } else {
+//          debug.printf("{%02x}", b);
+//        }
+//        debug.puts("\n");
 
         field_var_bytes_read++;
         current_listener->onDataFieldByte(b);

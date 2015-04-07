@@ -12,6 +12,11 @@
 #include "passive_timer.h"
 
 #include "protocol_util.h"  // remove this dependency
+
+// TODO: remove dependency, for debugging
+#include "esp8266.h"
+
+
 // The ARM PRO MINI LED output.
 static DigitalOut led(P0_20, 0);
 
@@ -40,8 +45,8 @@ static uint32_t last_connection_id = -1;
 static u8g_t u8g;
 
 // Screen dimensions,
-static const int kMaxX = 128 - 1;
-static const int kMaxY = 64 - 1;
+//static const int kMaxX = 128 - 1;
+//static const int kMaxY = 64 - 1;
 
 enum State {
   NOT_CONNECTED,
@@ -101,7 +106,7 @@ void drawDisplay() {
   // 1 sec per pixel. The u8g library will do the clipping to screen width.
   const uint32_t kMaxBarSecs = 5 * 60;
   const uint32_t kMinBarPixels = 2;
-  const uint32_t kMaxBarPixles = kMaxX;
+  const uint32_t kMaxBarPixles = 128; // screen width
   const uint32_t test_message_secs = time_since_last_text_message.secs();
   int bar_length_in_pixels =  kMinBarPixels + ((test_message_secs >= kMaxBarSecs)
       ? kMaxBarPixles - kMinBarPixels
@@ -112,32 +117,43 @@ void drawDisplay() {
   u8g_FirstPage(&u8g);
   do {
     // EXPERIMENTAL
+    // TODO: clean this.
+    esp8266::polling();
     protocol::polling();
 
-    u8g_DrawStr(&u8g, kMaxX / 2 - 32, 0, "CLOUD NODE");
+    //u8g_DrawStr(&u8g, kMaxX / 2 - 32, 0, "CLOUD NODE");
+    u8g_DrawStr(&u8g, 31, 0, "Cloud Thing");
+
 
     // TODO: determine size, make this buffer shared.
     static char bfr[20];
 
     if (state == CONNECTED || state == WAITING_FOR_LOGIN_RESPONSE) {
-      snprintf(bfr, sizeof(bfr), "%s [%lu]", stateName(state),
-          last_connection_id);
-      u8g_DrawStr(&u8g, 0, 17, bfr);
+      snprintf(bfr, sizeof(bfr), "%s [%lu]%s%s", stateName(state),
+          last_connection_id, esp8266::had_bad_line? "*" : "",
+          protocol::isPanicMode()? "!" : "");
+      u8g_DrawStr(&u8g, 0, 38, bfr);
     } else {
-      u8g_DrawStr(&u8g, 0, 17, stateName(state));
+      u8g_DrawStr(&u8g, 0, 38, stateName(state));
     }
 
     if (state == CONNECTED) {
-      u8g_DrawStr(&u8g, 0, 32, text_message);
+      // TODO: temp hack for the initial 'true' message. Filter out
+      // using the AppData key. For now we use here a hard coded filter.
+      if (strcmp(text_message, "true") != 0) {
+        u8g_DrawStr(&u8g, 4, 19, text_message);
+      }
+
+      u8g_DrawFrame(&u8g, 0, 16, 128, 15);
 
       // Draw time-since-last update bar.
-      u8g_DrawHLine(&u8g, 0, kMaxY-1, bar_length_in_pixels);
+      u8g_DrawHLine(&u8g, 0, 63, bar_length_in_pixels);
     }
 
     snprintf(bfr, sizeof(bfr), "I:%lu O:%lu %d.%02d.%02d",
         protocol_util::in_messages_counter, protocol_util::out_messages_counter,
         hh, mm, ss);
-    u8g_DrawStr(&u8g, 0, kMaxY - 16, bfr);
+    u8g_DrawStr(&u8g, 0, 50, bfr);
   } while (u8g_NextPage(&u8g));
 }
 

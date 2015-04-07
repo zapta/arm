@@ -25,6 +25,7 @@ def parseArgs(argv):
     "-p", "--port", dest="port",
     #default='/dev/tty.usbserial-A602VGAX',
     default='/dev/tty.usbmodemfd111',
+    #default='/dev/tty.usbmodemfa131',
     help="serial port connected to ESP8266")
   parser.add_option(
     "-s", "--speed", dest="speed",

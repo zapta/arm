@@ -1,4 +1,5 @@
---uart.setup(0, 115200, 8, 0, 1, 1)
+-- Disable echo. It's impotant to avoid the echo mingling with rx.
+uart.setup(0, 9600, 8, 0, 1, 0)
 tmr.delay(100000)
 print("\n\ninit.lua")
 function RUN() 

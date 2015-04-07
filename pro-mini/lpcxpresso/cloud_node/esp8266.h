@@ -33,6 +33,9 @@ extern void abortCurrentConnection();
 // Dump internal information for debugging.
 extern void dumpInternalState();
 
+// TODO: remove, for initial debuggin only.
+extern bool had_bad_line;
+
 }  // namespace esp8266
 
 #endif  // ESP8266_H
