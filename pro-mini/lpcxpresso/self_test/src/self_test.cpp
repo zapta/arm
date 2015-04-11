@@ -71,7 +71,7 @@ static void loop() {
     pin_table[i].set(i != current_pin_index);
   }
 
-  if (timer.usecs() >= 100000) {
+  if (timer.usecs() >= 750000) {
     timer.reset();
     current_pin_index = (current_pin_index + 1) % kPinCount;
   }
