@@ -81,11 +81,7 @@ Since the license of the ARM PRO MINI is very liberal (attribution and share ali
 This section will teach you how to load new firmware on your board. It is done by switching the board to the USB/ISP virtual disk mode and copying the new binary file.
 
 1. Connect the ARM PRO MINI board to a USB port of a Max OSX, Linux or Windows computer.
-2. Restart the board while the ISP button is pressed to enter the USB/ISP mode (with some practice, this can be done with a simple roll of one finger):
-    * Press and hold the RST button.
-    * Press and hold the ISP button.
-    * Release the RST button.
-    * Release the ISP button.
+2. Restart board in ISP mode by pressing the ISP button  (note: older versions require releasing the RST button while the ISP button is pressed).
 3. The ARM PRO MINI will mount itself on your computer as an external disk with a single file named firmware.bin.
 4. Copy one of the two provided hello world image files over the *firmware.bin* file. Note: on Mac OSX drag and drop does not work, instead using the cp shell command: *cp hello_world_fast_blink.bin "/Volumes/CRP DISABLD/firmware.bin"*
 5. Press the RST button of the ARM PRO MINI to restart it in the RUN mode. The image file you just loaded should start running and the red LED on the ARM PRO MINI should blink.
@@ -157,7 +153,7 @@ This section explains how to setup LPCXpresso to automate the process of buildin
 3. In the *Main* tab set the Location field to *${workspace_loc:/arm_pro_mini_lib/tools/copy_bin_to_usb_isp.sh}* and set the Arguments field to *${project_name} ${project_loc} ${config_name:${project_name}}*
 4. In the *Common* tab check *External Tools* to display the external tool icon in the tool bar.
 5. Click *Close*.
-6. To build and download switch the ARM PRO MINI board to USB/ISP mode (reset while the ISP button is pressed, explained above), then click on the *External Tool* icon and run USB/ISP. When the build and download are completed, reset your ARM PRO MINI board to start the new program you just downloaded.
+6. To build and download switch the ARM PRO MINI board to USB/ISP mode by pressing the ISP button (note: older versions of the board require release the RST button while the ISP button is pressed), then click on the *External Tool* icon and run USB/ISP. When the build and download are completed, reset your ARM PRO MINI board to start the new program you just downloaded.
 
 
 <br>
