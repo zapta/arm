@@ -197,9 +197,6 @@ The provided hello world example is well documented and self explanatory. It use
 // Provides serial I/O over USB/CDC.
 #include "usb_serial.h"
 
-// Allows to jump to ISP mode when ISP button is pressed.
-#include "isp_button_monitor.h"
-
 // LED blink cycle. We provide two prebuilt binaries with
 // fast and slow blink respectively to be used in the
 // Getting Started procedure.
@@ -219,18 +216,11 @@ static void setup() {
   system_time::setup();
   // Initialize the USB serial connection. This will allow us to print messages.
   usb_serial::setup();
-  // Get ready to monitor the ISP button
-  isp_button_monitor::setup();
   // Reset the timer to the time now. This starts the first cycle.
   timer.reset();
 }
 
 static void loop() {
-  // If the ISP button is pressed, this will jump to the USB/ISP
-  // mode, allowing to upgrade the firmware via drag and drop.
-  // Otherwise just reset the board while the ISP button is pressed.
-  isp_button_monitor::loop();
-
   static int message_count = 0;
   const uint32 time_now_in_cycle_usecs = timer.usecs();
 

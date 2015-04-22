@@ -1,9 +1,9 @@
 TODO list for ARM PRO MINI
 
 **SCHEMATIC**
-* Update BOM with new diodes and cap.
 
 **LAYOUT**
+Fix board name label, should be ARM PRO MINI (not ARM MINI PRO).
 
 ** Enclosure
 
@@ -13,8 +13,6 @@ TODO list for ARM PRO MINI
 
 **DOCUMENTATION**
 * In the pinout diagram, indicated that p0_4, p0_5 are non pull up, open drain only.
-* Updated board picture.
-* Updated pinotu diagram (LED and buttons moved).
 
 **MISCELLANEOUS**
 
