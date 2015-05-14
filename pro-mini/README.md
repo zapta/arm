@@ -102,17 +102,18 @@ This section will teach you how to view on your computer seial data output from 
       connected and look for a port that appears only when
       the ARM PRO MINI is connected. The serial port our linux test box is called */dev/ttyACM0* and is also availal with 
       two other name under the */dev/serial* directory.
-    * **Windows:** (description courtesy of user Xenon Photon from the eevblog forums) 
+    * **Windows:** (by Xenon Photon from the eevblog forums) 
       Identify the serial port on your computer: Open device manger, under "Ports(COM & LPT)" search for "LPC USB VCom Port (COMx)" 
-      where x is the com port number.  Use a terminal emulator to print the text received on the serial port you identified above: 
+      where x is the com port number.  
+    * **Mac OSX:** run the command *cat <port_name>*. For example *cat /dev/cu.usbmodemNXP-71*.
+    * **Linux:** run the command *cat <port_name>*. For example *cat /dev/ttyACM0*.
+    * **Windows:** (by Xenon Photon from the eevblog forums)
+      Use a terminal emulator to print the text received on the serial port you identified above: 
       Download any terminal emulator, for example Tera Term http://en.sourceforge.jp/projects/ttssh2/releases/. 
       Select the com port of your device and click OK.
       Windows will install the required drive automatically via the internet. if the device was not recognized then 
       download the driver from here: http://www.lpcware.com/content/nxpfile/lpcxpresso-link2-usb-driver-package
 3. Use a terminal emulator to print the text received on the serial port you identified above.
-    * **Mac OSX:** run the command *cat <port_name>*. For example *cat /dev/cu.usbmodemNXP-71*.
-    * **Linux:** run the command *cat <port_name>*. For example *cat /dev/ttyACM0*.
-    * **Windows:** TBD
 
 The output will look like this:
 ~~~
