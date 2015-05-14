@@ -28,7 +28,7 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 * Zero software installation when using with the mbed.org online IDE.
 * Full support of Windows, Mac OSX and Linux.
 * Easy firmware upgrade using a file drag and drop. Programmers and adapters are not required, even if you are bringing up your own board!
-* Supports optional debuggers (such as the [OM13014,598](http://www.digikey.com/short/7zbr3m)) for single stepping and full debugging capabilities.
+* Supports optional debuggers (such as [LPC-LINK 2](http://www.digikey.com/short/7nr7n4)) for single stepping and full debugging capabilities.
 * I/O library and a hello world example (with serial printing over USB, parallel port io, blinking LED, and timing).
 * No-nonsense open source license (no commercial restrictions, sharing and attribution not required).
 
@@ -102,7 +102,13 @@ This section will teach you how to view on your computer seial data output from 
       connected and look for a port that appears only when
       the ARM PRO MINI is connected. The serial port our linux test box is called */dev/ttyACM0* and is also availal with 
       two other name under the */dev/serial* directory.
-    * **Windows:** TBD (may required the NXP CDC driver [here](resources/lpc_bootloader).
+    * **Windows:** (description courtesy of user Xenon Photon from the eevblog forums) 
+      Identify the serial port on your computer: Open device manger, under "Ports(COM & LPT)" search for "LPC USB VCom Port (COMx)" 
+      where x is the com port number.  Use a terminal emulator to print the text received on the serial port you identified above: 
+      Download any terminal emulator, for example Tera Term http://en.sourceforge.jp/projects/ttssh2/releases/. 
+      Select the com port of your device and click OK.
+      Windows will install the required drive automatically via the internet. if the device was not recognized then 
+      download the driver from here: http://www.lpcware.com/content/nxpfile/lpcxpresso-link2-usb-driver-package
 3. Use a terminal emulator to print the text received on the serial port you identified above.
     * **Mac OSX:** run the command *cat <port_name>*. For example *cat /dev/cu.usbmodemNXP-71*.
     * **Linux:** run the command *cat <port_name>*. For example *cat /dev/ttyACM0*.
