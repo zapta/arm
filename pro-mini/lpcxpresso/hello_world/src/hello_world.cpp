@@ -18,6 +18,9 @@
 // Provides serial I/O over USB/CDC.
 #include "usb_serial.h"
 
+//Standard Input and Output Library.
+#include "stdio.h"
+
 // LED blink cycle. We provide two prebuilt binaries with
 // fast and slow blink respectively to be used in the
 // Getting Started procedure.
@@ -57,8 +60,7 @@ static void loop() {
   if (time_now_in_cycle_usecs >= kCycleTimeUsecs) {
     // NOTE: using \r\n EOL for the benefit of dumb serial dump. Typically
     // \n is sufficient.
-    usb_serial::printf("Hello world: %d, %u\r\n", message_count,
-        system_time::usecs());
+    printf("Hello world: %d, %lu\r\n", message_count, system_time::usecs());
     message_count++;
     // Advance cycle start time rather than reseting to time now. This
     // way we don't accumulate time errors.

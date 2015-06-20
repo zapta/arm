@@ -31,7 +31,9 @@
 
  //#include "board.h"
 #include "chip.h"
- #include "string.h"
+#include "string.h"
+#include <usb_serial/cdc_vcom.h>
+#define WRITEFUNC _write
 
 /* The System initialization code is called prior to the application and
    initializes the board for run-time operation. Board initialization
@@ -182,4 +184,14 @@ void Board_SystemInit(void)
 
 	/* Enable I/OH SRAM (SRAM1) */
 	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_RAM1);
+}
+
+//Retarget the _write function to USB/Serial
+int WRITEFUNC(int iFileHandle, char *pcBuffer, int iLength)
+{
+	if (vcom_connected())
+	{
+		return vcom_write((uint8_t *) pcBuffer,(uint32_t) iLength);
+	}
+	return -1;
 }
