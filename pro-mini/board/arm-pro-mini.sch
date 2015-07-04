@@ -210,10 +210,10 @@ Source: http://www.osram.convergy.de/ ... Lb_q993.pdf</description>
 <smd name="30" x="-0.75" y="2.55" dx="0.27" dy="0.85" layer="1"/>
 <smd name="31" x="-1.25" y="2.55" dx="0.27" dy="0.85" layer="1"/>
 <smd name="32" x="-1.75" y="2.55" dx="0.27" dy="0.85" layer="1"/>
-<pad name="G1" x="-0.65" y="0.65" drill="0.3302" diameter="0.6" thermals="no"/>
-<pad name="G2" x="-0.65" y="-0.65" drill="0.3302" diameter="0.6" thermals="no"/>
-<pad name="G3" x="0.65" y="-0.65" drill="0.3302" diameter="0.6" thermals="no"/>
-<pad name="G4" x="0.65" y="0.65" drill="0.3302" diameter="0.6" thermals="no"/>
+<pad name="G1" x="-0.65" y="0.65" drill="0.3302" diameter="0.6" stop="no" thermals="no"/>
+<pad name="G2" x="-0.65" y="-0.65" drill="0.3302" diameter="0.6" stop="no" thermals="no"/>
+<pad name="G3" x="0.65" y="-0.65" drill="0.3302" diameter="0.6" stop="no" thermals="no"/>
+<pad name="G4" x="0.65" y="0.65" drill="0.3302" diameter="0.6" stop="no" thermals="no"/>
 <smd name="TAB" x="0" y="0" dx="3.75" dy="3.75" layer="1" cream="no"/>
 <text x="-3.5" y="3.65" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="-3.5" y="-4.95" size="1.27" layer="27" font="vector">&gt;VALUE</text>
@@ -232,6 +232,10 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <text x="-5.08" y="-2.54" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <text x="5.08" y="-2.54" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
 <wire x1="2.3" y1="-0.6" x2="2.3" y2="0.6" width="0.127" layer="21"/>
+<pad name="P$1" x="-2.075" y="1.075" drill="0.3302" diameter="0.6096"/>
+<pad name="P$2" x="2.075" y="1.075" drill="0.3302" diameter="0.6096"/>
+<pad name="P$3" x="2.075" y="-1.075" drill="0.3302" diameter="0.6096"/>
+<pad name="P$4" x="-2.075" y="-1.075" drill="0.3302" diameter="0.6096"/>
 </package>
 <package name="R0402">
 <description>&lt;b&gt;RESISTOR&lt;/b&gt;</description>
@@ -1180,7 +1184,7 @@ General-purpose diode for high-speed switching</description>
 <wire x1="340.36" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="259.08" width="0.1524" layer="94"/>
 <text x="233.68" y="144.78" size="2.54" layer="97">MCU</text>
-<text x="331.978" y="7.112" size="2.54" layer="97">3</text>
+<text x="331.978" y="7.112" size="2.54" layer="97">3A</text>
 <text x="71.12" y="149.86" size="2.54" layer="97">USB</text>
 <text x="139.7" y="48.26" size="2.54" layer="97">SWD DEBUGGER PORT
 (OPTIONAL)</text>
