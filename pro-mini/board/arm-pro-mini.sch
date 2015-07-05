@@ -228,14 +228,14 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <smd name="A1" x="-2.075" y="1.075" dx="1.05" dy="0.65" layer="1"/>
 <smd name="A2" x="2.075" y="1.075" dx="1.05" dy="0.65" layer="1"/>
 <smd name="B1" x="-2.075" y="-1.075" dx="1.05" dy="0.65" layer="1"/>
-<smd name="B2" x="2.075" y="-1.05" dx="1.05" dy="0.65" layer="1"/>
+<smd name="B2" x="2.075" y="-1.075" dx="1.05" dy="0.65" layer="1"/>
 <text x="-5.08" y="-2.54" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <text x="5.08" y="-2.54" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
 <wire x1="2.3" y1="-0.6" x2="2.3" y2="0.6" width="0.127" layer="21"/>
-<pad name="P$1" x="-2.075" y="1.075" drill="0.3302" diameter="0.6096"/>
-<pad name="P$2" x="2.075" y="1.075" drill="0.3302" diameter="0.6096"/>
-<pad name="P$3" x="2.075" y="-1.075" drill="0.3302" diameter="0.6096"/>
-<pad name="P$4" x="-2.075" y="-1.075" drill="0.3302" diameter="0.6096"/>
+<pad name="A1P" x="-2.075" y="1.075" drill="0.3302" diameter="0.6096" stop="no"/>
+<pad name="A2P" x="2.075" y="1.075" drill="0.3302" diameter="0.6096" stop="no"/>
+<pad name="B2P" x="2.075" y="-1.075" drill="0.3302" diameter="0.6096" stop="no"/>
+<pad name="B1P" x="-2.075" y="-1.075" drill="0.3302" diameter="0.6096" stop="no"/>
 </package>
 <package name="R0402">
 <description>&lt;b&gt;RESISTOR&lt;/b&gt;</description>
@@ -882,8 +882,8 @@ General-purpose diode for high-speed switching</description>
 <devices>
 <device name="" package="PUSH_BUTTON">
 <connects>
-<connect gate="G$1" pin="1" pad="A1"/>
-<connect gate="G$1" pin="2" pad="B2"/>
+<connect gate="G$1" pin="1" pad="A1 A1P"/>
+<connect gate="G$1" pin="2" pad="B2 B2P"/>
 </connects>
 <technologies>
 <technology name=""/>
