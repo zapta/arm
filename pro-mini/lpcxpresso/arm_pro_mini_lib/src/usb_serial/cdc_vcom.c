@@ -229,6 +229,7 @@ static uint32_t vcom_write_packet(uint8_t *pBuf, uint32_t len)
 uint32_t vcom_write(uint8_t *pBuf, uint32_t len) {
   // Write one packet at a time.
   uint32_t total_bytes_sent = 0;
+  int i = 0;
   while(total_bytes_sent < len) {
     const int bytes_left_to_send = len - total_bytes_sent;
     const int packet_size = (bytes_left_to_send > kMaxPacketSize)
@@ -237,10 +238,16 @@ uint32_t vcom_write(uint8_t *pBuf, uint32_t len) {
       break;
     }
     // If TX is buzy, this loop acts as a buzy loop.
+    // TODO(XE): This busy loop cause the whole system to stop responding when USB/Serial
+	//           is disconnected from a linux or Android machine's Terminal.
+	//           This is a quick fix and needs to be checked again.
     if (!(g_vCOM.tx_flags & VCOM_TX_BUSY)) {
       const int bytes_sent =  vcom_write_packet(pBuf + total_bytes_sent, packet_size);
       total_bytes_sent += bytes_sent;
     }
+    if(i > 2000)
+        break;
+    i++;
   }
   return total_bytes_sent;
 }
