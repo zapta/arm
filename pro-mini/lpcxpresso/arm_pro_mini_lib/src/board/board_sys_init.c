@@ -198,8 +198,7 @@ int WRITEFUNC(int iFileHandle, char *pcBuffer, int iLength)
 }
 
 //Retarget the _read function to USB/Serial for stdio scanf.
-//It will work as long as the input is valid. Once input_failure happened, This function wont be called anymore.
-//Please refer to the discussion for more informations
+//Don't forget to use "fpurge(stdin);" right after each scanf statement.
 int READFUNC (int fd, char * ptr, int len)
 {
   if (vcom_connected ())
