@@ -3,7 +3,6 @@ TODO list for ARM PRO MINI
 **SCHEMATIC**
 
 **LAYOUT**
-Fix board name label, should be ARM PRO MINI (not ARM MINI PRO).
 
 ** Enclosure
 

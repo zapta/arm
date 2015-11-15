@@ -139,10 +139,10 @@ Source: 008-0260-0_E.pdf</description>
 <wire x1="1.7" y1="1.4" x2="1.7" y2="-1.4" width="0.127" layer="21"/>
 <wire x1="1.7" y1="-1.4" x2="-1.7" y2="-1.4" width="0.127" layer="21"/>
 <wire x1="-1.7" y1="-1.4" x2="-1.7" y2="1.4" width="0.127" layer="21"/>
-<smd name="1" x="-1.075" y="-0.775" dx="0.9" dy="1" layer="1"/>
-<smd name="2" x="1.075" y="-0.775" dx="0.9" dy="1" layer="1"/>
-<smd name="3" x="1.075" y="0.775" dx="0.9" dy="1" layer="1"/>
-<smd name="4" x="-1.075" y="0.775" dx="0.9" dy="1" layer="1"/>
+<smd name="1" x="-1.075" y="-1.025" dx="0.9" dy="1.5" layer="1"/>
+<smd name="2" x="1.075" y="-1.025" dx="0.9" dy="1.5" layer="1"/>
+<smd name="3" x="1.075" y="1.025" dx="0.9" dy="1.5" layer="1"/>
+<smd name="4" x="-1.075" y="1.025" dx="0.9" dy="1.5" layer="1"/>
 <text x="-2.54" y="2.54" size="1.27" layer="25">&gt;NAME</text>
 <text x="-2.54" y="-3.81" size="1.27" layer="27">&gt;VALUE</text>
 </package>
@@ -316,9 +316,9 @@ Metric Code Size 1608</description>
 <wire x1="-0.8" y1="-0.1" x2="-0.8" y2="0.6" width="0.127" layer="21"/>
 <wire x1="-0.8" y1="0.6" x2="-0.4" y2="0.6" width="0.127" layer="21"/>
 <wire x1="0.4" y1="0.6" x2="0.8" y2="0.6" width="0.127" layer="21"/>
-<smd name="B" x="-0.5" y="-0.571" dx="0.5" dy="0.6" layer="1"/>
-<smd name="C" x="0" y="0.571" dx="0.5" dy="0.6" layer="1"/>
-<smd name="E" x="0.5" y="-0.571" dx="0.5" dy="0.6" layer="1"/>
+<smd name="B" x="-0.5" y="-0.771" dx="0.5" dy="1" layer="1"/>
+<smd name="C" x="0" y="0.771" dx="0.5" dy="1" layer="1"/>
+<smd name="E" x="0.5" y="-0.771" dx="0.5" dy="1" layer="1"/>
 <text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
 </package>
@@ -339,7 +339,8 @@ Metric Code Size 1608</description>
 <package name="USB-MICRO">
 <description>http://www.hirose.co.jp/cataloge_hp/e24200011.pdf</description>
 <wire x1="3.25" y1="3.3" x2="3.25" y2="3.6" width="0.127" layer="21"/>
-<wire x1="3.25" y1="3.6" x2="-3.25" y2="3.6" width="0.127" layer="21"/>
+<wire x1="3.25" y1="3.6" x2="1.8" y2="3.6" width="0.127" layer="21"/>
+<wire x1="-1.8" y1="3.6" x2="-3.25" y2="3.6" width="0.127" layer="21"/>
 <wire x1="-3.25" y1="3.6" x2="-3.25" y2="3.3" width="0.127" layer="21"/>
 <wire x1="-5" y1="-1.45" x2="0" y2="-1.45" width="0.127" layer="51"/>
 <wire x1="0" y1="-1.45" x2="5" y2="-1.45" width="0.127" layer="51"/>
@@ -355,11 +356,11 @@ Metric Code Size 1608</description>
 <rectangle x1="2.35" y1="1.6" x2="4.05" y2="3.3" layer="29"/>
 <rectangle x1="2.35" y1="-0.95" x2="4.25" y2="0.95" layer="29"/>
 <rectangle x1="-2.159" y1="-0.889" x2="2.159" y2="1.778" layer="41"/>
-<smd name="1" x="-1.3" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<smd name="2" x="-0.65" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<smd name="3" x="0" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<smd name="4" x="0.65" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
-<smd name="5" x="1.3" y="2.675" dx="0.4" dy="1.35" layer="1" roundness="25"/>
+<smd name="1" x="-1.3" y="2.85" dx="0.4" dy="1.7" layer="1" roundness="25"/>
+<smd name="2" x="-0.65" y="2.85" dx="0.4" dy="1.7" layer="1" roundness="25"/>
+<smd name="3" x="0" y="2.85" dx="0.4" dy="1.7" layer="1" roundness="25"/>
+<smd name="4" x="0.65" y="2.85" dx="0.4" dy="1.7" layer="1" roundness="25"/>
+<smd name="5" x="1.3" y="2.85" dx="0.4" dy="1.7" layer="1" roundness="25"/>
 <pad name="G1" x="-3.3" y="0" drill="1.143" diameter="2.032" shape="square" stop="no"/>
 <pad name="G2" x="3.3" y="0" drill="1.143" diameter="2.032" shape="square" stop="no"/>
 <pad name="G3" x="-3.2" y="2.45" drill="0.508" diameter="1.5" shape="square" stop="no"/>
@@ -387,12 +388,12 @@ Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
 <rectangle x1="0.375" y1="-0.875" x2="0.625" y2="-0.475" layer="31" rot="R180"/>
 <rectangle x1="-0.125" y1="-0.875" x2="0.125" y2="-0.475" layer="31" rot="R180"/>
 <rectangle x1="-0.625" y1="-0.875" x2="-0.375" y2="-0.475" layer="31" rot="R180"/>
-<smd name="1" x="-0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="2" x="0" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="3" x="0.5" y="-0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="4" x="0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="5" x="0" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
-<smd name="6" x="-0.5" y="0.675" dx="0.3" dy="0.45" layer="1" stop="no" cream="no"/>
+<smd name="1" x="-0.5" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no" cream="no"/>
+<smd name="2" x="0" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no" cream="no"/>
+<smd name="3" x="0.5" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no" cream="no"/>
+<smd name="4" x="0.5" y="0.85" dx="0.3" dy="0.8" layer="1" stop="no" cream="no"/>
+<smd name="5" x="0" y="0.85" dx="0.3" dy="0.8" layer="1" stop="no" cream="no"/>
+<smd name="6" x="-0.5" y="0.85" dx="0.3" dy="0.8" layer="1" stop="no" cream="no"/>
 <text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
 </package>
@@ -1184,7 +1185,7 @@ General-purpose diode for high-speed switching</description>
 <wire x1="340.36" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="259.08" width="0.1524" layer="94"/>
 <text x="233.68" y="144.78" size="2.54" layer="97">MCU</text>
-<text x="331.978" y="7.112" size="2.54" layer="97">3A</text>
+<text x="331.978" y="7.112" size="2.54" layer="97">3B</text>
 <text x="71.12" y="149.86" size="2.54" layer="97">USB</text>
 <text x="139.7" y="48.26" size="2.54" layer="97">SWD DEBUGGER PORT
 (OPTIONAL)</text>
@@ -1769,7 +1770,7 @@ General-purpose diode for high-speed switching</description>
 <pinref part="S2" gate="G$1" pin="2"/>
 <wire x1="309.88" y1="78.74" x2="309.88" y2="91.44" width="0.1524" layer="91"/>
 <label x="308.61" y="98.298" size="1.778" layer="95" rot="R90"/>
-<wire x1="309.88" y1="91.44" x2="309.88" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="309.88" y1="91.44" x2="309.88" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="292.1" y1="91.44" x2="309.88" y2="91.44" width="0.1524" layer="91"/>
 <junction x="309.88" y="91.44"/>
 <pinref part="D4" gate="G$1" pin="A1"/>
