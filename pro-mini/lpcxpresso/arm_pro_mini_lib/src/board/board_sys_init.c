@@ -34,6 +34,7 @@
 #include "string.h"
 #include <usb_serial/cdc_vcom.h>
 #define WRITEFUNC _write
+#define READFUNC _read
 
 /* The System initialization code is called prior to the application and
    initializes the board for run-time operation. Board initialization
@@ -194,4 +195,26 @@ int WRITEFUNC(int iFileHandle, char *pcBuffer, int iLength)
 		return vcom_write((uint8_t *) pcBuffer,(uint32_t) iLength);
 	}
 	return -1;
+}
+
+//Retarget the _read function to USB/Serial for stdio scanf.
+//Don't forget to use "fpurge(stdin);" right after each scanf statement.
+int READFUNC (int fd, char * ptr, int len)
+{
+  if (vcom_connected ())
+    {
+      int i = 0;
+      for (i = 0; i < len; i++)
+	{
+	  while (vcom_bread ((uint8_t *) (ptr + i), 1) == 0)
+	    ;
+	  if ((*(ptr + i) == '\n') || (*(ptr + i) == '\r'))
+	    {
+	      i++;
+	      break;
+	    }
+	}
+      return (i);
+    }
+  return -1;
 }
