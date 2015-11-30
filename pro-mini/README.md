@@ -14,9 +14,7 @@ stepping stone for makers and hobbyists 'graduating' from Arduino to the ARM arc
 
 [Schematic (PDF)](https://github.com/zapta/arm/blob/master/pro-mini/board/arm-pro-mini-schematic.pdf)
 
-[BOM (CSV)](https://github.com/zapta/arm/blob/master/pro-mini/eagle/arm-pro-mini-bom.csv)
-
-[Case 3D Model](https://github.com/zapta/arm/blob/master/pro-mini/3d/arm-pro-mini-enclosure.stl)
+[BOM (CSV)](https://github.com/zapta/arm/blob/master/pro-mini/board/arm-pro-mini-bom.csv)
 
 
 <br>
@@ -250,7 +248,7 @@ int main(void) {
 ```
 
 <br>
-### Compiling with the ARMmbed Online IDE.
+### Compiling with the ARM mbed Online IDE.
 
 The instructions above explain how to install and use the fully featured LPCXpresso IDE and tool chain. Another option that
 ARM PRO MINI developes has it to use the ARM's free online IDE at mbed.org which doesn't require any sofrware installation. Following steps 
@@ -263,7 +261,7 @@ outline how to compile a simple blinky program for the ARM PRO MINI:
 5. Upload the binary file to your ARM PRO MINI board as described eariler in this document.
 
 
-ARMmbed blinky program:
+ARM mbed blinky program:
 ``` cpp
 #include "mbed.h"
 
@@ -298,7 +296,7 @@ When customizing for your own board, you can eliminate the optional parts that y
 
 ![](www/arm_pro_mini_board.png)
 
-Building a ARM PRO MINI is stragiht forward as long as you are comfortable with working with SMT devices. The BOM is available here https://github.com/zapta/arm/blob/master/pro-mini/eagle/arm-pro-mini-bom.csv (Digikey allows to populate an order from a CSV file) and all components can be sourced from Digikey. The PCB is two layers with trace/spacing requirements that are compatible with inexpensive vendors such as Elecrow and [OSHPark](https://oshpark.com/shared_projects/fw5118z7) (3 boards for a total of $6 shipped, as of Dec 2014) and the repository includes both eagle and gerber files (generated with Elecrow CAM file). For prototypes we used Elecrow 5x5cm max 1mm HASL PCB and 0.12mm (~5mil) laser cut metal stencil. Initial programming of a bootloader is not required and the board is ready to use straight out of your toaster oven.
+Building a ARM PRO MINI is stragiht forward as long as you are comfortable with working with SMT devices. The BOM is available here https://github.com/zapta/arm/blob/master/pro-mini/board/arm-pro-mini-bom.csv (Digikey allows to populate an order from a CSV file) and all components can be sourced from Digikey. The PCB is two layers with trace/spacing requirements that are compatible with inexpensive vendors such as Elecrow and [OSHPark](https://oshpark.com/shared_projects/fw5118z7) (3 boards for a total of $6 shipped, as of Dec 2014) and the repository includes both eagle and gerber files (generated with Elecrow CAM file). For prototypes we used Elecrow 5x5cm max 1mm HASL PCB and 0.12mm (~5mil) laser cut metal stencil. Initial programming of a bootloader is not required and the board is ready to use straight out of your toaster oven.
 
 
 <br>
