@@ -14,13 +14,15 @@
 namespace io_pins {
 
 namespace _private {
+  // TODO: Fix a bug with some pin's function.
+
   // Return the io control pin mod function to select the pio function for
   // the given port/bit. This is an inconsistency where some bits required
   // FUNC0 while other required FUNC1. See 7.4.1 I/O configuration registers
   // section in LPC11U35 user's manual (document UM10462).
   inline uint32 pio_mod_function(uint8 port_index, uint8 bit_index) {
     return (port_index == 0 && bit_index >= 10 && bit_index <= 15)
-        ? IOCON_FUNC1: IOCON_FUNC0;
+        ? (IOCON_FUNC1 | IOCON_DIGMODE_EN) : (IOCON_FUNC0 | IOCON_DIGMODE_EN);
   }
 }
 // An output pin.

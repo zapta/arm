@@ -18,6 +18,9 @@
 // Provides serial I/O over USB/CDC.
 #include "usb_serial.h"
 
+// Analog to Digital Converter (ADC) module
+#include "adc.h"
+
 //Standard Input and Output Library.
 #include "stdio.h"
 
@@ -38,39 +41,43 @@ static io_pins::OutputPin led1(0, 20);
 // at GPIO0_7.
 static io_pins::OutputPin legacy_led(0, 7);
 
+// Analog channel 0 initialize @PCB pin 7
+static ADC::ADC_Init Analog0(0);
+
 static void setup() {
-  arm_pro_mini::setup();
-  // Uses timer32_0 for generating a 1 usec 32 bit clock (does not use interrupts).
-  system_time::setup();
-  // Initialize the USB serial connection. This will allow us to print messages.
-  usb_serial::setup();
-  // Reset the timer to the time now. This starts the first cycle.
-  timer.reset();
+	arm_pro_mini::setup();
+	// Uses timer32_0 for generating a 1 usec 32 bit clock (does not use interrupts).
+	system_time::setup();
+	// Initialize the USB serial connection. This will allow us to print messages.
+	usb_serial::setup();
+	// Reset the timer to the time now. This starts the first cycle.
+	timer.reset();
 }
 
 static void loop() {
-  static int message_count = 0;
-  const uint32 time_now_in_cycle_usecs = timer.usecs();
+	static int message_count = 0;
+	const uint32 time_now_in_cycle_usecs = timer.usecs();
 
-  // Generates a blink at the beginning of each cycle.
-  const bool led_state = time_now_in_cycle_usecs <= kCycleTimeUsecs / 3;
-  led1.set(led_state);
-  legacy_led.set(led_state);
+	// Generates a blink at the beginning of each cycle.
+	const bool led_state = time_now_in_cycle_usecs <= kCycleTimeUsecs / 3;
+	led1.set(led_state);
+	legacy_led.set(led_state);
 
-  if (time_now_in_cycle_usecs >= kCycleTimeUsecs) {
-    // NOTE: using \r\n EOL for the benefit of dumb serial dump. Typically
-    // \n is sufficient.
-    printf("Hello world: %d, %lu\r\n", message_count, system_time::usecs());
-    message_count++;
-    // Advance cycle start time rather than reseting to time now. This
-    // way we don't accumulate time errors.
-    timer.advance_start_time_usecs(kCycleTimeUsecs);
-  }
+	if (time_now_in_cycle_usecs >= kCycleTimeUsecs) {
+		// NOTE: using \r\n EOL for the benefit of dumb serial dump. Typically
+		// \n is sufficient.
+		printf("Hello world: %d,ADC0: %d, %lu\r\n", message_count,
+				Analog0.Read(), system_time::usecs());
+		message_count++;
+		// Advance cycle start time rather than reseting to time now. This
+		// way we don't accumulate time errors.
+		timer.advance_start_time_usecs(kCycleTimeUsecs);
+	}
 }
 
 int main(void) {
-  setup();
-  for (;;) {
-    loop();
-  }
+	setup();
+	for (;;) {
+		loop();
+	}
 }
