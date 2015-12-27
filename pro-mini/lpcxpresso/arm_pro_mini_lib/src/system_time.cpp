@@ -2,8 +2,8 @@
 
 #include "chip/clock_11xx.h"
 
-// Using timer32 0. 
-#define SYS_CLOCK_TIMER32 (LPC_TIMER32_0)
+// Using CT32B1 timer, similar to mbed.
+#define SYS_CLOCK_TIMER32 (LPC_TIMER32_1)
 
 namespace system_time {
 

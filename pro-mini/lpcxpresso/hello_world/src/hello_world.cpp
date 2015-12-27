@@ -9,11 +9,11 @@
 // Provides abstraction to digital I/o pins.
 #include "io_pins.h"
 
-// Provide system time using TIMER32 0.
+// Provide system time using the CT32B1 timer.
 #include "system_time.h"
 
 // Provides interrupt free elapsed time measurement using system time.
-#include "passive_timer.h"
+#include  "passive_timer.h"
 
 // Provides serial I/O over USB/CDC.
 #include "usb_serial.h"
@@ -28,7 +28,7 @@
 // fast and slow blink respectively to be used in the
 // Getting Started procedure.
 //
-static const uint32 kCycleTimeUsecs = 300 * 1000;  // fast
+static const uint32 kCycleTimeUsecs = 100 * 1000;  // fast
 // static const uint32 kCycleTimeUsecs = 2000 * 1000;  // slow
 
 // Timer for generating the delay bettween printed messages.
