@@ -10,6 +10,9 @@
  ADC_CH7		23	1	7.0	8.1
  */
 
+#ifndef ADC_H
+#define ADC_H
+
 #include "chip.h"
 #include "chip/adc_11xx.h"
 
@@ -58,3 +61,5 @@ private:
 };
 
 }
+
+#endif  // ADC_H
