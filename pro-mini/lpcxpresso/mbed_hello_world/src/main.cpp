@@ -14,12 +14,12 @@ static Timer timer;
 static Timer sys_time;
 
 // Red LED is at GPIO0_20.
-DigitalOut led1(P0_20, 0);
+static DigitalOut led1(P0_20, 0);
 
 // Early versions of ARM PRO MINI had the led at GPIO0_7.
 DigitalOut legacy_led(P0_7, 0);
 
-USBSerial usb_serial;
+USBSerial usb_serial(0x1f00, 0x2012, 0x0001, false);
 
 AnalogIn analog_in(P0_11);
 
