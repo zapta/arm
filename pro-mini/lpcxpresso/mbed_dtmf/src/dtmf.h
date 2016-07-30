@@ -19,7 +19,11 @@ extern void loop();
 // kMaxDialingSequence this call is ignored silently.
 extern void start_dialing(const char* dtmf_codes);
 
-extern bool is_idle();
+extern bool is_dialing_in_progress();
+
+// Force continuous dtmf code. If any dialing is in progress abort it.
+// Useful for testing.
+extern void force_continuous_code(char dtmf_code);
 
 }  // dtmf
 

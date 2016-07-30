@@ -51,7 +51,7 @@ void loop() {
       if (timer.read_ms() < kSpaceTimeMillis) {
         return;
       }
-      usb_serial.printf("S-M %d\r\n", current_code_index);
+      usb_serial.printf("S->M %d\r\n", current_code_index);
       state = MARK;
       timer.reset();
       dtmf_io::set_dtmf_code(dialing_buffer[current_code_index]);
@@ -65,9 +65,11 @@ void loop() {
       current_code_index++;
       if (!dialing_buffer[current_code_index]) {
         state = IDLE;
+        usb_serial.printf("M->I %d\r\n", current_code_index);
         return;
       }
       state = SPACE;
+      usb_serial.printf("M->S %d\r\n", current_code_index);
       timer.reset();
       break;
 
@@ -98,14 +100,21 @@ void start_dialing(const char* dtmf_codes) {
   // Start. For first code we skip the SPACE and go directly to the
   // MARK.
   state = MARK;
+  usb_serial.printf("I->M %d\r\n", current_code_index);
   current_code_index = 0;
   timer.reset();
   dtmf_io::set_dtmf_code(dialing_buffer[current_code_index]);
 }
 
 // See dtmf.h
-bool is_idle() {
+bool is_dialing_in_progress() {
   return (state == IDLE);
+}
+
+// See dtmf.h
+void force_continuous_code(char dtmf_code) {
+  state = IDLE;
+  dtmf_io::set_dtmf_code(dtmf_code);
 }
 
 }  // dtmf

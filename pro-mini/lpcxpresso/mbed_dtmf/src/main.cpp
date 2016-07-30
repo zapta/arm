@@ -45,9 +45,10 @@ static void loop() {
     message_count++;
     timer.reset();
 
-    if (dtmf::is_idle()) {
-      dtmf::start_dialing("0123456789");
-    }
+    dtmf::force_continuous_code('0');
+//    if (dtmf::is_dialing_in_progress()) {
+//      dtmf::start_dialing("0123456789");
+//    }
   }
 }
 

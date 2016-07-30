@@ -79,8 +79,8 @@ void initialize() {
   LPC_CT16B1->PWMC = 0b0000;
 
   // Reset functionality on MR0 controlling the counter time period
-  LPC_CT16B0->MCR = (1 << 1);  // reset counter 0 of MR0 match
-  LPC_CT16B1->MCR = (1 << 4);  // reset counter 1 on MR1 match
+  LPC_CT16B0->MCR = (1 << 1);  // Timer0: reset counter 0 o0 MR0 match
+  LPC_CT16B1->MCR = (1 << 4);  // Timer1: reset counter 1 on MR1 match
 
   // Set prescalers to 1. Timer is incremented 'SystemCoreClock' times a second.
   LPC_CT16B0->PR = 0;
@@ -90,14 +90,19 @@ void initialize() {
   LPC_CT16B0->TCR = TCR_RESET;
   LPC_CT16B1->TCR = TCR_RESET;
 
-  // Set longest cycle. Doesn't really matter since both channels
-  // are not active yet.
-  LPC_CT16B0->MR0 = 0xffff;
-  LPC_CT16B1->MR1 = 0xffff;
+  // Clear output on match (tone are off, keep outputs  low).
+  LPC_CT16B0->EMR = (0b01 << 4);  // Timer0: output LOW on MR0 match
+  LPC_CT16B1->EMR = (0b10 << 6);  // Timer1: output HIGH on MR1 match
 
-  // Toggle output on match
-  LPC_CT16B0->EMR = (0b11 << 4);  // MR0 match
-  LPC_CT16B1->EMR = (0b11 << 6);  // MR1 match
+  // Set arbitrary cycle, just to have counter matches which sets
+  // the outputs to desired values based on EMR setting.
+  // Values don't matter much since we override latter when dialing
+  // the tones.
+  LPC_CT16B0->MR0 = COUNT(1000);
+  LPC_CT16B1->MR1 = COUNT(1300);
+
+  LPC_CT16B0->TCR = TCR_EN;
+  LPC_CT16B1->TCR = TCR_EN;
 
   // Pinout
   // TODO: define a const for the PWM pin function 2.
@@ -122,30 +127,35 @@ static const DtmfCodeEntry* find_dtmf_code_entry(char dtmf_ascii_code) {
   return &kDtmfTable[0];
 }
 
-// channel_index is 0 or 1.
 // dtmf_count is the timer count to set or 0 if to turn off.
-static void set_channel_tone(int channel_index, uint16_t dtmf_count) {
-  //usb_serial.printf("xset: %d, %d\r\n", channel_index, dtmf_count);
-
-  // Select the timer for this channel
-  LPC_CTxxBx_Type* const timer = channel_index ? LPC_CT16B1 : LPC_CT16B0;
-
-  // On timer0 we use MR0 and on timer1 we use MR1 so we need to select this
-  // as well.
-  __IO uint32_t* const timer_mr = channel_index ? &LPC_CT16B1->MR1 : &LPC_CT16B0->MR0;
-
-  // Handle the case of an actual tone.
-  if (dtmf_count) {
-    timer->TCR = TCR_RESET;
-    *timer_mr = dtmf_count;
-    timer->TCR = TCR_EN;
+static void set_tone0(uint16_t dtmf_count) {
+  // Handle the case of tone off
+  if (dtmf_count == 0) {
+    // Force output LOW on MR0 match
+    LPC_CT16B0->EMR = (0b01 << 4);
     return;
   }
 
-  // Handle the case of no tone. Turn the channel off.
-  timer->TCR = TCR_OFF;
-  timer->TCR = TCR_RESET;
-  *timer_mr = 0xffff;
+  // Handle the case of an actual tone.
+//  LPC_CT16B0->TCR = TCR_RESET;
+  LPC_CT16B0->MR0 = dtmf_count;
+  // Toggle output on MR0 match.
+  LPC_CT16B0->EMR = (0b11 << 4);
+}
+
+// dtmf_count is the timer count to set or 1 if to turn off.
+static void set_tone1(uint16_t dtmf_count) {
+  // Handle the case of tone off
+  if (dtmf_count == 0) {
+    // Force output HIGH on MR1 match.
+    LPC_CT16B1->EMR = (0b10 << 6);
+    return;
+  }
+
+  // Handle the case of an actual tone.
+  LPC_CT16B1->MR1 = dtmf_count;
+  // Toggle output on MR1 match.
+  LPC_CT16B1->EMR = (0b11 << 6);
 }
 
 // See dtmf_io.h
@@ -156,8 +166,8 @@ void set_dtmf_code(char dtmf_ascii_code) {
   usb_serial.printf("\r\nDTMF: %c, %d, %d\r\n", dtmf_code_entry->dtmf_ascii_code,
       dtmf_code_entry->timer0_count, dtmf_code_entry->timer1_count);
 
-  set_channel_tone(0, dtmf_code_entry->timer0_count);
-  set_channel_tone(1, dtmf_code_entry->timer1_count);
+  set_tone0(dtmf_code_entry->timer0_count);
+  set_tone1(dtmf_code_entry->timer1_count);
 }
 
 }  // dtmf_io
