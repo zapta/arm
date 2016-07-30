@@ -12,9 +12,6 @@ extern void initialize();
 // Use code ' ' to disable.
 extern void set_dtmf_code(char dtmf_ascii_code);
 
-// Turn off tone.
-//extern void tone_off();
-
 }  // dtmf_io
 
 #endif  // DTMF_IO_H

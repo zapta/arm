@@ -10,17 +10,14 @@
 
 extern USBSerial usb_serial;
 
-//static const uint16_t kFreqLow1Hz = 697;
-//static const uint16_t kFreqLow2Hz = 770;
-//static const uint16_t kFreqLow3Hz = 852;
-//static const uint16_t kFreqLow4Hz = 941;
+// DTMF tone generator hardware usage.
 //
-//static const uint16_t kFreqHigh1Hz = 1209;
-//static const uint16_t kFreqHigh2Hz = 1336;
-//static const uint16_t kFreqHigh3Hz = 1477;
+// Tone1 (low ):  P0_8   PWM_1  CT16B0  MR0
+// Tone2 (high):  P0_22  PWM_4  CT16B1  MR1
 
-// Map tone frequency to timer half cycle count. 0 indicates off.
-#define COUNT(f) ((const uint16_t)(SystemCoreClock / (f) / 2))
+// Map tone frequency to timer half cycle count. Since we have enough timer.
+// The -1 is from the timer specification.
+#define COUNT(f) ((const uint16_t)((SystemCoreClock / (f) / 2) - 1))
 
 struct DtmfCodeEntry {
   const char dtmf_ascii_code;
@@ -39,16 +36,16 @@ static const DtmfCodeEntry kDtmfTable[] = {
     { '0', COUNT(941), COUNT(1336) },
     { '1', COUNT(697), COUNT(1209) },
     { '2', COUNT(697), COUNT(1336) },
-    { '3', COUNT(697), COUNT(1477) },
+    { '3', COUNT(697), COUNT(1447) },
     { '4', COUNT(770), COUNT(1209) },
     { '5', COUNT(770), COUNT(1336) },
-    { '6', COUNT(770), COUNT(1477) },
+    { '6', COUNT(770), COUNT(1447) },
     { '7', COUNT(852), COUNT(1209) },
     { '8', COUNT(852), COUNT(1336) },
-    { '9', COUNT(852), COUNT(1477) },
+    { '9', COUNT(852), COUNT(1447) },
     // Special codes.
     { '*', COUNT(941), COUNT(1209) },
-    { '#', COUNT(941), COUNT(1477) },
+    { '#', COUNT(941), COUNT(1447) },
     // Low tones only.
     { 'i', COUNT(697), 0 },
     { 'j', COUNT(770), 0 },
@@ -63,30 +60,11 @@ static const DtmfCodeEntry kDtmfTable[] = {
 static const uint8_t kDtmfTableSize = sizeof(kDtmfTable)
     / sizeof(kDtmfTable[0]);
 
-// RGB LED connections (active high)
-//
-// Tone1 (low ):  P0_8   PWM_1  CT16B0  MR0
-// Tone2 (high):  P0_22  PWM_4  CT16B1  MR1
-
 #define TCR_OFF    0b00
 #define TCR_EN     0b01
 #define TCR_RESET  0b10
 
 namespace dtmf_io {
-
-// The MSB byte is derived from the 8bit pwm value. Subtracting 1
-// such that the min value of 0x00 which is translated to match
-// count of 0xff00 is beyond the period size. If it's equal, we
-// do get a ~0.2 usec pulses rather than constant low..
-//static const uint16_t kPeriodCounterTicks = 0xff00 - 1;
-
-// PWM ~100 hz frequency. 0xff00 is the max count of the counters ((~0x00) << 8).
-
-//static const uint16_t kScalerRatio = 1;
-
-// Last rgb set in 0x00rrggbb format.
-// Using an invalid value so the initialization setting will never match.
-//static uint32_t last_rgb = 0xff000000;
 
 void initialize() {
   // Disable timers 0, 1
@@ -113,10 +91,6 @@ void initialize() {
   LPC_CT16B0->TCR = TCR_RESET;
   LPC_CT16B1->TCR = TCR_RESET;
 
-  // Half cycle period to max.
-  //LPC_CT16B0->MR0 = COUNT(697);
-  //LPC_CT16B1->MR1 = COUNT(1477);
-
   // Set longest cycle. Doesn't really matter since both channels
   // are not active yet.
   LPC_CT16B0->MR0 = 0xffff;
@@ -126,23 +100,10 @@ void initialize() {
   LPC_CT16B0->EMR = (0b11 << 4);  // MR0 match
   LPC_CT16B1->EMR = (0b11 << 6);  // MR1 match
 
-  // Set initial PWM off ticks. This also initializes last_rgb.
-  // last_rgb never matches rgb in this call.
-  //set(0x000000);
-
-  // TODO: move this to end of function?
-  // Enable timers 0, 1
-//   LPC_CT16B0->TCR = TCR_EN;
-//   LPC_CT16B1->TCR = TCR_EN;
-
   // Pinout
   // TODO: define a const for the PWM pin function 2.
-
   pin_function(P0_8, 2);  // CT16B0_MAT0
   pin_mode(P0_8, PullNone);
-
-//  pin_function(P0_9, 2);
-//  pin_mode(P0_9, PullNone);
 
   pin_function(P0_22, 2);  // CT16B1_MAT1
   pin_mode(P0_22, PullNone);
