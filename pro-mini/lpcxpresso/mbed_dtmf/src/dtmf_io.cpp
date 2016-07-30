@@ -1,5 +1,4 @@
-#include "dtmf_io.h"
-
+#include <src/dtmf_io.h>
 #include "cmsis.h"
 #include "pinmap.h"
 #include "USBSerial.h"
@@ -9,6 +8,8 @@
 #endif
 
 extern USBSerial usb_serial;
+
+namespace dtmf_io {
 
 // DTMF tone generator hardware usage.
 //
@@ -63,8 +64,6 @@ static const uint8_t kDtmfTableSize = sizeof(kDtmfTable)
 #define TCR_OFF    0b00
 #define TCR_EN     0b01
 #define TCR_RESET  0b10
-
-namespace dtmf_io {
 
 void initialize() {
   // Disable timers 0, 1

@@ -1,9 +1,9 @@
 // A simple mbed program for Arm Pro Mini.
 // Tested on LPCXpresso 8.0.0 on Dec 2015.
 
+#include <src/dtmf.h>
 #include "mbed.h"
 #include "USBSerial.h"
-#include "dtmf_io.h"
 
 // LED blink cycle.
 static const uint32_t kCycleTimeMsecs = 3000;
@@ -27,10 +27,12 @@ AnalogIn analog_in(P0_11);
 static void setup() {
   timer.start();
   sys_time.start();
-  dtmf_io::initialize();
+  dtmf::initialize();
 }
 
 static void loop() {
+  dtmf::loop();
+
   static int message_count = 0;
   const uint32_t time_now_in_cycle_msecs = timer.read_ms();
 
@@ -43,7 +45,9 @@ static void loop() {
     message_count++;
     timer.reset();
 
-    dtmf_io::set_dtmf_code('0');
+    if (dtmf::is_idle()) {
+      dtmf::start_dialing("0123456789");
+    }
   }
 }
 
