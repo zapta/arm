@@ -8,13 +8,12 @@ namespace dtmf_io {
 // Upon return tone is off.
 extern void initialize();
 
-// 0-9 : decimal digits
-// 10  : '#'
-// 11  : '*'
-extern void set_tone(int tone_index);
+// See dtmf_id for the dtmf_ascii_code table.
+// Use code ' ' to disable.
+extern void set_dtmf_code(char dtmf_ascii_code);
 
 // Turn off tone.
-extern void tone_off();
+//extern void tone_off();
 
 }  // dtmf_io
 

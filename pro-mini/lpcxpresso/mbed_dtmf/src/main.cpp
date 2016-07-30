@@ -6,7 +6,7 @@
 #include "dtmf_io.h"
 
 // LED blink cycle.
-static const uint32_t kCycleTimeMsecs = 250;
+static const uint32_t kCycleTimeMsecs = 3000;
 
 // Timer for generating the delay between printed messages.
 static Timer timer;
@@ -45,9 +45,14 @@ static void loop() {
     // \n is sufficient.
 //    usb_serial.printf("Hello world: %d, ADC0: %u, %u\r\n", message_count,
 //           analog_level, sys_time.read_ms());
-    usb_serial.printf("%04x:%x, %04x:%x\r\n", LPC_CT16B0->TC, LPC_CT16B0->EMR & 1, LPC_CT16B1->TC, LPC_CT16B1->EMR & 2);
+
+  //  usb_serial.printf("%04x:%x, %04x:%x\r\n", LPC_CT16B0->TC, LPC_CT16B0->EMR & 1, LPC_CT16B1->TC, LPC_CT16B1->EMR & 2);
+
     message_count++;
     timer.reset();
+
+    dtmf_io::set_dtmf_code('0');
+
 
     // LPC_CT16B1->MR1 = 0x0800;
   }
