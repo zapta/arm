@@ -7,11 +7,13 @@
 
 extern USBSerial usb_serial;
 
+extern DigitalOut led1;
+
 namespace dtmf {
 
 // TODO: shorten periods to the standard.
-const int kSpaceTimeMillis = 100;
-const int kMarkTimeMillis = 200;
+const int kSpaceTimeMillis =  200;
+const int kMarkTimeMillis  = 500;
 
 enum State {
   // Not dialing
@@ -27,11 +29,15 @@ static State state = IDLE;
 // Used to time marks and spaces.
 static Timer timer;
 
+// When dialing, contains pointer to the dtmf codes to dial.
+// Ignored when state is IDLE.
+static const char* dialing_buffer = "";
+
 // Dialing codes buffer. Null terminated.
-static char dialing_buffer[kMaxDialingSequence+1] = "";
+//static char dialing_buffer[kMaxDialingSequence+1] = "";
 
 // Index of current code in dialing_buffer. Valid in SPACE and MARK
-// states.
+// states. Ignored in IDLE state.
 static int current_code_index = 0;
 
 // See dtmf.h
@@ -58,6 +64,7 @@ void loop() {
       break;
 
     case MARK:
+      led1 = 1;
       if (timer.read_ms() < kMarkTimeMillis) {
         return;
       }
@@ -88,27 +95,30 @@ void start_dialing(const char* dtmf_codes) {
     return;
   }
 
-  // If sequence is empty too long then ignore
+  // If sequence is empty or too long then ignore
   const int n = strlen(dtmf_codes);
-  if (n < 1 || n >= kMaxDialingSequence) {
+  if (n < 1 || n >= 30) {
+    usb_serial.printf("Ignoring: len=%d\r\n", n);
     return;
   }
 
+  dialing_buffer = dtmf_codes;
+
   // Copy sequence to buffer.
-  memcpy(dialing_buffer, dtmf_codes, n+1);
+  //memcpy(dialing_buffer, dtmf_codes, n+1);
 
   // Start. For first code we skip the SPACE and go directly to the
   // MARK.
   state = MARK;
-  usb_serial.printf("I->M %d\r\n", current_code_index);
   current_code_index = 0;
+  usb_serial.printf("I->M %d\r\n", current_code_index);
   timer.reset();
   dtmf_io::set_dtmf_code(dialing_buffer[current_code_index]);
 }
 
 // See dtmf.h
 bool is_dialing_in_progress() {
-  return (state == IDLE);
+  return (state != IDLE);
 }
 
 // See dtmf.h

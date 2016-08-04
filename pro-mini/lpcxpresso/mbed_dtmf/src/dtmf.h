@@ -1,3 +1,5 @@
+// DTMF dialer.
+
 #ifndef DTMF_H
 #define DTMF_H
 
@@ -5,7 +7,7 @@
 
 namespace dtmf {
 
-const int kMaxDialingSequence = 20;
+//const int kMaxDialingSequence = 20;
 
 // Call once upon initialization.
 extern void initialize();
@@ -14,9 +16,7 @@ extern void initialize();
 extern void loop();
 
 // Start dialing given sequence of dtmf codes (see dtmf_io.cpp for code table).
-// dtmf_codes is copied to an internal dialing buffer and not being accessed
-// after return. If is_idle() is false or if the sequence is longer than
-// kMaxDialingSequence this call is ignored silently.
+// dtmf_code buffer should stay stable until dialing is_idle() is true.
 extern void start_dialing(const char* dtmf_codes);
 
 extern bool is_dialing_in_progress();

@@ -1,3 +1,5 @@
+// DTMF driver.
+
 #ifndef DTMF_IO_H
 #define DTMF_IO_H
 
