@@ -117,17 +117,16 @@
 <text x="22.0726" y="60.071" size="1.524" layer="21" font="vector" ratio="10">+</text>
 </plain>
 <libraries>
-<library name="wifi_orb">
-<description>Generated from &lt;b&gt;wifi_orb.sch&lt;/b&gt;&lt;p&gt;
+<library name="phone-finder">
+<description>Generated from &lt;b&gt;phone-finder.sch&lt;/b&gt;&lt;p&gt;
 by exp-lbrs-filter.ulp</description>
 <packages>
 <package name="SOT23">
-<description>&lt;B&gt;DIODE&lt;/B&gt;</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.2224" width="0.127" layer="21"/>
-<wire x1="0.3224" y1="-0.6604" x2="-0.3224" y2="-0.6604" width="0.127" layer="21"/>
-<wire x1="-1.4224" y1="-0.2224" x2="-1.4224" y2="0.6604" width="0.127" layer="21"/>
-<wire x1="-1.4224" y1="0.6604" x2="-0.7396" y2="0.6604" width="0.127" layer="21"/>
-<wire x1="0.6396" y1="0.6604" x2="1.4224" y2="0.6604" width="0.127" layer="21"/>
+<description>&lt;b&gt;SOT-23&lt;/b&gt;</description>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
 <rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
 <rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
 <rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
@@ -137,29 +136,95 @@ by exp-lbrs-filter.ulp</description>
 <text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
 </package>
-<package name="C0805K">
-<description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0805 reflow solder&lt;/b&gt;&lt;p&gt;
-Metric Code Size 2012</description>
-<wire x1="-0.925" y1="0.6" x2="0.925" y2="0.6" width="0.1016" layer="51"/>
-<wire x1="0.925" y1="-0.6" x2="-0.925" y2="-0.6" width="0.1016" layer="51"/>
-<rectangle x1="-1" y1="-0.65" x2="-0.5" y2="0.65" layer="51"/>
-<rectangle x1="0.5" y1="-0.65" x2="1" y2="0.65" layer="51"/>
-<smd name="1" x="-1" y="0" dx="1.3" dy="1.6" layer="1"/>
-<smd name="2" x="1" y="0" dx="1.3" dy="1.6" layer="1"/>
-<text x="-1" y="0.875" size="1.016" layer="25">&gt;NAME</text>
-<text x="-1" y="-1.9" size="1.016" layer="27">&gt;VALUE</text>
+<package name="UD-6,3X5,8_NICHICON">
+<description>&lt;b&gt;ALUMINUM ELECTROLYTIC CAPACITORS&lt;/b&gt; UD Series 6.3 x 5.8 mm&lt;p&gt;
+Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
+<circle x="0" y="0" radius="3.1001" width="0.1016" layer="51"/>
+<wire x1="-3.25" y1="3.25" x2="2.45" y2="3.25" width="0.1016" layer="51"/>
+<wire x1="2.45" y1="3.25" x2="3.25" y2="2.45" width="0.1016" layer="51"/>
+<wire x1="3.25" y1="2.45" x2="3.25" y2="-2.45" width="0.1016" layer="51"/>
+<wire x1="3.25" y1="-2.45" x2="2.45" y2="-3.25" width="0.1016" layer="51"/>
+<wire x1="2.45" y1="-3.25" x2="-3.25" y2="-3.25" width="0.1016" layer="51"/>
+<wire x1="-3.25" y1="-3.25" x2="-3.25" y2="3.25" width="0.1016" layer="51"/>
+<wire x1="-3" y1="0.775" x2="2.975" y2="0.85" width="0.1016" layer="21" curve="-149.753145"/>
+<wire x1="-3.25" y1="0.8" x2="-3.25" y2="3.25" width="0.1016" layer="21"/>
+<wire x1="-3.25" y1="3.25" x2="2.45" y2="3.25" width="0.1016" layer="21"/>
+<wire x1="2.45" y1="3.25" x2="3.25" y2="2.45" width="0.1016" layer="21"/>
+<wire x1="3.25" y1="-2.45" x2="2.45" y2="-3.25" width="0.1016" layer="21"/>
+<wire x1="2.45" y1="-3.25" x2="-3.25" y2="-3.25" width="0.1016" layer="21"/>
+<wire x1="-3.25" y1="-3.25" x2="-3.25" y2="-0.7" width="0.1016" layer="21"/>
+<wire x1="3" y1="-0.775" x2="-2.975" y2="-0.85" width="0.1016" layer="21" curve="-149.753145"/>
+<smd name="+" x="2.65" y="0" dx="3.4" dy="1" layer="1"/>
+<smd name="-" x="-2.65" y="0" dx="3.4" dy="1" layer="1"/>
+<text x="-3.175" y="3.81" size="1.016" layer="25">&gt;NAME</text>
+<text x="-3.175" y="-4.445" size="1.016" layer="27">&gt;VALUE</text>
+<polygon width="0.1016" layer="51">
+<vertex x="-2.2" y="2.15" curve="88.581463"/>
+<vertex x="-2.2" y="-2.15"/>
+</polygon>
 </package>
-<package name="C0603K">
-<description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0603 reflow solder&lt;/b&gt;&lt;p&gt;
-Metric Code Size 1608</description>
-<wire x1="-0.725" y1="0.35" x2="0.725" y2="0.35" width="0.1016" layer="51"/>
-<wire x1="0.725" y1="-0.35" x2="-0.725" y2="-0.35" width="0.1016" layer="51"/>
-<rectangle x1="-0.8" y1="-0.4" x2="-0.45" y2="0.4" layer="51"/>
-<rectangle x1="0.45" y1="-0.4" x2="0.8" y2="0.4" layer="51"/>
-<smd name="1" x="-0.875" y="0" dx="1.05" dy="1.08" layer="1"/>
-<smd name="2" x="0.875" y="0" dx="1.05" dy="1.08" layer="1"/>
-<text x="-0.8" y="0.65" size="1.016" layer="25">&gt;NAME</text>
-<text x="-0.8" y="-1.65" size="1.016" layer="27">&gt;VALUE</text>
+<package name="CRYSTAL">
+<description>&lt;b&gt;Model 406 6.0x3.5mm Low Cost Surface Mount Crystal&lt;/b&gt;&lt;p&gt;
+Source: 008-0260-0_E.pdf</description>
+<wire x1="-0.5" y1="1.4" x2="0.5" y2="1.4" width="0.127" layer="21"/>
+<wire x1="1.7" y1="1.3" x2="1.7" y2="-1.3" width="0.127" layer="21"/>
+<wire x1="0.5" y1="-1.4" x2="-0.5" y2="-1.4" width="0.127" layer="21"/>
+<wire x1="-1.7" y1="-1.3" x2="-1.7" y2="1.3" width="0.127" layer="21"/>
+<smd name="1" x="-1.075" y="-1.025" dx="0.9" dy="1.5" layer="1"/>
+<smd name="2" x="1.075" y="-1.025" dx="0.9" dy="1.5" layer="1"/>
+<smd name="3" x="1.075" y="1.025" dx="0.9" dy="1.5" layer="1"/>
+<smd name="4" x="-1.075" y="1.025" dx="0.9" dy="1.5" layer="1"/>
+<text x="-2.54" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.54" y="-3.81" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="AG">
+<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
+diameter 9 mm, horizontal, grid 10.16 mm</description>
+<wire x1="-4.699" y1="-4.572" x2="-4.699" y2="4.572" width="0.1524" layer="21"/>
+<wire x1="4.699" y1="4.572" x2="4.699" y2="-4.572" width="0.1524" layer="21"/>
+<wire x1="-4.699" y1="4.572" x2="4.699" y2="4.572" width="0.1524" layer="21"/>
+<wire x1="4.699" y1="-4.572" x2="-4.699" y2="-4.572" width="0.1524" layer="21"/>
+<wire x1="-1.143" y1="0" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="0" y1="0" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="0" x2="2.54" y2="0" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="0" x2="5.842" y2="0" width="1.4732" layer="51"/>
+<wire x1="-7.62" y1="0" x2="-5.842" y2="0" width="1.4732" layer="51"/>
+<wire x1="-0.381" y1="0.508" x2="-0.381" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-0.381" y1="0.635" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="0.381" y1="-0.508" x2="0.381" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="0.381" y1="-0.635" x2="0" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="-0.635" x2="0" y2="0" width="0.1524" layer="21"/>
+<rectangle x1="-3.81" y1="-4.572" x2="-3.302" y2="4.572" layer="21"/>
+<rectangle x1="4.699" y1="-0.7112" x2="5.6134" y2="0.7112" layer="21"/>
+<rectangle x1="-5.6134" y1="-0.7112" x2="-4.699" y2="0.7112" layer="21"/>
+<pad name="A" x="7.62" y="0" drill="1.8034" shape="long"/>
+<pad name="C" x="-7.62" y="0" drill="1.8034" shape="long"/>
+<text x="-4.8006" y="4.8514" size="1.778" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.4892" y="-3.302" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+<package name="SOT223">
+<description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;</description>
+<wire x1="3.2766" y1="1.778" x2="3.2766" y2="-1.778" width="0.2032" layer="21"/>
+<wire x1="3.2766" y1="-1.778" x2="-3.2766" y2="-1.778" width="0.2032" layer="21"/>
+<wire x1="-3.2766" y1="-1.778" x2="-3.2766" y2="1.778" width="0.2032" layer="21"/>
+<wire x1="-3.2766" y1="1.778" x2="3.2766" y2="1.778" width="0.2032" layer="21"/>
+<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
+<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
+<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
+<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
+<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
+<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
+<smd name="1" x="-2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
+<smd name="2" x="0" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
+<smd name="3" x="2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
+<smd name="4" x="0" y="3.099" dx="3.6" dy="2.2" layer="1"/>
+<text x="-2.54" y="0.0508" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.54" y="-1.3208" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="HVQFN33-5MM">
 <description>&lt;h2&gt;HVQFN-33&lt;/h2&gt;7x7x0.85mm
@@ -225,6 +290,21 @@ Metric Code Size 1608</description>
 <package name="MOUNTING_HOLE">
 <pad name="P1" x="0" y="0" drill="4.3" stop="no" thermals="no"/>
 </package>
+<package name="1X01">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.016" shape="octagon"/>
+<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+</package>
 <package name="SC75-BEC">
 <description>SC59 (SOT23) Motorola</description>
 <wire x1="0.8" y1="0.6" x2="0.8" y2="-0.1" width="0.127" layer="21"/>
@@ -268,6 +348,59 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <text x="-0.635" y="0.635" size="1.27" layer="25">&gt;NAME</text>
 <text x="-0.635" y="-1.905" size="1.27" layer="27">&gt;VALUE</text>
 </package>
+<package name="R0805">
+<description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
+chip</description>
+<wire x1="-0.41" y1="0.635" x2="0.41" y2="0.635" width="0.1524" layer="51"/>
+<wire x1="-0.41" y1="-0.635" x2="0.41" y2="-0.635" width="0.1524" layer="51"/>
+<wire x1="-1.973" y1="0.983" x2="1.973" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="1.973" y1="0.983" x2="1.973" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="1.973" y1="-0.983" x2="-1.973" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="-1.973" y1="-0.983" x2="-1.973" y2="0.983" width="0.0508" layer="39"/>
+<smd name="1" x="-0.85" y="0" dx="1.3" dy="1.5" layer="1"/>
+<smd name="2" x="0.85" y="0" dx="1.3" dy="1.5" layer="1"/>
+<text x="-0.762" y="1.016" size="1.27" layer="25">&gt;NAME</text>
+<text x="-0.762" y="-2.286" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="0.4064" y1="-0.6985" x2="1.0564" y2="0.7015" layer="51"/>
+<rectangle x1="-1.0668" y1="-0.6985" x2="-0.4168" y2="0.7015" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.5001" x2="0.1999" y2="0.5001" layer="35"/>
+</package>
+<package name="REED">
+<description>&lt;b&gt;RELAY&lt;/b&gt;&lt;p&gt;
+reed, 1 x norm. open with polarity, grid 5.08</description>
+<circle x="-11.43" y="1.651" radius="0.127" width="0.254" layer="21"/>
+<wire x1="-20.32" y1="5.08" x2="0" y2="5.08" width="0.254" layer="21"/>
+<wire x1="0" y1="5.08" x2="0" y2="0" width="0.254" layer="21"/>
+<wire x1="0" y1="0" x2="-20.32" y2="0" width="0.254" layer="21"/>
+<wire x1="-20.32" y1="0" x2="-20.32" y2="1.27" width="0.254" layer="21"/>
+<wire x1="-20.32" y1="1.27" x2="-20.32" y2="3.81" width="0.254" layer="21"/>
+<wire x1="-20.32" y1="3.81" x2="-20.32" y2="5.08" width="0.254" layer="21"/>
+<wire x1="-20.32" y1="3.81" x2="-19.05" y2="2.54" width="0.254" layer="21"/>
+<wire x1="-19.05" y1="2.54" x2="-20.32" y2="1.27" width="0.254" layer="21"/>
+<wire x1="-10.795" y1="3.81" x2="-9.525" y2="3.81" width="0.254" layer="21"/>
+<wire x1="-9.525" y1="3.81" x2="-9.525" y2="3.175" width="0.254" layer="21"/>
+<wire x1="-9.525" y1="3.175" x2="-9.525" y2="2.54" width="0.254" layer="21"/>
+<wire x1="-9.525" y1="2.54" x2="-9.525" y2="1.27" width="0.254" layer="21"/>
+<wire x1="-9.525" y1="1.27" x2="-10.795" y2="1.27" width="0.254" layer="21"/>
+<wire x1="-10.795" y1="1.27" x2="-10.795" y2="1.905" width="0.254" layer="21"/>
+<wire x1="-10.795" y1="1.905" x2="-10.795" y2="2.54" width="0.254" layer="21"/>
+<wire x1="-10.795" y1="2.54" x2="-10.795" y2="3.81" width="0.254" layer="21"/>
+<wire x1="-10.795" y1="1.905" x2="-9.525" y2="3.175" width="0.254" layer="21"/>
+<wire x1="-10.795" y1="2.54" x2="-11.43" y2="2.54" width="0.254" layer="21"/>
+<wire x1="-9.525" y1="2.54" x2="-8.89" y2="2.54" width="0.254" layer="21"/>
+<wire x1="-17.78" y1="3.81" x2="-17.78" y2="4.445" width="0.254" layer="21"/>
+<wire x1="-17.78" y1="4.445" x2="-16.51" y2="4.445" width="0.254" layer="21"/>
+<wire x1="-14.605" y1="4.445" x2="-2.54" y2="4.445" width="0.254" layer="21"/>
+<wire x1="-2.54" y1="4.445" x2="-2.54" y2="3.81" width="0.254" layer="21"/>
+<wire x1="-16.51" y1="4.445" x2="-14.605" y2="3.81" width="0.254" layer="21"/>
+<pad name="1" x="-17.78" y="2.54" drill="0.8128" shape="long" rot="R90"/>
+<pad name="3" x="-12.7" y="2.54" drill="0.8128" shape="long" rot="R90"/>
+<pad name="5" x="-7.62" y="2.54" drill="0.8128" shape="long" rot="R90"/>
+<pad name="7" x="-2.54" y="2.54" drill="0.8128" shape="long" rot="R90"/>
+<text x="-19.685" y="0.635" size="0.4064" layer="48">Günther 3570.1331..</text>
+<text x="-19.685" y="5.715" size="1.27" layer="25">&gt;NAME</text>
+<text x="-12.7" y="5.715" size="1.27" layer="27">&gt;VALUE</text>
+</package>
 <package name="SWD-HEADER">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <wire x1="-3.81" y1="1.8" x2="3.81" y2="1.8" width="0.127" layer="21"/>
@@ -289,6 +422,23 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <pad name="10" x="2.54" y="0.635" drill="0.6" diameter="0.9906"/>
 <text x="-1.27" y="3.175" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-1.27" y="-4.445" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="PE-65612">
+<description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="http://ww2.pulseeng.com/products/datasheets/T601.pdf"&gt; Data sheet &lt;/a&gt;&lt;br&gt;
+www.pulseeng.com</description>
+<wire x1="-6.35" y1="-4.355" x2="6.35" y2="-4.355" width="0.2032" layer="21"/>
+<wire x1="6.35" y1="-4.355" x2="6.35" y2="3.355" width="0.2032" layer="21"/>
+<wire x1="6.35" y1="3.355" x2="5.35" y2="4.355" width="0.2032" layer="21" curve="90"/>
+<wire x1="5.35" y1="4.355" x2="-5.35" y2="4.355" width="0.2032" layer="21"/>
+<wire x1="-5.35" y1="4.355" x2="-6.35" y2="3.355" width="0.2032" layer="21" curve="90"/>
+<wire x1="-6.35" y1="3.355" x2="-6.35" y2="-4.355" width="0.2032" layer="21"/>
+<pad name="1" x="-5.08" y="-2.54" drill="0.8" diameter="1.27"/>
+<pad name="2" x="-5.08" y="2.54" drill="0.8" diameter="1.27"/>
+<pad name="3" x="5.08" y="2.54" drill="0.8" diameter="1.27"/>
+<pad name="4" x="5.08" y="-2.54" drill="0.8" diameter="1.27"/>
+<text x="-6.35" y="-6.35" size="1.27" layer="25">&gt;NAME</text>
+<text x="-5.08" y="-0.635" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="USB-MICRO">
 <description>http://www.hirose.co.jp/cataloge_hp/e24200011.pdf</description>
@@ -323,6 +473,27 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <pad name="G4" x="3.2" y="2.45" drill="0.508" diameter="1.5" shape="square" stop="no"/>
 <text x="-12.7" y="5.08" size="1.27" layer="27">&gt;VALUE</text>
 <text x="-12.7" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+</package>
+<package name="SOT-563">
+<description>&lt;b&gt;SOT-563, 6 LEAD CASE 463A-01 ISSUE F&lt;/b&gt;&lt;p&gt;
+Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
+<circle x="-0.525" y="-0.25" radius="0.1" width="0" layer="21"/>
+<wire x1="-0.75" y1="0.55" x2="-0.75" y2="-0.55" width="0.1016" layer="21"/>
+<wire x1="0.75" y1="-0.55" x2="0.75" y2="0.55" width="0.1016" layer="21"/>
+<rectangle x1="-0.675" y1="0.425" x2="-0.325" y2="0.925" layer="29"/>
+<rectangle x1="-0.175" y1="0.425" x2="0.175" y2="0.925" layer="29"/>
+<rectangle x1="0.325" y1="0.425" x2="0.675" y2="0.925" layer="29"/>
+<rectangle x1="0.325" y1="-0.925" x2="0.675" y2="-0.425" layer="29" rot="R180"/>
+<rectangle x1="-0.175" y1="-0.925" x2="0.175" y2="-0.425" layer="29" rot="R180"/>
+<rectangle x1="-0.675" y1="-0.925" x2="-0.325" y2="-0.425" layer="29" rot="R180"/>
+<smd name="1" x="-0.5" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
+<smd name="2" x="0" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
+<smd name="3" x="0.5" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
+<smd name="4" x="0.5" y="0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
+<smd name="5" x="0" y="0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
+<smd name="6" x="-0.5" y="0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
+<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="WIFI_MODULE">
 <circle x="-1.1938" y="15.8242" radius="0.508" width="0.508" layer="21"/>
@@ -384,26 +555,6 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <smd name="52" x="1.27" y="14.6685" dx="0.762" dy="2.159" layer="1" roundness="100"/>
 <smd name="TAB" x="10.16" y="7.62" dx="15.748" dy="10.668" layer="1" stop="no" thermals="no" cream="no"/>
 </package>
-</packages>
-</library>
-<library name="wifi-orb">
-<description>Generated from &lt;b&gt;wifi-orb.sch&lt;/b&gt;&lt;p&gt;
-by exp-lbrs-filter.ulp</description>
-<packages>
-<package name="CRYSTAL">
-<description>&lt;b&gt;Model 406 6.0x3.5mm Low Cost Surface Mount Crystal&lt;/b&gt;&lt;p&gt;
-Source: 008-0260-0_E.pdf</description>
-<wire x1="-0.5" y1="1.4" x2="0.5" y2="1.4" width="0.127" layer="21"/>
-<wire x1="1.7" y1="1.3" x2="1.7" y2="-1.3" width="0.127" layer="21"/>
-<wire x1="0.5" y1="-1.4" x2="-0.5" y2="-1.4" width="0.127" layer="21"/>
-<wire x1="-1.7" y1="-1.3" x2="-1.7" y2="1.3" width="0.127" layer="21"/>
-<smd name="1" x="-1.075" y="-1.025" dx="0.9" dy="1.5" layer="1"/>
-<smd name="2" x="1.075" y="-1.025" dx="0.9" dy="1.5" layer="1"/>
-<smd name="3" x="1.075" y="1.025" dx="0.9" dy="1.5" layer="1"/>
-<smd name="4" x="-1.075" y="1.025" dx="0.9" dy="1.5" layer="1"/>
-<text x="-2.54" y="2.54" size="1.27" layer="25">&gt;NAME</text>
-<text x="-2.54" y="-3.81" size="1.27" layer="27">&gt;VALUE</text>
-</package>
 <package name="C0402K">
 <description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0204 reflow solder&lt;/b&gt;&lt;p&gt;
 Metric Code Size 1005</description>
@@ -415,86 +566,6 @@ Metric Code Size 1005</description>
 <smd name="2" x="0.6" y="0" dx="0.925" dy="0.74" layer="1"/>
 <text x="-0.5" y="0.425" size="1.016" layer="25">&gt;NAME</text>
 <text x="-0.5" y="-1.45" size="1.016" layer="27">&gt;VALUE</text>
-</package>
-<package name="SOT223">
-<description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;</description>
-<wire x1="3.2766" y1="1.778" x2="3.2766" y2="-1.778" width="0.2032" layer="21"/>
-<wire x1="3.2766" y1="-1.778" x2="-3.2766" y2="-1.778" width="0.2032" layer="21"/>
-<wire x1="-3.2766" y1="-1.778" x2="-3.2766" y2="1.778" width="0.2032" layer="21"/>
-<wire x1="-3.2766" y1="1.778" x2="3.2766" y2="1.778" width="0.2032" layer="21"/>
-<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
-<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
-<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
-<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
-<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
-<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
-<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
-<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
-<smd name="1" x="-2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
-<smd name="2" x="0" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
-<smd name="3" x="2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
-<smd name="4" x="0" y="3.099" dx="3.6" dy="2.2" layer="1"/>
-<text x="-2.54" y="0.0508" size="1.27" layer="25">&gt;NAME</text>
-<text x="-2.54" y="-1.3208" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-<package name="SOT-563">
-<description>&lt;b&gt;SOT-563, 6 LEAD CASE 463A-01 ISSUE F&lt;/b&gt;&lt;p&gt;
-Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
-<circle x="-0.525" y="-0.25" radius="0.1" width="0" layer="21"/>
-<wire x1="-0.75" y1="0.55" x2="-0.75" y2="-0.55" width="0.1016" layer="21"/>
-<wire x1="0.75" y1="-0.55" x2="0.75" y2="0.55" width="0.1016" layer="21"/>
-<rectangle x1="-0.675" y1="0.425" x2="-0.325" y2="0.925" layer="29"/>
-<rectangle x1="-0.175" y1="0.425" x2="0.175" y2="0.925" layer="29"/>
-<rectangle x1="0.325" y1="0.425" x2="0.675" y2="0.925" layer="29"/>
-<rectangle x1="0.325" y1="-0.925" x2="0.675" y2="-0.425" layer="29" rot="R180"/>
-<rectangle x1="-0.175" y1="-0.925" x2="0.175" y2="-0.425" layer="29" rot="R180"/>
-<rectangle x1="-0.675" y1="-0.925" x2="-0.325" y2="-0.425" layer="29" rot="R180"/>
-<smd name="1" x="-0.5" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
-<smd name="2" x="0" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
-<smd name="3" x="0.5" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
-<smd name="4" x="0.5" y="0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
-<smd name="5" x="0" y="0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
-<smd name="6" x="-0.5" y="0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
-<text x="-1" y="1" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1" y="-2.5" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-<package name="UD-6,3X5,8_NICHICON">
-<description>&lt;b&gt;ALUMINUM ELECTROLYTIC CAPACITORS&lt;/b&gt; UD Series 6.3 x 5.8 mm&lt;p&gt;
-Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
-<circle x="0" y="0" radius="3.1001" width="0.1016" layer="51"/>
-<wire x1="-3.25" y1="3.25" x2="2.45" y2="3.25" width="0.1016" layer="51"/>
-<wire x1="2.45" y1="3.25" x2="3.25" y2="2.45" width="0.1016" layer="51"/>
-<wire x1="3.25" y1="2.45" x2="3.25" y2="-2.45" width="0.1016" layer="51"/>
-<wire x1="3.25" y1="-2.45" x2="2.45" y2="-3.25" width="0.1016" layer="51"/>
-<wire x1="2.45" y1="-3.25" x2="-3.25" y2="-3.25" width="0.1016" layer="51"/>
-<wire x1="-3.25" y1="-3.25" x2="-3.25" y2="3.25" width="0.1016" layer="51"/>
-<wire x1="-3" y1="0.775" x2="2.975" y2="0.85" width="0.1016" layer="21" curve="-149.753145"/>
-<wire x1="-3.25" y1="0.8" x2="-3.25" y2="3.25" width="0.1016" layer="21"/>
-<wire x1="-3.25" y1="3.25" x2="2.45" y2="3.25" width="0.1016" layer="21"/>
-<wire x1="2.45" y1="3.25" x2="3.25" y2="2.45" width="0.1016" layer="21"/>
-<wire x1="3.25" y1="-2.45" x2="2.45" y2="-3.25" width="0.1016" layer="21"/>
-<wire x1="2.45" y1="-3.25" x2="-3.25" y2="-3.25" width="0.1016" layer="21"/>
-<wire x1="-3.25" y1="-3.25" x2="-3.25" y2="-0.7" width="0.1016" layer="21"/>
-<wire x1="3" y1="-0.775" x2="-2.975" y2="-0.85" width="0.1016" layer="21" curve="-149.753145"/>
-<smd name="+" x="2.65" y="0" dx="3.4" dy="1" layer="1"/>
-<smd name="-" x="-2.65" y="0" dx="3.4" dy="1" layer="1"/>
-<text x="-3.175" y="3.81" size="1.016" layer="25">&gt;NAME</text>
-<text x="-3.175" y="-4.445" size="1.016" layer="27">&gt;VALUE</text>
-<polygon width="0.1016" layer="51">
-<vertex x="-2.2" y="2.15" curve="88.581463"/>
-<vertex x="-2.2" y="-2.15"/>
-</polygon>
-</package>
-<package name="R0402">
-<description>&lt;b&gt;RESISTOR&lt;/b&gt;</description>
-<wire x1="-0.245" y1="0.224" x2="0.245" y2="0.224" width="0.1524" layer="51"/>
-<wire x1="0.245" y1="-0.224" x2="-0.245" y2="-0.224" width="0.1524" layer="51"/>
-<rectangle x1="-0.554" y1="-0.3048" x2="-0.254" y2="0.2951" layer="51"/>
-<rectangle x1="0.2588" y1="-0.3048" x2="0.5588" y2="0.2951" layer="51"/>
-<smd name="1" x="-0.55" y="0" dx="0.5" dy="0.6" layer="1"/>
-<smd name="2" x="0.55" y="0" dx="0.5" dy="0.6" layer="1"/>
-<text x="-0.635" y="0.635" size="1.27" layer="25">&gt;NAME</text>
-<text x="-0.635" y="-1.905" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="C0603K">
 <description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0603 reflow solder&lt;/b&gt;&lt;p&gt;
@@ -508,164 +579,17 @@ Metric Code Size 1608</description>
 <text x="-0.8" y="0.65" size="1.016" layer="25">&gt;NAME</text>
 <text x="-0.8" y="-1.65" size="1.016" layer="27">&gt;VALUE</text>
 </package>
-</packages>
-</library>
-<library name="pinhead">
-<description>&lt;b&gt;Pin Header Connectors&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="1X01">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
-<pad name="1" x="0" y="0" drill="1.016" shape="octagon"/>
-<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
-</package>
-</packages>
-</library>
-<library name="transistor-npn">
-<description>&lt;b&gt;NPN Transistors&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="SOT23">
-<description>&lt;b&gt;SOT-23&lt;/b&gt;</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<smd name="3" x="0" y="1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="2" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="1" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
-<rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
-<rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
-</package>
-</packages>
-</library>
-<library name="relay">
-<description>&lt;b&gt;Relays&lt;/b&gt;&lt;p&gt;
-&lt;ul&gt;
-&lt;li&gt;Eichhoff
-&lt;li&gt;Finder
-&lt;li&gt;Fujitsu
-&lt;li&gt;HAMLIN
-&lt;li&gt;OMRON
-&lt;li&gt;Matsushita
-&lt;li&gt;NAiS
-&lt;li&gt;Siemens
-&lt;li&gt;Schrack
-&lt;/ul&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="REED">
-<description>&lt;b&gt;RELAY&lt;/b&gt;&lt;p&gt;
-reed, 1 x norm. open with polarity, grid 5.08</description>
-<wire x1="-20.32" y1="5.08" x2="0" y2="5.08" width="0.254" layer="21"/>
-<wire x1="0" y1="5.08" x2="0" y2="0" width="0.254" layer="21"/>
-<wire x1="0" y1="0" x2="-20.32" y2="0" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="0" x2="-20.32" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="1.27" x2="-20.32" y2="3.81" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="3.81" x2="-20.32" y2="5.08" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="3.81" x2="-19.05" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-19.05" y1="2.54" x2="-20.32" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="3.81" x2="-9.525" y2="3.81" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="3.81" x2="-9.525" y2="3.175" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="3.175" x2="-9.525" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="2.54" x2="-9.525" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="1.27" x2="-10.795" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="1.27" x2="-10.795" y2="1.905" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="1.905" x2="-10.795" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="2.54" x2="-10.795" y2="3.81" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="1.905" x2="-9.525" y2="3.175" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="2.54" x2="-11.43" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="2.54" x2="-8.89" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-17.78" y1="3.81" x2="-17.78" y2="4.445" width="0.254" layer="21"/>
-<wire x1="-17.78" y1="4.445" x2="-16.51" y2="4.445" width="0.254" layer="21"/>
-<wire x1="-14.605" y1="4.445" x2="-2.54" y2="4.445" width="0.254" layer="21"/>
-<wire x1="-2.54" y1="4.445" x2="-2.54" y2="3.81" width="0.254" layer="21"/>
-<wire x1="-16.51" y1="4.445" x2="-14.605" y2="3.81" width="0.254" layer="21"/>
-<circle x="-11.43" y="1.651" radius="0.127" width="0.254" layer="21"/>
-<pad name="7" x="-2.54" y="2.54" drill="0.8128" shape="long" rot="R90"/>
-<pad name="5" x="-7.62" y="2.54" drill="0.8128" shape="long" rot="R90"/>
-<pad name="3" x="-12.7" y="2.54" drill="0.8128" shape="long" rot="R90"/>
-<pad name="1" x="-17.78" y="2.54" drill="0.8128" shape="long" rot="R90"/>
-<text x="-19.685" y="0.635" size="0.4064" layer="48">Günther 3570.1331..</text>
-<text x="-19.685" y="5.715" size="1.27" layer="25">&gt;NAME</text>
-<text x="-12.7" y="5.715" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-</library>
-<library name="transformer-pulse">
-<description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
-www.pulseeng.com</description>
-<packages>
-<package name="PE-65612">
-<description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="http://ww2.pulseeng.com/products/datasheets/T601.pdf"&gt; Data sheet &lt;/a&gt;&lt;br&gt;
-www.pulseeng.com</description>
-<pad name="1" x="-5.08" y="-2.54" drill="0.8" diameter="1.27"/>
-<pad name="2" x="-5.08" y="2.54" drill="0.8" diameter="1.27"/>
-<pad name="3" x="5.08" y="2.54" drill="0.8" diameter="1.27"/>
-<pad name="4" x="5.08" y="-2.54" drill="0.8" diameter="1.27"/>
-<wire x1="-6.35" y1="-4.355" x2="6.35" y2="-4.355" width="0.2032" layer="21"/>
-<wire x1="6.35" y1="-4.355" x2="6.35" y2="3.355" width="0.2032" layer="21"/>
-<wire x1="6.35" y1="3.355" x2="5.35" y2="4.355" width="0.2032" layer="21" curve="90"/>
-<wire x1="5.35" y1="4.355" x2="-5.35" y2="4.355" width="0.2032" layer="21"/>
-<wire x1="-5.35" y1="4.355" x2="-6.35" y2="3.355" width="0.2032" layer="21" curve="90"/>
-<wire x1="-6.35" y1="3.355" x2="-6.35" y2="-4.355" width="0.2032" layer="21"/>
-<text x="-6.35" y="-6.35" size="1.27" layer="25">&gt;NAME</text>
-<text x="-5.08" y="-0.635" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-</library>
-<library name="diode">
-<description>&lt;b&gt;Diodes&lt;/b&gt;&lt;p&gt;
-Based on the following sources:
-&lt;ul&gt;
-&lt;li&gt;Motorola : www.onsemi.com
-&lt;li&gt;Fairchild : www.fairchildsemi.com
-&lt;li&gt;Philips : www.semiconductors.com
-&lt;li&gt;Vishay : www.vishay.de
-&lt;/ul&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="AG">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-diameter 9 mm, horizontal, grid 10.16 mm</description>
-<wire x1="-4.699" y1="-4.572" x2="-4.699" y2="4.572" width="0.1524" layer="21"/>
-<wire x1="4.699" y1="4.572" x2="4.699" y2="-4.572" width="0.1524" layer="21"/>
-<wire x1="-4.699" y1="4.572" x2="4.699" y2="4.572" width="0.1524" layer="21"/>
-<wire x1="4.699" y1="-4.572" x2="-4.699" y2="-4.572" width="0.1524" layer="21"/>
-<wire x1="-1.143" y1="0" x2="0" y2="0" width="0.1524" layer="21"/>
-<wire x1="0" y1="0" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0" x2="2.54" y2="0" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="-0.635" x2="0" y2="0" width="0.1524" layer="21"/>
-<wire x1="7.62" y1="0" x2="5.842" y2="0" width="1.4732" layer="51"/>
-<wire x1="-7.62" y1="0" x2="-5.842" y2="0" width="1.4732" layer="51"/>
-<wire x1="-0.381" y1="0.508" x2="-0.381" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-0.381" y1="0.635" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="0" y2="0" width="0.1524" layer="21"/>
-<wire x1="0.381" y1="-0.508" x2="0.381" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="0.381" y1="-0.635" x2="0" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="-0.635" x2="0" y2="0" width="0.1524" layer="21"/>
-<pad name="C" x="-7.62" y="0" drill="1.8034" shape="long"/>
-<pad name="A" x="7.62" y="0" drill="1.8034" shape="long"/>
-<text x="-4.8006" y="4.8514" size="1.778" layer="25" ratio="10">&gt;NAME</text>
-<text x="-2.4892" y="-3.302" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
-<rectangle x1="-3.81" y1="-4.572" x2="-3.302" y2="4.572" layer="21"/>
-<rectangle x1="4.699" y1="-0.7112" x2="5.6134" y2="0.7112" layer="21"/>
-<rectangle x1="-5.6134" y1="-0.7112" x2="-4.699" y2="0.7112" layer="21"/>
+<package name="C0805K">
+<description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0805 reflow solder&lt;/b&gt;&lt;p&gt;
+Metric Code Size 2012</description>
+<wire x1="-0.925" y1="0.6" x2="0.925" y2="0.6" width="0.1016" layer="51"/>
+<wire x1="0.925" y1="-0.6" x2="-0.925" y2="-0.6" width="0.1016" layer="51"/>
+<rectangle x1="-1" y1="-0.65" x2="-0.5" y2="0.65" layer="51"/>
+<rectangle x1="0.5" y1="-0.65" x2="1" y2="0.65" layer="51"/>
+<smd name="1" x="-1" y="0" dx="1.3" dy="1.6" layer="1"/>
+<smd name="2" x="1" y="0" dx="1.3" dy="1.6" layer="1"/>
+<text x="-1" y="0.875" size="1.016" layer="25">&gt;NAME</text>
+<text x="-1" y="-1.9" size="1.016" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 </library>
@@ -861,123 +785,123 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="J1" library="wifi_orb" package="USB-MICRO" value="MICRO USB" x="12.954" y="75.4" smashed="yes" rot="R270"/>
-<element name="MH$1" library="wifi_orb" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="98.13" y="72.86" smashed="yes"/>
-<element name="MH$2" library="wifi_orb" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="90.786" y="66.234" smashed="yes"/>
-<element name="MH$3" library="wifi_orb" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="99.322" y="66.496" smashed="yes"/>
-<element name="MH$4" library="wifi_orb" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="90.178" y="72.874" smashed="yes"/>
-<element name="S1" library="wifi_orb" package="PUSH_BUTTON" value="PUSH_BUTTON" x="58.801" y="59.563" smashed="yes" rot="R180"/>
-<element name="C7" library="wifi_orb" package="C0603K" value="1u" x="29.52" y="60.067" smashed="yes" rot="R270">
+<element name="J1" library="phone-finder" package="USB-MICRO" value="MICRO USB" x="12.954" y="75.4" smashed="yes" rot="R270"/>
+<element name="MH$1" library="phone-finder" package="MOUNTING_HOLE" value="MOUNTING-HOLE" x="98.13" y="72.86" smashed="yes"/>
+<element name="MH$2" library="phone-finder" package="MOUNTING_HOLE" value="MOUNTING-HOLE" x="90.786" y="66.234" smashed="yes"/>
+<element name="MH$3" library="phone-finder" package="MOUNTING_HOLE" value="MOUNTING-HOLE" x="99.322" y="66.496" smashed="yes"/>
+<element name="MH$4" library="phone-finder" package="MOUNTING_HOLE" value="MOUNTING-HOLE" x="90.178" y="72.874" smashed="yes"/>
+<element name="S1" library="phone-finder" package="PUSH_BUTTON" value="PUSH-BUTTON" x="58.801" y="59.563" smashed="yes" rot="R180"/>
+<element name="C7" library="phone-finder" package="C0603K" value="1u" x="29.52" y="60.067" smashed="yes" rot="R270">
 <attribute name="NAME" x="30.028" y="61.942" size="1.016" layer="25" font="vector" ratio="12" rot="R90"/>
 </element>
-<element name="C6" library="wifi_orb" package="C0603K" value="1u" x="27.456" y="63.56" smashed="yes" rot="R90">
+<element name="C6" library="phone-finder" package="C0603K" value="1u" x="27.456" y="63.56" smashed="yes" rot="R90">
 <attribute name="NAME" x="26.565" y="60.824" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="U3" library="wifi_orb" package="HVQFN33-5MM" value="LPC11U35FHI33/501" x="23.664" y="79.902" smashed="yes" rot="R270">
+<element name="U3" library="phone-finder" package="HVQFN33-5MM" value="LPC11U35FHI33/501" x="23.664" y="79.902" smashed="yes" rot="R270">
 <attribute name="NAME" x="25.945" y="75.701" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="Q1" library="wifi-orb" package="CRYSTAL" value="12Mhz" x="20.893" y="85.739" smashed="yes">
+<element name="Q1" library="phone-finder" package="CRYSTAL" value="12Mhz" x="20.893" y="85.739" smashed="yes">
 <attribute name="OC_NEWARK" value="unknown" x="-14.107" y="90.739" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="-14.107" y="90.739" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="" x="-14.107" y="90.739" size="1.778" layer="27" display="off"/>
 <attribute name="OC_FARNELL" value="unknown" x="-14.107" y="90.739" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="20.131" y="87.771" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="C1" library="wifi-orb" package="C0402K" value="18pF" x="24.059" y="86.055" smashed="yes" rot="R270">
+<element name="C1" library="phone-finder" package="C0402K" value="18pF" x="24.059" y="86.055" smashed="yes" rot="R270">
 <attribute name="NAME" x="24.824" y="85.571" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="C2" library="wifi-orb" package="C0402K" value="18pF" x="16.454" y="86.712" smashed="yes" rot="R90">
+<element name="C2" library="phone-finder" package="C0402K" value="18pF" x="16.454" y="86.712" smashed="yes" rot="R90">
 <attribute name="NAME" x="13.949" y="86.206" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="C4" library="wifi_orb" package="C0603K" value="0.1uF" x="29.971" y="80.24" smashed="yes">
+<element name="C4" library="phone-finder" package="C0402K" value="0.1uF" x="29.971" y="80.24" smashed="yes">
 <attribute name="NAME" x="28.836" y="78.379" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="C3" library="wifi_orb" package="C0603K" value="0.1uF" x="16.732" y="83.59" smashed="yes" rot="R180">
+<element name="C3" library="phone-finder" package="C0402K" value="0.1uF" x="16.732" y="83.59" smashed="yes" rot="R180">
 <attribute name="NAME" x="13.248" y="82.951" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="R1" library="wifi_orb" package="R0402" value="1K5" x="18.08" y="73.603" smashed="yes">
+<element name="R1" library="phone-finder" package="R0402" value="1K5" x="18.08" y="73.603" smashed="yes">
 <attribute name="NAME" x="18.218" y="70.404" size="1.016" layer="25" font="vector" ratio="12" rot="R90"/>
 </element>
-<element name="J2" library="wifi_orb" package="SWD-HEADER" value="SWD HEADER" x="26.975" y="72.531" smashed="yes">
+<element name="J2" library="phone-finder" package="SWD-HEADER" value="SWD HEADER" x="26.975" y="72.531" smashed="yes">
 <attribute name="NAME" x="27.483" y="69.356" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="R4" library="wifi_orb" package="R0402" value="10K" x="21.279" y="70.011" smashed="yes" rot="R270">
+<element name="R4" library="phone-finder" package="R0402" value="10K" x="21.279" y="70.011" smashed="yes" rot="R270">
 <attribute name="NAME" x="19.143" y="68.777" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="R5" library="wifi_orb" package="R0402" value="10K" x="24.397" y="75.508" smashed="yes">
+<element name="R5" library="phone-finder" package="R0402" value="10K" x="24.397" y="75.508" smashed="yes">
 <attribute name="NAME" x="22.238" y="76.27" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="R3" library="wifi_orb" package="R0402" value="10K" x="29.404" y="75.495" smashed="yes" rot="R180">
+<element name="R3" library="phone-finder" package="R0402" value="10K" x="29.404" y="75.495" smashed="yes" rot="R180">
 <attribute name="NAME" x="30.032" y="76.143" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="S2" library="wifi_orb" package="PUSH_BUTTON" value="PUSH_BUTTON" x="58.547" y="65.786" smashed="yes" rot="R180"/>
-<element name="R2" library="wifi_orb" package="R0402" value="10K" x="18.185" y="80.776" smashed="yes" rot="R90">
+<element name="S2" library="phone-finder" package="PUSH_BUTTON" value="PUSH-BUTTON" x="58.547" y="65.786" smashed="yes" rot="R180"/>
+<element name="R2" library="phone-finder" package="R0402" value="10K" x="18.185" y="80.776" smashed="yes" rot="R90">
 <attribute name="NAME" x="16.895" y="78.335" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="T1" library="wifi_orb" package="SC75-BEC" value="DTA114EET1G (2x10K)" x="20.654" y="72.822" smashed="yes" rot="R90">
+<element name="T1" library="phone-finder" package="SC75-BEC" value="DTA114EET1G (2x10K)" x="20.654" y="72.822" smashed="yes" rot="R90">
 <attribute name="NAME" x="19.482" y="73.961" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="U1" library="wifi-orb" package="SOT223" value="AP2114H-3.3TRG1" x="23.946" y="65.528" smashed="yes" rot="R270">
+<element name="U1" library="phone-finder" package="SOT223" value="AP2114H-3.3TRG1" x="23.946" y="65.528" smashed="yes" rot="R270">
 <attribute name="NAME" x="23.245" y="69.4628" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="U2" library="wifi-orb" package="SOT-563" value="NUF2042XV6T1G" x="18.726" y="75.931" smashed="yes" rot="R90">
+<element name="U2" library="phone-finder" package="SOT-563" value="NUF2042XV6T1G" x="18.726" y="75.931" smashed="yes" rot="R90">
 <attribute name="NAME" x="18.035" y="77.27" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="D2" library="wifi_orb" package="SOT23" value="BAS40-05" x="39.705" y="63.961" smashed="yes" rot="R180">
+<element name="D2" library="phone-finder" package="SOT23" value="BAS40-05" x="39.705" y="63.961" smashed="yes" rot="R180">
 <attribute name="NAME" x="39.035" y="66.595" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="C17" library="wifi_orb" package="C0603K" value="0.1uF" x="36.473" y="65.244" smashed="yes" rot="R90">
+<element name="C17" library="phone-finder" package="C0402K" value="0.1uF" x="36.473" y="65.244" smashed="yes" rot="R90">
 <attribute name="NAME" x="35.28" y="62.377" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="C9" library="wifi_orb" package="C0805K" value="10uF" x="30.777" y="89.92" smashed="yes" rot="R90">
+<element name="C9" library="phone-finder" package="C0805K" value="10uF" x="30.777" y="89.92" smashed="yes" rot="R90">
 <attribute name="NAME" x="29.267" y="88.666" size="1.016" layer="25" font="vector" ratio="12" rot="R90"/>
 </element>
-<element name="U4" library="wifi_orb" package="WIFI_MODULE" value="AMW006" x="35.814" y="71.755" smashed="yes"/>
-<element name="C13" library="wifi_orb" package="C0603K" value="0.1uF" x="57.447" y="83.283" smashed="yes" rot="R90">
+<element name="U4" library="phone-finder" package="WIFI_MODULE" value="AMW006" x="35.814" y="71.755" smashed="yes"/>
+<element name="C13" library="phone-finder" package="C0402K" value="0.1uF" x="57.447" y="83.283" smashed="yes" rot="R90">
 <attribute name="NAME" x="56.367" y="85.345" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="C14" library="wifi_orb" package="C0805K" value="10uF" x="26.975" y="85.533" smashed="yes" rot="R270">
+<element name="C14" library="phone-finder" package="C0805K" value="10uF" x="26.975" y="85.533" smashed="yes" rot="R270">
 <attribute name="NAME" x="25.735" y="87.54" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="C10" library="wifi_orb" package="C0603K" value="0.1uF" x="34.206" y="89.064" smashed="yes" rot="R90">
+<element name="C10" library="phone-finder" package="C0402K" value="0.1uF" x="34.206" y="89.064" smashed="yes" rot="R90">
 <attribute name="NAME" x="33.4" y="86.078" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="C11" library="wifi_orb" package="C0603K" value="0.1uF" x="30.31" y="85.279" smashed="yes" rot="R270">
+<element name="C11" library="phone-finder" package="C0402K" value="0.1uF" x="30.31" y="85.279" smashed="yes" rot="R270">
 <attribute name="NAME" x="28.902" y="82.297" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="C12" library="wifi_orb" package="C0805K" value="10uF" x="60.241" y="83.015" smashed="yes" rot="R90">
+<element name="C12" library="phone-finder" package="C0805K" value="10uF" x="60.241" y="83.015" smashed="yes" rot="R90">
 <attribute name="NAME" x="61.949" y="82.493" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="C5" library="wifi-orb" package="UD-6,3X5,8_NICHICON" value="47uF" x="15.748" y="65.151" smashed="yes" rot="R270">
+<element name="C5" library="phone-finder" package="UD-6,3X5,8_NICHICON" value="47uF" x="15.748" y="65.151" smashed="yes" rot="R270">
 <attribute name="NAME" x="13.208" y="60.325" size="1.016" layer="25" font="vector" ratio="12"/>
 </element>
-<element name="C8" library="wifi-orb" package="UD-6,3X5,8_NICHICON" value="47uF" x="32.004" y="65.405" smashed="yes" rot="R90">
+<element name="C8" library="phone-finder" package="UD-6,3X5,8_NICHICON" value="47uF" x="32.004" y="65.405" smashed="yes" rot="R90">
 <attribute name="NAME" x="36.449" y="68.326" size="1.016" layer="25" font="vector" ratio="12" rot="R90"/>
 </element>
-<element name="R6" library="wifi_orb" package="R0402" value="3K3" x="58.547" y="82.677" smashed="yes" rot="R270">
+<element name="R6" library="phone-finder" package="R0402" value="3K3" x="58.547" y="82.677" smashed="yes" rot="R270">
 <attribute name="NAME" x="60.325" y="81.788" size="1.016" layer="25" font="vector" ratio="12" rot="R90"/>
 </element>
-<element name="ANTENNA" library="pinhead" package="1X01" value="" x="44.196" y="89.154"/>
-<element name="Q3" library="transistor-npn" package="SOT23" value="2N2222" x="44.704" y="62.23"/>
-<element name="K1" library="relay" package="REED" value="35701331" x="51.816" y="49.53">
+<element name="ANTENNA" library="phone-finder" package="1X01" value="" x="44.196" y="89.154"/>
+<element name="Q3" library="phone-finder" package="SOT23" value="2N2222" x="44.704" y="62.23"/>
+<element name="K1" library="phone-finder" package="REED" value="RELAY" x="51.816" y="49.53">
 <attribute name="OC_NEWARK" value="unknown" x="51.816" y="49.53" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="51.816" y="49.53" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="" x="51.816" y="49.53" size="1.778" layer="27" display="off"/>
 <attribute name="OC_FARNELL" value="unknown" x="51.816" y="49.53" size="1.778" layer="27" display="off"/>
 </element>
-<element name="R11" library="wifi-orb" package="R0402" value="3K" x="38.608" y="59.182"/>
-<element name="TR1" library="transformer-pulse" package="PE-65612" value="PE-65612" x="21.59" y="53.594"/>
-<element name="R10" library="wifi-orb" package="R0402" value="100" x="86.868" y="52.832"/>
-<element name="LINE1" library="pinhead" package="1X01" value="" x="13.462" y="43.18"/>
-<element name="LINE2" library="pinhead" package="1X01" value="" x="13.462" y="38.1"/>
-<element name="D1" library="diode" package="AG" value="3V3" x="22.098" y="3.556"/>
-<element name="R12" library="wifi-orb" package="R0402" value="100" x="12.7" y="-3.556"/>
-<element name="R9" library="wifi-orb" package="R0402" value="100" x="12.7" y="-8.382"/>
-<element name="C15" library="wifi-orb" package="C0603K" value="0.1uF" x="12.954" y="-20.32"/>
-<element name="R7" library="wifi-orb" package="R0402" value="3K" x="12.7" y="-24.892"/>
-<element name="R8" library="wifi-orb" package="R0402" value="3K" x="12.7" y="-29.718"/>
-<element name="C16" library="wifi-orb" package="C0603K" value="0.1uF" x="12.954" y="-34.29"/>
-<element name="Q2" library="transistor-npn" package="SOT23" value="2N2222" x="13.97" y="-40.132"/>
+<element name="R11" library="phone-finder" package="R0402" value="3K" x="38.608" y="59.182"/>
+<element name="TR1" library="phone-finder" package="PE-65612" value="TRANSFORMER" x="21.59" y="53.594"/>
+<element name="R10" library="phone-finder" package="R0805" value="100" x="86.868" y="52.832"/>
+<element name="LINE1" library="phone-finder" package="1X01" value="" x="13.462" y="43.18"/>
+<element name="LINE2" library="phone-finder" package="1X01" value="" x="13.462" y="38.1"/>
+<element name="D1" library="phone-finder" package="AG" value="3V3" x="22.098" y="3.556"/>
+<element name="R12" library="phone-finder" package="R0805" value="100" x="12.7" y="-3.556"/>
+<element name="R9" library="phone-finder" package="R0805" value="100" x="12.7" y="-8.382"/>
+<element name="C15" library="phone-finder" package="C0402K" value="0.1uF" x="12.954" y="-20.32"/>
+<element name="R7" library="phone-finder" package="R0402" value="3K" x="12.7" y="-24.892"/>
+<element name="R8" library="phone-finder" package="R0402" value="3K" x="12.7" y="-29.718"/>
+<element name="C16" library="phone-finder" package="C0402K" value="0.1uF" x="12.954" y="-34.29"/>
+<element name="Q2" library="phone-finder" package="SOT23" value="2N2222" x="13.97" y="-40.132"/>
 </elements>
 <signals>
 <signal name="+5V">
@@ -1041,27 +965,27 @@ design rules under a new name.</description>
 <contactref element="C13" pad="1"/>
 <contactref element="C8" pad="+"/>
 <contactref element="U1" pad="4"/>
-<wire x1="57.447" y1="82.408" x2="60.241" y2="82.015" width="0" layer="19" extent="1-1"/>
-<wire x1="55.499" y1="83.185" x2="57.447" y2="82.408" width="0" layer="19" extent="1-1"/>
+<wire x1="57.447" y1="82.683" x2="60.241" y2="82.015" width="0" layer="19" extent="1-1"/>
+<wire x1="55.499" y1="83.185" x2="57.447" y2="82.683" width="0" layer="19" extent="1-1"/>
 <wire x1="36.449" y1="83.185" x2="55.499" y2="83.185" width="0" layer="19" extent="1-1"/>
-<wire x1="34.206" y1="88.189" x2="36.449" y2="83.185" width="0" layer="19" extent="1-1"/>
-<wire x1="30.777" y1="88.92" x2="34.206" y2="88.189" width="0" layer="19" extent="1-1"/>
+<wire x1="34.206" y1="88.464" x2="36.449" y2="83.185" width="0" layer="19" extent="1-1"/>
+<wire x1="30.777" y1="88.92" x2="34.206" y2="88.464" width="0" layer="19" extent="1-1"/>
 <wire x1="26.975" y1="86.533" x2="30.777" y2="88.92" width="0" layer="19" extent="1-1"/>
-<wire x1="30.31" y1="86.154" x2="26.975" y2="86.533" width="0" layer="19" extent="1-1"/>
-<wire x1="36.449" y1="74.295" x2="30.31" y2="86.154" width="0" layer="19" extent="1-1"/>
-<wire x1="29.096" y1="80.24" x2="26.975" y2="86.533" width="0" layer="19" extent="1-1"/>
-<wire x1="26.214" y1="80.152" x2="29.096" y2="80.24" width="0" layer="19" extent="1-1"/>
+<wire x1="30.31" y1="85.879" x2="26.975" y2="86.533" width="0" layer="19" extent="1-1"/>
+<wire x1="36.449" y1="74.295" x2="30.31" y2="85.879" width="0" layer="19" extent="1-1"/>
+<wire x1="29.371" y1="80.24" x2="26.975" y2="86.533" width="0" layer="19" extent="1-1"/>
+<wire x1="26.214" y1="80.152" x2="29.371" y2="80.24" width="0" layer="19" extent="1-1"/>
 <wire x1="22.914" y1="82.452" x2="26.214" y2="80.152" width="0" layer="19" extent="1-1"/>
-<wire x1="17.607" y1="83.59" x2="22.914" y2="82.452" width="0" layer="19" extent="1-1"/>
-<wire x1="28.854" y1="75.495" x2="29.096" y2="80.24" width="0" layer="19" extent="1-1"/>
+<wire x1="17.332" y1="83.59" x2="22.914" y2="82.452" width="0" layer="19" extent="1-1"/>
+<wire x1="28.854" y1="75.495" x2="29.371" y2="80.24" width="0" layer="19" extent="1-1"/>
 <wire x1="24.435" y1="71.896" x2="28.854" y2="75.495" width="0" layer="19" extent="1-1"/>
 <wire x1="21.279" y1="69.461" x2="24.435" y2="71.896" width="0" layer="19" extent="1-1"/>
 <wire x1="21.425" y1="73.322" x2="21.279" y2="69.461" width="0" layer="19" extent="1-1"/>
 <wire x1="20.8472" y1="65.528" x2="24.435" y2="71.896" width="0" layer="19" extent="1-1"/>
 <wire x1="29.52" y1="60.942" x2="20.8472" y2="65.528" width="0" layer="19" extent="1-1"/>
 <wire x1="32.004" y1="68.055" x2="29.52" y2="60.942" width="0" layer="19" extent="1-1"/>
-<wire x1="36.473" y1="64.369" x2="29.52" y2="60.942" width="0" layer="19" extent="1-1"/>
-<wire x1="27.045" y1="65.528" x2="36.473" y2="64.369" width="0" layer="19" extent="1-1"/>
+<wire x1="36.473" y1="64.644" x2="29.52" y2="60.942" width="0" layer="19" extent="1-1"/>
+<wire x1="27.045" y1="65.528" x2="36.473" y2="64.644" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="USB_CONNECT">
 <contactref element="U3" pad="15"/>
@@ -1099,8 +1023,8 @@ design rules under a new name.</description>
 <contactref element="C17" pad="2"/>
 <contactref element="D2" pad="2"/>
 <contactref element="U3" pad="3"/>
-<wire x1="36.473" y1="66.119" x2="24.414" y2="82.452" width="0" layer="19" extent="1-1"/>
-<wire x1="38.755" y1="65.061" x2="36.473" y2="66.119" width="0" layer="19" extent="1-1"/>
+<wire x1="36.473" y1="65.844" x2="24.414" y2="82.452" width="0" layer="19" extent="1-1"/>
+<wire x1="38.755" y1="65.061" x2="36.473" y2="65.844" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="R1" pad="2"/>
@@ -1278,8 +1202,8 @@ design rules under a new name.</description>
 <contactref element="TR1" pad="2"/>
 <contactref element="C15" pad="2"/>
 <wire x1="58.547" y1="83.227" x2="60.241" y2="84.015" width="0" layer="19" extent="1-1"/>
-<wire x1="57.447" y1="84.158" x2="58.547" y2="83.227" width="0" layer="19" extent="1-1"/>
-<wire x1="55.499" y1="84.455" x2="57.447" y2="84.158" width="0" layer="19" extent="1-1"/>
+<wire x1="57.447" y1="83.883" x2="58.547" y2="83.227" width="0" layer="19" extent="1-1"/>
+<wire x1="55.499" y1="84.455" x2="57.447" y2="83.883" width="0" layer="19" extent="1-1"/>
 <wire x1="55.5625" y1="85.725" x2="55.499" y2="84.455" width="0" layer="19" extent="1-1"/>
 <wire x1="54.864" y1="86.4235" x2="55.5625" y2="85.725" width="0" layer="19" extent="1-1"/>
 <wire x1="53.594" y1="86.36" x2="54.864" y2="86.4235" width="0" layer="19" extent="1-1"/>
@@ -1296,16 +1220,16 @@ design rules under a new name.</description>
 <wire x1="37.084" y1="86.4235" x2="38.354" y2="86.36" width="0" layer="19" extent="1-1"/>
 <wire x1="36.3855" y1="85.725" x2="37.084" y2="86.4235" width="0" layer="19" extent="1-1"/>
 <wire x1="36.449" y1="84.455" x2="36.3855" y2="85.725" width="0" layer="19" extent="1-1"/>
-<wire x1="34.206" y1="89.939" x2="37.084" y2="86.4235" width="0" layer="19" extent="1-1"/>
-<wire x1="30.777" y1="90.92" x2="34.206" y2="89.939" width="0" layer="19" extent="1-1"/>
-<wire x1="30.31" y1="84.404" x2="36.449" y2="84.455" width="0" layer="19" extent="1-1"/>
-<wire x1="26.975" y1="84.533" x2="30.31" y2="84.404" width="0" layer="19" extent="1-1"/>
+<wire x1="34.206" y1="89.664" x2="37.084" y2="86.4235" width="0" layer="19" extent="1-1"/>
+<wire x1="30.777" y1="90.92" x2="34.206" y2="89.664" width="0" layer="19" extent="1-1"/>
+<wire x1="30.31" y1="84.679" x2="36.449" y2="84.455" width="0" layer="19" extent="1-1"/>
+<wire x1="26.975" y1="84.533" x2="30.31" y2="84.679" width="0" layer="19" extent="1-1"/>
 <wire x1="24.059" y1="85.455" x2="26.975" y2="84.533" width="0" layer="19" extent="1-1"/>
 <wire x1="21.968" y1="84.714" x2="24.059" y2="85.455" width="0" layer="19" extent="1-1"/>
 <wire x1="19.818" y1="86.764" x2="21.968" y2="84.714" width="0" layer="19" extent="1-1"/>
 <wire x1="16.454" y1="87.312" x2="19.818" y2="86.764" width="0" layer="19" extent="1-1"/>
-<wire x1="15.857" y1="83.59" x2="16.454" y2="87.312" width="0" layer="19" extent="1-1"/>
-<wire x1="30.846" y1="80.24" x2="30.31" y2="84.404" width="0" layer="19" extent="1-1"/>
+<wire x1="16.132" y1="83.59" x2="16.454" y2="87.312" width="0" layer="19" extent="1-1"/>
+<wire x1="30.571" y1="80.24" x2="30.31" y2="84.679" width="0" layer="19" extent="1-1"/>
 <wire x1="23.014" y1="80.552" x2="21.968" y2="84.714" width="0" layer="19" extent="1-1"/>
 <wire x1="23.664" y1="79.902" x2="23.014" y2="80.552" width="0" layer="19" extent="1-1"/>
 <wire x1="24.314" y1="79.252" x2="23.664" y2="79.902" width="0" layer="19" extent="1-1"/>
@@ -1338,7 +1262,7 @@ design rules under a new name.</description>
 <wire x1="56.726" y1="58.488" x2="60.876" y2="58.488" width="0" layer="19" extent="1-1"/>
 <wire x1="45.654" y1="61.13" x2="56.726" y2="58.488" width="0" layer="19" extent="1-1"/>
 <wire x1="16.51" y1="56.134" x2="15.748" y2="67.801" width="0" layer="19" extent="1-1"/>
-<wire x1="13.829" y1="-20.32" x2="16.51" y2="56.134" width="0" layer="19" extent="1-1"/>
+<wire x1="13.554" y1="-20.32" x2="16.51" y2="56.134" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$13">
 </signal>
@@ -1369,14 +1293,14 @@ design rules under a new name.</description>
 <contactref element="C16" pad="2"/>
 <wire x1="13.462" y1="38.1" x2="26.67" y2="51.054" width="0" layer="19" extent="1-1"/>
 <wire x1="29.718" y1="3.556" x2="13.462" y2="38.1" width="0" layer="19" extent="1-1"/>
-<wire x1="13.829" y1="-34.29" x2="29.718" y2="3.556" width="0" layer="19" extent="1-1"/>
+<wire x1="13.554" y1="-34.29" x2="29.718" y2="3.556" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$14">
 <contactref element="R10" pad="1"/>
 <contactref element="TR1" pad="3"/>
 <contactref element="C16" pad="1"/>
-<wire x1="26.67" y1="56.134" x2="86.318" y2="52.832" width="0" layer="19" extent="1-1"/>
-<wire x1="12.079" y1="-34.29" x2="26.67" y2="56.134" width="0" layer="19" extent="1-1"/>
+<wire x1="26.67" y1="56.134" x2="86.018" y2="52.832" width="0" layer="19" extent="1-1"/>
+<wire x1="12.354" y1="-34.29" x2="26.67" y2="56.134" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DTMF1">
 <contactref element="U3" pad="17"/>
@@ -1397,18 +1321,18 @@ design rules under a new name.</description>
 <contactref element="R10" pad="2"/>
 <contactref element="R12" pad="1"/>
 <contactref element="D1" pad="C"/>
-<wire x1="14.478" y1="3.556" x2="87.418" y2="52.832" width="0" layer="19" extent="1-1"/>
-<wire x1="12.15" y1="-3.556" x2="14.478" y2="3.556" width="0" layer="19" extent="1-1"/>
+<wire x1="14.478" y1="3.556" x2="87.718" y2="52.832" width="0" layer="19" extent="1-1"/>
+<wire x1="11.85" y1="-3.556" x2="14.478" y2="3.556" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$20">
 <contactref element="R12" pad="2"/>
 <contactref element="K1" pad="1"/>
-<wire x1="13.25" y1="-3.556" x2="34.036" y2="52.07" width="0" layer="19" extent="1-1"/>
+<wire x1="13.55" y1="-3.556" x2="34.036" y2="52.07" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$17">
 <contactref element="R9" pad="1"/>
 <contactref element="TR1" pad="1"/>
-<wire x1="12.15" y1="-8.382" x2="16.51" y2="51.054" width="0" layer="19" extent="1-1"/>
+<wire x1="11.85" y1="-8.382" x2="16.51" y2="51.054" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$23">
 <contactref element="C15" pad="1"/>
@@ -1417,12 +1341,12 @@ design rules under a new name.</description>
 <contactref element="Q2" pad="1"/>
 <wire x1="13.25" y1="-29.718" x2="13.02" y2="-41.232" width="0" layer="19" extent="1-1"/>
 <wire x1="13.25" y1="-24.892" x2="13.25" y2="-29.718" width="0" layer="19" extent="1-1"/>
-<wire x1="12.079" y1="-20.32" x2="13.25" y2="-24.892" width="0" layer="19" extent="1-1"/>
+<wire x1="12.354" y1="-20.32" x2="13.25" y2="-24.892" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$8">
 <contactref element="R9" pad="2"/>
 <contactref element="Q2" pad="2"/>
-<wire x1="13.25" y1="-8.382" x2="14.92" y2="-41.232" width="0" layer="19" extent="1-1"/>
+<wire x1="13.55" y1="-8.382" x2="14.92" y2="-41.232" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <errors>

@@ -112,17 +112,16 @@
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
-<library name="wifi-orb">
-<description>Generated from &lt;b&gt;wifi-orb.sch&lt;/b&gt;&lt;p&gt;
+<library name="phone-finder">
+<description>Generated from &lt;b&gt;phone-finder.sch&lt;/b&gt;&lt;p&gt;
 by exp-lbrs-filter.ulp</description>
 <packages>
 <package name="SOT23">
-<description>&lt;B&gt;DIODE&lt;/B&gt;</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.2224" width="0.127" layer="21"/>
-<wire x1="0.3224" y1="-0.6604" x2="-0.3224" y2="-0.6604" width="0.127" layer="21"/>
-<wire x1="-1.4224" y1="-0.2224" x2="-1.4224" y2="0.6604" width="0.127" layer="21"/>
-<wire x1="-1.4224" y1="0.6604" x2="-0.7396" y2="0.6604" width="0.127" layer="21"/>
-<wire x1="0.6396" y1="0.6604" x2="1.4224" y2="0.6604" width="0.127" layer="21"/>
+<description>&lt;b&gt;SOT-23&lt;/b&gt;</description>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
 <rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
 <rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
 <rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
@@ -132,17 +131,32 @@ by exp-lbrs-filter.ulp</description>
 <text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
 </package>
-<package name="C0805K">
-<description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0805 reflow solder&lt;/b&gt;&lt;p&gt;
-Metric Code Size 2012</description>
-<wire x1="-0.925" y1="0.6" x2="0.925" y2="0.6" width="0.1016" layer="51"/>
-<wire x1="0.925" y1="-0.6" x2="-0.925" y2="-0.6" width="0.1016" layer="51"/>
-<rectangle x1="-1" y1="-0.65" x2="-0.5" y2="0.65" layer="51"/>
-<rectangle x1="0.5" y1="-0.65" x2="1" y2="0.65" layer="51"/>
-<smd name="1" x="-1" y="0" dx="1.3" dy="1.6" layer="1"/>
-<smd name="2" x="1" y="0" dx="1.3" dy="1.6" layer="1"/>
-<text x="-1" y="0.875" size="1.016" layer="25">&gt;NAME</text>
-<text x="-1" y="-1.9" size="1.016" layer="27">&gt;VALUE</text>
+<package name="UD-6,3X5,8_NICHICON">
+<description>&lt;b&gt;ALUMINUM ELECTROLYTIC CAPACITORS&lt;/b&gt; UD Series 6.3 x 5.8 mm&lt;p&gt;
+Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
+<circle x="0" y="0" radius="3.1001" width="0.1016" layer="51"/>
+<wire x1="-3.25" y1="3.25" x2="2.45" y2="3.25" width="0.1016" layer="51"/>
+<wire x1="2.45" y1="3.25" x2="3.25" y2="2.45" width="0.1016" layer="51"/>
+<wire x1="3.25" y1="2.45" x2="3.25" y2="-2.45" width="0.1016" layer="51"/>
+<wire x1="3.25" y1="-2.45" x2="2.45" y2="-3.25" width="0.1016" layer="51"/>
+<wire x1="2.45" y1="-3.25" x2="-3.25" y2="-3.25" width="0.1016" layer="51"/>
+<wire x1="-3.25" y1="-3.25" x2="-3.25" y2="3.25" width="0.1016" layer="51"/>
+<wire x1="-3" y1="0.775" x2="2.975" y2="0.85" width="0.1016" layer="21" curve="-149.753145"/>
+<wire x1="-3.25" y1="0.8" x2="-3.25" y2="3.25" width="0.1016" layer="21"/>
+<wire x1="-3.25" y1="3.25" x2="2.45" y2="3.25" width="0.1016" layer="21"/>
+<wire x1="2.45" y1="3.25" x2="3.25" y2="2.45" width="0.1016" layer="21"/>
+<wire x1="3.25" y1="-2.45" x2="2.45" y2="-3.25" width="0.1016" layer="21"/>
+<wire x1="2.45" y1="-3.25" x2="-3.25" y2="-3.25" width="0.1016" layer="21"/>
+<wire x1="-3.25" y1="-3.25" x2="-3.25" y2="-0.7" width="0.1016" layer="21"/>
+<wire x1="3" y1="-0.775" x2="-2.975" y2="-0.85" width="0.1016" layer="21" curve="-149.753145"/>
+<smd name="+" x="2.65" y="0" dx="3.4" dy="1" layer="1"/>
+<smd name="-" x="-2.65" y="0" dx="3.4" dy="1" layer="1"/>
+<text x="-3.175" y="3.81" size="1.016" layer="25">&gt;NAME</text>
+<text x="-3.175" y="-4.445" size="1.016" layer="27">&gt;VALUE</text>
+<polygon width="0.1016" layer="51">
+<vertex x="-2.2" y="2.15" curve="88.581463"/>
+<vertex x="-2.2" y="-2.15"/>
+</polygon>
 </package>
 <package name="CRYSTAL">
 <description>&lt;b&gt;Model 406 6.0x3.5mm Low Cost Surface Mount Crystal&lt;/b&gt;&lt;p&gt;
@@ -157,6 +171,55 @@ Source: 008-0260-0_E.pdf</description>
 <smd name="4" x="-1.075" y="1.025" dx="0.9" dy="1.5" layer="1"/>
 <text x="-2.54" y="2.54" size="1.27" layer="25">&gt;NAME</text>
 <text x="-2.54" y="-3.81" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="AG">
+<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
+diameter 9 mm, horizontal, grid 10.16 mm</description>
+<wire x1="-4.699" y1="-4.572" x2="-4.699" y2="4.572" width="0.1524" layer="21"/>
+<wire x1="4.699" y1="4.572" x2="4.699" y2="-4.572" width="0.1524" layer="21"/>
+<wire x1="-4.699" y1="4.572" x2="4.699" y2="4.572" width="0.1524" layer="21"/>
+<wire x1="4.699" y1="-4.572" x2="-4.699" y2="-4.572" width="0.1524" layer="21"/>
+<wire x1="-1.143" y1="0" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="0" y1="0" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="0" x2="2.54" y2="0" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="0" x2="5.842" y2="0" width="1.4732" layer="51"/>
+<wire x1="-7.62" y1="0" x2="-5.842" y2="0" width="1.4732" layer="51"/>
+<wire x1="-0.381" y1="0.508" x2="-0.381" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-0.381" y1="0.635" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="0.381" y1="-0.508" x2="0.381" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="0.381" y1="-0.635" x2="0" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="-0.635" x2="0" y2="0" width="0.1524" layer="21"/>
+<rectangle x1="-3.81" y1="-4.572" x2="-3.302" y2="4.572" layer="21"/>
+<rectangle x1="4.699" y1="-0.7112" x2="5.6134" y2="0.7112" layer="21"/>
+<rectangle x1="-5.6134" y1="-0.7112" x2="-4.699" y2="0.7112" layer="21"/>
+<pad name="A" x="7.62" y="0" drill="1.8034" shape="long"/>
+<pad name="C" x="-7.62" y="0" drill="1.8034" shape="long"/>
+<text x="-4.8006" y="4.8514" size="1.778" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.4892" y="-3.302" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+<package name="SOT223">
+<description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;</description>
+<wire x1="3.2766" y1="1.778" x2="3.2766" y2="-1.778" width="0.2032" layer="21"/>
+<wire x1="3.2766" y1="-1.778" x2="-3.2766" y2="-1.778" width="0.2032" layer="21"/>
+<wire x1="-3.2766" y1="-1.778" x2="-3.2766" y2="1.778" width="0.2032" layer="21"/>
+<wire x1="-3.2766" y1="1.778" x2="3.2766" y2="1.778" width="0.2032" layer="21"/>
+<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
+<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
+<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
+<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
+<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
+<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
+<smd name="1" x="-2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
+<smd name="2" x="0" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
+<smd name="3" x="2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
+<smd name="4" x="0" y="3.099" dx="3.6" dy="2.2" layer="1"/>
+<text x="-2.54" y="0.0508" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.54" y="-1.3208" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="HVQFN33-5MM">
 <description>&lt;h2&gt;HVQFN-33&lt;/h2&gt;7x7x0.85mm
@@ -222,6 +285,21 @@ Source: 008-0260-0_E.pdf</description>
 <package name="MOUNTING_HOLE">
 <pad name="P1" x="0" y="0" drill="4.3" stop="no" thermals="no"/>
 </package>
+<package name="1X01">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.016" shape="octagon"/>
+<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+</package>
 <package name="SC75-BEC">
 <description>SC59 (SOT23) Motorola</description>
 <wire x1="0.8" y1="0.6" x2="0.8" y2="-0.1" width="0.127" layer="21"/>
@@ -265,6 +343,76 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <text x="-0.635" y="0.635" size="1.27" layer="25">&gt;NAME</text>
 <text x="-0.635" y="-1.905" size="1.27" layer="27">&gt;VALUE</text>
 </package>
+<package name="R0805">
+<description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
+chip</description>
+<wire x1="-0.41" y1="0.635" x2="0.41" y2="0.635" width="0.1524" layer="51"/>
+<wire x1="-0.41" y1="-0.635" x2="0.41" y2="-0.635" width="0.1524" layer="51"/>
+<wire x1="-1.973" y1="0.983" x2="1.973" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="1.973" y1="0.983" x2="1.973" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="1.973" y1="-0.983" x2="-1.973" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="-1.973" y1="-0.983" x2="-1.973" y2="0.983" width="0.0508" layer="39"/>
+<smd name="1" x="-0.85" y="0" dx="1.3" dy="1.5" layer="1"/>
+<smd name="2" x="0.85" y="0" dx="1.3" dy="1.5" layer="1"/>
+<text x="-0.762" y="1.016" size="1.27" layer="25">&gt;NAME</text>
+<text x="-0.762" y="-2.286" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="0.4064" y1="-0.6985" x2="1.0564" y2="0.7015" layer="51"/>
+<rectangle x1="-1.0668" y1="-0.6985" x2="-0.4168" y2="0.7015" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.5001" x2="0.1999" y2="0.5001" layer="35"/>
+</package>
+<package name="R0603">
+<description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
+chip</description>
+<wire x1="-0.432" y1="-0.356" x2="0.432" y2="-0.356" width="0.1524" layer="51"/>
+<wire x1="0.432" y1="0.356" x2="-0.432" y2="0.356" width="0.1524" layer="51"/>
+<wire x1="-1.473" y1="0.983" x2="1.473" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="1.473" y1="0.983" x2="1.473" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="1.473" y1="-0.983" x2="-1.473" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="-1.473" y1="-0.983" x2="-1.473" y2="0.983" width="0.0508" layer="39"/>
+<smd name="1" x="-0.85" y="0" dx="1" dy="1.1" layer="1"/>
+<smd name="2" x="0.85" y="0" dx="1" dy="1.1" layer="1"/>
+<text x="-0.889" y="0.889" size="1.27" layer="25">&gt;NAME</text>
+<text x="-0.889" y="-2.032" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="0.4318" y1="-0.4318" x2="0.8382" y2="0.4318" layer="51"/>
+<rectangle x1="-0.8382" y1="-0.4318" x2="-0.4318" y2="0.4318" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+</package>
+<package name="REED">
+<description>&lt;b&gt;RELAY&lt;/b&gt;&lt;p&gt;
+reed, 1 x norm. open with polarity, grid 5.08</description>
+<circle x="-11.43" y="1.651" radius="0.127" width="0.254" layer="21"/>
+<wire x1="-20.32" y1="5.08" x2="0" y2="5.08" width="0.254" layer="21"/>
+<wire x1="0" y1="5.08" x2="0" y2="0" width="0.254" layer="21"/>
+<wire x1="0" y1="0" x2="-20.32" y2="0" width="0.254" layer="21"/>
+<wire x1="-20.32" y1="0" x2="-20.32" y2="1.27" width="0.254" layer="21"/>
+<wire x1="-20.32" y1="1.27" x2="-20.32" y2="3.81" width="0.254" layer="21"/>
+<wire x1="-20.32" y1="3.81" x2="-20.32" y2="5.08" width="0.254" layer="21"/>
+<wire x1="-20.32" y1="3.81" x2="-19.05" y2="2.54" width="0.254" layer="21"/>
+<wire x1="-19.05" y1="2.54" x2="-20.32" y2="1.27" width="0.254" layer="21"/>
+<wire x1="-10.795" y1="3.81" x2="-9.525" y2="3.81" width="0.254" layer="21"/>
+<wire x1="-9.525" y1="3.81" x2="-9.525" y2="3.175" width="0.254" layer="21"/>
+<wire x1="-9.525" y1="3.175" x2="-9.525" y2="2.54" width="0.254" layer="21"/>
+<wire x1="-9.525" y1="2.54" x2="-9.525" y2="1.27" width="0.254" layer="21"/>
+<wire x1="-9.525" y1="1.27" x2="-10.795" y2="1.27" width="0.254" layer="21"/>
+<wire x1="-10.795" y1="1.27" x2="-10.795" y2="1.905" width="0.254" layer="21"/>
+<wire x1="-10.795" y1="1.905" x2="-10.795" y2="2.54" width="0.254" layer="21"/>
+<wire x1="-10.795" y1="2.54" x2="-10.795" y2="3.81" width="0.254" layer="21"/>
+<wire x1="-10.795" y1="1.905" x2="-9.525" y2="3.175" width="0.254" layer="21"/>
+<wire x1="-10.795" y1="2.54" x2="-11.43" y2="2.54" width="0.254" layer="21"/>
+<wire x1="-9.525" y1="2.54" x2="-8.89" y2="2.54" width="0.254" layer="21"/>
+<wire x1="-17.78" y1="3.81" x2="-17.78" y2="4.445" width="0.254" layer="21"/>
+<wire x1="-17.78" y1="4.445" x2="-16.51" y2="4.445" width="0.254" layer="21"/>
+<wire x1="-14.605" y1="4.445" x2="-2.54" y2="4.445" width="0.254" layer="21"/>
+<wire x1="-2.54" y1="4.445" x2="-2.54" y2="3.81" width="0.254" layer="21"/>
+<wire x1="-16.51" y1="4.445" x2="-14.605" y2="3.81" width="0.254" layer="21"/>
+<pad name="1" x="-17.78" y="2.54" drill="0.8128" shape="long" rot="R90"/>
+<pad name="3" x="-12.7" y="2.54" drill="0.8128" shape="long" rot="R90"/>
+<pad name="5" x="-7.62" y="2.54" drill="0.8128" shape="long" rot="R90"/>
+<pad name="7" x="-2.54" y="2.54" drill="0.8128" shape="long" rot="R90"/>
+<text x="-19.685" y="0.635" size="0.4064" layer="48">Günther 3570.1331..</text>
+<text x="-19.685" y="5.715" size="1.27" layer="25">&gt;NAME</text>
+<text x="-12.7" y="5.715" size="1.27" layer="27">&gt;VALUE</text>
+</package>
 <package name="SWD-HEADER">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <wire x1="-3.81" y1="1.8" x2="3.81" y2="1.8" width="0.127" layer="21"/>
@@ -286,6 +434,23 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <pad name="10" x="2.54" y="0.635" drill="0.6" diameter="0.9906"/>
 <text x="-1.27" y="3.175" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-1.27" y="-4.445" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="PE-65612">
+<description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="http://ww2.pulseeng.com/products/datasheets/T601.pdf"&gt; Data sheet &lt;/a&gt;&lt;br&gt;
+www.pulseeng.com</description>
+<wire x1="-6.35" y1="-4.355" x2="6.35" y2="-4.355" width="0.2032" layer="21"/>
+<wire x1="6.35" y1="-4.355" x2="6.35" y2="3.355" width="0.2032" layer="21"/>
+<wire x1="6.35" y1="3.355" x2="5.35" y2="4.355" width="0.2032" layer="21" curve="90"/>
+<wire x1="5.35" y1="4.355" x2="-5.35" y2="4.355" width="0.2032" layer="21"/>
+<wire x1="-5.35" y1="4.355" x2="-6.35" y2="3.355" width="0.2032" layer="21" curve="90"/>
+<wire x1="-6.35" y1="3.355" x2="-6.35" y2="-4.355" width="0.2032" layer="21"/>
+<pad name="1" x="-5.08" y="-2.54" drill="0.8" diameter="1.27"/>
+<pad name="2" x="-5.08" y="2.54" drill="0.8" diameter="1.27"/>
+<pad name="3" x="5.08" y="2.54" drill="0.8" diameter="1.27"/>
+<pad name="4" x="5.08" y="-2.54" drill="0.8" diameter="1.27"/>
+<text x="-6.35" y="-6.35" size="1.27" layer="25">&gt;NAME</text>
+<text x="-5.08" y="-0.635" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="USB-MICRO">
 <description>http://www.hirose.co.jp/cataloge_hp/e24200011.pdf</description>
@@ -402,23 +567,6 @@ Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
 <smd name="52" x="1.27" y="14.6685" dx="0.762" dy="2.159" layer="1" roundness="100"/>
 <smd name="TAB" x="10.16" y="7.62" dx="15.748" dy="10.668" layer="1" stop="no" thermals="no" cream="no"/>
 </package>
-<package name="R2512W">
-<description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
-wave soldering</description>
-<wire x1="-2.362" y1="1.473" x2="2.387" y2="1.473" width="0.1524" layer="51"/>
-<wire x1="-2.362" y1="-1.473" x2="2.387" y2="-1.473" width="0.1524" layer="51"/>
-<wire x1="-3.973" y1="1.983" x2="3.973" y2="1.983" width="0.0508" layer="39"/>
-<wire x1="3.973" y1="1.983" x2="3.973" y2="-1.983" width="0.0508" layer="39"/>
-<wire x1="3.973" y1="-1.983" x2="-3.973" y2="-1.983" width="0.0508" layer="39"/>
-<wire x1="-3.973" y1="-1.983" x2="-3.973" y2="1.983" width="0.0508" layer="39"/>
-<rectangle x1="-3.2004" y1="-1.5494" x2="-2.3505" y2="1.5507" layer="51"/>
-<rectangle x1="2.3622" y1="-1.5494" x2="3.2121" y2="1.5507" layer="51"/>
-<rectangle x1="-0.5001" y1="-1" x2="0.5001" y2="1" layer="35"/>
-<smd name="1" x="-2.896" y="0" dx="2" dy="2.1" layer="1"/>
-<smd name="2" x="2.896" y="0" dx="2" dy="2.1" layer="1"/>
-<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-</package>
 <package name="C0402K">
 <description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0204 reflow solder&lt;/b&gt;&lt;p&gt;
 Metric Code Size 1005</description>
@@ -443,53 +591,17 @@ Metric Code Size 1608</description>
 <text x="-0.8" y="0.65" size="1.016" layer="25">&gt;NAME</text>
 <text x="-0.8" y="-1.65" size="1.016" layer="27">&gt;VALUE</text>
 </package>
-<package name="SOT223">
-<description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;</description>
-<wire x1="3.2766" y1="1.778" x2="3.2766" y2="-1.778" width="0.2032" layer="21"/>
-<wire x1="3.2766" y1="-1.778" x2="-3.2766" y2="-1.778" width="0.2032" layer="21"/>
-<wire x1="-3.2766" y1="-1.778" x2="-3.2766" y2="1.778" width="0.2032" layer="21"/>
-<wire x1="-3.2766" y1="1.778" x2="3.2766" y2="1.778" width="0.2032" layer="21"/>
-<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
-<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
-<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
-<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
-<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
-<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
-<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
-<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
-<smd name="1" x="-2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
-<smd name="2" x="0" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
-<smd name="3" x="2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
-<smd name="4" x="0" y="3.099" dx="3.6" dy="2.2" layer="1"/>
-<text x="-2.54" y="0.0508" size="1.27" layer="25">&gt;NAME</text>
-<text x="-2.54" y="-1.3208" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-<package name="UD-6,3X5,8_NICHICON">
-<description>&lt;b&gt;ALUMINUM ELECTROLYTIC CAPACITORS&lt;/b&gt; UD Series 6.3 x 5.8 mm&lt;p&gt;
-Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
-<circle x="0" y="0" radius="3.1001" width="0.1016" layer="51"/>
-<wire x1="-3.25" y1="3.25" x2="2.45" y2="3.25" width="0.1016" layer="51"/>
-<wire x1="2.45" y1="3.25" x2="3.25" y2="2.45" width="0.1016" layer="51"/>
-<wire x1="3.25" y1="2.45" x2="3.25" y2="-2.45" width="0.1016" layer="51"/>
-<wire x1="3.25" y1="-2.45" x2="2.45" y2="-3.25" width="0.1016" layer="51"/>
-<wire x1="2.45" y1="-3.25" x2="-3.25" y2="-3.25" width="0.1016" layer="51"/>
-<wire x1="-3.25" y1="-3.25" x2="-3.25" y2="3.25" width="0.1016" layer="51"/>
-<wire x1="-3" y1="0.775" x2="2.975" y2="0.85" width="0.1016" layer="21" curve="-149.753145"/>
-<wire x1="-3.25" y1="0.8" x2="-3.25" y2="3.25" width="0.1016" layer="21"/>
-<wire x1="-3.25" y1="3.25" x2="2.45" y2="3.25" width="0.1016" layer="21"/>
-<wire x1="2.45" y1="3.25" x2="3.25" y2="2.45" width="0.1016" layer="21"/>
-<wire x1="3.25" y1="-2.45" x2="2.45" y2="-3.25" width="0.1016" layer="21"/>
-<wire x1="2.45" y1="-3.25" x2="-3.25" y2="-3.25" width="0.1016" layer="21"/>
-<wire x1="-3.25" y1="-3.25" x2="-3.25" y2="-0.7" width="0.1016" layer="21"/>
-<wire x1="3" y1="-0.775" x2="-2.975" y2="-0.85" width="0.1016" layer="21" curve="-149.753145"/>
-<smd name="+" x="2.65" y="0" dx="3.4" dy="1" layer="1"/>
-<smd name="-" x="-2.65" y="0" dx="3.4" dy="1" layer="1"/>
-<text x="-3.175" y="3.81" size="1.016" layer="25">&gt;NAME</text>
-<text x="-3.175" y="-4.445" size="1.016" layer="27">&gt;VALUE</text>
-<polygon width="0.1016" layer="51">
-<vertex x="-2.2" y="2.15" curve="88.581463"/>
-<vertex x="-2.2" y="-2.15"/>
-</polygon>
+<package name="C0805K">
+<description>&lt;b&gt;Ceramic Chip Capacitor KEMET 0805 reflow solder&lt;/b&gt;&lt;p&gt;
+Metric Code Size 2012</description>
+<wire x1="-0.925" y1="0.6" x2="0.925" y2="0.6" width="0.1016" layer="51"/>
+<wire x1="0.925" y1="-0.6" x2="-0.925" y2="-0.6" width="0.1016" layer="51"/>
+<rectangle x1="-1" y1="-0.65" x2="-0.5" y2="0.65" layer="51"/>
+<rectangle x1="0.5" y1="-0.65" x2="1" y2="0.65" layer="51"/>
+<smd name="1" x="-1" y="0" dx="1.3" dy="1.6" layer="1"/>
+<smd name="2" x="1" y="0" dx="1.3" dy="1.6" layer="1"/>
+<text x="-1" y="0.875" size="1.016" layer="25">&gt;NAME</text>
+<text x="-1" y="-1.9" size="1.016" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -538,36 +650,16 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <text x="1.778" y="-4.5466" size="1.778" layer="95" rot="R180">&gt;NAME</text>
 <text x="-1.778" y="6.1976" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
-<symbol name="C-US">
+<symbol name="CPOL-US">
+<rectangle x1="-2.253" y1="0.668" x2="-1.364" y2="0.795" layer="94"/>
+<rectangle x1="-1.872" y1="0.287" x2="-1.745" y2="1.176" layer="94"/>
 <wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
 <wire x1="0" y1="-1.016" x2="0" y2="-1.0161" width="0.1524" layer="94"/>
 <wire x1="0" y1="-1.0161" x2="0" y2="-2.54" width="0.1524" layer="94"/>
 <wire x1="0" y1="-1" x2="2.4892" y2="-1.8542" width="0.254" layer="94" curve="-37.878202"/>
-<wire x1="-2.4668" y1="-1.8504" x2="0" y2="-1.0161" width="0.254" layer="94" curve="-37.373024"/>
-<pin name="1" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
-<pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
-<text x="1.016" y="0.635" size="1.778" layer="95">&gt;NAME</text>
-<text x="1.016" y="-4.191" size="1.778" layer="96">&gt;VALUE</text>
-</symbol>
-<symbol name="C-US-1">
-<wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="-1.016" x2="0" y2="-1.0161" width="0.1524" layer="94"/>
-<wire x1="0" y1="-1.0161" x2="0" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="0" y1="-1" x2="2.4892" y2="-1.8542" width="0.254" layer="94" curve="-37.878202"/>
-<wire x1="-2.4668" y1="-1.8504" x2="0" y2="-1.0161" width="0.254" layer="94" curve="-37.373024"/>
-<pin name="1" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
-<pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
-<text x="1.016" y="0.635" size="1.778" layer="95">&gt;NAME</text>
-<text x="1.016" y="-4.191" size="1.778" layer="96">&gt;VALUE</text>
-</symbol>
-<symbol name="CAPACITOR">
-<wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="-1.016" x2="0" y2="-1.0161" width="0.1524" layer="94"/>
-<wire x1="0" y1="-1.0161" x2="0" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="0" y1="-1" x2="2.4892" y2="-1.8542" width="0.254" layer="94" curve="-37.878202"/>
-<wire x1="-2.4668" y1="-1.8504" x2="0" y2="-1.0161" width="0.254" layer="94" curve="-37.373024"/>
-<pin name="1" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
-<pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
+<wire x1="-2.4669" y1="-1.8504" x2="0" y2="-1.0161" width="0.254" layer="94" curve="-37.376341"/>
+<pin name="+" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
+<pin name="-" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
 <text x="1.016" y="0.635" size="1.778" layer="95">&gt;NAME</text>
 <text x="1.016" y="-4.191" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
@@ -619,6 +711,26 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <text x="1.27" y="19.05" size="2.54" layer="94" font="vector">TITLE:</text>
 <text x="1.27" y="11.43" size="2.54" layer="94" font="vector">Document Number:</text>
 <text x="17.78" y="19.05" size="2.54" layer="94" font="vector">&gt;DRAWING_NAME</text>
+</symbol>
+<symbol name="SCHOTTKY-BIDIR">
+<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.905" y1="1.27" x2="1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="1.27" y2="0" width="0.1524" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-1.27" x2="0.635" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="3.81" y1="1.27" x2="3.81" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="3.81" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="3.81" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="1.905" y1="1.27" x2="1.905" y2="1.016" width="0.254" layer="94"/>
+<wire x1="0.635" y1="-1.016" x2="0.635" y2="-1.27" width="0.254" layer="94"/>
+<pin name="1" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+<text x="-1.27" y="1.905" size="1.778" layer="95">&gt;NAME</text>
+<text x="-1.27" y="-3.429" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="GND">
 <wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
@@ -681,6 +793,33 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <wire x1="-3.81" y1="0" x2="3.81" y2="0" width="0.254" layer="94"/>
 <wire x1="0" y1="3.81" x2="0" y2="-5.08" width="0.254" layer="94"/>
 <pin name="P$1" x="0" y="-5.08" length="point" rot="R90"/>
+</symbol>
+<symbol name="NPN">
+<rectangle x1="-0.254" y1="-2.54" x2="0.508" y2="2.54" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="0.508" y2="1.524" width="0.1524" layer="94"/>
+<wire x1="1.778" y1="-1.524" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.778" y2="-1.524" width="0.1524" layer="94"/>
+<wire x1="1.54" y1="-2.04" x2="0.308" y2="-1.424" width="0.1524" layer="94"/>
+<wire x1="1.524" y1="-2.413" x2="2.286" y2="-2.413" width="0.254" layer="94"/>
+<wire x1="2.286" y1="-2.413" x2="1.778" y2="-1.778" width="0.254" layer="94"/>
+<wire x1="1.778" y1="-1.778" x2="1.524" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="1.524" y1="-2.286" x2="1.905" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="1.905" y1="-2.286" x2="1.778" y2="-2.032" width="0.254" layer="94"/>
+<pin name="B" x="-2.54" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<pin name="C" x="2.54" y="5.08" visible="off" length="short" direction="pas" swaplevel="2" rot="R270"/>
+<pin name="E" x="2.54" y="-5.08" visible="off" length="short" direction="pas" swaplevel="3" rot="R90"/>
+<text x="-10.16" y="7.62" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="5.08" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="PINHD1">
+<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="-6.35" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="-6.35" y1="2.54" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
+<pin name="1" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
+<text x="-6.35" y="3.175" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="PNP-RESISTORS">
 <circle x="-2.286" y="0" radius="0.254" width="0.3048" layer="94"/>
@@ -756,6 +895,37 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <text x="-3.81" y="1.4986" size="1.778" layer="95">&gt;NAME</text>
 <text x="-3.81" y="-3.302" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="K-D-SIL">
+<wire x1="-3.81" y1="2.54" x2="1.27" y2="2.54" width="0.254" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="3.81" y2="2.54" width="0.254" layer="94"/>
+<wire x1="3.81" y1="2.54" x2="3.81" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="3.81" y1="-2.54" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-2.54" x2="-3.81" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="-2.54" x2="-3.81" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-2.54" x2="1.27" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-3.175" y1="0.635" x2="-2.54" y2="0.635" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0.635" x2="-3.175" y2="-0.635" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0.635" x2="-1.905" y2="-0.635" width="0.254" layer="94"/>
+<wire x1="-3.175" y1="-0.635" x2="-2.54" y2="-0.635" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-0.635" x2="-1.905" y2="-0.635" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0.635" x2="-2.54" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-0.635" x2="-2.54" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-1.905" y1="0.635" x2="-2.54" y2="0.635" width="0.254" layer="94"/>
+<pin name="3" x="0" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
+<pin name="5" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
+<text x="5.715" y="0" size="1.778" layer="95">&gt;PART</text>
+<text x="5.715" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="S-SIL">
+<circle x="0" y="-2.54" radius="0.3175" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="0" y2="5.3975" width="0.4064" layer="94"/>
+<wire x1="0" y1="-5.3975" x2="0" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-2.54" y2="2.54" width="0.4064" layer="94"/>
+<pin name="P" x="0" y="-7.62" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="S" x="0" y="7.62" visible="pad" length="short" direction="pas" rot="R270"/>
+<text x="3.175" y="1.905" size="1.778" layer="95">&gt;PART</text>
+<text x="3.175" y="-0.635" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
 <symbol name="SWD-HEADER">
 <wire x1="-6.35" y1="-7.62" x2="8.89" y2="-7.62" width="0.4064" layer="94"/>
 <wire x1="8.89" y1="-7.62" x2="8.89" y2="7.62" width="0.4064" layer="94"/>
@@ -773,6 +943,19 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pin name="10" x="5.08" y="-5.08" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
 <text x="-6.35" y="8.255" size="1.778" layer="95">&gt;NAME</text>
 <text x="-6.35" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="TRANSFORMER">
+<circle x="-1.905" y="3.175" radius="0.254" width="0" layer="94"/>
+<circle x="4.445" y="3.175" radius="0.254" width="0" layer="94"/>
+<rectangle x1="-1.905" y1="-2.54" x2="0.127" y2="2.54" layer="94"/>
+<rectangle x1="2.413" y1="-2.54" x2="4.445" y2="2.54" layer="94"/>
+<wire x1="1.27" y1="3.175" x2="1.27" y2="-3.175" width="0.254" layer="94"/>
+<pin name="P1" x="-5.08" y="2.54" visible="pad" length="middle" direction="pas"/>
+<pin name="P2" x="-5.08" y="-2.54" visible="pad" length="middle" direction="pas"/>
+<pin name="S1" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="S2" x="7.62" y="-2.54" visible="pad" length="middle" direction="pas" rot="R180"/>
+<text x="-2.54" y="4.826" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-5.715" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="USB">
 <wire x1="-5.08" y1="17.78" x2="5.08" y2="17.78" width="0.254" layer="94"/>
@@ -844,16 +1027,14 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <text x="36.322" y="-19.2024" size="1.778" layer="95">&gt;NAME</text>
 <text x="36.322" y="-21.7424" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
-<symbol name="CPOL-US">
-<rectangle x1="-2.253" y1="0.668" x2="-1.364" y2="0.795" layer="94"/>
-<rectangle x1="-1.872" y1="0.287" x2="-1.745" y2="1.176" layer="94"/>
+<symbol name="CAPACITOR">
 <wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
 <wire x1="0" y1="-1.016" x2="0" y2="-1.0161" width="0.1524" layer="94"/>
 <wire x1="0" y1="-1.0161" x2="0" y2="-2.54" width="0.1524" layer="94"/>
 <wire x1="0" y1="-1" x2="2.4892" y2="-1.8542" width="0.254" layer="94" curve="-37.878202"/>
-<wire x1="-2.4669" y1="-1.8504" x2="0" y2="-1.0161" width="0.254" layer="94" curve="-37.376341"/>
-<pin name="+" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
-<pin name="-" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
+<wire x1="-2.4668" y1="-1.8504" x2="0" y2="-1.0161" width="0.254" layer="94" curve="-37.373024"/>
+<pin name="1" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
+<pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
 <text x="1.016" y="0.635" size="1.778" layer="95">&gt;NAME</text>
 <text x="1.016" y="-4.191" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
@@ -904,50 +1085,16 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="C-US" prefix="C" uservalue="yes">
-<description>&lt;B&gt;CAPACITOR&lt;/B&gt;, American symbol</description>
+<deviceset name="C-POL" prefix="C" uservalue="yes">
+<description>&lt;B&gt;POLARIZED CAPACITOR&lt;/B&gt;, American symbol</description>
 <gates>
-<gate name="G$1" symbol="C-US" x="0" y="0"/>
+<gate name="G$1" symbol="CPOL-US" x="0" y="0"/>
 </gates>
 <devices>
-<device name="C0402K" package="C0402K">
+<device name="UD-6,3X5,8" package="UD-6,3X5,8_NICHICON">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="C-US1" prefix="C" uservalue="yes">
-<description>&lt;B&gt;CAPACITOR&lt;/B&gt;, American symbol</description>
-<gates>
-<gate name="G$1" symbol="C-US-1" x="0" y="0"/>
-</gates>
-<devices>
-<device name="C0805K" package="C0805K">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="CAPACITOR" prefix="C" uservalue="yes">
-<description>&lt;B&gt;CAPACITOR&lt;/B&gt;, American symbol</description>
-<gates>
-<gate name="G$1" symbol="CAPACITOR" x="0" y="0"/>
-</gates>
-<devices>
-<device name="C0603K" package="C0603K">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="+" pad="+"/>
+<connect gate="G$1" pin="-" pad="-"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -978,12 +1125,30 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="DOCFIELD">
+<deviceset name="DOC-INFO">
 <gates>
 <gate name="G$1" symbol="DOCFIELD" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="DUAL-ZENER" prefix="D">
+<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
+uni and bidirectional supressor diode</description>
+<gates>
+<gate name="1" symbol="SCHOTTKY-BIDIR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="AG">
+<connects>
+<connect gate="1" pin="1" pad="A"/>
+<connect gate="1" pin="2" pad="C"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -1067,7 +1232,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="MOUNTING_HOLE" prefix="MH$">
+<deviceset name="MOUNTING-HOLE" prefix="MH$">
 <gates>
 <gate name="G$1" symbol="MOUNTING_HOLE" x="0" y="0"/>
 </gates>
@@ -1082,7 +1247,42 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="PNP_RESISTORS">
+<deviceset name="NPN" prefix="Q">
+<description>NPN Transistor</description>
+<gates>
+<gate name="G$1" symbol="NPN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="SMD" package="SOT23">
+<connects>
+<connect gate="G$1" pin="B" pad="1"/>
+<connect gate="G$1" pin="C" pad="3"/>
+<connect gate="G$1" pin="E" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+<technology name="ALT1"/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PINHD-1X1" prefix="JP" uservalue="yes">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="PINHD1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="1X01">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PNP-BIASED">
 <description>DTA114EET1G  (Digikey DTA114EET1GOSCT-ND)</description>
 <gates>
 <gate name="G$1" symbol="PNP-RESISTORS" x="0" y="0"/>
@@ -1100,7 +1300,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="PUSH_BUTTON">
+<deviceset name="PUSH-BUTTON">
 <description>CKN10502CT-ND</description>
 <gates>
 <gate name="G$1" symbol="PUSH_BUTTON" x="0" y="0"/>
@@ -1119,7 +1319,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="R-US_" prefix="R" uservalue="yes">
+<deviceset name="R" prefix="R" uservalue="yes">
 <description>&lt;B&gt;RESISTOR&lt;/B&gt;, American symbol</description>
 <gates>
 <gate name="G$1" symbol="R-US" x="0" y="0"/>
@@ -1134,13 +1334,48 @@ General-purpose diode for high-speed switching</description>
 <technology name=""/>
 </technologies>
 </device>
-<device name="R2512W" package="R2512W">
+<device name="R0805" package="R0805">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+<device name="R0603" package="R0603">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="RELAY" prefix="K">
+<description>&lt;b&gt;RELAY&lt;/b&gt;&lt;p&gt;
+reed, 1 x norm. open with polarity</description>
+<gates>
+<gate name="1" symbol="K-D-SIL" x="0" y="0" addlevel="must"/>
+<gate name="2" symbol="S-SIL" x="17.78" y="0" addlevel="always"/>
+</gates>
+<devices>
+<device name="" package="REED">
+<connects>
+<connect gate="1" pin="3" pad="3"/>
+<connect gate="1" pin="5" pad="5"/>
+<connect gate="2" pin="P" pad="1"/>
+<connect gate="2" pin="S" pad="7"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -1170,7 +1405,28 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="USB" prefix="J">
+<deviceset name="TRANSFORMER" prefix="TR">
+<description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="http://ww2.pulseeng.com/products/datasheets/T601.pdf"&gt; Data sheet &lt;/a&gt;&lt;br&gt;
+www.pulseeng.com</description>
+<gates>
+<gate name="G$1" symbol="TRANSFORMER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PE-65612">
+<connects>
+<connect gate="G$1" pin="P1" pad="1"/>
+<connect gate="G$1" pin="P2" pad="2"/>
+<connect gate="G$1" pin="S1" pad="3"/>
+<connect gate="G$1" pin="S2" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="USB-CONN" prefix="J">
 <gates>
 <gate name="G$1" symbol="USB" x="0" y="-5.08"/>
 </gates>
@@ -1189,7 +1445,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="USB_FILTER">
+<deviceset name="USB-ESD">
 <gates>
 <gate name="G$1" symbol="USB_FILTER" x="0" y="0"/>
 </gates>
@@ -1209,7 +1465,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="WIFI_MODULE" prefix="U">
+<deviceset name="WIFI-MODULE" prefix="U">
 <gates>
 <gate name="G$1" symbol="WIFI_MODULE" x="0" y="2.54"/>
 </gates>
@@ -1258,391 +1514,34 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="CPOL-US" prefix="C" uservalue="yes">
-<description>&lt;B&gt;POLARIZED CAPACITOR&lt;/B&gt;, American symbol</description>
+<deviceset name="C" prefix="C" uservalue="yes">
+<description>&lt;B&gt;CAPACITOR&lt;/B&gt;, American symbol</description>
 <gates>
-<gate name="G$1" symbol="CPOL-US" x="0" y="0"/>
+<gate name="G$1" symbol="CAPACITOR" x="0" y="0"/>
 </gates>
 <devices>
-<device name="UD-6,3X5,8" package="UD-6,3X5,8_NICHICON">
-<connects>
-<connect gate="G$1" pin="+" pad="+"/>
-<connect gate="G$1" pin="-" pad="-"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="pinhead">
-<description>&lt;b&gt;Pin Header Connectors&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="1X01">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
-<pad name="1" x="0" y="0" drill="1.016" shape="octagon"/>
-<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
-</package>
-</packages>
-<symbols>
-<symbol name="PINHD1">
-<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="-2.54" x2="1.27" y2="2.54" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="2.54" x2="-6.35" y2="2.54" width="0.4064" layer="94"/>
-<wire x1="-6.35" y1="2.54" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
-<text x="-6.35" y="3.175" size="1.778" layer="95">&gt;NAME</text>
-<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="PINHD-1X1" prefix="JP" uservalue="yes">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="PINHD1" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="1X01">
+<device name="C0603K" package="C0603K">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
 </technologies>
 </device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="transistor-npn">
-<description>&lt;b&gt;NPN Transistors&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="SOT23">
-<description>&lt;b&gt;SOT-23&lt;/b&gt;</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<smd name="3" x="0" y="1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="2" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="1" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
-<rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
-<rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
-</package>
-</packages>
-<symbols>
-<symbol name="NPN">
-<wire x1="2.54" y1="2.54" x2="0.508" y2="1.524" width="0.1524" layer="94"/>
-<wire x1="1.778" y1="-1.524" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="-2.54" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="1.27" y1="-2.54" x2="1.778" y2="-1.524" width="0.1524" layer="94"/>
-<wire x1="1.54" y1="-2.04" x2="0.308" y2="-1.424" width="0.1524" layer="94"/>
-<wire x1="1.524" y1="-2.413" x2="2.286" y2="-2.413" width="0.254" layer="94"/>
-<wire x1="2.286" y1="-2.413" x2="1.778" y2="-1.778" width="0.254" layer="94"/>
-<wire x1="1.778" y1="-1.778" x2="1.524" y2="-2.286" width="0.254" layer="94"/>
-<wire x1="1.524" y1="-2.286" x2="1.905" y2="-2.286" width="0.254" layer="94"/>
-<wire x1="1.905" y1="-2.286" x2="1.778" y2="-2.032" width="0.254" layer="94"/>
-<text x="-10.16" y="7.62" size="1.778" layer="95">&gt;NAME</text>
-<text x="-10.16" y="5.08" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-0.254" y1="-2.54" x2="0.508" y2="2.54" layer="94"/>
-<pin name="B" x="-2.54" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
-<pin name="E" x="2.54" y="-5.08" visible="off" length="short" direction="pas" swaplevel="3" rot="R90"/>
-<pin name="C" x="2.54" y="5.08" visible="off" length="short" direction="pas" swaplevel="2" rot="R270"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="BC847*" prefix="Q">
-<description>NPN Transistor</description>
-<gates>
-<gate name="G$1" symbol="NPN" x="0" y="0"/>
-</gates>
-<devices>
-<device name="SMD" package="SOT23">
+<device name="C0402K" package="C0402K">
 <connects>
-<connect gate="G$1" pin="B" pad="1"/>
-<connect gate="G$1" pin="C" pad="3"/>
-<connect gate="G$1" pin="E" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-<technology name="A"/>
-<technology name="ALT1"/>
-<technology name="B"/>
-<technology name="BLT1"/>
-<technology name="C"/>
-<technology name="CLT1"/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="relay">
-<description>&lt;b&gt;Relays&lt;/b&gt;&lt;p&gt;
-&lt;ul&gt;
-&lt;li&gt;Eichhoff
-&lt;li&gt;Finder
-&lt;li&gt;Fujitsu
-&lt;li&gt;HAMLIN
-&lt;li&gt;OMRON
-&lt;li&gt;Matsushita
-&lt;li&gt;NAiS
-&lt;li&gt;Siemens
-&lt;li&gt;Schrack
-&lt;/ul&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="REED">
-<description>&lt;b&gt;RELAY&lt;/b&gt;&lt;p&gt;
-reed, 1 x norm. open with polarity, grid 5.08</description>
-<wire x1="-20.32" y1="5.08" x2="0" y2="5.08" width="0.254" layer="21"/>
-<wire x1="0" y1="5.08" x2="0" y2="0" width="0.254" layer="21"/>
-<wire x1="0" y1="0" x2="-20.32" y2="0" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="0" x2="-20.32" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="1.27" x2="-20.32" y2="3.81" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="3.81" x2="-20.32" y2="5.08" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="3.81" x2="-19.05" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-19.05" y1="2.54" x2="-20.32" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="3.81" x2="-9.525" y2="3.81" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="3.81" x2="-9.525" y2="3.175" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="3.175" x2="-9.525" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="2.54" x2="-9.525" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="1.27" x2="-10.795" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="1.27" x2="-10.795" y2="1.905" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="1.905" x2="-10.795" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="2.54" x2="-10.795" y2="3.81" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="1.905" x2="-9.525" y2="3.175" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="2.54" x2="-11.43" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="2.54" x2="-8.89" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-17.78" y1="3.81" x2="-17.78" y2="4.445" width="0.254" layer="21"/>
-<wire x1="-17.78" y1="4.445" x2="-16.51" y2="4.445" width="0.254" layer="21"/>
-<wire x1="-14.605" y1="4.445" x2="-2.54" y2="4.445" width="0.254" layer="21"/>
-<wire x1="-2.54" y1="4.445" x2="-2.54" y2="3.81" width="0.254" layer="21"/>
-<wire x1="-16.51" y1="4.445" x2="-14.605" y2="3.81" width="0.254" layer="21"/>
-<circle x="-11.43" y="1.651" radius="0.127" width="0.254" layer="21"/>
-<pad name="7" x="-2.54" y="2.54" drill="0.8128" shape="long" rot="R90"/>
-<pad name="5" x="-7.62" y="2.54" drill="0.8128" shape="long" rot="R90"/>
-<pad name="3" x="-12.7" y="2.54" drill="0.8128" shape="long" rot="R90"/>
-<pad name="1" x="-17.78" y="2.54" drill="0.8128" shape="long" rot="R90"/>
-<text x="-19.685" y="0.635" size="0.4064" layer="48">Günther 3570.1331..</text>
-<text x="-19.685" y="5.715" size="1.27" layer="25">&gt;NAME</text>
-<text x="-12.7" y="5.715" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="K-D-SIL">
-<wire x1="-3.81" y1="2.54" x2="1.27" y2="2.54" width="0.254" layer="94"/>
-<wire x1="1.27" y1="2.54" x2="3.81" y2="2.54" width="0.254" layer="94"/>
-<wire x1="3.81" y1="2.54" x2="3.81" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="3.81" y1="-2.54" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="-2.54" x2="-3.81" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-3.81" y1="-2.54" x2="-3.81" y2="2.54" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="-2.54" x2="1.27" y2="2.54" width="0.254" layer="94"/>
-<wire x1="-3.175" y1="0.635" x2="-2.54" y2="0.635" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="0.635" x2="-3.175" y2="-0.635" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="0.635" x2="-1.905" y2="-0.635" width="0.254" layer="94"/>
-<wire x1="-3.175" y1="-0.635" x2="-2.54" y2="-0.635" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-0.635" x2="-1.905" y2="-0.635" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="0.635" x2="-2.54" y2="1.27" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-0.635" x2="-2.54" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="-1.905" y1="0.635" x2="-2.54" y2="0.635" width="0.254" layer="94"/>
-<text x="5.715" y="0" size="1.778" layer="95">&gt;PART</text>
-<text x="5.715" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="3" x="0" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
-<pin name="5" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
-</symbol>
-<symbol name="S-SIL">
-<wire x1="0" y1="2.54" x2="0" y2="5.3975" width="0.4064" layer="94"/>
-<wire x1="0" y1="-5.3975" x2="0" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="0" y1="-2.54" x2="-2.54" y2="2.54" width="0.4064" layer="94"/>
-<circle x="0" y="-2.54" radius="0.3175" width="0.254" layer="94"/>
-<text x="3.175" y="1.905" size="1.778" layer="95">&gt;PART</text>
-<text x="3.175" y="-0.635" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="S" x="0" y="7.62" visible="pad" length="short" direction="pas" rot="R270"/>
-<pin name="P" x="0" y="-7.62" visible="pad" length="short" direction="pas" rot="R90"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="35701331" prefix="K">
-<description>&lt;b&gt;RELAY&lt;/b&gt;&lt;p&gt;
-reed, 1 x norm. open with polarity</description>
-<gates>
-<gate name="1" symbol="K-D-SIL" x="0" y="0" addlevel="must"/>
-<gate name="2" symbol="S-SIL" x="17.78" y="0" addlevel="always"/>
-</gates>
-<devices>
-<device name="" package="REED">
-<connects>
-<connect gate="1" pin="3" pad="3"/>
-<connect gate="1" pin="5" pad="5"/>
-<connect gate="2" pin="P" pad="1"/>
-<connect gate="2" pin="S" pad="7"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="unknown" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="transformer-pulse">
-<description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
-www.pulseeng.com</description>
-<packages>
-<package name="PE-65612">
-<description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="http://ww2.pulseeng.com/products/datasheets/T601.pdf"&gt; Data sheet &lt;/a&gt;&lt;br&gt;
-www.pulseeng.com</description>
-<pad name="1" x="-5.08" y="-2.54" drill="0.8" diameter="1.27"/>
-<pad name="2" x="-5.08" y="2.54" drill="0.8" diameter="1.27"/>
-<pad name="3" x="5.08" y="2.54" drill="0.8" diameter="1.27"/>
-<pad name="4" x="5.08" y="-2.54" drill="0.8" diameter="1.27"/>
-<wire x1="-6.35" y1="-4.355" x2="6.35" y2="-4.355" width="0.2032" layer="21"/>
-<wire x1="6.35" y1="-4.355" x2="6.35" y2="3.355" width="0.2032" layer="21"/>
-<wire x1="6.35" y1="3.355" x2="5.35" y2="4.355" width="0.2032" layer="21" curve="90"/>
-<wire x1="5.35" y1="4.355" x2="-5.35" y2="4.355" width="0.2032" layer="21"/>
-<wire x1="-5.35" y1="4.355" x2="-6.35" y2="3.355" width="0.2032" layer="21" curve="90"/>
-<wire x1="-6.35" y1="3.355" x2="-6.35" y2="-4.355" width="0.2032" layer="21"/>
-<text x="-6.35" y="-6.35" size="1.27" layer="25">&gt;NAME</text>
-<text x="-5.08" y="-0.635" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="TRANSFORMER">
-<wire x1="1.27" y1="3.175" x2="1.27" y2="-3.175" width="0.254" layer="94"/>
-<circle x="-1.905" y="3.175" radius="0.254" width="0" layer="94"/>
-<circle x="4.445" y="3.175" radius="0.254" width="0" layer="94"/>
-<text x="-2.54" y="4.826" size="1.778" layer="95">&gt;NAME</text>
-<text x="-2.54" y="-5.715" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-1.905" y1="-2.54" x2="0.127" y2="2.54" layer="94"/>
-<rectangle x1="2.413" y1="-2.54" x2="4.445" y2="2.54" layer="94"/>
-<pin name="P1" x="-5.08" y="2.54" visible="pad" length="middle" direction="pas"/>
-<pin name="P2" x="-5.08" y="-2.54" visible="pad" length="middle" direction="pas"/>
-<pin name="S1" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" rot="R180"/>
-<pin name="S2" x="7.62" y="-2.54" visible="pad" length="middle" direction="pas" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="PE-65612" prefix="TR">
-<description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="http://ww2.pulseeng.com/products/datasheets/T601.pdf"&gt; Data sheet &lt;/a&gt;&lt;br&gt;
-www.pulseeng.com</description>
-<gates>
-<gate name="G$1" symbol="TRANSFORMER" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="PE-65612">
-<connects>
-<connect gate="G$1" pin="P1" pad="1"/>
-<connect gate="G$1" pin="P2" pad="2"/>
-<connect gate="G$1" pin="S1" pad="3"/>
-<connect gate="G$1" pin="S2" pad="4"/>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
 </technologies>
 </device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="diode">
-<description>&lt;b&gt;Diodes&lt;/b&gt;&lt;p&gt;
-Based on the following sources:
-&lt;ul&gt;
-&lt;li&gt;Motorola : www.onsemi.com
-&lt;li&gt;Fairchild : www.fairchildsemi.com
-&lt;li&gt;Philips : www.semiconductors.com
-&lt;li&gt;Vishay : www.vishay.de
-&lt;/ul&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="AG">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-diameter 9 mm, horizontal, grid 10.16 mm</description>
-<wire x1="-4.699" y1="-4.572" x2="-4.699" y2="4.572" width="0.1524" layer="21"/>
-<wire x1="4.699" y1="4.572" x2="4.699" y2="-4.572" width="0.1524" layer="21"/>
-<wire x1="-4.699" y1="4.572" x2="4.699" y2="4.572" width="0.1524" layer="21"/>
-<wire x1="4.699" y1="-4.572" x2="-4.699" y2="-4.572" width="0.1524" layer="21"/>
-<wire x1="-1.143" y1="0" x2="0" y2="0" width="0.1524" layer="21"/>
-<wire x1="0" y1="0" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0" x2="2.54" y2="0" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="-0.635" x2="0" y2="0" width="0.1524" layer="21"/>
-<wire x1="7.62" y1="0" x2="5.842" y2="0" width="1.4732" layer="51"/>
-<wire x1="-7.62" y1="0" x2="-5.842" y2="0" width="1.4732" layer="51"/>
-<wire x1="-0.381" y1="0.508" x2="-0.381" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-0.381" y1="0.635" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="0" y2="0" width="0.1524" layer="21"/>
-<wire x1="0.381" y1="-0.508" x2="0.381" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="0.381" y1="-0.635" x2="0" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="-0.635" x2="0" y2="0" width="0.1524" layer="21"/>
-<pad name="C" x="-7.62" y="0" drill="1.8034" shape="long"/>
-<pad name="A" x="7.62" y="0" drill="1.8034" shape="long"/>
-<text x="-4.8006" y="4.8514" size="1.778" layer="25" ratio="10">&gt;NAME</text>
-<text x="-2.4892" y="-3.302" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
-<rectangle x1="-3.81" y1="-4.572" x2="-3.302" y2="4.572" layer="21"/>
-<rectangle x1="4.699" y1="-0.7112" x2="5.6134" y2="0.7112" layer="21"/>
-<rectangle x1="-5.6134" y1="-0.7112" x2="-4.699" y2="0.7112" layer="21"/>
-</package>
-</packages>
-<symbols>
-<symbol name="SCHOTTKY-BIDIR">
-<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
-<wire x1="1.905" y1="1.27" x2="1.27" y2="1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="1.27" y2="0" width="0.1524" layer="94"/>
-<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="-1.27" x2="0.635" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="3.81" y1="1.27" x2="3.81" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="3.81" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="3.81" y2="1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
-<wire x1="1.905" y1="1.27" x2="1.905" y2="1.016" width="0.254" layer="94"/>
-<wire x1="0.635" y1="-1.016" x2="0.635" y2="-1.27" width="0.254" layer="94"/>
-<text x="-1.27" y="1.905" size="1.778" layer="95">&gt;NAME</text>
-<text x="-1.27" y="-3.429" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
-<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="BZW50B" prefix="D">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-uni and bidirectional supressor diode</description>
-<gates>
-<gate name="1" symbol="SCHOTTKY-BIDIR" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="AG">
+<device name="C0805K" package="C0805K">
 <connects>
-<connect gate="1" pin="1" pad="A"/>
-<connect gate="1" pin="2" pad="C"/>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -1666,99 +1565,99 @@ uni and bidirectional supressor diode</description>
 </class>
 </classes>
 <parts>
-<part name="U$20" library="wifi-orb" deviceset="DOCFIELD" device=""/>
-<part name="J1" library="wifi-orb" deviceset="USB" device="" value="MICRO USB"/>
-<part name="GND5" library="wifi-orb" deviceset="GND" device=""/>
-<part name="+5V2" library="wifi-orb" deviceset="+5V" device=""/>
-<part name="MH$1" library="wifi-orb" deviceset="MOUNTING_HOLE" device=""/>
-<part name="MH$2" library="wifi-orb" deviceset="MOUNTING_HOLE" device=""/>
-<part name="MH$3" library="wifi-orb" deviceset="MOUNTING_HOLE" device=""/>
-<part name="MH$4" library="wifi-orb" deviceset="MOUNTING_HOLE" device=""/>
-<part name="GND22" library="wifi-orb" deviceset="GND" device=""/>
-<part name="S1" library="wifi-orb" deviceset="PUSH_BUTTON" device=""/>
-<part name="GND3" library="wifi-orb" deviceset="GND" device=""/>
-<part name="C7" library="wifi-orb" deviceset="CAPACITOR" device="C0603K" value="1u"/>
-<part name="GND18" library="wifi-orb" deviceset="GND" device=""/>
-<part name="C6" library="wifi-orb" deviceset="CAPACITOR" device="C0603K" value="1u"/>
-<part name="GND28" library="wifi-orb" deviceset="GND" device=""/>
-<part name="U3" library="wifi-orb" deviceset="LPC11U35FHN33/501" device="" value="LPC11U35FHI33/501"/>
-<part name="GND2" library="wifi-orb" deviceset="GND" device=""/>
-<part name="Q1" library="wifi-orb" deviceset="CRYSTAL" device="CTS406" value="12Mhz"/>
-<part name="C1" library="wifi-orb" deviceset="C-US" device="C0402K" value="18pF"/>
-<part name="C2" library="wifi-orb" deviceset="C-US" device="C0402K" value="18pF"/>
-<part name="GND4" library="wifi-orb" deviceset="GND" device=""/>
-<part name="C4" library="wifi-orb" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
-<part name="GND1" library="wifi-orb" deviceset="GND" device=""/>
-<part name="C3" library="wifi-orb" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
-<part name="GND11" library="wifi-orb" deviceset="GND" device=""/>
-<part name="+3V1" library="wifi-orb" deviceset="+3V3" device=""/>
-<part name="+3V2" library="wifi-orb" deviceset="+3V3" device=""/>
-<part name="R1" library="wifi-orb" deviceset="R-US_" device="R0402" value="1K5"/>
-<part name="+3V5" library="wifi-orb" deviceset="+3V3" device=""/>
-<part name="J2" library="wifi-orb" deviceset="SWD-HEADER" device="" value="SWD HEADER"/>
-<part name="+3V6" library="wifi-orb" deviceset="+3V3" device=""/>
-<part name="GND16" library="wifi-orb" deviceset="GND" device=""/>
-<part name="R4" library="wifi-orb" deviceset="R-US_" device="R0402" value="10K"/>
-<part name="R5" library="wifi-orb" deviceset="R-US_" device="R0402" value="10K"/>
-<part name="GND17" library="wifi-orb" deviceset="GND" device=""/>
-<part name="+3V7" library="wifi-orb" deviceset="+3V3" device=""/>
-<part name="R3" library="wifi-orb" deviceset="R-US_" device="R0402" value="10K"/>
-<part name="+3V8" library="wifi-orb" deviceset="+3V3" device=""/>
-<part name="S2" library="wifi-orb" deviceset="PUSH_BUTTON" device=""/>
-<part name="GND19" library="wifi-orb" deviceset="GND" device=""/>
-<part name="R2" library="wifi-orb" deviceset="R-US_" device="R0402" value="10K"/>
-<part name="+3V9" library="wifi-orb" deviceset="+3V3" device=""/>
-<part name="T1" library="wifi-orb" deviceset="PNP_RESISTORS" device="" value="DTA114EET1G (2x10K)"/>
-<part name="U1" library="wifi-orb" deviceset="LDO" device="SOT223" value="AP2114H-3.3TRG1"/>
-<part name="U2" library="wifi-orb" deviceset="USB_FILTER" device="" value="NUF2042XV6T1G"/>
-<part name="D2" library="wifi-orb" deviceset="BAS40-05" device=""/>
-<part name="C17" library="wifi-orb" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
-<part name="+3V10" library="wifi-orb" deviceset="+3V3" device=""/>
-<part name="+5V1" library="wifi-orb" deviceset="+5V" device=""/>
-<part name="C9" library="wifi-orb" deviceset="C-US1" device="C0805K" value="10uF"/>
-<part name="U4" library="wifi-orb" deviceset="WIFI_MODULE" device="SMT" value="AMW006"/>
-<part name="GND8" library="wifi-orb" deviceset="GND" device=""/>
-<part name="C13" library="wifi-orb" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
-<part name="C14" library="wifi-orb" deviceset="C-US1" device="C0805K" value="10uF"/>
-<part name="GND20" library="wifi-orb" deviceset="GND" device=""/>
-<part name="C10" library="wifi-orb" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
-<part name="C11" library="wifi-orb" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
-<part name="C12" library="wifi-orb" deviceset="C-US1" device="C0805K" value="10uF"/>
-<part name="GND21" library="wifi-orb" deviceset="GND" device=""/>
-<part name="GND23" library="wifi-orb" deviceset="GND" device=""/>
-<part name="GND24" library="wifi-orb" deviceset="GND" device=""/>
-<part name="GND25" library="wifi-orb" deviceset="GND" device=""/>
-<part name="GND26" library="wifi-orb" deviceset="GND" device=""/>
-<part name="+3V3" library="wifi-orb" deviceset="+3V3" device=""/>
-<part name="+3V4" library="wifi-orb" deviceset="+3V3" device=""/>
-<part name="+3V11" library="wifi-orb" deviceset="+3V3" device=""/>
-<part name="C5" library="wifi-orb" deviceset="CPOL-US" device="UD-6,3X5,8" value="47uF"/>
-<part name="C8" library="wifi-orb" deviceset="CPOL-US" device="UD-6,3X5,8" value="47uF"/>
-<part name="GND7" library="wifi-orb" deviceset="GND" device=""/>
-<part name="GND14" library="wifi-orb" deviceset="GND" device=""/>
-<part name="R6" library="wifi-orb" deviceset="R-US_" device="R0402" value="3K3"/>
-<part name="GND27" library="wifi-orb" deviceset="GND" device=""/>
-<part name="ANTENNA" library="pinhead" deviceset="PINHD-1X1" device=""/>
-<part name="Q3" library="transistor-npn" deviceset="BC847*" device="SMD" technology="ALT1" value="2N2222"/>
-<part name="GND6" library="wifi-orb" deviceset="GND" device=""/>
-<part name="K1" library="relay" deviceset="35701331" device=""/>
-<part name="+5V3" library="wifi-orb" deviceset="+5V" device=""/>
-<part name="R11" library="wifi-orb" deviceset="R-US_" device="R0402" value="3K"/>
-<part name="TR1" library="transformer-pulse" deviceset="PE-65612" device=""/>
-<part name="GND9" library="wifi-orb" deviceset="GND" device=""/>
-<part name="R10" library="wifi-orb" deviceset="R-US_" device="R0402" value="100"/>
-<part name="LINE1" library="pinhead" deviceset="PINHD-1X1" device=""/>
-<part name="LINE2" library="pinhead" deviceset="PINHD-1X1" device=""/>
-<part name="D1" library="diode" deviceset="BZW50B" device="" value="3V3"/>
-<part name="R12" library="wifi-orb" deviceset="R-US_" device="R0402" value="100"/>
-<part name="R9" library="wifi-orb" deviceset="R-US_" device="R0402" value="100"/>
-<part name="+5V4" library="wifi-orb" deviceset="+5V" device=""/>
-<part name="C15" library="wifi-orb" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
-<part name="GND12" library="wifi-orb" deviceset="GND" device=""/>
-<part name="R7" library="wifi-orb" deviceset="R-US_" device="R0402" value="3K"/>
-<part name="R8" library="wifi-orb" deviceset="R-US_" device="R0402" value="3K"/>
-<part name="C16" library="wifi-orb" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
-<part name="Q2" library="transistor-npn" deviceset="BC847*" device="SMD" technology="ALT1" value="2N2222"/>
+<part name="U$20" library="phone-finder" deviceset="DOC-INFO" device=""/>
+<part name="J1" library="phone-finder" deviceset="USB-CONN" device="" value="MICRO USB"/>
+<part name="GND5" library="phone-finder" deviceset="GND" device=""/>
+<part name="+5V2" library="phone-finder" deviceset="+5V" device=""/>
+<part name="MH$1" library="phone-finder" deviceset="MOUNTING-HOLE" device=""/>
+<part name="MH$2" library="phone-finder" deviceset="MOUNTING-HOLE" device=""/>
+<part name="MH$3" library="phone-finder" deviceset="MOUNTING-HOLE" device=""/>
+<part name="MH$4" library="phone-finder" deviceset="MOUNTING-HOLE" device=""/>
+<part name="GND22" library="phone-finder" deviceset="GND" device=""/>
+<part name="S1" library="phone-finder" deviceset="PUSH-BUTTON" device=""/>
+<part name="GND3" library="phone-finder" deviceset="GND" device=""/>
+<part name="C7" library="phone-finder" deviceset="C" device="C0603K" value="1u"/>
+<part name="GND18" library="phone-finder" deviceset="GND" device=""/>
+<part name="C6" library="phone-finder" deviceset="C" device="C0603K" value="1u"/>
+<part name="GND28" library="phone-finder" deviceset="GND" device=""/>
+<part name="U3" library="phone-finder" deviceset="LPC11U35FHN33/501" device="" value="LPC11U35FHI33/501"/>
+<part name="GND2" library="phone-finder" deviceset="GND" device=""/>
+<part name="Q1" library="phone-finder" deviceset="CRYSTAL" device="CTS406" value="12Mhz"/>
+<part name="C1" library="phone-finder" deviceset="C" device="C0402K" value="18pF"/>
+<part name="C2" library="phone-finder" deviceset="C" device="C0402K" value="18pF"/>
+<part name="GND4" library="phone-finder" deviceset="GND" device=""/>
+<part name="C4" library="phone-finder" deviceset="C" device="C0402K" value="0.1uF"/>
+<part name="GND1" library="phone-finder" deviceset="GND" device=""/>
+<part name="C3" library="phone-finder" deviceset="C" device="C0402K" value="0.1uF"/>
+<part name="GND11" library="phone-finder" deviceset="GND" device=""/>
+<part name="+3V1" library="phone-finder" deviceset="+3V3" device=""/>
+<part name="+3V2" library="phone-finder" deviceset="+3V3" device=""/>
+<part name="R1" library="phone-finder" deviceset="R" device="R0402" value="1K5"/>
+<part name="+3V5" library="phone-finder" deviceset="+3V3" device=""/>
+<part name="J2" library="phone-finder" deviceset="SWD-HEADER" device="" value="SWD HEADER"/>
+<part name="+3V6" library="phone-finder" deviceset="+3V3" device=""/>
+<part name="GND16" library="phone-finder" deviceset="GND" device=""/>
+<part name="R4" library="phone-finder" deviceset="R" device="R0402" value="10K"/>
+<part name="R5" library="phone-finder" deviceset="R" device="R0402" value="10K"/>
+<part name="GND17" library="phone-finder" deviceset="GND" device=""/>
+<part name="+3V7" library="phone-finder" deviceset="+3V3" device=""/>
+<part name="R3" library="phone-finder" deviceset="R" device="R0402" value="10K"/>
+<part name="+3V8" library="phone-finder" deviceset="+3V3" device=""/>
+<part name="S2" library="phone-finder" deviceset="PUSH-BUTTON" device=""/>
+<part name="GND19" library="phone-finder" deviceset="GND" device=""/>
+<part name="R2" library="phone-finder" deviceset="R" device="R0402" value="10K"/>
+<part name="+3V9" library="phone-finder" deviceset="+3V3" device=""/>
+<part name="T1" library="phone-finder" deviceset="PNP-BIASED" device="" value="DTA114EET1G (2x10K)"/>
+<part name="U1" library="phone-finder" deviceset="LDO" device="SOT223" value="AP2114H-3.3TRG1"/>
+<part name="U2" library="phone-finder" deviceset="USB-ESD" device="" value="NUF2042XV6T1G"/>
+<part name="D2" library="phone-finder" deviceset="BAS40-05" device=""/>
+<part name="C17" library="phone-finder" deviceset="C" device="C0402K" value="0.1uF"/>
+<part name="+3V10" library="phone-finder" deviceset="+3V3" device=""/>
+<part name="+5V1" library="phone-finder" deviceset="+5V" device=""/>
+<part name="C9" library="phone-finder" deviceset="C" device="C0805K" value="10uF"/>
+<part name="U4" library="phone-finder" deviceset="WIFI-MODULE" device="SMT" value="AMW006"/>
+<part name="GND8" library="phone-finder" deviceset="GND" device=""/>
+<part name="C13" library="phone-finder" deviceset="C" device="C0402K" value="0.1uF"/>
+<part name="C14" library="phone-finder" deviceset="C" device="C0805K" value="10uF"/>
+<part name="GND20" library="phone-finder" deviceset="GND" device=""/>
+<part name="C10" library="phone-finder" deviceset="C" device="C0402K" value="0.1uF"/>
+<part name="C11" library="phone-finder" deviceset="C" device="C0402K" value="0.1uF"/>
+<part name="C12" library="phone-finder" deviceset="C" device="C0805K" value="10uF"/>
+<part name="GND21" library="phone-finder" deviceset="GND" device=""/>
+<part name="GND23" library="phone-finder" deviceset="GND" device=""/>
+<part name="GND24" library="phone-finder" deviceset="GND" device=""/>
+<part name="GND25" library="phone-finder" deviceset="GND" device=""/>
+<part name="GND26" library="phone-finder" deviceset="GND" device=""/>
+<part name="+3V3" library="phone-finder" deviceset="+3V3" device=""/>
+<part name="+3V4" library="phone-finder" deviceset="+3V3" device=""/>
+<part name="+3V11" library="phone-finder" deviceset="+3V3" device=""/>
+<part name="C5" library="phone-finder" deviceset="C-POL" device="UD-6,3X5,8" value="47uF"/>
+<part name="C8" library="phone-finder" deviceset="C-POL" device="UD-6,3X5,8" value="47uF"/>
+<part name="GND7" library="phone-finder" deviceset="GND" device=""/>
+<part name="GND14" library="phone-finder" deviceset="GND" device=""/>
+<part name="R6" library="phone-finder" deviceset="R" device="R0402" value="3K3"/>
+<part name="GND27" library="phone-finder" deviceset="GND" device=""/>
+<part name="ANTENNA" library="phone-finder" deviceset="PINHD-1X1" device=""/>
+<part name="Q3" library="phone-finder" deviceset="NPN" device="SMD" technology="ALT1" value="2N2222"/>
+<part name="GND6" library="phone-finder" deviceset="GND" device=""/>
+<part name="K1" library="phone-finder" deviceset="RELAY" device=""/>
+<part name="+5V3" library="phone-finder" deviceset="+5V" device=""/>
+<part name="R11" library="phone-finder" deviceset="R" device="R0402" value="3K"/>
+<part name="TR1" library="phone-finder" deviceset="TRANSFORMER" device=""/>
+<part name="GND9" library="phone-finder" deviceset="GND" device=""/>
+<part name="R10" library="phone-finder" deviceset="R" device="R0805" value="100"/>
+<part name="LINE1" library="phone-finder" deviceset="PINHD-1X1" device=""/>
+<part name="LINE2" library="phone-finder" deviceset="PINHD-1X1" device=""/>
+<part name="D1" library="phone-finder" deviceset="DUAL-ZENER" device="" value="3V3"/>
+<part name="R12" library="phone-finder" deviceset="R" device="R0805" value="100"/>
+<part name="R9" library="phone-finder" deviceset="R" device="R0805" value="100"/>
+<part name="+5V4" library="phone-finder" deviceset="+5V" device=""/>
+<part name="C15" library="phone-finder" deviceset="C" device="C0402K" value="0.1uF"/>
+<part name="GND12" library="phone-finder" deviceset="GND" device=""/>
+<part name="R7" library="phone-finder" deviceset="R" device="R0402" value="3K"/>
+<part name="R8" library="phone-finder" deviceset="R" device="R0402" value="3K"/>
+<part name="C16" library="phone-finder" deviceset="C" device="C0402K" value="0.1uF"/>
+<part name="Q2" library="phone-finder" deviceset="NPN" device="SMD" technology="ALT1" value="2N2222"/>
 </parts>
 <sheets>
 <sheet>
