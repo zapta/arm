@@ -1346,21 +1346,6 @@ General-purpose diode for high-speed switching</description>
 <rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
 <rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
 </package>
-<package name="SOT23-BEC">
-<description>TO-236 ITT Intermetall</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.127" layer="51"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.127" layer="51"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.127" layer="51"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.127" layer="51"/>
-<smd name="C" x="0" y="1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="E" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="B" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
-<rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
-<rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
-</package>
 </packages>
 <symbols>
 <symbol name="NPN">
@@ -1403,26 +1388,6 @@ General-purpose diode for high-speed switching</description>
 <technology name="BLT1"/>
 <technology name="C"/>
 <technology name="CLT1"/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="BC818*" prefix="Q">
-<description>&lt;b&gt;NPN Transistor&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="NPN" x="0" y="0"/>
-</gates>
-<devices>
-<device name="SMD" package="SOT23-BEC">
-<connects>
-<connect gate="G$1" pin="B" pad="B"/>
-<connect gate="G$1" pin="C" pad="C"/>
-<connect gate="G$1" pin="E" pad="E"/>
-</connects>
-<technologies>
-<technology name="-16"/>
-<technology name="-25"/>
-<technology name="-40"/>
 </technologies>
 </device>
 </devices>
@@ -1787,13 +1752,13 @@ uni and bidirectional supressor diode</description>
 <part name="D1" library="diode" deviceset="BZW50B" device="" value="3V3"/>
 <part name="R12" library="wifi-orb" deviceset="R-US_" device="R0402" value="100"/>
 <part name="R9" library="wifi-orb" deviceset="R-US_" device="R0402" value="100"/>
-<part name="Q2" library="transistor-npn" deviceset="BC818*" device="SMD" technology="-16" value="2N2222"/>
 <part name="+5V4" library="wifi-orb" deviceset="+5V" device=""/>
 <part name="C15" library="wifi-orb" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
 <part name="GND12" library="wifi-orb" deviceset="GND" device=""/>
 <part name="R7" library="wifi-orb" deviceset="R-US_" device="R0402" value="3K"/>
 <part name="R8" library="wifi-orb" deviceset="R-US_" device="R0402" value="3K"/>
 <part name="C16" library="wifi-orb" deviceset="CAPACITOR" device="C0603K" value="0.1uF"/>
+<part name="Q2" library="transistor-npn" deviceset="BC847*" device="SMD" technology="ALT1" value="2N2222"/>
 </parts>
 <sheets>
 <sheet>
@@ -2017,10 +1982,6 @@ uni and bidirectional supressor diode</description>
 <attribute name="NAME" x="294.132" y="120.8786" size="1.778" layer="95"/>
 <attribute name="VALUE" x="293.37" y="124.206" size="1.778" layer="96"/>
 </instance>
-<instance part="Q2" gate="G$1" x="297.18" y="132.08" smashed="yes">
-<attribute name="NAME" x="301.752" y="134.112" size="1.778" layer="95"/>
-<attribute name="VALUE" x="301.752" y="130.81" size="1.778" layer="96"/>
-</instance>
 <instance part="+5V4" gate="G$1" x="299.72" y="144.78" rot="MR0"/>
 <instance part="C15" gate="G$1" x="287.02" y="111.76" smashed="yes">
 <attribute name="NAME" x="288.29" y="113.665" size="1.778" layer="95"/>
@@ -2038,6 +1999,10 @@ uni and bidirectional supressor diode</description>
 <instance part="C16" gate="G$1" x="322.58" y="114.3" smashed="yes">
 <attribute name="NAME" x="323.596" y="115.697" size="1.778" layer="95"/>
 <attribute name="VALUE" x="323.85" y="109.601" size="1.778" layer="96"/>
+</instance>
+<instance part="Q2" gate="G$1" x="297.18" y="132.08" smashed="yes">
+<attribute name="NAME" x="301.498" y="131.318" size="1.778" layer="95"/>
+<attribute name="VALUE" x="301.498" y="128.016" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -2318,9 +2283,9 @@ uni and bidirectional supressor diode</description>
 <wire x1="350.52" y1="83.82" x2="350.52" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="Q2" gate="G$1" pin="C"/>
 <wire x1="299.72" y1="137.16" x2="299.72" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="+5V4" gate="G$1" pin="+5V"/>
+<pinref part="Q2" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -2837,17 +2802,10 @@ uni and bidirectional supressor diode</description>
 <wire x1="299.72" y1="116.84" x2="302.26" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$21" class="0">
-<segment>
-<pinref part="Q2" gate="G$1" pin="E"/>
-<pinref part="R9" gate="G$1" pin="2"/>
-</segment>
-</net>
 <net name="N$23" class="0">
 <segment>
 <pinref part="C15" gate="G$1" pin="1"/>
 <wire x1="287.02" y1="114.3" x2="287.02" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="Q2" gate="G$1" pin="B"/>
 <wire x1="287.02" y1="124.46" x2="287.02" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="287.02" y1="132.08" x2="294.64" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="2"/>
@@ -2856,6 +2814,13 @@ uni and bidirectional supressor diode</description>
 <wire x1="281.94" y1="124.46" x2="287.02" y2="124.46" width="0.1524" layer="91"/>
 <junction x="287.02" y="124.46"/>
 <junction x="287.02" y="132.08"/>
+<pinref part="Q2" gate="G$1" pin="B"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="R9" gate="G$1" pin="2"/>
+<pinref part="Q2" gate="G$1" pin="E"/>
 </segment>
 </net>
 </nets>

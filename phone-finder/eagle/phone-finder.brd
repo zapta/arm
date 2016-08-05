@@ -550,21 +550,6 @@ Metric Code Size 1608</description>
 <rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
 <rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
 </package>
-<package name="SOT23-BEC">
-<description>TO-236 ITT Intermetall</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.127" layer="51"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.127" layer="51"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.127" layer="51"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.127" layer="51"/>
-<smd name="C" x="0" y="1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="E" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="B" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
-<rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
-<rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
-</package>
 </packages>
 </library>
 <library name="relay">
@@ -988,11 +973,11 @@ design rules under a new name.</description>
 <element name="D1" library="diode" package="AG" value="3V3" x="22.098" y="3.556"/>
 <element name="R12" library="wifi-orb" package="R0402" value="100" x="12.7" y="-3.556"/>
 <element name="R9" library="wifi-orb" package="R0402" value="100" x="12.7" y="-8.382"/>
-<element name="Q2" library="transistor-npn" package="SOT23-BEC" value="2N2222" x="13.97" y="-14.478"/>
 <element name="C15" library="wifi-orb" package="C0603K" value="0.1uF" x="12.954" y="-20.32"/>
 <element name="R7" library="wifi-orb" package="R0402" value="3K" x="12.7" y="-24.892"/>
 <element name="R8" library="wifi-orb" package="R0402" value="3K" x="12.7" y="-29.718"/>
 <element name="C16" library="wifi-orb" package="C0603K" value="0.1uF" x="12.954" y="-34.29"/>
+<element name="Q2" library="transistor-npn" package="SOT23" value="2N2222" x="13.97" y="-40.132"/>
 </elements>
 <signals>
 <signal name="+5V">
@@ -1003,14 +988,14 @@ design rules under a new name.</description>
 <contactref element="U1" pad="3"/>
 <contactref element="C5" pad="+"/>
 <contactref element="K1" pad="3"/>
-<contactref element="Q2" pad="C"/>
+<contactref element="Q2" pad="3"/>
 <wire x1="17.876" y1="75.931" x2="18.185" y2="80.226" width="0" layer="19" extent="1-1"/>
 <wire x1="15.629" y1="76.7" x2="17.876" y2="75.931" width="0" layer="19" extent="1-1"/>
 <wire x1="20.8472" y1="63.2166" x2="17.876" y2="75.931" width="0" layer="19" extent="1-1"/>
 <wire x1="15.748" y1="62.501" x2="20.8472" y2="63.2166" width="0" layer="19" extent="1-1"/>
 <wire x1="27.456" y1="62.685" x2="20.8472" y2="63.2166" width="0" layer="19" extent="1-1"/>
 <wire x1="39.116" y1="52.07" x2="27.456" y2="62.685" width="0" layer="19" extent="1-1"/>
-<wire x1="13.97" y1="-13.378" x2="39.116" y2="52.07" width="0" layer="19" extent="1-1"/>
+<wire x1="13.97" y1="-39.032" x2="39.116" y2="52.07" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$6">
 <contactref element="J1" pad="3"/>
@@ -1425,19 +1410,19 @@ design rules under a new name.</description>
 <contactref element="TR1" pad="1"/>
 <wire x1="12.15" y1="-8.382" x2="16.51" y2="51.054" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$21">
-<contactref element="Q2" pad="E"/>
-<contactref element="R9" pad="2"/>
-<wire x1="14.92" y1="-15.578" x2="13.25" y2="-8.382" width="0" layer="19" extent="1-1"/>
-</signal>
 <signal name="N$23">
 <contactref element="C15" pad="1"/>
-<contactref element="Q2" pad="B"/>
 <contactref element="R7" pad="2"/>
 <contactref element="R8" pad="2"/>
+<contactref element="Q2" pad="1"/>
+<wire x1="13.25" y1="-29.718" x2="13.02" y2="-41.232" width="0" layer="19" extent="1-1"/>
 <wire x1="13.25" y1="-24.892" x2="13.25" y2="-29.718" width="0" layer="19" extent="1-1"/>
 <wire x1="12.079" y1="-20.32" x2="13.25" y2="-24.892" width="0" layer="19" extent="1-1"/>
-<wire x1="13.02" y1="-15.578" x2="12.079" y2="-20.32" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$8">
+<contactref element="R9" pad="2"/>
+<contactref element="Q2" pad="2"/>
+<wire x1="13.25" y1="-8.382" x2="14.92" y2="-41.232" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <errors>
