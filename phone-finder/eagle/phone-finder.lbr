@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mic" unit="mic" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -1026,7 +1026,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="BZW50B" prefix="D">
+<deviceset name="DUAL-ZENER" prefix="D">
 <description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
 uni and bidirectional supressor diode</description>
 <gates>
@@ -1060,7 +1060,7 @@ uni and bidirectional supressor diode</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="35701331" prefix="K">
+<deviceset name="RELAY" prefix="K">
 <description>&lt;b&gt;RELAY&lt;/b&gt;&lt;p&gt;
 reed, 1 x norm. open with polarity</description>
 <gates>
@@ -1086,7 +1086,7 @@ reed, 1 x norm. open with polarity</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="PE-65612" prefix="TR">
+<deviceset name="TRANSFORMER" prefix="TR">
 <description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
 Source: &lt;a href="http://ww2.pulseeng.com/products/datasheets/T601.pdf"&gt; Data sheet &lt;/a&gt;&lt;br&gt;
 www.pulseeng.com</description>
@@ -1107,7 +1107,7 @@ www.pulseeng.com</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="BC847*" prefix="Q">
+<deviceset name="NPN" prefix="Q">
 <description>NPN Transistor</description>
 <gates>
 <gate name="G$1" symbol="NPN" x="0" y="0"/>
@@ -1171,41 +1171,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="C-US" prefix="C" uservalue="yes">
-<description>&lt;B&gt;CAPACITOR&lt;/B&gt;, American symbol</description>
-<gates>
-<gate name="G$1" symbol="C-US" x="0" y="0"/>
-</gates>
-<devices>
-<device name="C0402K" package="C0402K">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="C-US1" prefix="C" uservalue="yes">
-<description>&lt;B&gt;CAPACITOR&lt;/B&gt;, American symbol</description>
-<gates>
-<gate name="G$1" symbol="C-US-1" x="0" y="0"/>
-</gates>
-<devices>
-<device name="C0805K" package="C0805K">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="CAPACITOR" prefix="C" uservalue="yes">
+<deviceset name="C" prefix="C" uservalue="yes">
 <description>&lt;B&gt;CAPACITOR&lt;/B&gt;, American symbol</description>
 <gates>
 <gate name="G$1" symbol="CAPACITOR" x="0" y="0"/>
@@ -1220,9 +1186,27 @@ General-purpose diode for high-speed switching</description>
 <technology name=""/>
 </technologies>
 </device>
+<device name="C0402K" package="C0402K">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="C0805K" package="C0805K">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
-<deviceset name="CPOL-US" prefix="C" uservalue="yes">
+<deviceset name="C-POL" prefix="C" uservalue="yes">
 <description>&lt;B&gt;POLARIZED CAPACITOR&lt;/B&gt;, American symbol</description>
 <gates>
 <gate name="G$1" symbol="CPOL-US" x="0" y="0"/>
@@ -1262,7 +1246,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="DOCFIELD">
+<deviceset name="DOC-INFO">
 <gates>
 <gate name="G$1" symbol="DOCFIELD" x="0" y="0"/>
 </gates>
@@ -1351,7 +1335,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="MOUNTING_HOLE" prefix="MH$">
+<deviceset name="MOUNTING-HOLE" prefix="MH$">
 <gates>
 <gate name="G$1" symbol="MOUNTING_HOLE" x="0" y="0"/>
 </gates>
@@ -1366,7 +1350,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="PNP_RESISTORS">
+<deviceset name="PNP-BIASED">
 <description>DTA114EET1G  (Digikey DTA114EET1GOSCT-ND)</description>
 <gates>
 <gate name="G$1" symbol="PNP-RESISTORS" x="0" y="0"/>
@@ -1384,7 +1368,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="PUSH_BUTTON">
+<deviceset name="PUSH-BUTTON">
 <description>CKN10502CT-ND</description>
 <gates>
 <gate name="G$1" symbol="PUSH_BUTTON" x="0" y="0"/>
@@ -1403,7 +1387,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="R-US_" prefix="R" uservalue="yes">
+<deviceset name="R" prefix="R" uservalue="yes">
 <description>&lt;B&gt;RESISTOR&lt;/B&gt;, American symbol</description>
 <gates>
 <gate name="G$1" symbol="R-US" x="0" y="0"/>
@@ -1445,7 +1429,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="USB" prefix="J">
+<deviceset name="USB-CONN" prefix="J">
 <gates>
 <gate name="G$1" symbol="USB" x="0" y="-5.08"/>
 </gates>
@@ -1464,7 +1448,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="USB_FILTER">
+<deviceset name="USB-ESD">
 <gates>
 <gate name="G$1" symbol="USB_FILTER" x="0" y="0"/>
 </gates>
@@ -1484,7 +1468,7 @@ General-purpose diode for high-speed switching</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="WIFI_MODULE" prefix="U">
+<deviceset name="WIFI-MODULE" prefix="U">
 <gates>
 <gate name="G$1" symbol="WIFI_MODULE" x="0" y="2.54"/>
 </gates>
