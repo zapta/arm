@@ -9,7 +9,7 @@
 #include "_phone_numbers.i"
 
 // LED blink cycle.
-static const uint32_t kCycleTimeMsecs = 3000;
+static const uint32_t kCycleTimeMsecs = 1000;
 
 // Timer for generating the delay between printed messages.
 static Timer timer;
@@ -33,13 +33,11 @@ static void setup() {
   dialer::initialize();
 
   //dtmf::force_continuous_code('k');
-
 }
 
 static void loop() {
   dialer::loop();
 
-  static int message_count = 0;
   const uint32_t time_now_in_cycle_msecs = timer.read_ms();
 
   // Generates a blink at the beginning of each cycle.
@@ -48,20 +46,12 @@ static void loop() {
   legacy_led = led_state;
 
   if (time_now_in_cycle_msecs >= kCycleTimeMsecs) {
-    message_count++;
     timer.reset();
 
     if (!dialer::is_call_in_progress()) {
        dialer::call(TEST_PHONE_NUMBER);
      }
-
- //   dtmf::force_continuous_code('0');
-//    if (dtmf::is_dialing_in_progress()) {
-//      dtmf::start_dialing("0123456789");
-//    }
   }
-
-
 }
 
 int main(void) {

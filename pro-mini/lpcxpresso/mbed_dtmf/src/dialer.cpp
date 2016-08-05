@@ -7,12 +7,8 @@ extern USBSerial usb_serial;
 
 namespace dialer {
 
-//const int kPreDialingTimeMillis =  5000;
-const int kCallHoldTimeMillis   = 45000;
-//const int kPostCallTimeMillis   =  5000;
-
-// Phone hook. 1 = line active.
-//static DigitalOut hook(P0_12, 0);
+// NOTE: my cell phone stop ringing after ~25 secs.
+const int kCallHoldTimeMillis   = 30000;
 
 enum State {
   //
@@ -119,7 +115,6 @@ void call(const char* number) {
 bool is_call_in_progress() {
   return state != IDLE;
 }
-
 
 }  // dialer
 
