@@ -264,10 +264,6 @@ Source: 008-0260-0_E.pdf</description>
 <text x="-3.5" y="3.65" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="-3.5" y="-4.95" size="1.27" layer="27" font="vector">&gt;VALUE</text>
 </package>
-<package name="MOUNTING_HOLE">
-<circle x="0" y="0" radius="3.5" width="0.127" layer="39"/>
-<pad name="P$1" x="0" y="0" drill="3.2"/>
-</package>
 <package name="PINHD-1X1">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
@@ -359,28 +355,6 @@ reed, 1 x norm. open with polarity, grid 5.08</description>
 <pad name="4" x="7.62" y="0" drill="0.762" diameter="1.778" rot="R90"/>
 <text x="-8.636" y="3.556" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.651" y="2.921" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-<package name="SWD-HEADER">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-3.81" y1="1.8" x2="3.81" y2="1.8" width="0.127" layer="21"/>
-<wire x1="-3.81" y1="-1.8" x2="3.81" y2="-1.8" width="0.127" layer="21"/>
-<wire x1="-3.81" y1="-1.8" x2="-3.81" y2="1.8" width="0.127" layer="21"/>
-<wire x1="3.81" y1="-1.8" x2="3.81" y2="1.8" width="0.127" layer="21"/>
-<wire x1="-4.0132" y1="-0.6604" x2="-4.5212" y2="-0.2794" width="0.254" layer="21"/>
-<wire x1="-4.5212" y1="-0.2794" x2="-4.5212" y2="-1.0414" width="0.254" layer="21"/>
-<wire x1="-4.5212" y1="-1.0414" x2="-4.0132" y2="-0.6604" width="0.254" layer="21"/>
-<pad name="1" x="-2.54" y="-0.635" drill="0.6" diameter="0.9906" shape="square"/>
-<pad name="2" x="-2.54" y="0.635" drill="0.6" diameter="0.9906"/>
-<pad name="3" x="-1.27" y="-0.635" drill="0.6" diameter="0.9906"/>
-<pad name="4" x="-1.27" y="0.635" drill="0.6" diameter="0.9906"/>
-<pad name="5" x="0" y="-0.635" drill="0.6" diameter="0.9906"/>
-<pad name="6" x="0" y="0.635" drill="0.6" diameter="0.9906"/>
-<pad name="7" x="1.27" y="-0.635" drill="0.6" diameter="0.9906"/>
-<pad name="8" x="1.27" y="0.635" drill="0.6" diameter="0.9906"/>
-<pad name="9" x="2.54" y="-0.635" drill="0.6" diameter="0.9906"/>
-<pad name="10" x="2.54" y="0.635" drill="0.6" diameter="0.9906"/>
-<text x="-1.27" y="3.175" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-1.27" y="-4.445" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="TRANSFORMER">
 <description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
@@ -771,11 +745,6 @@ Inifineon</description>
 <text x="-47.498" y="-36.9824" size="1.778" layer="95">&gt;NAME</text>
 <text x="-34.798" y="-36.9824" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
-<symbol name="MOUNTING_HOLE">
-<circle x="0" y="0" radius="2.83980625" width="0.254" layer="94"/>
-<wire x1="-3.81" y1="0" x2="3.81" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="3.81" x2="0" y2="-3.81" width="0.254" layer="94"/>
-</symbol>
 <symbol name="NPN">
 <rectangle x1="-0.254" y1="-2.54" x2="0.508" y2="2.54" layer="94"/>
 <wire x1="2.54" y1="2.54" x2="0.508" y2="1.524" width="0.1524" layer="94"/>
@@ -907,24 +876,6 @@ Inifineon</description>
 <pin name="S2" x="0" y="-7.62" visible="pad" length="short" direction="pas" rot="R90"/>
 <text x="3.175" y="1.905" size="1.778" layer="95">&gt;PART</text>
 <text x="3.175" y="-0.635" size="1.778" layer="96">&gt;VALUE</text>
-</symbol>
-<symbol name="SWD-HEADER">
-<wire x1="-6.35" y1="-7.62" x2="8.89" y2="-7.62" width="0.4064" layer="94"/>
-<wire x1="8.89" y1="-7.62" x2="8.89" y2="7.62" width="0.4064" layer="94"/>
-<wire x1="8.89" y1="7.62" x2="-6.35" y2="7.62" width="0.4064" layer="94"/>
-<wire x1="-6.35" y1="7.62" x2="-6.35" y2="-7.62" width="0.4064" layer="94"/>
-<pin name="1" x="-2.54" y="5.08" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="2" x="5.08" y="5.08" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
-<pin name="3" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="4" x="5.08" y="2.54" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
-<pin name="5" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="6" x="5.08" y="0" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
-<pin name="7" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="8" x="5.08" y="-2.54" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
-<pin name="9" x="-2.54" y="-5.08" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="10" x="5.08" y="-5.08" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
-<text x="-6.35" y="8.255" size="1.778" layer="95">&gt;NAME</text>
-<text x="-6.35" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="TRANSFORMER">
 <circle x="-1.905" y="5.715" radius="0.254" width="0" layer="94"/>
@@ -1283,18 +1234,6 @@ uni and bidirectional supressor diode</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="MOUNTING-HOLE" prefix="MH$">
-<gates>
-<gate name="G$1" symbol="MOUNTING_HOLE" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="MOUNTING_HOLE">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="NPN" prefix="Q">
 <description>NPN Transistor</description>
 <gates>
@@ -1414,31 +1353,6 @@ reed, 1 x norm. open with polarity</description>
 <attribute name="OC_FARNELL" value="unknown" constant="no"/>
 <attribute name="OC_NEWARK" value="unknown" constant="no"/>
 </technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="SWD-HEADER" prefix="JP" uservalue="yes">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<gates>
-<gate name="A" symbol="SWD-HEADER" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="SWD-HEADER">
-<connects>
-<connect gate="A" pin="1" pad="1"/>
-<connect gate="A" pin="10" pad="10"/>
-<connect gate="A" pin="2" pad="2"/>
-<connect gate="A" pin="3" pad="3"/>
-<connect gate="A" pin="4" pad="4"/>
-<connect gate="A" pin="5" pad="5"/>
-<connect gate="A" pin="6" pad="6"/>
-<connect gate="A" pin="7" pad="7"/>
-<connect gate="A" pin="8" pad="8"/>
-<connect gate="A" pin="9" pad="9"/>
-</connects>
-<technologies>
-<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -1642,10 +1556,6 @@ reed, 1 x norm. open with polarity</description>
 <part name="J1" library="phone-finder" deviceset="USB-CONN" device="" value="MICRO USB"/>
 <part name="GND5" library="phone-finder" deviceset="GND" device=""/>
 <part name="+5V2" library="phone-finder" deviceset="+5V" device=""/>
-<part name="MH$1" library="phone-finder" deviceset="MOUNTING-HOLE" device=""/>
-<part name="MH$2" library="phone-finder" deviceset="MOUNTING-HOLE" device=""/>
-<part name="MH$3" library="phone-finder" deviceset="MOUNTING-HOLE" device=""/>
-<part name="MH$4" library="phone-finder" deviceset="MOUNTING-HOLE" device=""/>
 <part name="GND22" library="phone-finder" deviceset="GND" device=""/>
 <part name="S1" library="phone-finder" deviceset="PUSH-BUTTON" device=""/>
 <part name="GND3" library="phone-finder" deviceset="GND" device=""/>
@@ -1667,13 +1577,6 @@ reed, 1 x norm. open with polarity</description>
 <part name="+3V2" library="phone-finder" deviceset="+3V3" device=""/>
 <part name="R1" library="phone-finder" deviceset="R" device="R0402" value="1K5"/>
 <part name="+3V5" library="phone-finder" deviceset="+3V3" device=""/>
-<part name="J3" library="phone-finder" deviceset="SWD-HEADER" device="" value="SWD HEADER"/>
-<part name="+3V6" library="phone-finder" deviceset="+3V3" device=""/>
-<part name="GND16" library="phone-finder" deviceset="GND" device=""/>
-<part name="R4" library="phone-finder" deviceset="R" device="R0402" value="10K"/>
-<part name="R5" library="phone-finder" deviceset="R" device="R0402" value="10K"/>
-<part name="GND17" library="phone-finder" deviceset="GND" device=""/>
-<part name="+3V7" library="phone-finder" deviceset="+3V3" device=""/>
 <part name="R3" library="phone-finder" deviceset="R" device="R0402" value="10K"/>
 <part name="+3V8" library="phone-finder" deviceset="+3V3" device=""/>
 <part name="S2" library="phone-finder" deviceset="PUSH-BUTTON" device=""/>
@@ -1745,16 +1648,11 @@ reed, 1 x norm. open with polarity</description>
 <text x="400.812" y="7.874" size="2.54" layer="97">0</text>
 <text x="68.58" y="33.02" size="2.54" layer="97">USB</text>
 <text x="73.66" y="177.8" size="2.54" layer="97">MCU</text>
-<text x="185.42" y="38.1" size="2.54" layer="97">SWD DEBUGGER PORT</text>
 <text x="338.074" y="212.09" size="1.778" layer="94">ISP</text>
 <text x="359.41" y="212.344" size="1.778" layer="94">RST</text>
 <text x="61.214" y="119.38" size="2.54" layer="97">3.3V RGULATOR</text>
 <text x="330.2" y="190.5" size="2.54" layer="97">LOAD / RUN MODES</text>
 <text x="216.154" y="185.42" size="2.54" layer="97">WIFI MODULE</text>
-<wire x1="162.56" y1="99.06" x2="243.84" y2="99.06" width="0.254" layer="132" style="shortdash"/>
-<wire x1="243.84" y1="99.06" x2="243.84" y2="45.72" width="0.254" layer="132" style="shortdash"/>
-<wire x1="243.84" y1="45.72" x2="162.56" y2="45.72" width="0.254" layer="132" style="shortdash"/>
-<wire x1="162.56" y1="45.72" x2="162.56" y2="99.06" width="0.254" layer="132" style="shortdash"/>
 <wire x1="314.96" y1="198.12" x2="381" y2="198.12" width="0.254" layer="132" style="shortdash"/>
 <wire x1="381" y1="198.12" x2="381" y2="264.16" width="0.254" layer="132" style="shortdash"/>
 <wire x1="381" y1="264.16" x2="314.96" y2="264.16" width="0.254" layer="132" style="shortdash"/>
@@ -1773,10 +1671,6 @@ reed, 1 x norm. open with polarity</description>
 <instance part="J1" gate="G$1" x="43.18" y="55.88"/>
 <instance part="GND5" gate="1" x="53.34" y="45.72"/>
 <instance part="+5V2" gate="G$1" x="53.34" y="78.74" rot="MR0"/>
-<instance part="MH$1" gate="G$1" x="213.36" y="12.7"/>
-<instance part="MH$2" gate="G$1" x="220.98" y="12.7"/>
-<instance part="MH$3" gate="G$1" x="228.6" y="12.7"/>
-<instance part="MH$4" gate="G$1" x="236.22" y="12.7"/>
 <instance part="GND22" gate="1" x="347.98" y="203.2"/>
 <instance part="S1" gate="G$1" x="347.98" y="213.36" smashed="yes">
 <attribute name="NAME" x="342.392" y="208.788" size="1.778" layer="95"/>
@@ -1824,13 +1718,6 @@ reed, 1 x norm. open with polarity</description>
 <instance part="+3V2" gate="G$1" x="33.02" y="233.68"/>
 <instance part="R1" gate="G$1" x="63.5" y="81.28" rot="R90"/>
 <instance part="+3V5" gate="G$1" x="109.22" y="147.32" rot="R270"/>
-<instance part="J3" gate="A" x="182.88" y="71.12"/>
-<instance part="+3V6" gate="G$1" x="172.72" y="91.44"/>
-<instance part="GND16" gate="1" x="172.72" y="50.8"/>
-<instance part="R4" gate="G$1" x="198.12" y="83.82" rot="R90"/>
-<instance part="R5" gate="G$1" x="198.12" y="58.42" rot="R90"/>
-<instance part="GND17" gate="1" x="198.12" y="50.8"/>
-<instance part="+3V7" gate="G$1" x="198.12" y="91.44"/>
 <instance part="R3" gate="G$1" x="116.84" y="276.86" smashed="yes" rot="R90">
 <attribute name="NAME" x="119.38" y="278.1046" size="1.778" layer="95"/>
 <attribute name="VALUE" x="119.126" y="275.082" size="1.778" layer="96"/>
@@ -2047,28 +1934,6 @@ reed, 1 x norm. open with polarity</description>
 <wire x1="50.8" y1="50.8" x2="53.34" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="50.8" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
 <junction x="53.34" y="50.8"/>
-</segment>
-<segment>
-<pinref part="J3" gate="A" pin="3"/>
-<pinref part="GND16" gate="1" pin="GND"/>
-<wire x1="180.34" y1="73.66" x2="172.72" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="172.72" y1="73.66" x2="172.72" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="J3" gate="A" pin="5"/>
-<wire x1="172.72" y1="71.12" x2="172.72" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="172.72" y1="68.58" x2="172.72" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="172.72" y1="66.04" x2="172.72" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="180.34" y1="71.12" x2="172.72" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="J3" gate="A" pin="7"/>
-<wire x1="180.34" y1="68.58" x2="172.72" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="J3" gate="A" pin="9"/>
-<wire x1="180.34" y1="66.04" x2="172.72" y2="66.04" width="0.1524" layer="91"/>
-<junction x="172.72" y="71.12"/>
-<junction x="172.72" y="68.58"/>
-<junction x="172.72" y="66.04"/>
-</segment>
-<segment>
-<pinref part="R5" gate="G$1" pin="1"/>
-<pinref part="GND17" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="GND19" gate="1" pin="GND"/>
@@ -2344,16 +2209,6 @@ reed, 1 x norm. open with polarity</description>
 <junction x="101.6" y="147.32"/>
 </segment>
 <segment>
-<pinref part="J3" gate="A" pin="1"/>
-<pinref part="+3V6" gate="G$1" pin="+3V3"/>
-<wire x1="180.34" y1="76.2" x2="172.72" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="172.72" y1="76.2" x2="172.72" y2="88.9" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="R4" gate="G$1" pin="2"/>
-<pinref part="+3V7" gate="G$1" pin="+3V3"/>
-</segment>
-<segment>
 <pinref part="R3" gate="G$1" pin="2"/>
 <pinref part="+3V8" gate="G$1" pin="+3V3"/>
 </segment>
@@ -2436,11 +2291,6 @@ reed, 1 x norm. open with polarity</description>
 </net>
 <net name="RESET" class="0">
 <segment>
-<pinref part="J3" gate="A" pin="10"/>
-<wire x1="187.96" y1="66.04" x2="238.76" y2="66.04" width="0.1524" layer="91"/>
-<label x="215.9" y="66.04" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="U3" gate="G$1" pin="RESET/PIO0_0"/>
 <wire x1="114.3" y1="269.24" x2="116.84" y2="269.24" width="0.1524" layer="91"/>
 <label x="121.92" y="269.24" size="1.778" layer="95"/>
@@ -2461,22 +2311,6 @@ reed, 1 x norm. open with polarity</description>
 <pinref part="S2" gate="G$1" pin="B2"/>
 <wire x1="370.84" y1="218.44" x2="368.3" y2="218.44" width="0.1524" layer="91"/>
 <junction x="368.3" y="218.44"/>
-</segment>
-</net>
-<net name="SWDIO" class="0">
-<segment>
-<pinref part="J3" gate="A" pin="2"/>
-<wire x1="187.96" y1="76.2" x2="198.12" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="198.12" y1="76.2" x2="238.76" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="198.12" y1="78.74" x2="198.12" y2="76.2" width="0.1524" layer="91"/>
-<junction x="198.12" y="76.2"/>
-<label x="215.9" y="76.2" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U3" gate="G$1" pin="SWDIO/AD4/CT32B1_MAT2/PIO0_15"/>
-<wire x1="114.3" y1="228.6" x2="144.78" y2="228.6" width="0.1524" layer="91"/>
-<label x="121.92" y="228.6" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="ISP_EN" class="0">
@@ -2525,18 +2359,6 @@ reed, 1 x norm. open with polarity</description>
 <pinref part="U3" gate="G$1" pin="USB_DP"/>
 <wire x1="45.72" y1="241.3" x2="22.86" y2="241.3" width="0.1524" layer="91"/>
 <label x="22.86" y="241.3" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="SWDO" class="0">
-<segment>
-<pinref part="J3" gate="A" pin="6"/>
-<wire x1="187.96" y1="71.12" x2="238.76" y2="71.12" width="0.1524" layer="91"/>
-<label x="215.9" y="71.12" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U3" gate="G$1" pin="MOSI0/CT16B0_MAT1/PIO0_9"/>
-<wire x1="114.3" y1="243.84" x2="144.78" y2="243.84" width="0.1524" layer="91"/>
-<label x="121.92" y="243.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$12" class="2">
@@ -2656,22 +2478,6 @@ reed, 1 x norm. open with polarity</description>
 <pinref part="U3" gate="G$1" pin="SSEL0/CT16B0_CAP0/PIO0_2"/>
 <wire x1="114.3" y1="264.16" x2="144.78" y2="264.16" width="0.1524" layer="91"/>
 <label x="121.92" y="264.16" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="SWDCLK" class="0">
-<segment>
-<pinref part="U3" gate="G$1" pin="SWCLK/SCK0/CT16B0_MAT2/PIO0_10"/>
-<wire x1="114.3" y1="241.3" x2="144.78" y2="241.3" width="0.1524" layer="91"/>
-<label x="121.92" y="241.3" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="J3" gate="A" pin="4"/>
-<wire x1="187.96" y1="73.66" x2="198.12" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="198.12" y1="73.66" x2="238.76" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="198.12" y1="73.66" x2="198.12" y2="63.5" width="0.1524" layer="91"/>
-<junction x="198.12" y="73.66"/>
-<label x="215.9" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -2846,7 +2652,7 @@ reed, 1 x norm. open with polarity</description>
 <approved hash="104,1,220.98,259.08,U4,VBAT,+3V3,,,"/>
 <approved hash="104,1,233.68,259.08,U4,VDD_MCU,+3V3,,,"/>
 <approved hash="104,1,246.38,259.08,U4,VDD_WIFI,+3V3,,,"/>
-<approved hash="113,1,286.4,237.621,ANTENNA,,,,,"/>
+<approved hash="113,1,286.749,237.621,ANTENNA,,,,,"/>
 </errors>
 </schematic>
 </drawing>

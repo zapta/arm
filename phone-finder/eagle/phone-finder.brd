@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="inch" unit="mil" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mil" altunit="mil"/>
+<grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -113,12 +113,17 @@
 <board>
 <plain>
 <text x="47.752" y="8.001" size="1.524" layer="21" font="vector" ratio="10" rot="R90">PRG</text>
-<text x="47.498" y="23.876" size="1.524" layer="21" font="vector" ratio="10" rot="R90">RUN</text>
+<text x="48.006" y="23.876" size="1.524" layer="21" font="vector" ratio="10" rot="R90">RUN</text>
 <text x="11.4046" y="17.907" size="1.524" layer="21" font="vector" ratio="10">+</text>
-<wire x1="0" y1="0" x2="50" y2="0" width="0.1016" layer="20"/>
-<wire x1="50" y1="0" x2="50" y2="50" width="0.1016" layer="20"/>
-<wire x1="50" y1="50" x2="0" y2="50" width="0.1016" layer="20"/>
-<wire x1="0" y1="50" x2="0" y2="0" width="0.1016" layer="20"/>
+<wire x1="50" y1="2.828425" x2="50" y2="47.171575" width="0.1016" layer="20"/>
+<wire x1="50" y1="47.171575" x2="47.171575" y2="50" width="0.1016" layer="20" curve="90"/>
+<wire x1="47.171575" y1="50" x2="2.828425" y2="50" width="0.1016" layer="20"/>
+<wire x1="2.828425" y1="50" x2="0" y2="47.171575" width="0.1016" layer="20" curve="90"/>
+<wire x1="0" y1="47.171575" x2="0" y2="2.828425" width="0.1016" layer="20"/>
+<wire x1="0" y1="2.828425" x2="2.828425" y2="0" width="0.1016" layer="20" curve="90"/>
+<wire x1="2.828425" y1="0" x2="47.171575" y2="0" width="0.1016" layer="20"/>
+<wire x1="47.171575" y1="0" x2="50" y2="2.828425" width="0.1016" layer="20" curve="90"/>
+<text x="42.001" y="7.248" size="1.524" layer="21" font="vector" ratio="10">P</text>
 </plain>
 <libraries>
 <library name="phone-finder">
@@ -273,10 +278,6 @@ Source: 008-0260-0_E.pdf</description>
 <text x="-3.5" y="3.65" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="-3.5" y="-4.95" size="1.27" layer="27" font="vector">&gt;VALUE</text>
 </package>
-<package name="MOUNTING_HOLE">
-<circle x="0" y="0" radius="3.5" width="0.127" layer="39"/>
-<pad name="P$1" x="0" y="0" drill="3.2"/>
-</package>
 <package name="PINHD-1X1">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
@@ -368,28 +369,6 @@ reed, 1 x norm. open with polarity, grid 5.08</description>
 <pad name="4" x="7.62" y="0" drill="0.762" diameter="1.778" rot="R90"/>
 <text x="-8.636" y="3.556" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.651" y="2.921" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-<package name="SWD-HEADER">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-3.81" y1="1.8" x2="3.81" y2="1.8" width="0.127" layer="21"/>
-<wire x1="-3.81" y1="-1.8" x2="3.81" y2="-1.8" width="0.127" layer="21"/>
-<wire x1="-3.81" y1="-1.8" x2="-3.81" y2="1.8" width="0.127" layer="21"/>
-<wire x1="3.81" y1="-1.8" x2="3.81" y2="1.8" width="0.127" layer="21"/>
-<wire x1="-4.0132" y1="-0.6604" x2="-4.5212" y2="-0.2794" width="0.254" layer="21"/>
-<wire x1="-4.5212" y1="-0.2794" x2="-4.5212" y2="-1.0414" width="0.254" layer="21"/>
-<wire x1="-4.5212" y1="-1.0414" x2="-4.0132" y2="-0.6604" width="0.254" layer="21"/>
-<pad name="1" x="-2.54" y="-0.635" drill="0.6" diameter="0.9906" shape="square"/>
-<pad name="2" x="-2.54" y="0.635" drill="0.6" diameter="0.9906"/>
-<pad name="3" x="-1.27" y="-0.635" drill="0.6" diameter="0.9906"/>
-<pad name="4" x="-1.27" y="0.635" drill="0.6" diameter="0.9906"/>
-<pad name="5" x="0" y="-0.635" drill="0.6" diameter="0.9906"/>
-<pad name="6" x="0" y="0.635" drill="0.6" diameter="0.9906"/>
-<pad name="7" x="1.27" y="-0.635" drill="0.6" diameter="0.9906"/>
-<pad name="8" x="1.27" y="0.635" drill="0.6" diameter="0.9906"/>
-<pad name="9" x="2.54" y="-0.635" drill="0.6" diameter="0.9906"/>
-<pad name="10" x="2.54" y="0.635" drill="0.6" diameter="0.9906"/>
-<text x="-1.27" y="3.175" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-1.27" y="-4.445" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="TRANSFORMER">
 <description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
@@ -789,17 +768,13 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="J1" library="phone-finder" package="USB-MICRO" value="MICRO USB" x="1.524" y="37.808" smashed="yes" rot="R270"/>
-<element name="MH$1" library="phone-finder" package="MOUNTING_HOLE" value="MOUNTING-HOLE" x="47" y="47" smashed="yes"/>
-<element name="MH$2" library="phone-finder" package="MOUNTING_HOLE" value="MOUNTING-HOLE" x="47" y="3" smashed="yes"/>
-<element name="MH$3" library="phone-finder" package="MOUNTING_HOLE" value="MOUNTING-HOLE" x="3" y="3" smashed="yes"/>
-<element name="MH$4" library="phone-finder" package="MOUNTING_HOLE" value="MOUNTING-HOLE" x="3" y="47" smashed="yes"/>
+<element name="J1" library="phone-finder" package="USB-MICRO" value="MICRO USB" x="1.524" y="39.586" smashed="yes" rot="R270"/>
 <element name="S1" library="phone-finder" package="PUSH_BUTTON" value="PUSH-BUTTON" x="46.609" y="14.351" smashed="yes" rot="R180"/>
-<element name="C7" library="phone-finder" package="C0603K" value="1u" x="16.895" y="21.138" smashed="yes">
-<attribute name="NAME" x="15.02" y="21.646" size="1.27" layer="25" font="vector" ratio="10" rot="R180"/>
+<element name="C7" library="phone-finder" package="C0603K" value="1u" x="16.379" y="21.026" smashed="yes" rot="R180">
+<attribute name="NAME" x="18.254" y="20.518" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
-<element name="C6" library="phone-finder" package="C0603K" value="1u" x="7.644" y="24.19" smashed="yes" rot="R90">
-<attribute name="NAME" x="6.753" y="21.454" size="1.27" layer="25" font="vector" ratio="10"/>
+<element name="C6" library="phone-finder" package="C0603K" value="1u" x="5.866" y="22.666" smashed="yes" rot="R90">
+<attribute name="NAME" x="4.975" y="19.93" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
 <element name="U3" library="phone-finder" package="HVQFN33-5MM" value="LPC11U35FHI33/501" x="11.98" y="40.024" smashed="yes" rot="R270">
 <attribute name="NAME" x="14.261" y="35.823" size="1.27" layer="25" font="vector" ratio="10"/>
@@ -820,76 +795,67 @@ design rules under a new name.</description>
 <element name="C4" library="phone-finder" package="C0402K" value="0.1uF" x="16.232" y="39.625" smashed="yes" rot="R270">
 <attribute name="NAME" x="14.371" y="40.76" size="1.27" layer="25" font="vector" ratio="10" rot="R270"/>
 </element>
-<element name="C3" library="phone-finder" package="C0402K" value="0.1uF" x="4.54" y="42.95" smashed="yes" rot="R180">
-<attribute name="NAME" x="1.056" y="42.311" size="1.27" layer="25" font="vector" ratio="10"/>
+<element name="C3" library="phone-finder" package="C0402K" value="0.1uF" x="4.794" y="45.871" smashed="yes" rot="R180">
+<attribute name="NAME" x="1.31" y="45.232" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
-<element name="R1" library="phone-finder" package="R0402" value="1K5" x="6.039" y="34.244" smashed="yes" rot="R270">
-<attribute name="NAME" x="2.84" y="34.106" size="1.27" layer="25" font="vector" ratio="10"/>
-</element>
-<element name="J3" library="phone-finder" package="SWD-HEADER" value="SWD HEADER" x="7.417" y="31.129" smashed="yes">
-<attribute name="NAME" x="7.925" y="27.954" size="1.27" layer="25" font="vector" ratio="10"/>
-</element>
-<element name="R4" library="phone-finder" package="R0402" value="10K" x="1.975" y="31.403" smashed="yes" rot="R270">
-<attribute name="NAME" x="-0.161" y="30.169" size="1.27" layer="25" font="vector" ratio="10"/>
-</element>
-<element name="R5" library="phone-finder" package="R0402" value="10K" x="9.328" y="34.303" smashed="yes" rot="R90">
-<attribute name="NAME" x="8.566" y="32.144" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
+<element name="R1" library="phone-finder" package="R0402" value="1K5" x="7.436" y="33.609" smashed="yes" rot="R270">
+<attribute name="NAME" x="4.237" y="33.471" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
 <element name="R3" library="phone-finder" package="R0402" value="10K" x="15.046" y="43.631" smashed="yes">
 <attribute name="NAME" x="14.418" y="42.983" size="1.27" layer="25" font="vector" ratio="10" rot="R180"/>
 </element>
 <element name="S2" library="phone-finder" package="PUSH_BUTTON" value="PUSH-BUTTON" x="46.609" y="21.336" smashed="yes" rot="R180"/>
-<element name="R2" library="phone-finder" package="R0402" value="10K" x="5.993" y="41.406" smashed="yes" rot="R90">
-<attribute name="NAME" x="4.703" y="38.965" size="1.27" layer="25" font="vector" ratio="10"/>
+<element name="R2" library="phone-finder" package="R0402" value="10K" x="6.12" y="43.311" smashed="yes" rot="R90">
+<attribute name="NAME" x="4.83" y="40.87" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
-<element name="T1" library="phone-finder" package="SC75-BEC" value="DTA114EET1G (2x10K)" x="7.798" y="34.718" smashed="yes">
-<attribute name="NAME" x="8.937" y="35.89" size="1.27" layer="25" font="vector" ratio="10" rot="R270"/>
+<element name="T1" library="phone-finder" package="SC75-BEC" value="DTA114EET1G (2x10K)" x="9.957" y="33.448" smashed="yes">
+<attribute name="NAME" x="11.096" y="34.62" size="1.27" layer="25" font="vector" ratio="10" rot="R270"/>
 </element>
-<element name="U1" library="phone-finder" package="SOT223" value="AP2114H-3.3TRG1" x="13.024" y="24.126" smashed="yes" rot="R270">
-<attribute name="NAME" x="12.323" y="28.0608" size="1.27" layer="25" font="vector" ratio="10"/>
+<element name="U1" library="phone-finder" package="SOT223" value="AP2114H-3.3TRG1" x="12.135" y="24.634" smashed="yes" rot="R270">
+<attribute name="NAME" x="11.434" y="28.5688" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
-<element name="U2" library="phone-finder" package="SOT-563" value="NUF2042XV6T1G" x="7.127" y="38.284" smashed="yes" rot="R180">
-<attribute name="NAME" x="5.788" y="37.593" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
+<element name="U2" library="phone-finder" package="SOT-563" value="NUF2042XV6T1G" x="7" y="39.935" smashed="yes" rot="R180">
+<attribute name="NAME" x="5.661" y="39.244" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
 </element>
-<element name="D2" library="phone-finder" package="SOT23" value="BAS40-05" x="40.721" y="21.289" smashed="yes" rot="R180">
-<attribute name="NAME" x="40.051" y="23.923" size="1.27" layer="25" font="vector" ratio="10"/>
+<element name="D2" library="phone-finder" package="SOT23" value="BAS40-05" x="40.721" y="21.543" smashed="yes" rot="R180">
+<attribute name="NAME" x="40.051" y="24.177" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
-<element name="C17" library="phone-finder" package="C0402K" value="0.1uF" x="14.766" y="44.855" smashed="yes" rot="R180">
-<attribute name="NAME" x="17.633" y="43.662" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
+<element name="C17" library="phone-finder" package="C0402K" value="0.1uF" x="15.02" y="45.236" smashed="yes" rot="R180">
+<attribute name="NAME" x="17.887" y="44.043" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
 </element>
-<element name="C9" library="phone-finder" package="C0805K" value="10uF" x="19.855" y="43.692" smashed="yes" rot="R90">
-<attribute name="NAME" x="18.345" y="42.438" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
+<element name="C9" library="phone-finder" package="C0805K" value="10uF" x="20.617" y="43.692" smashed="yes" rot="R90">
+<attribute name="NAME" x="19.107" y="42.438" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
 </element>
-<element name="U4" library="phone-finder" package="WIFI_MODULE" value="AMW006" x="22.606" y="31.623" smashed="yes"/>
-<element name="C13" library="phone-finder" package="C0402K" value="0.1uF" x="45.509" y="41.627" smashed="yes" rot="R90">
-<attribute name="NAME" x="44.429" y="43.689" size="1.27" layer="25" font="vector" ratio="10"/>
+<element name="U4" library="phone-finder" package="WIFI_MODULE" value="AMW006" x="24.13" y="31.369" smashed="yes"/>
+<element name="C13" library="phone-finder" package="C0402K" value="0.1uF" x="46.398" y="41.627" smashed="yes" rot="R90">
+<attribute name="NAME" x="45.318" y="43.689" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
-<element name="C14" library="phone-finder" package="C0805K" value="10uF" x="47.447" y="41.467" smashed="yes" rot="R90">
-<attribute name="NAME" x="48.687" y="39.46" size="1.27" layer="25" font="vector" ratio="10" rot="R180"/>
+<element name="C14" library="phone-finder" package="C0805K" value="10uF" x="48.209" y="41.34" smashed="yes" rot="R90">
+<attribute name="NAME" x="49.449" y="39.333" size="1.27" layer="25" font="vector" ratio="10" rot="R180"/>
 </element>
-<element name="C10" library="phone-finder" package="C0402K" value="0.1uF" x="21.506" y="43.598" smashed="yes" rot="R90">
-<attribute name="NAME" x="20.7" y="40.612" size="1.27" layer="25" font="vector" ratio="10"/>
+<element name="C10" library="phone-finder" package="C0402K" value="0.1uF" x="22.395" y="43.598" smashed="yes" rot="R90">
+<attribute name="NAME" x="21.589" y="40.612" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
-<element name="C11" library="phone-finder" package="C0402K" value="0.1uF" x="21.42" y="33.463" smashed="yes" rot="R270">
-<attribute name="NAME" x="20.012" y="30.481" size="1.27" layer="25" font="vector" ratio="10"/>
+<element name="C11" library="phone-finder" package="C0402K" value="0.1uF" x="22.309" y="33.463" smashed="yes" rot="R270">
+<attribute name="NAME" x="20.901" y="30.481" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
-<element name="C12" library="phone-finder" package="C0805K" value="10uF" x="20.023" y="34.587" smashed="yes" rot="R270">
-<attribute name="NAME" x="18.315" y="35.109" size="1.27" layer="25" font="vector" ratio="10" rot="R180"/>
+<element name="C12" library="phone-finder" package="C0805K" value="10uF" x="20.404" y="34.079" smashed="yes" rot="R270">
+<attribute name="NAME" x="18.696" y="34.601" size="1.27" layer="25" font="vector" ratio="10" rot="R180"/>
 </element>
-<element name="C5" library="phone-finder" package="UD-6,3X5,8_NICHICON" value="47uF" x="3.556" y="24.765" smashed="yes" rot="R270">
-<attribute name="NAME" x="1.016" y="19.939" size="1.27" layer="25" font="vector" ratio="10"/>
+<element name="C5" library="phone-finder" package="UD-6,3X5,8_NICHICON" value="47uF" x="3.556" y="28.829" smashed="yes" rot="R270">
+<attribute name="NAME" x="1.016" y="24.003" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
-<element name="C8" library="phone-finder" package="UD-6,3X5,8_NICHICON" value="47uF" x="21.844" y="20.701" smashed="yes" rot="R90">
-<attribute name="NAME" x="26.289" y="23.622" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
+<element name="C8" library="phone-finder" package="UD-6,3X5,8_NICHICON" value="47uF" x="22.225" y="20.828" smashed="yes" rot="R90">
+<attribute name="NAME" x="26.67" y="23.749" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
 </element>
-<element name="R6" library="phone-finder" package="R0402" value="3K3" x="45.085" y="38.989" smashed="yes" rot="R90">
-<attribute name="NAME" x="43.307" y="39.878" size="1.27" layer="25" font="vector" ratio="10" rot="R270"/>
+<element name="R6" library="phone-finder" package="R0402" value="3K3" x="46.355" y="38.735" smashed="yes" rot="R90">
+<attribute name="NAME" x="44.577" y="39.624" size="1.27" layer="25" font="vector" ratio="10" rot="R270"/>
 </element>
 <element name="ANTENNA" library="phone-finder" package="PINHD-1X1" value="" x="35.814" y="48.768" smashed="yes">
 <attribute name="VALUE" x="34.544" y="45.593" size="1.27" layer="27"/>
 </element>
-<element name="Q3" library="phone-finder" package="SOT23" value="2N2222" x="23.876" y="13.716" smashed="yes" rot="R180">
-<attribute name="NAME" x="25.781" y="11.811" size="1.27" layer="25" font="vector" ratio="10" rot="R180"/>
+<element name="Q3" library="phone-finder" package="SOT23" value="2N2222" x="22.733" y="13.462" smashed="yes" rot="R180">
+<attribute name="NAME" x="24.638" y="11.557" size="1.27" layer="25" font="vector" ratio="10" rot="R180"/>
 </element>
 <element name="K1" library="phone-finder" package="RELAY" value="RELAY" x="17.272" y="3.048" smashed="yes">
 <attribute name="OC_NEWARK" value="unknown" x="17.272" y="3.048" size="1.778" layer="27" display="off"/>
@@ -898,8 +864,8 @@ design rules under a new name.</description>
 <attribute name="OC_FARNELL" value="unknown" x="17.272" y="3.048" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="-2.413" y="8.763" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
-<element name="R11" library="phone-finder" package="R0402" value="3K" x="26.67" y="14.732" smashed="yes" rot="R90">
-<attribute name="NAME" x="25.527" y="15.875" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
+<element name="R11" library="phone-finder" package="R0402" value="3K" x="26.416" y="13.97" smashed="yes" rot="R90">
+<attribute name="NAME" x="25.273" y="15.113" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
 </element>
 <element name="TR1" library="phone-finder" package="TRANSFORMER" value="TRANSFORMER" x="34.544" y="8.128" smashed="yes" rot="R180">
 <attribute name="NAME" x="40.894" y="14.478" size="1.27" layer="25" font="vector" ratio="10" rot="R180"/>
@@ -907,8 +873,8 @@ design rules under a new name.</description>
 <element name="R10" library="phone-finder" package="R0805" value="100" x="23.876" y="7.62" smashed="yes" rot="R180">
 <attribute name="NAME" x="24.638" y="6.604" size="1.27" layer="25" font="vector" ratio="10" rot="R180"/>
 </element>
-<element name="D1" library="phone-finder" package="DZ-0402" value="3V3" x="23.368" y="10.414" smashed="yes" rot="R270">
-<attribute name="NAME" x="24.003" y="11.049" size="1.27" layer="25" font="vector" ratio="10" rot="R270"/>
+<element name="D1" library="phone-finder" package="DZ-0402" value="3V3" x="24.384" y="10.287" smashed="yes" rot="R270">
+<attribute name="NAME" x="25.019" y="10.922" size="1.27" layer="25" font="vector" ratio="10" rot="R270"/>
 </element>
 <element name="R12" library="phone-finder" package="R0805" value="100" x="19.812" y="8.382" smashed="yes" rot="R270">
 <attribute name="NAME" x="20.828" y="9.144" size="1.27" layer="25" font="vector" ratio="10" rot="R270"/>
@@ -916,14 +882,14 @@ design rules under a new name.</description>
 <element name="R9" library="phone-finder" package="R0805" value="100" x="37.592" y="18.034" smashed="yes">
 <attribute name="NAME" x="36.83" y="19.05" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
-<element name="C15" library="phone-finder" package="C0402K" value="0.1uF" x="32.004" y="21.336" smashed="yes" rot="R180">
-<attribute name="NAME" x="32.504" y="20.911" size="1.27" layer="25" font="vector" ratio="10" rot="R180"/>
+<element name="C15" library="phone-finder" package="C0402K" value="0.1uF" x="31.877" y="21.717" smashed="yes" rot="R180">
+<attribute name="NAME" x="32.377" y="21.292" size="1.27" layer="25" font="vector" ratio="10" rot="R180"/>
 </element>
-<element name="R7" library="phone-finder" package="R0402" value="3K" x="33.02" y="22.86" smashed="yes">
-<attribute name="NAME" x="32.385" y="23.495" size="1.27" layer="25" font="vector" ratio="10"/>
+<element name="R7" library="phone-finder" package="R0402" value="3K" x="33.147" y="23.368" smashed="yes">
+<attribute name="NAME" x="32.512" y="24.003" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
-<element name="R8" library="phone-finder" package="R0402" value="3K" x="30.48" y="22.86" smashed="yes">
-<attribute name="NAME" x="29.845" y="23.495" size="1.27" layer="25" font="vector" ratio="10"/>
+<element name="R8" library="phone-finder" package="R0402" value="3K" x="30.353" y="23.368" smashed="yes">
+<attribute name="NAME" x="29.718" y="24.003" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
 <element name="C16" library="phone-finder" package="C0402K" value="0.1uF" x="26.416" y="10.414" smashed="yes" rot="R90">
 <attribute name="NAME" x="26.499" y="13.216" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
@@ -941,8 +907,8 @@ design rules under a new name.</description>
 <element name="D3" library="phone-finder" package="LED" value="LED" x="31.75" y="18.288" smashed="yes">
 <attribute name="NAME" x="30.48" y="21.336" size="1.27" layer="25" font="vector" ratio="10"/>
 </element>
-<element name="R13" library="phone-finder" package="R0402" value="1K5" x="28.702" y="19.05" smashed="yes" rot="R270">
-<attribute name="NAME" x="29.337" y="19.685" size="1.27" layer="25" font="vector" ratio="10" rot="R270"/>
+<element name="R13" library="phone-finder" package="R0402" value="1K5" x="28.067" y="18.923" smashed="yes" rot="R270">
+<attribute name="NAME" x="28.702" y="19.558" size="1.27" layer="25" font="vector" ratio="10" rot="R270"/>
 </element>
 </elements>
 <signals>
@@ -955,20 +921,20 @@ design rules under a new name.</description>
 <contactref element="C5" pad="+"/>
 <contactref element="K1" pad="2"/>
 <contactref element="Q2" pad="3"/>
-<wire x1="9.9252" y1="21.8146" x2="34.968" y2="21.844" width="0" layer="19" extent="1-1"/>
-<wire x1="7.644" y1="23.315" x2="9.9252" y2="21.8146" width="0" layer="19" extent="1-1"/>
-<wire x1="3.556" y1="22.115" x2="7.644" y2="23.315" width="0" layer="19" extent="1-1"/>
-<wire x1="7.127" y1="37.434" x2="7.644" y2="23.315" width="0" layer="19" extent="1-1"/>
-<wire x1="4.199" y1="39.108" x2="7.127" y2="37.434" width="0" layer="19" extent="1-1"/>
-<wire x1="5.993" y1="40.856" x2="4.199" y2="39.108" width="0" layer="19" extent="1-1"/>
-<wire x1="14.732" y1="3.048" x2="9.9252" y2="21.8146" width="0" layer="19" extent="1-1"/>
+<wire x1="9.0362" y1="22.3226" x2="34.968" y2="21.844" width="0" layer="19" extent="1-1"/>
+<wire x1="5.866" y1="21.791" x2="9.0362" y2="22.3226" width="0" layer="19" extent="1-1"/>
+<wire x1="3.556" y1="26.179" x2="5.866" y2="21.791" width="0" layer="19" extent="1-1"/>
+<wire x1="7" y1="39.085" x2="3.556" y2="26.179" width="0" layer="19" extent="1-1"/>
+<wire x1="4.199" y1="40.886" x2="7" y2="39.085" width="0" layer="19" extent="1-1"/>
+<wire x1="6.12" y1="42.761" x2="4.199" y2="40.886" width="0" layer="19" extent="1-1"/>
+<wire x1="14.732" y1="3.048" x2="9.0362" y2="22.3226" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$6">
 <contactref element="J1" pad="3"/>
 <contactref element="R1" pad="1"/>
 <contactref element="U2" pad="6"/>
-<wire x1="7.627" y1="37.434" x2="6.039" y2="34.794" width="0" layer="19" extent="1-1"/>
-<wire x1="4.199" y1="37.808" x2="6.039" y2="34.794" width="0" layer="19" extent="1-1"/>
+<wire x1="7.436" y1="34.159" x2="7.5" y2="39.085" width="0" layer="19" extent="1-1"/>
+<wire x1="4.199" y1="39.586" x2="7.5" y2="39.085" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="C1" pad="1"/>
@@ -981,7 +947,7 @@ design rules under a new name.</description>
 <contactref element="C2" pad="1"/>
 <contactref element="U3" pad="5"/>
 <contactref element="Q1" pad="1"/>
-<wire x1="8.072" y1="46.488" x2="9.912" y2="46.106" width="0" layer="19" extent="1-1"/>
+<wire x1="9.912" y1="46.106" x2="8.072" y2="46.488" width="0" layer="19" extent="1-1"/>
 <wire x1="11.73" y1="42.574" x2="9.912" y2="46.106" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+3V3">
@@ -991,8 +957,6 @@ design rules under a new name.</description>
 <contactref element="U3" pad="29"/>
 <contactref element="C7" pad="1"/>
 <contactref element="U1" pad="2"/>
-<contactref element="J3" pad="1"/>
-<contactref element="R4" pad="2"/>
 <contactref element="R3" pad="2"/>
 <contactref element="T1" pad="E"/>
 <contactref element="C17" pad="1"/>
@@ -1007,40 +971,37 @@ design rules under a new name.</description>
 <contactref element="C13" pad="1"/>
 <contactref element="C8" pad="+"/>
 <contactref element="U1" pad="4"/>
-<wire x1="45.509" y1="41.027" x2="47.447" y2="40.467" width="0" layer="19" extent="1-1"/>
-<wire x1="42.291" y1="43.053" x2="45.509" y2="41.027" width="0" layer="19" extent="1-1"/>
-<wire x1="23.241" y1="43.053" x2="42.291" y2="43.053" width="0" layer="19" extent="1-1"/>
-<wire x1="21.506" y1="42.998" x2="23.241" y2="43.053" width="0" layer="19" extent="1-1"/>
-<wire x1="19.855" y1="42.692" x2="21.506" y2="42.998" width="0" layer="19" extent="1-1"/>
-<wire x1="15.596" y1="43.631" x2="19.855" y2="42.692" width="0" layer="19" extent="1-1"/>
-<wire x1="15.366" y1="44.855" x2="15.596" y2="43.631" width="0" layer="19" extent="1-1"/>
+<wire x1="46.398" y1="41.027" x2="48.209" y2="40.34" width="0" layer="19" extent="1-1"/>
+<wire x1="43.815" y1="42.799" x2="46.398" y2="41.027" width="0" layer="19" extent="1-1"/>
+<wire x1="24.765" y1="42.799" x2="43.815" y2="42.799" width="0" layer="19" extent="1-1"/>
+<wire x1="22.395" y1="42.998" x2="24.765" y2="42.799" width="0" layer="19" extent="1-1"/>
+<wire x1="20.617" y1="42.692" x2="22.395" y2="42.998" width="0" layer="19" extent="1-1"/>
+<wire x1="15.596" y1="43.631" x2="20.617" y2="42.692" width="0" layer="19" extent="1-1"/>
+<wire x1="15.62" y1="45.236" x2="15.596" y2="43.631" width="0" layer="19" extent="1-1"/>
 <wire x1="16.232" y1="40.225" x2="15.596" y2="43.631" width="0" layer="19" extent="1-1"/>
 <wire x1="14.53" y1="40.274" x2="16.232" y2="40.225" width="0" layer="19" extent="1-1"/>
 <wire x1="11.23" y1="42.574" x2="14.53" y2="40.274" width="0" layer="19" extent="1-1"/>
-<wire x1="5.14" y1="42.95" x2="11.23" y2="42.574" width="0" layer="19" extent="1-1"/>
-<wire x1="20.023" y1="35.587" x2="16.232" y2="40.225" width="0" layer="19" extent="1-1"/>
-<wire x1="21.42" y1="34.063" x2="20.023" y2="35.587" width="0" layer="19" extent="1-1"/>
-<wire x1="23.241" y1="34.163" x2="21.42" y2="34.063" width="0" layer="19" extent="1-1"/>
-<wire x1="21.844" y1="23.351" x2="21.42" y2="34.063" width="0" layer="19" extent="1-1"/>
-<wire x1="16.123" y1="24.126" x2="21.844" y2="23.351" width="0" layer="19" extent="1-1"/>
-<wire x1="16.02" y1="21.138" x2="16.123" y2="24.126" width="0" layer="19" extent="1-1"/>
-<wire x1="9.9252" y1="24.126" x2="16.123" y2="24.126" width="0" layer="19" extent="1-1"/>
-<wire x1="4.877" y1="30.494" x2="9.9252" y2="24.126" width="0" layer="19" extent="1-1"/>
-<wire x1="1.975" y1="30.853" x2="4.877" y2="30.494" width="0" layer="19" extent="1-1"/>
-<wire x1="8.298" y1="33.947" x2="4.877" y2="30.494" width="0" layer="19" extent="1-1"/>
+<wire x1="20.404" y1="35.079" x2="16.232" y2="40.225" width="0" layer="19" extent="1-1"/>
+<wire x1="22.309" y1="34.063" x2="20.404" y2="35.079" width="0" layer="19" extent="1-1"/>
+<wire x1="24.765" y1="33.909" x2="22.309" y2="34.063" width="0" layer="19" extent="1-1"/>
+<wire x1="5.394" y1="45.871" x2="11.23" y2="42.574" width="0" layer="19" extent="1-1"/>
+<wire x1="10.457" y1="32.677" x2="14.53" y2="40.274" width="0" layer="19" extent="1-1"/>
+<wire x1="9.0362" y1="24.634" x2="10.457" y2="32.677" width="0" layer="19" extent="1-1"/>
+<wire x1="15.234" y1="24.634" x2="9.0362" y2="24.634" width="0" layer="19" extent="1-1"/>
+<wire x1="17.254" y1="21.026" x2="15.234" y2="24.634" width="0" layer="19" extent="1-1"/>
+<wire x1="22.225" y1="23.478" x2="17.254" y2="21.026" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="USB_CONNECT">
 <contactref element="U3" pad="15"/>
 <contactref element="T1" pad="B"/>
-<wire x1="7.298" y1="33.947" x2="9.43" y2="38.774" width="0" layer="19" extent="1-1"/>
+<wire x1="9.457" y1="32.677" x2="9.43" y2="38.774" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VBUS">
 <contactref element="U3" pad="9"/>
 <contactref element="R2" pad="2"/>
-<wire x1="5.993" y1="41.956" x2="9.43" y2="41.774" width="0" layer="19" extent="1-1"/>
+<wire x1="6.12" y1="43.861" x2="9.43" y2="41.774" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RESET">
-<contactref element="J3" pad="10"/>
 <contactref element="U3" pad="2"/>
 <contactref element="R3" pad="1"/>
 <contactref element="S2" pad="B1P"/>
@@ -1049,49 +1010,36 @@ design rules under a new name.</description>
 <contactref element="S2" pad="B2"/>
 <contactref element="S2" pad="B2P"/>
 <wire x1="44.534" y1="22.411" x2="48.684" y2="22.411" width="0" layer="19" extent="1-1"/>
-<wire x1="41.671" y1="22.389" x2="44.534" y2="22.411" width="0" layer="19" extent="1-1"/>
-<wire x1="9.957" y1="31.764" x2="41.671" y2="22.389" width="0" layer="19" extent="1-1"/>
-<wire x1="14.496" y1="43.631" x2="9.957" y2="31.764" width="0" layer="19" extent="1-1"/>
+<wire x1="41.671" y1="22.643" x2="44.534" y2="22.411" width="0" layer="19" extent="1-1"/>
+<wire x1="14.496" y1="43.631" x2="41.671" y2="22.643" width="0" layer="19" extent="1-1"/>
 <wire x1="13.23" y1="42.574" x2="14.496" y2="43.631" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="SWDIO">
-<contactref element="J3" pad="2"/>
-<contactref element="R4" pad="1"/>
-<contactref element="U3" pad="25"/>
-<wire x1="4.877" y1="31.764" x2="14.53" y2="38.274" width="0" layer="19" extent="1-1"/>
-<wire x1="1.975" y1="31.953" x2="4.877" y2="31.764" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="ISP_EN">
 <contactref element="C17" pad="2"/>
 <contactref element="D2" pad="2"/>
 <contactref element="U3" pad="3"/>
-<wire x1="14.166" y1="44.855" x2="39.771" y2="22.389" width="0" layer="19" extent="1-1"/>
-<wire x1="12.73" y1="42.574" x2="14.166" y2="44.855" width="0" layer="19" extent="1-1"/>
+<wire x1="12.73" y1="42.574" x2="39.771" y2="22.643" width="0" layer="19" extent="1-1"/>
+<wire x1="14.42" y1="45.236" x2="12.73" y2="42.574" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="R1" pad="2"/>
 <contactref element="T1" pad="C"/>
-<wire x1="6.039" y1="33.694" x2="7.798" y2="35.489" width="0" layer="19" extent="1-1"/>
+<wire x1="7.436" y1="33.059" x2="9.957" y2="34.219" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="USB_DM" class="2">
 <contactref element="U2" pad="3"/>
 <contactref element="U3" pad="13"/>
-<wire x1="6.627" y1="39.134" x2="9.43" y2="39.774" width="0" layer="19" extent="1-1"/>
+<wire x1="6.5" y1="40.785" x2="9.43" y2="39.774" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="USB_DP" class="2">
 <contactref element="U2" pad="1"/>
 <contactref element="U3" pad="14"/>
-<wire x1="7.627" y1="39.134" x2="9.43" y2="39.274" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="SWDO">
-<contactref element="J3" pad="6"/>
-<contactref element="U3" pad="18"/>
-<wire x1="7.417" y1="31.764" x2="10.73" y2="37.474" width="0" layer="19" extent="1-1"/>
+<wire x1="9.43" y1="39.274" x2="7.5" y2="40.785" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$12" class="2">
 <contactref element="U2" pad="4"/>
 <contactref element="J1" pad="2"/>
-<wire x1="4.199" y1="38.458" x2="6.627" y2="37.434" width="0" layer="19" extent="1-1"/>
+<wire x1="4.199" y1="40.236" x2="6.5" y2="39.085" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$16">
 <contactref element="S1" pad="B1P"/>
@@ -1100,56 +1048,49 @@ design rules under a new name.</description>
 <contactref element="S1" pad="B2"/>
 <contactref element="S1" pad="B2P"/>
 <wire x1="44.534" y1="15.426" x2="48.684" y2="15.426" width="0" layer="19" extent="1-1"/>
-<wire x1="40.721" y1="20.189" x2="44.534" y2="15.426" width="0" layer="19" extent="1-1"/>
+<wire x1="40.721" y1="20.443" x2="44.534" y2="15.426" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="WIFI_RESET">
 <contactref element="U4" pad="34"/>
 <contactref element="U3" pad="21"/>
 <contactref element="R6" pad="2"/>
-<wire x1="45.085" y1="39.539" x2="42.291" y2="41.783" width="0" layer="19" extent="1-1"/>
-<wire x1="12.23" y1="37.474" x2="42.291" y2="41.783" width="0" layer="19" extent="1-1"/>
+<wire x1="46.355" y1="39.285" x2="43.815" y2="41.529" width="0" layer="19" extent="1-1"/>
+<wire x1="12.23" y1="37.474" x2="43.815" y2="41.529" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="WIFI_RTS">
 <contactref element="U4" pad="17"/>
 <contactref element="U3" pad="30"/>
-<wire x1="14.53" y1="40.774" x2="30.226" y2="32.258" width="0" layer="19" extent="1-1"/>
+<wire x1="14.53" y1="40.774" x2="31.75" y2="32.004" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="WIFI_CTS">
 <contactref element="U4" pad="18"/>
 <contactref element="U3" pad="27"/>
-<wire x1="14.53" y1="39.274" x2="31.496" y2="32.258" width="0" layer="19" extent="1-1"/>
+<wire x1="14.53" y1="39.274" x2="33.02" y2="32.004" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="WIFI_RX">
 <contactref element="U4" pad="19"/>
 <contactref element="U3" pad="32"/>
-<wire x1="14.53" y1="41.774" x2="32.766" y2="32.258" width="0" layer="19" extent="1-1"/>
+<wire x1="14.53" y1="41.774" x2="34.29" y2="32.004" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="WIFI_TX">
 <contactref element="U4" pad="20"/>
 <contactref element="U3" pad="31"/>
-<wire x1="14.53" y1="41.274" x2="34.036" y2="32.258" width="0" layer="19" extent="1-1"/>
+<wire x1="14.53" y1="41.274" x2="35.56" y2="32.004" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="WIFI_WAKE">
 <contactref element="U4" pad="32"/>
 <contactref element="U3" pad="16"/>
-<wire x1="9.43" y1="38.274" x2="42.291" y2="39.243" width="0" layer="19" extent="1-1"/>
+<wire x1="9.43" y1="38.274" x2="43.815" y2="38.989" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="WIFI_FACTORY">
 <contactref element="U4" pad="4"/>
 <contactref element="U3" pad="24"/>
-<wire x1="13.73" y1="37.474" x2="23.241" y2="41.783" width="0" layer="19" extent="1-1"/>
+<wire x1="13.73" y1="37.474" x2="24.765" y2="41.529" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="WIFI_IRQ">
 <contactref element="U4" pad="24"/>
 <contactref element="U3" pad="8"/>
-<wire x1="10.23" y1="42.574" x2="39.116" y2="32.258" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="SWDCLK">
-<contactref element="U3" pad="19"/>
-<contactref element="J3" pad="4"/>
-<contactref element="R5" pad="2"/>
-<wire x1="9.328" y1="34.853" x2="11.23" y2="37.474" width="0" layer="19" extent="1-1"/>
-<wire x1="6.147" y1="31.764" x2="9.328" y2="34.853" width="0" layer="19" extent="1-1"/>
+<wire x1="10.23" y1="42.574" x2="40.64" y2="32.004" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND">
 <contactref element="J1" pad="G3"/>
@@ -1171,11 +1112,6 @@ design rules under a new name.</description>
 <contactref element="C4" pad="2"/>
 <contactref element="C3" pad="2"/>
 <contactref element="U2" pad="2"/>
-<contactref element="J3" pad="3"/>
-<contactref element="J3" pad="5"/>
-<contactref element="J3" pad="7"/>
-<contactref element="J3" pad="9"/>
-<contactref element="R5" pad="1"/>
 <contactref element="S2" pad="A1"/>
 <contactref element="S2" pad="A1P"/>
 <contactref element="U3" pad="G2"/>
@@ -1244,28 +1180,30 @@ design rules under a new name.</description>
 <contactref element="TR1" pad="6"/>
 <contactref element="C15" pad="2"/>
 <contactref element="D3" pad="K"/>
-<wire x1="45.509" y1="42.227" x2="47.447" y2="42.467" width="0" layer="19" extent="1-1"/>
-<wire x1="42.291" y1="44.323" x2="45.509" y2="42.227" width="0" layer="19" extent="1-1"/>
-<wire x1="42.3545" y1="45.593" x2="42.291" y2="44.323" width="0" layer="19" extent="1-1"/>
-<wire x1="41.656" y1="46.2915" x2="42.3545" y2="45.593" width="0" layer="19" extent="1-1"/>
-<wire x1="40.386" y1="46.228" x2="41.656" y2="46.2915" width="0" layer="19" extent="1-1"/>
-<wire x1="39.116" y1="46.228" x2="40.386" y2="46.228" width="0" layer="19" extent="1-1"/>
-<wire x1="37.846" y1="46.228" x2="39.116" y2="46.228" width="0" layer="19" extent="1-1"/>
-<wire x1="36.576" y1="46.228" x2="37.846" y2="46.228" width="0" layer="19" extent="1-1"/>
-<wire x1="34.036" y1="46.228" x2="36.576" y2="46.228" width="0" layer="19" extent="1-1"/>
-<wire x1="32.766" y1="46.228" x2="34.036" y2="46.228" width="0" layer="19" extent="1-1"/>
-<wire x1="31.496" y1="46.228" x2="32.766" y2="46.228" width="0" layer="19" extent="1-1"/>
-<wire x1="28.956" y1="46.228" x2="31.496" y2="46.228" width="0" layer="19" extent="1-1"/>
-<wire x1="27.686" y1="46.228" x2="28.956" y2="46.228" width="0" layer="19" extent="1-1"/>
-<wire x1="26.416" y1="46.228" x2="27.686" y2="46.228" width="0" layer="19" extent="1-1"/>
-<wire x1="25.146" y1="46.228" x2="26.416" y2="46.228" width="0" layer="19" extent="1-1"/>
-<wire x1="23.876" y1="46.2915" x2="25.146" y2="46.228" width="0" layer="19" extent="1-1"/>
-<wire x1="23.1775" y1="45.593" x2="23.876" y2="46.2915" width="0" layer="19" extent="1-1"/>
-<wire x1="23.241" y1="44.323" x2="23.1775" y2="45.593" width="0" layer="19" extent="1-1"/>
-<wire x1="21.506" y1="44.198" x2="23.1775" y2="45.593" width="0" layer="19" extent="1-1"/>
-<wire x1="19.855" y1="44.692" x2="21.506" y2="44.198" width="0" layer="19" extent="1-1"/>
-<wire x1="45.085" y1="38.439" x2="45.509" y2="42.227" width="0" layer="19" extent="1-1"/>
-<wire x1="13.645" y1="46.847" x2="19.855" y2="44.692" width="0" layer="19" extent="1-1"/>
+<wire x1="43.8785" y1="45.339" x2="43.18" y2="46.0375" width="0" layer="19" extent="1-1"/>
+<wire x1="43.815" y1="44.069" x2="43.8785" y2="45.339" width="0" layer="19" extent="1-1"/>
+<wire x1="41.91" y1="45.974" x2="43.18" y2="46.0375" width="0" layer="19" extent="1-1"/>
+<wire x1="40.64" y1="45.974" x2="41.91" y2="45.974" width="0" layer="19" extent="1-1"/>
+<wire x1="39.37" y1="45.974" x2="40.64" y2="45.974" width="0" layer="19" extent="1-1"/>
+<wire x1="38.1" y1="45.974" x2="39.37" y2="45.974" width="0" layer="19" extent="1-1"/>
+<wire x1="35.56" y1="45.974" x2="38.1" y2="45.974" width="0" layer="19" extent="1-1"/>
+<wire x1="34.29" y1="45.974" x2="35.56" y2="45.974" width="0" layer="19" extent="1-1"/>
+<wire x1="33.02" y1="45.974" x2="34.29" y2="45.974" width="0" layer="19" extent="1-1"/>
+<wire x1="30.48" y1="45.974" x2="33.02" y2="45.974" width="0" layer="19" extent="1-1"/>
+<wire x1="29.21" y1="45.974" x2="30.48" y2="45.974" width="0" layer="19" extent="1-1"/>
+<wire x1="27.94" y1="45.974" x2="29.21" y2="45.974" width="0" layer="19" extent="1-1"/>
+<wire x1="26.67" y1="45.974" x2="27.94" y2="45.974" width="0" layer="19" extent="1-1"/>
+<wire x1="25.4" y1="46.0375" x2="26.67" y2="45.974" width="0" layer="19" extent="1-1"/>
+<wire x1="24.7015" y1="45.339" x2="25.4" y2="46.0375" width="0" layer="19" extent="1-1"/>
+<wire x1="24.765" y1="44.069" x2="24.7015" y2="45.339" width="0" layer="19" extent="1-1"/>
+<wire x1="22.395" y1="44.198" x2="24.765" y2="44.069" width="0" layer="19" extent="1-1"/>
+<wire x1="20.617" y1="44.692" x2="22.395" y2="44.198" width="0" layer="19" extent="1-1"/>
+<wire x1="46.398" y1="42.227" x2="43.815" y2="44.069" width="0" layer="19" extent="1-1"/>
+<wire x1="48.209" y1="42.34" x2="46.398" y2="42.227" width="0" layer="19" extent="1-1"/>
+<wire x1="46.355" y1="38.185" x2="46.398" y2="42.227" width="0" layer="19" extent="1-1"/>
+<wire x1="43.8785" y1="32.639" x2="46.355" y2="38.185" width="0" layer="19" extent="1-1"/>
+<wire x1="43.18" y1="31.9405" x2="43.8785" y2="32.639" width="0" layer="19" extent="1-1"/>
+<wire x1="13.645" y1="46.847" x2="20.617" y2="44.692" width="0" layer="19" extent="1-1"/>
 <wire x1="12.062" y1="46.106" x2="13.645" y2="46.847" width="0" layer="19" extent="1-1"/>
 <wire x1="9.912" y1="48.156" x2="12.062" y2="46.106" width="0" layer="19" extent="1-1"/>
 <wire x1="8.072" y1="47.688" x2="9.912" y2="48.156" width="0" layer="19" extent="1-1"/>
@@ -1275,33 +1213,26 @@ design rules under a new name.</description>
 <wire x1="12.63" y1="39.374" x2="11.98" y2="40.024" width="0" layer="19" extent="1-1"/>
 <wire x1="11.33" y1="39.374" x2="11.98" y2="40.024" width="0" layer="19" extent="1-1"/>
 <wire x1="16.232" y1="39.025" x2="12.63" y2="39.374" width="0" layer="19" extent="1-1"/>
-<wire x1="7.127" y1="39.134" x2="11.33" y2="39.374" width="0" layer="19" extent="1-1"/>
-<wire x1="3.974" y1="41.008" x2="7.127" y2="39.134" width="0" layer="19" extent="1-1"/>
-<wire x1="1.524" y1="41.108" x2="3.974" y2="41.008" width="0" layer="19" extent="1-1"/>
-<wire x1="3.94" y1="42.95" x2="3.974" y2="41.008" width="0" layer="19" extent="1-1"/>
-<wire x1="4.199" y1="36.508" x2="7.127" y2="39.134" width="0" layer="19" extent="1-1"/>
-<wire x1="3.974" y1="34.608" x2="4.199" y2="36.508" width="0" layer="19" extent="1-1"/>
-<wire x1="1.524" y1="34.508" x2="3.974" y2="34.608" width="0" layer="19" extent="1-1"/>
-<wire x1="9.328" y1="33.753" x2="12.63" y2="39.374" width="0" layer="19" extent="1-1"/>
-<wire x1="7.417" y1="30.494" x2="9.328" y2="33.753" width="0" layer="19" extent="1-1"/>
-<wire x1="8.687" y1="30.494" x2="7.417" y2="30.494" width="0" layer="19" extent="1-1"/>
-<wire x1="9.957" y1="30.494" x2="8.687" y2="30.494" width="0" layer="19" extent="1-1"/>
-<wire x1="6.147" y1="30.494" x2="7.417" y2="30.494" width="0" layer="19" extent="1-1"/>
-<wire x1="9.9252" y1="26.4374" x2="6.147" y2="30.494" width="0" layer="19" extent="1-1"/>
-<wire x1="7.644" y1="25.065" x2="9.9252" y2="26.4374" width="0" layer="19" extent="1-1"/>
-<wire x1="3.556" y1="27.415" x2="7.644" y2="25.065" width="0" layer="19" extent="1-1"/>
-<wire x1="20.023" y1="33.587" x2="9.957" y2="30.494" width="0" layer="19" extent="1-1"/>
-<wire x1="21.42" y1="32.863" x2="20.023" y2="33.587" width="0" layer="19" extent="1-1"/>
-<wire x1="23.1775" y1="32.893" x2="21.42" y2="32.863" width="0" layer="19" extent="1-1"/>
-<wire x1="23.876" y1="32.1945" x2="23.1775" y2="32.893" width="0" layer="19" extent="1-1"/>
-<wire x1="42.3545" y1="32.893" x2="45.085" y2="38.439" width="0" layer="19" extent="1-1"/>
-<wire x1="41.656" y1="32.1945" x2="42.3545" y2="32.893" width="0" layer="19" extent="1-1"/>
-<wire x1="32.766" y1="39.243" x2="32.766" y2="46.228" width="0" layer="19" extent="1-1"/>
-<wire x1="31.404" y1="21.336" x2="23.876" y2="32.1945" width="0" layer="19" extent="1-1"/>
-<wire x1="21.844" y1="18.051" x2="31.404" y2="21.336" width="0" layer="19" extent="1-1"/>
-<wire x1="22.926" y1="14.816" x2="21.844" y2="18.051" width="0" layer="19" extent="1-1"/>
-<wire x1="17.77" y1="21.138" x2="21.844" y2="18.051" width="0" layer="19" extent="1-1"/>
-<wire x1="33.02" y1="18.288" x2="31.404" y2="21.336" width="0" layer="19" extent="1-1"/>
+<wire x1="7" y1="40.785" x2="11.33" y2="39.374" width="0" layer="19" extent="1-1"/>
+<wire x1="3.974" y1="42.786" x2="7" y2="40.785" width="0" layer="19" extent="1-1"/>
+<wire x1="4.194" y1="45.871" x2="3.974" y2="42.786" width="0" layer="19" extent="1-1"/>
+<wire x1="1.524" y1="42.886" x2="3.974" y2="42.786" width="0" layer="19" extent="1-1"/>
+<wire x1="4.199" y1="38.286" x2="7" y2="40.785" width="0" layer="19" extent="1-1"/>
+<wire x1="3.974" y1="36.386" x2="4.199" y2="38.286" width="0" layer="19" extent="1-1"/>
+<wire x1="1.524" y1="36.286" x2="3.974" y2="36.386" width="0" layer="19" extent="1-1"/>
+<wire x1="3.556" y1="31.479" x2="3.974" y2="36.386" width="0" layer="19" extent="1-1"/>
+<wire x1="9.0362" y1="26.9454" x2="3.556" y2="31.479" width="0" layer="19" extent="1-1"/>
+<wire x1="5.866" y1="23.541" x2="9.0362" y2="26.9454" width="0" layer="19" extent="1-1"/>
+<wire x1="20.404" y1="33.079" x2="16.232" y2="39.025" width="0" layer="19" extent="1-1"/>
+<wire x1="22.309" y1="32.863" x2="20.404" y2="33.079" width="0" layer="19" extent="1-1"/>
+<wire x1="24.7015" y1="32.639" x2="22.309" y2="32.863" width="0" layer="19" extent="1-1"/>
+<wire x1="25.4" y1="31.9405" x2="24.7015" y2="32.639" width="0" layer="19" extent="1-1"/>
+<wire x1="34.29" y1="38.989" x2="34.29" y2="45.974" width="0" layer="19" extent="1-1"/>
+<wire x1="15.504" y1="21.026" x2="9.0362" y2="26.9454" width="0" layer="19" extent="1-1"/>
+<wire x1="22.225" y1="18.178" x2="15.504" y2="21.026" width="0" layer="19" extent="1-1"/>
+<wire x1="21.783" y1="14.562" x2="22.225" y2="18.178" width="0" layer="19" extent="1-1"/>
+<wire x1="31.277" y1="21.717" x2="22.225" y2="18.178" width="0" layer="19" extent="1-1"/>
+<wire x1="33.02" y1="18.288" x2="31.277" y2="21.717" width="0" layer="19" extent="1-1"/>
 <wire x1="38.5572" y1="11.6332" x2="33.02" y2="18.288" width="0" layer="19" extent="1-1"/>
 <wire x1="44.534" y1="13.276" x2="38.5572" y2="11.6332" width="0" layer="19" extent="1-1"/>
 <wire x1="48.684" y1="13.276" x2="44.534" y2="13.276" width="0" layer="19" extent="1-1"/>
@@ -1313,17 +1244,17 @@ design rules under a new name.</description>
 <signal name="N$2">
 <contactref element="U4" pad="43"/>
 <contactref element="ANTENNA" pad="1"/>
-<wire x1="35.306" y1="46.228" x2="35.814" y2="48.768" width="0" layer="19" extent="1-1"/>
+<wire x1="36.83" y1="45.974" x2="35.814" y2="48.768" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$4">
 <contactref element="Q3" pad="3"/>
 <contactref element="K1" pad="3"/>
-<wire x1="19.812" y1="3.048" x2="23.876" y2="12.616" width="0" layer="19" extent="1-1"/>
+<wire x1="19.812" y1="3.048" x2="22.733" y2="12.362" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$7">
 <contactref element="R11" pad="1"/>
 <contactref element="Q3" pad="1"/>
-<wire x1="24.826" y1="14.816" x2="26.67" y2="14.182" width="0" layer="19" extent="1-1"/>
+<wire x1="23.683" y1="14.562" x2="26.416" y2="13.42" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$10">
 <contactref element="TR1" pad="1"/>
@@ -1331,29 +1262,29 @@ design rules under a new name.</description>
 <contactref element="C16" pad="2"/>
 <contactref element="J2" pad="3"/>
 <wire x1="26.416" y1="11.014" x2="30.5308" y2="11.6332" width="0" layer="19" extent="1-1"/>
-<wire x1="23.368" y1="10.964" x2="26.416" y2="11.014" width="0" layer="19" extent="1-1"/>
-<wire x1="16.774" y1="12.478" x2="23.368" y2="10.964" width="0" layer="19" extent="1-1"/>
+<wire x1="24.384" y1="10.837" x2="26.416" y2="11.014" width="0" layer="19" extent="1-1"/>
+<wire x1="16.774" y1="12.478" x2="24.384" y2="10.837" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DTMF1">
 <contactref element="U3" pad="17"/>
 <contactref element="R7" pad="1"/>
-<wire x1="10.23" y1="37.474" x2="32.47" y2="22.86" width="0" layer="19" extent="1-1"/>
+<wire x1="10.23" y1="37.474" x2="32.597" y2="23.368" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DTMF2">
 <contactref element="U3" pad="20"/>
 <contactref element="R8" pad="1"/>
-<wire x1="11.73" y1="37.474" x2="29.93" y2="22.86" width="0" layer="19" extent="1-1"/>
+<wire x1="11.73" y1="37.474" x2="29.803" y2="23.368" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="HOOK">
 <contactref element="U3" pad="22"/>
 <contactref element="R11" pad="2"/>
-<wire x1="26.67" y1="15.282" x2="12.73" y2="37.474" width="0" layer="19" extent="1-1"/>
+<wire x1="26.416" y1="14.52" x2="12.73" y2="37.474" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$15">
 <contactref element="R10" pad="2"/>
 <contactref element="R12" pad="1"/>
 <contactref element="D1" pad="2"/>
-<wire x1="23.368" y1="9.864" x2="23.026" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="24.384" y1="9.737" x2="23.026" y2="7.62" width="0" layer="19" extent="1-1"/>
 <wire x1="19.812" y1="9.232" x2="23.026" y2="7.62" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$20">
@@ -1371,14 +1302,14 @@ design rules under a new name.</description>
 <contactref element="R7" pad="2"/>
 <contactref element="R8" pad="2"/>
 <contactref element="Q2" pad="1"/>
-<wire x1="32.604" y1="21.336" x2="37.168" y2="20.894" width="0" layer="19" extent="1-1"/>
-<wire x1="33.57" y1="22.86" x2="32.604" y2="21.336" width="0" layer="19" extent="1-1"/>
-<wire x1="31.03" y1="22.86" x2="33.57" y2="22.86" width="0" layer="19" extent="1-1"/>
+<wire x1="32.477" y1="21.717" x2="33.697" y2="23.368" width="0" layer="19" extent="1-1"/>
+<wire x1="30.903" y1="23.368" x2="32.477" y2="21.717" width="0" layer="19" extent="1-1"/>
+<wire x1="37.168" y1="20.894" x2="33.697" y2="23.368" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$8">
 <contactref element="R9" pad="2"/>
 <contactref element="Q2" pad="2"/>
-<wire x1="38.442" y1="18.034" x2="37.168" y2="22.794" width="0" layer="19" extent="1-1"/>
+<wire x1="37.168" y1="22.794" x2="38.442" y2="18.034" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$11">
 <contactref element="K1" pad="1"/>
@@ -1395,12 +1326,12 @@ design rules under a new name.</description>
 <signal name="LED">
 <contactref element="U3" pad="7"/>
 <contactref element="R13" pad="1"/>
-<wire x1="28.702" y1="19.6" x2="10.73" y2="42.574" width="0" layer="19" extent="1-1"/>
+<wire x1="28.067" y1="19.473" x2="10.73" y2="42.574" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$14">
 <contactref element="R13" pad="2"/>
 <contactref element="D3" pad="A"/>
-<wire x1="28.702" y1="18.5" x2="30.48" y2="18.288" width="0" layer="19" extent="1-1"/>
+<wire x1="28.067" y1="18.373" x2="30.48" y2="18.288" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <errors>
