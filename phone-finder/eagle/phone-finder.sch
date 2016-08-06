@@ -343,41 +343,20 @@ chip</description>
 <text x="-0.762" y="1.016" size="1.27" layer="25">&gt;NAME</text>
 <text x="-0.762" y="-2.286" size="1.27" layer="27">&gt;VALUE</text>
 </package>
-<package name="REED">
+<package name="RELAY">
 <description>&lt;b&gt;RELAY&lt;/b&gt;&lt;p&gt;
 reed, 1 x norm. open with polarity, grid 5.08</description>
-<circle x="-11.43" y="1.651" radius="0.127" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="5.08" x2="0" y2="5.08" width="0.254" layer="21"/>
-<wire x1="0" y1="5.08" x2="0" y2="0" width="0.254" layer="21"/>
-<wire x1="0" y1="0" x2="-20.32" y2="0" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="0" x2="-20.32" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="1.27" x2="-20.32" y2="3.81" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="3.81" x2="-20.32" y2="5.08" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="3.81" x2="-19.05" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-19.05" y1="2.54" x2="-20.32" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="3.81" x2="-9.525" y2="3.81" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="3.81" x2="-9.525" y2="3.175" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="3.175" x2="-9.525" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="2.54" x2="-9.525" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="1.27" x2="-10.795" y2="1.27" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="1.27" x2="-10.795" y2="1.905" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="1.905" x2="-10.795" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="2.54" x2="-10.795" y2="3.81" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="1.905" x2="-9.525" y2="3.175" width="0.254" layer="21"/>
-<wire x1="-10.795" y1="2.54" x2="-11.43" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-9.525" y1="2.54" x2="-8.89" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-17.78" y1="3.81" x2="-17.78" y2="4.445" width="0.254" layer="21"/>
-<wire x1="-17.78" y1="4.445" x2="-16.51" y2="4.445" width="0.254" layer="21"/>
-<wire x1="-14.605" y1="4.445" x2="-2.54" y2="4.445" width="0.254" layer="21"/>
-<wire x1="-2.54" y1="4.445" x2="-2.54" y2="3.81" width="0.254" layer="21"/>
-<wire x1="-16.51" y1="4.445" x2="-14.605" y2="3.81" width="0.254" layer="21"/>
-<pad name="1" x="-17.78" y="2.54" drill="0.8128" shape="long" rot="R90"/>
-<pad name="3" x="-12.7" y="2.54" drill="0.8128" shape="long" rot="R90"/>
-<pad name="5" x="-7.62" y="2.54" drill="0.8128" shape="long" rot="R90"/>
-<pad name="7" x="-2.54" y="2.54" drill="0.8128" shape="long" rot="R90"/>
-<text x="-19.685" y="0.635" size="0.4064" layer="48">Günther 3570.1331..</text>
-<text x="-19.685" y="5.715" size="1.27" layer="25">&gt;NAME</text>
-<text x="-12.7" y="5.715" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-9.652" y1="2.54" x2="9.652" y2="2.54" width="0.127" layer="21"/>
+<wire x1="9.652" y1="2.54" x2="9.652" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="9.652" y1="-2.54" x2="-9.652" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-9.652" y1="-2.54" x2="-9.652" y2="2.54" width="0.127" layer="21"/>
+<pad name="1" x="-7.62" y="0" drill="0.762" shape="square" rot="R90"/>
+<pad name="2" x="-2.54" y="0" drill="0.762" shape="long" rot="R90"/>
+<pad name="3" x="2.54" y="0" drill="0.762" shape="long" rot="R90"/>
+<pad name="4" x="7.62" y="0" drill="0.762" shape="long" rot="R90"/>
+<text x="-8.636" y="3.556" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.651" y="2.921" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-8.89" y1="2.54" x2="-8.89" y2="-2.54" width="0.127" layer="21"/>
 </package>
 <package name="SWD-HEADER">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
@@ -401,22 +380,24 @@ reed, 1 x norm. open with polarity, grid 5.08</description>
 <text x="-1.27" y="3.175" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-1.27" y="-4.445" size="1.27" layer="27">&gt;VALUE</text>
 </package>
-<package name="PE-65612">
+<package name="TRANSFORMER">
 <description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
 Source: &lt;a href="http://ww2.pulseeng.com/products/datasheets/T601.pdf"&gt; Data sheet &lt;/a&gt;&lt;br&gt;
 www.pulseeng.com</description>
-<wire x1="-6.35" y1="-4.355" x2="6.35" y2="-4.355" width="0.2032" layer="21"/>
-<wire x1="6.35" y1="-4.355" x2="6.35" y2="3.355" width="0.2032" layer="21"/>
-<wire x1="6.35" y1="3.355" x2="5.35" y2="4.355" width="0.2032" layer="21" curve="90"/>
-<wire x1="5.35" y1="4.355" x2="-5.35" y2="4.355" width="0.2032" layer="21"/>
-<wire x1="-5.35" y1="4.355" x2="-6.35" y2="3.355" width="0.2032" layer="21" curve="90"/>
-<wire x1="-6.35" y1="3.355" x2="-6.35" y2="-4.355" width="0.2032" layer="21"/>
-<pad name="1" x="-5.08" y="-2.54" drill="0.8" diameter="1.27"/>
-<pad name="2" x="-5.08" y="2.54" drill="0.8" diameter="1.27"/>
-<pad name="3" x="5.08" y="2.54" drill="0.8" diameter="1.27"/>
-<pad name="4" x="5.08" y="-2.54" drill="0.8" diameter="1.27"/>
-<text x="-6.35" y="-6.35" size="1.27" layer="25">&gt;NAME</text>
-<text x="-5.08" y="-0.635" size="1.27" layer="27">&gt;VALUE</text>
+<pad name="6" x="-4.0132" y="-3.5052" drill="0.8128" shape="long"/>
+<pad name="4" x="-4.0132" y="3.5052" drill="0.8128" shape="long"/>
+<pad name="3" x="4.0132" y="3.5052" drill="0.8128" shape="long"/>
+<pad name="1" x="4.0132" y="-3.5052" drill="0.8128" diameter="1.778" shape="square"/>
+<text x="-6.35" y="-8.89" size="1.27" layer="25">&gt;NAME</text>
+<text x="0" y="-8.89" size="1.27" layer="27">&gt;VALUE</text>
+<pad name="5" x="-4.0132" y="0" drill="0.8128" shape="long"/>
+<pad name="2" x="4.0132" y="0.3048" drill="0.8128" shape="long"/>
+<wire x1="-6.2484" y1="-7.5184" x2="6.2484" y2="-7.5184" width="0.127" layer="21"/>
+<wire x1="6.2484" y1="-7.5184" x2="6.2484" y2="7.5184" width="0.127" layer="21"/>
+<wire x1="6.2484" y1="7.5184" x2="-6.2484" y2="7.5184" width="0.127" layer="21"/>
+<wire x1="-6.2484" y1="7.5184" x2="-6.2484" y2="-1.778" width="0.127" layer="21"/>
+<wire x1="-6.2484" y1="-1.778" x2="-6.2484" y2="-2.159" width="0.127" layer="21"/>
+<wire x1="-6.2484" y1="-2.159" x2="-6.2484" y2="-7.5184" width="0.127" layer="21"/>
 </package>
 <package name="USB-MICRO">
 <description>http://www.hirose.co.jp/cataloge_hp/e24200011.pdf</description>
@@ -572,18 +553,18 @@ Metric Code Size 2012</description>
 <package name="PHONE-JACK">
 <description>&lt;b&gt;RJ11 Connector&lt;/b&gt;&lt;p&gt;
 Source: 4UCON TECHNOLOGY INC.  14867.pdf</description>
-<wire x1="5.535" y1="-10.3" x2="5.535" y2="10.07" width="0.2032" layer="21"/>
-<wire x1="-5.535" y1="10.07" x2="-5.535" y2="-10.3" width="0.2032" layer="21"/>
-<wire x1="-5.535" y1="-10.3" x2="5.535" y2="-10.3" width="0.2032" layer="21"/>
-<wire x1="-5.535" y1="10.07" x2="5.535" y2="10.07" width="0.2032" layer="21"/>
-<pad name="1" x="-1.905" y="6.35" drill="0.9" diameter="1.4224"/>
-<pad name="2" x="-0.635" y="8.89" drill="0.9" diameter="1.4224"/>
-<pad name="3" x="0.635" y="6.35" drill="0.9" diameter="1.4224"/>
-<pad name="4" x="1.905" y="8.89" drill="0.9" diameter="1.4224"/>
+<wire x1="6.6" y1="-7.9" x2="6.6" y2="10.2" width="0.2032" layer="21"/>
+<wire x1="-6.6" y1="10.2" x2="-6.6" y2="-7.9" width="0.2032" layer="21"/>
+<wire x1="-6.6" y1="-7.9" x2="6.6" y2="-7.9" width="0.2032" layer="21"/>
+<wire x1="-6.6" y1="10.2" x2="6.6" y2="10.2" width="0.2032" layer="21"/>
+<pad name="4" x="-0.54" y="6.36" drill="0.9" diameter="1.4224"/>
+<pad name="5" x="-1.81" y="8.9" drill="0.9" diameter="1.4224"/>
+<pad name="2" x="2" y="6.36" drill="0.9" diameter="1.4224"/>
+<pad name="3" x="0.73" y="8.9" drill="0.9" diameter="1.4224"/>
 <text x="-5.08" y="10.795" size="1.27" layer="25">&gt;NAME</text>
 <text x="-4.445" y="2.54" size="1.27" layer="27">&gt;VALUE</text>
-<hole x="-3.81" y="0" drill="3.2"/>
-<hole x="3.81" y="0" drill="3.2"/>
+<hole x="-5.08" y="0" drill="3.2"/>
+<hole x="5.08" y="0" drill="3.2"/>
 </package>
 </packages>
 <symbols>
@@ -876,7 +857,7 @@ Source: 4UCON TECHNOLOGY INC.  14867.pdf</description>
 <text x="-3.81" y="1.4986" size="1.778" layer="95">&gt;NAME</text>
 <text x="-3.81" y="-3.302" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
-<symbol name="K-D-SIL">
+<symbol name="RELAY-COIL">
 <wire x1="-3.81" y1="2.54" x2="1.27" y2="2.54" width="0.254" layer="94"/>
 <wire x1="1.27" y1="2.54" x2="3.81" y2="2.54" width="0.254" layer="94"/>
 <wire x1="3.81" y1="2.54" x2="3.81" y2="-2.54" width="0.254" layer="94"/>
@@ -892,18 +873,18 @@ Source: 4UCON TECHNOLOGY INC.  14867.pdf</description>
 <wire x1="-2.54" y1="0.635" x2="-2.54" y2="1.27" width="0.254" layer="94"/>
 <wire x1="-2.54" y1="-0.635" x2="-2.54" y2="-1.27" width="0.254" layer="94"/>
 <wire x1="-1.905" y1="0.635" x2="-2.54" y2="0.635" width="0.254" layer="94"/>
-<pin name="3" x="0" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
-<pin name="5" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="COIL-POS" x="0" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
+<pin name="COIL-NEG" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
 <text x="5.715" y="0" size="1.778" layer="95">&gt;PART</text>
 <text x="5.715" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
-<symbol name="S-SIL">
+<symbol name="RELAY-SWITCH">
 <circle x="0" y="-2.54" radius="0.3175" width="0.254" layer="94"/>
 <wire x1="0" y1="2.54" x2="0" y2="5.3975" width="0.4064" layer="94"/>
 <wire x1="0" y1="-5.3975" x2="0" y2="-2.54" width="0.4064" layer="94"/>
 <wire x1="0" y1="-2.54" x2="-2.54" y2="2.54" width="0.4064" layer="94"/>
-<pin name="P" x="0" y="-7.62" visible="pad" length="short" direction="pas" rot="R90"/>
-<pin name="S" x="0" y="7.62" visible="pad" length="short" direction="pas" rot="R270"/>
+<pin name="S2" x="0" y="-7.62" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="S1" x="0" y="7.62" visible="pad" length="short" direction="pas" rot="R270"/>
 <text x="3.175" y="1.905" size="1.778" layer="95">&gt;PART</text>
 <text x="3.175" y="-0.635" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
@@ -937,6 +918,7 @@ Source: 4UCON TECHNOLOGY INC.  14867.pdf</description>
 <pin name="S2" x="7.62" y="-2.54" visible="pad" length="middle" direction="pas" rot="R180"/>
 <text x="-2.54" y="7.366" size="1.778" layer="95">&gt;NAME</text>
 <text x="-2.54" y="-5.715" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-4.191" y="0.381" size="1.778" layer="94">P</text>
 </symbol>
 <symbol name="USB">
 <wire x1="-5.08" y1="17.78" x2="5.08" y2="17.78" width="0.254" layer="94"/>
@@ -1050,10 +1032,10 @@ Source: 4UCON TECHNOLOGY INC.  14867.pdf</description>
 <wire x1="2.794" y1="0.508" x2="3.556" y2="0.508" width="0.1998" layer="94"/>
 <text x="-2.54" y="7.62" size="1.778" layer="95">&gt;NAME</text>
 <text x="-2.54" y="-5.588" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="5.08" visible="pad" length="short" direction="pas" swaplevel="1"/>
-<pin name="2" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" swaplevel="1"/>
+<pin name="5" x="-2.54" y="5.08" visible="pad" length="short" direction="pas" swaplevel="1"/>
+<pin name="4" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" swaplevel="1"/>
 <pin name="3" x="-2.54" y="0" visible="pad" length="short" direction="pas" swaplevel="1"/>
-<pin name="4" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" swaplevel="1"/>
+<pin name="2" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" swaplevel="1"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1084,8 +1066,6 @@ Source: 4UCON TECHNOLOGY INC.  14867.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="BAS40-05" prefix="D">
-<description>&lt;b&gt;Silicon Schottky Diodes&lt;/b&gt;&lt;p&gt;
-General-purpose diode for high-speed switching</description>
 <gates>
 <gate name="G$1" symbol="SDD-1" x="0" y="2.54"/>
 </gates>
@@ -1276,7 +1256,7 @@ uni and bidirectional supressor diode</description>
 <gate name="G$1" symbol="NPN" x="0" y="0"/>
 </gates>
 <devices>
-<device name="SMD" package="SOT23">
+<device name="" package="SOT23">
 <connects>
 <connect gate="G$1" pin="B" pad="1"/>
 <connect gate="G$1" pin="C" pad="3"/>
@@ -1284,7 +1264,6 @@ uni and bidirectional supressor diode</description>
 </connects>
 <technologies>
 <technology name=""/>
-<technology name="ALT1"/>
 </technologies>
 </device>
 </devices>
@@ -1372,16 +1351,16 @@ uni and bidirectional supressor diode</description>
 <description>&lt;b&gt;RELAY&lt;/b&gt;&lt;p&gt;
 reed, 1 x norm. open with polarity</description>
 <gates>
-<gate name="1" symbol="K-D-SIL" x="0" y="0" addlevel="must"/>
-<gate name="2" symbol="S-SIL" x="17.78" y="0" addlevel="always"/>
+<gate name="1" symbol="RELAY-COIL" x="0" y="0" addlevel="must"/>
+<gate name="2" symbol="RELAY-SWITCH" x="17.78" y="0" addlevel="always"/>
 </gates>
 <devices>
-<device name="" package="REED">
+<device name="" package="RELAY">
 <connects>
-<connect gate="1" pin="3" pad="3"/>
-<connect gate="1" pin="5" pad="5"/>
-<connect gate="2" pin="P" pad="1"/>
-<connect gate="2" pin="S" pad="7"/>
+<connect gate="1" pin="COIL-NEG" pad="3"/>
+<connect gate="1" pin="COIL-POS" pad="2"/>
+<connect gate="2" pin="S1" pad="1"/>
+<connect gate="2" pin="S2" pad="4"/>
 </connects>
 <technologies>
 <technology name="">
@@ -1420,19 +1399,16 @@ reed, 1 x norm. open with polarity</description>
 </devices>
 </deviceset>
 <deviceset name="TRANSFORMER" prefix="TR">
-<description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="http://ww2.pulseeng.com/products/datasheets/T601.pdf"&gt; Data sheet &lt;/a&gt;&lt;br&gt;
-www.pulseeng.com</description>
 <gates>
 <gate name="G$1" symbol="TRANSFORMER" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="PE-65612">
+<device name="" package="TRANSFORMER">
 <connects>
-<connect gate="G$1" pin="P1" pad="1"/>
-<connect gate="G$1" pin="P2" pad="2"/>
+<connect gate="G$1" pin="P1" pad="4"/>
+<connect gate="G$1" pin="P2" pad="6"/>
 <connect gate="G$1" pin="S1" pad="3"/>
-<connect gate="G$1" pin="S2" pad="4"/>
+<connect gate="G$1" pin="S2" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -1529,7 +1505,6 @@ www.pulseeng.com</description>
 </devices>
 </deviceset>
 <deviceset name="C" prefix="C" uservalue="yes">
-<description>&lt;B&gt;CAPACITOR&lt;/B&gt;, American symbol</description>
 <gates>
 <gate name="G$1" symbol="CAPACITOR" x="0" y="0"/>
 </gates>
@@ -1564,18 +1539,16 @@ www.pulseeng.com</description>
 </devices>
 </deviceset>
 <deviceset name="PHONE-JACK" prefix="X">
-<description>&lt;b&gt;RJ11 Connector&lt;/b&gt;&lt;p&gt;
-Source: 4UCON TECHNOLOGY INC.  14867.pdf</description>
 <gates>
 <gate name="G$1" symbol="PHONE-JACK" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="PHONE-JACK">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 <connect gate="G$1" pin="3" pad="3"/>
 <connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
 </connects>
 <technologies>
 <technology name="">
@@ -1758,7 +1731,7 @@ infrared emitting diode, Infineon</description>
 <part name="R6" library="phone-finder" deviceset="R" device="R0402" value="3K3"/>
 <part name="GND27" library="phone-finder" deviceset="GND" device=""/>
 <part name="ANTENNA" library="phone-finder" deviceset="PINHD-1X1" device=""/>
-<part name="Q3" library="phone-finder" deviceset="NPN" device="SMD" technology="ALT1" value="2N2222"/>
+<part name="Q3" library="phone-finder" deviceset="NPN" device="" value="2N2222"/>
 <part name="GND6" library="phone-finder" deviceset="GND" device=""/>
 <part name="K1" library="phone-finder" deviceset="RELAY" device=""/>
 <part name="+5V3" library="phone-finder" deviceset="+5V" device=""/>
@@ -1775,7 +1748,7 @@ infrared emitting diode, Infineon</description>
 <part name="R7" library="phone-finder" deviceset="R" device="R0402" value="3K"/>
 <part name="R8" library="phone-finder" deviceset="R" device="R0402" value="3K"/>
 <part name="C16" library="phone-finder" deviceset="C" device="C0402K" value="0.1uF"/>
-<part name="Q2" library="phone-finder" deviceset="NPN" device="SMD" technology="ALT1" value="2N2222"/>
+<part name="Q2" library="phone-finder" deviceset="NPN" device="" value="2N2222"/>
 <part name="J2" library="phone-finder" deviceset="PHONE-JACK" device=""/>
 <part name="D3" library="led" deviceset="SFH482" device=""/>
 <part name="GND10" library="phone-finder" deviceset="GND" device=""/>
@@ -2023,7 +1996,10 @@ infrared emitting diode, Infineon</description>
 <attribute name="NAME" x="298.958" y="151.638" size="1.778" layer="95"/>
 <attribute name="VALUE" x="298.958" y="148.336" size="1.778" layer="96"/>
 </instance>
-<instance part="J2" gate="G$1" x="383.54" y="132.08"/>
+<instance part="J2" gate="G$1" x="383.54" y="132.08" smashed="yes">
+<attribute name="NAME" x="383.54" y="139.7" size="1.778" layer="95"/>
+<attribute name="VALUE" x="378.46" y="123.952" size="1.778" layer="96"/>
+</instance>
 <instance part="D3" gate="1" x="200.66" y="134.62"/>
 <instance part="GND10" gate="1" x="200.66" y="124.46"/>
 <instance part="R13" gate="G$1" x="193.04" y="144.78" smashed="yes">
@@ -2309,7 +2285,7 @@ infrared emitting diode, Infineon</description>
 <junction x="50.8" y="147.32"/>
 </segment>
 <segment>
-<pinref part="K1" gate="1" pin="3"/>
+<pinref part="K1" gate="1" pin="COIL-POS"/>
 <pinref part="+5V3" gate="G$1" pin="+5V"/>
 <wire x1="355.6" y1="116.84" x2="355.6" y2="119.38" width="0.1524" layer="91"/>
 </segment>
@@ -2726,7 +2702,7 @@ infrared emitting diode, Infineon</description>
 <net name="N$4" class="0">
 <segment>
 <pinref part="Q3" gate="G$1" pin="C"/>
-<pinref part="K1" gate="1" pin="5"/>
+<pinref part="K1" gate="1" pin="COIL-NEG"/>
 <wire x1="355.6" y1="104.14" x2="355.6" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -2805,7 +2781,7 @@ infrared emitting diode, Infineon</description>
 <net name="N$20" class="0">
 <segment>
 <pinref part="R12" gate="G$1" pin="2"/>
-<pinref part="K1" gate="2" pin="P"/>
+<pinref part="K1" gate="2" pin="S2"/>
 <wire x1="355.6" y1="139.7" x2="358.14" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -2839,10 +2815,10 @@ infrared emitting diode, Infineon</description>
 </net>
 <net name="N$11" class="0">
 <segment>
-<pinref part="K1" gate="2" pin="S"/>
+<pinref part="K1" gate="2" pin="S1"/>
 <wire x1="373.38" y1="139.7" x2="375.92" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="375.92" y1="139.7" x2="375.92" y2="134.62" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="2"/>
+<pinref part="J2" gate="G$1" pin="4"/>
 <wire x1="375.92" y1="134.62" x2="381" y2="134.62" width="0.1524" layer="91"/>
 </segment>
 </net>
