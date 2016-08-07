@@ -22,9 +22,9 @@ pcb_thickness = 1.6;
 // For tallest component.
 pcb_to_cover_clearance = 13;
 
-// 3M double tape.
-// TODO: set exact thickness.
-sticky_tape_thickness = 1.5;
+// Thickness of tape used to stick the PCB to the base.
+// Scotch 414P Extreme Mounting Tape.
+sticky_tape_thickness = 1.0;
 
 // Base thickness at the center.
 base_height = 7;
@@ -60,13 +60,15 @@ cover_width = base_width + 2*base_to_cover_margin + 2*cover_thickness;
 
 // The total height of the cover. This doesn't include the height of 
 // the step around the base.
-cover_height = base_height - base_step_height + pcb_thickness + sticky_tape_thickness + pcb_to_cover_clearance + cover_thickness; 
+cover_height = (base_height - base_step_height) + sticky_tape_thickness + pcb_thickness  + pcb_to_cover_clearance + cover_thickness; 
 
 // The external radius of the cover's corners.
 cover_corner_radius = base_corner_radius + base_to_cover_margin + cover_thickness;
 
 // Distance between centers of base screw holes.
 base_screws_spacing = 30;
+
+pcb_surface_height = base_height + sticky_tape_thickness + pcb_thickness; 
 
 // A cylinder with rounded bottom.
 // r is the corner radius at the bottom.
@@ -120,16 +122,40 @@ module rounded_box(l, w, h, r, r1=0, r2=0) {
   }
 }
 
+// A hole in the cover for a connector.
+// horiz_offset: offset from PCB center line.
+// vert_offset: offset from PCB surface.
+module conn_hole(width, height, horiz_offset, vert_offset) {
+    translate([-cover_length/2 - cover_thickness, 
+               -width/2 + horiz_offset, 
+               pcb_surface_height + vert_offset]) 
+        cube([3*cover_thickness, 
+              width, 
+              height + eps1]);
+}
+
+module usb_conn_hole() {
+  // TODO: set actual hole dimensions
+  conn_hole(11, 6, 12, -1);
+}
+
+module phone_conn_hole() {
+  // TODO: set actual hole dimensions
+  conn_hole(8, 8, -14, 0);
+}
+
 module cover() {
   difference() {
-   rounded_box(cover_length, cover_width, cover_height, cover_corner_radius, 0, 0.4);
+   rounded_box(cover_length, cover_width, cover_height, cover_corner_radius, 0, 1);
    translate([0, 0, -eps1]) 
      rounded_box(
          cover_length-2*cover_thickness, 
          cover_width-2*cover_thickness, 
          cover_height-cover_thickness+eps1, 
          cover_corner_radius - cover_thickness, 
-         0, 2);
+         0, 4);
+    usb_conn_hole();
+    phone_conn_hole();
   }
 }
 
@@ -149,7 +175,7 @@ module base() {
     union() {
       rounded_box(base_length, base_width, base_height, base_corner_radius);
       rounded_box(base_length + 2*extra, base_width + 2*extra, base_step_height, 
-        base_corner_radius + extra, 0.4, 0.2);
+        base_corner_radius + extra, 0.5, 0.2);
     }
     translate([0, -base_screws_spacing/2, 0]) base_screw_hole();
     translate([0, base_screws_spacing/2, 0]) base_screw_hole();
@@ -181,8 +207,18 @@ module parts_for_printing() {
       mirror([0, 0, 1]) cover(); 
 }
 
-
 //parts_assembled();
 
 parts_for_printing();
+
+//rotate([0,180, 0])
+//intersection() {
+//  difference() {
+//    cover();
+//    //conn_holes2();
+//    usb_conn_hole();
+//    phone_conn_hole();
+//  }
+//  //translate([-75, -30, 4]) cube([60, 60, 60]);
+//}
 
