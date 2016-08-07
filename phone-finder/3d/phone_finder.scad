@@ -13,12 +13,23 @@ board_thickness = 1.6;
 
 base_thickness = 3;
 base_post_height = 4;  // above base.
-
 board_base_margin = 0.2;
-base_cover_margin = 1;
+
+base_corner_radius = board_corner_radius + board_base_margin;
+
 
 base_length = board_length + 2*board_base_margin;
 base_width = board_width + 2*board_base_margin;
+
+
+cover_thickness = 2;
+base_to_cover_margin = 0.2;
+board_to_cover_clearance = 13;
+
+cover_length = base_length + 2*base_to_cover_margin + 2*cover_thickness;
+cover_width = base_width + 2*base_to_cover_margin + 2*cover_thickness;
+cover_height = base_thickness + board_thickness + board_to_cover_clearance + cover_thickness; 
+cover_corner_radius = base_corner_radius + base_to_cover_margin + cover_thickness;
 
 
 // Hole for a M3 metal insert, mcmaster part number 94180A331.
@@ -108,30 +119,25 @@ module uncliped_base_post_body() {
 // Hole for threaded insert. Already elevated to match uncliped base post body.
 module base_post_hole() {
   h = base_thickness + base_post_height;
- // difference() {
- //   uncliped_base_post_body(h);
-    translate([0, 0, h+eps1]) mirror([0, 0, 1]) m3_threaded_insert(5);  
- // }
+  translate([0, 0, h+eps1]) mirror([0, 0, 1]) m3_threaded_insert(5);  
 }
 
-// A single base post wit the insert hole.
-//module uncliped_base_post() {
-//  h = base_thickness + base_post_height;
-//  difference() {
-//    uncliped_base_post_body(h);
-//    translate([0, 0, h+eps1]) mirror([0, 0, 1]) m3_threaded_insert(5);  
-//  }
-//}
-
-//module cover() {
-//  difference() {
-//   rounded_box(50+4, 50+4, 20, 5, 0.5);
-//   translate([0, 0, 2]) rounded_box(50, 50, 18+eps1, 3, 3);
-//  }
-//}
+module cover() {
+  
+  difference() {
+   rounded_box(cover_length, cover_width, cover_height, cover_corner_radius);
+   translate([0, 0, -eps1]) 
+     rounded_box(
+         cover_length-2*cover_thickness, 
+         cover_width-2*cover_thickness, 
+         cover_height-cover_thickness+eps1, 
+         cover_corner_radius - cover_thickness, 
+         0, 4);
+  }
+}
 
 module base_plate(h) {
-  rounded_box(base_length, base_width, h, board_corner_radius);
+  rounded_box(base_length, base_width, h, base_corner_radius);
 }
 
 module base() {
@@ -177,10 +183,12 @@ module board() {
   }
 }
 
-//intersection() {
-//  translate([0, 0, -eps1]) rotate([0, 0, 45]) cube([100, 100, 100]);
-  base();
-//}
 
-// Board
-translate([0, 0, base_thickness + base_post_height + eps1]) board();
+//intersection() {
+  //translate([0, 0, -eps1]) rotate([0, 0, 45]) cube([100, 100, 100]);
+  union() {
+  translate([0, 0, eps1]) cover();
+  base();
+  translate([0, 0, base_thickness + base_post_height + eps1]) board();
+  }
+//}
