@@ -65,6 +65,9 @@ cover_height = base_height - base_step_height + pcb_thickness + sticky_tape_thic
 // The external radius of the cover's corners.
 cover_corner_radius = base_corner_radius + base_to_cover_margin + cover_thickness;
 
+// Distance between centers of base screw holes.
+base_screws_spacing = 30;
+
 // A cylinder with rounded bottom.
 // r is the corner radius at the bottom.
 // Similar to rounded_cylinder(d, h, r, 0).
@@ -130,13 +133,29 @@ module cover() {
   }
 }
 
+module base_screw_hole() {
+  d1 = 4;
+  d2 = 10;
+  sink_depth = 4;
+  translate([0, 0, -eps1]) cylinder(d=d1, h=base_height+eps2);  
+  translate([0, 0, base_height-sink_depth]) cylinder(d=d2, h=sink_depth+eps1);  
+}
+
 // The base part.
 module base() {
   extra = base_to_cover_margin + cover_thickness;
   
-  rounded_box(base_length, base_width, base_height, base_corner_radius);
-  rounded_box(base_length + 2*extra, base_width + 2*extra, base_step_height, 
-    base_corner_radius + extra, 0.4, 0.2);
+  difference() {
+    union() {
+      rounded_box(base_length, base_width, base_height, base_corner_radius);
+      rounded_box(base_length + 2*extra, base_width + 2*extra, base_step_height, 
+        base_corner_radius + extra, 0.4, 0.2);
+    }
+    translate([0, -base_screws_spacing/2, 0]) base_screw_hole();
+    translate([0, base_screws_spacing/2, 0]) base_screw_hole();
+    translate([-base_screws_spacing/2, 0, 0]) base_screw_hole();
+    translate([base_screws_spacing/2, 0, 0]) base_screw_hole();
+  }
 }
 
 // A piece of plastic at the size of the unpopulated PCB. For simulation.
@@ -163,7 +182,7 @@ module parts_for_printing() {
 }
 
 
-// parts_assembled();
+//parts_assembled();
 
 parts_for_printing();
 
