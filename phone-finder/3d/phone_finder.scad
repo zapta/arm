@@ -1,54 +1,69 @@
+// Open Scad 3D printed model of a case for the Phone Finder.
 
 $fn=64;
 
 eps1 = 0.01;
 eps2 = eps1 + eps1;
 
-board_corner_radius = 3;
-board_mount_length = 43;
-board_mount_witdh = 43;
-board_length = 50;
-board_width = 50;
-board_thickness = 1.6;
+// Radius of PCB corners. The value here should be <= the actual
+// PCB radius. The radiuses of the base and cover are derived from
+// this value.
+pcb_corner_radius = 2.8;
 
-base_thickness = 3;
-base_post_height = 4;  // above base.
-board_base_margin = 0.2;
+// PCB length
+pcb_length = 50;
 
-base_corner_radius = board_corner_radius + board_base_margin;
+// PCB width.
+pcb_width = 50;
 
+// PCB thickness, without the components.
+pcb_thickness = 1.6;
 
-base_length = board_length + 2*board_base_margin;
-base_width = board_width + 2*board_base_margin;
+// For tallest component.
+pcb_to_cover_clearance = 13;
 
+// 3M double tape.
+// TODO: set exact thickness.
+sticky_tape_thickness = 1.5;
 
+// Base thickness at the center.
+base_height = 7;
+
+// Base thickness around the edge.
+base_step_height = 2;
+
+// Base margin aroung the PCB.
+pcb_base_margin = 0.2;
+
+// Corner radius of the thick part of the base.
+base_corner_radius = pcb_corner_radius + pcb_base_margin;
+
+// The length of the thick part of the base, without the side step.
+// This is the length of the area that supports the PCB.
+base_length = pcb_length + 2*pcb_base_margin;
+
+// The widthof the thick part of the base, without the side step.
+// This is the width of the area that supports the PCB.
+base_width = pcb_width + 2*pcb_base_margin;
+
+// Cover top and side wall thickness.
 cover_thickness = 2;
-base_to_cover_margin = 0.2;
-board_to_cover_clearance = 13;
 
+// Ajust for tight cover fit.
+base_to_cover_margin = 0.1;
+
+// External length of the cover.
 cover_length = base_length + 2*base_to_cover_margin + 2*cover_thickness;
+
+// External width of the cover.
 cover_width = base_width + 2*base_to_cover_margin + 2*cover_thickness;
-cover_height = base_thickness + board_thickness + board_to_cover_clearance + cover_thickness; 
+
+// The total height of the cover. This doesn't include the height of 
+// the step around the base.
+cover_height = base_height - base_step_height + pcb_thickness + sticky_tape_thickness + pcb_to_cover_clearance + cover_thickness; 
+
+// The external radius of the cover's corners.
 cover_corner_radius = base_corner_radius + base_to_cover_margin + cover_thickness;
-
-
-// Hole for a M3 metal insert, mcmaster part number 94180A331.
-// h is the total depth for the screw hole. Already includes an
-// extra eps1 at the opening side.
-module m3_threaded_insert(h) {
-  // Adding tweaks for compensate for my printer's tolerace.
-  A = 5.1 + 0.3;
-  B = 5.31 + 0.4;
-  L = 3.8;
-  D = 4.0;
-  translate([0, 0, -eps1]) {
-    // NOTE: diameter are compensated to actual print results.
-    // May vary among printers.
-    cylinder(d1=B, d2=A, h=eps1+L*2/3, $f2=32);
-    cylinder(d=A, h=eps1+L, $f2=32);
-    translate([0, 0, L-eps1]) cylinder(d=D, h=h+eps1-L, $f2=32);
-  }
-}
 
 // A cylinder with rounded bottom.
 // r is the corner radius at the bottom.
@@ -102,93 +117,53 @@ module rounded_box(l, w, h, r, r1=0, r2=0) {
   }
 }
 
-// A single base post without the insert hole. 
-module uncliped_base_post_body() {
-  h = base_thickness + base_post_height;
-  d = 8;
-  stretch = d / 2;
-  hull() {
-    cylinder(d=d, h=h);
-    translate([-d/2, -d/2-stretch, 0]) cube([d, eps1, h]);
-    translate([-d/2-stretch, -d/2, 0]) cube([eps1, d, h]);
-    //rotate([0, 0, -45]) translate([0, -d/2-stretch/2, 0]) 
-    //    cylinder(d=stretch, h=h);
- }
-}
-
-// Hole for threaded insert. Already elevated to match uncliped base post body.
-module base_post_hole() {
-  h = base_thickness + base_post_height;
-  translate([0, 0, h+eps1]) mirror([0, 0, 1]) m3_threaded_insert(5);  
-}
-
 module cover() {
-  
   difference() {
-   rounded_box(cover_length, cover_width, cover_height, cover_corner_radius);
+   rounded_box(cover_length, cover_width, cover_height, cover_corner_radius, 0, 0.4);
    translate([0, 0, -eps1]) 
      rounded_box(
          cover_length-2*cover_thickness, 
          cover_width-2*cover_thickness, 
          cover_height-cover_thickness+eps1, 
          cover_corner_radius - cover_thickness, 
-         0, 4);
+         0, 2);
   }
 }
 
-module base_plate(h) {
-  rounded_box(base_length, base_width, h, base_corner_radius);
-}
-
+// The base part.
 module base() {
-  dx = board_mount_length/2;
-  dy = board_mount_length/2;
-  difference() {
-    // Combine base and posts.
-    union() {
-      base_plate(base_thickness);
-      intersection() {
-        translate([0, 0, -eps1]) base_plate(10);
-        union() {
-          translate([-dx, -dy, 0]) uncliped_base_post_body();
-          translate([-dx, dy, 0]) mirror([0, 1, 0]) uncliped_base_post_body();
-          translate([dx, -dy, 0]) mirror([1, 0, 0]) uncliped_base_post_body();
-          translate([dx, dy, 0]) mirror([1, 1, 0]) uncliped_base_post_body();
-        }
-      } 
-    }
-    
-    // Make holes for inserts.
-    translate([-dx, -dy, 0]) base_post_hole();
-    translate([-dx, dy, 0]) base_post_hole();
-    translate([dx, -dy, 0]) base_post_hole();
-    translate([dx, dy, 0]) base_post_hole();
-  }
+  extra = base_to_cover_margin + cover_thickness;
+  
+  rounded_box(base_length, base_width, base_height, base_corner_radius);
+  rounded_box(base_length + 2*extra, base_width + 2*extra, base_step_height, 
+    base_corner_radius + extra, 0.4, 0.2);
 }
 
-
-module board_hole() {
-  translate([0, 0, -eps1]) cylinder(d=3.2, h=board_thickness+eps2);
+// A piece of plastic at the size of the unpopulated PCB. For simulation.
+// No need to print this.
+module pcb() {
+  color([0, 0.6, 0, 0.6]) 
+    rounded_box(pcb_length, pcb_width, pcb_thickness, pcb_corner_radius, 0.2, 0);
 }
 
-module board() {
-  dx = board_mount_length/2;
-  dy = board_mount_length/2;
-  color([0, 0.6, 0, 0.6]) difference() {
-    rounded_box(board_length, board_width, board_thickness, board_corner_radius);
-    translate([-dx, -dy, 0]) board_hole();
-    translate([-dx, dy, 0]) board_hole();
-    translate([dx, -dy, 0]) board_hole();
-    translate([dx, dy, 0]) board_hole();
-  }
-}
-
-
-//intersection() {
-  //translate([0, 0, -eps1]) rotate([0, 0, 45]) cube([100, 100, 100]);
-  union() {
-  translate([0, 0, eps1]) cover();
+// Combine the parts in assembled position, with eps spacing.
+module parts_assembled() {
   base();
-  translate([0, 0, base_thickness + base_post_height + eps1]) board();
-  }
-//}
+  translate([0, 0, base_height + sticky_tape_thickness]) pcb();
+  color([0, 0, 0.6, 0.4]) 
+      translate([0, 0, base_step_height + eps1]) cover();
+}
+
+module parts_for_printing() {
+  space = 8;
+  base();
+  translate([0, -(cover_width+space), 0]) pcb();  
+  translate([cover_length+space, 0, cover_height]) 
+      mirror([0, 0, 1]) cover(); 
+}
+
+
+// parts_assembled();
+
+parts_for_printing();
+
