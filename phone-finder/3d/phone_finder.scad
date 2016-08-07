@@ -201,10 +201,9 @@ module parts_assembled() {
 
 module parts_for_printing() {
   space = 8;
-  base();
-  translate([0, -(cover_width+space), 0]) pcb();  
+  rotate([0, 0, 90]) base();
   translate([cover_length+space, 0, cover_height]) 
-      mirror([0, 0, 1]) cover(); 
+      mirror([0, 0, 1]) rotate([0, 0, 90])  cover(); 
 }
 
 //parts_assembled();
