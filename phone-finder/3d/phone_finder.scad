@@ -33,24 +33,24 @@ base_height = 7;
 base_step_height = 2;
 
 // Base margin aroung the PCB.
-pcb_base_margin = 0.2;
+pcb_to_base_margin = 0.4;
 
 // Corner radius of the thick part of the base.
-base_corner_radius = pcb_corner_radius + pcb_base_margin;
+base_corner_radius = pcb_corner_radius + pcb_to_base_margin;
 
 // The length of the thick part of the base, without the side step.
 // This is the length of the area that supports the PCB.
-base_length = pcb_length + 2*pcb_base_margin;
+base_length = pcb_length + 2*pcb_to_base_margin;
 
 // The widthof the thick part of the base, without the side step.
 // This is the width of the area that supports the PCB.
-base_width = pcb_width + 2*pcb_base_margin;
+base_width = pcb_width + 2*pcb_to_base_margin;
 
 // Cover top and side wall thickness.
 cover_thickness = 2;
 
 // Ajust for tight cover fit.
-base_to_cover_margin = 0.1;
+base_to_cover_margin = 0.0;
 
 // External length of the cover.
 cover_length = base_length + 2*base_to_cover_margin + 2*cover_thickness;
@@ -128,7 +128,7 @@ module rounded_box(l, w, h, r, r1=0, r2=0) {
 module conn_hole(width, height, horiz_offset, vert_offset) {
     translate([-cover_length/2 - cover_thickness, 
                -width/2 + horiz_offset, 
-               pcb_surface_height + vert_offset]) 
+               pcb_surface_height -base_step_height + vert_offset]) 
         cube([3*cover_thickness, 
               width, 
               height + eps1]);
@@ -141,7 +141,7 @@ module usb_conn_hole() {
 
 module phone_conn_hole() {
   // TODO: set actual hole dimensions
-  conn_hole(8, 8, -14, 0);
+  conn_hole(8, 9, -14, 0);
 }
 
 module cover() {
@@ -187,7 +187,7 @@ module base() {
 // A piece of plastic at the size of the unpopulated PCB. For simulation.
 // No need to print this.
 module pcb() {
-  color([0, 0.6, 0, 0.6]) 
+  color([0.6, 0.6, 0.6, 0.9]) 
     rounded_box(pcb_length, pcb_width, pcb_thickness, pcb_corner_radius, 0.2, 0);
 }
 
@@ -195,7 +195,7 @@ module pcb() {
 module parts_assembled() {
   base();
   translate([0, 0, base_height + sticky_tape_thickness]) pcb();
-  color([0, 0, 0.6, 0.4]) 
+  color([0, 0, 0.6, 0.7]) 
       translate([0, 0, base_step_height + eps1]) cover();
 }
 
@@ -210,14 +210,8 @@ module parts_for_printing() {
 
 parts_for_printing();
 
-//rotate([0,180, 0])
-//intersection() {
-//  difference() {
-//    cover();
-//    //conn_holes2();
-//    usb_conn_hole();
-//    phone_conn_hole();
-//  }
-//  //translate([-75, -30, 4]) cube([60, 60, 60]);
+//difference() {
+//  parts_assembled();
+//  translate([0, -50, -eps1]) cube([100, 100, 100]);
 //}
 
