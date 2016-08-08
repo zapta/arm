@@ -50,7 +50,7 @@ base_width = pcb_width + 2*pcb_to_base_margin;
 cover_thickness = 2;
 
 // Ajust for tight cover fit.
-base_to_cover_margin = 0.0;
+base_to_cover_margin = 0.1;
 
 // External length of the cover.
 cover_length = base_length + 2*base_to_cover_margin + 2*cover_thickness;
@@ -69,6 +69,16 @@ cover_corner_radius = base_corner_radius + base_to_cover_margin + cover_thicknes
 base_screws_spacing = 30;
 
 pcb_surface_height = base_height + sticky_tape_thickness + pcb_thickness; 
+
+module snap_fit(d, h, l) {
+  d1 = d;
+  d2 = d * 0.2;
+  rotate([90, 0, 0])
+  hull() {
+    translate([(l-d1)/2, 0, 0]) cylinder(d1=d1, d2=d2, h=h); //point_side_bump(d, h);
+    translate([-(l-d1)/2, 0, 0]) cylinder(d1=d1, d2=d2, h=h); //point_side_bump(d, h);
+  }
+}
 
 // A cylinder with rounded bottom.
 // r is the corner radius at the bottom.
@@ -136,18 +146,57 @@ module conn_hole(width, height, horiz_offset, vert_offset) {
 
 module usb_conn_hole() {
   // TODO: set actual hole dimensions
-  conn_hole(11, 6, 12, -1);
+  conn_hole(11, 6, -12, -1);
 }
 
 module phone_conn_hole() {
   // TODO: set actual hole dimensions
-  conn_hole(8, 9, -14, 0);
+  conn_hole(8, 9, 14, 0);
+}
+
+module base_screw_hole() {
+  d1 = 4;
+  d2 = 10;
+  sink_depth = 4;
+  translate([0, 0, -eps1]) cylinder(d=d1, h=base_height+eps2);  
+  translate([0, 0, base_height-sink_depth]) cylinder(d=d2, h=sink_depth+eps1);  
+}
+
+snap_fit_height = 2;
+snap_fit_length = 20;
+snap_fit_depth = 0.7;
+
+module base_snap_fit_holes() {
+  module sf(a) {
+    dz = base_step_height + (base_height - base_step_height)/2;
+    dy =  base_width/2+eps1;   
+    rotate([0, 0, a]) translate([0, dy, dz])
+      snap_fit(snap_fit_height, snap_fit_depth, snap_fit_length+4);
+  }
+  
+  sf(0);
+  sf(180);
+  
+  // If the base is symetric just make it so.
+  if (base_width == base_length) {
+    sf(90);
+    sf(270);
+  }
+}
+
+module cover_snap_fit_bumps() {
+  dz = (base_height - base_step_height)/2;
+  dy = cover_width/2 - cover_thickness + eps1;
+  
+  translate([0, dy, dz]) snap_fit(snap_fit_height, snap_fit_depth, snap_fit_length);
+  mirror([0, 1, 0]) translate([0, dy, dz]) snap_fit(snap_fit_height, snap_fit_depth, snap_fit_length);
 }
 
 module cover() {
   difference() {
-   rounded_box(cover_length, cover_width, cover_height, cover_corner_radius, 0, 1);
-   translate([0, 0, -eps1]) 
+    rounded_box(cover_length, cover_width, cover_height,
+                cover_corner_radius, 0, 1);
+    translate([0, 0, -eps1]) 
      rounded_box(
          cover_length-2*cover_thickness, 
          cover_width-2*cover_thickness, 
@@ -157,14 +206,7 @@ module cover() {
     usb_conn_hole();
     phone_conn_hole();
   }
-}
-
-module base_screw_hole() {
-  d1 = 4;
-  d2 = 10;
-  sink_depth = 4;
-  translate([0, 0, -eps1]) cylinder(d=d1, h=base_height+eps2);  
-  translate([0, 0, base_height-sink_depth]) cylinder(d=d2, h=sink_depth+eps1);  
+  cover_snap_fit_bumps();
 }
 
 // The base part.
@@ -181,6 +223,8 @@ module base() {
     translate([0, base_screws_spacing/2, 0]) base_screw_hole();
     translate([-base_screws_spacing/2, 0, 0]) base_screw_hole();
     translate([base_screws_spacing/2, 0, 0]) base_screw_hole();
+    
+    base_snap_fit_holes();
   }
 }
 
@@ -205,6 +249,8 @@ module parts_for_printing() {
   translate([cover_length+space, 0, cover_height]) 
       mirror([0, 0, 1]) rotate([0, 0, 90])  cover(); 
 }
+
+
 
 //parts_assembled();
 
