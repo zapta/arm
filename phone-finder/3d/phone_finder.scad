@@ -146,12 +146,12 @@ module conn_hole(width, height, horiz_offset, vert_offset) {
 
 module usb_conn_hole() {
   // TODO: set actual hole dimensions
-  conn_hole(11, 6, -12, -1);
+  conn_hole(11, 6, -15, 1.2);
 }
 
 module phone_conn_hole() {
   // TODO: set actual hole dimensions
-  conn_hole(8, 9, 14, 0);
+  conn_hole(10, 7, 15, 3);
 }
 
 module base_screw_hole() {

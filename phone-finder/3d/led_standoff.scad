@@ -1,9 +1,8 @@
 // LED PCB standoff generator.
 
-// Number of faces per 360 degrees.
-$fn=64;
-
-eps1 = 0.01;
+// A small positive value to maintain manifold.
+// +0 to hide in thingiverse customizer.
+eps1 = 0.01+0;
 eps2 = eps1 + eps1;
 
 // Outer diamter.
@@ -33,6 +32,9 @@ columns = 4;
 
 // Spacing of printed rows and columns.
 part_spacing = 5;
+
+// Number of faces to compute per 360 degrees.
+$fn=64;
 
 // A single LED lead hole or slot. Positioned at the 
 // positive X direction. 
