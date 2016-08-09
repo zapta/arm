@@ -68,6 +68,9 @@ cover_corner_radius = base_corner_radius + base_to_cover_margin + cover_thicknes
 // Distance between centers of base screw holes.
 base_screws_spacing = 30;
 
+led_hole_length = 5 + 0.2;
+led_hole_width = 2 + 0.2;
+
 pcb_surface_height = base_height + sticky_tape_thickness + pcb_thickness; 
 
 module snap_fit(d, h, l) {
@@ -154,6 +157,22 @@ module phone_conn_hole() {
   conn_hole(10, 7, 15, 3);
 }
 
+module led_hole() {
+  // Slopt, for easy LED insertion
+  expansion = 0.7;
+  translate([15, 0, cover_height - cover_thickness])
+  union() {
+    hull() {
+      cube([led_hole_width+2*expansion, led_hole_length+2*expansion, eps2], center=true);  
+      translate([0, 0, cover_thickness*2/3]) 
+        cube([led_hole_width, led_hole_length, eps2], center=true);  
+    }
+    cube([led_hole_width, led_hole_length, 2*(cover_thickness+eps1)], center=true); 
+  }
+//  translate([15, 0, 0]) 
+//  cube([led_hole_width, led_hole_length, cover_height+eps1]);  
+}
+
 module base_screw_hole() {
   d1 = 4;
   d2 = 10;
@@ -205,6 +224,7 @@ module cover() {
          0, 4);
     usb_conn_hole();
     phone_conn_hole();
+    led_hole();
   }
   cover_snap_fit_bumps();
 }
@@ -250,7 +270,9 @@ module parts_for_printing() {
       mirror([0, 0, 1]) rotate([0, 0, 90])  cover(); 
 }
 
+//led_hole();
 
+//cover();
 
 //parts_assembled();
 
