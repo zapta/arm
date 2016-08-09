@@ -1,4 +1,6 @@
-// LED PCB standoff
+// LED PCB standoff generator.
+
+// Number of faces per 360 degrees.
 $fn=64;
 
 eps1 = 0.01;
@@ -23,6 +25,17 @@ use_open_slot = 1;
 // cost of reduces stability.
 width_factor = 0.8;
 
+// Number of rows to generate.
+rows = 2;
+
+// Number of columns to generate.
+columns = 4;
+
+// Spacing of printed rows and columns.
+part_spacing = 5;
+
+// A single LED lead hole or slot. Positioned at the 
+// positive X direction. 
 module lead_hole() {
   module hole(offset) {
      translate([offset, 0, -eps1])
@@ -39,6 +52,7 @@ module lead_hole() {
   }
 }
 
+// A round standoff, before applying width_factor.
 module round_led_standoff() {
   difference() {
     cylinder(d=outer_diameter, h=height);
@@ -47,6 +61,7 @@ module round_led_standoff() {
   }
 }
 
+// A round standoff with width_factor applied.
 module led_standoff() {
   dx = outer_diameter + eps2;
   dy = (width_factor * outer_diameter) + eps2;
@@ -58,4 +73,12 @@ module led_standoff() {
   } 
 }
 
-led_standoff();
+// Generate the array
+pitch = outer_diameter + part_spacing;
+
+for (i = [1:columns]) {
+  for (j = [1:rows]) {
+    translate([i*pitch, j*pitch, 0]) led_standoff();
+  }
+}
+
