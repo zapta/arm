@@ -1179,7 +1179,7 @@ uni and bidirectional supressor diode</description>
 <connects>
 <connect gate="G$1" pin="GND" pad="1"/>
 <connect gate="G$1" pin="VIN" pad="3"/>
-<connect gate="G$1" pin="VOUT" pad="2 4"/>
+<connect gate="G$1" pin="VOUT" pad="4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -1813,8 +1813,8 @@ reed, 1 x norm. open with polarity</description>
 <instance part="K1" gate="1" x="350.52" y="73.66" smashed="yes">
 <attribute name="PART" x="355.981" y="70.358" size="1.778" layer="95"/>
 </instance>
-<instance part="K1" gate="2" x="360.68" y="119.38" smashed="yes" rot="R270">
-<attribute name="PART" x="362.839" y="114.935" size="1.778" layer="95"/>
+<instance part="K1" gate="2" x="360.68" y="119.38" smashed="yes" rot="MR270">
+<attribute name="PART" x="358.521" y="114.935" size="1.778" layer="95" rot="MR0"/>
 </instance>
 <instance part="+5V3" gate="G$1" x="350.52" y="83.82" rot="MR0"/>
 <instance part="R11" gate="G$1" x="335.28" y="60.96" smashed="yes" rot="R180">
@@ -2550,13 +2550,6 @@ reed, 1 x norm. open with polarity</description>
 <label x="320.04" y="60.96" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$20" class="0">
-<segment>
-<pinref part="R12" gate="G$1" pin="2"/>
-<pinref part="K1" gate="2" pin="S2"/>
-<wire x1="350.52" y1="119.38" x2="353.06" y2="119.38" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$17" class="0">
 <segment>
 <pinref part="R9" gate="G$1" pin="1"/>
@@ -2587,11 +2580,11 @@ reed, 1 x norm. open with polarity</description>
 </net>
 <net name="N$11" class="0">
 <segment>
-<pinref part="K1" gate="2" pin="S1"/>
-<wire x1="368.3" y1="119.38" x2="370.84" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="370.84" y1="119.38" x2="370.84" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="J2" gate="G$1" pin="4"/>
 <wire x1="370.84" y1="114.3" x2="375.92" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="K1" gate="2" pin="S2"/>
+<wire x1="368.3" y1="119.38" x2="370.84" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -2628,6 +2621,13 @@ reed, 1 x norm. open with polarity</description>
 <pinref part="D3" gate="1" pin="A"/>
 <wire x1="200.66" y1="45.72" x2="203.2" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="203.2" y1="45.72" x2="203.2" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$15" class="0">
+<segment>
+<pinref part="R12" gate="G$1" pin="2"/>
+<pinref part="K1" gate="2" pin="S1"/>
+<wire x1="350.52" y1="119.38" x2="353.06" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
