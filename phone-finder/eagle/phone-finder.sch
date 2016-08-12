@@ -360,9 +360,11 @@ reed, 1 x norm. open with polarity, grid 5.08</description>
 <description>&lt;b&gt;TRANSFORMERS FOR DIGITAL AUDIO DATA TRANSMISSION&lt;/b&gt;&lt;p&gt;
 Source: &lt;a href="http://ww2.pulseeng.com/products/datasheets/T601.pdf"&gt; Data sheet &lt;/a&gt;&lt;br&gt;
 www.pulseeng.com</description>
-<wire x1="-6.2484" y1="-7.5184" x2="6.2484" y2="-7.5184" width="0.127" layer="21"/>
+<wire x1="-6.2484" y1="-7.5184" x2="-5.6134" y2="-7.5184" width="0.127" layer="21"/>
+<wire x1="-5.6134" y1="-7.5184" x2="6.2484" y2="-7.5184" width="0.127" layer="21"/>
 <wire x1="6.2484" y1="-7.5184" x2="6.2484" y2="7.5184" width="0.127" layer="21"/>
-<wire x1="6.2484" y1="7.5184" x2="-6.2484" y2="7.5184" width="0.127" layer="21"/>
+<wire x1="6.2484" y1="7.5184" x2="-5.6134" y2="7.5184" width="0.127" layer="21"/>
+<wire x1="-5.6134" y1="7.5184" x2="-6.2484" y2="7.5184" width="0.127" layer="21"/>
 <wire x1="-6.2484" y1="7.5184" x2="-6.2484" y2="-7.5184" width="0.127" layer="21"/>
 <pad name="1" x="4.0132" y="-3.5052" drill="0.8128" diameter="1.651" shape="square"/>
 <pad name="2" x="4.0132" y="0.3048" drill="0.8128" diameter="1.778"/>
@@ -372,6 +374,8 @@ www.pulseeng.com</description>
 <pad name="6" x="-4.0132" y="-3.5052" drill="0.8128" diameter="1.778"/>
 <text x="-6.35" y="-8.89" size="1.27" layer="25">&gt;NAME</text>
 <text x="0" y="-8.89" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-6.2484" y1="7.5184" x2="-6.2484" y2="-7.5184" width="0.127" layer="21"/>
+<wire x1="-5.6134" y1="7.5184" x2="-5.6134" y2="-7.5184" width="0.127" layer="21"/>
 </package>
 <package name="USB-MICRO">
 <description>http://www.hirose.co.jp/cataloge_hp/e24200011.pdf</description>
@@ -553,12 +557,12 @@ Inifineon</description>
 <wire x1="1.5" y1="-0.9546" x2="1.778" y2="0" width="0.1524" layer="51" curve="32.472615"/>
 <wire x1="-1.778" y1="0" x2="-1.5142" y2="-0.9318" width="0.1524" layer="51" curve="31.606487"/>
 <wire x1="-1.778" y1="0" x2="-1.5" y2="0.9546" width="0.1524" layer="51" curve="-32.472615"/>
+<wire x1="-2.286" y1="-1.016" x2="-2.286" y2="-2.032" width="0.127" layer="21"/>
+<wire x1="-2.794" y1="-1.524" x2="-1.778" y2="-1.524" width="0.127" layer="21"/>
 <pad name="A" x="-1.27" y="0" drill="0.8128" shape="long" rot="R90"/>
 <pad name="K" x="1.27" y="0" drill="0.8128" shape="long" rot="R90"/>
 <text x="-1.27" y="3.048" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-1.27" y="-4.318" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
-<wire x1="-2.286" y1="-1.016" x2="-2.286" y2="-2.032" width="0.127" layer="21"/>
-<wire x1="-2.794" y1="-1.524" x2="-1.778" y2="-1.524" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -1565,7 +1569,7 @@ reed, 1 x norm. open with polarity</description>
 <part name="GND28" library="phone-finder" deviceset="GND" device=""/>
 <part name="U3" library="phone-finder" deviceset="LPC11U35FHN33/501" device="" value="LPC11U35FHI33/501"/>
 <part name="GND2" library="phone-finder" deviceset="GND" device=""/>
-<part name="Q1" library="phone-finder" deviceset="CRYSTAL" device="CTS406" value="12Mhz"/>
+<part name="Y1" library="phone-finder" deviceset="CRYSTAL" device="CTS406" value="12Mhz"/>
 <part name="C1" library="phone-finder" deviceset="C" device="C0402K" value="18pF"/>
 <part name="C2" library="phone-finder" deviceset="C" device="C0402K" value="18pF"/>
 <part name="GND4" library="phone-finder" deviceset="GND" device=""/>
@@ -1583,7 +1587,7 @@ reed, 1 x norm. open with polarity</description>
 <part name="GND19" library="phone-finder" deviceset="GND" device=""/>
 <part name="R2" library="phone-finder" deviceset="R" device="R0402" value="10K"/>
 <part name="+3V9" library="phone-finder" deviceset="+3V3" device=""/>
-<part name="T1" library="phone-finder" deviceset="PNP-BIASED" device="" value="DTA114EET1G (2x10K)"/>
+<part name="Q1" library="phone-finder" deviceset="PNP-BIASED" device="" value="DTA114EET1G (2x10K)"/>
 <part name="U1" library="phone-finder" deviceset="LDO" device="SOT223" value="AP2114H-3.3TRG1"/>
 <part name="U2" library="phone-finder" deviceset="USB-ESD" device="" value="NUF2042XV6T1G"/>
 <part name="D2" library="phone-finder" deviceset="BAS40-05" device=""/>
@@ -1619,7 +1623,7 @@ reed, 1 x norm. open with polarity</description>
 <part name="K1" library="phone-finder" deviceset="RELAY" device=""/>
 <part name="+5V3" library="phone-finder" deviceset="+5V" device=""/>
 <part name="R11" library="phone-finder" deviceset="R" device="R0402" value="3K"/>
-<part name="TR1" library="phone-finder" deviceset="TRANSFORMER" device=""/>
+<part name="T1" library="phone-finder" deviceset="TRANSFORMER" device=""/>
 <part name="GND9" library="phone-finder" deviceset="GND" device=""/>
 <part name="D1" library="phone-finder" deviceset="DUAL-ZENER" device="" value="3V3"/>
 <part name="R12" library="phone-finder" deviceset="R" device="R0805" value="100"/>
@@ -1691,7 +1695,7 @@ reed, 1 x norm. open with polarity</description>
 <attribute name="VALUE" x="66.802" y="186.5376" size="1.778" layer="96"/>
 </instance>
 <instance part="GND2" gate="1" x="43.18" y="190.5"/>
-<instance part="Q1" gate="G$1" x="40.64" y="264.16" smashed="yes" rot="R90">
+<instance part="Y1" gate="G$1" x="40.64" y="264.16" smashed="yes" rot="R90">
 <attribute name="NAME" x="38.608" y="267.716" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="44.704" y="257.302" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -1732,7 +1736,7 @@ reed, 1 x norm. open with polarity</description>
 <attribute name="VALUE" x="81.026" y="117.856" size="1.778" layer="96"/>
 </instance>
 <instance part="+3V9" gate="G$1" x="63.5" y="157.48"/>
-<instance part="T1" gate="G$1" x="66.04" y="144.78" smashed="yes" rot="MR0">
+<instance part="Q1" gate="G$1" x="66.04" y="144.78" smashed="yes" rot="MR0">
 <attribute name="NAME" x="73.66" y="147.32" size="1.778" layer="95"/>
 <attribute name="VALUE" x="67.056" y="138.938" size="1.778" layer="96"/>
 </instance>
@@ -1821,7 +1825,7 @@ reed, 1 x norm. open with polarity</description>
 <attribute name="NAME" x="328.93" y="56.8706" size="1.778" layer="95"/>
 <attribute name="VALUE" x="336.55" y="56.896" size="1.778" layer="96"/>
 </instance>
-<instance part="TR1" gate="G$1" x="309.88" y="111.76" smashed="yes">
+<instance part="T1" gate="G$1" x="309.88" y="111.76" smashed="yes">
 <attribute name="NAME" x="308.864" y="106.172" size="1.778" layer="95"/>
 </instance>
 <instance part="GND9" gate="1" x="304.8" y="104.14"/>
@@ -1909,7 +1913,7 @@ reed, 1 x norm. open with polarity</description>
 <wire x1="25.4" y1="259.08" x2="25.4" y2="256.54" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="259.08" x2="25.4" y2="259.08" width="0.1524" layer="91"/>
 <junction x="25.4" y="259.08"/>
-<pinref part="Q1" gate="G$1" pin="GND"/>
+<pinref part="Y1" gate="G$1" pin="GND"/>
 <wire x1="35.56" y1="264.16" x2="25.4" y2="264.16" width="0.1524" layer="91"/>
 <junction x="25.4" y="264.16"/>
 </segment>
@@ -2083,7 +2087,7 @@ reed, 1 x norm. open with polarity</description>
 <segment>
 <pinref part="GND9" gate="1" pin="GND"/>
 <wire x1="304.8" y1="106.68" x2="304.8" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="TR1" gate="G$1" pin="P2"/>
+<pinref part="T1" gate="G$1" pin="P2"/>
 </segment>
 <segment>
 <pinref part="C15" gate="G$1" pin="2"/>
@@ -2154,7 +2158,7 @@ reed, 1 x norm. open with polarity</description>
 <pinref part="C1" gate="G$1" pin="1"/>
 <pinref part="U3" gate="G$1" pin="XTALIN"/>
 <wire x1="35.56" y1="269.24" x2="40.64" y2="269.24" width="0.1524" layer="91"/>
-<pinref part="Q1" gate="G$1" pin="2"/>
+<pinref part="Y1" gate="G$1" pin="2"/>
 <wire x1="40.64" y1="269.24" x2="45.72" y2="269.24" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="266.7" x2="40.64" y2="269.24" width="0.1524" layer="91"/>
 <junction x="40.64" y="269.24"/>
@@ -2165,7 +2169,7 @@ reed, 1 x norm. open with polarity</description>
 <pinref part="C2" gate="G$1" pin="1"/>
 <pinref part="U3" gate="G$1" pin="XTLOUT"/>
 <wire x1="35.56" y1="259.08" x2="40.64" y2="259.08" width="0.1524" layer="91"/>
-<pinref part="Q1" gate="G$1" pin="1"/>
+<pinref part="Y1" gate="G$1" pin="1"/>
 <wire x1="40.64" y1="259.08" x2="45.72" y2="259.08" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="261.62" x2="40.64" y2="259.08" width="0.1524" layer="91"/>
 <junction x="40.64" y="259.08"/>
@@ -2209,7 +2213,7 @@ reed, 1 x norm. open with polarity</description>
 </segment>
 <segment>
 <pinref part="+3V9" gate="G$1" pin="+3V3"/>
-<pinref part="T1" gate="G$1" pin="E"/>
+<pinref part="Q1" gate="G$1" pin="E"/>
 <wire x1="63.5" y1="154.94" x2="63.5" y2="149.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -2269,7 +2273,7 @@ reed, 1 x norm. open with polarity</description>
 <segment>
 <label x="91.44" y="144.78" size="1.778" layer="95"/>
 <wire x1="73.66" y1="144.78" x2="111.76" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="T1" gate="G$1" pin="B"/>
+<pinref part="Q1" gate="G$1" pin="B"/>
 </segment>
 </net>
 <net name="VBUS" class="0">
@@ -2329,7 +2333,7 @@ reed, 1 x norm. open with polarity</description>
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="63.5" y1="139.7" x2="63.5" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="T1" gate="G$1" pin="C"/>
+<pinref part="Q1" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="USB_DM" class="2">
@@ -2498,7 +2502,7 @@ reed, 1 x norm. open with polarity</description>
 </net>
 <net name="N$10" class="0">
 <segment>
-<pinref part="TR1" gate="G$1" pin="S2"/>
+<pinref part="T1" gate="G$1" pin="S2"/>
 <wire x1="317.5" y1="109.22" x2="317.5" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="317.5" y1="106.68" x2="325.12" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="D1" gate="1" pin="1"/>
@@ -2553,7 +2557,7 @@ reed, 1 x norm. open with polarity</description>
 <net name="N$17" class="0">
 <segment>
 <pinref part="R9" gate="G$1" pin="1"/>
-<pinref part="TR1" gate="G$1" pin="P1"/>
+<pinref part="T1" gate="G$1" pin="P1"/>
 <wire x1="304.8" y1="119.38" x2="304.8" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -2590,7 +2594,7 @@ reed, 1 x norm. open with polarity</description>
 <net name="N$9" class="0">
 <segment>
 <wire x1="317.5" y1="119.38" x2="317.5" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="TR1" gate="G$1" pin="S1"/>
+<pinref part="T1" gate="G$1" pin="S1"/>
 <wire x1="317.5" y1="119.38" x2="325.12" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="C16" gate="G$1" pin="1"/>
 <wire x1="325.12" y1="116.84" x2="325.12" y2="119.38" width="0.1524" layer="91"/>
