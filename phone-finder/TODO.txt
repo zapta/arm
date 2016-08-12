@@ -1,0 +1,18 @@
+
+* Duplicate connections in netlist?
+
+* Component Labels (font size, location, etc)
+
+* Rename transistors to Qx 
+
+* Add board label and version
+
+* Verify component footprints
+
+* Verify connectors distance from board edge.
+
+* Verify phone jack polarity (to minimize DC flux).
+
+* Final auto routing
+
+
