@@ -1813,8 +1813,8 @@ reed, 1 x norm. open with polarity</description>
 <instance part="K1" gate="1" x="350.52" y="73.66" smashed="yes">
 <attribute name="PART" x="355.981" y="70.358" size="1.778" layer="95"/>
 </instance>
-<instance part="K1" gate="2" x="360.68" y="119.38" smashed="yes" rot="MR270">
-<attribute name="PART" x="358.521" y="114.935" size="1.778" layer="95" rot="MR0"/>
+<instance part="K1" gate="2" x="360.68" y="119.38" smashed="yes" rot="R270">
+<attribute name="PART" x="362.839" y="114.935" size="1.778" layer="95"/>
 </instance>
 <instance part="+5V3" gate="G$1" x="350.52" y="83.82" rot="MR0"/>
 <instance part="R11" gate="G$1" x="335.28" y="60.96" smashed="yes" rot="R180">
@@ -2583,7 +2583,7 @@ reed, 1 x norm. open with polarity</description>
 <wire x1="370.84" y1="119.38" x2="370.84" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="J2" gate="G$1" pin="4"/>
 <wire x1="370.84" y1="114.3" x2="375.92" y2="114.3" width="0.1524" layer="91"/>
-<pinref part="K1" gate="2" pin="S2"/>
+<pinref part="K1" gate="2" pin="S1"/>
 <wire x1="368.3" y1="119.38" x2="370.84" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -2626,7 +2626,7 @@ reed, 1 x norm. open with polarity</description>
 <net name="N$15" class="0">
 <segment>
 <pinref part="R12" gate="G$1" pin="2"/>
-<pinref part="K1" gate="2" pin="S1"/>
+<pinref part="K1" gate="2" pin="S2"/>
 <wire x1="350.52" y1="119.38" x2="353.06" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -2634,9 +2634,9 @@ reed, 1 x norm. open with polarity</description>
 </sheet>
 </sheets>
 <errors>
-<approved hash="102,1,86.36,147.32,VOUT,+3V3,,,,"/>
-<approved hash="104,1,66.04,147.32,U1,VIN,+5V,,,"/>
-<approved hash="104,1,78.74,58.42,U2,VBUS,+5V,,,"/>
+<approved hash="102,1,205.74,119.38,VOUT,+3V3,,,,"/>
+<approved hash="104,1,185.42,119.38,U1,VIN,+5V,,,"/>
+<approved hash="104,1,78.74,109.22,U2,VBUS,+5V,,,"/>
 <approved hash="104,1,220.98,259.08,U4,VBAT,+3V3,,,"/>
 <approved hash="104,1,233.68,259.08,U4,VDD_MCU,+3V3,,,"/>
 <approved hash="104,1,246.38,259.08,U4,VDD_WIFI,+3V3,,,"/>
