@@ -1648,7 +1648,7 @@ reed, 1 x norm. open with polarity</description>
 <wire x1="406.4" y1="304.8" x2="406.4" y2="0" width="0.1524" layer="94"/>
 <wire x1="406.4" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="304.8" width="0.1524" layer="94"/>
-<text x="400.812" y="7.874" size="2.54" layer="97">0</text>
+<text x="395.732" y="7.874" size="2.54" layer="97">1.0</text>
 <text x="68.58" y="81.28" size="2.54" layer="97">USB</text>
 <text x="73.66" y="177.8" size="2.54" layer="97">MCU</text>
 <text x="338.074" y="209.55" size="1.778" layer="94">ISP</text>

@@ -4,9 +4,11 @@
 
 * Verify connectors distance from board edge.
 
----
 
-* Add board label and version
+---
 
 * Final auto routing
 
+---
+
+* Fill in BOM

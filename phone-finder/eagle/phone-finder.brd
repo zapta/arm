@@ -112,8 +112,8 @@
 </layers>
 <board>
 <plain>
-<text x="48.514" y="6.35" size="1.27" layer="21" font="vector" ratio="10" rot="R90">PRG</text>
-<text x="48.514" y="25.527" size="1.27" layer="21" font="vector" ratio="10" rot="R90">RUN</text>
+<text x="48.26" y="7.747" size="1.016" layer="21" font="vector" ratio="10" rot="R90">PRG</text>
+<text x="48.133" y="25.527" size="1.016" layer="21" font="vector" ratio="10" rot="R90">RUN</text>
 <text x="12.6746" y="25.0952" size="1.524" layer="21" font="vector" ratio="10">+</text>
 <wire x1="50" y1="2.828425" x2="50" y2="47.171575" width="0.1016" layer="20"/>
 <wire x1="50" y1="47.171575" x2="47.171575" y2="50" width="0.1016" layer="20" curve="90"/>
@@ -137,7 +137,8 @@
 <wire x1="17.653" y1="14.732" x2="21.336" y2="10.922" width="0.2032" layer="42"/>
 <wire x1="21.336" y1="10.922" x2="53.213" y2="10.922" width="0.2032" layer="42"/>
 <text x="8.8646" y="28.6512" size="1.524" layer="21" font="vector" ratio="10">+</text>
-<text x="38.989" y="47.752" size="1.27" layer="21" font="vector" ratio="10">ANT.</text>
+<text x="38.989" y="47.752" size="1.016" layer="21" font="vector" ratio="10">ANT.</text>
+<text x="3.302" y="1.143" size="1.016" layer="21" font="vector" ratio="10">PHONE FINDER V1.0</text>
 </plain>
 <libraries>
 <library name="phone-finder">
@@ -917,7 +918,7 @@ design rules under a new name.</description>
 <attribute name="MPN" value="" x="7.874" y="10" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="" x="7.874" y="10" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="OC_FARNELL" value="unknown" x="7.874" y="10" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="3.335" y="1.143" size="0.762" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="18.702" y="10.668" size="0.762" layer="25" font="vector" ratio="10"/>
 </element>
 <element name="D3" library="phone-finder" package="LED" value="LED" x="40" y="25" smashed="yes" rot="R90">
 <attribute name="NAME" x="42.399" y="24.77" size="0.762" layer="25" font="vector" ratio="10"/>
