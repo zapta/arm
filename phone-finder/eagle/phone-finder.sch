@@ -549,10 +549,10 @@ Source: 4UCON TECHNOLOGY INC.  14867.pdf</description>
 infrared emitting diode, Infineon
 TO-18, lead spacing 2.54 mm, cathode marking&lt;p&gt;
 Inifineon</description>
-<wire x1="0" y1="1.778" x2="1.5358" y2="0.8959" width="0.1524" layer="21" curve="-59.743278"/>
-<wire x1="-1.5358" y1="0.8959" x2="0" y2="1.778" width="0.1524" layer="21" curve="-59.743278"/>
-<wire x1="-1.5358" y1="-0.8959" x2="0" y2="-1.778" width="0.1524" layer="21" curve="59.743278"/>
-<wire x1="0" y1="-1.778" x2="1.5358" y2="-0.8959" width="0.1524" layer="21" curve="59.743278"/>
+<wire x1="0" y1="1.778" x2="1.5358" y2="0.8959" width="0.1524" layer="51" curve="-59.743278"/>
+<wire x1="-1.5358" y1="0.8959" x2="0" y2="1.778" width="0.1524" layer="51" curve="-59.743278"/>
+<wire x1="-1.5358" y1="-0.8959" x2="0" y2="-1.778" width="0.1524" layer="51" curve="59.743278"/>
+<wire x1="0" y1="-1.778" x2="1.5358" y2="-0.8959" width="0.1524" layer="51" curve="59.743278"/>
 <wire x1="1.5142" y1="0.9318" x2="1.778" y2="0" width="0.1524" layer="51" curve="-31.606487"/>
 <wire x1="1.5" y1="-0.9546" x2="1.778" y2="0" width="0.1524" layer="51" curve="32.472615"/>
 <wire x1="-1.778" y1="0" x2="-1.5142" y2="-0.9318" width="0.1524" layer="51" curve="31.606487"/>
