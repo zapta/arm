@@ -10,6 +10,3 @@
 * Final auto-routing
 
 
----
-
-* Fill in BOM
