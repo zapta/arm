@@ -535,10 +535,10 @@ Source: 4UCON TECHNOLOGY INC.  14867.pdf</description>
 <wire x1="-6.6" y1="10.2" x2="-6.6" y2="-7.9" width="0.2032" layer="21"/>
 <wire x1="-6.6" y1="-7.9" x2="6.6" y2="-7.9" width="0.2032" layer="21"/>
 <wire x1="-6.6" y1="10.2" x2="6.6" y2="10.2" width="0.2032" layer="21"/>
-<pad name="2" x="2" y="6.36" drill="0.9" diameter="1.778"/>
-<pad name="3" x="0.73" y="8.9" drill="0.9" diameter="1.778"/>
-<pad name="4" x="-0.54" y="6.36" drill="0.9" diameter="1.778"/>
-<pad name="5" x="-1.81" y="8.9" drill="0.9" diameter="1.778"/>
+<pad name="2" x="-2" y="6.36" drill="0.9" diameter="1.778"/>
+<pad name="3" x="-0.73" y="8.9" drill="0.9" diameter="1.778"/>
+<pad name="4" x="0.54" y="6.36" drill="0.9" diameter="1.778"/>
+<pad name="5" x="1.81" y="8.9" drill="0.9" diameter="1.778"/>
 <text x="-5.08" y="10.795" size="1.27" layer="25">&gt;NAME</text>
 <text x="-4.445" y="2.54" size="1.27" layer="27">&gt;VALUE</text>
 <hole x="-5.08" y="0" drill="3.2"/>
