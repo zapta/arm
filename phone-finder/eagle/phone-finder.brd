@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mil" altunit="mil"/>
+<grid distance="5" unitdist="mil" unit="mm" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -112,8 +112,8 @@
 </layers>
 <board>
 <plain>
-<text x="48.26" y="7.747" size="1.016" layer="21" font="vector" ratio="10" rot="R90">PRG</text>
-<text x="48.133" y="25.527" size="1.016" layer="21" font="vector" ratio="10" rot="R90">RUN</text>
+<text x="48.26" y="6.747" size="1.016" layer="21" font="vector" ratio="10" rot="R90">PRG</text>
+<text x="48.26" y="25.527" size="1.016" layer="21" font="vector" ratio="10" rot="R90">RUN</text>
 <text x="12.6746" y="25.0952" size="1.524" layer="21" font="vector" ratio="10">+</text>
 <wire x1="50" y1="2.828425" x2="50" y2="47.171575" width="0.1016" layer="20"/>
 <wire x1="50" y1="47.171575" x2="47.171575" y2="50" width="0.1016" layer="20" curve="90"/>
@@ -797,7 +797,7 @@ design rules under a new name.</description>
 </autorouter>
 <elements>
 <element name="J1" library="phone-finder" package="USB-MICRO" value="MICRO USB" x="2.397" y="40" smashed="yes" rot="R270"/>
-<element name="S1" library="phone-finder" package="PUSH_BUTTON" value="PUSH-BUTTON" x="47.625" y="11.843" smashed="yes" rot="R270"/>
+<element name="S1" library="phone-finder" package="PUSH_BUTTON" value="PUSH-BUTTON" x="47.625" y="12.843" smashed="yes" rot="R270"/>
 <element name="C7" library="phone-finder" package="C0603K" value="1u" x="9.656" y="25.583" smashed="yes">
 <attribute name="NAME" x="10.321" y="27.234" size="0.762" layer="25" font="vector" ratio="10" rot="R180"/>
 </element>
@@ -927,7 +927,7 @@ design rules under a new name.</description>
 <attribute name="MPN" value="" x="7.374" y="10" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="" x="7.374" y="10" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="OC_FARNELL" value="unknown" x="7.374" y="10" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="18.202" y="10.668" size="0.762" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="18.075" y="5.588" size="0.762" layer="25" font="vector" ratio="10"/>
 </element>
 <element name="D3" library="phone-finder" package="LED" value="LED" x="40" y="25" smashed="yes" rot="R270">
 <attribute name="NAME" x="42.282" y="25.697" size="0.762" layer="25" font="vector" ratio="10"/>
@@ -1205,8 +1205,8 @@ design rules under a new name.</description>
 <contactref element="D2" pad="3"/>
 <contactref element="S1" pad="B2"/>
 <contactref element="S1" pad="B2P"/>
-<wire x1="46.55" y1="9.768" x2="46.55" y2="13.918" width="0" layer="19" extent="1-1"/>
-<wire x1="33.0668" y1="21.382" x2="46.55" y2="13.918" width="0" layer="19" extent="1-1"/>
+<wire x1="46.55" y1="10.768" x2="46.55" y2="14.918" width="0" layer="19" extent="1-1"/>
+<wire x1="33.0668" y1="21.382" x2="46.55" y2="14.918" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="WIFI_RESET">
 <contactref element="U4" pad="34"/>
@@ -1568,8 +1568,8 @@ design rules under a new name.</description>
 <wire x1="24.384" y1="14.986" x2="28.1178" y2="17.0942" width="0" layer="19" extent="16-16"/>
 <wire x1="46.677" y1="24.046" x2="45.974" y2="31.623" width="0" layer="19" extent="1-1"/>
 <wire x1="46.677" y1="19.896" x2="46.677" y2="24.046" width="0" layer="19" extent="1-1"/>
-<wire x1="48.7" y1="13.918" x2="46.677" y2="19.896" width="0" layer="19" extent="1-1"/>
-<wire x1="48.7" y1="9.768" x2="48.7" y2="13.918" width="0" layer="19" extent="1-1"/>
+<wire x1="48.7" y1="14.918" x2="46.677" y2="19.896" width="0" layer="19" extent="1-1"/>
+<wire x1="48.7" y1="10.768" x2="48.7" y2="14.918" width="0" layer="19" extent="1-1"/>
 <wire x1="40" y1="23.73" x2="46.677" y2="24.046" width="0" layer="19" extent="1-1"/>
 <wire x1="4.826" y1="36.703" x2="4.826" y2="32.512" width="0.6096" layer="1"/>
 <wire x1="4.826" y1="32.512" x2="4.064" y2="31.75" width="0.6096" layer="1"/>
