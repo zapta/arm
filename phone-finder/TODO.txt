@@ -10,3 +10,12 @@
 * Final auto-routing
 
 
+---
+
+BOM:
+
+* Add component references
+
+* Update counts
+
+
