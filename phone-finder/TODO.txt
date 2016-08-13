@@ -1,14 +1,4 @@
-* Verify component footprints
-
-* Verify phone jack polarity (to minimize DC flux).
-
-* Verify connectors distance from board edge.
-
-
----
-
-* Final auto-routing
-
+Schematic:
 
 ---
 
@@ -18,4 +8,8 @@ BOM:
 
 * Update counts
 
+---
 
+3D Enclosure
+
+* Add release notch.
