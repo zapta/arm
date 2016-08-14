@@ -71,6 +71,9 @@ base_screws_spacing = 30;
 led_hole_length = 5 + 0.2;
 led_hole_width = 2 + 0.2;
 
+release_notch_width = 8;
+release_notch_height = 1;
+
 pcb_surface_height = base_height + sticky_tape_thickness + pcb_thickness; 
 
 module snap_fit(d, h, l) {
@@ -182,7 +185,7 @@ module base_screw_hole() {
 }
 
 snap_fit_height = 2;
-snap_fit_length = 20;
+snap_fit_length = 30;
 snap_fit_depth = 0.7;
 
 module base_snap_fit_holes() {
@@ -211,6 +214,11 @@ module cover_snap_fit_bumps() {
   mirror([0, 1, 0]) translate([0, dy, dz]) snap_fit(snap_fit_height, snap_fit_depth, snap_fit_length);
 }
 
+module release_notches() {
+  translate([-release_notch_width/2, -cover_length/2-eps1, -eps1])
+  #cube([release_notch_width, cover_width + eps2, release_notch_height+eps1]);
+}
+
 module cover() {
   difference() {
     rounded_box(cover_length, cover_width, cover_height,
@@ -225,6 +233,7 @@ module cover() {
     usb_conn_hole();
     phone_conn_hole();
     led_hole();
+    release_notches();
   }
   cover_snap_fit_bumps();
 }
