@@ -1615,7 +1615,7 @@ reed, 1 x norm. open with polarity</description>
 <part name="C8" library="phone-finder" deviceset="C-POL" device="UD-6,3X5,8" value="47uF"/>
 <part name="GND7" library="phone-finder" deviceset="GND" device=""/>
 <part name="GND14" library="phone-finder" deviceset="GND" device=""/>
-<part name="R6" library="phone-finder" deviceset="R" device="R0402" value="3K3"/>
+<part name="R6" library="phone-finder" deviceset="R" device="R0402" value="3K"/>
 <part name="GND27" library="phone-finder" deviceset="GND" device=""/>
 <part name="ANTENNA" library="phone-finder" deviceset="PINHD-1X1" device=""/>
 <part name="Q3" library="phone-finder" deviceset="NPN" device="" value="2N2222"/>
