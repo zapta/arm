@@ -68,13 +68,18 @@ cover_corner_radius = base_corner_radius + base_to_cover_margin + cover_thicknes
 // Distance between centers of base screw holes.
 base_screws_spacing = 30;
 
-led_hole_length = 5 + 0.2;
-led_hole_width = 2 + 0.2;
+// Adding compensation for first layer width.
+led_hole_length = 5 + 0.6;
+led_hole_width = 2 + 0.6;
 
 release_notch_width = 8;
 release_notch_height = 1;
 
 pcb_surface_height = base_height + sticky_tape_thickness + pcb_thickness; 
+
+snap_fit_height = 2;
+snap_fit_length = 30;
+snap_fit_depth = 0.7;
 
 module snap_fit(d, h, l) {
   d1 = d;
@@ -184,10 +189,6 @@ module base_screw_hole() {
   translate([0, 0, base_height-sink_depth]) cylinder(d=d2, h=sink_depth+eps1);  
 }
 
-snap_fit_height = 2;
-snap_fit_length = 30;
-snap_fit_depth = 0.7;
-
 module base_snap_fit_holes() {
   module sf(a) {
     dz = base_step_height + (base_height - base_step_height)/2;
@@ -279,13 +280,17 @@ module parts_for_printing() {
       mirror([0, 0, 1]) rotate([0, 0, 90])  cover(); 
 }
 
-//led_hole();
 
 //cover();
 
 //parts_assembled();
 
 parts_for_printing();
+
+//intersection() {
+//  parts_for_printing();
+//  translate([43, -7, -eps1]) cube([30, 30, 50]);
+//}
 
 //difference() {
 //  parts_assembled();
