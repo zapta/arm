@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -1669,6 +1669,22 @@ reed, 1 x norm. open with polarity</description>
 <wire x1="360.68" y1="73.66" x2="355.6" y2="73.66" width="0.1524" layer="94" style="shortdash"/>
 <text x="287.02" y="81.28" size="2.54" layer="97">PHONE LINE INTERFACE</text>
 <text x="190.5" y="17.78" size="2.54" layer="97">LED</text>
+<wire x1="260.604" y1="134.62" x2="261.62" y2="134.62" width="0.1524" layer="97"/>
+<wire x1="261.62" y1="134.62" x2="261.62" y2="136.144" width="0.1524" layer="97"/>
+<wire x1="261.62" y1="136.144" x2="263.652" y2="136.144" width="0.1524" layer="97"/>
+<wire x1="263.652" y1="136.144" x2="263.652" y2="134.62" width="0.1524" layer="97"/>
+<wire x1="263.652" y1="134.62" x2="265.684" y2="134.62" width="0.1524" layer="97"/>
+<wire x1="265.684" y1="134.62" x2="265.684" y2="136.144" width="0.1524" layer="97"/>
+<wire x1="265.684" y1="136.144" x2="267.208" y2="136.144" width="0.1524" layer="97"/>
+<wire x1="260.604" y1="127" x2="261.62" y2="127" width="0.1524" layer="97"/>
+<wire x1="261.62" y1="127" x2="261.62" y2="128.524" width="0.1524" layer="97"/>
+<wire x1="261.62" y1="128.524" x2="263.144" y2="128.524" width="0.1524" layer="97"/>
+<wire x1="263.144" y1="128.524" x2="263.144" y2="127" width="0.1524" layer="97"/>
+<wire x1="263.144" y1="127" x2="264.668" y2="127" width="0.1524" layer="97"/>
+<wire x1="264.668" y1="127" x2="264.668" y2="128.524" width="0.1524" layer="97"/>
+<wire x1="264.668" y1="128.524" x2="266.192" y2="128.524" width="0.1524" layer="97"/>
+<wire x1="266.192" y1="128.524" x2="266.192" y2="127" width="0.1524" layer="97"/>
+<wire x1="266.192" y1="127" x2="267.208" y2="127" width="0.1524" layer="97"/>
 </plain>
 <instances>
 <instance part="U$20" gate="G$1" x="304.8" y="0"/>
@@ -2271,8 +2287,8 @@ reed, 1 x norm. open with polarity</description>
 <label x="121.92" y="254" size="1.778" layer="95"/>
 </segment>
 <segment>
-<label x="91.44" y="144.78" size="1.778" layer="95"/>
-<wire x1="73.66" y1="144.78" x2="111.76" y2="144.78" width="0.1524" layer="91"/>
+<label x="96.52" y="144.78" size="1.778" layer="95"/>
+<wire x1="73.66" y1="144.78" x2="114.3" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="B"/>
 </segment>
 </net>
@@ -2285,7 +2301,7 @@ reed, 1 x norm. open with polarity</description>
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="93.98" y1="121.92" x2="114.3" y2="121.92" width="0.1524" layer="91"/>
-<label x="104.14" y="121.92" size="1.778" layer="95"/>
+<label x="106.68" y="121.92" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RESET" class="0">
