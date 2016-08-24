@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?>
-
-<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="com.crt.advproject.config.exe.debug.1108285409">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.crt.advproject.config.exe.debug.1108285409" moduleId="org.eclipse.cdt.core.settings" name="Debug">
@@ -47,6 +45,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arm_pro_mini_lib/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/u8g_lib/inc}&quot;"/>
 								</option>
+								<option id="com.crt.advproject.cpp.specs.1021969135" superClass="com.crt.advproject.cpp.specs" value="com.crt.advproject.cpp.specs.newlibnano" valueType="enumerated"/>
 								<inputType id="com.crt.advproject.compiler.cpp.input.1427671137" superClass="com.crt.advproject.compiler.cpp.input"/>
 							</tool>
 							<tool id="com.crt.advproject.gcc.exe.debug.1723104749" name="MCU C Compiler" superClass="com.crt.advproject.gcc.exe.debug">
@@ -69,6 +68,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arm_pro_mini_lib/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/u8g_lib/inc}&quot;"/>
 								</option>
+								<option id="com.crt.advproject.gcc.specs.1767463671" superClass="com.crt.advproject.gcc.specs" value="com.crt.advproject.gcc.specs.newlibnano" valueType="enumerated"/>
 								<inputType id="com.crt.advproject.compiler.input.2053268050" superClass="com.crt.advproject.compiler.input"/>
 							</tool>
 							<tool id="com.crt.advproject.gas.exe.debug.100383692" name="MCU Assembler" superClass="com.crt.advproject.gas.exe.debug">
@@ -80,6 +80,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/u8g_lib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arm_pro_mini_lib}&quot;"/>
 								</option>
+								<option id="com.crt.advproject.gas.specs.1749625862" superClass="com.crt.advproject.gas.specs" value="com.crt.advproject.gas.specs.newlibnano" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1953680083" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 								<inputType id="com.crt.advproject.assembler.input.293831501" name="Additional Assembly Source Files" superClass="com.crt.advproject.assembler.input"/>
 							</tool>
@@ -195,6 +196,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ez_arm_lib/inc}&quot;"/>
 								</option>
+								<option id="com.crt.advproject.gcc.specs.1152864753" superClass="com.crt.advproject.gcc.specs" value="com.crt.advproject.gcc.specs.newlib" valueType="enumerated"/>
 								<inputType id="com.crt.advproject.compiler.input.1707441742" superClass="com.crt.advproject.compiler.input"/>
 							</tool>
 							<tool id="com.crt.advproject.gas.exe.release.307369329" name="MCU Assembler" superClass="com.crt.advproject.gas.exe.release">
@@ -202,6 +204,7 @@
 								<option id="com.crt.advproject.gas.arch.281538412" name="Architecture" superClass="com.crt.advproject.gas.arch" value="com.crt.advproject.gas.target.cm0" valueType="enumerated"/>
 								<option id="com.crt.advproject.gas.thumb.470945033" name="Thumb mode" superClass="com.crt.advproject.gas.thumb" value="true" valueType="boolean"/>
 								<option id="gnu.both.asm.option.flags.crt.932376339" name="Assembler flags" superClass="gnu.both.asm.option.flags.crt" value="-c -x assembler-with-cpp -D__NEWLIB__ -DNDEBUG -D__CODE_RED" valueType="string"/>
+								<option id="com.crt.advproject.gas.specs.1884656414" superClass="com.crt.advproject.gas.specs" value="com.crt.advproject.gas.specs.newlib" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2104422582" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 								<inputType id="com.crt.advproject.assembler.input.1052551951" name="Additional Assembly Source Files" superClass="com.crt.advproject.assembler.input"/>
 							</tool>
