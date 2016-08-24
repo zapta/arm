@@ -8,7 +8,7 @@ extern USBSerial usb_serial;
 namespace dialer {
 
 // NOTE: my cell phone stop ringing after ~25 secs.
-const int kCallHoldTimeMillis   = 30000;
+const int kCallHoldTimeMillis   = 25000;
 
 enum State {
   //

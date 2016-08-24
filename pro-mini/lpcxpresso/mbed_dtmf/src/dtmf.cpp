@@ -11,9 +11,8 @@ extern DigitalOut led1;
 
 namespace dtmf {
 
-// TODO: shorten periods to the standard.
-const int kSpaceTimeMillis =  200;
-const int kMarkTimeMillis  = 500;
+const int kSpaceTimeMillis =  40;
+const int kMarkTimeMillis  = 40;
 
 enum State {
   // Not dialing

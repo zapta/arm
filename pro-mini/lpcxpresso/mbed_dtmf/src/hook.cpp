@@ -13,9 +13,12 @@ namespace hook {
 // Phone hook. 1 = line active.
 static DigitalOut hook(P0_12, 0);
 
-// TODO: shorten periods to the standard.
-const int kHookOnStableTimeMillis = 2000;
-const int kHookOffStableTimeMillis = 2000;
+// Max time in millis from activating the hook until we can start dialing.
+const int kHookOnStableTimeMillis = 1000;
+
+// Max time in millis from deactivating the hook until it can be activated
+// again for the next call.
+const int kHookOffStableTimeMillis = 1000;
 
 enum State {
   OFF,

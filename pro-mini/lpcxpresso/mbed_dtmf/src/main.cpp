@@ -1,9 +1,11 @@
 // A simple mbed program for Arm Pro Mini.
 // Tested on LPCXpresso 8.0.0 on Dec 2015.
 
-#include <src/dialer.h>
 #include "mbed.h"
 #include "USBSerial.h"
+
+#include <src/dialer.h>
+#include <src/dtmf.h>
 
 // This consts file is not checked in to keep the numbers private.
 #include "_phone_numbers.i"
@@ -32,7 +34,8 @@ static void setup() {
   sys_time.start();
   dialer::initialize();
 
-  //dtmf::force_continuous_code('k');
+  // For testing
+  // dtmf::force_continuous_code('z');
 }
 
 static void loop() {
