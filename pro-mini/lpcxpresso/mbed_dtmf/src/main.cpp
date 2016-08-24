@@ -7,7 +7,9 @@
 #include <src/dialer.h>
 #include <src/dtmf.h>
 
-// This consts file is not checked in to keep the numbers private.
+// This consts file is not checked in to keep the actual test phone
+//  number private. It includes a definition like this:
+// #define TEST_PHONE_NUMBER "18004377950"
 #include "_phone_numbers.i"
 
 // LED blink cycle.
