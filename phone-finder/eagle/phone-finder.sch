@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -417,12 +417,12 @@ Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
 <circle x="-0.525" y="-0.25" radius="0.1" width="0" layer="21"/>
 <wire x1="-0.75" y1="0.55" x2="-0.75" y2="-0.55" width="0.1016" layer="21"/>
 <wire x1="0.75" y1="-0.55" x2="0.75" y2="0.55" width="0.1016" layer="21"/>
-<rectangle x1="-0.675" y1="0.425" x2="-0.325" y2="0.925" layer="29"/>
-<rectangle x1="-0.175" y1="0.425" x2="0.175" y2="0.925" layer="29"/>
-<rectangle x1="0.325" y1="0.425" x2="0.675" y2="0.925" layer="29"/>
-<rectangle x1="0.325" y1="-0.925" x2="0.675" y2="-0.425" layer="29" rot="R180"/>
-<rectangle x1="-0.175" y1="-0.925" x2="0.175" y2="-0.425" layer="29" rot="R180"/>
-<rectangle x1="-0.675" y1="-0.925" x2="-0.325" y2="-0.425" layer="29" rot="R180"/>
+<rectangle x1="-0.675" y1="0.425" x2="-0.325" y2="1.275" layer="29"/>
+<rectangle x1="-0.175" y1="0.425" x2="0.175" y2="1.275" layer="29"/>
+<rectangle x1="0.325" y1="0.425" x2="0.675" y2="1.275" layer="29"/>
+<rectangle x1="0.325" y1="-1.275" x2="0.675" y2="-0.425" layer="29"/>
+<rectangle x1="-0.175" y1="-1.275" x2="0.175" y2="-0.425" layer="29"/>
+<rectangle x1="-0.675" y1="-1.275" x2="-0.325" y2="-0.425" layer="29"/>
 <smd name="1" x="-0.5" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
 <smd name="2" x="0" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
 <smd name="3" x="0.5" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>

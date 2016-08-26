@@ -26,7 +26,7 @@
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="yes" active="yes"/>
@@ -455,12 +455,12 @@ Source: U6 OnSemi Inductive Load Driver MDC3105-D.PDF</description>
 <circle x="-0.525" y="-0.25" radius="0.1" width="0" layer="21"/>
 <wire x1="-0.75" y1="0.55" x2="-0.75" y2="-0.55" width="0.1016" layer="21"/>
 <wire x1="0.75" y1="-0.55" x2="0.75" y2="0.55" width="0.1016" layer="21"/>
-<rectangle x1="-0.675" y1="0.425" x2="-0.325" y2="0.925" layer="29"/>
-<rectangle x1="-0.175" y1="0.425" x2="0.175" y2="0.925" layer="29"/>
-<rectangle x1="0.325" y1="0.425" x2="0.675" y2="0.925" layer="29"/>
-<rectangle x1="0.325" y1="-0.925" x2="0.675" y2="-0.425" layer="29" rot="R180"/>
-<rectangle x1="-0.175" y1="-0.925" x2="0.175" y2="-0.425" layer="29" rot="R180"/>
-<rectangle x1="-0.675" y1="-0.925" x2="-0.325" y2="-0.425" layer="29" rot="R180"/>
+<rectangle x1="-0.675" y1="0.425" x2="-0.325" y2="1.275" layer="29"/>
+<rectangle x1="-0.175" y1="0.425" x2="0.175" y2="1.275" layer="29"/>
+<rectangle x1="0.325" y1="0.425" x2="0.675" y2="1.275" layer="29"/>
+<rectangle x1="0.325" y1="-1.275" x2="0.675" y2="-0.425" layer="29"/>
+<rectangle x1="-0.175" y1="-1.275" x2="0.175" y2="-0.425" layer="29"/>
+<rectangle x1="-0.675" y1="-1.275" x2="-0.325" y2="-0.425" layer="29"/>
 <smd name="1" x="-0.5" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
 <smd name="2" x="0" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
 <smd name="3" x="0.5" y="-0.85" dx="0.3" dy="0.8" layer="1" stop="no"/>
@@ -2022,6 +2022,39 @@ design rules under a new name.</description>
 </signal>
 </signals>
 <errors>
+<approved hash="18,29,78873f5b4cec3736"/>
+<approved hash="18,29,20ca5b223695717b"/>
+<approved hash="18,29,581413ec214a9292"/>
+<approved hash="18,29,394b120c216af3cd"/>
+<approved hash="18,29,44752ed9a3d7207b"/>
+<approved hash="18,29,267de3d16ed2427e"/>
+<approved hash="18,29,8c5726fb23f9a055"/>
+<approved hash="18,29,a65363ff66f28a5e"/>
+<approved hash="18,29,e4dcb8d840f018b4"/>
+<approved hash="18,29,eb20b72c4f441738"/>
+<approved hash="18,29,d3f6f7cc0ba42bee"/>
+<approved hash="18,29,dc7af87804502412"/>
+<approved hash="18,29,696e68bda4fce947"/>
+<approved hash="18,29,8c648ad18fa97032"/>
+<approved hash="18,29,ef9dcfa9ddb44718"/>
+<approved hash="18,29,ef9dcfa9ddb44718"/>
+<approved hash="18,29,d5f95a7fa847beef"/>
+<approved hash="18,29,ef956bca3cd682ab"/>
+<approved hash="18,29,cf963eec34542aa5"/>
+<approved hash="18,29,c71d5b3e0cd2e98d"/>
+<approved hash="18,29,2793ee2014d4138b"/>
+<approved hash="18,29,73af697bb9698fb0"/>
+<approved hash="18,29,b88df88dd5df9758"/>
+<approved hash="18,29,0da4add9161254e5"/>
+<approved hash="18,29,b1e2bb3bcb2dbdf0"/>
+<approved hash="18,29,e1d76e266e36e1fe"/>
+<approved hash="18,29,e2d36d3a6eb2e2e2"/>
+<approved hash="18,29,dff76e866eb6dfee"/>
+<approved hash="18,29,e0f3518251badf62"/>
+<approved hash="18,29,b2af18001831b127"/>
+<approved hash="18,29,b1b31b041b2db1a3"/>
+<approved hash="18,29,ff1356a456bdff23"/>
+<approved hash="18,29,c01769a05631c02f"/>
 <approved hash="6,1,5a16451045135a15"/>
 <approved hash="6,1,5019531f531e5018"/>
 <approved hash="6,1,f5f632082e04e9fa"/>
