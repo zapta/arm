@@ -1,7 +1,10 @@
-#include <src/dtmf_io.h>
+#include "dialer/dtmf_io.h"
+
 #include "cmsis.h"
 #include "pinmap.h"
-#include "USBSerial.h"
+
+//#include "USBSerial.h"
+#include "util/common.h"
 
 #ifndef TARGET_LPC11U35_501
 #error "Should verify MCU compatibility"
@@ -163,7 +166,7 @@ void set_dtmf_code(char dtmf_ascii_code) {
   const DtmfCodeEntry* const dtmf_code_entry = find_dtmf_code_entry(
       dtmf_ascii_code);
 
-  usb_serial.printf("\r\nDTMF: %c, %d, %d\r\n", dtmf_code_entry->dtmf_ascii_code,
+  PRINTF("\r\nDTMF: %c, %d, %d\r\n", dtmf_code_entry->dtmf_ascii_code,
       dtmf_code_entry->timer0_count, dtmf_code_entry->timer1_count);
 
   set_tone0(dtmf_code_entry->timer0_count);

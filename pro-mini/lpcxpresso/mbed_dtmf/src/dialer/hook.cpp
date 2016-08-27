@@ -1,8 +1,7 @@
-#include <src/hook.h>
-//#include <src/dtmf_io.h>
-//#include "cmsis.h"
-//#include "pinmap.h"
-#include "USBSerial.h"
+#include "dialer/hook.h"
+
+//#include "USBSerial.h"
+#include "util/common.h"
 
 extern USBSerial usb_serial;
 
@@ -69,7 +68,7 @@ void loop() {
     break;
 
   default:
-    usb_serial.printf("hook error: %d\r\n", state);
+    PRINTF("hook error: %d\r\n", state);
   }
 }
 

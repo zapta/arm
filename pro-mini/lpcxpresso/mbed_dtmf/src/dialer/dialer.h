@@ -1,7 +1,7 @@
 // Phone dialer.
 
-#ifndef DIALER_H
-#define DIALER_H
+#ifndef DIALER_DIALER_H
+#define DIALER_DIALER_H
 
 #include "mbed.h"
 
@@ -23,4 +23,4 @@ extern bool is_call_in_progress();
 
 }  // dialer
 
-#endif  // DIALER_H
+#endif  // DIALER_DIALER_H

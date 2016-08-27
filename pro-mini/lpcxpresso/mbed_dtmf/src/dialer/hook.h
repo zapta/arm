@@ -1,7 +1,7 @@
 // Phone hook controller.
 
-#ifndef HOOK_H
-#define HOOK_H
+#ifndef DIALER_HOOK_H
+#define DIALER_HOOK_H
 
 #include "mbed.h"
 
@@ -20,4 +20,4 @@ extern void set_hook(bool is_on);
 
 }  // hook
 
-#endif  // HOOK_H
+#endif  // DIALER_HOOK_H

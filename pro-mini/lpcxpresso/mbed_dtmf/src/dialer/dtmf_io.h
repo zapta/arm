@@ -1,7 +1,7 @@
 // DTMF driver.
 
-#ifndef DTMF_IO_H
-#define DTMF_IO_H
+#ifndef DIALER_DTMF_IO_H
+#define DIALER_DTMF_IO_H
 
 #include "mbed.h"
 
@@ -16,4 +16,4 @@ extern void set_dtmf_code(char dtmf_ascii_code);
 
 }  // dtmf_io
 
-#endif  // DTMF_IO_H
+#endif  // DIALER_DTMF_IO_H

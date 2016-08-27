@@ -2,10 +2,11 @@
 // Tested on LPCXpresso 8.0.0 on Dec 2015.
 
 #include "mbed.h"
-#include "USBSerial.h"
+//#include "USBSerial.h"
 
-#include <src/dialer.h>
-#include <src/dtmf.h>
+#include <src/dialer/dialer.h>
+// For testing only
+#include <src/dialer/dtmf.h>
 
 // This consts file is not checked in to keep the actual test phone
 //  number private. It includes a definition like this:
@@ -24,10 +25,7 @@ static Timer sys_time;
 // Red LED is at GPIO0_20.
 DigitalOut led1(P0_20, 0);
 
-// Early versions of ARM PRO MINI had the led at GPIO0_7.
-static DigitalOut legacy_led(P0_7, 0);
-
-USBSerial usb_serial(0x1f00, 0x2012, 0x0001, false);
+//USBSerial usb_serial(0x1f00, 0x2012, 0x0001, false);
 
 AnalogIn analog_in(P0_11);
 
@@ -48,7 +46,7 @@ static void loop() {
   // Generates a blink at the beginning of each cycle.
   const bool led_state = time_now_in_cycle_msecs <= kCycleTimeMsecs / 50;
   led1 = led_state;
-  legacy_led = led_state;
+  //legacy_led = led_state;
 
   if (time_now_in_cycle_msecs >= kCycleTimeMsecs) {
     timer.reset();

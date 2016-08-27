@@ -1,7 +1,10 @@
-#include <src/dialer.h>
-#include <src/dtmf.h>
-#include <src/hook.h>
-#include "USBSerial.h"
+#include "dialer/dialer.h"
+
+//#include "USBSerial.h"
+#include "util/common.h"
+
+#include "dialer/dtmf.h"
+#include "dialer/hook.h"
 
 extern USBSerial usb_serial;
 
@@ -52,7 +55,7 @@ void initialize() {
 }
 
 static void change_state(State new_state) {
-  usb_serial.printf("%s -> %s\r\n", state_name(state), state_name(new_state));
+  PRINTF("%s -> %s\r\n", state_name(state), state_name(new_state));
   time_in_state.reset();
   state = new_state;
 }
@@ -96,7 +99,7 @@ void loop() {
       return;
 
     default:
-      usb_serial.printf("Unknown dialer state: %d\r\n", state);
+      PRINTF("Unknown dialer state: %d\r\n", state);
       change_state(IDLE);
   }
 }
@@ -104,7 +107,7 @@ void loop() {
 // See dialer.h.
 void call(const char* number) {
   if (state != IDLE) {
-    usb_serial.printf("A call already in progress\r\n");
+    PRINTF("A call already in progress\r\n");
     return;
   }
   number_to_dial = number;

@@ -1,9 +1,9 @@
-#include <src/dtmf.h>
-#include <src/dtmf_io.h>
-//#include "cmsis.h"
-//#include "pinmap.h"
-#include "USBSerial.h"
+#include "dialer/dtmf.h"
 
+#include "util/common.h"
+#include "dialer/dtmf_io.h"
+
+//#include "USBSerial.h"
 
 extern USBSerial usb_serial;
 
@@ -56,7 +56,7 @@ void loop() {
       if (timer.read_ms() < kSpaceTimeMillis) {
         return;
       }
-      usb_serial.printf("S->M %d\r\n", current_code_index);
+      PRINTF("S->M %d\r\n", current_code_index);
       state = MARK;
       timer.reset();
       dtmf_io::set_dtmf_code(dialing_buffer[current_code_index]);
@@ -71,11 +71,11 @@ void loop() {
       current_code_index++;
       if (!dialing_buffer[current_code_index]) {
         state = IDLE;
-        usb_serial.printf("M->I %d\r\n", current_code_index);
+        PRINTF("M->I %d\r\n", current_code_index);
         return;
       }
       state = SPACE;
-      usb_serial.printf("M->S %d\r\n", current_code_index);
+      PRINTF("M->S %d\r\n", current_code_index);
       timer.reset();
       break;
 
@@ -87,7 +87,7 @@ void loop() {
 
 // See dtmf.h
 void start_dialing(const char* dtmf_codes) {
-  usb_serial.printf("***DIAL: [%s]\r\n", dtmf_codes);
+  PRINTF("***DIAL: [%s]\r\n", dtmf_codes);
 
   // If not idle then ignore.
   if (state != IDLE) {
@@ -97,7 +97,7 @@ void start_dialing(const char* dtmf_codes) {
   // If sequence is empty or too long then ignore
   const int n = strlen(dtmf_codes);
   if (n < 1 || n >= 30) {
-    usb_serial.printf("Ignoring: len=%d\r\n", n);
+    PRINTF("Ignoring: len=%d\r\n", n);
     return;
   }
 
@@ -110,7 +110,7 @@ void start_dialing(const char* dtmf_codes) {
   // MARK.
   state = MARK;
   current_code_index = 0;
-  usb_serial.printf("I->M %d\r\n", current_code_index);
+  PRINTF("I->M %d\r\n", current_code_index);
   timer.reset();
   dtmf_io::set_dtmf_code(dialing_buffer[current_code_index]);
 }

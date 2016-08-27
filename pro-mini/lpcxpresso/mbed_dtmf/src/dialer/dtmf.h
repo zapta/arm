@@ -1,7 +1,7 @@
 // DTMF dialer.
 
-#ifndef DTMF_H
-#define DTMF_H
+#ifndef DIALER_DTMF_H
+#define DIALER_DTMF_H
 
 #include "mbed.h"
 
@@ -27,4 +27,4 @@ extern void force_continuous_code(char dtmf_code);
 
 }  // dtmf
 
-#endif  // DTMF_H
+#endif  // DIALER_DTMF_H
