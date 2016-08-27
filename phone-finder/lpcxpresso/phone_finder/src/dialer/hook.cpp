@@ -3,7 +3,7 @@
 //#include "USBSerial.h"
 #include "util/common.h"
 
-extern USBSerial usb_serial;
+//extern USBSerial usb_serial;
 
 //extern DigitalOut led1;
 

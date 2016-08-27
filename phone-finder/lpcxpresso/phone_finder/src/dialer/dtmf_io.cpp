@@ -10,7 +10,7 @@
 #error "Should verify MCU compatibility"
 #endif
 
-extern USBSerial usb_serial;
+//extern USBSerial usb_serial;
 
 namespace dtmf_io {
 

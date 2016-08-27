@@ -6,7 +6,7 @@
 
 #include "mbed.h"
 #include "USBSerial.h"
-#include "rgb_io.h"
+//#include "rgb_io.h"
 #include "wifi_io.h"
 
 // ARM PRO MINI red LED is at GPIO0_20.
@@ -24,12 +24,12 @@ static void setup() {
   tx_timer.start();
   rx_timer.start();
 
-  rgb_io::initialize();
+  //rgb_io::initialize();
   wifi_io::initialize();
 }
 
-static bool last_tx_status = false;;
-static bool last_rx_status = false;;
+//static bool last_tx_status = false;;
+//static bool last_rx_status = false;;
 
 static void loop() {
   // Blinking red led.
@@ -59,14 +59,14 @@ static void loop() {
 
   led = tx_status || rx_status;
 
-  if ((tx_status != last_tx_status) || (rx_status != last_rx_status)) {
-    last_tx_status = tx_status;
-    last_rx_status = rx_status;
-    rgb_io::set(
-        tx_status ? 0x10 : 0x00,  // tx -> red
-        rx_status ? 0x10 : 0x00,  // rx -> green
-        0x00);                    // blue off
-  }
+//  if ((tx_status != last_tx_status) || (rx_status != last_rx_status)) {
+//    last_tx_status = tx_status;
+//    last_rx_status = rx_status;
+////    rgb_io::set(
+////        tx_status ? 0x10 : 0x00,  // tx -> red
+////        rx_status ? 0x10 : 0x00,  // rx -> green
+////        0x00);                    // blue off
+//  }
 }
 
 int main(void) {

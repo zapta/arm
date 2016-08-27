@@ -6,7 +6,7 @@
 #include "dialer/dtmf.h"
 #include "dialer/hook.h"
 
-extern USBSerial usb_serial;
+//extern USBSerial usb_serial;
 
 namespace dialer {
 

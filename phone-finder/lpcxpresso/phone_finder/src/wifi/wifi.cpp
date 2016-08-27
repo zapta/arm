@@ -13,10 +13,8 @@
 #include <wifi/wifi_parser.h>
 //#include <wifi/wifi_streams.h>
 
-//#include "config/config.h"
 #include "util/byte_fifo.h"
 #include "util/common.h"
-#include "util/passive_timer.h"
 #include "util/string_util.h"
 #include "wifi/wifi_io.h"
 
@@ -70,7 +68,7 @@ static State state;
 // Derived from the current state.
 static bool is_up;
 
-static PassiveTimer time_in_current_state;
+static Timer time_in_current_state;
 
 // OK to call for the current state to reset the time in state
 // counter.
@@ -193,7 +191,7 @@ void polling() {
   wifi_parser::polling();
 
   // Make sure we don't get stucked in the same state for too long.
-  if (time_in_current_state.usecs() >= 20 * 1000 * 1000) {
+  if (time_in_current_state.read_ms() >= 20 * 1000) {
     protocolPanic("State Timeout");
   }
 
@@ -209,14 +207,14 @@ void polling() {
 
     // Here when the wifi module hardware reset pin is active.
     case STATE_RESET: {
-      if (time_in_current_state.millis() >= 100) {
+      if (time_in_current_state.read_ms() >= 100) {
         // Release hardware reset after 100ms.
         wifi_io::wifi_module_control(false);
       }
 
       // NOTE: increase this time to debug initial sequence. It will allow to
       // connect the USB terminal before starting the connection sequence.
-      if (time_in_current_state.millis() >= 1000) {
+      if (time_in_current_state.read_ms() >= 1000) {
         // Clear rx fifo, just in case.
         wifi_io::rx_reset();
         batch_commands_done = 0;
@@ -259,7 +257,7 @@ void polling() {
     // Here when the access point is up.
     case STATE_UP:
       // Do nothing if not ready for next status command.
-      if (time_in_current_state.millis() < kWifiStatusPollingIntervalMillis || !wifi_io::tx_is_empty()) {
+      if (time_in_current_state.read_ms() < kWifiStatusPollingIntervalMillis || !wifi_io::tx_is_empty()) {
         break;
       }
       // Send next status command
@@ -313,12 +311,13 @@ void dumpInternalState() {
       state,
       batch_commands_done,
       next_status_cmd,
-      time_in_current_state.millis());
+      time_in_current_state.read_ms());
   wifi_parser::dumpInternalState();
   wifi_io::dumpInternalState();
 }
 
 void initialize() {
+  time_in_current_state.start();
   wifi_io::initialize();
   wifi_parser::initialize();
   next_status_cmd = kMinStatusCommand;

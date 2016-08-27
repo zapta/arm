@@ -1,13 +1,14 @@
 #include "dialer/dtmf.h"
 
 #include "util/common.h"
+#include "util/status_led.h"
 #include "dialer/dtmf_io.h"
 
 //#include "USBSerial.h"
 
-extern USBSerial usb_serial;
+//extern USBSerial usb_serial;
 
-extern DigitalOut led1;
+//extern DigitalOut led1;
 
 namespace dtmf {
 
@@ -63,7 +64,7 @@ void loop() {
       break;
 
     case MARK:
-      led1 = 1;
+      status_led::led_pin = 1;
       if (timer.read_ms() < kMarkTimeMillis) {
         return;
       }
