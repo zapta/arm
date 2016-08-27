@@ -21,6 +21,10 @@ extern void dumpInternalState();
 // of reconnecting.
 extern void protocolPanic(const char* short_message);
 
+// Return a bit set of currently pressed buttons. First button is
+// LSB. Corresponds to button list.
+extern int getPressedButtonSet();
+
 }  // namespace wifi
 
 #endif  // WIFI_WIFI_H

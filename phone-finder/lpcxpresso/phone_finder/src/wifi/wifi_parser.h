@@ -32,6 +32,10 @@ extern bool isResponseParsingDone();
 extern char line_buffer[];
 extern unsigned int line_buffer_size;
 
+// Return a bit set of currently pressed buttons. First button is
+// LSB. Corresponds to button list.
+extern int getPressedButtonSet();
+
 
 }  // namespace wifi_parser
 

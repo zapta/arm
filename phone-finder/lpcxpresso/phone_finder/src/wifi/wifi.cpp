@@ -145,6 +145,7 @@ static void sendBatchCommand(int index) {
       send_wifi_command(wifi_parser::STD, batch_cmd.format);
       break;
 
+    // TODO: externalize the ssid and password. These ones are the defaults for testing.
     case FORMAT_ARGS_SSID:
       send_wifi_commandf(wifi_parser::STD, batch_cmd.format, "dashrx");  //ap.ssid);
       break;
@@ -323,6 +324,10 @@ void initialize() {
   next_status_cmd = kMinStatusCommand;
   session_id = 0;
   enterState(STATE_IDLE);
+}
+
+int getPressedButtonSet() {
+  return wifi_parser::getPressedButtonSet();
 }
 
 }  // namespace wifi

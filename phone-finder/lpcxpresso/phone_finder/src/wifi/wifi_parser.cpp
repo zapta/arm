@@ -12,12 +12,15 @@ static ResponseParsingMode parsing_mode = STD;
 
 static const char* kButtonTable[] = {
   "A0:02:DC:09:A5:EE",
+  "F0:27:2D:30:68:68",  // green
 };
 
 static const int kButtonTableSize = sizeof(kButtonTable) / sizeof(kButtonTable[0]);
 
+// Last parsing result.
 static int buttons_set = 0;
 
+// Temp during parsing.
 static int parsed_buttons_set = 0;
 
 enum ReaderState {
@@ -228,6 +231,10 @@ void polling() {
       state = STATE_IDLE;
     }
   }
+}
+
+int getPressedButtonSet() {
+  return buttons_set;
 }
 
 void dumpInternalState() {

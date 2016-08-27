@@ -111,6 +111,10 @@ static void loop() {
 //       dialer::call(TEST_PHONE_NUMBER);
 //     }
   }
+
+  if (!dialer::is_call_in_progress() && wifi::getPressedButtonSet()) {
+    dialer::call(TEST_PHONE_NUMBER);
+  }
 }
 
 int main(void) {
