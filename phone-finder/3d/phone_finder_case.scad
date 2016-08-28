@@ -12,10 +12,10 @@ eps2 = eps1 + eps1;
 // this value.
 pcb_corner_radius = 2.8;
 
-// PCB length
+// PCB length. (on y axis)
 pcb_length = 50;
 
-// PCB width.
+// PCB width. (on x axis)
 pcb_width = 50;
 
 // PCB thickness, without the components.
@@ -237,10 +237,19 @@ module cover() {
 }
 
 // Marks the orientation of the base (connectors side)
-module base_orientation_mark() {
-  depth = 1.0;
-  translate([-base_length/2 + 6, 0, base_height-depth]) 
-    rotate([0, 0, 180]) cylinder(d=6, h=depth+eps1, $fn=3);
+//module base_orientation_mark() {
+//  depth = 1.0;
+//  translate([-base_length/2 + 6, 0, base_height-depth]) 
+//    rotate([0, 0, 180]) cylinder(d=6, h=depth+eps1, $fn=3);
+//}
+
+// Cavities in the base for PCB features. 
+// Input coordiantes are in eagle x,y.
+module pcb_sink(eagle_x, eagle_y, d) { 
+  x =  -pcb_width/2 + eagle_x;
+  y =  - pcb_length/2 + eagle_y;
+  depth = 2;
+  translate([x, y, base_height - depth]) cylinder(d=d, h=depth+eps1);
 }
 
 // The base part.
@@ -254,7 +263,7 @@ module base() {
         base_corner_radius + extra, 0.5, 0.2);
     }
     
-    base_orientation_mark();
+    //base_orientation_mark();
     
     translate([0, -base_screws_spacing/2, 0]) base_screw_hole();
     translate([0, base_screws_spacing/2, 0]) base_screw_hole();
@@ -262,6 +271,11 @@ module base() {
 //    translate([base_screws_spacing/2, 0, 0]) base_screw_hole();
     
     base_snap_fit_holes();
+    
+    // Clearance for phone jack mount tabs.
+    pcb_sink(7.5, 5, 6);
+    pcb_sink(7.5, 15.25, 6);
+
   }
 }
 
@@ -282,9 +296,9 @@ module parts_assembled() {
 
 module parts_for_printing() {
   space = 8;
-  rotate([0, 0, 90]) base();
+  base();
   translate([cover_length+space, 0, cover_height]) 
-       rotate([0, 180, -90])  cover(); 
+       rotate([180, 0, 0])  cover(); 
 }
 
   //rotate([0, 180, -90])  cover(); 
