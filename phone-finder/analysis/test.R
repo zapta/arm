@@ -108,7 +108,7 @@ dn = min((fdisplay/(1/sp)), n/2)
 
 paste("Display points: ", dn)
 
-X11(width=10, height=8)
+X11(width=12, height=7)
 
 # Skipping first frequency band (close to DC)
 plot(f[2:dn], dbu[2:dn], type="l", ylim=c(-60,0) ) 

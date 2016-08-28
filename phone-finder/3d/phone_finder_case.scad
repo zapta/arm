@@ -32,8 +32,9 @@ base_height = 7;
 // Base thickness around the edge.
 base_step_height = 2;
 
-// Base margin aroung the PCB.
-pcb_to_base_margin = 0.4;
+// Base margin aroung the PCB. This compensates for PCB tolerances and
+// allow the cover's snag-fit to clear the PCB.
+pcb_to_base_margin = 1.0;
 
 // Corner radius of the thick part of the base.
 base_corner_radius = pcb_corner_radius + pcb_to_base_margin;
@@ -168,7 +169,11 @@ module phone_conn_hole() {
 module led_hole() {
   // Slopt, for easy LED insertion
   expansion = 0.7;
-  translate([15, 0, cover_height - cover_thickness])
+  // Since we flash the board edge with connector on the base edge, the entire board
+  // including the LED is slighly offseted.
+  correction_offset = -0.8;
+  // '15' is the nominal led center distance from the PCB center.
+  translate([15 + correction_offset, 0, cover_height - cover_thickness])
   union() {
     hull() {
       cube([led_hole_width+2*expansion, led_hole_length+2*expansion, eps2], center=true);  
@@ -201,10 +206,10 @@ module base_snap_fit_holes() {
   sf(180);
   
   // If the base is symetric just make it so.
-  if (base_width == base_length) {
-    sf(90);
-    sf(270);
-  }
+//  if (base_width == base_length) {
+//    sf(90);
+//    sf(270);
+//  }
 }
 
 module cover_snap_fit_bumps() {
@@ -217,7 +222,7 @@ module cover_snap_fit_bumps() {
 
 module release_notches() {
   translate([-release_notch_width/2, -cover_length/2-eps1, -eps1])
-  #cube([release_notch_width, cover_width + eps2, release_notch_height+eps1]);
+  cube([release_notch_width, cover_width + eps2, release_notch_height+eps1]);
 }
 
 module cover() {
@@ -239,6 +244,13 @@ module cover() {
   cover_snap_fit_bumps();
 }
 
+// Marks the orientation of the base (connectors side)
+module base_orientation_mark() {
+  depth = 1.0;
+  translate([-base_length/2 + 6, 0, base_height-depth]) 
+    rotate([0, 0, 180]) cylinder(d=6, h=depth+eps1, $fn=3);
+}
+
 // The base part.
 module base() {
   extra = base_to_cover_margin + cover_thickness;
@@ -249,10 +261,13 @@ module base() {
       rounded_box(base_length + 2*extra, base_width + 2*extra, base_step_height, 
         base_corner_radius + extra, 0.5, 0.2);
     }
+    
+    base_orientation_mark();
+    
     translate([0, -base_screws_spacing/2, 0]) base_screw_hole();
     translate([0, base_screws_spacing/2, 0]) base_screw_hole();
-    translate([-base_screws_spacing/2, 0, 0]) base_screw_hole();
-    translate([base_screws_spacing/2, 0, 0]) base_screw_hole();
+//    translate([-base_screws_spacing/2, 0, 0]) base_screw_hole();
+//    translate([base_screws_spacing/2, 0, 0]) base_screw_hole();
     
     base_snap_fit_holes();
   }
@@ -287,6 +302,9 @@ module parts_for_printing() {
 
 parts_for_printing();
 
+
+
+//#base_mark();
 //intersection() {
 //  parts_for_printing();
 //  translate([43, -7, -eps1]) cube([30, 30, 50]);
