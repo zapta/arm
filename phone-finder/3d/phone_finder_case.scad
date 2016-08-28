@@ -1,5 +1,7 @@
 // Open Scad 3D printed model of a case for the Phone Finder.
 
+// Use with 8mm high LED studs.
+
 $fn=64;
 
 eps1 = 0.01;
@@ -20,7 +22,7 @@ pcb_width = 50;
 pcb_thickness = 1.6;
 
 // For tallest component.
-pcb_to_cover_clearance = 13;
+pcb_to_cover_clearance = 14;
 
 // Thickness of tape used to stick the PCB to the base.
 // Scotch 414P Extreme Mounting Tape.
@@ -157,13 +159,11 @@ module conn_hole(width, height, horiz_offset, vert_offset) {
 }
 
 module usb_conn_hole() {
-  // TODO: set actual hole dimensions
-  conn_hole(11, 6, -15, 1.2);
+  conn_hole(12, 8, 15, -2.8);
 }
 
 module phone_conn_hole() {
-  // TODO: set actual hole dimensions
-  conn_hole(10, 7, 15, 3);
+  conn_hole(12, 13.3, -15, -2.8);
 }
 
 module led_hole() {
@@ -182,8 +182,6 @@ module led_hole() {
     }
     cube([led_hole_width, led_hole_length, 2*(cover_thickness+eps1)], center=true); 
   }
-//  translate([15, 0, 0]) 
-//  cube([led_hole_width, led_hole_length, cover_height+eps1]);  
 }
 
 module base_screw_hole() {
@@ -204,12 +202,6 @@ module base_snap_fit_holes() {
   
   sf(0);
   sf(180);
-  
-  // If the base is symetric just make it so.
-//  if (base_width == base_length) {
-//    sf(90);
-//    sf(270);
-//  }
 }
 
 module cover_snap_fit_bumps() {
@@ -292,9 +284,10 @@ module parts_for_printing() {
   space = 8;
   rotate([0, 0, 90]) base();
   translate([cover_length+space, 0, cover_height]) 
-      mirror([0, 0, 1]) rotate([0, 0, 90])  cover(); 
+       rotate([0, 180, -90])  cover(); 
 }
 
+  //rotate([0, 180, -90])  cover(); 
 
 //cover();
 
@@ -302,7 +295,10 @@ module parts_for_printing() {
 
 parts_for_printing();
 
-
+//intersection() {
+//   cover();
+//   translate([-85, -35, -eps1]) cube([70, 70, 40]); 
+//}
 
 //#base_mark();
 //intersection() {
