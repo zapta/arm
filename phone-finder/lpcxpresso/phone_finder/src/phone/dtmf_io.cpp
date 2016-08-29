@@ -1,5 +1,4 @@
-#include "dialer/dtmf_io.h"
-
+#include <phone/dtmf_io.h>
 #include "cmsis.h"
 #include "pinmap.h"
 
@@ -58,6 +57,8 @@ static const DtmfCodeEntry kDtmfTable[] = {
     { 'x', 0, COUNT(1209) },
     { 'y', 0, COUNT(1336) },
     { 'z', 0, COUNT(1447) },
+    // Beep signal.
+    { 'B', COUNT(1000), 0 },
 };
 
 // Number of table entries.

@@ -1,12 +1,8 @@
-#include "dialer/dialer.h"
-
-//#include "USBSerial.h"
+#include <phone/dialer.h>
+#include <phone/dtmf.h>
+#include <phone/hook.h>
 #include "util/common.h"
 
-#include "dialer/dtmf.h"
-#include "dialer/hook.h"
-
-//extern USBSerial usb_serial;
 
 namespace dialer {
 
@@ -47,9 +43,14 @@ static const char* number_to_dial = "";
 // timer overflow.
 static Timer time_in_state;
 
+// For periodic beeps during call delay.
+static Timer beep_timer;
+
 // See dtmf.h
 void initialize() {
   time_in_state.start();
+  beep_timer.start();
+
   dtmf::initialize();
   hook::initialize();
 }
@@ -57,6 +58,9 @@ void initialize() {
 static void change_state(State new_state) {
   PRINTF("%s -> %s\r\n", state_name(state), state_name(new_state));
   time_in_state.reset();
+  // We always reset the beep counter even though we need it only in
+  // CALL_DELAY state.
+  beep_timer.reset();
   state = new_state;
 }
 
@@ -69,7 +73,6 @@ void loop() {
     case IDLE:
       hook::set_hook(false);
       return;
-      break;
 
     case ACTIVATE:
       hook::set_hook(true);
@@ -77,19 +80,30 @@ void loop() {
         change_state(DIALING);
         dtmf::start_dialing(number_to_dial);
       }
-      break;
+      return;
 
     case DIALING:
       if (!dtmf::is_dialing_in_progress()) {
         change_state(CALL_DELAY);
       }
-      break;
+      return;
 
     case CALL_DELAY:
+      // Test if time to end the call.
       if (time_in_state.read_ms() > kCallHoldTimeMillis) {
         change_state(DEACTIVATE);
+        return;
       }
-      break;
+      // Periodic beeps during the call, to indicate the nature of the call.
+      if (beep_timer.read_ms() > 3000) {
+        beep_timer.reset();
+        PRINTF("** BEEP **\r\n");
+        // NOTE: The phone/cell company seems to filter out valid DTMF tones.
+        // For this reason, we use for the beep a single tone that doesn't
+        // colides with DTMF tones.
+        dtmf::start_dialing("BBB");
+      }
+      return;
 
     case DEACTIVATE:
       hook::set_hook(false);
@@ -117,6 +131,29 @@ void call(const char* number) {
 // See dialer.h.
 bool is_call_in_progress() {
   return state != IDLE;
+}
+
+bool led_control() {
+  switch (state) {
+    case IDLE:
+      return false;
+
+    case ACTIVATE:
+      return true;
+
+    case DIALING:
+      return dtmf::led_control();
+
+    case CALL_DELAY:
+      // Fast 3Hz blink
+      return (time_in_state.read_ms() % 300) < 100;
+
+    case DEACTIVATE:
+      return false;
+
+    default:
+      return false;
+  }
 }
 
 }  // dialer

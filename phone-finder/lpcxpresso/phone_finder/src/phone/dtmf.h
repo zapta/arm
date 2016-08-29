@@ -21,6 +21,10 @@ extern void start_dialing(const char* dtmf_codes);
 
 extern bool is_dialing_in_progress();
 
+// While is_dialing_in_progress() is true LED should be controlled
+// by this signal.
+extern bool led_control();
+
 // Force continuous dtmf code. If any dialing is in progress abort it.
 // Useful for testing.
 extern void force_continuous_code(char dtmf_code);

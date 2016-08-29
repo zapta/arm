@@ -1,14 +1,11 @@
 // A simple mbed program for Arm Pro Mini.
 // Tested on LPCXpresso 8.0.0 on Dec 2015.
 
+#include <phone/dialer.h>
+#include <phone/dtmf.h>
 #include "mbed.h"
-//#include "USBSerial.h"
 
-#include <src/dialer/dialer.h>
-// For testing only
-#include <src/dialer/dtmf.h>
 #include "util/system_memory.h"
-#include "util/status_led.h"
 #include "wifi/wifi.h"
 
 
@@ -17,6 +14,9 @@
 // #define PHONE_NUMBER1 "18004377950"
 // #define PHONE_NUMBER2 "16501234567"
 #include "_phone_numbers.i"
+
+// LED, active high.
+static DigitalOut led(P0_20, 0);
 
 // LED blink cycle.
 static const uint32_t kCycleTimeMsecs = 1000;
@@ -45,25 +45,28 @@ static void loop() {
   dialer::loop();
   wifi::polling();
 
-  const uint32_t time_now_in_cycle_msecs = heatbeat_timer.read_ms();
+  const uint32_t time_now_in_heatbeat_cycle_msecs = heatbeat_timer.read_ms();
 
-  // Generates a blink at the beginning of each cycle.
-  const bool led_state = time_now_in_cycle_msecs <= kCycleTimeMsecs / 50;
-  status_led::led_pin = led_state;
+  led = (dialer::is_call_in_progress())
+      ? dialer::led_control()
+      : time_now_in_heatbeat_cycle_msecs <= kCycleTimeMsecs / 100;
 
-  if (time_now_in_cycle_msecs >= kCycleTimeMsecs) {
+  if (time_now_in_heatbeat_cycle_msecs >= kCycleTimeMsecs) {
     heatbeat_timer.reset();
     PRINTF("\n");
     dumpInternalState();
     return;
   }
 
+  // If not active and a button is pressed than dial that number.
   if (!dialer::is_call_in_progress()) {
     const int pressed_buttons = wifi::getPressedButtonSet();
+    // Number 1
     if (pressed_buttons & (1 << 1)) {
        dialer::call(PHONE_NUMBER1);
        return;
     }
+    // Number 2
     if (pressed_buttons & (1 << 2)) {
        dialer::call(PHONE_NUMBER2);
        return;

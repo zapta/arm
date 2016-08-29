@@ -1,6 +1,4 @@
-#include "dialer/hook.h"
-
-//#include "USBSerial.h"
+#include <phone/hook.h>
 #include "util/common.h"
 
 //extern USBSerial usb_serial;

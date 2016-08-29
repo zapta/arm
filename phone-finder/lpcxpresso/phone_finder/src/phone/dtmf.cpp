@@ -1,14 +1,6 @@
-#include "dialer/dtmf.h"
-
+#include <phone/dtmf.h>
+#include <phone/dtmf_io.h>
 #include "util/common.h"
-#include "util/status_led.h"
-#include "dialer/dtmf_io.h"
-
-//#include "USBSerial.h"
-
-//extern USBSerial usb_serial;
-
-//extern DigitalOut led1;
 
 namespace dtmf {
 
@@ -64,7 +56,6 @@ void loop() {
       break;
 
     case MARK:
-      status_led::led_pin = 1;
       if (timer.read_ms() < kMarkTimeMillis) {
         return;
       }
@@ -104,9 +95,6 @@ void start_dialing(const char* dtmf_codes) {
 
   dialing_buffer = dtmf_codes;
 
-  // Copy sequence to buffer.
-  //memcpy(dialing_buffer, dtmf_codes, n+1);
-
   // Start. For first code we skip the SPACE and go directly to the
   // MARK.
   state = MARK;
@@ -119,6 +107,11 @@ void start_dialing(const char* dtmf_codes) {
 // See dtmf.h
 bool is_dialing_in_progress() {
   return (state != IDLE);
+}
+
+// See dtmf.h
+bool led_control() {
+  return state == MARK;
 }
 
 // See dtmf.h
