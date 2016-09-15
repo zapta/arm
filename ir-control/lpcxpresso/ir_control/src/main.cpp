@@ -20,11 +20,13 @@ Ticker ticker;
 #error "Should verify MCU compatibility"
 #endif
 
-// P0_8   PWM_1  CT16B0  MR0
+// P0_8   PWM_0  CT16B0  MR0, pin 4 (or 5?)
+
+static const uint16_t kCarrierFrequency = 40000;
 
 // Map tone frequency to timer half cycle count. Since we have enough timer.
 // The -1 is from the timer specification.
-#define COUNT(f) ((const uint16_t)((SystemCoreClock / (f) / 2) - 1))
+static const uint16_t kTimerCarrierCount =  (uint16_t)((SystemCoreClock / (kCarrierFrequency) / 2) - 1);
 
 #define TCR_OFF    0b00
 #define TCR_EN     0b01
@@ -63,7 +65,7 @@ void ir_setup() {
   // the outputs to desired values based on EMR setting.
   // Values don't matter much since we override latter when dialing
   // the tones.
-  LPC_CT16B0->MR0 = COUNT(1000);
+  LPC_CT16B0->MR0 = kTimerCarrierCount; //COUNT(1000);
   //LPC_CT16B1->MR1 = COUNT(1300);
 
   LPC_CT16B0->TCR = TCR_EN;
@@ -106,7 +108,7 @@ static inline void ir_on() {
 
   // Handle the case of an actual tone.
 //  LPC_CT16B0->TCR = TCR_RESET;
-  LPC_CT16B0->MR0 = COUNT(1000);   //dtmf_count;
+ // LPC_CT16B0->MR0 = kTimerTargetCount;
   // Toggle output on MR0 match.
   LPC_CT16B0->EMR = (0b11 << 4);
 }
@@ -126,8 +128,16 @@ static inline void ir_off() {
 //  LPC_CT16B0->EMR = (0b11 << 4);
 }
 
-void ticker_func() {
+static bool flag = false;
 
+void ticker_func() {
+  if (flag) {
+    flag = false;
+    ir_off();
+  } else {
+    flag = true;
+    ir_on();
+  }
 }
 
 
