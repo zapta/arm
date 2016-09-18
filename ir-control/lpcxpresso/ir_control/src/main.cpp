@@ -9,18 +9,16 @@
 #include "pinmap.h"
 
 // LED blink cycle.
-static const uint32_t kCycleTimeMsecs = 250;
+//static const uint32_t kCycleTimeMsecs = 250;
 
-// Timer for generating the delay between printed messages.
-static Timer timer;
 
+// Ticker for generating continuous 600usec interval IRQ
+// for IR ticks.
 Ticker ticker;
 
 #ifndef TARGET_LPC11U35_501
 #error "Should verify MCU compatibility"
 #endif
-
-// P0_8   PWM_0  CT16B0  MR0, pin 4 (or 5?)
 
 static const uint16_t kCarrierFrequency = 40000;
 
@@ -35,145 +33,220 @@ static const uint16_t kTimerCarrierCount =  (uint16_t)((SystemCoreClock / (kCarr
 void ir_setup() {
   // Disable timers 0, 1
   LPC_CT16B0->TCR = TCR_OFF;
-  //LPC_CT16B1->TCR = TCR_OFF;
 
   //Power timers 0, 1
   LPC_SYSCON->SYSAHBCLKCTRL |= 1 << (7 + 0);
-  //LPC_SYSCON->SYSAHBCLKCTRL |= 1 << (7 + 1);
 
   // Enable counter mode (non PWM) for timers 0, 1
   LPC_CT16B0->PWMC = 0b0000;
-  //LPC_CT16B1->PWMC = 0b0000;
 
   // Reset functionality on MR0 controlling the counter time period
   LPC_CT16B0->MCR = (1 << 1);  // Timer0: reset counter 0 o0 MR0 match
-  //LPC_CT16B1->MCR = (1 << 4);  // Timer1: reset counter 1 on MR1 match
 
-  // Set prescalers to 1. Timer is incremented 'SystemCoreClock' times a second.
+  // Set prescaler to 1. Timer is incremented 'SystemCoreClock' times a second.
   LPC_CT16B0->PR = 0;
-  //LPC_CT16B1->PR = 0;
 
   // TODO: is this reset needed?
   LPC_CT16B0->TCR = TCR_RESET;
-  //LPC_CT16B1->TCR = TCR_RESET;
 
   // Clear output on match (tone are off, keep outputs  low).
   LPC_CT16B0->EMR = (0b01 << 4);  // Timer0: output LOW on MR0 match
-  //LPC_CT16B1->EMR = (0b10 << 6);  // Timer1: output HIGH on MR1 match
 
-  // Set arbitrary cycle, just to have counter matches which sets
-  // the outputs to desired values based on EMR setting.
-  // Values don't matter much since we override latter when dialing
-  // the tones.
-  LPC_CT16B0->MR0 = kTimerCarrierCount; //COUNT(1000);
-  //LPC_CT16B1->MR1 = COUNT(1300);
+  // Set frequency.
+  LPC_CT16B0->MR0 = kTimerCarrierCount;
 
   LPC_CT16B0->TCR = TCR_EN;
-  //LPC_CT16B1->TCR = TCR_EN;
 
   // Pinout
    // TODO: define a const for the PWM pin function 2.
    pin_function(P0_8, 2);  // CT16B0_MAT0
    pin_mode(P0_8, PullNone);
-
-   //pin_function(P0_22, 2);  // CT16B1_MAT1
-  // pin_mode(P0_22, PullNone);
  }
 
-// dtmf_count is the timer count to set or 0 if to turn off.
-
-//static inline void ir_off() {
-//  // Handle the case of tone off
-////  if (!is_on) {
-//    // Force output LOW on MR0 match
-//    LPC_CT16B0->EMR = (0b01 << 4);
-////    return;
-////  }
-////
-////  // Handle the case of an actual tone.
-//////  LPC_CT16B0->TCR = TCR_RESET;
-////  LPC_CT16B0->MR0 = COUNT(1000);   //dtmf_count;
-////  // Toggle output on MR0 match.
-////  LPC_CT16B0->EMR = (0b11 << 4);
-//}
-
-
 static inline void ir_on() {
-  // Handle the case of tone off
-//  if (!is_on) {
-//    // Force output LOW on MR0 match
-//    LPC_CT16B0->EMR = (0b01 << 4);
-//    return;
-//  }
-
-  // Handle the case of an actual tone.
-//  LPC_CT16B0->TCR = TCR_RESET;
- // LPC_CT16B0->MR0 = kTimerTargetCount;
-  // Toggle output on MR0 match.
   LPC_CT16B0->EMR = (0b11 << 4);
 }
 
 static inline void ir_off() {
-  // Handle the case of tone off
-//  if (!is_on) {
-    // Force output LOW on MR0 match
     LPC_CT16B0->EMR = (0b01 << 4);
-//    return;
-//  }
-//
-//  // Handle the case of an actual tone.
-////  LPC_CT16B0->TCR = TCR_RESET;
-//  LPC_CT16B0->MR0 = COUNT(1000);   //dtmf_count;
-//  // Toggle output on MR0 match.
-//  LPC_CT16B0->EMR = (0b11 << 4);
 }
 
-static bool flag = false;
+enum TickerState {
+  IDLE,
+  START,
+  PRE_BIT_SPACE,
+  BIT_DATA,
+  POST_PACKET_SPACE
+};
 
-void ticker_func() {
-  if (flag) {
-    flag = false;
-    ir_off();
-  } else {
-    flag = true;
-    ir_on();
+static TickerState ticker_state = IDLE;
+
+// Valid in states START, BIT_DATA.
+static int32_t ticks_left_in_state = 0;
+
+// Valid in START, BIT_SPACE, BIT_DATA, PACKET_SPACE.
+static int32_t ticks_from_packet_start = 0;
+
+static int bits_left_in_packet = 0;
+
+// The packet to send to turn my Sony audio system on/off.
+static const uint32_t kDataBits = 0x540a;
+
+// Number of bits to send from kDataBits. Only the N LSB bits of
+// data_bits are transmitted with the more significant bits sent first.
+static const int kDataBitsCount = 15;
+
+// Number of errors detected so far during the IRQ. Non zero value
+// indicates a software bug.
+static int volatile ticker_error_count = 0;
+
+// Number of packets left to send. Decremented after each packet sent
+// until zero.
+static int volatile packets_left = 0;
+
+// Written by main to control irq.
+//static volatile bool  ir_tx_enabled = false;
+
+// Should be called from the ticker IRQ only.
+static void inline irq_enter_idle_state() {
+  ticker_state = IDLE;
+  ir_off();
+  packets_left = 0;
+}
+
+// Should be called from the ticker IRQ only.
+static void inline irq_enter_start_state() {
+  ticker_state = START;
+  ir_on();
+  // Length of the start marker in ticks.
+  ticks_left_in_state = 4;
+  bits_left_in_packet = kDataBitsCount;
+  ticks_from_packet_start = 0;
+}
+
+// Should be called from the ticker IRQ only.
+static void inline irq_enter_pre_bit_space_state() {
+  ticker_state = PRE_BIT_SPACE;
+  ir_off();
+}
+
+// Should be called from the ticker IRQ only.
+static void inline irq_enter_bit_data_state(bool bit_value) {
+  ticker_state = BIT_DATA;
+  ir_on();
+  ticks_left_in_state = bit_value ? 2 : 1;
+}
+
+// Should be called from the ticker IRQ only.
+static void inline irq_enter_post_packet_space_state() {
+  ticker_state = POST_PACKET_SPACE;
+  ir_off();
+}
+
+void irq_handler() {
+  switch (ticker_state) {
+    case IDLE:
+      if (packets_left > 0) {
+        irq_enter_start_state();
+      }
+      return;
+
+    case START:
+      ticks_from_packet_start++;
+      if ((--ticks_left_in_state) <= 0) {
+        irq_enter_pre_bit_space_state();
+        return;
+      }
+      return;
+
+    case PRE_BIT_SPACE: {
+      ticks_from_packet_start++;
+      // Here always bits_left > 0.
+      const bool bit_value = kDataBits &  (1 << (--bits_left_in_packet));
+      irq_enter_bit_data_state(bit_value);
+      return;
+    }
+
+    case BIT_DATA:
+      ticks_from_packet_start++;
+      if ((--ticks_left_in_state) > 0) {
+        return;
+      }
+      // If has more bits switch to DATA_SPACE
+      if (bits_left_in_packet > 0) {
+        irq_enter_pre_bit_space_state();
+        return;
+      }
+      // Else, packet done. Switch to POST_SPACE.
+      irq_enter_post_packet_space_state();
+      return;
+
+    case POST_PACKET_SPACE:
+      ticks_from_packet_start++;
+      // Next packet can start 45 ms (== 75 600usec ticks) since start of
+      // previous packet.
+      if (ticks_from_packet_start < 75) {
+        return;
+      }
+      // If still transmitting, start next packet.
+      if (--packets_left > 0) {
+        irq_enter_start_state();
+        return;
+      }
+      // Else, switch to IDLE state. IR is already off.
+      irq_enter_idle_state();
+      return;
+
+    // Handle unexpected state.
+    default:
+      ticker_error_count++;
+      irq_enter_idle_state();
+      return;
   }
 }
 
+static void start_tx(int packets) {
+  __disable_irq();
+  // TODO: should we verify that packets_left is zero now?
+  packets_left = packets;
+  __enable_irq();
+}
 
-// Time since program start.
-//static Timer sys_time;
+//static int get_packets_left() {
+//  __disable_irq();
+//  const int result = packets_left;
+//  __enable_irq();
+//  return result;
+//}
 
 // Red LED is at GPIO0_20.
 static DigitalOut led(P0_20, 0);
 
 USBSerial usb_serial(0x1f00, 0x2012, 0x0001, false);
 
-//AnalogIn analog_in(P0_11);
+static Timer timer;
 
 static void setup() {
   timer.start();
   ir_setup();
 
-  ticker.attach_us(&ticker_func, 600);
+  ticker.attach_us(&irq_handler, 600);
 
-  ir_on();
-  //sys_time.start();
+  start_tx(3);
 }
 
 volatile uint32_t i;
 
+
 static void loop() {
-  timer.reset();
+  int ms = timer.read_ms();
+  led = (ms < 500); // blink
 
-  i = 0;
-  while(i < 2166213L) {
-    i++;
+  if (ms > 20000) {
+    timer.reset();
+    start_tx(3);
+    usb_serial.printf("Errors: %u\r\n", ticker_error_count);
   }
-
-  int32_t loop_time_usecs = timer.read_us();
-  usb_serial.printf("Time, %u\r\n", loop_time_usecs);
-  led = !led;
 }
 
 int main(void) {
