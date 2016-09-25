@@ -246,23 +246,6 @@ Source: http://dkc3.digikey.com/Media/PDF/Data%20Sheets/E-Switch%20PDFs/TL1105%2
 <text x="-0.635" y="0.635" size="1.27" layer="25">&gt;NAME</text>
 <text x="-0.635" y="-1.905" size="1.27" layer="27">&gt;VALUE</text>
 </package>
-<package name="R0805">
-<description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
-chip</description>
-<wire x1="-0.41" y1="0.635" x2="0.41" y2="0.635" width="0.1524" layer="51"/>
-<wire x1="-0.41" y1="-0.635" x2="0.41" y2="-0.635" width="0.1524" layer="51"/>
-<wire x1="-1.973" y1="0.983" x2="1.973" y2="0.983" width="0.0508" layer="39"/>
-<wire x1="1.973" y1="0.983" x2="1.973" y2="-0.983" width="0.0508" layer="39"/>
-<wire x1="1.973" y1="-0.983" x2="-1.973" y2="-0.983" width="0.0508" layer="39"/>
-<wire x1="-1.973" y1="-0.983" x2="-1.973" y2="0.983" width="0.0508" layer="39"/>
-<rectangle x1="0.4064" y1="-0.6985" x2="1.0564" y2="0.7015" layer="51"/>
-<rectangle x1="-1.0668" y1="-0.6985" x2="-0.4168" y2="0.7015" layer="51"/>
-<rectangle x1="-0.1999" y1="-0.5001" x2="0.1999" y2="0.5001" layer="35"/>
-<smd name="1" x="-0.85" y="0" dx="1.3" dy="1.5" layer="1"/>
-<smd name="2" x="0.85" y="0" dx="1.3" dy="1.5" layer="1"/>
-<text x="-0.762" y="1.016" size="1.27" layer="25">&gt;NAME</text>
-<text x="-0.762" y="-2.286" size="1.27" layer="27">&gt;VALUE</text>
-</package>
 <package name="USB-MICRO">
 <description>http://www.hirose.co.jp/cataloge_hp/e24200011.pdf</description>
 <wire x1="3.25" y1="3.3" x2="3.25" y2="3.6" width="0.127" layer="21"/>
@@ -388,28 +371,10 @@ Inifineon</description>
 <text x="-1.397" y="1.794" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.524" y="-3.064" size="1.27" layer="27">&gt;VALUE</text>
 </package>
-<package name="KLBR1">
+<package name="JACK">
 <description>&lt;b&gt;Jack connectors according to JISC 6560, 2.5 mm&lt;/b&gt;&lt;p&gt;
 Klinkensteckverbinder nach JISC 6560, 2,5 mm&lt;br&gt;
 Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
-<wire x1="-1.25" y1="4.7" x2="-0.75" y2="5.2" width="0" layer="46" curve="-90"/>
-<wire x1="-0.75" y1="5.2" x2="0.75" y2="5.2" width="0" layer="46"/>
-<wire x1="0.75" y1="5.2" x2="1.25" y2="4.7" width="0" layer="46" curve="-90"/>
-<wire x1="1.25" y1="4.7" x2="0.75" y2="4.2" width="0" layer="46" curve="-90"/>
-<wire x1="0.75" y1="4.2" x2="-0.75" y2="4.2" width="0" layer="46"/>
-<wire x1="-0.75" y1="4.2" x2="-1.25" y2="4.7" width="0" layer="46" curve="-90"/>
-<wire x1="-1.25" y1="-4.7" x2="-0.75" y2="-4.2" width="0" layer="46" curve="-90"/>
-<wire x1="-0.75" y1="-4.2" x2="0.75" y2="-4.2" width="0" layer="46"/>
-<wire x1="0.75" y1="-4.2" x2="1.25" y2="-4.7" width="0" layer="46" curve="-90"/>
-<wire x1="1.25" y1="-4.7" x2="0.75" y2="-5.2" width="0" layer="46" curve="-90"/>
-<wire x1="0.75" y1="-5.2" x2="-0.75" y2="-5.2" width="0" layer="46"/>
-<wire x1="-0.75" y1="-5.2" x2="-1.25" y2="-4.7" width="0" layer="46" curve="-90"/>
-<wire x1="-4" y1="-4.75" x2="-4.5" y2="-4.25" width="0" layer="46" curve="-90"/>
-<wire x1="-4.5" y1="-4.25" x2="-4.5" y2="-2.75" width="0" layer="46"/>
-<wire x1="-4.5" y1="-2.75" x2="-4" y2="-2.25" width="0" layer="46" curve="-90"/>
-<wire x1="-4" y1="-2.25" x2="-3.5" y2="-2.75" width="0" layer="46" curve="-90"/>
-<wire x1="-3.5" y1="-2.75" x2="-3.5" y2="-4.25" width="0" layer="46"/>
-<wire x1="-3.5" y1="-4.25" x2="-4" y2="-4.75" width="0" layer="46" curve="-90"/>
 <wire x1="-2.9" y1="7.725" x2="-2.9" y2="8.995" width="0.2032" layer="21"/>
 <wire x1="-1.9" y1="11.015" x2="1.9" y2="11.015" width="0.2032" layer="21"/>
 <wire x1="2.9" y1="8.995" x2="2.9" y2="7.725" width="0.2032" layer="21"/>
@@ -436,9 +401,9 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <wire x1="2.4" y1="5.965" x2="4.9" y2="5.965" width="0.2032" layer="21"/>
 <wire x1="-2.4" y1="5.965" x2="-2.4" y2="7.065" width="0.2032" layer="21"/>
 <wire x1="2.4" y1="7.065" x2="2.4" y2="5.965" width="0.2032" layer="21"/>
-<pad name="3" x="0" y="-4.7" drill="1" diameter="1.8" shape="long"/>
-<pad name="4" x="-4" y="-3.5" drill="1" diameter="1.8" shape="long" rot="R90"/>
-<pad name="5" x="0" y="4.7" drill="1" diameter="1.8" shape="long"/>
+<pad name="3" x="0" y="-4.7" drill="2"/>
+<pad name="2" x="3.65" y="1.15" drill="2" rot="R90"/>
+<pad name="1" x="1.2" y="-0.85" drill="2"/>
 <text x="-5.715" y="-4.445" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <text x="6.985" y="-4.445" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
 </package>
@@ -749,22 +714,20 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <text x="-7.62" y="8.255" size="1.778" layer="95">&gt;NAME</text>
 <text x="-7.62" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
-<symbol name="JACK-SWITCH">
+<symbol name="JACK">
 <rectangle x1="2.286" y1="-0.508" x2="7.874" y2="0.508" layer="94" rot="R90"/>
 <wire x1="-2.54" y1="2.54" x2="0" y2="2.54" width="0.1524" layer="94"/>
 <wire x1="0" y1="2.54" x2="1.524" y2="1.016" width="0.1524" layer="94"/>
 <wire x1="1.524" y1="1.016" x2="2.286" y2="1.778" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="0" x2="-0.762" y2="0" width="0.1524" layer="94"/>
-<wire x1="-0.762" y1="0" x2="-0.762" y2="2.286" width="0.1524" layer="94"/>
-<wire x1="-0.762" y1="2.286" x2="-1.016" y2="1.524" width="0.254" layer="94"/>
-<wire x1="-1.016" y1="1.524" x2="-0.508" y2="1.524" width="0.254" layer="94"/>
-<wire x1="-0.508" y1="1.524" x2="-0.762" y2="2.286" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="0" x2="-2.667" y2="0" width="0.1524" layer="94"/>
 <wire x1="-2.54" y1="-2.54" x2="4.572" y2="-2.54" width="0.1524" layer="94"/>
-<pin name="3" x="-5.08" y="2.54" visible="pad" length="short" direction="pas"/>
-<pin name="4" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
-<pin name="5" x="-5.08" y="-2.54" visible="pad" length="short" direction="pas"/>
+<pin name="2" x="-5.08" y="2.54" visible="pad" length="short" direction="pas"/>
+<pin name="4" x="-5.08" y="0" visible="pad" length="point" direction="pas"/>
+<pin name="1" x="-5.08" y="-2.54" visible="pad" length="short" direction="pas"/>
 <text x="-2.54" y="4.064" size="1.778" layer="95">&gt;NAME</text>
 <text x="-2.54" y="-6.096" size="1.778" layer="96">&gt;VALUE</text>
+<wire x1="-2.54" y1="0" x2="-1.651" y2="-0.889" width="0.1524" layer="94"/>
+<wire x1="-1.651" y1="-0.889" x2="-0.889" y2="-0.127" width="0.1524" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -834,7 +797,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="DOC-INFO">
+<deviceset name="DOC-INFO" prefix="DOC">
 <gates>
 <gate name="G$1" symbol="DOCFIELD" x="0" y="0"/>
 </gates>
@@ -859,7 +822,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="LPC11U35FHN33/501">
+<deviceset name="LPC11U35FHN33/501" prefix="U">
 <gates>
 <gate name="G$1" symbol="LPC11U35FHN33" x="22.86" y="-7.62"/>
 </gates>
@@ -906,7 +869,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="PNP-BIASED">
+<deviceset name="PNP-BIASED" prefix="Q">
 <description>DTA114EET1G  (Digikey DTA114EET1GOSCT-ND)</description>
 <gates>
 <gate name="G$1" symbol="PNP-RESISTORS" x="0" y="0"/>
@@ -924,7 +887,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="PUSH-BUTTON">
+<deviceset name="PUSH-BUTTON" prefix="S">
 <description>CKN10502CT-ND</description>
 <gates>
 <gate name="G$1" symbol="PUSH_BUTTON" x="0" y="0"/>
@@ -958,15 +921,6 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <technology name=""/>
 </technologies>
 </device>
-<device name="R0805" package="R0805">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
 </devices>
 </deviceset>
 <deviceset name="USB-CONN" prefix="J">
@@ -988,7 +942,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="USB-ESD">
+<deviceset name="USB-ESD" prefix="U">
 <gates>
 <gate name="G$1" symbol="USB_FILTER" x="0" y="0"/>
 </gates>
@@ -1076,7 +1030,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="LDO">
+<deviceset name="LDO" prefix="U">
 <gates>
 <gate name="G$1" symbol="LDO" x="0" y="0"/>
 </gates>
@@ -1093,20 +1047,20 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="KLBR?" prefix="X">
+<deviceset name="JACK" prefix="J">
 <description>&lt;b&gt;Jack connectors according to JISC 6560, 2.5mm / 3.5 mm&lt;/b&gt;&lt;p&gt;
 Klinkensteckverbinder nach JISC 6560, 2.5mm / 3,5 mm&lt;br&gt;
 Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
  www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <gates>
-<gate name="G$1" symbol="JACK-SWITCH" x="0" y="0"/>
+<gate name="G$1" symbol="JACK" x="0" y="0"/>
 </gates>
 <devices>
-<device name="1" package="KLBR1">
+<device name="X" package="JACK">
 <connects>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
-<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="4" pad="3"/>
 </connects>
 <technologies>
 <technology name="">
@@ -1135,63 +1089,63 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 </class>
 </classes>
 <parts>
-<part name="U$20" library="ir-control" deviceset="DOC-INFO" device=""/>
-<part name="J1" library="ir-control" deviceset="USB-CONN" device="" value="MICRO USB"/>
-<part name="GND5" library="ir-control" deviceset="GND" device=""/>
-<part name="+5V2" library="ir-control" deviceset="+5V" device=""/>
-<part name="GND22" library="ir-control" deviceset="GND" device=""/>
-<part name="S1" library="ir-control" deviceset="PUSH-BUTTON" device=""/>
-<part name="GND3" library="ir-control" deviceset="GND" device=""/>
-<part name="C7" library="ir-control" deviceset="C" device="C0603K" value="1u"/>
-<part name="GND18" library="ir-control" deviceset="GND" device=""/>
-<part name="C6" library="ir-control" deviceset="C" device="C0603K" value="1u"/>
-<part name="GND28" library="ir-control" deviceset="GND" device=""/>
-<part name="U3" library="ir-control" deviceset="LPC11U35FHN33/501" device="" value="LPC11U35FHI33/501"/>
-<part name="GND2" library="ir-control" deviceset="GND" device=""/>
-<part name="Y1" library="ir-control" deviceset="CRYSTAL" device="CTS406" value="12Mhz"/>
-<part name="C1" library="ir-control" deviceset="C" device="C0402K" value="18pF"/>
-<part name="C2" library="ir-control" deviceset="C" device="C0402K" value="18pF"/>
-<part name="GND4" library="ir-control" deviceset="GND" device=""/>
-<part name="C4" library="ir-control" deviceset="C" device="C0402K" value="0.1uF"/>
-<part name="GND1" library="ir-control" deviceset="GND" device=""/>
-<part name="C3" library="ir-control" deviceset="C" device="C0402K" value="0.1uF"/>
-<part name="GND11" library="ir-control" deviceset="GND" device=""/>
-<part name="+3V1" library="ir-control" deviceset="+3V3" device=""/>
-<part name="+3V2" library="ir-control" deviceset="+3V3" device=""/>
-<part name="R1" library="ir-control" deviceset="R" device="R0402" value="1K5"/>
-<part name="+3V5" library="ir-control" deviceset="+3V3" device=""/>
-<part name="R3" library="ir-control" deviceset="R" device="R0402" value="10K"/>
-<part name="+3V8" library="ir-control" deviceset="+3V3" device=""/>
-<part name="S2" library="ir-control" deviceset="PUSH-BUTTON" device=""/>
-<part name="GND19" library="ir-control" deviceset="GND" device=""/>
-<part name="R2" library="ir-control" deviceset="R" device="R0402" value="10K"/>
-<part name="+3V9" library="ir-control" deviceset="+3V3" device=""/>
-<part name="Q1" library="ir-control" deviceset="PNP-BIASED" device="" value="DTA114EET1G (2x10K)"/>
-<part name="U2" library="ir-control" deviceset="USB-ESD" device="" value="NUF2042XV6T1G"/>
-<part name="D2" library="ir-control" deviceset="BAS40-05" device=""/>
-<part name="C17" library="ir-control" deviceset="C" device="C0402K" value="0.1uF"/>
-<part name="+3V10" library="ir-control" deviceset="+3V3" device=""/>
-<part name="+5V1" library="ir-control" deviceset="+5V" device=""/>
-<part name="GND7" library="ir-control" deviceset="GND" device=""/>
-<part name="GND14" library="ir-control" deviceset="GND" device=""/>
-<part name="D3" library="ir-control" deviceset="LED" device=""/>
-<part name="GND10" library="ir-control" deviceset="GND" device=""/>
-<part name="R13" library="ir-control" deviceset="R" device="R0402" value="1K5"/>
-<part name="C5" library="ir-control" deviceset="C" device="C0805K" value="10u"/>
-<part name="C8" library="ir-control" deviceset="C" device="C0805K" value="10u"/>
-<part name="U4" library="ir-control" deviceset="LDO" device="" value="MCP1754ST-3302E/CB"/>
-<part name="J2" library="ir-control" deviceset="USB-CONN" device="" value="MICRO USB"/>
+<part name="DOC1" library="ir-control" deviceset="DOC-INFO" device=""/>
 <part name="J3" library="ir-control" deviceset="USB-CONN" device="" value="MICRO USB"/>
+<part name="GND3" library="ir-control" deviceset="GND" device=""/>
+<part name="+5V1" library="ir-control" deviceset="+5V" device=""/>
+<part name="GND15" library="ir-control" deviceset="GND" device=""/>
+<part name="S1" library="ir-control" deviceset="PUSH-BUTTON" device=""/>
 <part name="GND6" library="ir-control" deviceset="GND" device=""/>
+<part name="C3" library="ir-control" deviceset="C" device="C0603K" value="1u"/>
 <part name="GND8" library="ir-control" deviceset="GND" device=""/>
+<part name="C2" library="ir-control" deviceset="C" device="C0603K" value="1u"/>
+<part name="GND5" library="ir-control" deviceset="GND" device=""/>
+<part name="U3" library="ir-control" deviceset="LPC11U35FHN33/501" device="" value="LPC11U35FHI33/501"/>
+<part name="GND13" library="ir-control" deviceset="GND" device=""/>
+<part name="Q2" library="ir-control" deviceset="CRYSTAL" device="CTS406" value="12Mhz"/>
+<part name="C5" library="ir-control" deviceset="C" device="C0402K" value="18pF"/>
+<part name="C6" library="ir-control" deviceset="C" device="C0402K" value="18pF"/>
+<part name="GND10" library="ir-control" deviceset="GND" device=""/>
+<part name="C8" library="ir-control" deviceset="C" device="C0402K" value="0.1uF"/>
+<part name="GND12" library="ir-control" deviceset="GND" device=""/>
+<part name="C7" library="ir-control" deviceset="C" device="C0402K" value="0.1uF"/>
+<part name="GND11" library="ir-control" deviceset="GND" device=""/>
+<part name="+3V34" library="ir-control" deviceset="+3V3" device=""/>
+<part name="+3V33" library="ir-control" deviceset="+3V3" device=""/>
+<part name="R3" library="ir-control" deviceset="R" device="R0402" value="1K5"/>
+<part name="+3V32" library="ir-control" deviceset="+3V3" device=""/>
+<part name="R8" library="ir-control" deviceset="R" device="R0402" value="10K"/>
+<part name="+3V35" library="ir-control" deviceset="+3V3" device=""/>
+<part name="S2" library="ir-control" deviceset="PUSH-BUTTON" device=""/>
+<part name="GND16" library="ir-control" deviceset="GND" device=""/>
 <part name="R4" library="ir-control" deviceset="R" device="R0402" value="10K"/>
-<part name="R5" library="ir-control" deviceset="R" device="R0402" value="10K"/>
-<part name="X1" library="ir-control" deviceset="KLBR?" device="1"/>
-<part name="+5V3" library="ir-control" deviceset="+5V" device=""/>
-<part name="R6" library="ir-control" deviceset="R" device="R0402" value="330"/>
+<part name="+3V31" library="ir-control" deviceset="+3V3" device=""/>
+<part name="Q1" library="ir-control" deviceset="PNP-BIASED" device="" value="DTA114EET1G (2x10K)"/>
+<part name="U1" library="ir-control" deviceset="USB-ESD" device="" value="NUF2042XV6T1G"/>
+<part name="D2" library="ir-control" deviceset="BAS40-05" device=""/>
+<part name="C9" library="ir-control" deviceset="C" device="C0402K" value="0.1uF"/>
+<part name="+3V36" library="ir-control" deviceset="+3V3" device=""/>
+<part name="+5V2" library="ir-control" deviceset="+5V" device=""/>
+<part name="GND4" library="ir-control" deviceset="GND" device=""/>
 <part name="GND9" library="ir-control" deviceset="GND" device=""/>
+<part name="D1" library="ir-control" deviceset="LED" device=""/>
+<part name="GND7" library="ir-control" deviceset="GND" device=""/>
+<part name="R5" library="ir-control" deviceset="R" device="R0402" value="330"/>
+<part name="C1" library="ir-control" deviceset="C" device="C0805K" value="10u"/>
+<part name="C4" library="ir-control" deviceset="C" device="C0805K" value="10u"/>
+<part name="U2" library="ir-control" deviceset="LDO" device="" value="MCP1754ST-3302E/CB"/>
+<part name="J1" library="ir-control" deviceset="USB-CONN" device="" value="MICRO USB"/>
+<part name="J2" library="ir-control" deviceset="USB-CONN" device="" value="MICRO USB"/>
+<part name="GND1" library="ir-control" deviceset="GND" device=""/>
+<part name="GND2" library="ir-control" deviceset="GND" device=""/>
+<part name="R1" library="ir-control" deviceset="R" device="R0402" value="10K"/>
+<part name="R2" library="ir-control" deviceset="R" device="R0402" value="10K"/>
+<part name="J4" library="ir-control" deviceset="JACK" device="X"/>
+<part name="+5V3" library="ir-control" deviceset="+5V" device=""/>
+<part name="R7" library="ir-control" deviceset="R" device="R0402" value="330"/>
+<part name="GND14" library="ir-control" deviceset="GND" device=""/>
 <part name="Q3" library="ir-control" deviceset="NPN" device=""/>
-<part name="R7" library="ir-control" deviceset="R" device="R0402" value="10K"/>
+<part name="R6" library="ir-control" deviceset="R" device="R0402" value="1K5"/>
 </parts>
 <sheets>
 <sheet>
@@ -1212,130 +1166,130 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <text x="134.62" y="162.56" size="2.54" layer="97">TODO: add IR diode</text>
 </plain>
 <instances>
-<instance part="U$20" gate="G$1" x="304.8" y="0"/>
-<instance part="J1" gate="G$1" x="45.72" y="220.98"/>
-<instance part="GND5" gate="1" x="55.88" y="210.82"/>
-<instance part="+5V2" gate="G$1" x="55.88" y="243.84" rot="MR0"/>
-<instance part="GND22" gate="1" x="363.22" y="73.66"/>
+<instance part="DOC1" gate="G$1" x="304.8" y="0"/>
+<instance part="J3" gate="G$1" x="45.72" y="220.98"/>
+<instance part="GND3" gate="1" x="55.88" y="210.82"/>
+<instance part="+5V1" gate="G$1" x="55.88" y="243.84" rot="MR0"/>
+<instance part="GND15" gate="1" x="363.22" y="73.66"/>
 <instance part="S1" gate="G$1" x="363.22" y="83.82" smashed="yes">
 <attribute name="NAME" x="357.632" y="79.248" size="1.778" layer="95"/>
 </instance>
-<instance part="GND3" gate="1" x="195.58" y="101.6"/>
-<instance part="C7" gate="G$1" x="210.82" y="111.76" smashed="yes">
+<instance part="GND6" gate="1" x="195.58" y="101.6"/>
+<instance part="C3" gate="G$1" x="210.82" y="111.76" smashed="yes">
 <attribute name="NAME" x="212.598" y="112.903" size="1.778" layer="95"/>
 <attribute name="VALUE" x="212.09" y="107.315" size="1.778" layer="96"/>
 </instance>
-<instance part="GND18" gate="1" x="210.82" y="101.6"/>
-<instance part="C6" gate="G$1" x="180.34" y="111.76" smashed="yes">
+<instance part="GND8" gate="1" x="210.82" y="101.6"/>
+<instance part="C2" gate="G$1" x="180.34" y="111.76" smashed="yes">
 <attribute name="NAME" x="174.752" y="112.903" size="1.778" layer="95"/>
 <attribute name="VALUE" x="174.498" y="107.315" size="1.778" layer="96"/>
 </instance>
-<instance part="GND28" gate="1" x="180.34" y="101.6"/>
+<instance part="GND5" gate="1" x="180.34" y="101.6"/>
 <instance part="U3" gate="G$1" x="325.12" y="210.82" smashed="yes">
 <attribute name="NAME" x="285.242" y="173.8376" size="1.778" layer="95"/>
 <attribute name="VALUE" x="292.862" y="173.8376" size="1.778" layer="96"/>
 </instance>
-<instance part="GND2" gate="1" x="269.24" y="177.8"/>
-<instance part="Y1" gate="G$1" x="266.7" y="251.46" smashed="yes" rot="R90">
+<instance part="GND13" gate="1" x="269.24" y="177.8"/>
+<instance part="Q2" gate="G$1" x="266.7" y="251.46" smashed="yes" rot="R90">
 <attribute name="NAME" x="264.668" y="255.016" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="270.764" y="244.602" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C1" gate="G$1" x="259.08" y="256.54" smashed="yes" rot="R270">
+<instance part="C5" gate="G$1" x="259.08" y="256.54" smashed="yes" rot="R270">
 <attribute name="NAME" x="253.238" y="257.429" size="1.778" layer="95"/>
 <attribute name="VALUE" x="253.238" y="260.477" size="1.778" layer="96"/>
 </instance>
-<instance part="C2" gate="G$1" x="259.08" y="246.38" smashed="yes" rot="R270">
+<instance part="C6" gate="G$1" x="259.08" y="246.38" smashed="yes" rot="R270">
 <attribute name="NAME" x="253.238" y="243.459" size="1.778" layer="95"/>
 <attribute name="VALUE" x="255.27" y="240.157" size="1.778" layer="96"/>
 </instance>
-<instance part="GND4" gate="1" x="251.46" y="241.3"/>
-<instance part="C4" gate="G$1" x="259.08" y="187.96" smashed="yes">
+<instance part="GND10" gate="1" x="251.46" y="241.3"/>
+<instance part="C8" gate="G$1" x="259.08" y="187.96" smashed="yes">
 <attribute name="NAME" x="252.222" y="187.325" size="1.778" layer="95"/>
 <attribute name="VALUE" x="250.698" y="183.007" size="1.778" layer="96"/>
 </instance>
-<instance part="GND1" gate="1" x="259.08" y="177.8"/>
-<instance part="C3" gate="G$1" x="259.08" y="210.82" smashed="yes">
+<instance part="GND12" gate="1" x="259.08" y="177.8"/>
+<instance part="C7" gate="G$1" x="259.08" y="210.82" smashed="yes">
 <attribute name="NAME" x="251.46" y="208.915" size="1.778" layer="95"/>
 <attribute name="VALUE" x="249.174" y="205.613" size="1.778" layer="96"/>
 </instance>
 <instance part="GND11" gate="1" x="259.08" y="203.2"/>
-<instance part="+3V1" gate="G$1" x="259.08" y="198.12"/>
-<instance part="+3V2" gate="G$1" x="259.08" y="220.98"/>
-<instance part="R1" gate="G$1" x="66.04" y="246.38" rot="R90"/>
-<instance part="+3V5" gate="G$1" x="228.6" y="119.38" rot="R270"/>
-<instance part="R3" gate="G$1" x="342.9" y="264.16" smashed="yes" rot="R90">
+<instance part="+3V34" gate="G$1" x="259.08" y="198.12"/>
+<instance part="+3V33" gate="G$1" x="259.08" y="220.98"/>
+<instance part="R3" gate="G$1" x="66.04" y="246.38" rot="R90"/>
+<instance part="+3V32" gate="G$1" x="228.6" y="119.38" rot="R270"/>
+<instance part="R8" gate="G$1" x="342.9" y="264.16" smashed="yes" rot="R90">
 <attribute name="NAME" x="345.44" y="265.4046" size="1.778" layer="95"/>
 <attribute name="VALUE" x="345.186" y="262.382" size="1.778" layer="96"/>
 </instance>
-<instance part="+3V8" gate="G$1" x="342.9" y="271.78"/>
+<instance part="+3V35" gate="G$1" x="342.9" y="271.78"/>
 <instance part="S2" gate="G$1" x="383.54" y="83.82" smashed="yes">
 <attribute name="NAME" x="377.952" y="79.248" size="1.778" layer="95"/>
 </instance>
-<instance part="GND19" gate="1" x="383.54" y="73.66"/>
-<instance part="R2" gate="G$1" x="91.44" y="236.22" smashed="yes">
+<instance part="GND16" gate="1" x="383.54" y="73.66"/>
+<instance part="R4" gate="G$1" x="91.44" y="236.22" smashed="yes">
 <attribute name="NAME" x="83.312" y="237.2106" size="1.778" layer="95"/>
 <attribute name="VALUE" x="83.566" y="232.156" size="1.778" layer="96"/>
 </instance>
-<instance part="+3V9" gate="G$1" x="66.04" y="271.78"/>
+<instance part="+3V31" gate="G$1" x="66.04" y="271.78"/>
 <instance part="Q1" gate="G$1" x="68.58" y="259.08" smashed="yes" rot="MR0">
 <attribute name="NAME" x="76.2" y="261.62" size="1.778" layer="95"/>
 <attribute name="VALUE" x="69.596" y="253.238" size="1.778" layer="96"/>
 </instance>
-<instance part="U2" gate="G$1" x="91.44" y="218.44"/>
+<instance part="U1" gate="G$1" x="91.44" y="218.44"/>
 <instance part="D2" gate="G$1" x="363.22" y="96.52" smashed="yes" rot="R270">
 <attribute name="NAME" x="356.616" y="97.5614" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="356.616" y="93.8784" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C17" gate="G$1" x="342.9" y="111.76" smashed="yes">
-<attribute name="NAME" x="336.042" y="111.125" size="1.778" layer="95"/>
-<attribute name="VALUE" x="334.518" y="106.807" size="1.778" layer="96"/>
+<instance part="C9" gate="G$1" x="350.52" y="106.68" smashed="yes">
+<attribute name="NAME" x="343.662" y="106.045" size="1.778" layer="95"/>
+<attribute name="VALUE" x="342.138" y="101.727" size="1.778" layer="96"/>
 </instance>
-<instance part="+3V10" gate="G$1" x="342.9" y="124.46"/>
-<instance part="+5V1" gate="G$1" x="162.56" y="127" rot="MR0"/>
-<instance part="GND7" gate="1" x="170.18" y="101.6"/>
-<instance part="GND14" gate="1" x="220.98" y="101.6"/>
-<instance part="D3" gate="1" x="208.28" y="35.56"/>
-<instance part="GND10" gate="1" x="208.28" y="25.4"/>
-<instance part="R13" gate="G$1" x="200.66" y="45.72" smashed="yes">
+<instance part="+3V36" gate="G$1" x="350.52" y="114.3"/>
+<instance part="+5V2" gate="G$1" x="162.56" y="127" rot="MR0"/>
+<instance part="GND4" gate="1" x="170.18" y="101.6"/>
+<instance part="GND9" gate="1" x="220.98" y="101.6"/>
+<instance part="D1" gate="1" x="208.28" y="35.56"/>
+<instance part="GND7" gate="1" x="208.28" y="25.4"/>
+<instance part="R5" gate="G$1" x="200.66" y="45.72" smashed="yes">
 <attribute name="NAME" x="199.644" y="47.7266" size="1.778" layer="95"/>
 <attribute name="VALUE" x="193.548" y="47.498" size="1.778" layer="96"/>
 </instance>
-<instance part="C5" gate="G$1" x="170.18" y="111.76" smashed="yes">
+<instance part="C1" gate="G$1" x="170.18" y="111.76" smashed="yes">
 <attribute name="NAME" x="166.116" y="112.395" size="1.778" layer="95"/>
 <attribute name="VALUE" x="164.338" y="107.061" size="1.778" layer="96"/>
 </instance>
-<instance part="C8" gate="G$1" x="220.98" y="111.76" smashed="yes">
+<instance part="C4" gate="G$1" x="220.98" y="111.76" smashed="yes">
 <attribute name="NAME" x="221.996" y="112.395" size="1.778" layer="95"/>
 <attribute name="VALUE" x="221.996" y="107.569" size="1.778" layer="96"/>
 </instance>
-<instance part="U4" gate="G$1" x="195.58" y="114.3" smashed="yes">
+<instance part="U2" gate="G$1" x="195.58" y="114.3" smashed="yes">
 <attribute name="NAME" x="190.5" y="129.54" size="1.778" layer="95"/>
 <attribute name="VALUE" x="182.88" y="124.46" size="1.778" layer="96"/>
 </instance>
-<instance part="J2" gate="G$1" x="40.64" y="137.16"/>
-<instance part="J3" gate="G$1" x="40.64" y="73.66"/>
-<instance part="GND6" gate="1" x="50.8" y="127"/>
-<instance part="GND8" gate="1" x="50.8" y="63.5"/>
-<instance part="R4" gate="G$1" x="60.96" y="152.4" smashed="yes">
+<instance part="J1" gate="G$1" x="40.64" y="137.16"/>
+<instance part="J2" gate="G$1" x="40.64" y="73.66"/>
+<instance part="GND1" gate="1" x="50.8" y="127"/>
+<instance part="GND2" gate="1" x="50.8" y="63.5"/>
+<instance part="R1" gate="G$1" x="60.96" y="152.4" smashed="yes">
 <attribute name="NAME" x="52.832" y="153.3906" size="1.778" layer="95"/>
 <attribute name="VALUE" x="53.086" y="148.336" size="1.778" layer="96"/>
 </instance>
-<instance part="R5" gate="G$1" x="60.96" y="88.9" smashed="yes">
+<instance part="R2" gate="G$1" x="60.96" y="88.9" smashed="yes">
 <attribute name="NAME" x="52.832" y="89.8906" size="1.778" layer="95"/>
 <attribute name="VALUE" x="53.086" y="84.836" size="1.778" layer="96"/>
 </instance>
-<instance part="X1" gate="G$1" x="299.72" y="104.14"/>
+<instance part="J4" gate="G$1" x="299.72" y="104.14"/>
 <instance part="+5V3" gate="G$1" x="284.48" y="132.08" rot="MR0"/>
-<instance part="R6" gate="G$1" x="284.48" y="119.38" smashed="yes" rot="R90">
+<instance part="R7" gate="G$1" x="284.48" y="119.38" smashed="yes" rot="R90">
 <attribute name="NAME" x="283.4894" y="111.252" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="288.544" y="111.506" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="GND9" gate="1" x="284.48" y="81.28"/>
+<instance part="GND14" gate="1" x="284.48" y="81.28"/>
 <instance part="Q3" gate="G$1" x="281.94" y="93.98" smashed="yes">
 <attribute name="NAME" x="289.56" y="93.98" size="1.778" layer="95"/>
 <attribute name="VALUE" x="289.56" y="91.44" size="1.778" layer="96"/>
 </instance>
-<instance part="R7" gate="G$1" x="269.24" y="93.98" smashed="yes" rot="R180">
+<instance part="R6" gate="G$1" x="269.24" y="93.98" smashed="yes" rot="R180">
 <attribute name="NAME" x="277.368" y="92.9894" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="277.114" y="98.044" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -1345,7 +1299,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <nets>
 <net name="GND" class="0">
 <segment>
-<pinref part="GND22" gate="1" pin="GND"/>
+<pinref part="GND15" gate="1" pin="GND"/>
 <wire x1="363.22" y1="76.2" x2="363.22" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="S1" gate="G$1" pin="A1"/>
 <pinref part="S1" gate="G$1" pin="A2"/>
@@ -1353,49 +1307,49 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <junction x="363.22" y="78.74"/>
 </segment>
 <segment>
-<pinref part="C7" gate="G$1" pin="2"/>
-<pinref part="GND18" gate="1" pin="GND"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<pinref part="GND8" gate="1" pin="GND"/>
 <wire x1="210.82" y1="106.68" x2="210.82" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND28" gate="1" pin="GND"/>
-<pinref part="C6" gate="G$1" pin="2"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+<pinref part="C2" gate="G$1" pin="2"/>
 <wire x1="180.34" y1="104.14" x2="180.34" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C1" gate="G$1" pin="2"/>
-<pinref part="GND4" gate="1" pin="GND"/>
+<pinref part="C5" gate="G$1" pin="2"/>
+<pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="254" y1="256.54" x2="251.46" y2="256.54" width="0.1524" layer="91"/>
 <wire x1="251.46" y1="256.54" x2="251.46" y2="251.46" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="2"/>
+<pinref part="C6" gate="G$1" pin="2"/>
 <wire x1="251.46" y1="251.46" x2="251.46" y2="246.38" width="0.1524" layer="91"/>
 <wire x1="251.46" y1="246.38" x2="251.46" y2="243.84" width="0.1524" layer="91"/>
 <wire x1="254" y1="246.38" x2="251.46" y2="246.38" width="0.1524" layer="91"/>
 <junction x="251.46" y="246.38"/>
-<pinref part="Y1" gate="G$1" pin="GND"/>
+<pinref part="Q2" gate="G$1" pin="GND"/>
 <wire x1="261.62" y1="251.46" x2="251.46" y2="251.46" width="0.1524" layer="91"/>
 <junction x="251.46" y="251.46"/>
 </segment>
 <segment>
-<pinref part="C4" gate="G$1" pin="2"/>
-<pinref part="GND1" gate="1" pin="GND"/>
+<pinref part="C8" gate="G$1" pin="2"/>
+<pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="259.08" y1="180.34" x2="259.08" y2="182.88" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C3" gate="G$1" pin="2"/>
+<pinref part="C7" gate="G$1" pin="2"/>
 <pinref part="GND11" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="GND"/>
+<pinref part="U1" gate="G$1" pin="GND"/>
 <wire x1="55.88" y1="215.9" x2="81.28" y2="215.9" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="GND"/>
-<pinref part="GND5" gate="1" pin="GND"/>
+<pinref part="J3" gate="G$1" pin="GND"/>
+<pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="53.34" y1="215.9" x2="55.88" y2="215.9" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="215.9" x2="55.88" y2="213.36" width="0.1524" layer="91"/>
 <junction x="55.88" y="215.9"/>
 </segment>
 <segment>
-<pinref part="GND19" gate="1" pin="GND"/>
+<pinref part="GND16" gate="1" pin="GND"/>
 <pinref part="S2" gate="G$1" pin="A1"/>
 <wire x1="383.54" y1="76.2" x2="383.54" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="S2" gate="G$1" pin="A2"/>
@@ -1405,56 +1359,56 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <segment>
 <pinref part="U3" gate="G$1" pin="GND"/>
 <wire x1="271.78" y1="182.88" x2="269.24" y2="182.88" width="0.1524" layer="91"/>
-<pinref part="GND2" gate="1" pin="GND"/>
+<pinref part="GND13" gate="1" pin="GND"/>
 <wire x1="269.24" y1="182.88" x2="269.24" y2="180.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND7" gate="1" pin="GND"/>
+<pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="170.18" y1="106.68" x2="170.18" y2="104.14" width="0.1524" layer="91"/>
-<pinref part="C5" gate="G$1" pin="2"/>
+<pinref part="C1" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="GND14" gate="1" pin="GND"/>
+<pinref part="GND9" gate="1" pin="GND"/>
 <wire x1="220.98" y1="106.68" x2="220.98" y2="104.14" width="0.1524" layer="91"/>
-<pinref part="C8" gate="G$1" pin="2"/>
+<pinref part="C4" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="D3" gate="1" pin="C"/>
-<pinref part="GND10" gate="1" pin="GND"/>
+<pinref part="D1" gate="1" pin="C"/>
+<pinref part="GND7" gate="1" pin="GND"/>
 <wire x1="208.28" y1="30.48" x2="208.28" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U4" gate="G$1" pin="GND"/>
-<pinref part="GND3" gate="1" pin="GND"/>
+<pinref part="U2" gate="G$1" pin="GND"/>
+<pinref part="GND6" gate="1" pin="GND"/>
 <wire x1="195.58" y1="106.68" x2="195.58" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="J3" gate="G$1" pin="GND"/>
-<pinref part="GND8" gate="1" pin="GND"/>
+<pinref part="J2" gate="G$1" pin="GND"/>
+<pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="48.26" y1="68.58" x2="50.8" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="68.58" x2="50.8" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="J2" gate="G$1" pin="GND"/>
-<pinref part="GND6" gate="1" pin="GND"/>
+<pinref part="J1" gate="G$1" pin="GND"/>
+<pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="48.26" y1="132.08" x2="50.8" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="132.08" x2="50.8" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="Q3" gate="G$1" pin="E"/>
-<pinref part="GND9" gate="1" pin="GND"/>
+<pinref part="GND14" gate="1" pin="GND"/>
 <wire x1="284.48" y1="83.82" x2="284.48" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="0">
 <segment>
-<pinref part="+5V2" gate="G$1" pin="+5V"/>
+<pinref part="+5V1" gate="G$1" pin="+5V"/>
 <wire x1="55.88" y1="236.22" x2="55.88" y2="241.3" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="VBUS"/>
+<pinref part="J3" gate="G$1" pin="VBUS"/>
 <wire x1="53.34" y1="236.22" x2="55.88" y2="236.22" width="0.1524" layer="91"/>
-<pinref part="R2" gate="G$1" pin="1"/>
+<pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="55.88" y1="236.22" x2="76.2" y2="236.22" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="VBUS"/>
+<pinref part="U1" gate="G$1" pin="VBUS"/>
 <wire x1="76.2" y1="236.22" x2="86.36" y2="236.22" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="223.52" x2="76.2" y2="223.52" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="223.52" x2="76.2" y2="236.22" width="0.1524" layer="91"/>
@@ -1463,42 +1417,42 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 </segment>
 <segment>
 <wire x1="162.56" y1="119.38" x2="162.56" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="C6" gate="G$1" pin="1"/>
+<pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="180.34" y1="114.3" x2="180.34" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="119.38" x2="170.18" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="+5V1" gate="G$1" pin="+5V"/>
+<pinref part="+5V2" gate="G$1" pin="+5V"/>
 <wire x1="170.18" y1="119.38" x2="180.34" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="170.18" y1="114.3" x2="170.18" y2="119.38" width="0.1524" layer="91"/>
 <junction x="170.18" y="119.38"/>
-<pinref part="C5" gate="G$1" pin="1"/>
-<pinref part="U4" gate="G$1" pin="VIN"/>
+<pinref part="C1" gate="G$1" pin="1"/>
+<pinref part="U2" gate="G$1" pin="VIN"/>
 <wire x1="185.42" y1="119.38" x2="180.34" y2="119.38" width="0.1524" layer="91"/>
 <junction x="180.34" y="119.38"/>
 </segment>
 <segment>
-<pinref part="R6" gate="G$1" pin="2"/>
+<pinref part="R7" gate="G$1" pin="2"/>
 <wire x1="284.48" y1="124.46" x2="284.48" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="+5V3" gate="G$1" pin="+5V"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="J1" gate="G$1" pin="D+"/>
+<pinref part="J3" gate="G$1" pin="D+"/>
 <wire x1="66.04" y1="226.06" x2="66.04" y2="218.44" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="218.44" x2="81.28" y2="218.44" width="0.1524" layer="91"/>
 <junction x="66.04" y="226.06"/>
 <wire x1="66.04" y1="241.3" x2="66.04" y2="226.06" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<pinref part="U2" gate="G$1" pin="DPI"/>
+<pinref part="R3" gate="G$1" pin="1"/>
+<pinref part="U1" gate="G$1" pin="DPI"/>
 <wire x1="53.34" y1="226.06" x2="66.04" y2="226.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="C1" gate="G$1" pin="1"/>
+<pinref part="C5" gate="G$1" pin="1"/>
 <pinref part="U3" gate="G$1" pin="XTALIN"/>
 <wire x1="261.62" y1="256.54" x2="266.7" y2="256.54" width="0.1524" layer="91"/>
-<pinref part="Y1" gate="G$1" pin="2"/>
+<pinref part="Q2" gate="G$1" pin="2"/>
 <wire x1="266.7" y1="256.54" x2="271.78" y2="256.54" width="0.1524" layer="91"/>
 <wire x1="266.7" y1="254" x2="266.7" y2="256.54" width="0.1524" layer="91"/>
 <junction x="266.7" y="256.54"/>
@@ -1506,10 +1460,10 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="C2" gate="G$1" pin="1"/>
+<pinref part="C6" gate="G$1" pin="1"/>
 <pinref part="U3" gate="G$1" pin="XTLOUT"/>
 <wire x1="261.62" y1="246.38" x2="266.7" y2="246.38" width="0.1524" layer="91"/>
-<pinref part="Y1" gate="G$1" pin="1"/>
+<pinref part="Q2" gate="G$1" pin="1"/>
 <wire x1="266.7" y1="246.38" x2="271.78" y2="246.38" width="0.1524" layer="91"/>
 <wire x1="266.7" y1="248.92" x2="266.7" y2="246.38" width="0.1524" layer="91"/>
 <junction x="266.7" y="246.38"/>
@@ -1517,36 +1471,36 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 </net>
 <net name="+3V3" class="0">
 <segment>
-<pinref part="C3" gate="G$1" pin="1"/>
+<pinref part="C7" gate="G$1" pin="1"/>
 <wire x1="259.08" y1="213.36" x2="259.08" y2="215.9" width="0.1524" layer="91"/>
 <pinref part="U3" gate="G$1" pin="VDD@1"/>
 <wire x1="259.08" y1="215.9" x2="271.78" y2="215.9" width="0.1524" layer="91"/>
-<pinref part="+3V2" gate="G$1" pin="+3V3"/>
+<pinref part="+3V33" gate="G$1" pin="+3V3"/>
 <wire x1="259.08" y1="218.44" x2="259.08" y2="215.9" width="0.1524" layer="91"/>
 <junction x="259.08" y="215.9"/>
 </segment>
 <segment>
-<pinref part="C4" gate="G$1" pin="1"/>
+<pinref part="C8" gate="G$1" pin="1"/>
 <wire x1="259.08" y1="190.5" x2="259.08" y2="193.04" width="0.1524" layer="91"/>
 <pinref part="U3" gate="G$1" pin="VDD@2"/>
 <wire x1="259.08" y1="193.04" x2="271.78" y2="193.04" width="0.1524" layer="91"/>
-<pinref part="+3V1" gate="G$1" pin="+3V3"/>
+<pinref part="+3V34" gate="G$1" pin="+3V3"/>
 <wire x1="259.08" y1="195.58" x2="259.08" y2="193.04" width="0.1524" layer="91"/>
 <junction x="259.08" y="193.04"/>
 </segment>
 <segment>
-<pinref part="R3" gate="G$1" pin="2"/>
-<pinref part="+3V8" gate="G$1" pin="+3V3"/>
+<pinref part="R8" gate="G$1" pin="2"/>
+<pinref part="+3V35" gate="G$1" pin="+3V3"/>
 </segment>
 <segment>
-<pinref part="+3V9" gate="G$1" pin="+3V3"/>
+<pinref part="+3V31" gate="G$1" pin="+3V3"/>
 <pinref part="Q1" gate="G$1" pin="E"/>
 <wire x1="66.04" y1="269.24" x2="66.04" y2="264.16" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C17" gate="G$1" pin="1"/>
-<wire x1="342.9" y1="114.3" x2="342.9" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="+3V10" gate="G$1" pin="+3V3"/>
+<pinref part="C9" gate="G$1" pin="1"/>
+<wire x1="350.52" y1="109.22" x2="350.52" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="+3V36" gate="G$1" pin="+3V3"/>
 </segment>
 </net>
 <net name="!USB_CONNECT" class="0">
@@ -1568,7 +1522,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <label x="347.98" y="248.92" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R2" gate="G$1" pin="2"/>
+<pinref part="R4" gate="G$1" pin="2"/>
 <wire x1="96.52" y1="236.22" x2="116.84" y2="236.22" width="0.1524" layer="91"/>
 <label x="109.22" y="236.22" size="1.778" layer="95"/>
 </segment>
@@ -1578,7 +1532,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <pinref part="U3" gate="G$1" pin="RESET/PIO0_0"/>
 <wire x1="340.36" y1="256.54" x2="342.9" y2="256.54" width="0.1524" layer="91"/>
 <label x="347.98" y="256.54" size="1.778" layer="95"/>
-<pinref part="R3" gate="G$1" pin="1"/>
+<pinref part="R8" gate="G$1" pin="1"/>
 <wire x1="342.9" y1="256.54" x2="370.84" y2="256.54" width="0.1524" layer="91"/>
 <wire x1="342.9" y1="259.08" x2="342.9" y2="256.54" width="0.1524" layer="91"/>
 <junction x="342.9" y="256.54"/>
@@ -1600,10 +1554,9 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <net name="!ISP_EN" class="0">
 <segment>
 <label x="359.664" y="115.316" size="1.778" layer="95" rot="R90"/>
-<pinref part="C17" gate="G$1" pin="2"/>
+<pinref part="C9" gate="G$1" pin="2"/>
 <wire x1="360.68" y1="101.6" x2="360.68" y2="124.46" width="0.1524" layer="91"/>
-<wire x1="360.68" y1="101.6" x2="342.9" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="342.9" y1="101.6" x2="342.9" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="360.68" y1="101.6" x2="350.52" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="D2" gate="G$1" pin="A2"/>
 <wire x1="360.68" y1="99.06" x2="360.68" y2="101.6" width="0.1524" layer="91"/>
 <junction x="360.68" y="101.6"/>
@@ -1616,7 +1569,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="2"/>
+<pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="66.04" y1="254" x2="66.04" y2="251.46" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="C"/>
 </segment>
@@ -1625,7 +1578,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <segment>
 <wire x1="101.6" y1="223.52" x2="116.84" y2="223.52" width="0.1524" layer="91"/>
 <label x="106.68" y="223.52" size="1.778" layer="95"/>
-<pinref part="U2" gate="G$1" pin="DMO"/>
+<pinref part="U1" gate="G$1" pin="DMO"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="USB_DM"/>
@@ -1637,7 +1590,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <segment>
 <wire x1="101.6" y1="215.9" x2="116.84" y2="215.9" width="0.1524" layer="91"/>
 <label x="106.68" y="215.9" size="1.778" layer="95"/>
-<pinref part="U2" gate="G$1" pin="DPO"/>
+<pinref part="U1" gate="G$1" pin="DPO"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="USB_DP"/>
@@ -1649,8 +1602,8 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <segment>
 <wire x1="71.12" y1="231.14" x2="71.12" y2="220.98" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="220.98" x2="81.28" y2="220.98" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="DMI"/>
-<pinref part="J1" gate="G$1" pin="D-"/>
+<pinref part="U1" gate="G$1" pin="DMI"/>
+<pinref part="J3" gate="G$1" pin="D-"/>
 <wire x1="53.34" y1="231.14" x2="71.12" y2="231.14" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -1671,72 +1624,82 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <label x="347.98" y="200.66" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="R13" gate="G$1" pin="1"/>
+<pinref part="R5" gate="G$1" pin="1"/>
 <wire x1="195.58" y1="45.72" x2="185.42" y2="45.72" width="0.1524" layer="91"/>
 <label x="185.42" y="45.72" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$14" class="0">
 <segment>
-<pinref part="R13" gate="G$1" pin="2"/>
-<pinref part="D3" gate="1" pin="A"/>
+<pinref part="R5" gate="G$1" pin="2"/>
+<pinref part="D1" gate="1" pin="A"/>
 <wire x1="205.74" y1="45.72" x2="208.28" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="208.28" y1="45.72" x2="208.28" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VOUT" class="0">
 <segment>
-<pinref part="C7" gate="G$1" pin="1"/>
+<pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="210.82" y1="119.38" x2="220.98" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="220.98" y1="119.38" x2="226.06" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="210.82" y1="114.3" x2="210.82" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="+3V5" gate="G$1" pin="+3V3"/>
+<pinref part="+3V32" gate="G$1" pin="+3V3"/>
 <wire x1="220.98" y1="114.3" x2="220.98" y2="119.38" width="0.1524" layer="91"/>
 <junction x="220.98" y="119.38"/>
-<pinref part="C8" gate="G$1" pin="1"/>
-<pinref part="U4" gate="G$1" pin="VOUT"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<pinref part="U2" gate="G$1" pin="VOUT"/>
 <wire x1="205.74" y1="119.38" x2="210.82" y2="119.38" width="0.1524" layer="91"/>
 <junction x="210.82" y="119.38"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="J2" gate="G$1" pin="VBUS"/>
-<pinref part="R4" gate="G$1" pin="1"/>
+<pinref part="J1" gate="G$1" pin="VBUS"/>
+<pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="48.26" y1="152.4" x2="55.88" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="TV_SENSE" class="0">
 <segment>
-<pinref part="R4" gate="G$1" pin="2"/>
+<pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="66.04" y1="152.4" x2="83.82" y2="152.4" width="0.1524" layer="91"/>
 <label x="71.12" y="152.4" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="SWCLK/SCK0/CT16B0_MAT2/PIO0_10"/>
+<wire x1="340.36" y1="228.6" x2="370.84" y2="228.6" width="0.1524" layer="91"/>
+<label x="360.68" y="228.6" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="J3" gate="G$1" pin="VBUS"/>
-<pinref part="R5" gate="G$1" pin="1"/>
+<pinref part="J2" gate="G$1" pin="VBUS"/>
+<pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="48.26" y1="88.9" x2="55.88" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="AV_SENSE" class="0">
 <segment>
-<pinref part="R5" gate="G$1" pin="2"/>
+<pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="66.04" y1="88.9" x2="83.82" y2="88.9" width="0.1524" layer="91"/>
 <label x="71.12" y="88.9" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="TD/AD0/CT32B0_MAT3/PIO0_11"/>
+<wire x1="340.36" y1="226.06" x2="370.84" y2="226.06" width="0.1524" layer="91"/>
+<label x="360.68" y="226.06" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="R7" gate="G$1" pin="1"/>
+<pinref part="R6" gate="G$1" pin="1"/>
 <pinref part="Q3" gate="G$1" pin="B"/>
 <wire x1="274.32" y1="93.98" x2="279.4" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="IR" class="0">
 <segment>
-<pinref part="R7" gate="G$1" pin="2"/>
+<pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="264.16" y1="93.98" x2="251.46" y2="93.98" width="0.1524" layer="91"/>
 <label x="254" y="93.98" size="1.778" layer="95"/>
 </segment>
