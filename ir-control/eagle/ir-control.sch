@@ -1221,7 +1221,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <attribute name="NAME" x="345.44" y="265.4046" size="1.778" layer="95"/>
 <attribute name="VALUE" x="345.186" y="262.382" size="1.778" layer="96"/>
 </instance>
-<instance part="+3V35" gate="G$1" x="342.9" y="271.78"/>
+<instance part="+3V35" gate="G$1" x="342.9" y="274.32"/>
 <instance part="S2" gate="G$1" x="383.54" y="83.82" smashed="yes">
 <attribute name="NAME" x="377.952" y="79.248" size="1.778" layer="95"/>
 </instance>
@@ -1491,6 +1491,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <segment>
 <pinref part="R8" gate="G$1" pin="2"/>
 <pinref part="+3V35" gate="G$1" pin="+3V3"/>
+<wire x1="342.9" y1="271.78" x2="342.9" y2="269.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="+3V31" gate="G$1" pin="+3V3"/>
@@ -1501,6 +1502,19 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <pinref part="C9" gate="G$1" pin="1"/>
 <wire x1="350.52" y1="109.22" x2="350.52" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="+3V36" gate="G$1" pin="+3V3"/>
+</segment>
+<segment>
+<pinref part="C3" gate="G$1" pin="1"/>
+<wire x1="210.82" y1="119.38" x2="220.98" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="220.98" y1="119.38" x2="226.06" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="114.3" x2="210.82" y2="119.38" width="0.1524" layer="91"/>
+<pinref part="+3V32" gate="G$1" pin="+3V3"/>
+<wire x1="220.98" y1="114.3" x2="220.98" y2="119.38" width="0.1524" layer="91"/>
+<junction x="220.98" y="119.38"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<pinref part="U2" gate="G$1" pin="VOUT"/>
+<wire x1="205.74" y1="119.38" x2="210.82" y2="119.38" width="0.1524" layer="91"/>
+<junction x="210.82" y="119.38"/>
 </segment>
 </net>
 <net name="!USB_CONNECT" class="0">
@@ -1635,21 +1649,6 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <pinref part="D1" gate="1" pin="A"/>
 <wire x1="205.74" y1="45.72" x2="208.28" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="208.28" y1="45.72" x2="208.28" y2="38.1" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="VOUT" class="0">
-<segment>
-<pinref part="C3" gate="G$1" pin="1"/>
-<wire x1="210.82" y1="119.38" x2="220.98" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="220.98" y1="119.38" x2="226.06" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="210.82" y1="114.3" x2="210.82" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="+3V32" gate="G$1" pin="+3V3"/>
-<wire x1="220.98" y1="114.3" x2="220.98" y2="119.38" width="0.1524" layer="91"/>
-<junction x="220.98" y="119.38"/>
-<pinref part="C4" gate="G$1" pin="1"/>
-<pinref part="U2" gate="G$1" pin="VOUT"/>
-<wire x1="205.74" y1="119.38" x2="210.82" y2="119.38" width="0.1524" layer="91"/>
-<junction x="210.82" y="119.38"/>
 </segment>
 </net>
 <net name="N$2" class="0">
