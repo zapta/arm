@@ -1082,10 +1082,14 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 </variantdefs>
 <classes>
 <class number="0" name="default" width="0" drill="0">
+<clearance class="0" value="0.205"/>
 </class>
 <class number="1" name="power" width="0.254" drill="0">
 </class>
 <class number="2" name="critical" width="0" drill="0">
+<clearance class="0" value="0.205"/>
+<clearance class="1" value="0.205"/>
+<clearance class="2" value="0.205"/>
 </class>
 </classes>
 <parts>
@@ -1134,8 +1138,8 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <part name="C1" library="ir-control" deviceset="C" device="C0805K" value="10u"/>
 <part name="C4" library="ir-control" deviceset="C" device="C0805K" value="10u"/>
 <part name="U2" library="ir-control" deviceset="LDO" device="" value="MCP1754ST-3302E/CB"/>
-<part name="J1" library="ir-control" deviceset="USB-CONN" device="" value="MICRO USB"/>
 <part name="J2" library="ir-control" deviceset="USB-CONN" device="" value="MICRO USB"/>
+<part name="J1" library="ir-control" deviceset="USB-CONN" device="" value="MICRO USB"/>
 <part name="GND1" library="ir-control" deviceset="GND" device=""/>
 <part name="GND2" library="ir-control" deviceset="GND" device=""/>
 <part name="R1" library="ir-control" deviceset="R" device="R0402" value="10K"/>
@@ -1266,8 +1270,8 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <attribute name="NAME" x="190.5" y="129.54" size="1.778" layer="95"/>
 <attribute name="VALUE" x="182.88" y="124.46" size="1.778" layer="96"/>
 </instance>
-<instance part="J1" gate="G$1" x="40.64" y="137.16"/>
-<instance part="J2" gate="G$1" x="40.64" y="73.66"/>
+<instance part="J2" gate="G$1" x="40.64" y="137.16"/>
+<instance part="J1" gate="G$1" x="40.64" y="73.66"/>
 <instance part="GND1" gate="1" x="50.8" y="127"/>
 <instance part="GND2" gate="1" x="50.8" y="63.5"/>
 <instance part="R1" gate="G$1" x="60.96" y="152.4" smashed="yes">
@@ -1383,13 +1387,13 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <wire x1="195.58" y1="106.68" x2="195.58" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="J2" gate="G$1" pin="GND"/>
+<pinref part="J1" gate="G$1" pin="GND"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="48.26" y1="68.58" x2="50.8" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="68.58" x2="50.8" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="GND"/>
+<pinref part="J2" gate="G$1" pin="GND"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="48.26" y1="132.08" x2="50.8" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="132.08" x2="50.8" y2="129.54" width="0.1524" layer="91"/>
@@ -1653,7 +1657,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="J1" gate="G$1" pin="VBUS"/>
+<pinref part="J2" gate="G$1" pin="VBUS"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="48.26" y1="152.4" x2="55.88" y2="152.4" width="0.1524" layer="91"/>
 </segment>
@@ -1672,7 +1676,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="J2" gate="G$1" pin="VBUS"/>
+<pinref part="J1" gate="G$1" pin="VBUS"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="48.26" y1="88.9" x2="55.88" y2="88.9" width="0.1524" layer="91"/>
 </segment>
