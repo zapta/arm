@@ -375,37 +375,30 @@ Inifineon</description>
 <description>&lt;b&gt;Jack connectors according to JISC 6560, 2.5 mm&lt;/b&gt;&lt;p&gt;
 Klinkensteckverbinder nach JISC 6560, 2,5 mm&lt;br&gt;
 Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
-<wire x1="-2.9" y1="7.725" x2="-2.9" y2="8.995" width="0.2032" layer="21"/>
-<wire x1="-1.9" y1="11.015" x2="1.9" y2="11.015" width="0.2032" layer="21"/>
-<wire x1="2.9" y1="8.995" x2="2.9" y2="7.725" width="0.2032" layer="21"/>
-<wire x1="-2.4" y1="7.065" x2="2.4" y2="7.065" width="0.2032" layer="21"/>
-<wire x1="4.9" y1="5.965" x2="4.9" y2="-4.35" width="0.2032" layer="21"/>
-<wire x1="4.9" y1="-4.35" x2="2.25" y2="-4.35" width="0.2032" layer="21"/>
-<wire x1="2.25" y1="-4.35" x2="-2.25" y2="-4.35" width="0.2032" layer="51"/>
-<wire x1="-2.25" y1="-4.35" x2="-4.1" y2="-4.35" width="0.2032" layer="25"/>
-<wire x1="-4.1" y1="-4.35" x2="-4.9" y2="-4.35" width="0.2032" layer="51"/>
-<wire x1="-4.9" y1="-4.35" x2="-4.9" y2="-1.7" width="0.2032" layer="51"/>
-<wire x1="-4.9" y1="-1.7" x2="-4.9" y2="5.965" width="0.2032" layer="21"/>
-<wire x1="-2.9" y1="8.995" x2="-1.9" y2="8.995" width="0.2032" layer="21"/>
-<wire x1="-1.9" y1="8.995" x2="1.9" y2="8.995" width="0.2032" layer="21"/>
-<wire x1="1.9" y1="8.995" x2="2.9" y2="8.995" width="0.2032" layer="21"/>
-<wire x1="-2.9" y1="7.725" x2="-1.9" y2="7.725" width="0.2032" layer="21"/>
-<wire x1="-1.9" y1="7.725" x2="1.9" y2="7.725" width="0.2032" layer="21"/>
-<wire x1="1.9" y1="7.725" x2="2.9" y2="7.725" width="0.2032" layer="21"/>
-<wire x1="-1.9" y1="8.995" x2="-1.9" y2="11.015" width="0.2032" layer="21"/>
-<wire x1="1.9" y1="11.015" x2="1.9" y2="8.995" width="0.2032" layer="21"/>
-<wire x1="-1.9" y1="7.165" x2="-1.9" y2="7.725" width="0.2032" layer="21"/>
-<wire x1="1.9" y1="7.725" x2="1.9" y2="7.165" width="0.2032" layer="21"/>
-<wire x1="-4.9" y1="5.965" x2="-2.4" y2="5.965" width="0.2032" layer="21"/>
-<wire x1="-2.4" y1="5.965" x2="2.4" y2="5.965" width="0.2032" layer="21"/>
-<wire x1="2.4" y1="5.965" x2="4.9" y2="5.965" width="0.2032" layer="21"/>
-<wire x1="-2.4" y1="5.965" x2="-2.4" y2="7.065" width="0.2032" layer="21"/>
-<wire x1="2.4" y1="7.065" x2="2.4" y2="5.965" width="0.2032" layer="21"/>
-<pad name="3" x="0" y="-4.7" drill="2"/>
-<pad name="2" x="3.65" y="1.15" drill="2" rot="R90"/>
-<pad name="1" x="1.2" y="-0.85" drill="2"/>
-<text x="-5.715" y="-4.445" size="1.27" layer="25" rot="R90">&gt;NAME</text>
-<text x="6.985" y="-4.445" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<wire x1="-10.9" y1="-3" x2="-10.9" y2="3" width="0.2032" layer="48"/>
+<wire x1="-8" y1="3" x2="-8" y2="-3" width="0.2032" layer="48"/>
+<wire x1="2.5" y1="6" x2="2.5" y2="-6" width="0.2032" layer="21"/>
+<wire x1="2.5" y1="-6" x2="-9.5" y2="-6" width="0.2032" layer="51"/>
+<wire x1="-9.5" y1="-6" x2="-9.5" y2="-2" width="0.2032" layer="51"/>
+<wire x1="-9.5" y1="-2" x2="-8" y2="-2" width="0.2032" layer="51"/>
+<wire x1="-8" y1="-2" x2="-8" y2="2" width="0.2032" layer="51"/>
+<wire x1="-8" y1="2" x2="-9.5" y2="2" width="0.2032" layer="51"/>
+<wire x1="-9.5" y1="2" x2="-9.5" y2="6" width="0.2032" layer="51"/>
+<wire x1="-10.9" y1="3" x2="-8" y2="3" width="0.2032" layer="48"/>
+<wire x1="-10.9" y1="-3" x2="-8" y2="-3" width="0.2032" layer="48"/>
+<wire x1="-9.5" y1="6" x2="2.5" y2="6" width="0.2032" layer="21"/>
+<pad name="4" x="0" y="-2.5" drill="1.2"/>
+<pad name="3" x="0" y="5" drill="1.2" rot="R90"/>
+<pad name="5" x="0" y="2.5" drill="1.2"/>
+<text x="-7.445" y="8.715" size="1.27" layer="25">&gt;NAME</text>
+<text x="-7.445" y="7.015" size="1.27" layer="27">&gt;VALUE</text>
+<pad name="2" x="0" y="-5" drill="1.2" rot="R90"/>
+<pad name="1" x="-5" y="0" drill="1.2" rot="R90"/>
+<hole x="0" y="0" drill="1.2"/>
+<hole x="-5" y="5" drill="1.2"/>
+<hole x="-7.5" y="5" drill="1.2"/>
+<hole x="-7.5" y="-5" drill="1.2"/>
+<hole x="-5" y="-5" drill="1.2"/>
 </package>
 </packages>
 <symbols>
@@ -721,8 +714,8 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <wire x1="1.524" y1="1.016" x2="2.286" y2="1.778" width="0.1524" layer="94"/>
 <wire x1="-5.08" y1="0" x2="-2.667" y2="0" width="0.1524" layer="94"/>
 <wire x1="-2.54" y1="-2.54" x2="4.572" y2="-2.54" width="0.1524" layer="94"/>
-<pin name="2" x="-5.08" y="2.54" visible="pad" length="short" direction="pas"/>
-<pin name="4" x="-5.08" y="0" visible="pad" length="point" direction="pas"/>
+<pin name="3" x="-5.08" y="2.54" visible="pad" length="short" direction="pas"/>
+<pin name="2" x="-5.08" y="0" visible="pad" length="point" direction="pas"/>
 <pin name="1" x="-5.08" y="-2.54" visible="pad" length="short" direction="pas"/>
 <text x="-2.54" y="4.064" size="1.778" layer="95">&gt;NAME</text>
 <text x="-2.54" y="-6.096" size="1.778" layer="96">&gt;VALUE</text>
@@ -1060,7 +1053,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="4" pad="3"/>
+<connect gate="G$1" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name="">
@@ -1282,20 +1275,20 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <attribute name="NAME" x="52.832" y="89.8906" size="1.778" layer="95"/>
 <attribute name="VALUE" x="53.086" y="84.836" size="1.778" layer="96"/>
 </instance>
-<instance part="J4" gate="G$1" x="299.72" y="104.14"/>
-<instance part="+5V3" gate="G$1" x="284.48" y="132.08" rot="MR0"/>
-<instance part="R7" gate="G$1" x="284.48" y="119.38" smashed="yes" rot="R90">
-<attribute name="NAME" x="283.4894" y="111.252" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="288.544" y="111.506" size="1.778" layer="96" rot="R90"/>
+<instance part="J4" gate="G$1" x="297.18" y="101.6"/>
+<instance part="+5V3" gate="G$1" x="287.02" y="127" rot="MR0"/>
+<instance part="R7" gate="G$1" x="287.02" y="114.3" smashed="yes" rot="R90">
+<attribute name="NAME" x="291.1094" y="113.792" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="283.464" y="111.506" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="GND14" gate="1" x="284.48" y="81.28"/>
-<instance part="Q3" gate="G$1" x="281.94" y="93.98" smashed="yes">
-<attribute name="NAME" x="289.56" y="93.98" size="1.778" layer="95"/>
-<attribute name="VALUE" x="289.56" y="91.44" size="1.778" layer="96"/>
+<instance part="GND14" gate="1" x="287.02" y="76.2"/>
+<instance part="Q3" gate="G$1" x="284.48" y="88.9" smashed="yes">
+<attribute name="NAME" x="289.56" y="88.9" size="1.778" layer="95"/>
+<attribute name="VALUE" x="289.56" y="86.36" size="1.778" layer="96"/>
 </instance>
-<instance part="R6" gate="G$1" x="269.24" y="93.98" smashed="yes" rot="R180">
-<attribute name="NAME" x="277.368" y="92.9894" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="277.114" y="98.044" size="1.778" layer="96" rot="R180"/>
+<instance part="R6" gate="G$1" x="271.78" y="88.9" smashed="yes" rot="R180">
+<attribute name="NAME" x="279.908" y="87.9094" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="279.654" y="92.964" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -1401,7 +1394,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <segment>
 <pinref part="Q3" gate="G$1" pin="E"/>
 <pinref part="GND14" gate="1" pin="GND"/>
-<wire x1="284.48" y1="83.82" x2="284.48" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="287.02" y1="78.74" x2="287.02" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -1435,7 +1428,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 </segment>
 <segment>
 <pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="284.48" y1="124.46" x2="284.48" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="287.02" y1="119.38" x2="287.02" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="+5V3" gate="G$1" pin="+5V"/>
 </segment>
 </net>
@@ -1697,19 +1690,35 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <segment>
 <pinref part="R6" gate="G$1" pin="1"/>
 <pinref part="Q3" gate="G$1" pin="B"/>
-<wire x1="274.32" y1="93.98" x2="279.4" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="276.86" y1="88.9" x2="281.94" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="IR" class="0">
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
-<wire x1="264.16" y1="93.98" x2="251.46" y2="93.98" width="0.1524" layer="91"/>
-<label x="254" y="93.98" size="1.778" layer="95"/>
+<wire x1="266.7" y1="88.9" x2="259.08" y2="88.9" width="0.1524" layer="91"/>
+<label x="259.08" y="88.9" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="MISO0/CT16B0_MAT0/PIO0_8"/>
 <wire x1="340.36" y1="233.68" x2="370.84" y2="233.68" width="0.1524" layer="91"/>
 <label x="347.98" y="233.68" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="J4" gate="G$1" pin="1"/>
+<pinref part="Q3" gate="G$1" pin="C"/>
+<wire x1="292.1" y1="99.06" x2="287.02" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="287.02" y1="99.06" x2="287.02" y2="93.98" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<pinref part="J4" gate="G$1" pin="2"/>
+<pinref part="R7" gate="G$1" pin="1"/>
+<wire x1="292.1" y1="101.6" x2="287.02" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="287.02" y1="101.6" x2="287.02" y2="109.22" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
