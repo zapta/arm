@@ -387,11 +387,11 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <wire x1="-10.9" y1="3" x2="-8" y2="3" width="0.2032" layer="48"/>
 <wire x1="-10.9" y1="-3" x2="-8" y2="-3" width="0.2032" layer="48"/>
 <wire x1="-9.5" y1="6" x2="2.5" y2="6" width="0.2032" layer="21"/>
+<pad name="1" x="-5" y="0" drill="1.2" rot="R90"/>
+<pad name="2" x="0" y="-5" drill="1.2" rot="R90"/>
 <pad name="3" x="0" y="5" drill="1.2" rot="R90"/>
 <text x="-7.445" y="8.715" size="1.27" layer="25">&gt;NAME</text>
 <text x="-7.445" y="7.015" size="1.27" layer="27">&gt;VALUE</text>
-<pad name="2" x="0" y="-5" drill="1.2" rot="R90"/>
-<pad name="1" x="-5" y="0" drill="1.2" rot="R90"/>
 <hole x="0" y="0" drill="1.2"/>
 <hole x="-5" y="5" drill="1.2"/>
 <hole x="-7.5" y="5" drill="1.2"/>
@@ -400,10 +400,10 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 </package>
 <package name="SO6">
 <description>&lt;b&gt;SMALL OUTLINE PACKAGE&lt;/b&gt;</description>
-<wire x1="1.9" y1="2.3" x2="1.9" y2="-2.3" width="0.2032" layer="51"/>
-<wire x1="1.9" y1="-2.3" x2="-1.9" y2="-2.3" width="0.2032" layer="51"/>
-<wire x1="-1.9" y1="-2.3" x2="-1.9" y2="2.3" width="0.2032" layer="51"/>
-<wire x1="-1.9" y1="2.3" x2="1.9" y2="2.3" width="0.2032" layer="51"/>
+<wire x1="1.9" y1="2.3" x2="1.9" y2="-2.3" width="0.127" layer="21"/>
+<wire x1="1.9" y1="-2.3" x2="-1.9" y2="-2.3" width="0.127" layer="21"/>
+<wire x1="-1.9" y1="-2.3" x2="-1.9" y2="2.3" width="0.127" layer="21"/>
+<wire x1="-1.9" y1="2.3" x2="1.9" y2="2.3" width="0.127" layer="21"/>
 <smd name="1" x="-1.27" y="-3.15" dx="0.8" dy="1.2" layer="1"/>
 <smd name="3" x="1.27" y="-3.15" dx="0.8" dy="1.2" layer="1"/>
 <smd name="4" x="1.27" y="3.15" dx="0.8" dy="1.2" layer="1"/>
@@ -726,15 +726,16 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <wire x1="1.524" y1="1.016" x2="2.286" y2="1.778" width="0.1524" layer="94"/>
 <wire x1="-5.08" y1="0" x2="-2.667" y2="0" width="0.1524" layer="94"/>
 <wire x1="-2.54" y1="-2.54" x2="4.572" y2="-2.54" width="0.1524" layer="94"/>
-<pin name="3" x="-5.08" y="2.54" visible="pad" length="short" direction="pas"/>
-<pin name="2" x="-5.08" y="0" visible="pad" length="point" direction="pas"/>
-<pin name="1" x="-5.08" y="-2.54" visible="pad" length="short" direction="pas"/>
-<text x="-2.54" y="4.064" size="1.778" layer="95">&gt;NAME</text>
-<text x="-2.54" y="-6.096" size="1.778" layer="96">&gt;VALUE</text>
 <wire x1="-2.54" y1="0" x2="-1.651" y2="-0.889" width="0.1524" layer="94"/>
 <wire x1="-1.651" y1="-0.889" x2="-0.889" y2="-0.127" width="0.1524" layer="94"/>
+<pin name="1" x="-5.08" y="-2.54" visible="pad" length="short" direction="pas"/>
+<pin name="2" x="-5.08" y="0" visible="pad" length="point" direction="pas"/>
+<pin name="3" x="-5.08" y="2.54" visible="pad" length="short" direction="pas"/>
+<text x="-2.54" y="4.064" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-6.096" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="OPTO_COUPLER">
+<circle x="3.302" y="0" radius="0.4064" width="0.1524" layer="94"/>
 <wire x1="-5.715" y1="1.27" x2="-6.985" y2="-1.27" width="0.254" layer="94"/>
 <wire x1="-6.985" y1="-1.27" x2="-8.255" y2="1.27" width="0.254" layer="94"/>
 <wire x1="-5.715" y1="-1.27" x2="-6.985" y2="-1.27" width="0.254" layer="94"/>
@@ -762,15 +763,14 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <wire x1="5.08" y1="-5.08" x2="0" y2="-5.08" width="0.4064" layer="94"/>
 <wire x1="0" y1="-5.08" x2="-10.16" y2="-5.08" width="0.4064" layer="94"/>
 <wire x1="0" y1="1.27" x2="0" y2="5.08" width="0.1524" layer="94"/>
-<circle x="3.302" y="0" radius="0.4064" width="0.1524" layer="94"/>
-<text x="-12.065" y="5.715" size="1.778" layer="95">&gt;NAME</text>
-<text x="-14.605" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
+<wire x1="0" y1="-1.27" x2="0" y2="-5.08" width="0.1524" layer="94"/>
 <pin name="A" x="-12.7" y="2.54" visible="pad" length="short" direction="pas"/>
 <pin name="C" x="-12.7" y="-2.54" visible="pad" length="short" direction="pas"/>
+<pin name="GND" x="0" y="-7.62" visible="pad" length="short" direction="pas" rot="R90"/>
 <pin name="OUT" x="7.62" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
 <pin name="VCC" x="0" y="7.62" visible="pad" length="short" direction="pas" rot="R270"/>
-<pin name="GND" x="0" y="-7.62" visible="pad" length="short" direction="pas" rot="R90"/>
-<wire x1="0" y1="-1.27" x2="0" y2="-5.08" width="0.1524" layer="94"/>
+<text x="-12.065" y="5.715" size="1.778" layer="95">&gt;NAME</text>
+<text x="-14.605" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -1160,7 +1160,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <part name="GND3" library="ir-control" deviceset="GND" device=""/>
 <part name="+5V1" library="ir-control" deviceset="+5V" device=""/>
 <part name="GND15" library="ir-control" deviceset="GND" device=""/>
-<part name="S1" library="ir-control" deviceset="PUSH-BUTTON" device=""/>
+<part name="S1" library="ir-control" deviceset="PUSH-BUTTON" device="" value="CKN10502CT-ND"/>
 <part name="GND6" library="ir-control" deviceset="GND" device=""/>
 <part name="C3" library="ir-control" deviceset="C" device="C0603K" value="1u"/>
 <part name="GND8" library="ir-control" deviceset="GND" device=""/>
@@ -1207,7 +1207,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <part name="+5V3" library="ir-control" deviceset="+5V" device=""/>
 <part name="R7" library="ir-control" deviceset="R" device="R0402" value="330"/>
 <part name="GND14" library="ir-control" deviceset="GND" device=""/>
-<part name="Q3" library="ir-control" deviceset="NPN" device=""/>
+<part name="Q3" library="ir-control" deviceset="NPN" device="" value="MMBT2222A"/>
 <part name="R6" library="ir-control" deviceset="R" device="R0402" value="1K5"/>
 <part name="U5" library="ir-control" deviceset="OPTO_COUPLER" device="" value="TLP2361"/>
 <part name="GND17" library="ir-control" deviceset="GND" device=""/>
