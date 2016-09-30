@@ -404,12 +404,12 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <wire x1="-10.9" y1="-3" x2="-10.9" y2="3" width="0.2032" layer="48"/>
 <wire x1="-8" y1="3" x2="-8" y2="-3" width="0.2032" layer="48"/>
 <wire x1="2.5" y1="6" x2="2.5" y2="-6" width="0.2032" layer="21"/>
-<wire x1="2.5" y1="-6" x2="-9.5" y2="-6" width="0.2032" layer="51"/>
-<wire x1="-9.5" y1="-6" x2="-9.5" y2="-2" width="0.2032" layer="51"/>
-<wire x1="-9.5" y1="-2" x2="-8" y2="-2" width="0.2032" layer="51"/>
-<wire x1="-8" y1="-2" x2="-8" y2="2" width="0.2032" layer="51"/>
-<wire x1="-8" y1="2" x2="-9.5" y2="2" width="0.2032" layer="51"/>
-<wire x1="-9.5" y1="2" x2="-9.5" y2="6" width="0.2032" layer="51"/>
+<wire x1="2.5" y1="-6" x2="-9.5" y2="-6" width="0.2032" layer="21"/>
+<wire x1="-9.5" y1="-6" x2="-9.5" y2="-2" width="0.2032" layer="21"/>
+<wire x1="-9.5" y1="-2" x2="-8" y2="-2" width="0.2032" layer="21"/>
+<wire x1="-8" y1="-2" x2="-8" y2="2" width="0.2032" layer="21"/>
+<wire x1="-8" y1="2" x2="-9.5" y2="2" width="0.2032" layer="21"/>
+<wire x1="-9.5" y1="2" x2="-9.5" y2="6" width="0.2032" layer="21"/>
 <wire x1="-10.9" y1="3" x2="-8" y2="3" width="0.2032" layer="48"/>
 <wire x1="-10.9" y1="-3" x2="-8" y2="-3" width="0.2032" layer="48"/>
 <wire x1="-9.5" y1="6" x2="2.5" y2="6" width="0.2032" layer="21"/>
@@ -1406,35 +1406,36 @@ design rules under a new name.</description>
 <approved hash="4,16,b255648166a88c34"/>
 <approved hash="4,16,dc3d0ce90e80e21c"/>
 <approved hash="4,16,9c4d4c794eb8ac14"/>
-<approved hash="18,29,ea21638c21ea50e7"/>
+<approved hash="18,29,8d1662ac20ca3750"/>
 <approved hash="18,29,3eec628820ee84aa"/>
 <approved hash="18,29,5f2f638021e6e5e9"/>
 <approved hash="18,29,c96e608c22ea73a8"/>
 <approved hash="18,29,acc963cc21ea168f"/>
-<approved hash="18,29,8d1662ac20ca3750"/>
+<approved hash="18,29,ea21638c21ea50e7"/>
 <approved hash="18,29,aa77b2b74c865a64"/>
 <approved hash="18,29,5f634781b7b0a170"/>
-<approved hash="18,29,2595e6396236459a"/>
 <approved hash="18,29,43dd2271a67323df"/>
+<approved hash="18,29,2595e6396236459a"/>
 <approved hash="18,29,83f3225f2e51a3fd"/>
 <approved hash="18,29,a5f76e5b625685fa"/>
 <approved hash="18,29,c3857435d0429504"/>
 <approved hash="18,29,1e2ce791723facbc"/>
-<approved hash="18,29,7f2beb423135e55f"/>
 <approved hash="18,29,7284e63bef910173"/>
 <approved hash="18,29,8a680b5d69b11071"/>
+<approved hash="18,29,7f2beb423135e55f"/>
 <approved hash="18,29,0f8f20be8413b20c"/>
 <approved hash="18,29,31a809a371ce4db4"/>
 <approved hash="18,29,24fc1f77671258f8"/>
 <approved hash="18,29,e5783d4441289d65"/>
 <approved hash="18,29,f0342b9857fc8831"/>
-<approved hash="18,29,2373ea02ea3b23e2"/>
 <approved hash="18,29,2377ea06ea37236e"/>
-<approved hash="18,29,7393da24da3d73a2"/>
+<approved hash="18,29,2373ea02ea3b23e2"/>
 <approved hash="18,29,7397da20dab173ae"/>
+<approved hash="18,29,7393da24da3d73a2"/>
+<approved hash="18,29,16ffc18619efde9a"/>
 <approved hash="18,29,988b5ffc8bb15cca"/>
-<approved hash="18,29,2377ea06ea37236e"/>
 <approved hash="18,29,2373ea02ea3b23e2"/>
+<approved hash="18,29,2377ea06ea37236e"/>
 <approved hash="18,29,5393fa24fa3d53a2"/>
 <approved hash="18,29,5397fa20fab153ae"/>
 <approved hash="5,1,89355a1ec6cb6e04"/>

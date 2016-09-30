@@ -378,12 +378,12 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <wire x1="-10.9" y1="-3" x2="-10.9" y2="3" width="0.2032" layer="48"/>
 <wire x1="-8" y1="3" x2="-8" y2="-3" width="0.2032" layer="48"/>
 <wire x1="2.5" y1="6" x2="2.5" y2="-6" width="0.2032" layer="21"/>
-<wire x1="2.5" y1="-6" x2="-9.5" y2="-6" width="0.2032" layer="51"/>
-<wire x1="-9.5" y1="-6" x2="-9.5" y2="-2" width="0.2032" layer="51"/>
-<wire x1="-9.5" y1="-2" x2="-8" y2="-2" width="0.2032" layer="51"/>
-<wire x1="-8" y1="-2" x2="-8" y2="2" width="0.2032" layer="51"/>
-<wire x1="-8" y1="2" x2="-9.5" y2="2" width="0.2032" layer="51"/>
-<wire x1="-9.5" y1="2" x2="-9.5" y2="6" width="0.2032" layer="51"/>
+<wire x1="2.5" y1="-6" x2="-9.5" y2="-6" width="0.2032" layer="21"/>
+<wire x1="-9.5" y1="-6" x2="-9.5" y2="-2" width="0.2032" layer="21"/>
+<wire x1="-9.5" y1="-2" x2="-8" y2="-2" width="0.2032" layer="21"/>
+<wire x1="-8" y1="-2" x2="-8" y2="2" width="0.2032" layer="21"/>
+<wire x1="-8" y1="2" x2="-9.5" y2="2" width="0.2032" layer="21"/>
+<wire x1="-9.5" y1="2" x2="-9.5" y2="6" width="0.2032" layer="21"/>
 <wire x1="-10.9" y1="3" x2="-8" y2="3" width="0.2032" layer="48"/>
 <wire x1="-10.9" y1="-3" x2="-8" y2="-3" width="0.2032" layer="48"/>
 <wire x1="-9.5" y1="6" x2="2.5" y2="6" width="0.2032" layer="21"/>
@@ -672,7 +672,6 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <wire x1="0" y1="-2.54" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="1.27" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
 <wire x1="0" y1="0" x2="-1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="0" y2="-2.54" width="0.1524" layer="94"/>
 <wire x1="-2.032" y1="-0.762" x2="-3.429" y2="-2.159" width="0.1524" layer="94"/>
 <wire x1="-1.905" y1="-1.905" x2="-3.302" y2="-3.302" width="0.1524" layer="94"/>
 <pin name="A" x="0" y="2.54" visible="off" length="short" direction="pas" rot="R270"/>
@@ -747,7 +746,6 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <wire x1="-3.81" y1="-0.635" x2="-4.191" y2="-0.381" width="0.1524" layer="94"/>
 <wire x1="-3.81" y1="-0.635" x2="-4.191" y2="-0.889" width="0.1524" layer="94"/>
 <wire x1="-5.715" y1="1.27" x2="-6.985" y2="1.27" width="0.254" layer="94"/>
-<wire x1="-6.985" y1="1.27" x2="-6.985" y2="-1.27" width="0.254" layer="94"/>
 <wire x1="-6.985" y1="1.27" x2="-8.255" y2="1.27" width="0.254" layer="94"/>
 <wire x1="-2.54" y1="-2.667" x2="-2.54" y2="2.667" width="0.4064" layer="94"/>
 <wire x1="-2.54" y1="2.667" x2="2.794" y2="0" width="0.4064" layer="94"/>
@@ -759,7 +757,8 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <wire x1="-10.16" y1="5.08" x2="-10.16" y2="-5.08" width="0.4064" layer="94"/>
 <wire x1="5.08" y1="5.08" x2="0" y2="5.08" width="0.4064" layer="94"/>
 <wire x1="0" y1="5.08" x2="-10.16" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="5.08" y1="5.08" x2="5.08" y2="-5.08" width="0.4064" layer="94"/>
+<wire x1="5.08" y1="5.08" x2="5.08" y2="0" width="0.4064" layer="94"/>
+<wire x1="5.08" y1="0" x2="5.08" y2="-5.08" width="0.4064" layer="94"/>
 <wire x1="5.08" y1="-5.08" x2="0" y2="-5.08" width="0.4064" layer="94"/>
 <wire x1="0" y1="-5.08" x2="-10.16" y2="-5.08" width="0.4064" layer="94"/>
 <wire x1="0" y1="1.27" x2="0" y2="5.08" width="0.1524" layer="94"/>
@@ -771,6 +770,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 <pin name="VCC" x="0" y="7.62" visible="pad" length="short" direction="pas" rot="R270"/>
 <text x="-12.065" y="5.715" size="1.778" layer="95">&gt;NAME</text>
 <text x="-14.605" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
+<wire x1="3.81" y1="0" x2="5.08" y2="0" width="0.1524" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
