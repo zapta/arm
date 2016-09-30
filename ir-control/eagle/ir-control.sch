@@ -966,6 +966,25 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR1.pdf</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="USB-CONN-UNSHIELDED" prefix="J">
+<gates>
+<gate name="G$1" symbol="USB" x="0" y="-5.08"/>
+</gates>
+<devices>
+<device name="" package="USB-MICRO">
+<connects>
+<connect gate="G$1" pin="D+" pad="3"/>
+<connect gate="G$1" pin="D-" pad="2"/>
+<connect gate="G$1" pin="GND" pad="5"/>
+<connect gate="G$1" pin="ID" pad="4"/>
+<connect gate="G$1" pin="VBUS" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 <deviceset name="USB-CONN" prefix="J">
 <gates>
 <gate name="G$1" symbol="USB" x="0" y="-5.08"/>
@@ -1200,8 +1219,8 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <part name="C1" library="ir-control" deviceset="C" device="C0805K" value="10u"/>
 <part name="C4" library="ir-control" deviceset="C" device="C0805K" value="10u"/>
 <part name="U2" library="ir-control" deviceset="LDO" device="" value="MCP1754ST-3302E/CB"/>
-<part name="J2" library="ir-control" deviceset="USB-CONN" device="" value="MICRO USB"/>
-<part name="J1" library="ir-control" deviceset="USB-CONN" device="" value="MICRO USB"/>
+<part name="J2" library="ir-control" deviceset="USB-CONN-UNSHIELDED" device="" value="MICRO USB"/>
+<part name="J1" library="ir-control" deviceset="USB-CONN-UNSHIELDED" device="" value="MICRO USB"/>
 <part name="R2" library="ir-control" deviceset="R" device="R0402" value="1K5"/>
 <part name="J4" library="ir-control" deviceset="JACK" device="X" value="SJ1-3523NG"/>
 <part name="+5V3" library="ir-control" deviceset="+5V" device=""/>
