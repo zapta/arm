@@ -1,3 +1,5 @@
+// This module is responsible for sending the AV IR commands.
+
 #ifndef IR_TX_H
 #define IR_TX_H
 
@@ -7,7 +9,7 @@ extern void setup();
 
 extern void start_tx(int packets);
 
-extern int get_packets_left();
+extern int tx_packets_pending();
 
 extern void dump_state();
 

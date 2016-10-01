@@ -1,5 +1,3 @@
-// A simple mbed program for Arm Pro Mini.
-// Tested on LPCXpresso 8.0.0 on Dec 2015.
 
 #include "ir_tx.h"
 #include "common.h"
@@ -65,9 +63,6 @@ static int volatile ticker_error_count = 0;
 // until zero.
 static int volatile packets_left = 0;
 
-// Written by main to control irq.
-//static volatile bool  ir_tx_enabled = false;
-
 
 #define TCR_OFF    0b00
 #define TCR_EN     0b01
@@ -113,7 +108,6 @@ static inline void ir_on() {
 static inline void ir_off() {
     LPC_CT16B0->EMR = (0b01 << 4);
 }
-
 
 // Should be called from the ticker IRQ only.
 static void inline irq_enter_idle_state() {
@@ -220,6 +214,16 @@ void start_tx(int packets) {
   __enable_irq();
 }
 
+int tx_packets_pending() {
+  int result;
+
+  __disable_irq();
+  result = packets_left;
+  __enable_irq();
+
+  return result;
+}
+
 void dump_state() {
   __disable_irq();
   const int errors = ticker_error_count;
@@ -228,26 +232,9 @@ void dump_state() {
   PRINTF("IR: errors=%d\r\n", errors);
 }
 
-//static int get_packets_left() {
-//  __disable_irq();
-//  const int result = packets_left;
-//  __enable_irq();
-//  return result;
-//}
-
-// Red LED is at GPIO0_20.
-//static DigitalOut led(P0_20, 0);
-
-//USBSerial usb_serial(0x1f00, 0x2012, 0x0001, false);
-
-//static Timer timer;
-
 void setup() {
   ir_setup();
-
   ticker.attach_us(&irq_handler, 600);
-
-  //start_tx(3);
 }
 
 

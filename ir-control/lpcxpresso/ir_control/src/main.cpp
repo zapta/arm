@@ -1,257 +1,152 @@
-// A simple mbed program for Arm Pro Mini.
-// Tested on LPCXpresso 8.0.0 on Dec 2015.
+// TV/AV master/slave IR controller.
+//
+// This program aim to have the AV system at the same on/off state
+// as the TV. It senses the on/off states of both the AV and the TV and
+// if different, it issues IR commands to change the state of the AV
+// to that of the TV.
+//
+// This allows the on/off button on the TV remote control to control
+// also the AV system.
+//
+// The on/off statuses of the AV and TV are senses via isolated USB
+// connectors that sense the +5V from the devices. The AV IR control
+// is currently hard coded to my Sony AV system but can be changed
+// by modifying ir_tx.cpp.
 
 #include "ir_tx.h"
 #include "common.h"
+#include "sense.h"
 
-//#include "mbed.h"
-//#include "USBSerial.h"
-
-// For ir timer
-//#include "cmsis.h"
-//#include "pinmap.h"
-
-// LED blink cycle.
-//static const uint32_t kCycleTimeMsecs = 250;
-
-
-// Ticker for generating continuous 600usec interval IRQ
-// for IR ticks.
-Ticker ticker;
-
-//#ifndef TARGET_LPC11U35_501
-//#error "Should verify MCU compatibility"
-//#endif
-
-//static const uint16_t kCarrierFrequency = 40000;
-
-// Map tone frequency to timer half cycle count. Since we have enough timer.
-// The -1 is from the timer specification.
-//static const uint16_t kTimerCarrierCount =  (uint16_t)((SystemCoreClock / (kCarrierFrequency) / 2) - 1);
-
-//#define TCR_OFF    0b00
-//#define TCR_EN     0b01
-//#define TCR_RESET  0b10
-//
-//void ir_setup() {
-//  // Disable timers 0, 1
-//  LPC_CT16B0->TCR = TCR_OFF;
-//
-//  //Power timers 0, 1
-//  LPC_SYSCON->SYSAHBCLKCTRL |= 1 << (7 + 0);
-//
-//  // Enable counter mode (non PWM) for timers 0, 1
-//  LPC_CT16B0->PWMC = 0b0000;
-//
-//  // Reset functionality on MR0 controlling the counter time period
-//  LPC_CT16B0->MCR = (1 << 1);  // Timer0: reset counter 0 o0 MR0 match
-//
-//  // Set prescaler to 1. Timer is incremented 'SystemCoreClock' times a second.
-//  LPC_CT16B0->PR = 0;
-//
-//  // TODO: is this reset needed?
-//  LPC_CT16B0->TCR = TCR_RESET;
-//
-//  // Clear output on match (tone are off, keep outputs  low).
-//  LPC_CT16B0->EMR = (0b01 << 4);  // Timer0: output LOW on MR0 match
-//
-//  // Set frequency.
-//  LPC_CT16B0->MR0 = kTimerCarrierCount;
-//
-//  LPC_CT16B0->TCR = TCR_EN;
-//
-//  // Pinout
-//   // TODO: define a const for the PWM pin function 2.
-//   pin_function(P0_8, 2);  // CT16B0_MAT0
-//   pin_mode(P0_8, PullNone);
-// }
-//
-//static inline void ir_on() {
-//  LPC_CT16B0->EMR = (0b11 << 4);
-//}
-//
-//static inline void ir_off() {
-//    LPC_CT16B0->EMR = (0b01 << 4);
-//}
-//
-//enum TickerState {
-//  IDLE,
-//  START,
-//  PRE_BIT_SPACE,
-//  BIT_DATA,
-//  POST_PACKET_SPACE
-//};
-//
-//static TickerState ticker_state = IDLE;
-//
-//// Valid in states START, BIT_DATA.
-//static int32_t ticks_left_in_state = 0;
-//
-//// Valid in START, BIT_SPACE, BIT_DATA, PACKET_SPACE.
-//static int32_t ticks_from_packet_start = 0;
-//
-//static int bits_left_in_packet = 0;
-//
-//// The packet to send to turn my Sony audio system on/off.
-//static const uint32_t kDataBits = 0x540a;
-//
-//// Number of bits to send from kDataBits. Only the N LSB bits of
-//// data_bits are transmitted with the more significant bits sent first.
-//static const int kDataBitsCount = 15;
-//
-//// Number of errors detected so far during the IRQ. Non zero value
-//// indicates a software bug.
-//static int volatile ticker_error_count = 0;
-//
-//// Number of packets left to send. Decremented after each packet sent
-//// until zero.
-//static int volatile packets_left = 0;
-//
-//// Written by main to control irq.
-////static volatile bool  ir_tx_enabled = false;
-//
-//// Should be called from the ticker IRQ only.
-//static void inline irq_enter_idle_state() {
-//  ticker_state = IDLE;
-//  ir_off();
-//  packets_left = 0;
-//}
-//
-//// Should be called from the ticker IRQ only.
-//static void inline irq_enter_start_state() {
-//  ticker_state = START;
-//  ir_on();
-//  // Length of the start marker in ticks.
-//  ticks_left_in_state = 4;
-//  bits_left_in_packet = kDataBitsCount;
-//  ticks_from_packet_start = 0;
-//}
-//
-//// Should be called from the ticker IRQ only.
-//static void inline irq_enter_pre_bit_space_state() {
-//  ticker_state = PRE_BIT_SPACE;
-//  ir_off();
-//}
-//
-//// Should be called from the ticker IRQ only.
-//static void inline irq_enter_bit_data_state(bool bit_value) {
-//  ticker_state = BIT_DATA;
-//  ir_on();
-//  ticks_left_in_state = bit_value ? 2 : 1;
-//}
-//
-//// Should be called from the ticker IRQ only.
-//static void inline irq_enter_post_packet_space_state() {
-//  ticker_state = POST_PACKET_SPACE;
-//  ir_off();
-//}
-//
-//void irq_handler() {
-//  switch (ticker_state) {
-//    case IDLE:
-//      if (packets_left > 0) {
-//        irq_enter_start_state();
-//      }
-//      return;
-//
-//    case START:
-//      ticks_from_packet_start++;
-//      if ((--ticks_left_in_state) <= 0) {
-//        irq_enter_pre_bit_space_state();
-//        return;
-//      }
-//      return;
-//
-//    case PRE_BIT_SPACE: {
-//      ticks_from_packet_start++;
-//      // Here always bits_left > 0.
-//      const bool bit_value = kDataBits &  (1 << (--bits_left_in_packet));
-//      irq_enter_bit_data_state(bit_value);
-//      return;
-//    }
-//
-//    case BIT_DATA:
-//      ticks_from_packet_start++;
-//      if ((--ticks_left_in_state) > 0) {
-//        return;
-//      }
-//      // If has more bits switch to DATA_SPACE
-//      if (bits_left_in_packet > 0) {
-//        irq_enter_pre_bit_space_state();
-//        return;
-//      }
-//      // Else, packet done. Switch to POST_SPACE.
-//      irq_enter_post_packet_space_state();
-//      return;
-//
-//    case POST_PACKET_SPACE:
-//      ticks_from_packet_start++;
-//      // Next packet can start 45 ms (== 75 600usec ticks) since start of
-//      // previous packet.
-//      if (ticks_from_packet_start < 75) {
-//        return;
-//      }
-//      // If still transmitting, start next packet.
-//      if (--packets_left > 0) {
-//        irq_enter_start_state();
-//        return;
-//      }
-//      // Else, switch to IDLE state. IR is already off.
-//      irq_enter_idle_state();
-//      return;
-//
-//    // Handle unexpected state.
-//    default:
-//      ticker_error_count++;
-//      irq_enter_idle_state();
-//      return;
-//  }
-//}
-//
-//static void start_tx(int packets) {
-//  __disable_irq();
-//  // TODO: should we verify that packets_left is zero now?
-//  packets_left = packets;
-//  __enable_irq();
-//}
-
-//static int get_packets_left() {
-//  __disable_irq();
-//  const int result = packets_left;
-//  __enable_irq();
-//  return result;
-//}
-
-// Red LED is at GPIO0_20.
+// Status LED is at GPIO0_20.
 static DigitalOut led(P0_20, 0);
 
-//USBSerial usb_serial(0x1f00, 0x2012, 0x0001, false);
+// Timer for led blinking and status dump.
+static Timer heartbeat_timer;
 
-static Timer timer;
+// Timer for control state machine timeouts. Reset on each
+// state change.
+// May overflow in AV_EQUALS_TV since it's not time bounded.
+static Timer millis_in_state;
 
-static void setup() {
-  timer.start();
-  ir_tx::setup();
-//  ir_setup();
-//
-//  ticker.attach_us(&irq_handler, 600);
+enum State {
+  BOOT,
+  DISPATCH,
+  AV_EQUALS_TV,
+  WAIT_AV_ON,
+  WAIT_AV_OFF,
+};
 
-  ir_tx::start_tx(3);
+static State state = BOOT;
+
+static void change_state(State new_state) {
+  PRINTF("State %d -> %d\r\n", state, new_state);
+  millis_in_state.reset();
+  state = new_state;
 }
 
-//volatile uint32_t i;
-//
+static void setup() {
+  heartbeat_timer.start();
+  millis_in_state.start();
+
+  ir_tx::setup();
+  sense::setup();
+}
+
+// Heartbeat handling.
+static void loop_heartbeat() {
+  const int heartbeat_ms = heartbeat_timer.read_ms();
+  const bool blink_polarity = (sense::is_av_on() != sense::is_tv_on());
+
+  led = (heartbeat_ms <= 100) ^ blink_polarity; // blink
+
+  if (heartbeat_ms > 1000) {
+    heartbeat_timer.reset();
+    ir_tx::dump_state();
+    PRINTF("TV=%s, AV=%s\r\n", sense::is_tv_on(), sense::is_av_on());
+  }
+}
+
+// Control state machine handling.
+static void loop_state() {
+  // Cache common values.
+  const int ms_in_state = millis_in_state.read_ms();
+  const bool av_on = sense::is_av_on();
+  const bool tv_on = sense::is_tv_on();
+
+  switch (state) {
+
+    // Initial delay to let the sense input debouncers stabilize.
+  case BOOT:
+    if (ms_in_state >= 1000) {
+      change_state(DISPATCH);
+    }
+    break;
+
+    // Compare the AV and TV state and dispatch state.
+  case DISPATCH:
+    if (av_on == tv_on) {
+      change_state(AV_EQUALS_TV);
+      return;
+    }
+
+    // Wait until previous tx completed before we can issue a new command.
+    if (ir_tx::tx_packets_pending()) {
+      return;
+    }
+
+    // Start transmitting an IR AV toggle command.
+    ir_tx::start_tx(3);
+    change_state(av_on ? WAIT_AV_OFF : WAIT_AV_ON);
+    return;
+
+    // The stable state where both AV and TV are on or off.
+    // Note: do not use here time in state since it can overflow.
+  case AV_EQUALS_TV:
+    if (av_on != tv_on) {
+      change_state(DISPATCH);
+    }
+    return;
+
+    // An IR command was sent to turn the AV on. Wait for for AV on or timeout.
+  case WAIT_AV_ON:
+    if (av_on) {
+      PRINTF("ON after %d ms\r\n", millis_in_state)
+      change_state(DISPATCH);
+      return;
+    }
+    // TODO: set a const for av on timeout
+    if (millis_in_state >= 15000) {
+      PRINTF("ON Timeout\r\n")
+      change_state(DISPATCH);
+    }
+    return;
+
+    // An IR command was sent to turn the AV off. Wait for for AV off or timeout.
+  case WAIT_AV_OFF:
+    if (!av_on) {
+      PRINTF("OFF after %d ms\r\n", millis_in_state)
+      change_state(DISPATCH);
+      return;
+    }
+    // TODO: set a const for av off timeout
+    if (millis_in_state >= 15000) {
+      PRINTF("OFF Timeout\r\n")
+      change_state(DISPATCH);
+    }
+    return;
+
+    // Unexpected state.
+  default:
+    PRINTF("Unknown state: %d\r\n", state)
+    ;
+    change_state(DISPATCH);
+    return;
+  }
+}
 
 static void loop() {
-  int ms = timer.read_ms();
-  led = (ms < 500); // blink
-
-  if (ms > 20000) {
-    timer.reset();
-    ir_tx::dump_state();
-    ir_tx::start_tx(3);
-    //PRINTF("Errors: %u\r\n", ticker_error_count);
-  }
+  loop_heartbeat();
+  loop_state();
 }
 
 int main(void) {
