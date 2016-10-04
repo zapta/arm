@@ -17,6 +17,9 @@
 #include "common.h"
 #include "sense.h"
 
+const static int kWaitAvOnTimeoutMillis = 3000;
+const static int kWaitAvOffTimeoutMillis = 3000;
+
 // Status LED is at GPIO0_20.
 static DigitalOut led(P0_20, 0);
 
@@ -26,7 +29,7 @@ static Timer heartbeat_timer;
 // Timer for control state machine timeouts. Reset on each
 // state change.
 // May overflow in AV_EQUALS_TV since it's not time bounded.
-static Timer millis_in_state;
+static Timer time_in_state;
 
 enum State {
   BOOT,
@@ -40,13 +43,13 @@ static State state = BOOT;
 
 static void change_state(State new_state) {
   PRINTF("State %d -> %d\r\n", state, new_state);
-  millis_in_state.reset();
+  time_in_state.reset();
   state = new_state;
 }
 
 static void setup() {
   heartbeat_timer.start();
-  millis_in_state.start();
+  time_in_state.start();
 
   ir_tx::setup();
   sense::setup();
@@ -54,6 +57,7 @@ static void setup() {
 
 // Heartbeat handling.
 static void loop_heartbeat() {
+
   const int heartbeat_ms = heartbeat_timer.read_ms();
   const bool blink_polarity = (sense::is_av_on() != sense::is_tv_on());
 
@@ -62,14 +66,17 @@ static void loop_heartbeat() {
   if (heartbeat_ms > 1000) {
     heartbeat_timer.reset();
     ir_tx::dump_state();
-    PRINTF("TV=%s, AV=%s\r\n", sense::is_tv_on(), sense::is_av_on());
+    PRINTF("TV=%u, AV=%u, packets=%d, state=%u (t="
+        "%d)\r\n", sense::is_tv_on(), sense::is_av_on(),
+        ir_tx::tx_packets_pending(), state,
+        (state == AV_EQUALS_TV) ? -1 : time_in_state.read_ms());
   }
 }
 
 // Control state machine handling.
 static void loop_state() {
   // Cache common values.
-  const int ms_in_state = millis_in_state.read_ms();
+  const int ms_in_state = time_in_state.read_ms();
   const bool av_on = sense::is_av_on();
   const bool tv_on = sense::is_tv_on();
 
@@ -110,12 +117,12 @@ static void loop_state() {
     // An IR command was sent to turn the AV on. Wait for for AV on or timeout.
   case WAIT_AV_ON:
     if (av_on) {
-      PRINTF("ON after %d ms\r\n", millis_in_state)
+      PRINTF("ON after %d ms\r\n", ms_in_state)
       change_state(DISPATCH);
       return;
     }
     // TODO: set a const for av on timeout
-    if (millis_in_state >= 15000) {
+    if (ms_in_state >= kWaitAvOnTimeoutMillis) {
       PRINTF("ON Timeout\r\n")
       change_state(DISPATCH);
     }
@@ -124,12 +131,12 @@ static void loop_state() {
     // An IR command was sent to turn the AV off. Wait for for AV off or timeout.
   case WAIT_AV_OFF:
     if (!av_on) {
-      PRINTF("OFF after %d ms\r\n", millis_in_state)
+      PRINTF("OFF after %d ms\r\n", ms_in_state)
       change_state(DISPATCH);
       return;
     }
     // TODO: set a const for av off timeout
-    if (millis_in_state >= 15000) {
+    if (ms_in_state >= kWaitAvOffTimeoutMillis) {
       PRINTF("OFF Timeout\r\n")
       change_state(DISPATCH);
     }
@@ -145,6 +152,7 @@ static void loop_state() {
 }
 
 static void loop() {
+  sense::loop();
   loop_heartbeat();
   loop_state();
 }

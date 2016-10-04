@@ -11,11 +11,6 @@
 
 namespace ir_tx {
 
-
-// LED blink cycle.
-//static const uint32_t kCycleTimeMsecs = 250;
-
-
 // Ticker for generating continuous 600usec interval IRQ
 // for IR ticks.
 Ticker ticker;
@@ -208,6 +203,7 @@ static void irq_handler() {
 }
 
 void start_tx(int packets) {
+  PRINTF("Start TX: %d packets\r\n", packets);
   __disable_irq();
   // TODO: should we verify that packets_left is zero now?
   packets_left = packets;
@@ -229,7 +225,9 @@ void dump_state() {
   const int errors = ticker_error_count;
   __enable_irq();
 
-  PRINTF("IR: errors=%d\r\n", errors);
+  if (errors) {
+    PRINTF("IR: errors=%d\r\n", errors);
+  }
 }
 
 void setup() {

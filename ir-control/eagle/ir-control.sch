@@ -1224,7 +1224,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/KLBR2.pdf&lt;br&gt;
 <part name="R2" library="ir-control" deviceset="R" device="R0402" value="1K5"/>
 <part name="J4" library="ir-control" deviceset="JACK" device="X" value="SJ1-3523NG"/>
 <part name="+5V3" library="ir-control" deviceset="+5V" device=""/>
-<part name="R7" library="ir-control" deviceset="R" device="R0402" value="330"/>
+<part name="R7" library="ir-control" deviceset="R" device="R0402" value="100"/>
 <part name="GND14" library="ir-control" deviceset="GND" device=""/>
 <part name="Q3" library="ir-control" deviceset="NPN" device="" value="MMBT2222A"/>
 <part name="R6" library="ir-control" deviceset="R" device="R0402" value="1K5"/>
