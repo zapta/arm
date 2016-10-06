@@ -17,14 +17,18 @@
 #include "common.h"
 #include "sense.h"
 
-const static int kWaitAvOnTimeoutMillis = 3000;
-const static int kWaitAvOffTimeoutMillis = 3000;
+// Timeouts for waiting for AV response to IR commands.
+const static int kWaitForAvOnTimeoutMillis = 3000;
+const static int kWaitForAvOffTimeoutMillis = 3000;
 
 // Status LED is at GPIO0_20.
 static DigitalOut led(P0_20, 0);
 
-// Timer for led blinking and status dump.
-static Timer heartbeat_timer;
+// Timer for led blinking.
+static Timer led_timer;
+
+// Timer for dumping status to serial port (for debugging).
+static Timer status_dump_timer;
 
 // Timer for control state machine timeouts. Reset on each
 // state change.
@@ -48,23 +52,32 @@ static void change_state(State new_state) {
 }
 
 static void setup() {
-  heartbeat_timer.start();
+  led_timer.start();
+  status_dump_timer.start();
   time_in_state.start();
 
   ir_tx::setup();
   sense::setup();
 }
 
-// Heartbeat handling.
-static void loop_heartbeat() {
+// Led control.
+static void loop_led_heartbeat() {
+  // Set LED state.
+  const int led_timer_ms = led_timer.read_ms();
+  const bool is_av_equals_tv = (sense::is_av_on() == sense::is_tv_on());
+  led = ir_tx::tx_packets_pending() || (led_timer_ms <= 100);
 
-  const int heartbeat_ms = heartbeat_timer.read_ms();
-  const bool blink_polarity = (sense::is_av_on() != sense::is_tv_on());
+  // Faster blink when AV != TV.
+  const int blink_period_ms = is_av_equals_tv ? 3000 : 400;
+  if (led_timer_ms >= blink_period_ms) {
+    led_timer.reset();
+  }
+}
 
-  led = (heartbeat_ms <= 100) ^ blink_polarity; // blink
-
-  if (heartbeat_ms > 1000) {
-    heartbeat_timer.reset();
+// Periodic status dump to serial port.
+static void loop_status_dump() {
+  if (status_dump_timer.read_ms() > 2000) {
+    status_dump_timer.reset();
     ir_tx::dump_state();
     PRINTF("TV=%u, AV=%u, packets=%d, state=%u (t="
         "%d)\r\n", sense::is_tv_on(), sense::is_av_on(),
@@ -82,7 +95,7 @@ static void loop_state() {
 
   switch (state) {
 
-    // Initial delay to let the sense input debouncers stabilize.
+  // Initial delay to let the sense input debouncers stabilize.
   case BOOT:
     if (ms_in_state >= 1000) {
       change_state(DISPATCH);
@@ -122,7 +135,7 @@ static void loop_state() {
       return;
     }
     // TODO: set a const for av on timeout
-    if (ms_in_state >= kWaitAvOnTimeoutMillis) {
+    if (ms_in_state >= kWaitForAvOnTimeoutMillis) {
       PRINTF("ON Timeout\r\n")
       change_state(DISPATCH);
     }
@@ -136,7 +149,7 @@ static void loop_state() {
       return;
     }
     // TODO: set a const for av off timeout
-    if (ms_in_state >= kWaitAvOffTimeoutMillis) {
+    if (ms_in_state >= kWaitForAvOffTimeoutMillis) {
       PRINTF("OFF Timeout\r\n")
       change_state(DISPATCH);
     }
@@ -152,8 +165,12 @@ static void loop_state() {
 }
 
 static void loop() {
+  // Dependent module
   sense::loop();
-  loop_heartbeat();
+
+  // Logic in this file.
+  loop_led_heartbeat();
+  loop_status_dump();
   loop_state();
 }
 
