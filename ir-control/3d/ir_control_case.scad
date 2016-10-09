@@ -10,10 +10,10 @@ eps2 = eps1 + eps1;
 // this value.
 pcb_corner_radius = 2.8;
 
-// PCB length. (on y axis)
+// PCB length. (on x axis)
 pcb_length = 40;
 
-// PCB width. (on x axis)
+// PCB width. (on y axis)
 pcb_width = 45;
 
 // PCB thickness, without the components.
@@ -80,6 +80,7 @@ release_notch_width = 8;
 release_notch_height = 1;
 
 pcb_surface_height = base_height + sticky_tape_thickness + pcb_thickness; 
+echo("pcb_surface_height", pcb_surface_height);
 
 snap_fit_height = 2;
 snap_fit_length = 30;
@@ -148,36 +149,44 @@ module rounded_box(l, w, h, r, r1=0, r2=0) {
 }
 
 // A hole in the cover for a connector on the USB side.
-// horiz_offset: offset from PCB center line.
-// vert_offset: offset from PCB surface.
-module conn_hole(width, height, horiz_offset, vert_offset) {
+// eagle_y: center y coordinate in eagle.
+// vert_offset: offset of hole vertical center from PCB surface.
+module usb_conn_hole(width, height, eagle_y, vert_offset) {
+    horiz_offset = eagle_y - pcb_width/2;
     translate([-cover_length/2 - cover_thickness, 
                -width/2 + horiz_offset, 
-               pcb_surface_height -base_step_height + vert_offset]) 
+               pcb_surface_height - base_step_height - height/2 + vert_offset]) 
         cube([3*cover_thickness, 
               width, 
-              height + eps1]);
+              height]);
 }
 
 module usb_conn_holes() {
   width = 11;
   height = 8;
-  vert_offset = -2.8;
+  vert_offset = 1.2; //-2.8;
   
-  conn_hole(width, height, 14.5, vert_offset);
-  conn_hole(width, height, -2.5, vert_offset);
-  conn_hole(width, height, -14.5, vert_offset);
+  usb_conn_hole(width, height, 37, vert_offset);
+  usb_conn_hole(width, height, 20, vert_offset);
+  usb_conn_hole(width, height,  8, vert_offset);
 }
 
 module ir_conn_hole() {
   // Project to the other side of the box, opposite to 
   // the USB connectors.
-  mirror([1, 0, 0]) conn_hole(8, 8, 14, -2.8);
+  //mirror([1, 0, 0]) conn_hole(8, 8, 36.5, 2.5);
+  
+  eagle_y = 36.5;
+  vert_offset = 2.5;
+  diameter = 6;
+ 
+  horiz_offset = eagle_y - pcb_width/2;
+  translate([cover_length/2 - cover_thickness/2, 
+               -diameter/2 + horiz_offset, 
+               pcb_surface_height - base_step_height  + vert_offset]) 
+        rotate([0, 90, 0]) 
+           cylinder(d=diameter, h=3*cover_thickness, center=true);       
 }
-
-//module phone_conn_hole() {
-//  conn_hole(12, 13.3, -15, -2.8);
-//}
 
 module led_hole() {
   // Slopt, for easy LED insertion
@@ -196,14 +205,6 @@ module led_hole() {
     cube([led_hole_width, led_hole_length, 2*(cover_thickness+eps1)], center=true); 
   }
 }
-
-//module base_screw_hole() {
-//  d1 = 4;
-//  d2 = 10;
-//  sink_depth = 4;
-//  translate([0, 0, -eps1]) cylinder(d=d1, h=base_height+eps2);  
-//  translate([0, 0, base_height-sink_depth]) cylinder(d=d2, h=sink_depth+eps1);  
-//}
 
 module base_snap_fit_holes() {
   module sf(a) {
@@ -251,13 +252,6 @@ module cover() {
   cover_snap_fit_bumps();
 }
 
-// Marks the orientation of the base (connectors side)
-//module base_orientation_mark() {
-//  depth = 1.0;
-//  translate([-base_length/2 + 6, 0, base_height-depth]) 
-//    rotate([0, 0, 180]) cylinder(d=6, h=depth+eps1, $fn=3);
-//}
-
 // Cavities in the base for PCB features. 
 // Input coordiantes are in eagle x,y.
 module pcb_sink(eagle_x, eagle_y, d) { 
@@ -277,13 +271,6 @@ module base() {
       rounded_box(base_length + 2*extra, base_width + 2*extra, base_step_height, 
         base_corner_radius + extra, 0.5, 0.2);
     }
-    
-    //base_orientation_mark();
-    
-//    translate([0, -base_screws_spacing/2, 0]) base_screw_hole();
-//    translate([0, base_screws_spacing/2, 0]) base_screw_hole();
-//    translate([-base_screws_spacing/2, 0, 0]) base_screw_hole();
-//    translate([base_screws_spacing/2, 0, 0]) base_screw_hole();
     
     base_snap_fit_holes();
     
@@ -316,8 +303,6 @@ module parts_for_printing() {
        rotate([180, 0, 0])  cover(); 
 }
 
-  //rotate([0, 180, -90])  cover(); 
-
 //cover();
 
 //parts_assembled();
@@ -329,7 +314,6 @@ parts_for_printing();
 //   translate([-85, -35, -eps1]) cube([70, 70, 40]); 
 //}
 
-//#base_mark();
 //intersection() {
 //  parts_for_printing();
 //  translate([43, -7, -eps1]) cube([30, 30, 50]);
