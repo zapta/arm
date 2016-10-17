@@ -20,7 +20,7 @@ pcb_width = 45;
 pcb_thickness = 1.6;
 
 // For tallest component.
-pcb_to_cover_clearance = 8;
+pcb_to_cover_clearance = 9;
 
 // Thickness of tape used to stick the PCB to the base.
 // Scotch 414P Extreme Mounting Tape.
@@ -35,7 +35,7 @@ base_step_height = 2;
 // Base margin aroung the PCB. This compensates for PCB
 // tolerances and allow the cover's snag-fit to clear the PCB.
 // This dimension is on all four sides of the PCB.
-pcb_to_base_margin = 0.6;
+pcb_to_base_margin = 1.0;
 
 // Corner radius of the thick part of the base.
 base_corner_radius = pcb_corner_radius + pcb_to_base_margin;
@@ -162,7 +162,7 @@ module usb_conn_hole(width, height, eagle_y, vert_offset) {
 }
 
 module usb_conn_holes() {
-  width = 11;
+  width = 12.5;
   height = 8;
   vert_offset = 1.2; //-2.8;
   
@@ -172,17 +172,15 @@ module usb_conn_holes() {
 }
 
 module ir_conn_hole() {
-  // Project to the other side of the box, opposite to 
-  // the USB connectors.
-  //mirror([1, 0, 0]) conn_hole(8, 8, 36.5, 2.5);
-  
-  eagle_y = 36.5;
+  eagle_y = 35;
   vert_offset = 2.5;
-  diameter = 6;
+  diameter = 8;
  
   horiz_offset = eagle_y - pcb_width/2;
+  echo("horiz offset", horiz_offset);
+  
   translate([cover_length/2 - cover_thickness/2, 
-               -diameter/2 + horiz_offset, 
+               horiz_offset, 
                pcb_surface_height - base_step_height  + vert_offset]) 
         rotate([0, 90, 0]) 
            cylinder(d=diameter, h=3*cover_thickness, center=true);       
@@ -232,6 +230,13 @@ module release_notches() {
   cube([release_notch_width, cover_width + eps2, release_notch_height+eps1]);
 }
 
+// Engraved text on the top of the cover.
+//module cover_text(x, y, angle, msg) {
+//  depth = 1;
+//  size = 3;
+//   translate([x, y, cover_height-depth]) linear_extrude(height = depth+eps1) rotate([0, 0, angle]) text(msg, halign="center",valign="center", size=size, font="Helvetica:style=Bold");
+//}
+
 module cover() {
   difference() {
     rounded_box(cover_length, cover_width, cover_height,
@@ -248,6 +253,14 @@ module cover() {
     //phone_conn_hole();
     led_hole();
     release_notches();
+    
+    // text
+    // Tweak the dimension to match the holes.
+//    cover_text(-18.5, -14, -90, "TV");
+//    cover_text(-18.5, -2, -90, "AV");
+//    cover_text(-18.5, 14.6, -90, "PWR");  
+//    cover_text(18.5, 10.7, 90, "IR");
+
   }
   cover_snap_fit_bumps();
 }
@@ -255,11 +268,12 @@ module cover() {
 // Cavities in the base for PCB features. 
 // Input coordiantes are in eagle x,y.
 module pcb_sink(eagle_x, eagle_y, d) { 
-  x =  -pcb_width/2 + eagle_x;
-  y =  - pcb_length/2 + eagle_y;
+  x =  -pcb_length/2 + eagle_x;
+  y =  - pcb_width/2 + eagle_y;
   depth = 2;
   translate([x, y, base_height - depth]) cylinder(d=d, h=depth+eps1);
 }
+
 
 // The base part.
 module base() {
@@ -303,7 +317,11 @@ module parts_for_printing() {
        rotate([180, 0, 0])  cover(); 
 }
 
+//base();
+
 //cover();
+
+
 
 //parts_assembled();
 
